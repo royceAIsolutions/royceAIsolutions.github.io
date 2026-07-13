@@ -96,17 +96,19 @@ body {
       👋 Hey! I'm RoyceAI. Ask me about:
       <br><br>
       • <b>AI Receptionists</b> — 24/7 call answering for dealerships, medical, dental, vets<br>
-      • <b>Tutoring</b> — K-12 Math, Science, English, Korean via RoyceAI Tutor<br>
+      • <b>Tutoring</b> — K-12 Math, Science, English, Korean<br>
+      • <b>Websites</b> — Custom, responsive, AI-integrated<br>
       • <b>Cuisine Quiz</b> — Test your food knowledge<br>
       <br>
+      <a href="https://t.me/royceai_bot" target="_blank">📲 Start on Telegram</a> • <a href="mailto:royceaisolutions@gmail.com">📧 Email us</a><br>
       What can I help you with?
     </div>
   </div>
 
   <div class="quick-btns" id="quickBtns">
     <button onclick="sendQuick('Tell me about your AI receptionist')">📞 AI Receptionist</button>
-    <button onclick="sendQuick('I need a tutor for my child')">🧠 Tutoring</button>
-    <button onclick="sendQuick('What areas do you serve?')">📍 Irvine, CA</button>
+    <button onclick="sendQuick('I need a tutor for my child')">🧠 Tutoring ($100/mo)</button>
+    <button onclick="sendQuick('I need a website')">🌐 Website ($1k)</button>
     <button onclick="sendQuick('Pricing?')">💰 Pricing</button>
   </div>
 
@@ -151,11 +153,12 @@ function sendQuick(text) {
 }
 
 function formatReply(text) {
-  return text
+  // Convert markdown bold to HTML (do this FIRST before any HTML handling)
+  let html = text
     .replace(/### (.*)/g, '<strong>$1</strong><br>')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\n/g, '<br>')
-    .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank">$1</a>');
+    .replace(/\n/g, '<br>');
+  return html;
 }
 
 async function sendMessage() {
@@ -178,7 +181,7 @@ async function sendMessage() {
     });
 
     const data = await resp.json();
-    let reply = data.reply || 'Sorry, I had trouble with that. Email us at royceaisolutions@gmail.com';
+    let reply = data.reply || 'Sorry, I had trouble with that. <a href="mailto:royceaisolutions@gmail.com">Email us</a>';
     
     history.push({ role: 'assistant', content: reply });
     showTyping(false);
@@ -186,14 +189,14 @@ async function sendMessage() {
 
   } catch (e) {
     showTyping(false);
-    addMessage('⚠️ Connection error. Send us an email at royceaisolutions@gmail.com', 'bot');
+    addMessage('⚠️ Connection error. <a href="mailto:royceaisolutions@gmail.com">Email us</a>', 'bot');
   }
 
   document.getElementById('sendBtn').disabled = false;
   msgCount++;
 
   if (msgCount === 3) {
-    addMessage('💡 Want to continue later? Message us on <a href="https://t.me/royceai_bot">Telegram</a> anytime.', 'system');
+    addMessage('💡 Want to continue later? <a href="https://t.me/royceai_bot" target="_blank">Message us on Telegram</a>', 'system');
   }
 }
 </script>
