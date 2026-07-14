@@ -160,11 +160,12 @@ footer .copy{color:var(--text-secondary);font-size:0.75rem}
 </div>
 <footer><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
 <script>
-const S='https://docs.google.com/spreadsheets/d/1YMuoRMJiDJP9_viB6dM5-4r2OGvUeZlZEwdVTQymWvM/export?format=csv',H='https://chat-api-tawny-zeta.vercel.app/api/quiz-history';let U=[];
+function parseCSV(t){var r=[],l=t.trim().split('\n');for(var i=0;i<l.length;i++){var ln=l[i],c=[],cur='',q=false;for(var j=0;j<ln.length;j++){var ch=ln[j];if(ch==='"')q=!q;else if(ch===','&&!q){c.push(cur.trim());cur=''}else cur+=ch}c.push(cur.trim());r.push(c)}return r}
 function e(s){if(!s)return 0;var m=s.match(/(\d+)%/);return m?parseInt(m[1]):0}
+const S='https://docs.google.com/spreadsheets/d/1YMuoRMJiDJP9_viB6dM5-4r2OGvUeZlZEwdVTQymWvM/export?format=csv',H='https://chat-api-tawny-zeta.vercel.app/api/quiz-history';let U=[];
 async function L(){try{
-  var r=await fetch(S+'&'+Date.now()),c=await r.text(),rows=c.trim().split('\n').slice(1);
-  U=rows.map(function(r){var cols=r.split(','),fn=(cols[0]||'').trim(),ln=(cols[1]||'').trim();return{id:(fn+' '+ln).toLowerCase(),fn:fn,ln:ln,name:fn+(ln?' '+ln:''),sub:(cols[2]||'').trim(),a:(cols[3]||'').trim().toUpperCase()==='YES',t:(cols[4]||'').trim(),m:(cols[5]||'').trim(),y:(cols[6]||'').trim(),top:(cols[7]||'').trim(),d:(cols[8]||'').trim(),f:(cols[9]||'').trim(),p:(cols[10]||'').trim(),c:(cols[11]||'math').trim()}}).filter(function(u){return u.id.trim()&&u.a});
+  var r=await fetch(S+'&'+Date.now()),c=await r.text(),rows=parseCSV(c).slice(1);
+  U=rows.map(function(r){var fn=(r[0]||'').trim(),ln=(r[1]||'').trim();return{id:(fn+' '+ln).toLowerCase(),fn:fn,ln:ln,name:fn+(ln?' '+ln:''),sub:(r[2]||'').trim(),a:(r[3]||'').trim().toUpperCase()==='YES',t:(r[4]||'').trim(),m:(r[5]||'').trim(),y:(r[6]||'').trim(),top:(r[7]||'').trim(),d:(r[8]||'').trim(),f:(r[9]||'').trim(),p:(r[10]||'').trim(),c:(r[11]||'math').trim()}}).filter(function(u){return u.id.trim()&&u.a});
   document.getElementById('loginSubtitle').textContent='Enter your name.';var s=localStorage.getItem('tutor_user');
   if(s){try{var u=JSON.parse(s);var m=U.find(function(x){return x.id===u.id});if(m)D(m);else localStorage.removeItem('tutor_user')}catch(e){localStorage.removeItem('tutor_user')}}
 }catch(e){document.getElementById('loginSubtitle').textContent='Could not load users.'}}
