@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High School Tutor — Royce AI Solutions</title>
+<meta name="description" content="Royce AI high school tutoring. Log in to access your AI tutor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a;
+  --bg-card: #111;
+  --bg-elevated: #1a1a1a;
+  --text: #f5f5f5;
+  --text-secondary: #a1a1aa;
+  --border: rgba(255,255,255,0.06);
+  --accent: #667eea;
+  --accent-hover: #7c93f5;
+  --accent-glow: rgba(102,126,234,0.2);
+  --accent-bg: rgba(102,126,234,0.08);
+  --purple-deep: #764ba2;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --max-w: 1200px;
+  --nav-h: 64px;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 1px var(--accent), 0 4px 20px var(--accent-glow); }
+  50% { box-shadow: 0 0 0 1px var(--accent), 0 4px 40px var(--accent-glow), 0 0 60px var(--accent-glow); }
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  z-index: 100;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-logo .logo-icon {
+  width: 28px; height: 28px;
+  background: linear-gradient(135deg, var(--accent), var(--purple-deep));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: white;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: 8px; }
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.nav-links a:hover { color: var(--text); background: var(--accent-bg); }
+.nav-links a.active { color: var(--accent); background: var(--accent-bg); }
+.nav-links .nav-cta {
+  background: var(--accent);
+  color: white !important;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 8px;
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+.nav-links .nav-cta:hover { background: var(--accent-hover); transform: scale(1.05); }
+
+/* Login screen */
+.login-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 24px 60px;
+  max-width: 440px;
+  margin: 0 auto;
+  text-align: center;
+}
+.login-screen.hidden { display: none; }
+.login-screen h1 {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.login-screen h1 .gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s ease-in-out infinite;
+}
+.login-screen p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 32px;
+}
+.login-box {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  text-align: left;
+}
+.login-box label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.login-box input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  margin-bottom: 16px;
+}
+.login-box input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.login-box .btn {
+  width: 100%;
+  justify-content: center;
+}
+.login-box .error {
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin-top: 12px;
+  display: none;
+}
+.login-box .error.show { display: block; }
+
+/* Dashboard */
+.dashboard { display: none; }
+.dashboard.show { display: block; }
+
+.dash-header {
+  padding: 100px 24px 40px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  text-align: center;
+}
+.dash-header h1 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.dash-header h1 .gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s ease-in-out infinite;
+}
+.dash-header p { color: var(--text-secondary); font-size: 0.9rem; }
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.dash-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+  transition: all var(--transition);
+}
+.dash-card:hover {
+  border-color: rgba(102,126,234,0.3);
+  transform: translateY(-2px);
+}
+.dash-card .icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+.dash-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+.dash-card p { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 16px; line-height: 1.6; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 0 0 1px var(--accent), 0 4px 20px var(--accent-glow);
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px) scale(1.03);
+}
+.btn-secondary {
+  background: var(--bg-elevated);
+  color: var(--text);
+  box-shadow: 0 0 0 1px var(--border);
+}
+.btn-secondary:hover {
+  background: var(--bg-card);
+  box-shadow: 0 0 0 1px var(--accent);
+  transform: translateY(-1px);
+}
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 0.85rem;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 48px 24px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+footer .logo { font-weight: 700; font-size: 1rem; color: var(--text-secondary); }
+footer .logo span { color: var(--accent); }
+footer .links { display: flex; gap: 20px; flex-wrap: wrap; }
+footer .links a { color: var(--text-secondary); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+footer .links a:hover { color: var(--accent); }
+footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; text-align: center; }
+
+@media (max-width: 640px) {
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile) { display: none; }
+  footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="logo-icon">R</span>
+    Royce<span>AI</span>
+  </a>
+  <div class="nav-links">
+    <a href="/products">Products</a>
+    <a href="/tutor" class="active">Tutor</a>
+    <a href="/blog">Blog</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
+  </div>
+</nav>
+
+<!-- Login Screen -->
+<div class="login-screen" id="loginScreen">
+  <h1>Welcome, <span class="gradient">Tutor</span></h1>
+  <p id="loginSubtitle">Loading authorized users...</p>
+  <div class="login-box">
+    <label for="studentFirstName">First Name</label>
+    <input type="text" id="studentFirstName" placeholder="First name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <label for="studentLastName" style="margin-top:4px">Last Name</label>
+    <input type="text" id="studentLastName" placeholder="Last name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <button class="btn btn-primary" onclick="login()">Unlock Tutoring →</button>
+    <div class="error" id="loginError">Name not found. Try again or <a href="/chat" style="color:var(--accent)">chat with us</a> to get set up.</div>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div class="dashboard" id="dashboard">
+  <div class="dash-header">
+    <h1>Welcome back, <span class="gradient" id="studentName">Student</span>!</h1>
+    <p id="studentInfo">What would you like to study today?</p>
+  </div>
+  <div class="dash-grid">
+    <div class="dash-card">
+      <span class="icon">📐</span>
+      <h3>Math</h3>
+      <p>Algebra, Geometry, Precalculus, Calculus. Step-by-step help and practice problems.</p>
+      <a href="/chat" class="btn btn-primary btn-sm">Start Math →</a>
+    </div>
+    <div class="dash-card">
+      <span class="icon">🔬</span>
+      <h3>Science</h3>
+      <p>Biology, Chemistry, Physics. Concept breakdowns and exam prep.</p>
+      <a href="/chat" class="btn btn-primary btn-sm">Start Science →</a>
+    </div>
+    <div class="dash-card">
+      <span class="icon">📝</span>
+      <h3>English</h3>
+      <p>Essay writing, grammar, reading comprehension, literature analysis.</p>
+      <a href="/chat" class="btn btn-primary btn-sm">Start English →</a>
+    </div>
+    <div class="dash-card">
+      <span class="icon">🇰🇷</span>
+      <h3>Korean</h3>
+      <p>Reading, writing, speaking practice. All levels welcome.</p>
+      <a href="/chat" class="btn btn-primary btn-sm">Start Korean →</a>
+    </div>
+    <div class="dash-card">
+      <span class="icon">📊</span>
+      <h3>Progress</h3>
+      <p>Track your scores, see what you've mastered, and what needs work.</p>
+      <button class="btn btn-secondary btn-sm" onclick="logout()">Logout</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
+  <div class="links">
+    <a href="/products">Products</a>
+    <a href="/tutor">Tutor</a>
+    <a href="/blog">Blog</a>
+    <a href="/chat">Chat</a>
+  </div>
+  <div class="copy">RoyceAI Solutions. Irvine, CA</div>
+</footer>
+
+<script>
+// ===== GOOGLE SHEET URL =====
+// Edit users here: https://docs.google.com/spreadsheets/d/1YMuoRMJiDJP9_viB6dM5-4r2OGvUeZlZEwdVTQymWvM
+// Columns: First Name, Last Name, Subjects, Active, Progress, Current Focus, Plan
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1YMuoRMJiDJP9_viB6dM5-4r2OGvUeZlZEwdVTQymWvM/export?format=csv';
+
+let AUTHORIZED_USERS = [];
+
+async function loadUsers() {
+  try {
+    const resp = await fetch(SHEET_CSV_URL);
+    const csv = await resp.text();
+    const rows = csv.trim().split('\n').slice(1);
+    AUTHORIZED_USERS = rows.map(row => {
+      const cols = row.split(',');
+      const firstName = (cols[0] || '').trim();
+      const lastName = (cols[1] || '').trim();
+      return {
+        id: (firstName + ' ' + lastName).toLowerCase(),
+        firstName: firstName,
+        lastName: lastName,
+        name: firstName + (lastName ? ' ' + lastName : ''),
+        subjects: (cols[2] || '').trim(),
+        active: (cols[3] || '').trim().toUpperCase() === 'YES',
+        progress: (cols[4] || '').trim(),
+        focus: (cols[5] || '').trim(),
+        plan: (cols[6] || '').trim(),
+      };
+    }).filter(u => u.id.trim() && u.active);
+    document.getElementById('loginSubtitle').textContent = 'Enter your name to access tutoring.';
+    const saved = localStorage.getItem('tutor_user');
+    if (saved) {
+      try {
+        const user = JSON.parse(saved);
+        const match = AUTHORIZED_USERS.find(u => u.id === user.id);
+        if (match) showDashboard(match);
+        else localStorage.removeItem('tutor_user');
+      } catch { localStorage.removeItem('tutor_user'); }
+    }
+  } catch (e) {
+    document.getElementById('loginSubtitle').textContent = 'Could not load user list. Try again later.';
+  }
+}
+
+function login() {
+  const firstInput = document.getElementById('studentFirstName');
+  const lastInput = document.getElementById('studentLastName');
+  const error = document.getElementById('loginError');
+  const firstName = firstInput.value.trim();
+  const lastName = lastInput.value.trim();
+  const fullId = (firstName + ' ' + lastName).toLowerCase();
+
+  if (!firstName) {
+    error.textContent = 'Please enter your first name.';
+    error.classList.add('show');
+    return;
+  }
+
+  const user = AUTHORIZED_USERS.find(u => u.id === fullId);
+  if (!user) {
+    error.textContent = 'Name not found. Try again or chat with us to get set up.';
+    error.classList.add('show');
+    return;
+  }
+
+  error.classList.remove('show');
+  localStorage.setItem('tutor_user', JSON.stringify(user));
+  showDashboard(user);
+}
+
+function showDashboard(user) {
+  document.getElementById('loginScreen').classList.add('hidden');
+  document.getElementById('dashboard').classList.add('show');
+  document.getElementById('studentName').textContent = user.name;
+  
+  let info = user.subjects + ' — what would you like to study?';
+  if (user.progress) info += '\n📈 Progress: ' + user.progress;
+  if (user.focus) info += '\n🎯 Focus: ' + user.focus;
+  if (user.plan) info += '\n📋 Plan: ' + user.plan;
+  document.getElementById('studentInfo').innerHTML = info.replace(/\n/g, '<br>');
+}
+
+function logout() {
+  localStorage.removeItem('tutor_user');
+  document.getElementById('dashboard').classList.remove('show');
+  document.getElementById('loginScreen').classList.remove('hidden');
+  document.getElementById('studentFirstName').value = '';
+  document.getElementById('studentLastName').value = '';
+}
+
+window.addEventListener('DOMContentLoaded', loadUsers);
+</script>
+<script src="/chat-widget.js"></script>
+</body>
+</html>
