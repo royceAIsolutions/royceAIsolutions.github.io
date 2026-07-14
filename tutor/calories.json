@@ -1,1 +1,44 @@
-[{"student": "Carter", "food": "Oikos vanilla protein shake", "calories": 160, "date": "2026-07-14", "ts": 1784029441509}, {"student": "Carter", "food": "Milk + Chobani yogurt", "calories": 300, "date": "2026-07-14", "ts": 1784035441509}, {"student": "Carter", "food": "Tuna (1 can) + 3 eggs + rice", "calories": 550, "date": "2026-07-14", "ts": 1784045441509}, {"student": "Carter", "food": "Pasta salad with shrimp (2 bowls)", "calories": 700, "date": "2026-07-14", "ts": 1784055441509}, {"student": "Carter", "food": "Walnuts", "calories": 100, "date": "2026-07-14", "ts": 1784065441509}]
+[
+  {
+    "student": "Carter",
+    "food": "Oikos vanilla protein shake",
+    "calories": 160,
+    "date": "2026-07-14",
+    "ts": 1784029441509
+  },
+  {
+    "student": "Carter",
+    "food": "Milk + Chobani yogurt",
+    "calories": 300,
+    "date": "2026-07-14",
+    "ts": 1784035441509
+  },
+  {
+    "student": "Carter",
+    "food": "Tuna (1 can) + 3 eggs + rice",
+    "calories": 550,
+    "date": "2026-07-14",
+    "ts": 1784045441509
+  },
+  {
+    "student": "Carter",
+    "food": "Pasta salad with shrimp (2 bowls)",
+    "calories": 700,
+    "date": "2026-07-14",
+    "ts": 1784055441509
+  },
+  {
+    "student": "Carter",
+    "food": "Walnuts",
+    "calories": 100,
+    "date": "2026-07-14",
+    "ts": 1784065441509
+  },
+  {
+    "student": "Carter",
+    "food": "test",
+    "calories": 1,
+    "date": "2026-07-14",
+    "ts": 1784066171327
+  }
+]
