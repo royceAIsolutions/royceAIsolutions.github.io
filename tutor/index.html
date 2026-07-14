@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>High School Tutor — Royce AI Solutions</title>
+<title>RoyceAI Tutor — Your AI Learning Dashboard</title>
 <link rel="stylesheet" href="/tutor/cal.css">
 <link rel="stylesheet" href="/tutor/cal.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,21 +96,22 @@ footer .copy{color:var(--text-secondary);font-size:0.75rem}
 <nav>
   <a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
   <div class="nav-links">
-    <a href="/products">Products</a><a href="/tutor" class="active">Tutor</a><a href="/blog">Blog</a><a href="/chat" class="nav-cta">💬 Chat</a>
+    <a href="/products">Products</a><a href="/tutor" class="active" style="background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);animation:pulse-glow 2s ease-in-out infinite;padding:5px 14px;font-weight:700">✨ Tutor</a><a href="/blog">Blog</a><a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
 </nav>
 
 <div class="login-screen" id="loginScreen">
   <h1>Log in to <span class="gradient">study</span></h1>
-  <p id="loginSubtitle">Enter your name to get started.</p>
+  <p id="loginSubtitle">Enter your name to access your personalized learning dashboard.</p>
   <div class="login-box">
     <label for="studentFirstName">First Name</label>
     <input type="text" id="studentFirstName" placeholder="First name" autocomplete="off">
     <label for="studentLastName" style="margin-top:4px">Last Name</label>
     <input type="text" id="studentLastName" placeholder="Last name" autocomplete="off">
     <button class="btn btn-primary" onclick="login()">Unlock Tutoring →</button>
-    <div class="error" id="loginError">Name not found. Try again or <a href="/chat" style="color:var(--accent)">chat with us</a> to get set up.</div>
+    <div class="error" id="loginError">Name not found. New here? <a href="/chat" style="color:var(--accent)">Start a free trial</a> — no account needed.</div>
   </div>
+  <p style="font-size:0.75rem;color:var(--text-secondary);margin-top:12px">New to RoyceAI? <a href="/chat" style="color:var(--accent);font-weight:600">Try our AI tutor free →</a></p>
 </div>
 
 <div class="dashboard" id="dashboard">
