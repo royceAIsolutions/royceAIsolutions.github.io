@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,27 +17,17 @@
   --text: #f5f5f5;
   --text-secondary: #a1a1aa;
   --border: rgba(255,255,255,0.06);
-  --accent: #dc2626;
-  --accent-hover: #ef4444;
-  --accent-glow: rgba(220,38,38,0.15);
+  --accent: #667eea;
+  --accent-hover: #7c93f5;
+  --accent-glow: rgba(102,126,234,0.2);
+  --accent-bg: rgba(102,126,234,0.1);
+  --purple-deep: #764ba2;
   --radius: 16px;
   --radius-sm: 10px;
   --max-w: 1200px;
   --nav-h: 64px;
   --font: 'Inter', system-ui, -apple-system, sans-serif;
   --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-[data-theme="light"] {
-  --bg: #fafafa;
-  --bg-card: #ffffff;
-  --bg-elevated: #f0f0f0;
-  --text: #111;
-  --text-secondary: #52525b;
-  --border: rgba(0,0,0,0.08);
-  --accent: #dc2626;
-  --accent-hover: #b91c1c;
-  --accent-glow: rgba(220,38,38,0.1);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,6 +42,25 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background var(--transition), color var(--transition);
   overflow-x: hidden;
+}
+
+/* Shimmer animation for gradient text */
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pulse glow for CTA buttons */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 1px var(--accent), 0 4px 20px var(--accent-glow); }
+  50% { box-shadow: 0 0 0 1px var(--accent), 0 4px 40px var(--accent-glow), 0 0 60px var(--accent-glow); }
+}
+
+/* Card border glow on hover */
+@keyframes border-glow {
+  0%, 100% { border-color: rgba(102,126,234,0.15); }
+  50% { border-color: rgba(102,126,234,0.4); }
 }
 
 /* Noise texture overlay */
@@ -79,14 +88,10 @@ nav {
   max-width: var(--max-w);
   margin: 0 auto;
   z-index: 100;
-  background: rgba(10,10,10,0.8);
+  background: rgba(10,10,10,0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
-  transition: background var(--transition), border var(--transition);
-}
-[data-theme="light"] nav {
-  background: rgba(250,250,250,0.8);
 }
 
 .nav-logo {
@@ -95,37 +100,47 @@ nav {
   letter-spacing: -0.02em;
   color: var(--text);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-logo .logo-icon {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, var(--accent), var(--purple-deep));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: white;
 }
 .nav-logo span { color: var(--accent); }
 
-.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-links { display: flex; align-items: center; gap: 8px; }
 .nav-links a {
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--text); }
-
-.theme-toggle {
-  background: none;
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-  width: 36px;
-  height: 36px;
+  padding: 6px 14px;
   border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: all 0.2s;
 }
-.theme-toggle:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-glow);
+.nav-links a:hover { color: var(--text); background: var(--accent-bg); }
+
+.nav-links .nav-cta {
+  background: var(--accent);
+  color: white !important;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 8px;
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+.nav-links .nav-cta:hover {
+  background: var(--accent-hover);
+  transform: scale(1.05);
 }
 
 /* Hero */
@@ -146,8 +161,8 @@ nav {
   gap: 6px;
   padding: 6px 14px;
   border-radius: 100px;
-  background: var(--accent-glow);
-  border: 1px solid rgba(220,38,38,0.2);
+  background: var(--accent-bg);
+  border: 1px solid rgba(102,126,234,0.2);
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--accent);
@@ -164,10 +179,12 @@ nav {
   max-width: 900px;
 }
 .hero h1 .gradient {
-  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
 }
 
 .hero p {
@@ -200,11 +217,12 @@ nav {
   background: var(--accent);
   color: white;
   box-shadow: 0 0 0 1px var(--accent), 0 4px 20px var(--accent-glow);
+  animation: pulse-glow 2.5s ease-in-out infinite;
 }
 .btn-primary:hover {
   background: var(--accent-hover);
-  box-shadow: 0 0 0 1px var(--accent-hover), 0 6px 28px var(--accent-glow);
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 0 1px var(--accent-hover), 0 6px 30px var(--accent-glow), 0 0 60px var(--accent-glow);
 }
 
 .btn-secondary {
@@ -214,7 +232,7 @@ nav {
 }
 .btn-secondary:hover {
   background: var(--bg-card);
-  box-shadow: 0 0 0 1px var(--border), 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 0 0 1px var(--accent), 0 4px 12px rgba(0,0,0,0.1);
   transform: translateY(-1px);
 }
 
@@ -234,6 +252,14 @@ nav {
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 12px;
+}
+.section-header h2 .gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
 }
 .section-header p {
   color: var(--text-secondary);
@@ -259,9 +285,9 @@ nav {
   overflow: hidden;
 }
 .bento-card:hover {
-  border-color: rgba(220,38,38,0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  border-color: rgba(102,126,234,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2), 0 0 0 1px rgba(102,126,234,0.1);
 }
 
 .bento-card.wide {
@@ -292,7 +318,7 @@ nav {
   margin-top: 16px;
   padding: 4px 12px;
   border-radius: 6px;
-  background: var(--accent-glow);
+  background: var(--accent-bg);
   color: var(--accent);
   font-size: 0.85rem;
   font-weight: 600;
@@ -314,12 +340,12 @@ nav {
 }
 .bento-card .btn-card:hover {
   background: var(--accent-hover);
+  transform: scale(1.05);
 }
 
-/* Glow accent behind hero card */
 .bento-card.accent {
-  border-color: rgba(220,38,38,0.15);
-  background: linear-gradient(135deg, rgba(220,38,38,0.04) 0%, transparent 100%);
+  border-color: rgba(102,126,234,0.15);
+  background: linear-gradient(135deg, rgba(102,126,234,0.04) 0%, transparent 100%);
 }
 .bento-card.accent::before {
   content: '';
@@ -328,7 +354,7 @@ nav {
   right: -50%;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(220,38,38,0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(102,126,234,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -351,13 +377,14 @@ nav {
   position: relative;
 }
 .pricing-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2), 0 0 0 1px rgba(102,126,234,0.1);
+  border-color: rgba(102,126,234,0.2);
 }
 
 .pricing-card.featured {
-  border-color: rgba(220,38,38,0.2);
-  background: linear-gradient(135deg, rgba(220,38,38,0.04) 0%, transparent 100%);
+  border-color: rgba(102,126,234,0.2);
+  background: linear-gradient(135deg, rgba(102,126,234,0.04) 0%, transparent 100%);
 }
 .pricing-card.featured::before {
   content: 'Popular';
@@ -398,10 +425,7 @@ nav {
   line-height: 1.6;
 }
 
-.pricing-card .btn {
-  width: 100%;
-  justify-content: center;
-}
+.pricing-card .btn { width: 100%; justify-content: center; }
 
 /* CTA Section */
 .cta-section {
@@ -450,7 +474,7 @@ footer .links a {
   font-size: 0.875rem;
   transition: color 0.2s;
 }
-footer .links a:hover { color: var(--text); }
+footer .links a:hover { color: var(--accent); }
 
 footer .copy {
   color: var(--text-secondary);
@@ -484,7 +508,7 @@ footer .copy {
 
 /* Mobile */
 @media (max-width: 640px) {
-  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile) { display: none; }
   .bento-card.wide { grid-column: span 1; }
   .hero h1 { font-size: clamp(2rem, 10vw, 3rem); }
   .section { padding: 80px 20px; }
@@ -500,12 +524,15 @@ footer .copy {
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">Royce<span>AI</span></a>
+  <a href="/" class="nav-logo">
+    <span class="logo-icon">R</span>
+    Royce<span>AI</span>
+  </a>
   <div class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#pricing">Pricing</a>
-    <a href="/chat" class="nav-cta">Chat</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+    <a href="/products">Products</a>
+    <a href="/tutor">Tutor</a>
+    <a href="/blog">Blog</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
 </nav>
 
@@ -521,13 +548,13 @@ footer .copy {
   </p>
   <div class="hero-actions reveal" style="transition-delay:0.3s">
     <a href="/chat" class="btn btn-primary">💬 Chat with us</a>
-    
+    <a href="/products" class="btn btn-secondary">See products →</a>
   </div>
 </section>
 
 <section id="services" class="section">
   <div class="section-header reveal">
-    <h2>What we build</h2>
+    <h2><span class="gradient">What we build</span></h2>
     <p>AI-powered solutions that make your business run smoother, sell more, and save time.</p>
   </div>
   <div class="bento reveal-stagger">
@@ -535,31 +562,34 @@ footer .copy {
       <span class="icon">📞</span>
       <h3>AI Receptionist</h3>
       <p>24/7 call answering for auto dealerships, medical practices, dental offices, and vets. Never miss a lead — day or night.</p>
+      <a href="/business" class="btn-card">Learn more →</a>
     </div>
     <div class="bento-card">
       <span class="icon">🧠</span>
       <h3>High School Tutor</h3>
       <p>Math, Science, English, Korean. On-demand AI tutoring your teen can text anytime.</p>
       <div class="price">$100/mo</div>
-      <a href="/chat" class="btn-card" target="_blank">Chat with us →</a>
+      <a href="/tutor" class="btn-card">Learn more →</a>
     </div>
     <div class="bento-card">
       <span class="icon">🌐</span>
       <h3>Websites</h3>
       <p>Custom, responsive, AI-integrated websites designed to convert visitors into customers.</p>
       <div class="price">from $1,000</div>
+      <a href="/chat" class="btn-card">Get a quote →</a>
     </div>
     <div class="bento-card wide">
       <span class="icon">⚡</span>
       <h3>Business AI</h3>
       <p>Custom chatbots, AI workflows, and automation tailored to your business. From lead qualification to appointment scheduling — we build what you need.</p>
+      <a href="/chat" class="btn-card">Let's talk →</a>
     </div>
   </div>
 </section>
 
 <section id="pricing" class="section">
   <div class="section-header reveal">
-    <h2>Simple pricing</h2>
+    <h2><span class="gradient">Simple pricing</span></h2>
     <p>No hidden fees. No "contact us for pricing" on standard tiers.</p>
   </div>
   <div class="pricing-grid reveal-stagger">
@@ -567,27 +597,21 @@ footer .copy {
       <h3>High School Tutor</h3>
       <div class="amount">$100</div>
       <div class="pricing-period">/month</div>
-      <div class="desc">
-        AI tutoring via the website chat.
-      </div>
-      <a href="/chat" class="btn btn-primary" target="_blank">Start →</a>
+      <div class="desc">AI tutoring via the website chat. Math, Science, English, Korean.</div>
+      <a href="/pay" class="btn btn-primary">Subscribe →</a>
     </div>
     <div class="pricing-card featured">
       <h3>Website</h3>
       <div class="amount">$1,000</div>
       <div class="pricing-period">starting</div>
-      <div class="desc">
-        Custom responsive website with AI integration. Designed to convert.
-      </div>
+      <div class="desc">Custom responsive website with AI integration. Designed to convert.</div>
       <a href="/chat" class="btn btn-primary">Get started →</a>
     </div>
     <div class="pricing-card">
       <h3>Business AI</h3>
       <div class="amount">Custom</div>
       <div class="pricing-period"></div>
-      <div class="desc">
-        AI receptionists, chatbots, automation. We scope and build what you need.
-      </div>
+      <div class="desc">AI receptionists, chatbots, automation. We scope and build what you need.</div>
       <a href="/chat" class="btn btn-secondary">Let's talk →</a>
     </div>
   </div>
@@ -595,34 +619,22 @@ footer .copy {
 
 <section class="cta-section reveal">
   <h2>Ready to get started?</h2>
-  <p>Chat with us on the website.</p>
+  <p>Chat with us on the website. No forms, no wait.</p>
   <a href="/chat" class="btn btn-primary">💬 Chat with us</a>
 </section>
 
 <footer>
-  <div class="logo">Royce<span>AI</span> Solutions</div>
+  <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
   <div class="links">
+    <a href="/products">Products</a>
+    <a href="/tutor">Tutor</a>
+    <a href="/blog">Blog</a>
     <a href="/chat">Chat</a>
   </div>
-  <div class="copy">Irvine, CA</div>
+  <div class="copy">RoyceAI Solutions. Irvine, CA</div>
 </footer>
 
 <script>
-// Dark mode toggle
-const toggle = document.getElementById('themeToggle');
-const html = document.documentElement;
-const saved = localStorage.getItem('theme');
-
-if (saved) html.setAttribute('data-theme', saved);
-
-toggle.addEventListener('click', () => {
-  const current = html.getAttribute('data-theme');
-  const next = current === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
-  toggle.textContent = next === 'dark' ? '🌙' : '☀️';
-});
-
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
