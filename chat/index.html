@@ -123,9 +123,9 @@ function init(){
   
   if(subject){
     leadInfo = {name:subject,email:subject+'@quiz.royceai.com',phone:'000-000-0000',timestamp:new Date().toISOString()};
-    sp(leadInfo);
+    try{sp(leadInfo)}catch(e){}
     showChat();
-    setTimeout(function(){document.getElementById('userInput').value='Start '+subject+' quiz';sendMessage()},500);
+    setTimeout(function(){var inp=document.getElementById('userInput');if(inp){inp.value='Start '+subject+' quiz';sendMessage()}},500);
     return;
   }
   
@@ -134,12 +134,18 @@ function init(){
   var sl = gp();
   
   if(sl){leadInfo = sl}
-  else if(tu){leadInfo = {name:tu.name,email:tu.name.toLowerCase().replace(/\s+/g,'.')+'@student.tutor',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo)}
+  else if(tu){leadInfo = {name:tu.name,email:'tu@t',phone:'000-000-0000',timestamp:new Date().toISOString()};try{sp(leadInfo)}catch(e){}}
   
-  if(leadInfo){showChat();}else{showLeadForm()};if(leadInfo){showChat();var h=rh();if(h){var msg=document.getElementById('messages');var s=document.createElement('div');s.className='msg system';s.textContent='↻ Welcome back, '+(leadInfo.name||'');msg.appendChild(s)}}
+  if(leadInfo){
+    showChat();
+    var h=rh();
+    if(h){var m=document.getElementById('messages');var s=document.createElement('div');s.className='msg system';s.textContent='↻ Welcome back';m.appendChild(s)}
+  }else{
+    var o=document.getElementById('leadOverlay');
+    if(o)o.style.display='flex';
+  }
 }
 
-function showLeadForm(){document.getElementById('leadOverlay').style.display='flex'}
 function submitLead(){var n=document.getElementById('leadName').value.trim();if(!n){document.getElementById('nameGroup').classList.add('invalid');return}
 document.getElementById('nameGroup').classList.remove('invalid')
 leadInfo={name:n,email:n.toLowerCase().replace(/\\s+/g,'.')+'@client.royceai.com',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo)
