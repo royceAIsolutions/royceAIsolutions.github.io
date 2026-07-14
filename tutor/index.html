@@ -143,8 +143,8 @@ footer .copy{color:var(--text-secondary);font-size:0.75rem}
     <div class="cal-card">
       <h3>🔥 Calorie Tracker</h3>
       <div class="cal-stats">
-        <span>Consumed: <strong id="calConsumed">0</strong> cal</span>
-        <span>Goal: <strong>4,000</strong> cal</span>
+        <span>Consumed: <strong id="calConsumed">0</strong> / <strong>4,000</strong> cal</span>
+        <span id="calGap" style="color:var(--gold)">Need <strong>4,000</strong> more</span>
       </div>
       <div class="cal-bar"><div class="cal-fill" id="calFill" style="width:0%"></div></div>
       <div class="cal-inputs">
@@ -154,6 +154,10 @@ footer .copy{color:var(--text-secondary);font-size:0.75rem}
       </div>
       <div class="cal-items" id="calItems">
         <p style="color:var(--text-secondary);font-size:0.75rem;text-align:center">No food logged today</p>
+      </div>
+      <div id="calSuggestions" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06)">
+        <p style="font-size:0.7rem;color:var(--text-secondary);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em">💡 To close the gap, try:</p>
+        <div id="calSuggestList" style="display:flex;flex-wrap:wrap;gap:4px"></div>
       </div>
     </div>
   </div>
@@ -231,14 +235,32 @@ async function loadCalories(){
   try{
     var r=await fetch('https://chat-api-tawny-zeta.vercel.app/api/calorie?student=Carter');
     var d=await r.json();
+    var total=0;
     if(d.today&&d.today.length){
-      var total=d.today.reduce(function(a,b){return a+parseInt(b.calories||0)},0);
+      total=d.today.reduce(function(a,b){return a+parseInt(b.calories||0)},0);
       document.getElementById('calConsumed').textContent=total;
       var pct=Math.min(total/4000*100,100);
       document.getElementById('calFill').style.width=pct+'%';
       document.getElementById('calItems').innerHTML=d.today.slice(-6).reverse().map(function(i){
         return '<div class="cal-item"><span class="cal-item-food">'+i.food+'</span><span class="cal-item-cal">'+i.calories+' cal</span></div>'
       }).join('\n');
+    }
+    var gap=4000-total;
+    if(gap<=0){
+      document.getElementById('calGap').innerHTML='🎯 Goal met! <strong>'+total+'</strong>/4,000';
+      document.getElementById('calGap').style.color='#22c55e';
+      document.getElementById('calSuggestList').innerHTML='<span style="font-size:0.75rem;color:#22c55e">✅ You hit 4,000 cal today!</span>';
+    }else{
+      document.getElementById('calGap').innerHTML='Need <strong>'+gap+'</strong> more cal';
+      document.getElementById('calGap').style.color='var(--gold)';
+      // Suggest foods based on gap size
+      var suggestions=[];
+      if(gap>=1000){suggestions.push({f:'Double cheeseburger + fries',c:900},{f:'Large pizza (3 slices)',c:800},{f:'Chicken teriyaki bowl',c:850},{f:'Peanut butter sandwich x2 + milk',c:700},{f:'Protein pasta with meatballs',c:750})}
+      else if(gap>=500){suggestions.push({f:'Protein shake + banana',c:400},{f:'Greek yogurt + granola',c:350},{f:'Turkey sandwich + chips',c:450},{f:'Rice + chicken thigh',c:500},{f:'Trail mix (1 cup)',c:350})}
+      else{suggestions.push({f:'Banana + peanut butter',c:250},{f:'Protein bar',c:250},{f:'Glass of milk + toast',c:200},{f:'Handful of almonds',c:170},{f:'Orange juice + egg',c:200})}
+      document.getElementById('calSuggestList').innerHTML=suggestions.map(function(s){
+        return '<button class="ans-btn" onclick="document.getElementById(\'calFood\').value=\''+s.f+'\';document.getElementById(\'calAmount\').value=\''+s.c+'\';logCalorie()" style="font-size:11px;padding:6px 12px">'+s.f+'<br><small style="color:var(--gold)">'+s.c+' cal</small></button>'
+      }).join(' ');
     }
   }catch(e){}
 }
