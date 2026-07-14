@@ -79,10 +79,10 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); display:
 .scoreboard-badges { display: flex; align-items: center; gap: 8px; }
 .scoreboard-streak { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: var(--gold); padding: 4px 12px; border-radius: 6px; background: rgba(234,179,8,0.1); }
 .diff-badge { padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; }
-.diff-advanced { background: rgba(239,68,68,0.15); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
-.diff-hard { background: rgba(234,179,8,0.15); color: #eab308; border: 1px solid rgba(234,179,8,0.3); }
-.diff-medium { background: rgba(102,126,234,0.15); color: #667eea; border: 1px solid rgba(102,126,234,0.3); }
-.diff-foundational { background: rgba(34,197,94,0.15); color: #22c55e; border: 1px solid rgba(34,197,94,0.3); }
+.diff-grade10-12 { background: rgba(239,68,68,0.15); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
+.diff-grade7-9 { background: rgba(234,179,8,0.15); color: #eab308; border: 1px solid rgba(234,179,8,0.3); }
+.diff-grade4-6 { background: rgba(102,126,234,0.15); color: #667eea; border: 1px solid rgba(102,126,234,0.3); }
+.diff-grade1-3 { background: rgba(34,197,94,0.15); color: #22c55e; border: 1px solid rgba(34,197,94,0.3); }
 
 .scoreboard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .score-stat { text-align: center; padding: 16px 12px; border-radius: 10px; background: var(--bg-card); border: 1px solid var(--border); transition: all 0.3s; }
@@ -113,6 +113,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); display:
 .btn-secondary { background: var(--bg-elevated); color: var(--text); box-shadow: 0 0 0 1px var(--border); }
 .btn-secondary:hover { background: var(--bg-card); box-shadow: 0 0 0 1px var(--accent); transform: translateY(-1px); }
 .btn-sm { padding: 8px 18px; font-size: 0.85rem; }
+.btn-sat { background: #7c3aed; color: white; box-shadow: 0 0 0 1px #7c3aed, 0 4px 20px rgba(124,58,237,0.2); }
+.btn-sat:hover { background: #8b5cf6; transform: translateY(-2px) scale(1.03); }
 
 footer { border-top: 1px solid var(--border); padding: 48px 24px; max-width: var(--max-w); margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
 footer .logo { font-weight: 700; font-size: 1rem; color: var(--text-secondary); }
@@ -216,10 +218,10 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
       <a href="/chat?subject=english" class="btn btn-primary btn-sm">Start English →</a>
     </div>
     <div class="dash-card">
-      <span class="icon">🇰🇷</span>
-      <h3>Korean</h3>
-      <p>Reading, writing, speaking practice.</p>
-      <a href="/chat?subject=korean" class="btn btn-primary btn-sm">Start Korean →</a>
+      <span class="icon">🎯</span>
+      <h3>SAT Prep</h3>
+      <p>Math, Reading, Writing — full SAT readiness.</p>
+      <a href="/chat?subject=sat" class="btn btn-sat btn-sm">Start SAT Prep →</a>
     </div>
     <div class="dash-card">
       <span class="icon">📊</span>
@@ -245,6 +247,11 @@ let AUTHORIZED_USERS = [];
 function extractPercent(str) {
   if (!str) return 0;
   const m = str.match(/(\d+)%/);
+  return m ? parseInt(m[1]) : 0;
+}
+
+function getGradeNumber(diff) {
+  const m = diff.match(/Grade\s*(\d+)/i);
   return m ? parseInt(m[1]) : 0;
 }
 
@@ -326,16 +333,17 @@ function showDashboard(user) {
     document.getElementById('topicsList').innerHTML = user.topics.split(',').map(t => '<span class="tag">' + t.trim() + '</span>').join(' ');
   }
 
-  // Difficulty badge
-  if (user.difficulty) {
+  // Difficulty badge — grade level
+  if (user.difficulty && user.difficulty !== '—') {
     const badge = document.getElementById('difficultyBadge');
     badge.textContent = user.difficulty;
     badge.style.display = 'flex';
     badge.className = 'diff-badge';
-    if (user.difficulty.includes('ADVANCED')) badge.classList.add('diff-advanced');
-    else if (user.difficulty.includes('HARD')) badge.classList.add('diff-hard');
-    else if (user.difficulty.includes('MEDIUM')) badge.classList.add('diff-medium');
-    else badge.classList.add('diff-foundational');
+    const grade = getGradeNumber(user.difficulty);
+    if (grade >= 10) badge.classList.add('diff-grade10-12');
+    else if (grade >= 7) badge.classList.add('diff-grade7-9');
+    else if (grade >= 4) badge.classList.add('diff-grade4-6');
+    else badge.classList.add('diff-grade1-3');
   }
 
   // Streak
