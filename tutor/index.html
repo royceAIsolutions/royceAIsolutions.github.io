@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>High School Tutor — Royce AI Solutions</title>
-<meta name="description" content="Royce AI high school tutoring. Log in to access your AI tutor.">
+<meta name="description" content="Royce AI high school tutoring. Log in to see your stats.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #0a0a0a;
@@ -21,6 +21,10 @@
   --accent-glow: rgba(102,126,234,0.2);
   --accent-bg: rgba(102,126,234,0.08);
   --purple-deep: #764ba2;
+  --green: #22c55e;
+  --green-glow: rgba(34,197,94,0.15);
+  --gold: #eab308;
+  --gold-glow: rgba(234,179,8,0.15);
   --radius: 16px;
   --radius-sm: 10px;
   --max-w: 1200px;
@@ -38,6 +42,14 @@
   0%, 100% { box-shadow: 0 0 0 1px var(--accent), 0 4px 20px var(--accent-glow); }
   50% { box-shadow: 0 0 0 1px var(--accent), 0 4px 40px var(--accent-glow), 0 0 60px var(--accent-glow); }
 }
+@keyframes score-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 4px rgba(102,126,234,0.3); }
+  50% { box-shadow: 0 0 20px rgba(102,126,234,0.5), 0 0 40px rgba(102,126,234,0.2); }
+}
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -49,263 +61,107 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  opacity: 0.015;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 256px 256px;
-  pointer-events: none;
-  z-index: 9999;
-}
 
 nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
+  position: fixed; top: 0; left: 0; right: 0;
   height: var(--nav-h);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-  max-width: var(--max-w);
-  margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; max-width: var(--max-w); margin: 0 auto;
   z-index: 100;
   background: rgba(10,10,10,0.85);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
-.nav-logo {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-  color: var(--text);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.nav-logo .logo-icon {
-  width: 28px; height: 28px;
-  background: linear-gradient(135deg, var(--accent), var(--purple-deep));
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: 800;
-  color: white;
-}
+.nav-logo { font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+.nav-logo .logo-icon { width: 28px; height: 28px; background: linear-gradient(135deg, var(--accent), var(--purple-deep)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: white; }
 .nav-logo span { color: var(--accent); }
 .nav-links { display: flex; align-items: center; gap: 8px; }
-.nav-links a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 6px 14px;
-  border-radius: 8px;
-  transition: all 0.2s;
-}
+.nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.875rem; font-weight: 500; padding: 6px 14px; border-radius: 8px; transition: all 0.2s; }
 .nav-links a:hover { color: var(--text); background: var(--accent-bg); }
 .nav-links a.active { color: var(--accent); background: var(--accent-bg); }
-.nav-links .nav-cta {
-  background: var(--accent);
-  color: white !important;
-  font-weight: 600;
-  padding: 8px 20px;
-  border-radius: 8px;
-  animation: pulse-glow 2.5s ease-in-out infinite;
-}
+.nav-links .nav-cta { background: var(--accent); color: white !important; font-weight: 600; padding: 8px 20px; border-radius: 8px; animation: pulse-glow 2.5s ease-in-out infinite; }
 .nav-links .nav-cta:hover { background: var(--accent-hover); transform: scale(1.05); }
 
-/* Login screen */
-.login-screen {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 24px 60px;
-  max-width: 440px;
-  margin: 0 auto;
-  text-align: center;
-}
+.login-screen { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 100px 24px 60px; max-width: 440px; margin: 0 auto; text-align: center; }
 .login-screen.hidden { display: none; }
-.login-screen h1 {
-  font-size: clamp(1.8rem, 4vw, 2.2rem);
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-.login-screen h1 .gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 3s ease-in-out infinite;
-}
-.login-screen p {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: 32px;
-}
-.login-box {
-  width: 100%;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px;
-  text-align: left;
-}
-.login-box label {
-  display: block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 8px;
-}
-.login-box input {
-  width: 100%;
-  padding: 12px 16px;
-  border-radius: var(--radius-sm);
-  background: var(--bg);
-  border: 1px solid var(--border);
-  color: var(--text);
-  font-family: var(--font);
-  font-size: 1rem;
-  outline: none;
-  transition: border 0.2s;
-  margin-bottom: 16px;
-}
-.login-box input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
-}
-.login-box .btn {
-  width: 100%;
-  justify-content: center;
-}
-.login-box .error {
-  color: #ef4444;
-  font-size: 0.8rem;
-  margin-top: 12px;
-  display: none;
-}
+.login-screen h1 { font-size: clamp(1.8rem, 4vw, 2.2rem); font-weight: 700; margin-bottom: 8px; }
+.login-screen h1 .gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%); background-size: 200% 200%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 3s ease-in-out infinite; }
+.login-screen p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 32px; }
+.login-box { width: 100%; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; text-align: left; }
+.login-box label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+.login-box input { width: 100%; padding: 12px 16px; border-radius: var(--radius-sm); background: var(--bg); border: 1px solid var(--border); color: var(--text); font-family: var(--font); font-size: 1rem; outline: none; transition: border 0.2s; margin-bottom: 16px; }
+.login-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
+.login-box .btn { width: 100%; justify-content: center; }
+.login-box .error { color: #ef4444; font-size: 0.8rem; margin-top: 12px; display: none; }
 .login-box .error.show { display: block; }
 
-/* Dashboard */
 .dashboard { display: none; }
 .dashboard.show { display: block; }
 
-.dash-header {
-  padding: 100px 24px 40px;
-  max-width: var(--max-w);
-  margin: 0 auto;
-  text-align: center;
-}
-.dash-header h1 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-.dash-header h1 .gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 3s ease-in-out infinite;
-}
+/* DASH HEADER */
+.dash-header { padding: 100px 24px 20px; max-width: var(--max-w); margin: 0 auto; text-align: center; position: relative; }
+.dash-header h1 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 4px; }
+.dash-header h1 .gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%); background-size: 200% 200%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 3s ease-in-out infinite; }
 .dash-header p { color: var(--text-secondary); font-size: 0.9rem; }
 
-.dash-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 24px 80px;
+/* SCOREBOARD — Video Game Style */
+.scoreboard {
+  max-width: 900px; margin: 0 auto; padding: 0 24px 32px;
 }
-
-.dash-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+.scoreboard-inner {
+  background: linear-gradient(135deg, rgba(102,126,234,0.04) 0%, transparent 100%);
+  border: 1px solid rgba(102,126,234,0.2);
   border-radius: var(--radius);
   padding: 28px;
-  text-align: center;
-  transition: all var(--transition);
+  animation: score-in 0.5s ease;
 }
-.dash-card:hover {
-  border-color: rgba(102,126,234,0.3);
-  transform: translateY(-2px);
+.scoreboard-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 20px; padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
+.scoreboard-title { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); display: flex; align-items: center; gap: 8px; }
+.scoreboard-title span { color: var(--accent); }
+.scoreboard-streak { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: var(--gold); padding: 4px 12px; border-radius: 6px; background: rgba(234,179,8,0.1); }
+.scoreboard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.score-stat { text-align: center; padding: 16px 12px; border-radius: 10px; background: var(--bg-card); border: 1px solid var(--border); transition: all 0.3s; }
+.score-stat:hover { border-color: rgba(102,126,234,0.3); transform: translateY(-2px); }
+.score-stat .label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); margin-bottom: 8px; }
+.score-stat .score { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 900; letter-spacing: -0.02em; color: var(--text); }
+.score-stat .score.green { color: var(--green); }
+.score-stat .score.gold { color: var(--gold); }
+.score-stat .score.accent { color: var(--accent); }
+.score-stat .sub { font-size: 0.75rem; color: var(--text-secondary); margin-top: 4px; }
+.score-stat .bar {
+  width: 100%; height: 4px; border-radius: 2px; background: var(--bg-elevated);
+  margin-top: 8px; overflow: hidden;
+}
+.score-stat .bar-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--accent), var(--purple-deep)); transition: width 0.8s ease; }
+
+/* Topics row */
+.topics-row {
+  margin-top: 16px; padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.topics-row .label { font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+.topics-row .tag { padding: 3px 10px; border-radius: 4px; background: var(--accent-bg); color: var(--accent); font-size: 0.75rem; font-weight: 500; }
+
+.dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: var(--max-w); margin: 0 auto; padding: 0 24px 80px; }
+.dash-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; text-align: center; transition: all var(--transition); }
+.dash-card:hover { border-color: rgba(102,126,234,0.3); transform: translateY(-2px); }
 .dash-card .icon { font-size: 2rem; margin-bottom: 12px; display: block; }
 .dash-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
 .dash-card p { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 16px; line-height: 1.6; }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 28px;
-  border-radius: var(--radius-sm);
-  font-family: var(--font);
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-  border: none;
-  cursor: pointer;
-}
-.btn-primary {
-  background: var(--accent);
-  color: white;
-  box-shadow: 0 0 0 1px var(--accent), 0 4px 20px var(--accent-glow);
-  animation: pulse-glow 2.5s ease-in-out infinite;
-}
-.btn-primary:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px) scale(1.03);
-}
-.btn-secondary {
-  background: var(--bg-elevated);
-  color: var(--text);
-  box-shadow: 0 0 0 1px var(--border);
-}
-.btn-secondary:hover {
-  background: var(--bg-card);
-  box-shadow: 0 0 0 1px var(--accent);
-  transform: translateY(-1px);
-}
-.btn-sm {
-  padding: 8px 18px;
-  font-size: 0.85rem;
-}
-.btn-ghost {
-  background: none;
-  color: var(--text-secondary);
-  box-shadow: none;
-  font-weight: 400;
-  font-size: 0.8rem;
-  padding: 6px 12px;
-}
-.btn-ghost:hover { color: var(--text); }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: var(--radius-sm); font-family: var(--font); font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+.btn-primary { background: var(--accent); color: white; box-shadow: 0 0 0 1px var(--accent), 0 4px 20px var(--accent-glow); animation: pulse-glow 2.5s ease-in-out infinite; }
+.btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px) scale(1.03); }
+.btn-secondary { background: var(--bg-elevated); color: var(--text); box-shadow: 0 0 0 1px var(--border); }
+.btn-secondary:hover { background: var(--bg-card); box-shadow: 0 0 0 1px var(--accent); transform: translateY(-1px); }
+.btn-sm { padding: 8px 18px; font-size: 0.85rem; }
 
-footer {
-  border-top: 1px solid var(--border);
-  padding: 48px 24px;
-  max-width: var(--max-w);
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-}
+footer { border-top: 1px solid var(--border); padding: 48px 24px; max-width: var(--max-w); margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
 footer .logo { font-weight: 700; font-size: 1rem; color: var(--text-secondary); }
 footer .logo span { color: var(--accent); }
 footer .links { display: flex; gap: 20px; flex-wrap: wrap; }
@@ -314,17 +170,16 @@ footer .links a:hover { color: var(--accent); }
 footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; text-align: center; }
 
 @media (max-width: 640px) {
-  .nav-links a:not(.nav-cta):not(.nav-show-mobile) { display: none; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .scoreboard-grid { grid-template-columns: 1fr; }
   footer { flex-direction: column; text-align: center; }
 }
 </style>
 </head>
 <body>
-
 <nav>
   <a href="/" class="nav-logo">
-    <span class="logo-icon">R</span>
-    Royce<span>AI</span>
+    <span class="logo-icon">R</span> Royce<span>AI</span>
   </a>
   <div class="nav-links">
     <a href="/products">Products</a>
@@ -334,70 +189,87 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
   </div>
 </nav>
 
-<!-- Login Screen -->
 <div class="login-screen" id="loginScreen">
   <h1>Welcome, <span class="gradient">Tutor</span></h1>
   <p id="loginSubtitle">Loading authorized users...</p>
   <div class="login-box">
     <label for="studentFirstName">First Name</label>
-    <input type="text" id="studentFirstName" placeholder="First name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <input type="text" id="studentFirstName" placeholder="First name" autocomplete="off">
     <label for="studentLastName" style="margin-top:4px">Last Name</label>
-    <input type="text" id="studentLastName" placeholder="Last name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <input type="text" id="studentLastName" placeholder="Last name" autocomplete="off">
     <button class="btn btn-primary" onclick="login()">Unlock Tutoring →</button>
     <div class="error" id="loginError">Name not found. Try again or <a href="/chat" style="color:var(--accent)">chat with us</a> to get set up.</div>
   </div>
 </div>
 
-<!-- Dashboard -->
 <div class="dashboard" id="dashboard">
   <div class="dash-header">
     <h1>Welcome back, <span class="gradient" id="studentName">Student</span>!</h1>
     <p id="studentInfo">What would you like to study today?</p>
   </div>
+
+  <div class="scoreboard" id="scoreboard">
+    <div class="scoreboard-inner">
+      <div class="scoreboard-header">
+        <div class="scoreboard-title">🎮 <span>Scoreboard</span> — Session Stats</div>
+        <div class="scoreboard-streak" id="streakDisplay">🔥 Streak 0</div>
+      </div>
+      <div class="scoreboard-grid">
+        <div class="score-stat">
+          <div class="label">📅 Today</div>
+          <div class="score accent" id="scoreToday">—</div>
+          <div class="sub" id="scoreTodaySub">—</div>
+          <div class="bar"><div class="bar-fill" id="barToday" style="width:0%"></div></div>
+        </div>
+        <div class="score-stat">
+          <div class="label">📊 Month</div>
+          <div class="score gold" id="scoreMTD">—</div>
+          <div class="sub" id="scoreMTDSub">—</div>
+          <div class="bar"><div class="bar-fill" id="barMTD" style="width:0%"></div></div>
+        </div>
+        <div class="score-stat">
+          <div class="label">🏆 All Time</div>
+          <div class="score green" id="scoreYTD">—</div>
+          <div class="sub" id="scoreYTDSub">—</div>
+          <div class="bar"><div class="bar-fill" id="barYTD" style="width:0%"></div></div>
+        </div>
+      </div>
+      <div class="topics-row">
+        <span class="label">🎯 Topics:</span>
+        <span id="topicsList"><span class="tag">—</span></span>
+      </div>
+    </div>
+  </div>
+
   <div class="dash-grid">
     <div class="dash-card">
       <span class="icon">📐</span>
       <h3>Math</h3>
-      <p>Algebra, Geometry, Precalculus, Calculus. Step-by-step help and practice problems.</p>
+      <p>Algebra, Geometry, Precalculus, Calculus.</p>
       <a href="/chat?subject=math" class="btn btn-primary btn-sm">Start Math →</a>
     </div>
     <div class="dash-card">
       <span class="icon">🔬</span>
       <h3>Science</h3>
-      <p>Biology, Chemistry, Physics. Concept breakdowns and exam prep.</p>
+      <p>Biology, Chemistry, Physics.</p>
       <a href="/chat?subject=science" class="btn btn-primary btn-sm">Start Science →</a>
     </div>
     <div class="dash-card">
       <span class="icon">📝</span>
       <h3>English</h3>
-      <p>Essay writing, grammar, reading comprehension, literature analysis.</p>
+      <p>Essay writing, grammar, comprehension.</p>
       <a href="/chat?subject=english" class="btn btn-primary btn-sm">Start English →</a>
     </div>
     <div class="dash-card">
       <span class="icon">🇰🇷</span>
       <h3>Korean</h3>
-      <p>Reading, writing, speaking practice. All levels welcome.</p>
+      <p>Reading, writing, speaking practice.</p>
       <a href="/chat?subject=korean" class="btn btn-primary btn-sm">Start Korean →</a>
-    </div>
-    <div class="dash-card" style="display:none">
-      <span class="icon">📈</span>
-      <h3>Progress</h3>
-      <p id="stat-progress" style="font-size:1.2rem;font-weight:700;color:var(--accent)">—</p>
-    </div>
-    <div class="dash-card" style="display:none">
-      <span class="icon">🎯</span>
-      <h3>Current Focus</h3>
-      <p id="stat-focus" style="font-size:0.95rem">—</p>
-    </div>
-    <div class="dash-card" style="display:none">
-      <span class="icon">📋</span>
-      <h3>Plan</h3>
-      <p id="stat-plan" style="font-size:0.95rem">—</p>
     </div>
     <div class="dash-card">
       <span class="icon">📊</span>
       <h3>Session</h3>
-      <p>Track your scores, see what you've mastered, and what needs work.</p>
+      <p>Track your scores and progress.</p>
       <button class="btn btn-secondary btn-sm" onclick="logout()">Logout</button>
     </div>
   </div>
@@ -406,38 +278,37 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
 <footer>
   <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
   <div class="links">
-    <a href="/products">Products</a>
-    <a href="/tutor">Tutor</a>
-    <a href="/blog">Blog</a>
-    <a href="/chat">Chat</a>
+    <a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/chat">Chat</a>
   </div>
   <div class="copy">RoyceAI Solutions. Irvine, CA</div>
 </footer>
 
 <script>
-// ===== GOOGLE SHEET URL =====
-const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1YMuoRMJiDJP9_viB6dM5-4r2OGvUeZlZEwdVTQymWvM/export?format=csv' + '&' + Date.now();
-
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1YMuoRMJiDJP9_viB6dM5-4r2OGvUeZlZEwdVTQymWvM/export?format=csv';
 let AUTHORIZED_USERS = [];
+
+function extractPercent(str) {
+  if (!str) return 0;
+  const m = str.match(/(\d+)%/);
+  return m ? parseInt(m[1]) : 0;
+}
 
 async function loadUsers() {
   try {
-    const resp = await fetch(SHEET_CSV_URL);
+    const resp = await fetch(SHEET_CSV_URL + '&' + Date.now());
     const csv = await resp.text();
     const rows = csv.trim().split('\n').slice(1);
     AUTHORIZED_USERS = rows.map(row => {
       const cols = row.split(',');
-      const firstName = (cols[0] || '').trim();
-      const lastName = (cols[1] || '').trim();
+      const fn = (cols[0] || '').trim(), ln = (cols[1] || '').trim();
       return {
-        id: (firstName + ' ' + lastName).toLowerCase(),
-        firstName, lastName,
-        name: firstName + (lastName ? ' ' + lastName : ''),
+        id: (fn + ' ' + ln).toLowerCase(), firstName: fn, lastName: ln,
+        name: fn + (ln ? ' ' + ln : ''),
         subjects: (cols[2] || '').trim(),
         active: (cols[3] || '').trim().toUpperCase() === 'YES',
-        progress: (cols[4] || '').trim(),
-        focus: (cols[5] || '').trim(),
-        plan: (cols[6] || '').trim(),
+        today: (cols[4] || '').trim(), mtd: (cols[5] || '').trim(),
+        ytd: (cols[6] || '').trim(), topics: (cols[7] || '').trim(),
+        focus: (cols[8] || '').trim(), plan: (cols[9] || '').trim(),
       };
     }).filter(u => u.id.trim() && u.active);
     document.getElementById('loginSubtitle').textContent = 'Enter your name to access tutoring.';
@@ -462,17 +333,9 @@ function login() {
   const firstName = firstInput.value.trim();
   const lastName = lastInput.value.trim();
   const fullId = (firstName + ' ' + lastName).toLowerCase();
-  if (!firstName) {
-    error.textContent = 'Please enter your first name.';
-    error.classList.add('show');
-    return;
-  }
+  if (!firstName) { error.textContent = 'Please enter your first name.'; error.classList.add('show'); return; }
   const user = AUTHORIZED_USERS.find(u => u.id === fullId);
-  if (!user) {
-    error.textContent = 'Name not found. Try again or chat with us to get set up.';
-    error.classList.add('show');
-    return;
-  }
+  if (!user) { error.textContent = 'Name not found. Try again or chat with us to get set up.'; error.classList.add('show'); return; }
   error.classList.remove('show');
   localStorage.setItem('tutor_user', JSON.stringify(user));
   showDashboard(user);
@@ -483,20 +346,36 @@ function showDashboard(user) {
   document.getElementById('dashboard').classList.add('show');
   document.getElementById('studentName').textContent = user.name;
   document.getElementById('studentInfo').textContent = user.subjects + ' — what would you like to study?';
-  
-  if (user.progress && user.progress !== 'N/A') {
-    document.getElementById('stat-progress').textContent = user.progress;
-    document.getElementById('stat-progress').parentElement.style.display = 'block';
+
+  // Scoreboard
+  if (user.today && user.today !== '—') {
+    document.getElementById('scoreToday').textContent = user.today;
+    const p = extractPercent(user.today);
+    document.getElementById('barToday').style.width = Math.min(p, 100) + '%';
+    document.getElementById('scoreTodaySub').textContent = user.today;
   }
-  if (user.focus && user.focus !== 'N/A') {
-    document.getElementById('stat-focus').textContent = user.focus;
-    document.getElementById('stat-focus').parentElement.style.display = 'block';
+  if (user.mtd && user.mtd !== '—') {
+    document.getElementById('scoreMTD').textContent = user.mtd;
+    const p = extractPercent(user.mtd);
+    document.getElementById('barMTD').style.width = Math.min(p, 100) + '%';
+    document.getElementById('scoreMTDSub').textContent = user.mtd;
   }
-  if (user.plan && user.plan !== 'N/A') {
-    document.getElementById('stat-plan').textContent = user.plan;
-    document.getElementById('stat-plan').parentElement.style.display = 'block';
+  if (user.ytd && user.ytd !== '—') {
+    document.getElementById('scoreYTD').textContent = user.ytd;
+    const p = extractPercent(user.ytd);
+    document.getElementById('barYTD').style.width = Math.min(p, 100) + '%';
+    document.getElementById('scoreYTDSub').textContent = user.ytd;
   }
-  
+  if (user.topics) {
+    document.getElementById('topicsList').innerHTML = user.topics.split(',').map(t => '<span class="tag">' + t.trim() + '</span>').join(' ');
+  }
+
+  // Streak (from YTD)
+  const ytdPct = extractPercent(user.ytd);
+  const streak = ytdPct >= 90 ? Math.floor(ytdPct / 2) : 0;
+  document.getElementById('streakDisplay').innerHTML = '🔥 Streak ' + streak;
+
+  // Save to lead
   localStorage.setItem('royceai_lead', JSON.stringify({
     name: user.name,
     email: user.name.toLowerCase().replace(' ', '.') + '@student.tutor',
