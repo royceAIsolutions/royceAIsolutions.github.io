@@ -1,14 +1,5 @@
 [
   {
-    "student": "Josh Lucero",
-    "correct": 8,
-    "total": 10,
-    "percent": 80,
-    "subject": "series66",
-    "date": "2026-07-14",
-    "ts": 1784062579819
-  },
-  {
     "student": "Carter Koh",
     "correct": 64,
     "total": 80,
@@ -16,23 +7,5 @@
     "subject": "sat",
     "date": "2026-07-14",
     "ts": 1784065665280
-  },
-  {
-    "student": "Josh Lucero",
-    "correct": 7,
-    "total": 10,
-    "percent": 70,
-    "subject": "series7",
-    "date": "2026-07-14",
-    "ts": 1784067805092
-  },
-  {
-    "student": "Josh Lucero",
-    "correct": 10,
-    "total": 10,
-    "percent": 100,
-    "subject": "series66",
-    "date": "2026-07-14",
-    "ts": 1784067969532
   }
 ]
