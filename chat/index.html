@@ -120,7 +120,8 @@ function gs(){try{var p=new URLSearchParams(window.location.search);return p.get
 function init(){
   var subject=gs();quizMode=!!subject;
   if(subject){
-    leadInfo={name:subject,email:subject+'@q.royceai.com',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo);
+    var sn=subject;try{var tu=JSON.parse(localStorage.getItem('tutor_user'));if(tu&&tu.name)sn=tu.name}catch(e){}
+    leadInfo={name:sn,email:sn.toLowerCase().replace(/\s+/g,'.')+'@q.royceai.com',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo);
     showChat();
     setTimeout(function(){var inp=document.getElementById('userInput');if(inp){inp.value='Start '+subject+' quiz';sendMessage()}},500);
     return;
