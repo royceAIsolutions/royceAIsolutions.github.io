@@ -350,25 +350,25 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
       <span class="icon">📐</span>
       <h3>Math</h3>
       <p>Algebra, Geometry, Precalculus, Calculus. Step-by-step help and practice problems.</p>
-      <a href="/chat" class="btn btn-primary btn-sm">Start Math →</a>
+      <a href="/chat?subject=math" class="btn btn-primary btn-sm">Start Math →</a>
     </div>
     <div class="dash-card">
       <span class="icon">🔬</span>
       <h3>Science</h3>
       <p>Biology, Chemistry, Physics. Concept breakdowns and exam prep.</p>
-      <a href="/chat" class="btn btn-primary btn-sm">Start Science →</a>
+      <a href="/chat?subject=science" class="btn btn-primary btn-sm">Start Science →</a>
     </div>
     <div class="dash-card">
       <span class="icon">📝</span>
       <h3>English</h3>
       <p>Essay writing, grammar, reading comprehension, literature analysis.</p>
-      <a href="/chat" class="btn btn-primary btn-sm">Start English →</a>
+      <a href="/chat?subject=english" class="btn btn-primary btn-sm">Start English →</a>
     </div>
     <div class="dash-card">
       <span class="icon">🇰🇷</span>
       <h3>Korean</h3>
       <p>Reading, writing, speaking practice. All levels welcome.</p>
-      <a href="/chat" class="btn btn-primary btn-sm">Start Korean →</a>
+      <a href="/chat?subject=korean" class="btn btn-primary btn-sm">Start Korean →</a>
     </div>
     <div class="dash-card">
       <span class="icon">📊</span>
@@ -392,8 +392,6 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
 
 <script>
 // ===== GOOGLE SHEET URL =====
-// Edit users here: https://docs.google.com/spreadsheets/d/1YMuoRMJiDJP9_viB6dM5-4r2OGvUeZlZEwdVTQymWvM
-// Columns: First Name, Last Name, Subjects, Active, Progress, Current Focus, Plan
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1YMuoRMJiDJP9_viB6dM5-4r2OGvUeZlZEwdVTQymWvM/export?format=csv';
 
 let AUTHORIZED_USERS = [];
@@ -470,6 +468,14 @@ function showDashboard(user) {
   if (user.focus) info += '\n🎯 Focus: ' + user.focus;
   if (user.plan) info += '\n📋 Plan: ' + user.plan;
   document.getElementById('studentInfo').innerHTML = info.replace(/\n/g, '<br>');
+  
+  // Also save as lead so /chat recognizes the student
+  localStorage.setItem('royceai_lead', JSON.stringify({
+    name: user.name,
+    email: user.name.toLowerCase().replace(' ', '.') + '@student.tutor',
+    phone: '000-000-0000',
+    timestamp: new Date().toISOString()
+  }));
 }
 
 function logout() {
