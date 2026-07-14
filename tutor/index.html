@@ -179,6 +179,15 @@ var USERS=[{"first":"Jiho","last":"Pak","id":"jiho pak","name":"Jiho Pak","subje
 (function(){document.getElementById('loginSubtitle').textContent='Enter your name to access your personalized learning dashboard.';var s=localStorage.getItem('tutor_user');if(s){try{var u=JSON.parse(s);var m=USERS.find(function(x){return x.id===u.id});if(m)D(m);else localStorage.removeItem('tutor_user')}catch(e){localStorage.removeItem('tutor_user')}}})();
 
 function login(){var fi=document.getElementById('studentFirstName'),li=document.getElementById('studentLastName'),er=document.getElementById('loginError');var fn=fi.value.trim(),ln=li.value.trim(),id=(fn+' '+ln).toLowerCase();if(!fn){er.textContent='Enter your first name.';er.classList.add('show');return}var u=USERS.find(function(x){return x.id===id});if(!u){er.textContent='Name not found. Try again or chat with us.';er.classList.add('show');return}er.classList.remove('show');localStorage.setItem('tutor_user',JSON.stringify(u));D(u)}
+function updateScoreboard(u){
+  if(u.focus)document.getElementById('focusDisplay').textContent=u.focus;
+  if(u.today&&u.today!=='—'){document.getElementById('scoreToday').textContent=u.today;var p=e(u.today);document.getElementById('barToday').style.width=Math.min(p,100)+'%';document.getElementById('scoreTodaySub').textContent=u.today}
+  if(u.mtd&&u.mtd!=='—'){document.getElementById('scoreMTD').textContent=u.mtd;document.getElementById('barMTD').style.width=Math.min(e(u.mtd),100)+'%';document.getElementById('scoreMTDSub').textContent=u.mtd}
+  if(u.ytd&&u.ytd!=='—'){document.getElementById('scoreYTD').textContent=u.ytd;document.getElementById('barYTD').style.width=Math.min(e(u.ytd),100)+'%';document.getElementById('scoreYTDSub').textContent=u.ytd}
+  if(u.topics){document.getElementById('topicsList').innerHTML=u.topics.split(',').map(function(t){return '<span class="tag">'+t.trim()+'</span>'}).join(' ')}
+
+}
+
 function D(u){
   document.getElementById('loginScreen').classList.add('hidden');document.getElementById('dashboard').classList.add('show');
   document.getElementById('studentName').textContent=u.name;document.getElementById('studentInfo').textContent=u.subjects+' — '+u.plan;
@@ -209,14 +218,8 @@ function D(u){
       else{btn.innerHTML='⚡ Start Quiz';btn.className='btn btn-dynamic btn-primary btn-sm'}
     }
   });
-  if(u.focus)document.getElementById('focusDisplay').textContent=u.focus;
-  if(u.today&&u.today!=='—'){document.getElementById('scoreToday').textContent=u.today;var p=e(u.today);document.getElementById('barToday').style.width=Math.min(p,100)+'%';document.getElementById('scoreTodaySub').textContent=u.today}
-  if(u.mtd&&u.mtd!=='—'){document.getElementById('scoreMTD').textContent=u.mtd;document.getElementById('barMTD').style.width=Math.min(e(u.mtd),100)+'%';document.getElementById('scoreMTDSub').textContent=u.mtd}
-  if(u.ytd&&u.ytd!=='—'){document.getElementById('scoreYTD').textContent=u.ytd;document.getElementById('barYTD').style.width=Math.min(e(u.ytd),100)+'%';document.getElementById('scoreYTDSub').textContent=u.ytd}
-  if(u.topics){document.getElementById('topicsList').innerHTML=u.topics.split(',').map(function(t){return '<span class="tag">'+t.trim()+'</span>'}).join(' ')}
-  var b=document.getElementById('difficultyBadge');
-  if(u.difficulty&&u.difficulty!=='—'){b.textContent=u.difficulty;b.style.display='flex';b.className='diff-badge';var d=u.difficulty;if(d.includes('Math 2')||d.includes('Math 3')||d.includes('SAT — Advanced')||d.includes('AP')||d.includes('RN')||d.includes('Series'))b.classList.add('diff-grade10-12');else if(d.includes('Math 1')||d.includes('SAT — On Track'))b.classList.add('diff-grade7-9');else if(d.includes('Game')||d.includes('Baby'))b.classList.add('diff-grade1-3');else b.classList.add('diff-grade4-6')}else b.style.display='none';
-  document.getElementById('streakDisplay').innerHTML='🔥 '+(e(u.ytd)>=90?Math.floor(e(u.ytd)/2):0);
+  updateScoreboard(u);
+
   if(u.first==='Jiho'||u.first==='Carter'||u.first==='Josh')Q(u.first);
   localStorage.setItem('royceai_lead',JSON.stringify({name:u.name,email:u.name.toLowerCase().replace(/\s+/g,'.')+'@student.tutor',phone:'000-000-0000',timestamp:new Date().toISOString()}))
 }
