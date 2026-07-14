@@ -236,12 +236,12 @@ async function loadCalories(){
     var r=await fetch('https://chat-api-tawny-zeta.vercel.app/api/calorie?student=Carter');
     var d=await r.json();
     var total=0;
-    if(d.today&&d.today.length){
-      total=d.today.reduce(function(a,b){return a+parseInt(b.calories||0)},0);
+    if(d.entries&&d.entries.length){
+      total=d.today_total||d.entries.reduce(function(a,b){return a+parseInt(b.calories||0)},0);
       document.getElementById('calConsumed').textContent=total;
       var pct=Math.min(total/4000*100,100);
       document.getElementById('calFill').style.width=pct+'%';
-      document.getElementById('calItems').innerHTML=d.today.slice(-6).reverse().map(function(i){
+      document.getElementById('calItems').innerHTML=d.entries.slice(-6).reverse().map(function(i){
         return '<div class="cal-item"><span class="cal-item-food">'+i.food+'</span><span class="cal-item-cal">'+i.calories+' cal</span></div>'
       }).join('\n');
     }
