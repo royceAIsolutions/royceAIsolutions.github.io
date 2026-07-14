@@ -343,15 +343,42 @@ async function sendMessage() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         message: text,
-        history: history.slice(-20),
         lead: leadInfo,
       }),
     });
     const data = await resp.json();
-    let reply = data.reply || 'Sorry, I had trouble with that.';
-    history.push({ role: 'assistant', content: reply });
-    showTyping(false);
-    addMessage(formatReply(reply), 'bot');
+    
+    if (data.sent && data.requestId) {
+      // Poll for response from Hermes via Telegram relay
+      let reply = null;
+      for (let i = 0; i < 20; i++) {
+        await new Promise(r => setTimeout(r, 2000));
+        try {
+          const pollResp = await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ checkId: data.requestId }),
+          });
+          const pollData = await pollResp.json();
+          if (pollData.found && pollData.reply) {
+            reply = pollData.reply;
+            break;
+          }
+        } catch(e) {}
+      }
+      showTyping(false);
+      if (reply) {
+        history.push({ role: 'assistant', content: reply });
+        addMessage(formatReply(reply), 'bot');
+      } else {
+        addMessage('Thanks! Royce will get back to you shortly.', 'bot');
+      }
+    } else {
+      showTyping(false);
+      let reply = data.reply || 'Thanks for your message!';
+      history.push({ role: 'assistant', content: reply });
+      addMessage(formatReply(reply), 'bot');
+    }
   } catch (e) {
     showTyping(false);
     addMessage('⚠️ Connection error. Try again later.', 'bot');
