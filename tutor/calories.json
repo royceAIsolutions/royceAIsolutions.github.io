@@ -12,5 +12,12 @@
     "calories": 250,
     "date": "2026-07-14",
     "ts": 1784062429531
+  },
+  {
+    "student": "Carter",
+    "food": "Burger",
+    "calories": 800,
+    "date": "2026-07-14",
+    "ts": 1784062516505
   }
 ]
