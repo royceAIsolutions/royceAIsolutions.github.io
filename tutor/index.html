@@ -186,7 +186,7 @@ function loadUsers(){
 const H='https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
 function e(s){if(!s)return 0;var m=s.match(/(\d+)%/);return m?parseInt(m[1]):0}
 ;
-function login(){var fi=document.getElementById('studentFirstName'),li=document.getElementById('studentLastName'),er=document.getElementById('loginError');var fn=fi.value.trim(),ln=li.value.trim(),id=(fn+' '+ln).toLowerCase();if(!fn){er.textContent='Enter your first name.';er.classList.add('show');return}var u=USERS.find(function(x){return x.id===id});if(!u){er.textContent='Name not found.';er.classList.add('show');return}er.classList.remove('show');localStorage.setItem('tutor_user',JSON.stringify(u));D(u)}
+function login(){var fi=document.getElementById('studentFirstName'),li=document.getElementById('studentLastName'),er=document.getElementById('loginError');var fn=fi.value.trim(),ln=li.value.trim(),id=(fn+' '+ln).toLowerCase();if(!fn){er.textContent='Enter your first name.';er.classList.add('show');return}if(!USERS.length){er.textContent='Loading users... Wait a moment.';er.classList.add('show');setTimeout(login,500);return}var u=USERS.find(function(x){return x.id===id});if(!u){er.textContent='Name not found. Try again or chat with us.';er.classList.add('show');return}er.classList.remove('show');localStorage.setItem('tutor_user',JSON.stringify(u));D(u)}
 function D(u){
   document.getElementById('loginScreen').classList.add('hidden');document.getElementById('dashboard').classList.add('show');
   document.getElementById('studentName').textContent=u.name;document.getElementById('studentInfo').textContent=u.subjects+' — '+u.plan;
