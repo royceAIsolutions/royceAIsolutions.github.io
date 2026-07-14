@@ -337,7 +337,7 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
 <!-- Login Screen -->
 <div class="login-screen" id="loginScreen">
   <h1>Welcome, <span class="gradient">Tutor</span></h1>
-  <p>Enter your student ID to access tutoring.</p>
+  <p id="loginSubtitle">Loading authorized users...</p>
   <div class="login-box">
     <label for="studentId">Student ID</label>
     <input type="text" id="studentId" placeholder="e.g. Jiho, Carter, Duman" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
@@ -398,15 +398,44 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
 </footer>
 
 <script>
-// ===== AUTHORIZED USERS LIST =====
-// Add or remove student IDs here. Case-insensitive.
-const AUTHORIZED_USERS = [
-  { id: "jiho", name: "Jiho", subjects: "Math" },
-  { id: "carter", name: "Carter", subjects: "Math, Basketball" },
-  { id: "duman", name: "Duman", subjects: "English" },
-  { id: "paxton", name: "Paxton", subjects: "Reading" },
-  { id: "demo", name: "Demo Student", subjects: "All subjects" }
-];
+// ===== GOOGLE SHEET URL =====
+// Edit users here: https://docs.google.com/spreadsheets/d/1YMuoRMJiDJP9_viB6dM5-4r2OGvUeZlZEwdVTQymWvM
+// Columns: Student ID, Name, Subjects, Active
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1YMuoRMJiDJP9_viB6dM5-4r2OGvUeZlZEwdVTQymWvM/export?format=csv';
+
+let AUTHORIZED_USERS = [];
+
+// ===== FETCH USERS FROM SHEET =====
+async function loadUsers() {
+  try {
+    const resp = await fetch(SHEET_CSV_URL);
+    const csv = await resp.text();
+    const rows = csv.trim().split('\n').slice(1); // skip header
+    AUTHORIZED_USERS = rows.map(row => {
+      const cols = row.split(',');
+      return {
+        id: (cols[0] || '').trim().toLowerCase(),
+        name: (cols[1] || '').trim(),
+        subjects: (cols[2] || '').trim(),
+        active: (cols[3] || '').trim().toUpperCase() === 'YES'
+      };
+    }).filter(u => u.id && u.active);
+    document.getElementById('loginSubtitle').textContent = 'Enter your student ID to access tutoring.';
+    // Try auto-login if already saved
+    const saved = localStorage.getItem('tutor_user');
+    if (saved) {
+      try {
+        const user = JSON.parse(saved);
+        const match = AUTHORIZED_USERS.find(u => u.id === user.id);
+        if (match) showDashboard(match);
+        else localStorage.removeItem('tutor_user');
+      } catch { localStorage.removeItem('tutor_user'); }
+    }
+  } catch (e) {
+    document.getElementById('loginSubtitle').textContent = 'Could not load user list. Try again later.';
+    console.error('Sheet fetch failed:', e);
+  }
+}
 
 // ===== LOGIN =====
 function login() {
@@ -427,7 +456,6 @@ function login() {
     return;
   }
 
-  // Success — store session
   error.classList.remove('show');
   localStorage.setItem('tutor_user', JSON.stringify(user));
   showDashboard(user);
@@ -449,18 +477,8 @@ function logout() {
   document.getElementById('studentId').value = '';
 }
 
-// ===== AUTO-LOGIN ON LOAD =====
-window.addEventListener('DOMContentLoaded', () => {
-  const saved = localStorage.getItem('tutor_user');
-  if (saved) {
-    try {
-      const user = JSON.parse(saved);
-      showDashboard(user);
-    } catch {
-      localStorage.removeItem('tutor_user');
-    }
-  }
-});
+// ===== LOAD ON START =====
+window.addEventListener('DOMContentLoaded', loadUsers);
 </script>
 </body>
 </html>
