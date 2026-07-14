@@ -228,13 +228,62 @@ let history = [];
 let msgCount = 0;
 let leadInfo = null;
 
-// Check if lead already submitted
-const saved = localStorage.getItem('royceai_lead');
-if (saved) {
+// ===== PERSISTENT VISITOR PROFILE =====
+function getProfile() {
+  try { return JSON.parse(localStorage.getItem('royceai_lead')); } catch(e) { return null; }
+}
+
+function saveProfile(info) {
+  localStorage.setItem('royceai_lead', JSON.stringify(info));
+}
+
+function loadHistory() {
   try {
-    leadInfo = JSON.parse(saved);
-    showChat();
+    const data = JSON.parse(localStorage.getItem('royceai_chat_history'));
+    if (data && Array.isArray(data)) return data;
   } catch(e) {}
+  return [];
+}
+
+function saveHistory() {
+  // Keep last 100 messages max per visitor
+  const trimmed = history.slice(-100);
+  localStorage.setItem('royceai_chat_history', JSON.stringify(trimmed));
+}
+
+function replayHistory() {
+  const saved = loadHistory();
+  if (saved.length === 0) return false;
+  history = saved;
+  const msgs = document.getElementById('messages');
+  // Clear welcome message
+  msgs.innerHTML = '';
+  // Replay each message
+  for (const msg of history) {
+    if (msg.role === 'user' || msg.role === 'assistant') {
+      const div = document.createElement('div');
+      div.className = 'msg ' + (msg.role === 'user' ? 'user' : 'bot');
+      div.innerHTML = msg.role === 'assistant' ? formatReply(msg.content) : msg.content;
+      msgs.appendChild(div);
+    }
+  }
+  return true;
+}
+
+// On load: check for returning visitor
+const savedLead = getProfile();
+if (savedLead) {
+  leadInfo = savedLead;
+  showChat();
+  const hadHistory = replayHistory();
+  if (hadHistory) {
+    // Add a "welcome back" separator
+    const msgs = document.getElementById('messages');
+    const sep = document.createElement('div');
+    sep.className = 'msg system';
+    sep.textContent = '↻ Welcome back, ' + (leadInfo.name || '') + ' — continuing where you left off';
+    msgs.appendChild(sep);
+  }
 }
 
 function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
@@ -277,7 +326,7 @@ function submitLead() {
   btn.textContent = 'Submitting...';
 
   leadInfo = { name, email, phone, timestamp: new Date().toISOString() };
-  localStorage.setItem('royceai_lead', JSON.stringify(leadInfo));
+  saveProfile(leadInfo);
 
   fetch(API_URL.replace('/api/chat', '/api/lead'), {
     method: 'POST',
@@ -337,6 +386,7 @@ async function sendMessage() {
   addMessage(text, 'user');
   showTyping(true);
   history.push({ role: 'user', content: text });
+  saveHistory();
   try {
     const resp = await fetch(API_URL, {
       method: 'POST',
@@ -344,6 +394,7 @@ async function sendMessage() {
       body: JSON.stringify({
         message: text,
         lead: leadInfo,
+        history: history.slice(-40), // send recent context
       }),
     });
     const data = await resp.json();
@@ -370,6 +421,7 @@ async function sendMessage() {
       if (reply) {
         history.push({ role: 'assistant', content: reply });
         addMessage(formatReply(reply), 'bot');
+        saveHistory();
       } else {
         addMessage('Thanks! Royce will get back to you shortly.', 'bot');
       }
@@ -378,6 +430,7 @@ async function sendMessage() {
       let reply = data.reply || 'Thanks for your message!';
       history.push({ role: 'assistant', content: reply });
       addMessage(formatReply(reply), 'bot');
+      saveHistory();
     }
   } catch (e) {
     showTyping(false);
