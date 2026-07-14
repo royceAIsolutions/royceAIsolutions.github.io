@@ -192,6 +192,8 @@ function D(u){
   document.getElementById('loginScreen').classList.add('hidden');document.getElementById('dashboard').classList.add('show');
   document.getElementById('studentName').textContent=u.name;document.getElementById('studentInfo').textContent=u.subjects+' — '+u.plan;
   var k=u.cards?u.cards.split(','):['math'];document.querySelectorAll('.dash-card').forEach(function(c){c.style.display=k.indexOf(c.dataset.subject)>=0?'block':'none'});
+  // Live refresh stats from GitHub
+  fetch('https://raw.githubusercontent.com/royceAIsolutions/royceAIsolutions.github.io/main/tutor/users.json?'+Date.now()).then(function(r){return r.json()}).then(function(d){var f=d.find(function(x){return x.id===u.id});if(f){u.today=f.today;u.mtd=f.mtd;u.ytd=f.ytd;u.difficulty=f.difficulty;u.topics=f.topics;u.focus=f.focus;if(window.updateScoreboard)updateScoreboard(u)}}).catch(function(){});
   // Dynamic buttons based on today's score
   document.querySelectorAll('.dash-card').forEach(function(card){
     if(card.style.display==='block'){
