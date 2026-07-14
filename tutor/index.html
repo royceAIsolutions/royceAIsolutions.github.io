@@ -177,7 +177,7 @@ footer .copy{color:var(--text-secondary);font-size:0.75rem}
 const U='https://raw.githubusercontent.com/royceAIsolutions/royceAIsolutions.github.io/main/tutor/users.json';
 var USERS=[];
 function loadUsers(){
-  fetch(U+'?'+Date.now()).then(function(r){return r.json()}).then(function(d){
+  null.then(function(r){return r.json()}).then(function(d){
     USERS=d;
     document.getElementById('loginSubtitle').textContent='Enter your name.';
     var s=localStorage.getItem('tutor_user');
