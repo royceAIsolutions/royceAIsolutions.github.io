@@ -160,29 +160,26 @@ footer .copy{color:var(--text-secondary);font-size:0.75rem}
 </div>
 <footer><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
 <script>
-function parseCSV(t){var r=[],l=t.trim().split('\n');for(var i=0;i<l.length;i++){var ln=l[i],c=[],cur='',q=false;for(var j=0;j<ln.length;j++){var ch=ln[j];if(ch==='"')q=!q;else if(ch===','&&!q){c.push(cur.trim());cur=''}else cur+=ch}c.push(cur.trim());r.push(c)}return r}
+const J='/tutor/users.json',H='https://chat-api-tawny-zeta.vercel.app/api/quiz-history';let U=[];
 function e(s){if(!s)return 0;var m=s.match(/(\d+)%/);return m?parseInt(m[1]):0}
-const S='https://docs.google.com/spreadsheets/d/1YMuoRMJiDJP9_viB6dM5-4r2OGvUeZlZEwdVTQymWvM/export?format=csv',H='https://chat-api-tawny-zeta.vercel.app/api/quiz-history';let U=[];
-async function L(){try{
-  var r=await fetch(S+'&'+Date.now()),c=await r.text(),rows=parseCSV(c).slice(1);
-  U=rows.map(function(r){var fn=(r[0]||'').trim(),ln=(r[1]||'').trim();return{id:(fn+' '+ln).toLowerCase(),fn:fn,ln:ln,name:fn+(ln?' '+ln:''),sub:(r[2]||'').trim(),a:(r[3]||'').trim().toUpperCase()==='YES',t:(r[4]||'').trim(),m:(r[5]||'').trim(),y:(r[6]||'').trim(),top:(r[7]||'').trim(),d:(r[8]||'').trim(),f:(r[9]||'').trim(),p:(r[10]||'').trim(),c:(r[11]||'math').trim()}}).filter(function(u){return u.id.trim()&&u.a});
-  document.getElementById('loginSubtitle').textContent='Enter your name.';var s=localStorage.getItem('tutor_user');
-  if(s){try{var u=JSON.parse(s);var m=U.find(function(x){return x.id===u.id});if(m)D(m);else localStorage.removeItem('tutor_user')}catch(e){localStorage.removeItem('tutor_user')}}
+async function L(){try{var r=await fetch(J+'?'+Date.now()),d=await r.json();U=d.filter(function(u){return u.active});
+document.getElementById('loginSubtitle').textContent='Enter your name.';var s=localStorage.getItem('tutor_user');
+if(s){try{var u=JSON.parse(s);var m=U.find(function(x){return x.id===u.id});if(m)D(m);else localStorage.removeItem('tutor_user')}catch(e){localStorage.removeItem('tutor_user')}}
 }catch(e){document.getElementById('loginSubtitle').textContent='Could not load users.'}}
 function login(){var fi=document.getElementById('studentFirstName'),li=document.getElementById('studentLastName'),er=document.getElementById('loginError');var fn=fi.value.trim(),ln=li.value.trim(),id=(fn+' '+ln).toLowerCase();if(!fn){er.textContent='Enter your first name.';er.classList.add('show');return}var u=U.find(function(x){return x.id===id});if(!u){er.textContent='Name not found.';er.classList.add('show');return}er.classList.remove('show');localStorage.setItem('tutor_user',JSON.stringify(u));D(u)}
 function D(u){
   document.getElementById('loginScreen').classList.add('hidden');document.getElementById('dashboard').classList.add('show');
-  document.getElementById('studentName').textContent=u.name;document.getElementById('studentInfo').textContent=u.sub+' — '+u.p;
-  var k=u.c?u.c.split(','):['math'];document.querySelectorAll('.dash-card').forEach(function(c){c.style.display=k.indexOf(c.dataset.subject)>=0?'block':'none'});
-  if(u.f)document.getElementById('focusDisplay').textContent=u.f;
-  if(u.t&&u.t!=='—'){document.getElementById('scoreToday').textContent=u.t;var p=e(u.t);document.getElementById('barToday').style.width=Math.min(p,100)+'%';document.getElementById('scoreTodaySub').textContent=u.t}
-  if(u.m&&u.m!=='—'){document.getElementById('scoreMTD').textContent=u.m;document.getElementById('barMTD').style.width=Math.min(e(u.m),100)+'%';document.getElementById('scoreMTDSub').textContent=u.m}
-  if(u.y&&u.y!=='—'){document.getElementById('scoreYTD').textContent=u.y;document.getElementById('barYTD').style.width=Math.min(e(u.y),100)+'%';document.getElementById('scoreYTDSub').textContent=u.y}
-  if(u.top){document.getElementById('topicsList').innerHTML=u.top.split(',').map(function(t){return '<span class="tag">'+t.trim()+'</span>'}).join(' ')}
+  document.getElementById('studentName').textContent=u.name;document.getElementById('studentInfo').textContent=u.subjects+' — '+u.plan;
+  var k=u.cards?u.cards.split(','):['math'];document.querySelectorAll('.dash-card').forEach(function(c){c.style.display=k.indexOf(c.dataset.subject)>=0?'block':'none'});
+  if(u.focus)document.getElementById('focusDisplay').textContent=u.focus;
+  if(u.today&&u.today!=='—'){document.getElementById('scoreToday').textContent=u.today;var p=e(u.today);document.getElementById('barToday').style.width=Math.min(p,100)+'%';document.getElementById('scoreTodaySub').textContent=u.today}
+  if(u.mtd&&u.mtd!=='—'){document.getElementById('scoreMTD').textContent=u.mtd;document.getElementById('barMTD').style.width=Math.min(e(u.mtd),100)+'%';document.getElementById('scoreMTDSub').textContent=u.mtd}
+  if(u.ytd&&u.ytd!=='—'){document.getElementById('scoreYTD').textContent=u.ytd;document.getElementById('barYTD').style.width=Math.min(e(u.ytd),100)+'%';document.getElementById('scoreYTDSub').textContent=u.ytd}
+  if(u.topics){document.getElementById('topicsList').innerHTML=u.topics.split(',').map(function(t){return '<span class="tag">'+t.trim()+'</span>'}).join(' ')}
   var b=document.getElementById('difficultyBadge');
-  if(u.d&&u.d!=='—'){b.textContent=u.d;b.style.display='flex';b.className='diff-badge';var d=u.d;if(d.includes('Math 2')||d.includes('Math 3')||d.includes('SAT — Advanced')||d.includes('AP')||d.includes('RN')||d.includes('Series'))b.classList.add('diff-grade10-12');else if(d.includes('Math 1')||d.includes('SAT — On Track'))b.classList.add('diff-grade7-9');else if(d.includes('Game')||d.includes('Baby'))b.classList.add('diff-grade1-3');else b.classList.add('diff-grade4-6')}else b.style.display='none';
-  document.getElementById('streakDisplay').innerHTML='🔥 '+(e(u.y)>=90?Math.floor(e(u.y)/2):0);
-  if(u.fn==='Jiho'||u.fn==='Carter'||u.fn==='Josh')Q(u.fn);
+  if(u.difficulty&&u.difficulty!=='—'){b.textContent=u.difficulty;b.style.display='flex';b.className='diff-badge';var d=u.difficulty;if(d.includes('Math 2')||d.includes('Math 3')||d.includes('SAT — Advanced')||d.includes('AP')||d.includes('RN')||d.includes('Series'))b.classList.add('diff-grade10-12');else if(d.includes('Math 1')||d.includes('SAT — On Track'))b.classList.add('diff-grade7-9');else if(d.includes('Game')||d.includes('Baby'))b.classList.add('diff-grade1-3');else b.classList.add('diff-grade4-6')}else b.style.display='none';
+  document.getElementById('streakDisplay').innerHTML='🔥 '+(e(u.ytd)>=90?Math.floor(e(u.ytd)/2):0);
+  if(u.first==='Jiho'||u.first==='Carter'||u.first==='Josh')Q(u.first);
   localStorage.setItem('royceai_lead',JSON.stringify({name:u.name,email:u.name.toLowerCase().replace(/\s+/g,'.')+'@student.tutor',phone:'000-000-0000',timestamp:new Date().toISOString()}))
 }
 async function Q(n){var el=document.getElementById('quizHistory'),tb=document.getElementById('quizHistoryBody');el.style.display='block';tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:var(--text-secondary)">Loading...</td></tr>';try{var r=await fetch(H,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({student:n})});var d=await r.json(),ss=d.sessions||[];if(!ss.length){tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:var(--text-secondary)">No sessions yet</td></tr>';return}tb.innerHTML=ss.slice(-10).reverse().map(function(s){var p=s.percent||Math.round(s.correct/s.total*100),pa=p>=80;var tp=s.topics?Object.keys(s.topics).slice(0,2).map(function(t){return '<span class="quiz-topic">'+t.replace(/_/g,' ')+'</span>'}).join(' '):'<span class="quiz-topic">general</span>';return '<tr><td>'+(s.date||'—')+'</td><td>'+(s.mode||'quiz')+'</td><td><strong>'+s.correct+'/'+s.total+'</strong> ('+p+'%)</td><td>'+tp+'</td><td class="'+(pa?'quiz-pass':'quiz-fail')+'">'+(pa?'✅ Pass':'❌ Review')+'</td></tr>'}).join('')}catch(e){tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:var(--red-diff)">Could not load history</td></tr>'}}
