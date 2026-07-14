@@ -266,17 +266,50 @@ function replayHistory() {
   return true;
 }
 
-const savedLead = getProfile();
-if (savedLead) {
-  leadInfo = savedLead;
-  showChat();
-  const hadHistory = replayHistory();
-  if (hadHistory) {
-    const msgs = document.getElementById('messages');
-    const sep = document.createElement('div');
-    sep.className = 'msg system';
-    sep.textContent = '↻ Welcome back, ' + (leadInfo.name || '') + ' — continuing where you left off';
-    msgs.appendChild(sep);
+// ===== GET SUBJECT FROM URL (tutor dashboard links) =====
+function getSubjectFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('subject');
+}
+
+// ===== INIT =====
+function init() {
+  // Check for tutor_user as fallback (came from tutor dashboard)
+  const tutorUser = (() => { try { return JSON.parse(localStorage.getItem('tutor_user')); } catch(e) { return null; } })();
+  
+  const savedLead = getProfile();
+  if (savedLead) {
+    leadInfo = savedLead;
+    showChat();
+    const hadHistory = replayHistory();
+    if (hadHistory) {
+      const msgs = document.getElementById('messages');
+      const sep = document.createElement('div');
+      sep.className = 'msg system';
+      sep.textContent = '↻ Welcome back, ' + (leadInfo.name || '') + ' — continuing where you left off';
+      msgs.appendChild(sep);
+    }
+    // Auto-start subject if coming from tutor dashboard
+    const subject = getSubjectFromUrl();
+    if (subject && !hadHistory) {
+      document.getElementById('userInput').value = 'Start ' + subject + ' quiz for ' + (leadInfo.name || 'me');
+      setTimeout(() => sendMessage(), 500);
+    }
+  } else if (tutorUser) {
+    // Create lead from tutor user
+    leadInfo = {
+      name: tutorUser.name,
+      email: tutorUser.name.toLowerCase().replace(/\s+/g, '.') + '@student.tutor',
+      phone: '000-000-0000',
+      timestamp: new Date().toISOString()
+    };
+    saveProfile(leadInfo);
+    showChat();
+    const subject = getSubjectFromUrl();
+    if (subject) {
+      document.getElementById('userInput').value = 'Start ' + subject + ' quiz for ' + tutorUser.name;
+      setTimeout(() => sendMessage(), 500);
+    }
   }
 }
 
@@ -435,6 +468,9 @@ async function sendMessage() {
     addMessage('💡 Want to continue later? Bookmark this page and come back.', 'system');
   }
 }
+
+// Use init instead of inline code
+init();
 </script>
 <script src="/chat-widget.js"></script>
 </body>
