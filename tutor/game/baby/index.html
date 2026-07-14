@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Baby Play — Royce AI Kids</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+html,body{width:100%;height:100%;overflow:hidden;touch-action:manipulation;cursor:pointer}
+body{font-family:'Nunito',sans-serif;transition:background 1s ease}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:rgba(255,255,255,0.85);backdrop-filter:blur(8px)}
+.nav-logo{font-weight:800;font-size:14px;color:#555;display:flex;align-items:center;gap:4px}
+.nav-back{display:flex;align-items:center;gap:6px;padding:6px 14px;background:#667eea;color:white;border:none;border-radius:20px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;text-decoration:none;transition:transform 0.2s}
+.nav-back:hover{transform:scale(1.05)}
+
+#game{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
+
+#tapArea{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+
+#bigEmoji{font-size:min(40vw,180px);transition:all 0.3s ease;animation:float 3s ease-in-out infinite;position:relative;z-index:2}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+
+#message{font-size:min(6vw,28px);font-weight:800;color:rgba(255,255,255,0.9);margin-top:20px;text-shadow:0 2px 10px rgba(0,0,0,0.2);position:relative;z-index:2;text-align:center;padding:0 20px}
+
+.bubble{position:absolute;border-radius:50%;pointer-events:none;animation:pop 1.2s ease-out forwards;z-index:1}
+@keyframes pop{0%{transform:scale(0);opacity:1}50%{transform:scale(1);opacity:0.8}100%{transform:scale(1.5);opacity:0}}
+
+.star{position:absolute;pointer-events:none;animation:starAnim 1.5s ease-out forwards;z-index:1}
+@keyframes starAnim{0%{transform:scale(0) rotate(0deg);opacity:1}100%{transform:scale(1.5) rotate(180deg) translateY(-60px);opacity:0}}
+
+.shape{position:absolute;pointer-events:none;z-index:1;animation:shapeAnim 2s ease-out forwards}
+@keyframes shapeAnim{0%{transform:scale(0) rotate(0);opacity:1}100%{transform:scale(1.2) rotate(360deg) translateY(-80px);opacity:0}}
+
+.counter{position:fixed;bottom:20px;right:20px;background:rgba(255,255,255,0.2);backdrop-filter:blur(8px);padding:8px 16px;border-radius:20px;color:white;font-size:14px;font-weight:700;z-index:10;display:flex;align-items:center;gap:6px}
+
+@media(max-width:480px){#bigEmoji{font-size:min(50vw,140px)}#message{font-size:min(7vw,22px);margin-top:12px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">👶 RoyceAI Baby</div>
+  <a href="/tutor" class="nav-back">← Dashboard</a>
+</nav>
+
+<div id="game">
+  <div id="tapArea" onclick="pop(event)">
+    <div id="bigEmoji">🌈</div>
+    <div id="message">Tap anywhere!</div>
+  </div>
+</div>
+
+<div class="counter" id="counter">👆 <span id="tapCount">0</span></div>
+
+<script>
+const emojis = ['🌈','⭐','🎈','🦋','🌻','🐶','🐱','🐼','🎨','🍭','🌟','💫','🪷','🐥','🦄','🌺','🍀','🐝','🎪','🌈'];
+const bgColors = ['#FF6B6B','#4ECDC4','#45B7D1','#96CEB4','#FFEAA7','#DDA0DD','#98D8C8','#F7DC6F','#BB8FCE','#85C1E9','#F8C471','#82E0AA','#F1948A','#AED6F1'];
+const messages = ['Yay! 🎉','So fun! ⭐','Again! 🎈','Wow! 🌟','Boop! 🐶','♡〜٩( ╹▿╹ )۶〜♡','(っ˘ω˘ς)','⋆｡°✩','(ᵔ◡ᵔ)','☆〜（ゝ。∂）'];
+let tapCount = 0;
+let currentEmoji = '🌈';
+let audioCtx = null;
+
+function initAudio(){if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)()}
+
+function playNote(freq){
+  try{
+    initAudio();
+    const o=audioCtx.createOscillator();
+    const g=audioCtx.createGain();
+    o.type='sine';
+    o.frequency.setValueAtTime(freq,audioCtx.currentTime);
+    g.gain.setValueAtTime(0.15,audioCtx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001,audioCtx.currentTime+0.5);
+    o.connect(g);g.connect(audioCtx.destination);
+    o.start();o.stop(audioCtx.currentTime+0.5);
+  }catch(e){}
+}
+
+function pop(e){
+  initAudio();
+  tapCount++;
+  document.getElementById('tapCount').textContent=tapCount;
+  
+  // Change emoji
+  const newEmoji = emojis[Math.floor(Math.random()*emojis.length)];
+  document.getElementById('bigEmoji').textContent = newEmoji;
+  
+  // Change background
+  const bg = bgColors[Math.floor(Math.random()*bgColors.length)];
+  document.body.style.background = bg;
+  
+  // Play sound - random happy notes
+  const notes = [523,587,659,698,784,880,988,1047];
+  playNote(notes[Math.floor(Math.random()*notes.length)]);
+  if(tapCount%3===0){setTimeout(function(){playNote(notes[Math.floor(Math.random()*notes.length)])},100)}
+  
+  // Show message sometimes
+  if(tapCount%5===0){
+    document.getElementById('message').textContent = messages[Math.floor(Math.random()*messages.length)];
+  }else{
+    document.getElementById('message').textContent = 'Tap! ' + ['👆','💫','✨','🎵'][Math.floor(Math.random()*4)];
+  }
+  
+  // Bubbles
+  const rect = e ? (e.touches ? {clientX:e.touches[0].clientX,clientY:e.touches[0].clientY} : {clientX:e.clientX,clientY:e.clientY}) : {clientX:Math.random()*window.innerWidth,clientY:Math.random()*window.innerHeight};
+  
+  for(let i=0;i<5;i++){
+    const bubble=document.createElement('div');
+    bubble.className='bubble';
+    const size=20+Math.random()*50;
+    bubble.style.width=size+'px';bubble.style.height=size+'px';
+    const colors=['#fff','#ffd700','#ff6b9d','#7bed9f','#70a1ff','#ffa502','#eccc68'];
+    bubble.style.background=colors[Math.floor(Math.random()*colors.length)];
+    bubble.style.left=(rect.clientX-25+Math.random()*50)+'px';
+    bubble.style.top=(rect.clientY-25+Math.random()*50)+'px';
+    document.getElementById('game').appendChild(bubble);
+    setTimeout(function(){bubble.remove()},1200);
+  }
+  
+  // Stars
+  if(tapCount%3===0){
+    for(let i=0;i<3;i++){
+      const star=document.createElement('div');
+      star.className='star';
+      star.textContent='⭐';
+      star.style.fontSize=(20+Math.random()*20)+'px';
+      star.style.left=(rect.clientX-30+Math.random()*60)+'px';
+      star.style.top=(rect.clientY-30+Math.random()*60)+'px';
+      document.getElementById('game').appendChild(star);
+      setTimeout(function(){star.remove()},1500);
+    }
+  }
+  
+  // Shapes
+  if(tapCount%7===0){
+    const shapes=['🔵','🟣','🔴','🟢','🟡','🟠','💜','❤️','💙','💚','🧡'];
+    for(let i=0;i<4;i++){
+      const shape=document.createElement('div');
+      shape.className='shape';
+      shape.textContent=shapes[Math.floor(Math.random()*shapes.length)];
+      shape.style.fontSize=(25+Math.random()*25)+'px';
+      shape.style.left=Math.random()*(window.innerWidth-50)+'px';
+      shape.style.top=Math.random()*(window.innerHeight-50)+'px';
+      document.getElementById('game').appendChild(shape);
+      setTimeout(function(){shape.remove()},2000);
+    }
+  }
+}
+
+// Auto-trigger on load to show it's interactive
+document.addEventListener('DOMContentLoaded',function(){
+  setTimeout(function(){pop({clientX:window.innerWidth/2,clientY:window.innerHeight/2})},1000);
+  setTimeout(function(){pop({clientX:window.innerWidth/3,clientY:window.innerHeight/3})},2000);
+});
+
+// Touch anywhere also triggers
+window.addEventListener('touchstart',function(e){initAudio()},{once:true});
+</script>
+</body>
+</html>
