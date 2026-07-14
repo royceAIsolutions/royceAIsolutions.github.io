@@ -117,10 +117,23 @@ function lh(){try{var d=JSON.parse(localStorage.getItem('royceai_chat_history'))
 function sh(){localStorage.setItem('royceai_chat_history',JSON.stringify(history.slice(-100)))}
 function rh(){var s=lh();if(!s.length)return false;history=s;var m=document.getElementById('messages');m.innerHTML='';for(var i=0;i<history.length;i++){var msg=history[i];if(msg.role==='user'||msg.role==='assistant'){var d=document.createElement('div');d.className='msg '+(msg.role==='user'?'user':'bot');d.innerHTML=msg.role==='assistant'?fr(msg.content):msg.content;m.appendChild(d)}}return true}
 function gs(){var p=new URLSearchParams(window.location.search);return p.get('subject')}
-function init(){var subject=gs();quizMode=!!subject;var tu=function(){try{return JSON.parse(localStorage.getItem('tutor_user'))}catch(e){return null}}();var sl=gp()
-if(!sl){if(tu){leadInfo={name:tu.name,email:tu.name.toLowerCase().replace(/\\s+/g,'.')+'@student.tutor',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo)}else if(subject){leadInfo={name:subject.charAt(0).toUpperCase()+subject.slice(1)+' Student',email:subject+'@tutor.royceai.com',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo);document.getElementById('leadSubtitle').textContent='Quick setup for '+subject+'...'}else{return}}else{leadInfo=sl}
-showChat();var h=rh();if(h){var msg=document.getElementById('messages');var s=document.createElement('div');s.className='msg system';s.textContent='↻ Welcome back, '+(leadInfo.name||'');msg.appendChild(s)}
-if(subject){setTimeout(function(){var inp=document.getElementById('userInput');inp.value='Start '+subject+' quiz for '+(leadInfo.name||'me');sendMessage()},800)}}
+function init(){
+  var subject = gs();
+  quizMode = !!subject;
+  var tu = null;
+  try{var u = JSON.parse(localStorage.getItem('tutor_user'));if(u&&u.name)tu=u}catch(e){}
+  var sl = gp();
+  
+  if(sl){leadInfo = sl}
+  else if(tu){leadInfo = {name:tu.name,email:tu.name.toLowerCase().replace(/\s+/g,'.')+'@student.tutor',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo)}
+  else if(subject){leadInfo = {name:subject.charAt(0).toUpperCase()+subject.slice(1)+' Student',email:subject+'@tutor.royceai.com',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo)}
+  else{leadInfo = null}
+  
+  if(leadInfo){showChat();var h=rh();if(h){var msg=document.getElementById('messages');var s=document.createElement('div');s.className='msg system';s.textContent='↻ Welcome back, '+(leadInfo.name||'');msg.appendChild(s)}
+    if(subject){setTimeout(function(){var inp=document.getElementById('userInput');inp.value='Start '+subject+' quiz';sendMessage()},500)}
+  }
+}
+
 function submitLead(){var n=document.getElementById('leadName').value.trim();if(!n){document.getElementById('nameGroup').classList.add('invalid');return}
 document.getElementById('nameGroup').classList.remove('invalid')
 leadInfo={name:n,email:n.toLowerCase().replace(/\\s+/g,'.')+'@client.royceai.com',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo)
