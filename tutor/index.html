@@ -175,19 +175,10 @@ footer .copy{color:var(--text-secondary);font-size:0.75rem}
 <footer><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
 <script>
 const U='https://raw.githubusercontent.com/royceAIsolutions/royceAIsolutions.github.io/main/tutor/users.json';
-var USERS=[];
-function loadUsers(){
-  null.then(function(r){return r.json()}).then(function(d){
-    USERS=d;
-    document.getElementById('loginSubtitle').textContent='Enter your name.';
-    var s=localStorage.getItem('tutor_user');
-    if(s){try{var u=JSON.parse(s);var m=USERS.find(function(x){return x.id===u.id});if(m)D(m);else localStorage.removeItem('tutor_user')}catch(e){localStorage.removeItem('tutor_user')}}
-  }).catch(function(){document.getElementById('loginSubtitle').textContent='Could not load users.'});
-}
-const H='https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
-function e(s){if(!s)return 0;var m=s.match(/(\d+)%/);return m?parseInt(m[1]):0}
-;
-function login(){var fi=document.getElementById('studentFirstName'),li=document.getElementById('studentLastName'),er=document.getElementById('loginError');var fn=fi.value.trim(),ln=li.value.trim(),id=(fn+' '+ln).toLowerCase();if(!fn){er.textContent='Enter your first name.';er.classList.add('show');return}if(!USERS.length){er.textContent='Loading users... Wait a moment.';er.classList.add('show');setTimeout(login,500);return}var u=USERS.find(function(x){return x.id===id});if(!u){er.textContent='Name not found. Try again or chat with us.';er.classList.add('show');return}er.classList.remove('show');localStorage.setItem('tutor_user',JSON.stringify(u));D(u)}
+var USERS=[{"first":"Jiho","last":"Pak","id":"jiho pak","name":"Jiho Pak","subjects":"Math","active":true,"today":"88/100 (88%)","mtd":"365/392 (93%)","ytd":"365/392 (93%)","topics":"Combined Session, Exponents Set5","difficulty":"🔥 Math 3","focus":"Radicals, Quadratics, Polynomials","plan":"100 q/day, 80% pass","cards":"math"},{"first":"Carter","last":"Koh","id":"carter koh","name":"Carter Koh","subjects":"Math / SAT / Basketball","active":true,"today":"—","mtd":"4/4 cal goals hit","ytd":"4/4 cal goals hit","topics":"SAT Concepts, Calorie Tracking","difficulty":"⚡ SAT — On Track","focus":"SAT prep + 4K cal daily + Bench Builder","plan":"4K cal/day, SAT readiness, basketball","cards":"sat,math"},{"first":"Angel","last":"Koh","id":"angel koh","name":"Angel Koh","subjects":"RN Training","active":true,"today":"—","mtd":"—","ytd":"—","topics":"NCLEX-RN Training","difficulty":"🩺 RN Training — Active","focus":"NCLEX-RN, Pharmacology, Anatomy","plan":"Exam prep, daily health","cards":"rn"},{"first":"Paxton","last":"Koh","id":"paxton koh","name":"Paxton Koh","subjects":"Reading Games","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"🎮 Grade 1 — Game Mode","focus":"Letter Recognition, Phonics, Sight Words","plan":"Daily 15min reading games","cards":"reading"},{"first":"Josh","last":"Lucero","id":"josh lucero","name":"Josh Lucero","subjects":"Series 66, 7","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"⚡ Series 66/7 — On Track","focus":"Series 66 (Combined), Series 7","plan":"Practice exams, 80% target","cards":"series66,series7"},{"first":"Mason","last":"Min","id":"mason min","name":"Mason Min","subjects":"Baby Play","active":true,"today":"—","mtd":"—","ytd":"—","topics":"Sensory Play","difficulty":"👶 Baby Play — Sensory","focus":"Sensory, Colors, Sounds","plan":"Daily sensory play","cards":"baby"}];
+(function(){document.getElementById('loginSubtitle').textContent='Enter your name to access your personalized learning dashboard.';var s=localStorage.getItem('tutor_user');if(s){try{var u=JSON.parse(s);var m=USERS.find(function(x){return x.id===u.id});if(m)D(m);else localStorage.removeItem('tutor_user')}catch(e){localStorage.removeItem('tutor_user')}}})();
+
+function login(){var fi=document.getElementById('studentFirstName'),li=document.getElementById('studentLastName'),er=document.getElementById('loginError');var fn=fi.value.trim(),ln=li.value.trim(),id=(fn+' '+ln).toLowerCase();if(!fn){er.textContent='Enter your first name.';er.classList.add('show');return}var u=USERS.find(function(x){return x.id===id});if(!u){er.textContent='Name not found. Try again or chat with us.';er.classList.add('show');return}er.classList.remove('show');localStorage.setItem('tutor_user',JSON.stringify(u));D(u)}
 function D(u){
   document.getElementById('loginScreen').classList.add('hidden');document.getElementById('dashboard').classList.add('show');
   document.getElementById('studentName').textContent=u.name;document.getElementById('studentInfo').textContent=u.subjects+' — '+u.plan;
