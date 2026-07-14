@@ -71,7 +71,7 @@ nav{display:flex;align-items:center;padding:0 16px;height:56px;border-bottom:1px
   <a href="/tutor" class="nav-back">← Dashboard</a>
 </nav>
 
-<div id="leadOverlay">
+<div id="leadOverlay" style="display:none">
   <div class="lead-card" id="leadForm">
     <h1>Welcome to <span>Royce AI</span></h1>
     <p id="leadSubtitle">Enter your name to get started.</p>
@@ -120,20 +120,26 @@ function gs(){var p=new URLSearchParams(window.location.search);return p.get('su
 function init(){
   var subject = gs();
   quizMode = !!subject;
+  
+  if(subject){
+    leadInfo = {name:subject,email:subject+'@quiz.royceai.com',phone:'000-000-0000',timestamp:new Date().toISOString()};
+    sp(leadInfo);
+    showChat();
+    setTimeout(function(){document.getElementById('userInput').value='Start '+subject+' quiz';sendMessage()},500);
+    return;
+  }
+  
   var tu = null;
   try{var u = JSON.parse(localStorage.getItem('tutor_user'));if(u&&u.name)tu=u}catch(e){}
   var sl = gp();
   
   if(sl){leadInfo = sl}
   else if(tu){leadInfo = {name:tu.name,email:tu.name.toLowerCase().replace(/\s+/g,'.')+'@student.tutor',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo)}
-  else if(subject){leadInfo = {name:subject.charAt(0).toUpperCase()+subject.slice(1)+' Student',email:subject+'@tutor.royceai.com',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo)}
-  else{leadInfo = null}
   
-  if(leadInfo){showChat();var h=rh();if(h){var msg=document.getElementById('messages');var s=document.createElement('div');s.className='msg system';s.textContent='↻ Welcome back, '+(leadInfo.name||'');msg.appendChild(s)}
-    if(subject){setTimeout(function(){var inp=document.getElementById('userInput');inp.value='Start '+subject+' quiz';sendMessage()},500)}
-  }
+  if(leadInfo){showChat();}else{showLeadForm()};if(leadInfo){showChat();var h=rh();if(h){var msg=document.getElementById('messages');var s=document.createElement('div');s.className='msg system';s.textContent='↻ Welcome back, '+(leadInfo.name||'');msg.appendChild(s)}}
 }
 
+function showLeadForm(){document.getElementById('leadOverlay').style.display='flex'}
 function submitLead(){var n=document.getElementById('leadName').value.trim();if(!n){document.getElementById('nameGroup').classList.add('invalid');return}
 document.getElementById('nameGroup').classList.remove('invalid')
 leadInfo={name:n,email:n.toLowerCase().replace(/\\s+/g,'.')+'@client.royceai.com',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo)
