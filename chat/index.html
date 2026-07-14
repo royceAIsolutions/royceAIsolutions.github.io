@@ -18,14 +18,21 @@
   --border: rgba(255,255,255,0.06);
   --accent: #667eea;
   --accent-hover: #7c93f5;
-  --accent-glow: rgba(102,126,234,0.15);
-  --accent-bg: rgba(102,126,234,0.1);
+  --accent-glow: rgba(102,126,234,0.2);
+  --accent-bg: rgba(102,126,234,0.08);
+  --purple-deep: #764ba2;
   --red: #ef4444;
   --radius: 16px;
   --radius-sm: 10px;
   --font: 'Inter', system-ui, -apple-system, sans-serif;
   --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 1px var(--accent), 0 4px 20px var(--accent-glow); }
+  50% { box-shadow: 0 0 0 1px var(--accent), 0 4px 40px var(--accent-glow), 0 0 60px var(--accent-glow); }
+}
+
 *{margin:0;padding:0;box-sizing:border-box;}
 html{height:100%;}
 body{
@@ -37,18 +44,35 @@ body{
 /* Nav */
 .nav{
   display:flex;align-items:center;justify-content:space-between;
-  padding:12px 24px;height:56px;border-bottom:1px solid var(--border);flex-shrink:0;
+  padding:10px 24px;height:56px;border-bottom:1px solid var(--border);flex-shrink:0;
 }
 .nav-logo{
   font-size:17px;font-weight:700;letter-spacing:-0.3px;
   display:flex;align-items:center;gap:8px;
+  text-decoration:none;color:var(--text);
+}
+.nav-logo .logo-icon {
+  width:26px;height:26px;
+  background:linear-gradient(135deg,var(--accent),var(--purple-deep));
+  border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:800;color:white;
 }
 .nav-logo span{color:var(--accent);}
-.nav-back{
-  font-size:13px;color:var(--text-secondary);text-decoration:none;
-  display:flex;align-items:center;gap:6px;transition:color var(--transition);
+
+.nav-links{display:flex;align-items:center;gap:4px;}
+.nav-links a{
+  color:var(--text-secondary);text-decoration:none;
+  font-size:13px;font-weight:500;
+  padding:5px 12px;border-radius:6px;transition:all 0.2s;
 }
-.nav-back:hover{color:var(--accent);}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg);}
+.nav-links .nav-cta{
+  background:var(--accent);color:white!important;font-weight:600;
+  padding:6px 16px;border-radius:6px;
+  animation:pulse-glow 2.5s ease-in-out infinite;
+}
+.nav-links .nav-cta:hover{background:var(--accent-hover);transform:scale(1.05);}
 
 /* Lead capture form */
 .lead-overlay{
@@ -163,14 +187,21 @@ body{
 <!-- Chat App -->
 <div class="chat-app" id="chatApp">
   <div class="nav">
-    <div class="nav-logo">Royce<span>AI</span></div>
-    <a href="https://royceaisolutions.github.io" class="nav-back">← Back to site</a>
+    <a href="/" class="nav-logo">
+      <span class="logo-icon">R</span>
+      Royce<span>AI</span>
+    </a>
+    <div class="nav-links">
+      <a href="/products">Products</a>
+      <a href="/tutor">Tutor</a>
+      <a href="/blog">Blog</a>
+      <a href="/chat" class="nav-cta">💬 Chat</a>
+    </div>
   </div>
   <div class="chat-wrap">
     <div class="messages" id="messages">
       <div class="msg bot" id="welcomeMsg">
-        👋 Hey! I'm RoyceAI. Ask me about:
-        <br><br>
+        👋 Hey! I'm RoyceAI. Ask me about:<br><br>
         • <b>AI Receptionists</b> — 24/7 call answering<br>
         • <b>Tutoring</b> — Math, Science, English, Korean<br>
         • <b>Websites</b> — Custom, AI-integrated<br>
@@ -209,7 +240,6 @@ if (saved) {
 function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
 function validatePhone(p) {
   const cleaned = p.replace(/[\s\-\(\)\.]/g, '');
-  // Accept +1XXXXXXXXXX, 1XXXXXXXXXX, or XXXXXXXXXX (10 digits)
   return /^(\+?1?\d{10})$/.test(cleaned) || /^\d{10}$/.test(cleaned);
 }
 
@@ -249,12 +279,11 @@ function submitLead() {
   leadInfo = { name, email, phone, timestamp: new Date().toISOString() };
   localStorage.setItem('royceai_lead', JSON.stringify(leadInfo));
 
-  // Save to API
   fetch(API_URL.replace('/api/chat', '/api/lead'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(leadInfo),
-  }).catch(() => {}); // fail silently if API not ready
+  }).catch(() => {});
 
   document.getElementById('leadSent').classList.add('active');
   setTimeout(showChat, 800);
