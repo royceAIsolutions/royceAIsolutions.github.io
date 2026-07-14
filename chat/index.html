@@ -172,7 +172,8 @@ am(t,'user');st(true);history.push({role:'user',content:t});sh()
 try{var url=quizMode?Q:C;var body={message:t,lead:leadInfo,history:history.slice(-30)};if(quizMode)body={message:t,history:history.slice(-20)}
 var r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});var d=await r.json()
 st(false);var reply=d.reply||(quizMode?'Type next for next question':'Thanks!');history.push({role:'assistant',content:reply});am(fr(reply),'bot');sh()
-if(quizMode){checkSave(reply);var msgs=document.getElementById('messages');var last=msgs.lastElementChild;if(last)renderAnswers(reply,last)}}
+if(quizMode){checkSave(reply);var msgs=document.getElementById('messages');var last=msgs.lastElementChild;if(last)renderAnswers(reply,last)
+if(reply.match(/Correct|Incorrect/i)&&!reply.match(/Q[2-9]\/10/)){setTimeout(function(){sq('next')},1200)}}
 catch(e){st(false);am('Error. Try again.','bot')}
 document.getElementById('sendBtn').disabled=false;msgCount++}
 init();
