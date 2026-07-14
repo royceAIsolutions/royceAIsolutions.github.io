@@ -17,9 +17,9 @@
   --text: #f5f5f5;
   --text-secondary: #a1a1aa;
   --border: rgba(255,255,255,0.06);
-  --accent: #667eea;
-  --accent-hover: #7c93f5;
-  --accent-glow: rgba(102,126,234,0.15);
+  --accent: #dc2626;
+  --accent-hover: #ef4444;
+  --accent-glow: rgba(220,38,38,0.15);
   --radius: 16px;
   --radius-sm: 10px;
   --max-w: 1200px;
@@ -35,9 +35,9 @@
   --text: #111;
   --text-secondary: #52525b;
   --border: rgba(0,0,0,0.08);
-  --accent: #667eea;
-  --accent-hover: #5a6fd6;
-  --accent-glow: rgba(102,126,234,0.1);
+  --accent: #dc2626;
+  --accent-hover: #b91c1c;
+  --accent-glow: rgba(220,38,38,0.1);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -147,7 +147,7 @@ nav {
   padding: 6px 14px;
   border-radius: 100px;
   background: var(--accent-glow);
-  border: 1px solid rgba(102,126,234,0.2);
+  border: 1px solid rgba(220,38,38,0.2);
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--accent);
@@ -164,7 +164,7 @@ nav {
   max-width: 900px;
 }
 .hero h1 .gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -259,7 +259,7 @@ nav {
   overflow: hidden;
 }
 .bento-card:hover {
-  border-color: rgba(102,126,234,0.2);
+  border-color: rgba(220,38,38,0.2);
   transform: translateY(-2px);
   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
 }
@@ -318,8 +318,8 @@ nav {
 
 /* Glow accent behind hero card */
 .bento-card.accent {
-  border-color: rgba(102,126,234,0.15);
-  background: linear-gradient(135deg, rgba(102,126,234,0.04) 0%, transparent 100%);
+  border-color: rgba(220,38,38,0.15);
+  background: linear-gradient(135deg, rgba(220,38,38,0.04) 0%, transparent 100%);
 }
 .bento-card.accent::before {
   content: '';
@@ -328,7 +328,7 @@ nav {
   right: -50%;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(102,126,234,0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(220,38,38,0.04) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -356,8 +356,8 @@ nav {
 }
 
 .pricing-card.featured {
-  border-color: rgba(102,126,234,0.2);
-  background: linear-gradient(135deg, rgba(102,126,234,0.04) 0%, transparent 100%);
+  border-color: rgba(220,38,38,0.2);
+  background: linear-gradient(135deg, rgba(220,38,38,0.04) 0%, transparent 100%);
 }
 .pricing-card.featured::before {
   content: 'Popular';
