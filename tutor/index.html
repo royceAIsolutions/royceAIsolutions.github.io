@@ -339,10 +339,12 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
   <h1>Welcome, <span class="gradient">Tutor</span></h1>
   <p id="loginSubtitle">Loading authorized users...</p>
   <div class="login-box">
-    <label for="studentId">Student ID</label>
-    <input type="text" id="studentId" placeholder="e.g. Jiho, Carter, Duman" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <label for="studentFirstName">First Name</label>
+    <input type="text" id="studentFirstName" placeholder="First name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <label for="studentLastName" style="margin-top:4px">Last Name</label>
+    <input type="text" id="studentLastName" placeholder="Last name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
     <button class="btn btn-primary" onclick="login()">Unlock Tutoring →</button>
-    <div class="error" id="loginError">ID not found. Try again or <a href="/chat" style="color:var(--accent)">chat with us</a> to get set up.</div>
+    <div class="error" id="loginError">Name not found. Try again or <a href="/chat" style="color:var(--accent)">chat with us</a> to get set up.</div>
   </div>
 </div>
 
@@ -400,7 +402,7 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
 <script>
 // ===== GOOGLE SHEET URL =====
 // Edit users here: https://docs.google.com/spreadsheets/d/1YMuoRMJiDJP9_viB6dM5-4r2OGvUeZlZEwdVTQymWvM
-// Columns: Student ID, Name, Subjects, Active
+// Columns: First Name, Last Name, Subjects, Active
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1YMuoRMJiDJP9_viB6dM5-4r2OGvUeZlZEwdVTQymWvM/export?format=csv';
 
 let AUTHORIZED_USERS = [];
@@ -410,18 +412,21 @@ async function loadUsers() {
   try {
     const resp = await fetch(SHEET_CSV_URL);
     const csv = await resp.text();
-    const rows = csv.trim().split('\n').slice(1); // skip header
+    const rows = csv.trim().split('\n').slice(1);
     AUTHORIZED_USERS = rows.map(row => {
       const cols = row.split(',');
+      const firstName = (cols[0] || '').trim();
+      const lastName = (cols[1] || '').trim();
       return {
-        id: (cols[0] || '').trim().toLowerCase(),
-        name: (cols[1] || '').trim(),
+        id: (firstName + ' ' + lastName).toLowerCase(),
+        firstName: firstName,
+        lastName: lastName,
+        name: firstName + (lastName ? ' ' + lastName : ''),
         subjects: (cols[2] || '').trim(),
         active: (cols[3] || '').trim().toUpperCase() === 'YES'
       };
-    }).filter(u => u.id && u.active);
-    document.getElementById('loginSubtitle').textContent = 'Enter your student ID to access tutoring.';
-    // Try auto-login if already saved
+    }).filter(u => u.id.trim() && u.active);
+    document.getElementById('loginSubtitle').textContent = 'Enter your name to access tutoring.';
     const saved = localStorage.getItem('tutor_user');
     if (saved) {
       try {
@@ -433,25 +438,27 @@ async function loadUsers() {
     }
   } catch (e) {
     document.getElementById('loginSubtitle').textContent = 'Could not load user list. Try again later.';
-    console.error('Sheet fetch failed:', e);
   }
 }
 
 // ===== LOGIN =====
 function login() {
-  const input = document.getElementById('studentId');
+  const firstInput = document.getElementById('studentFirstName');
+  const lastInput = document.getElementById('studentLastName');
   const error = document.getElementById('loginError');
-  const raw = input.value.trim().toLowerCase();
-  
-  if (!raw) {
-    error.textContent = 'Please enter your student ID.';
+  const firstName = firstInput.value.trim();
+  const lastName = lastInput.value.trim();
+  const fullId = (firstName + ' ' + lastName).toLowerCase();
+
+  if (!firstName) {
+    error.textContent = 'Please enter your first name.';
     error.classList.add('show');
     return;
   }
 
-  const user = AUTHORIZED_USERS.find(u => u.id === raw);
+  const user = AUTHORIZED_USERS.find(u => u.id === fullId);
   if (!user) {
-    error.textContent = 'ID not found. Try again or chat with us to get set up.';
+    error.textContent = 'Name not found. Try again or chat with us to get set up.';
     error.classList.add('show');
     return;
   }
@@ -474,7 +481,8 @@ function logout() {
   localStorage.removeItem('tutor_user');
   document.getElementById('dashboard').classList.remove('show');
   document.getElementById('loginScreen').classList.remove('hidden');
-  document.getElementById('studentId').value = '';
+  document.getElementById('studentFirstName').value = '';
+  document.getElementById('studentLastName').value = '';
 }
 
 // ===== LOAD ON START =====
