@@ -96,19 +96,10 @@ body {
       👋 Hey! I'm RoyceAI. Ask me about:
       <br><br>
       • <b>AI Receptionists</b> — 24/7 call answering for dealerships, medical, dental, vets<br>
-<<<<<<< HEAD
-      • <b>Tutoring</b> — Math, Science, English, Korean<br>
-      • <b>Websites</b> — Custom, responsive, AI-integrated<br>
-      • <b>Cuisine Quiz</b> — Test your food knowledge<br>
-      <br>
-      <a href="https://t.me/royceai2026bot" target="_blank">📲 Start on Telegram</a> • <a href="mailto:royceaisolutions@gmail.com">📧 Email us</a><br>
-=======
       • <b>Tutoring</b> — High School Math, Science, English, Korean<br>
       • <b>Websites</b> — Custom, responsive, AI-integrated<br>
       • <b>Cuisine Quiz</b> — Test your food knowledge<br>
       <br>
-      <a href="https://royceai.com/chat" target="_blank">💬 Chat with us</a><br>
->>>>>>> cf7f4e9 (Remove Telegram/email from site, consolidate to chat only)
       What can I help you with?
     </div>
   </div>
@@ -189,11 +180,7 @@ async function sendMessage() {
     });
 
     const data = await resp.json();
-<<<<<<< HEAD
-    let reply = data.reply || 'Sorry, I had trouble with that. <a href="mailto:royceaisolutions@gmail.com">Email us</a>';
-=======
     let reply = data.reply || 'Sorry, I had trouble with that.';
->>>>>>> cf7f4e9 (Remove Telegram/email from site, consolidate to chat only)
     
     history.push({ role: 'assistant', content: reply });
     showTyping(false);
@@ -201,22 +188,14 @@ async function sendMessage() {
 
   } catch (e) {
     showTyping(false);
-<<<<<<< HEAD
-    addMessage('⚠️ Connection error. <a href="mailto:royceaisolutions@gmail.com">Email us</a>', 'bot');
-=======
     addMessage('⚠️ Connection error. Try again later.', 'bot');
->>>>>>> cf7f4e9 (Remove Telegram/email from site, consolidate to chat only)
   }
 
   document.getElementById('sendBtn').disabled = false;
   msgCount++;
 
   if (msgCount === 3) {
-<<<<<<< HEAD
-    addMessage('💡 Want to continue later? <a href="https://t.me/royceai2026bot" target="_blank">Message us on Telegram</a>', 'system');
-=======
     addMessage('💡 Want to continue later? Bookmark this page and come back.', 'system');
->>>>>>> cf7f4e9 (Remove Telegram/email from site, consolidate to chat only)
   }
 }
 </script>
