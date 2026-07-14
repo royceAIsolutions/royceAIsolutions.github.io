@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "student": "Josh Lucero",
+    "correct": 8,
+    "total": 10,
+    "percent": 80,
+    "subject": "series66",
+    "date": "2026-07-14",
+    "ts": 1784062579819
+  }
+]
