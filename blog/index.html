@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Royce AI Solutions</title>
+<meta name="description" content="Royce AI Solutions blog: AI tips, business automation, tutoring insights, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a;
+  --bg-card: #111;
+  --bg-elevated: #1a1a1a;
+  --text: #f5f5f5;
+  --text-secondary: #a1a1aa;
+  --border: rgba(255,255,255,0.06);
+  --accent: #667eea;
+  --accent-hover: #7c93f5;
+  --accent-glow: rgba(102,126,234,0.2);
+  --accent-bg: rgba(102,126,234,0.08);
+  --purple-deep: #764ba2;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --max-w: 1000px;
+  --nav-h: 64px;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 1px var(--accent), 0 4px 20px var(--accent-glow); }
+  50% { box-shadow: 0 0 0 1px var(--accent), 0 4px 40px var(--accent-glow), 0 0 60px var(--accent-glow); }
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 100;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-logo .logo-icon {
+  width: 28px; height: 28px;
+  background: linear-gradient(135deg, var(--accent), var(--purple-deep));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: white;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: 8px; }
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.nav-links a:hover { color: var(--text); background: var(--accent-bg); }
+.nav-links a.active { color: var(--accent); background: var(--accent-bg); }
+.nav-links .nav-cta {
+  background: var(--accent);
+  color: white !important;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 8px;
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+.nav-links .nav-cta:hover { background: var(--accent-hover); transform: scale(1.05); }
+
+.page { padding-top: var(--nav-h); }
+
+.hero-sub {
+  padding: 100px 24px 60px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-sub h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+.hero-sub h1 .gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s ease-in-out infinite;
+}
+.hero-sub p { color: var(--text-secondary); font-size: 1.1rem; max-width: 500px; margin: 0 auto; }
+
+.posts {
+  padding: 0 24px 100px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.post-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 20px;
+  transition: all var(--transition);
+}
+.post-card:hover {
+  border-color: rgba(102,126,234,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.post-card .date { color: var(--accent); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+.post-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
+.post-card h3 a { color: var(--text); text-decoration: none; transition: color 0.2s; }
+.post-card h3 a:hover { color: var(--accent); }
+.post-card p { color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6; }
+.post-card .read-more { display: inline-block; margin-top: 12px; color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: color 0.2s; }
+.post-card .read-more:hover { color: var(--accent-hover); }
+.post-card .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+.post-card .tags span { padding: 2px 10px; border-radius: 4px; background: var(--accent-bg); color: var(--accent); font-size: 0.7rem; font-weight: 500; }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 48px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+footer .logo { font-weight: 700; font-size: 1rem; color: var(--text-secondary); }
+footer .logo span { color: var(--accent); }
+footer .links { display: flex; gap: 20px; flex-wrap: wrap; }
+footer .links a { color: var(--text-secondary); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+footer .links a:hover { color: var(--accent); }
+footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; text-align: center; }
+
+@media (max-width: 640px) {
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile) { display: none; }
+  .hero-sub { padding: 80px 20px 40px; }
+  .posts { padding: 0 20px 80px; }
+  footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="logo-icon">R</span>
+    Royce<span>AI</span>
+  </a>
+  <div class="nav-links">
+    <a href="/products">Products</a>
+    <a href="/tutor">Tutor</a>
+    <a href="/blog" class="active">Blog</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
+  </div>
+</nav>
+
+<div class="page">
+  <section class="hero-sub">
+    <h1><span class="gradient">Blog</span></h1>
+    <p>AI tips, business automation, and insights from Royce AI Solutions.</p>
+  </section>
+
+  <section class="posts">
+    <article class="post-card">
+      <div class="date">July 13, 2026</div>
+      <h3><a href="/blog/ai-receptionist-vs-human">AI Receptionist vs. Human: Which is Better for Your Business?</a></h3>
+      <p>Comparing 24/7 AI call answering with traditional human receptionists — cost, availability, and lead conversion rates.</p>
+      <div class="tags"><span>AI Receptionist</span><span>Business</span></div>
+      <a href="/blog/ai-receptionist-vs-human" class="read-more">Read more →</a>
+    </article>
+
+    <article class="post-card">
+      <div class="date">July 10, 2026</div>
+      <h3><a href="/blog/affordable-high-school-tutoring">Affordable High School Tutoring in Irvine: $100/mo</a></h3>
+      <p>How AI-powered tutoring makes quality math, science, and English help accessible at a fraction of traditional rates.</p>
+      <div class="tags"><span>Tutoring</span><span>Education</span></div>
+      <a href="/blog/affordable-high-school-tutoring" class="read-more">Read more →</a>
+    </article>
+
+    <article class="post-card">
+      <div class="date">July 7, 2026</div>
+      <h3><a href="/blog/after-hours-auto-dealership-leads">Why Auto Dealerships Lose 40% of Leads After Hours</a></h3>
+      <p>Most car shoppers browse at night. Here's how AI receptionists help dealerships capture every lead, 24/7.</p>
+      <div class="tags"><span>Auto Dealerships</span><span>Leads</span></div>
+      <a href="/blog/after-hours-auto-dealership-leads" class="read-more">Read more →</a>
+    </article>
+
+    <article class="post-card">
+      <div class="date">July 3, 2026</div>
+      <h3><a href="/blog/5-ways-ai-transforms-small-business">5 Ways AI Transforms Small Business Operations</a></h3>
+      <p>From chatbots to automated workflows — how small businesses in Orange County are leveraging AI to compete with enterprise.</p>
+      <div class="tags"><span>Business AI</span><span>Automation</span></div>
+      <a href="/blog/5-ways-ai-transforms-small-business" class="read-more">Read more →</a>
+    </article>
+  </section>
+</div>
+
+<footer>
+  <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
+  <div class="links">
+    <a href="/products">Products</a>
+    <a href="/tutor">Tutor</a>
+    <a href="/blog">Blog</a>
+    <a href="/chat">Chat</a>
+  </div>
+  <div class="copy">RoyceAI Solutions. Irvine, CA</div>
+</footer>
+
+</body>
+</html>
