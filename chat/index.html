@@ -171,7 +171,7 @@ function renderAnswers(reply, container){
 }
 function checkSave(reply){
   if(!quizMode||!reply)return;
-  var m=reply.match(/Score:\\s*(\\d+)\\s*\\/\\s*(\\d+)/i);
+  var m=reply.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i);
   if(!m){return}
   var c=parseInt(m[1]),t=parseInt(m[2]);
   if(!t||t<1||c>t)return;
