@@ -71,34 +71,45 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); display:
 .dash-header h1 .gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%); background-size: 200% 200%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 3s ease-in-out infinite; }
 .dash-header p { color: var(--text-secondary); font-size: 0.9rem; }
 
-.scoreboard { max-width: 900px; margin: 0 auto; padding: 0 24px 32px; }
-.scoreboard-inner { background: linear-gradient(135deg, rgba(102,126,234,0.04) 0%, transparent 100%); border: 1px solid rgba(102,126,234,0.2); border-radius: var(--radius); padding: 28px; animation: score-in 0.5s ease; }
-.scoreboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.scoreboard { max-width: 900px; margin: 0 auto; padding: 0 24px 20px; }
+.scoreboard-inner { background: linear-gradient(135deg, rgba(102,126,234,0.04) 0%, transparent 100%); border: 1px solid rgba(102,126,234,0.2); border-radius: var(--radius); padding: 24px; animation: score-in 0.5s ease; }
+.scoreboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); }
 .scoreboard-title { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); display: flex; align-items: center; gap: 8px; }
 .scoreboard-title span { color: var(--accent); }
 .scoreboard-badges { display: flex; align-items: center; gap: 8px; }
 .scoreboard-streak { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: var(--gold); padding: 4px 12px; border-radius: 6px; background: rgba(234,179,8,0.1); }
-.diff-badge { padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; }
+.diff-badge { padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; white-space: nowrap; }
 .diff-grade10-12 { background: rgba(239,68,68,0.15); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
 .diff-grade7-9 { background: rgba(234,179,8,0.15); color: #eab308; border: 1px solid rgba(234,179,8,0.3); }
 .diff-grade4-6 { background: rgba(102,126,234,0.15); color: #667eea; border: 1px solid rgba(102,126,234,0.3); }
 .diff-grade1-3 { background: rgba(34,197,94,0.15); color: #22c55e; border: 1px solid rgba(34,197,94,0.3); }
 
-.scoreboard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.score-stat { text-align: center; padding: 16px 12px; border-radius: 10px; background: var(--bg-card); border: 1px solid var(--border); transition: all 0.3s; }
-.score-stat:hover { border-color: rgba(102,126,234,0.3); transform: translateY(-2px); }
-.score-stat .label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); margin-bottom: 8px; }
-.score-stat .score { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 900; letter-spacing: -0.02em; color: var(--text); }
+.scoreboard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.score-stat { text-align: center; padding: 14px 10px; border-radius: 10px; background: var(--bg-card); border: 1px solid var(--border); }
+.score-stat .label { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); margin-bottom: 6px; }
+.score-stat .score { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 900; letter-spacing: -0.02em; }
 .score-stat .score.green { color: var(--green); }
 .score-stat .score.gold { color: var(--gold); }
 .score-stat .score.accent { color: var(--accent); }
-.score-stat .sub { font-size: 0.75rem; color: var(--text-secondary); margin-top: 4px; }
-.score-stat .bar { width: 100%; height: 4px; border-radius: 2px; background: var(--bg-elevated); margin-top: 8px; overflow: hidden; }
+.score-stat .sub { font-size: 0.7rem; color: var(--text-secondary); margin-top: 3px; }
+.score-stat .bar { width: 100%; height: 3px; border-radius: 2px; background: var(--bg-elevated); margin-top: 6px; overflow: hidden; }
 .score-stat .bar-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--accent), var(--purple-deep)); transition: width 0.8s ease; }
 
-.topics-row { margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.topics-row .label { font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+.topics-row { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.topics-row .label { font-size: 0.7rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
 .topics-row .tag { padding: 3px 10px; border-radius: 4px; background: var(--accent-bg); color: var(--accent); font-size: 0.75rem; font-weight: 500; }
+
+/* Quiz History */
+.quiz-history { max-width: 900px; margin: 0 auto; padding: 0 24px 32px; }
+.quiz-history h3 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: var(--text-secondary); display: flex; align-items: center; gap: 8px; }
+.quiz-history h3 span { color: var(--accent); }
+.quiz-table { width: 100%; border-collapse: collapse; }
+.quiz-table th { text-align: left; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); padding: 8px 12px; border-bottom: 1px solid var(--border); }
+.quiz-table td { padding: 8px 12px; font-size: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.03); }
+.quiz-table tr:hover td { background: var(--accent-bg); }
+.quiz-pass { color: var(--green); font-weight: 600; }
+.quiz-fail { color: var(--red-diff); font-weight: 600; }
+.quiz-topic { padding: 2px 8px; border-radius: 4px; background: var(--accent-bg); color: var(--accent); font-size: 0.7rem; }
 
 .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: var(--max-w); margin: 0 auto; padding: 0 24px 80px; }
 .dash-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; text-align: center; transition: all var(--transition); }
@@ -115,6 +126,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); display:
 .btn-sm { padding: 8px 18px; font-size: 0.85rem; }
 .btn-sat { background: #7c3aed; color: white; box-shadow: 0 0 0 1px #7c3aed, 0 4px 20px rgba(124,58,237,0.2); }
 .btn-sat:hover { background: #8b5cf6; transform: translateY(-2px) scale(1.03); }
+.btn-game { background: #eab308; color: #0a0a0a; box-shadow: 0 0 0 1px #eab308, 0 4px 20px rgba(234,179,8,0.3); font-weight: 800; font-size: 1.1rem; }
+.btn-game:hover { background: #facc15; transform: translateY(-2px) scale(1.05); }
 
 footer { border-top: 1px solid var(--border); padding: 48px 24px; max-width: var(--max-w); margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
 footer .logo { font-weight: 700; font-size: 1rem; color: var(--text-secondary); }
@@ -194,8 +207,21 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
       <div class="topics-row">
         <span class="label">🎯 Topics:</span>
         <span id="topicsList"><span class="tag">—</span></span>
+        <span class="label" style="margin-left:12px">🧠 Focus:</span>
+        <span id="focusDisplay" style="color:var(--text-secondary);font-size:0.8rem">—</span>
       </div>
     </div>
+  </div>
+
+  <!-- Quiz History (shown for Jiho & Carter) -->
+  <div class="quiz-history" id="quizHistory" style="display:none">
+    <h3>📋 <span>Quiz History</span> — Last 10 Sessions</h3>
+    <table class="quiz-table">
+      <thead>
+        <tr><th>Date</th><th>Mode</th><th>Score</th><th>Topics</th><th>Result</th></tr>
+      </thead>
+      <tbody id="quizHistoryBody"></tbody>
+    </table>
   </div>
 
   <div class="dash-grid">
@@ -223,6 +249,12 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
       <p>Math, Reading, Writing — full SAT readiness.</p>
       <a href="/chat?subject=sat" class="btn btn-sat btn-sm">Start SAT Prep →</a>
     </div>
+    <div class="dash-card" id="gameCard">
+      <span class="icon">🎮</span>
+      <h3>Reading Games</h3>
+      <p>Fun phonics and letter games for kids.</p>
+      <a href="/tutor/game" class="btn btn-game btn-sm">🎮 Play Now! →</a>
+    </div>
     <div class="dash-card">
       <span class="icon">📊</span>
       <h3>Session</h3>
@@ -242,6 +274,7 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
 
 <script>
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1YMuoRMJiDJP9_viB6dM5-4r2OGvUeZlZEwdVTQymWvM/export?format=csv';
+const HISTORY_API = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
 let AUTHORIZED_USERS = [];
 
 function extractPercent(str) {
@@ -303,8 +336,20 @@ function showDashboard(user) {
   document.getElementById('loginScreen').classList.add('hidden');
   document.getElementById('dashboard').classList.add('show');
   document.getElementById('studentName').textContent = user.name;
-  document.getElementById('studentInfo').textContent = user.subjects + ' — what would you like to study?';
 
+  // Per-user custom greeting and visibility
+  if (user.firstName === 'Paxton') {
+    document.getElementById('studentInfo').innerHTML = '🎮 Ready to play reading games? ⭐';
+    document.getElementById('gameCard').style.display = 'block';
+  } else {
+    document.getElementById('gameCard').style.display = 'none';
+  }
+  document.getElementById('studentInfo').textContent = user.subjects + ' — ' + (user.plan || 'what would you like to study?');
+
+  // Focus
+  if (user.focus) document.getElementById('focusDisplay').textContent = user.focus;
+
+  // Scoreboard
   if (user.today && user.today !== '—') {
     document.getElementById('scoreToday').textContent = user.today;
     const p = extractPercent(user.today);
@@ -325,24 +370,31 @@ function showDashboard(user) {
     document.getElementById('topicsList').innerHTML = user.topics.split(',').map(t => '<span class="tag">' + t.trim() + '</span>').join(' ');
   }
 
+  // Difficulty badge
   if (user.difficulty && user.difficulty !== '—') {
     const badge = document.getElementById('difficultyBadge');
     badge.textContent = user.difficulty;
     badge.style.display = 'flex';
     badge.className = 'diff-badge';
     const d = user.difficulty;
-    if (d.includes('Math 2') || d.includes('Math 3') || d.includes('SAT — Advanced') || d.includes('AP '))
+    if (d.includes('Math 2') || d.includes('Math 3') || d.includes('SAT — Advanced') || d.includes('AP') || d.includes('RN'))
       badge.classList.add('diff-grade10-12');
-    else if (d.includes('Math 1') || d.includes('SAT — On Track') || d.includes('Grade 10'))
+    else if (d.includes('Math 1') || d.includes('SAT — On Track'))
       badge.classList.add('diff-grade7-9');
-    else if (d.includes('SAT — Building') || d.includes('Grade'))
-      badge.classList.add('diff-grade4-6');
-    else
+    else if (d.includes('Game'))
       badge.classList.add('diff-grade1-3');
+    else
+      badge.classList.add('diff-grade4-6');
   }
 
+  // Streak
   const ytdPct = extractPercent(user.ytd);
   document.getElementById('streakDisplay').innerHTML = '🔥 Streak ' + (ytdPct >= 90 ? Math.floor(ytdPct / 2) : 0);
+
+  // Quiz history for Jiho & Carter
+  if (user.firstName === 'Jiho' || user.firstName === 'Carter') {
+    loadQuizHistory(user.firstName);
+  }
 
   localStorage.setItem('royceai_lead', JSON.stringify({
     name: user.name,
@@ -350,6 +402,41 @@ function showDashboard(user) {
     phone: '000-000-0000',
     timestamp: new Date().toISOString()
   }));
+}
+
+async function loadQuizHistory(name) {
+  const el = document.getElementById('quizHistory');
+  const tbody = document.getElementById('quizHistoryBody');
+  el.style.display = 'block';
+  tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-secondary)">Loading...</td></tr>';
+
+  try {
+    const resp = await fetch(HISTORY_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ student: name }),
+    });
+    const data = await resp.json();
+    const sessions = data.sessions || [];
+    if (sessions.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-secondary)">No sessions recorded yet</td></tr>';
+      return;
+    }
+    tbody.innerHTML = sessions.slice(-10).reverse().map(s => {
+      const pct = s.percent || Math.round(s.correct / s.total * 100);
+      const passed = pct >= 80;
+      const topics = s.topics ? Object.keys(s.topics).slice(0,2).map(t => '<span class="quiz-topic">' + t.replace(/_/g,' ') + '</span>').join(' ') : '<span class="quiz-topic">general</span>';
+      return `<tr>
+        <td>${s.date || '—'}</td>
+        <td>${s.mode || 'quiz'}</td>
+        <td><strong>${s.correct}/${s.total}</strong> (${pct}%)</td>
+        <td>${topics}</td>
+        <td class="${passed ? 'quiz-pass' : 'quiz-fail'}">${passed ? '✅ Pass' : '❌ Review'}</td>
+      </tr>`;
+    }).join('');
+  } catch (e) {
+    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--red-diff)">Could not load history</td></tr>';
+  }
 }
 
 function logout() {
