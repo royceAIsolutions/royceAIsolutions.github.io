@@ -1,0 +1,16 @@
+/* Calorie Tracker */
+.cal-tracker{max-width:900px;margin:0 auto 16px;padding:0 20px}
+.cal-tracker .cal-card{background:var(--bg-card);border:1px solid rgba(255,107,53,0.2);border-radius:var(--radius);padding:20px;animation:score-in 0.5s ease}
+.cal-tracker .cal-card h3{font-size:0.9rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px;color:#ff6b35}
+.cal-tracker .cal-bar{margin:8px 0;height:6px;border-radius:3px;background:var(--bg-elevated);overflow:hidden}
+.cal-tracker .cal-bar .cal-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#ff6b35,#ffd000);transition:width 0.8s ease}
+.cal-tracker .cal-stats{display:flex;justify-content:space-between;font-size:0.8rem;color:var(--text-secondary);margin-bottom:10px}
+.cal-tracker .cal-stats strong{color:var(--text);font-size:1.1rem}
+.cal-tracker .cal-inputs{display:flex;gap:8px;margin-bottom:8px}
+.cal-tracker .cal-inputs input{flex:1;padding:8px 12px;border-radius:8px;background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:var(--font);font-size:0.8rem;outline:none;transition:border 0.2s}
+.cal-tracker .cal-inputs input:focus{border-color:#ff6b35;box-shadow:0 0 0 3px rgba(255,107,53,0.15)}
+.cal-tracker .cal-log-btn{background:linear-gradient(135deg,#ff6b35,#ff9a3c);color:white;border:none;padding:8px 16px;border-radius:8px;font-weight:700;cursor:pointer;transition:all 0.2s;font-size:0.8rem}
+.cal-tracker .cal-log-btn:hover{transform:scale(1.05)}
+.cal-tracker .cal-items{margin-top:8px}
+.cal-tracker .cal-item{display:flex;justify-content:space-between;padding:4px 0;font-size:0.78rem;border-bottom:1px solid rgba(255,255,255,0.04)}
+.cal-tracker .cal-item .cal-item-food{color:var(--text-secondary)}.cal-tracker .cal-item .cal-item-cal{color:#ff9a3c;font-weight:600}
