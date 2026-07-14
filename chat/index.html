@@ -91,7 +91,7 @@ nav{display:flex;align-items:center;padding:0 16px;height:56px;border-bottom:1px
 <div id="chatApp">
   <div class="chat-header">
     <h2 id="welcomeMsg">💬 Royce AI Assistant</h2>
-    <p>No account needed. Start learning immediately.</p>
+    <p id="chatSubtitle">No account needed. Start learning immediately.</p>
   </div>
   <div id="messages">
     <div class="msg bot">Hi! I'm Royce AI. How can I help you today?</div>
@@ -138,7 +138,7 @@ document.getElementById('nameGroup').classList.remove('invalid')
 leadInfo={name:n,email:n.replace(/\s+/g,'.')+'@c.royceai.com',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo)
 document.getElementById('leadSent').classList.add('active');setTimeout(showChat,800)}
 function showChat(){document.getElementById('leadOverlay').style.display='none';document.getElementById('chatApp').classList.add('active');document.getElementById('userInput').focus()
-if(quizMode)document.getElementById('welcomeMsg').innerHTML='Quiz Mode'}
+if(quizMode){document.getElementById('welcomeMsg').innerHTML='Quiz Mode';document.getElementById('chatSubtitle').style.display='none'}else{document.getElementById('chatSubtitle').style.display='block'}}
 function am(c,s){var m=document.getElementById('messages'),d=document.createElement('div');d.className='msg '+s;d.innerHTML=c;m.appendChild(d);m.scrollTop=m.scrollHeight}
 function st(s){var e=document.querySelector('.typing');if(e)e.remove();if(!s)return;var d=document.createElement('div');d.className='typing';d.innerHTML='<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';document.getElementById('messages').appendChild(d);document.getElementById('messages').scrollTop=document.getElementById('messages').scrollHeight}
 function sq(t){document.getElementById('userInput').value=t;sendMessage()}
