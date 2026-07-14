@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>High School Tutor — Royce AI Solutions</title>
-<meta name="description" content="Royce AI high school tutoring: Math, Science, English, Korean. On-demand AI tutoring for $100/month.">
+<meta name="description" content="Royce AI high school tutoring. Log in to access your AI tutor.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -34,7 +34,6 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
 @keyframes pulse-glow {
   0%, 100% { box-shadow: 0 0 0 1px var(--accent), 0 4px 20px var(--accent-glow); }
   50% { box-shadow: 0 0 0 1px var(--accent), 0 4px 40px var(--accent-glow), 0 0 60px var(--accent-glow); }
@@ -121,20 +120,25 @@ nav {
 }
 .nav-links .nav-cta:hover { background: var(--accent-hover); transform: scale(1.05); }
 
-.hero-sub {
-  padding: 120px 24px 60px;
-  max-width: var(--max-w);
+/* Login screen */
+.login-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 24px 60px;
+  max-width: 440px;
   margin: 0 auto;
   text-align: center;
 }
-.hero-sub h1 {
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  margin-bottom: 16px;
+.login-screen.hidden { display: none; }
+.login-screen h1 {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 8px;
 }
-.hero-sub h1 .gradient {
+.login-screen h1 .gradient {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
@@ -142,75 +146,106 @@ nav {
   -webkit-text-fill-color: transparent;
   animation: shimmer 3s ease-in-out infinite;
 }
-.hero-sub p {
+.login-screen p {
   color: var(--text-secondary);
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto 32px;
-  line-height: 1.7;
+  font-size: 0.9rem;
+  margin-bottom: 32px;
 }
-
-.section {
-  padding: 80px 24px;
-  max-width: var(--max-w);
-  margin: 0 auto;
-}
-
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.feature-card {
+.login-box {
+  width: 100%;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 28px;
-  transition: all var(--transition);
+  padding: 32px;
+  text-align: left;
 }
-.feature-card:hover {
-  border-color: rgba(102,126,234,0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-}
-.feature-card .icon { font-size: 1.6rem; margin-bottom: 12px; display: block; }
-.feature-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
-.feature-card p { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; }
-
-.pricing-card {
-  max-width: 400px;
-  margin: 60px auto 0;
-  background: var(--bg-card);
-  border: 1px solid rgba(102,126,234,0.2);
-  border-radius: var(--radius);
-  padding: 40px;
-  text-align: center;
-  background: linear-gradient(135deg, rgba(102,126,234,0.04) 0%, transparent 100%);
-  position: relative;
-}
-.pricing-card h3 {
-  font-size: 1rem;
+.login-box label {
+  display: block;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 8px;
 }
-.pricing-card .amount {
-  font-size: clamp(2.5rem, 5vw, 3.2rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  margin: 12px 0;
+.login-box input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  margin-bottom: 16px;
 }
-.pricing-card .desc {
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  margin-bottom: 28px;
-  line-height: 1.6;
+.login-box input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
 }
+.login-box .btn {
+  width: 100%;
+  justify-content: center;
+}
+.login-box .error {
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin-top: 12px;
+  display: none;
+}
+.login-box .error.show { display: block; }
+
+/* Dashboard */
+.dashboard { display: none; }
+.dashboard.show { display: block; }
+
+.dash-header {
+  padding: 100px 24px 40px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  text-align: center;
+}
+.dash-header h1 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.dash-header h1 .gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s ease-in-out infinite;
+}
+.dash-header p { color: var(--text-secondary); font-size: 0.9rem; }
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.dash-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+  transition: all var(--transition);
+}
+.dash-card:hover {
+  border-color: rgba(102,126,234,0.3);
+  transform: translateY(-2px);
+}
+.dash-card .icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+.dash-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+.dash-card p { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 16px; line-height: 1.6; }
 
 .btn {
   display: inline-flex;
@@ -223,6 +258,8 @@ nav {
   font-weight: 600;
   text-decoration: none;
   transition: all 0.2s;
+  border: none;
+  cursor: pointer;
 }
 .btn-primary {
   background: var(--accent);
@@ -233,7 +270,6 @@ nav {
 .btn-primary:hover {
   background: var(--accent-hover);
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 0 0 1px var(--accent-hover), 0 6px 30px var(--accent-glow);
 }
 .btn-secondary {
   background: var(--bg-elevated);
@@ -242,18 +278,22 @@ nav {
 }
 .btn-secondary:hover {
   background: var(--bg-card);
-  box-shadow: 0 0 0 1px var(--accent), 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 0 0 1px var(--accent);
   transform: translateY(-1px);
 }
-
-.cta-section {
-  text-align: center;
-  padding: 100px 24px;
-  max-width: var(--max-w);
-  margin: 0 auto;
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 0.85rem;
 }
-.cta-section h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 16px; }
-.cta-section p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 32px; }
+.btn-ghost {
+  background: none;
+  color: var(--text-secondary);
+  box-shadow: none;
+  font-weight: 400;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+}
+.btn-ghost:hover { color: var(--text); }
 
 footer {
   border-top: 1px solid var(--border);
@@ -275,8 +315,6 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
 
 @media (max-width: 640px) {
   .nav-links a:not(.nav-cta):not(.nav-show-mobile) { display: none; }
-  .hero-sub { padding: 100px 20px 40px; }
-  .section { padding: 60px 20px; }
   footer { flex-direction: column; text-align: center; }
 }
 </style>
@@ -296,63 +334,56 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
   </div>
 </nav>
 
-<div class="page">
-  <section class="hero-sub">
-    <h1>High School <span class="gradient">Tutoring</span></h1>
-    <p>On-demand AI tutoring for $100/month. Math, Science, English, Korean — your teen can text us anytime.</p>
-    <a href="/pay" class="btn btn-primary">Subscribe — $100/mo →</a>
-  </section>
+<!-- Login Screen -->
+<div class="login-screen" id="loginScreen">
+  <h1>Welcome, <span class="gradient">Tutor</span></h1>
+  <p>Enter your student ID to access tutoring.</p>
+  <div class="login-box">
+    <label for="studentId">Student ID</label>
+    <input type="text" id="studentId" placeholder="e.g. Jiho, Carter, Duman" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <button class="btn btn-primary" onclick="login()">Unlock Tutoring →</button>
+    <div class="error" id="loginError">ID not found. Try again or <a href="/chat" style="color:var(--accent)">chat with us</a> to get set up.</div>
+  </div>
+</div>
 
-  <section class="section">
-    <div class="features">
-      <div class="feature-card">
-        <span class="icon">📐</span>
-        <h3>Math</h3>
-        <p>Algebra, Geometry, Precalculus, Calculus, Statistics. Step-by-step explanations and practice problems.</p>
-      </div>
-      <div class="feature-card">
-        <span class="icon">🔬</span>
-        <h3>Science</h3>
-        <p>Biology, Chemistry, Physics. Concept breakdowns, lab report help, and exam prep.</p>
-      </div>
-      <div class="feature-card">
-        <span class="icon">📝</span>
-        <h3>English</h3>
-        <p>Essay writing, grammar, reading comprehension, and literature analysis.</p>
-      </div>
-      <div class="feature-card">
-        <span class="icon">🇰🇷</span>
-        <h3>Korean</h3>
-        <p>Reading, writing, speaking practice for heritage speakers and new learners alike.</p>
-      </div>
-      <div class="feature-card">
-        <span class="icon">💬</span>
-        <h3>Anytime Access</h3>
-        <p>Text the chat whenever — no appointments needed. Responses in seconds, not hours.</p>
-      </div>
-      <div class="feature-card">
-        <span class="icon">📊</span>
-        <h3>Progress Tracking</h3>
-        <p>See what your teen is working on and how they're improving over time.</p>
-      </div>
+<!-- Dashboard -->
+<div class="dashboard" id="dashboard">
+  <div class="dash-header">
+    <h1>Welcome back, <span class="gradient" id="studentName">Student</span>!</h1>
+    <p id="studentInfo">What would you like to study today?</p>
+  </div>
+  <div class="dash-grid">
+    <div class="dash-card">
+      <span class="icon">📐</span>
+      <h3>Math</h3>
+      <p>Algebra, Geometry, Precalculus, Calculus. Step-by-step help and practice problems.</p>
+      <a href="/chat" class="btn btn-primary btn-sm">Start Math →</a>
     </div>
-
-    <div class="pricing-card">
-      <h3>Monthly Subscription</h3>
-      <div class="amount">$100</div>
-      <div class="desc">
-        All subjects included. Unlimited questions. Cancel anytime.<br>
-        No long-term contracts.
-      </div>
-      <a href="/pay" class="btn btn-primary">Subscribe →</a>
+    <div class="dash-card">
+      <span class="icon">🔬</span>
+      <h3>Science</h3>
+      <p>Biology, Chemistry, Physics. Concept breakdowns and exam prep.</p>
+      <a href="/chat" class="btn btn-primary btn-sm">Start Science →</a>
     </div>
-  </section>
-
-  <section class="cta-section">
-    <h2>Questions about tutoring?</h2>
-    <p>Chat with us and we'll answer right away.</p>
-    <a href="/chat" class="btn btn-primary">💬 Chat with us</a>
-  </section>
+    <div class="dash-card">
+      <span class="icon">📝</span>
+      <h3>English</h3>
+      <p>Essay writing, grammar, reading comprehension, literature analysis.</p>
+      <a href="/chat" class="btn btn-primary btn-sm">Start English →</a>
+    </div>
+    <div class="dash-card">
+      <span class="icon">🇰🇷</span>
+      <h3>Korean</h3>
+      <p>Reading, writing, speaking practice. All levels welcome.</p>
+      <a href="/chat" class="btn btn-primary btn-sm">Start Korean →</a>
+    </div>
+    <div class="dash-card">
+      <span class="icon">📊</span>
+      <h3>Progress</h3>
+      <p>Track your scores, see what you've mastered, and what needs work.</p>
+      <button class="btn btn-secondary btn-sm" onclick="logout()">Logout</button>
+    </div>
+  </div>
 </div>
 
 <footer>
@@ -366,5 +397,70 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
   <div class="copy">RoyceAI Solutions. Irvine, CA</div>
 </footer>
 
+<script>
+// ===== AUTHORIZED USERS LIST =====
+// Add or remove student IDs here. Case-insensitive.
+const AUTHORIZED_USERS = [
+  { id: "jiho", name: "Jiho", subjects: "Math" },
+  { id: "carter", name: "Carter", subjects: "Math, Basketball" },
+  { id: "duman", name: "Duman", subjects: "English" },
+  { id: "paxton", name: "Paxton", subjects: "Reading" },
+  { id: "demo", name: "Demo Student", subjects: "All subjects" }
+];
+
+// ===== LOGIN =====
+function login() {
+  const input = document.getElementById('studentId');
+  const error = document.getElementById('loginError');
+  const raw = input.value.trim().toLowerCase();
+  
+  if (!raw) {
+    error.textContent = 'Please enter your student ID.';
+    error.classList.add('show');
+    return;
+  }
+
+  const user = AUTHORIZED_USERS.find(u => u.id === raw);
+  if (!user) {
+    error.textContent = 'ID not found. Try again or chat with us to get set up.';
+    error.classList.add('show');
+    return;
+  }
+
+  // Success — store session
+  error.classList.remove('show');
+  localStorage.setItem('tutor_user', JSON.stringify(user));
+  showDashboard(user);
+}
+
+// ===== SHOW DASHBOARD =====
+function showDashboard(user) {
+  document.getElementById('loginScreen').classList.add('hidden');
+  document.getElementById('dashboard').classList.add('show');
+  document.getElementById('studentName').textContent = user.name;
+  document.getElementById('studentInfo').textContent = user.subjects + ' — what would you like to study?';
+}
+
+// ===== LOGOUT =====
+function logout() {
+  localStorage.removeItem('tutor_user');
+  document.getElementById('dashboard').classList.remove('show');
+  document.getElementById('loginScreen').classList.remove('hidden');
+  document.getElementById('studentId').value = '';
+}
+
+// ===== AUTO-LOGIN ON LOAD =====
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('tutor_user');
+  if (saved) {
+    try {
+      const user = JSON.parse(saved);
+      showDashboard(user);
+    } catch {
+      localStorage.removeItem('tutor_user');
+    }
+  }
+});
+</script>
 </body>
 </html>
