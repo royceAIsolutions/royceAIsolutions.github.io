@@ -142,7 +142,7 @@ if(quizMode)document.getElementById('welcomeMsg').innerHTML='Quiz Mode'}
 function am(c,s){var m=document.getElementById('messages'),d=document.createElement('div');d.className='msg '+s;d.innerHTML=c;m.appendChild(d);m.scrollTop=m.scrollHeight}
 function st(s){var e=document.querySelector('.typing');if(e)e.remove();if(!s)return;var d=document.createElement('div');d.className='typing';d.innerHTML='<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';document.getElementById('messages').appendChild(d);document.getElementById('messages').scrollTop=document.getElementById('messages').scrollHeight}
 function sq(t){document.getElementById('userInput').value=t;sendMessage()}
-function fr(t){return t.replace(/### (.+)/g,'<b>$1</b><br>').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')}
+function fr(t){if(quizMode)t=t.replace(/^[A-D]\)\s*[^\n]*\n?/gm,'').replace(/^Please select your answer\.?\s*\n?/im,'').trim();return t.replace(/### (.+)/g,'<b>$1</b><br>').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')}
 function renderAnswers(reply,container){
   if(!reply||!quizMode)return;
   var opts=reply.match(/[A-D]\)\s*[^\n]+/g);
