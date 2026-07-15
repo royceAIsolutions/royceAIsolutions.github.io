@@ -369,13 +369,22 @@ function login() {
   var fi = document.getElementById('studentFirstName'), li = document.getElementById('studentLastName'), er = document.getElementById('loginError');
   var fn = fi.value.trim(), ln = li.value.trim(), id = (fn + ' ' + ln).toLowerCase();
   if (!fn) { er.textContent = 'Enter your first name.'; er.classList.add('show'); return; }
-  if (!usersData.length) { er.textContent = 'Loading student data... try again in a moment.'; er.classList.add('show'); return; }
-  var u = usersData.find(function(x) { return x.id === id; });
-  if (!u) { er.textContent = 'Name not found. Try again or chat with us.'; er.classList.add('show'); return; }
-  er.classList.remove('show');
-  localStorage.setItem('tutor_user', JSON.stringify(u));
-  currentUser = u;
-  showDashboard(u);
+  function tryLogin() {
+    if (!usersData.length) {
+      er.textContent = 'Loading...';
+      er.classList.add('show');
+      fetchUsers(true);
+      setTimeout(tryLogin, 500);
+      return;
+    }
+    var u = usersData.find(function(x) { return x.id === id; });
+    if (!u) { er.textContent = 'Name not found. Check your spelling.'; er.classList.add('show'); return; }
+    er.classList.remove('show');
+    localStorage.setItem('tutor_user', JSON.stringify(u));
+    currentUser = u;
+    showDashboard(u);
+  }
+  tryLogin();
 }
 
 function showDashboard(u) {
