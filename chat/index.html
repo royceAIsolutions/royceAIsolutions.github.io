@@ -402,10 +402,6 @@ async function sendQuizMessage(text) {
     addMessage(formatQuizReply(reply), 'bot');
     renderAnswerButtons(reply);
     checkSaveScore(reply);
-    // Auto-advance for correct/incorrect (skip on final score)
-    if (reply.match(/Correct|Incorrect/i) && !reply.match(/Quiz complete|Final score/i)) {
-      setTimeout(function() { sendQuizMessage('next'); }, 1200);
-    }
   } catch(e) {
     showTyping(false);
     addMessage('Error. Try again.', 'bot');
