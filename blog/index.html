@@ -138,18 +138,49 @@ nav {
 }
 .hero-sub p { color: var(--text-secondary); font-size: 1.1rem; }
 
-.blog-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+.blog-categories {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 24px 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  align-items: start;
 }
+.blog-category {}
+.blog-category h3 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.blog-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: all var(--transition);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin-bottom: 12px;
+  max-width: 100%;
+}
+.blog-card:hover {
+  border-color: rgba(102,126,234,0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.blog-card .tag { color: var(--accent); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; display: block; }
+.blog-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; border: none; padding: 0; letter-spacing: normal; text-transform: none; color: var(--text); }
+.blog-card p { color: var(--text-secondary); font-size: 0.8rem; line-height: 1.5; }
+.blog-card .date { color: var(--text-secondary); font-size: 0.75rem; margin-top: 8px; display: block; }
 
 .blog-card {
-  max-width: 600px;
-  margin: 0 auto;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -171,13 +202,62 @@ nav {
 
 .<h2 class="category-header">🔒 Cybersecurity</h2>
 <p class="category-desc">Security news, best practices, and how to protect your business from cyber threats.</p>
-<div class="blog-grid">
-  <a class="blog-card" href="/chat">
-    <span class="tag">Security</span>
-    <h3>Cybersecurity Basics for Small Business</h3>
-    <p>Essential security practices every small business should follow — phishing, passwords, backups, and more.</p>
-    <span class="date">Coming soon</span>
-  </a>
+<div class="blog-categories">
+  <div class="blog-category">
+    <h3>AI Solutions</h3>
+    <a class="blog-card" href="/business">
+      <h3>Why Every Dealership Needs an AI Receptionist</h3>
+      <p>How AI call answering is transforming auto dealership service departments and sales floors.</p>
+      <span class="date">July 2026</span>
+    </a>
+    <a class="blog-card" href="/chat">
+      <h3>AI for Small Business: Where to Start</h3>
+      <p>A practical guide for small business owners looking to implement AI without breaking the bank.</p>
+      <span class="date">June 2026</span>
+    </a>
+    <a class="blog-card" href="/chat">
+      <h3>Building a Chatbot That Actually Sells</h3>
+      <p>Lessons learned from building RoyceAI's sales chatbot — qualification, pricing, and close rates.</p>
+      <span class="date">June 2026</span>
+    </a>
+  </div>
+  <div class="blog-category">
+    <h3>Food & Dining</h3>
+    <a class="blog-card" href="/blog/best-korean-oc.html">
+      <h3>Best Korean Restaurants in Orange County</h3>
+      <p>Baekjeong, Gangnam Station, Jinsol Gukbap, and more — OC's best Korean BBQ, soups, and homestyle spots ranked.</p>
+      <span class="date">July 2026</span>
+    </a>
+  </div>
+  <div class="blog-category">
+    <h3>Gas Prices</h3>
+    <a class="blog-card" href="/blog/cheapest-gas-oc.html">
+      <h3>Where to Find the Cheapest Gas in Orange County</h3>
+      <p>Berri Brothers, Costco, and tips — where to save 20-30¢ a gallon in OC. Updated weekly.</p>
+      <span class="date">July 2026</span>
+    </a>
+  </div>
+  <div class="blog-category">
+    <h3>Markets</h3>
+    <a class="blog-card" href="/chat">
+      <h3>Best Leveraged ETFs for Today's Market</h3>
+      <p>UPRO, TQQQ, SOXL, FAS — which leveraged ETFs align with the current market regime.</p>
+      <span class="date">July 2026</span>
+    </a>
+    <a class="blog-card" href="/chat">
+      <h3>Reading the Regime: VIX, SPY MA200, and Credit Spreads</h3>
+      <p>How to use market regime indicators (Green/Yellow/Red) to make smarter trades.</p>
+      <span class="date">June 2026</span>
+    </a>
+  </div>
+  <div class="blog-category">
+    <h3>Security</h3>
+    <a class="blog-card" href="/chat">
+      <h3>Cybersecurity Basics for Small Business</h3>
+      <p>Essential security practices every small business should follow — phishing, passwords, backups, and more.</p>
+      <span class="date">Coming soon</span>
+    </a>
+  </div>
 </div>
 
 cta-section {
