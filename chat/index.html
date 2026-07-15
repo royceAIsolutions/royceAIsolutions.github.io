@@ -207,8 +207,15 @@ const saved = localStorage.getItem('royceai_lead');
 if (saved) {
   try {
     leadInfo = JSON.parse(saved);
-    showChat();
-  } catch(e) {}
+    // Only auto-submit if lead has real contact info (not a tutor dashboard stub)
+    if (leadInfo.email && leadInfo.email.indexOf('@') > 0 && leadInfo.phone && leadInfo.phone !== '000-000-0000') {
+      showChat();
+    } else {
+      // Stale tutor lead - clear it
+      localStorage.removeItem('royceai_lead');
+      leadInfo = null;
+    }
+  } catch(e) { localStorage.removeItem('royceai_lead'); leadInfo = null; }
 }
 
 function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
