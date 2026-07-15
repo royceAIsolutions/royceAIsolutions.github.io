@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RoyceAI Tutor — Your AI Learning Dashboard</title>
 <link rel="stylesheet" href="/tutor/cal.css">
-<link rel="stylesheet" href="/tutor/cal.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -13,8 +12,7 @@
 @keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 @keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
 @keyframes score-in{from{opacity:0;transform:translateY(10px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
-@keyframes btnPop{0%{transform:scale(1)}40%{transform:scale(1.08)}60%{transform:scale(0.96)}100%{transform:scale(1)}}
-@keyframes btnShine{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.4}}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -47,6 +45,10 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-i
 .dash-actions{position:fixed;top:58px;right:20px;z-index:99;display:flex;gap:8px}
 .dash-actions .logout-btn{padding:6px 14px;border-radius:8px;background:rgba(239,68,68,0.12);color:#ef4444;border:1px solid rgba(239,68,68,0.25);font-family:var(--font);font-size:0.75rem;font-weight:600;cursor:pointer;transition:all 0.2s;text-decoration:none;display:flex;align-items:center;gap:4px}
 .dash-actions .logout-btn:hover{background:rgba(239,68,68,0.2);transform:scale(1.04)}
+.freshness{position:fixed;bottom:12px;right:16px;font-size:0.6rem;color:var(--text-secondary);background:var(--bg-card);padding:4px 10px;border-radius:6px;border:1px solid var(--border);z-index:50;animation:blink 2s ease-in-out infinite}
+.freshness.ok{color:var(--green);animation:none}
+.freshness.stale{color:var(--gold);animation:none}
+.freshness.error{color:var(--red-diff);animation:none}
 .scoreboard{max-width:900px;margin:0 auto;padding:0 20px 16px}
 .scoreboard-inner{background:linear-gradient(135deg,rgba(102,126,234,0.04) 0%,transparent 100%);border:1px solid rgba(102,126,234,0.2);border-radius:var(--radius);padding:20px;animation:score-in 0.5s ease}
 .scoreboard-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.06)}
@@ -120,6 +122,7 @@ footer .copy{color:var(--text-secondary);font-size:0.75rem}
     <h1>Welcome, <span class="gradient" id="studentName">Student</span></h1>
     <p id="studentInfo">Your personalized learning dashboard</p>
   </div>
+  <div class="freshness" id="freshnessBadge">⟳ loading...</div>
   <div class="scoreboard">
     <div class="scoreboard-inner">
       <div class="scoreboard-header">
@@ -137,31 +140,17 @@ footer .copy{color:var(--text-secondary);font-size:0.75rem}
       </div>
     </div>
   </div>
-  <div class="cal-tracker" id="calTracker" style="display:none"><div class="cal-card"><h3>🔥 Calorie Tracker</h3><div class="cal-stats"><span>Consumed: <strong id="calConsumed">0</strong> cal</span><span>Goal: <strong>4,000</strong> cal</span></div><div class="cal-bar"><div class="cal-fill" id="calFill" style="width:0%"></div></div><div class="cal-inputs"><input type="text" id="calFood" placeholder="Food (e.g. Chicken Rice Bowl)"><input type="number" id="calAmount" placeholder="Calories" min="1" max="5000"><button class="cal-log-btn" onclick="logCalorie()">+ Log</button></div><div class="cal-items" id="calItems"></div><div class="cal-items" id="calItems"><p style="color:var(--text-secondary);font-size:0.75rem;text-align:center">No food logged today</p></div></div></div>
-
-  <div class="cal-tracker" id="calTracker" style="display:none">
+  <div class="cal-tracker" id="calTracker" style="display:none"><div class="cal-card"><h3>🔥 Calorie Tracker</h3><div class="cal-stats"><span>Consumed: <strong id="calConsumed">0</strong> cal</span><span>Goal: <strong>4,000</strong> cal</span></div><div class="cal-bar"><div class="cal-fill" id="calFill" style="width:0%"></div></div><div class="cal-inputs"><input type="text" id="calFood" placeholder="Food (e.g. Chicken Rice Bowl)"><input type="number" id="calAmount" placeholder="Calories" min="1" max="5000"><button class="cal-log-btn" onclick="logCalorie()">+ Log</button></div><div class="cal-items" id="calItems"></div></div></div>
+  <div class="cal-tracker" id="calTracker2" style="display:none">
     <div class="cal-card">
       <h3>🔥 Calorie Tracker</h3>
-      <div class="cal-stats">
-        <span>Consumed: <strong id="calConsumed">0</strong> / <strong>4,000</strong> cal</span>
-        <span id="calGap" style="color:var(--gold)">Need <strong>4,000</strong> more</span>
-      </div>
+      <div class="cal-stats"><span>Consumed: <strong id="calConsumed">0</strong> / <strong>4,000</strong> cal</span><span id="calGap" style="color:var(--gold)">Need <strong>4,000</strong> more</span></div>
       <div class="cal-bar"><div class="cal-fill" id="calFill" style="width:0%"></div></div>
-      <div class="cal-inputs">
-        <input type="text" id="calFood" placeholder="Food (e.g. Chicken Rice Bowl)">
-        <input type="number" id="calAmount" placeholder="Calories" min="1" max="5000">
-        <button class="cal-log-btn" onclick="logCalorie()">+ Log</button>
-      </div>
-      <div class="cal-items" id="calItems">
-        <p style="color:var(--text-secondary);font-size:0.75rem;text-align:center">No food logged today</p>
-      </div>
-      <div id="calSuggestions" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06)">
-        <p style="font-size:0.7rem;color:var(--text-secondary);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em">💡 To close the gap, try:</p>
-        <div id="calSuggestList" style="display:flex;flex-wrap:wrap;gap:4px"></div>
-      </div>
+      <div class="cal-inputs"><input type="text" id="calFood" placeholder="Food (e.g. Chicken Rice Bowl)"><input type="number" id="calAmount" placeholder="Calories" min="1" max="5000"><button class="cal-log-btn" onclick="logCalorie()">+ Log</button></div>
+      <div class="cal-items" id="calItems"></div>
+      <div id="calSuggestions" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06)"><p style="font-size:0.7rem;color:var(--text-secondary);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em">💡 To close the gap, try:</p><div id="calSuggestList" style="display:flex;flex-wrap:wrap;gap:4px"></div></div>
     </div>
   </div>
-
 <div class="quiz-history" id="quizHistory" style="display:none">
     <h3>📋 <span>Quiz History</span> — Last 10</h3>
     <table class="quiz-table"><thead><tr><th>Date</th><th>Mode</th><th>Score</th><th>Topics</th><th>Result</th></tr></thead><tbody id="quizHistoryBody"></tbody></table>
@@ -178,105 +167,244 @@ footer .copy{color:var(--text-secondary);font-size:0.75rem}
 </div>
 <footer><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
 <script>
-const U='https://raw.githubusercontent.com/royceAIsolutions/royceAIsolutions.github.io/main/tutor/users.json';const H='https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
-var USERS=[{"first":"Jiho","last":"Pak","id":"jiho pak","name":"Jiho Pak","subjects":"Math","active":true,"today":"88/100 (88%)","mtd":"365/392 (93%)","ytd":"365/392 (93%)","topics":"Combined Session, Exponents Set5","difficulty":"🔥 Math 3","focus":"Radicals, Quadratics, Polynomials","plan":"100 q/day, 80% pass","cards":"math"},{"first":"Carter","last":"Koh","id":"carter koh","name":"Carter Koh","subjects":"Math / SAT / Basketball","active":true,"today":"64/80 (80%)","mtd":"64/80 (80%)","ytd":"64/80 (80%)","topics":"SAT Prep, Calorie Tracking","difficulty":"⚡ SAT — On Track","focus":"SAT prep + 4K cal daily + Bench Builder","plan":"4K cal/day, SAT readiness, basketball","cards":"sat,math"},{"first":"Angel","last":"Koh","id":"angel koh","name":"Angel Koh","subjects":"RN Training","active":true,"today":"—","mtd":"—","ytd":"—","topics":"NCLEX-RN Training","difficulty":"🩺 RN Training — Active","focus":"NCLEX-RN, Pharmacology, Anatomy","plan":"Exam prep, daily health","cards":"rn"},{"first":"Paxton","last":"Koh","id":"paxton koh","name":"Paxton Koh","subjects":"Reading Games","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"🎮 Grade 1 — Game Mode","focus":"Letter Recognition, Phonics, Sight Words","plan":"Daily 15min reading games","cards":"reading"},{"first":"Josh","last":"Lucero","id":"josh lucero","name":"Josh Lucero","subjects":"Series 66, 7","active":true,"today":"27/30 (90%)","mtd":"27/30 (90%)","ytd":"27/30 (90%)","topics":"Series 66, Series 7","difficulty":"🔥 Series 66/7 — Advanced (90%)","focus":"Series 66 (Uniform Combined), Series 7","plan":"80% pass target","cards":"series66,series7"},{"first":"Mason","last":"Min","id":"mason min","name":"Mason Min","subjects":"Baby Play","active":true,"today":"—","mtd":"—","ytd":"—","topics":"Sensory Play","difficulty":"👶 Baby Play — Sensory","focus":"Sensory, Colors, Sounds","plan":"Daily sensory play","cards":"baby"},{"first":"Pearl","last":"Johnson","id":"pearl johnson","name":"Pearl Johnson","subjects":"Preschool Play","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"🎨 Preschool — Play Mode","focus":"Colors, Shapes, Letters, Numbers","plan":"Daily 15min fun learning","cards":"baby"},{"first":"Ruby","last":"Johnson","id":"ruby johnson","name":"Ruby Johnson","subjects":"Reading / Math","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"📚 Grade 2 — Foundations","focus":"Reading Comprehension, Addition, Subtraction","plan":"Daily 20min reading & math","cards":"reading"}];
-(function(){document.getElementById('loginSubtitle').textContent='Enter your name to access your personalized learning dashboard.';var s=localStorage.getItem('tutor_user');if(s){try{var u=JSON.parse(s);var m=USERS.find(function(x){return x.id===u.id});if(m)D(m);else localStorage.removeItem('tutor_user')}catch(e){localStorage.removeItem('tutor_user')}}})();
+const USERS_URL = 'https://raw.githubusercontent.com/royceAIsolutions/royceAIsolutions.github.io/main/tutor/users.json';
+const HIST_URL = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
+let usersData = [];
+let currentUser = null;
+let refreshTimer = null;
+let lastFetchTime = null;
 
-function login(){var fi=document.getElementById('studentFirstName'),li=document.getElementById('studentLastName'),er=document.getElementById('loginError');var fn=fi.value.trim(),ln=li.value.trim(),id=(fn+' '+ln).toLowerCase();if(!fn){er.textContent='Enter your first name.';er.classList.add('show');return}var u=USERS.find(function(x){return x.id===id});if(!u){er.textContent='Name not found. Try again or chat with us.';er.classList.add('show');return}er.classList.remove('show');localStorage.setItem('tutor_user',JSON.stringify(u));D(u)}
-function e(s){try{var m=s.match(/\((\d+)%\)/);if(m)return parseInt(m[1]);m=s.match(/(\d+)\/(\d+)/);if(m)return Math.round(parseInt(m[1])/parseInt(m[2])*100)}catch(e){}return 0}
-function updateScoreboard(u){
-  if(u.focus)document.getElementById('focusDisplay').textContent=u.focus;
-  if(u.today&&u.today!=='—'){var m=u.today.match(/(\d+)\/(\d+)/);var p=e(u.today);if(m){document.getElementById('scoreToday').textContent=m[0]+' ('+p+'%)';document.getElementById('barToday').style.width=Math.min(p,100)+'%';document.getElementById('scoreTodaySub').textContent=p+'%'}else{document.getElementById('scoreToday').textContent=u.today;document.getElementById('barToday').style.width='0%';document.getElementById('scoreTodaySub').textContent=u.today}}
-  if(u.mtd&&u.mtd!=='—'){var m=u.mtd.match(/(\d+)\/(\d+)/);var p=e(u.mtd);if(m){document.getElementById('scoreMTD').textContent=m[0]+' ('+p+'%)';document.getElementById('barMTD').style.width=Math.min(p,100)+'%';document.getElementById('scoreMTDSub').textContent=p+'%'}else{document.getElementById('scoreMTD').textContent=u.mtd;document.getElementById('barMTD').style.width='0%';document.getElementById('scoreMTDSub').textContent=u.mtd}}
-  if(u.ytd&&u.ytd!=='—'){var m=u.ytd.match(/(\d+)\/(\d+)/);var p=e(u.ytd);if(m){document.getElementById('scoreYTD').textContent=m[0]+' ('+p+'%)';document.getElementById('barYTD').style.width=Math.min(p,100)+'%';document.getElementById('scoreYTDSub').textContent=p+'%'}else{document.getElementById('scoreYTD').textContent=u.ytd;document.getElementById('barYTD').style.width='0%';document.getElementById('scoreYTDSub').textContent=u.ytd}}
-  if(u.topics){document.getElementById('topicsList').innerHTML=u.topics.split(',').map(function(t){return '<span class="tag">'+t.trim()+'</span>'}).join(' ')}
-
+// === FETCH USERS FROM GITHUB (single source of truth) ===
+async function fetchUsers(showError) {
+  try {
+    var r = await fetch(USERS_URL + '?_=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    var data = await r.json();
+    if (!data || !data.length) throw new Error('Empty data');
+    usersData = data;
+    lastFetchTime = Date.now();
+    var badge = document.getElementById('freshnessBadge');
+    if (badge) { badge.textContent = '✓ Live ' + new Date().toLocaleTimeString(); badge.className = 'freshness ok'; }
+    // Update current user's stats if logged in
+    if (currentUser) {
+      var fresh = usersData.find(function(x) { return x.id === currentUser.id; });
+      if (fresh) {
+        currentUser = fresh;
+        renderStats(currentUser);
+        updateButtons(currentUser);
+      }
+    }
+    // Cache in localStorage
+    try { localStorage.setItem('tutor_users_cache', JSON.stringify({ts: Date.now(), data: data})); } catch(e) {}
+  } catch (e) {
+    // Try cache
+    try {
+      var cached = JSON.parse(localStorage.getItem('tutor_users_cache'));
+      if (cached && cached.data && cached.data.length) {
+        usersData = cached.data;
+        if (currentUser) {
+          var fresh = usersData.find(function(x) { return x.id === currentUser.id; });
+          if (fresh) { currentUser = fresh; renderStats(currentUser); updateButtons(currentUser); }
+        }
+        var age = Math.round((Date.now() - cached.ts) / 1000);
+        var badge = document.getElementById('freshnessBadge');
+        if (badge) { badge.textContent = '⚠ Cached ' + age + 's ago'; badge.className = 'freshness stale'; }
+        return;
+      }
+    } catch(e2) {}
+    if (showError) {
+      var badge = document.getElementById('freshnessBadge');
+      if (badge) { badge.textContent = '✗ Offline'; badge.className = 'freshness error'; }
+    }
+  }
 }
 
-function D(u){
-  document.getElementById('loginScreen').classList.add('hidden');document.getElementById('dashboard').classList.add('show');
-  document.getElementById('studentName').textContent=u.name;document.getElementById('studentInfo').textContent=u.subjects+' — '+u.plan;
-  var k=u.cards?u.cards.split(','):['math'];document.querySelectorAll('.dash-card').forEach(function(c){c.style.display=k.indexOf(c.dataset.subject)>=0?'block':'none'});
-  // Live refresh stats from GitHub
-  fetch('https://raw.githubusercontent.com/royceAIsolutions/royceAIsolutions.github.io/main/tutor/users.json?'+Date.now()).then(function(r){return r.json()}).then(function(d){var f=d.find(function(x){return x.id===u.id});if(f){u.today=f.today;u.mtd=f.mtd;u.ytd=f.ytd;u.difficulty=f.difficulty;u.topics=f.topics;u.focus=f.focus;if(window.updateScoreboard)updateScoreboard(u)}}).catch(function(){});
-  // Dynamic buttons based on today's score
-  document.querySelectorAll('.dash-card').forEach(function(card){
-    if(card.style.display==='block'){
-      var btn=card.querySelector('.btn-dynamic');
-      if(!btn)return;
-      var subj=card.dataset.subject;
-      if(subj==='reading'||subj==='baby'){return}
-  // Calorie tracker for Carter
-  if(u.first==='Carter'){
-    var ct=document.getElementById('calTracker');
-    if(ct)ct.style.display='block';
-    loadCalories();
-  }else{
-    var ct=document.getElementById('calTracker');
-    if(ct)ct.style.display='none';
-  }
+// === STATS PARSING ===
+function extractPct(s) {
+  try {
+    var m = s.match(/\((\d+)%\)/);
+    if (m) return parseInt(m[1]);
+    m = s.match(/(\d+)\/(\d+)/);
+    if (m) return Math.round(parseInt(m[1]) / parseInt(m[2]) * 100);
+  } catch(e) {}
+  return 0;
+}
 
-      var tp=e(u.today);
-      var yp=e(u.ytd);
-      if(tp>=90){btn.innerHTML='⚡ On Fire!';btn.className='btn btn-dynamic btn-fire btn-sm'}
-      else if(tp>=80){btn.innerHTML='✅ Continue';btn.className='btn btn-dynamic btn-continue btn-sm'}
-      else if(tp>0){btn.innerHTML='📚 Review';btn.className='btn btn-dynamic btn-review btn-sm'}
-      else if(yp>=90){btn.innerHTML='🔥 Start Quiz';btn.className='btn btn-dynamic btn-hot btn-sm'}
-      else{btn.innerHTML='⚡ Start Quiz';btn.className='btn btn-dynamic btn-primary btn-sm'}
+// === RENDER SCOREBOARD ===
+function renderStats(u) {
+  if (!u) return;
+  if (u.focus) document.getElementById('focusDisplay').textContent = u.focus;
+  ['today','mtd','ytd'].forEach(function(key) {
+    var val = u[key];
+    var el = document.getElementById('score' + key.charAt(0).toUpperCase() + key.slice(1));
+    var bar = document.getElementById('bar' + key.charAt(0).toUpperCase() + key.slice(1));
+    var sub = document.getElementById('score' + key.charAt(0).toUpperCase() + key.slice(1) + 'Sub');
+    if (val && val !== '—') {
+      var m = val.match(/(\d+)\/(\d+)/);
+      var p = extractPct(val);
+      if (m) { el.textContent = m[0] + ' (' + p + '%)'; bar.style.width = Math.min(p, 100) + '%'; sub.textContent = p + '%'; }
+      else { el.textContent = val; bar.style.width = '0%'; sub.textContent = val; }
+    } else {
+      el.textContent = '—'; bar.style.width = '0%'; sub.textContent = '—';
     }
   });
-  updateScoreboard(u);
-
-  if(u.first==='Jiho'||u.first==='Carter'||u.first==='Josh')Q(u.first);
-  localStorage.setItem('royceai_lead',JSON.stringify({name:u.name,email:u.name.toLowerCase().replace(/\s+/g,'.')+'@student.tutor',phone:'000-000-0000',timestamp:new Date().toISOString()}))
+  if (u.topics) {
+    document.getElementById('topicsList').innerHTML = u.topics.split(',').map(function(t) { return '<span class="tag">' + t.trim() + '</span>'; }).join(' ');
+  }
+  if (u.difficulty) {
+    var db = document.getElementById('difficultyBadge');
+    db.textContent = u.difficulty; db.style.display = 'inline-block';
+  }
 }
-var ds=document.createElement('style');ds.textContent='.btn-dynamic{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:12px;font-family:Inter,system-ui,sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none;transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);border:none;cursor:pointer;position:relative;overflow:hidden;letter-spacing:0.02em}.btn-dynamic::before{content:"";position:absolute;inset:0;border-radius:12px;opacity:0;transition:opacity 0.3s;background:linear-gradient(135deg,rgba(255,255,255,0.15) 0%,transparent 50%);pointer-events:none}.btn-dynamic:hover::before{opacity:1}.btn-dynamic:hover{animation:btnPop 0.4s cubic-bezier(0.34,1.56,0.64,1);transform:translateY(-3px)}.btn-dynamic:active{transform:translateY(0) scale(0.96)}.btn-primary{background:linear-gradient(135deg,#667eea,#764ba2,#667eea);background-size:200% 200%;color:white;box-shadow:0 4px 15px rgba(102,126,234,0.3),0 0 0 1px rgba(102,126,234,0.3)}.btn-primary:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(102,126,234,0.5),0 0 30px rgba(102,126,234,0.2)}.btn-fire{background:linear-gradient(135deg,#ef4444,#f97316,#ef4444);background-size:200% 200%;color:white;box-shadow:0 4px 15px rgba(239,68,68,0.3),0 0 0 1px rgba(239,68,68,0.3)}.btn-fire:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(239,68,68,0.5),0 0 30px rgba(239,68,68,0.2)}.btn-continue{background:linear-gradient(135deg,#22c55e,#4ade80,#22c55e);background-size:200% 200%;color:white;box-shadow:0 4px 15px rgba(34,197,94,0.3),0 0 0 1px rgba(34,197,94,0.3)}.btn-continue:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(34,197,94,0.5),0 0 30px rgba(34,197,94,0.2)}.btn-review{background:linear-gradient(135deg,#f59e0b,#eab308,#f59e0b);background-size:200% 200%;color:#0a0a0a;box-shadow:0 4px 15px rgba(245,158,11,0.3),0 0 0 1px rgba(245,158,11,0.3)}.btn-review:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(245,158,11,0.5),0 0 30px rgba(245,158,11,0.2)}.btn-hot{background:linear-gradient(135deg,#ef4444,#667eea,#ef4444);background-size:200% 200%;color:white;box-shadow:0 4px 15px rgba(239,68,68,0.3),0 0 0 1px rgba(239,68,68,0.3)}.btn-hot:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(239,68,68,0.5),0 0 30px rgba(239,68,68,0.2)}.btn-game{background:linear-gradient(135deg,#eab308,#facc15,#eab308);background-size:200% 200%;color:#0a0a0a;font-weight:800;box-shadow:0 4px 15px rgba(234,179,8,0.4),0 0 0 1px rgba(234,179,8,0.3)}.btn-game:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(234,179,8,0.6),0 0 30px rgba(234,179,8,0.2)}.btn-baby{background:linear-gradient(135deg,#ff6b9d,#ff85ab,#ff6b9d);background-size:200% 200%;color:white;font-weight:800;box-shadow:0 4px 15px rgba(255,107,157,0.3),0 0 0 1px rgba(255,107,157,0.3)}.btn-baby:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(255,107,157,0.5),0 0 30px rgba(255,107,157,0.2)}.btn-sm{padding:9px 20px;font-size:0.85rem}';document.head.appendChild(ds);
 
-async function loadCalories(){
-  try{
-    var r=await fetch('https://chat-api-tawny-zeta.vercel.app/api/calorie?student=Carter');
-    var d=await r.json();
-    var total=0;
-    if(d.entries&&d.entries.length){
-      total=d.today_total||d.entries.reduce(function(a,b){return a+parseInt(b.calories||0)},0);
-      document.getElementById('calConsumed').textContent=total;
-      var pct=Math.min(total/4000*100,100);
-      document.getElementById('calFill').style.width=pct+'%';
-      document.getElementById('calItems').innerHTML=d.entries.slice(-6).reverse().map(function(i){
-        return '<div class="cal-item"><span class="cal-item-food">'+i.food+'</span><span class="cal-item-cal">'+i.calories+' cal</span></div>'
+// === BUTTON UPDATES ===
+function updateButtons(u) {
+  document.querySelectorAll('.dash-card').forEach(function(card) {
+    if (card.style.display !== 'block') return;
+    var btn = card.querySelector('.btn-dynamic');
+    if (!btn) return;
+    var tp = extractPct(u.today);
+    var yp = extractPct(u.ytd);
+    if (tp >= 90) { btn.innerHTML = '⚡ On Fire!'; btn.className = 'btn btn-dynamic btn-fire btn-sm'; }
+    else if (tp >= 80) { btn.innerHTML = '✅ Continue'; btn.className = 'btn btn-dynamic btn-continue btn-sm'; }
+    else if (tp > 0) { btn.innerHTML = '📚 Review'; btn.className = 'btn btn-dynamic btn-review btn-sm'; }
+    else if (yp >= 90) { btn.innerHTML = '🔥 Start Quiz'; btn.className = 'btn btn-dynamic btn-hot btn-sm'; }
+    else { btn.innerHTML = '⚡ Start Quiz'; btn.className = 'btn btn-dynamic btn-primary btn-sm'; }
+  });
+}
+
+// === LOGIN ===
+function login() {
+  var fi = document.getElementById('studentFirstName'), li = document.getElementById('studentLastName'), er = document.getElementById('loginError');
+  var fn = fi.value.trim(), ln = li.value.trim(), id = (fn + ' ' + ln).toLowerCase();
+  if (!fn) { er.textContent = 'Enter your first name.'; er.classList.add('show'); return; }
+  if (!usersData.length) { er.textContent = 'Loading student data... try again in a moment.'; er.classList.add('show'); return; }
+  var u = usersData.find(function(x) { return x.id === id; });
+  if (!u) { er.textContent = 'Name not found. Try again or chat with us.'; er.classList.add('show'); return; }
+  er.classList.remove('show');
+  localStorage.setItem('tutor_user', JSON.stringify(u));
+  currentUser = u;
+  showDashboard(u);
+}
+
+function showDashboard(u) {
+  document.getElementById('loginScreen').classList.add('hidden');
+  document.getElementById('dashboard').classList.add('show');
+  document.getElementById('studentName').textContent = u.name;
+  document.getElementById('studentInfo').textContent = (u.subjects || '') + ' — ' + (u.plan || '');
+  var k = u.cards ? u.cards.split(',') : ['math'];
+  document.querySelectorAll('.dash-card').forEach(function(c) { c.style.display = k.indexOf(c.dataset.subject) >= 0 ? 'block' : 'none'; });
+  renderStats(u);
+  updateButtons(u);
+  // Calorie tracker for Carter
+  var ct = document.getElementById('calTracker');
+  if (ct) ct.style.display = u.first === 'Carter' ? 'block' : 'none';
+  if (u.first === 'Carter') loadCalories();
+  // Quiz history for Jiho/Carter/Josh
+  if (u.first === 'Jiho' || u.first === 'Carter' || u.first === 'Josh') loadHistory(u.first);
+  // Save lead
+  try { localStorage.setItem('royceai_lead', JSON.stringify({name: u.name, email: u.name.toLowerCase().replace(/\s+/g, '.') + '@student.tutor', phone: '000-000-0000', timestamp: new Date().toISOString()})); } catch(e) {}
+}
+
+// === AUTO-REFRESH ===
+function startAutoRefresh() {
+  if (refreshTimer) clearInterval(refreshTimer);
+  refreshTimer = setInterval(function() { fetchUsers(false); }, 30000);
+}
+
+// === QUIZ HISTORY ===
+async function loadHistory(n) {
+  var el = document.getElementById('quizHistory'), tb = document.getElementById('quizHistoryBody');
+  el.style.display = 'block';
+  tb.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-secondary)">Loading...</td></tr>';
+  try {
+    var r = await fetch(HIST_URL, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({student: n})});
+    var d = await r.json(), ss = d.sessions || [];
+    if (!ss.length) { tb.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-secondary)">No sessions yet</td></tr>'; return; }
+    tb.innerHTML = ss.slice(-10).reverse().map(function(s) {
+      var p = s.percent || Math.round(s.correct/s.total*100), pa = p >= 80;
+      var tp = s.topics ? Object.keys(s.topics).slice(0,2).map(function(t){return '<span class="quiz-topic">'+t.replace(/_/g,' ')+'</span>';}).join(' ') : '<span class="quiz-topic">general</span>';
+      return '<tr><td>'+(s.date||'—')+'</td><td>'+(s.mode||'quiz')+'</td><td><strong>'+s.correct+'/'+s.total+'</strong> ('+p+'%)</td><td>'+tp+'</td><td class="'+(pa?'quiz-pass':'quiz-fail')+'">'+(pa?'✅ Pass':'❌ Review')+'</td></tr>';
+    }).join('');
+  } catch(e) { tb.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--red-diff)">Could not load history</td></tr>'; }
+}
+
+// === CALORIE TRACKER ===
+async function loadCalories() {
+  try {
+    var r = await fetch('https://chat-api-tawny-zeta.vercel.app/api/calorie?student=Carter');
+    var d = await r.json();
+    var total = 0;
+    if (d.entries && d.entries.length) {
+      total = d.today_total || d.entries.reduce(function(a,b) { return a+parseInt(b.calories||0); }, 0);
+      document.getElementById('calConsumed').textContent = total;
+      document.getElementById('calFill').style.width = Math.min(total/4000*100,100)+'%';
+      document.getElementById('calItems').innerHTML = d.entries.slice(-6).reverse().map(function(i) {
+        return '<div class="cal-item"><span class="cal-item-food">'+i.food+'</span><span class="cal-item-cal">'+i.calories+' cal</span></div>';
       }).join('\n');
     }
-    var gap=4000-total;
-    if(gap<=0){
-      document.getElementById('calGap').innerHTML='🎯 Goal met! <strong>'+total+'</strong>/4,000';
-      document.getElementById('calGap').style.color='#22c55e';
-      document.getElementById('calSuggestList').innerHTML='<span style="font-size:0.75rem;color:#22c55e">✅ You hit 4,000 cal today!</span>';
-    }else{
-      document.getElementById('calGap').innerHTML='Need <strong>'+gap+'</strong> more cal';
-      document.getElementById('calGap').style.color='var(--gold)';
-      // Suggest foods based on gap size
-      var suggestions=[];
-      if(gap>=1000){suggestions.push({f:'Double cheeseburger + fries',c:900},{f:'Large pizza (3 slices)',c:800},{f:'Chicken teriyaki bowl',c:850},{f:'Peanut butter sandwich x2 + milk',c:700},{f:'Protein pasta with meatballs',c:750})}
-      else if(gap>=500){suggestions.push({f:'Protein shake + banana',c:400},{f:'Greek yogurt + granola',c:350},{f:'Turkey sandwich + chips',c:450},{f:'Rice + chicken thigh',c:500},{f:'Trail mix (1 cup)',c:350})}
-      else{suggestions.push({f:'Banana + peanut butter',c:250},{f:'Protein bar',c:250},{f:'Glass of milk + toast',c:200},{f:'Handful of almonds',c:170},{f:'Orange juice + egg',c:200})}
-      document.getElementById('calSuggestList').innerHTML=suggestions.map(function(s){
-        return '<button class="ans-btn" onclick="document.getElementById(\'calFood\').value=\''+s.f+'\';document.getElementById(\'calAmount\').value=\''+s.c+'\';logCalorie()" style="font-size:11px;padding:6px 12px">'+s.f+'<br><small style="color:var(--gold)">'+s.c+' cal</small></button>'
+    var gap = 4000 - total;
+    if (gap <= 0) {
+      document.getElementById('calGap').innerHTML = '🎯 Goal met! <strong>'+total+'</strong>/4,000';
+      document.getElementById('calGap').style.color = '#22c55e';
+      document.getElementById('calSuggestList').innerHTML = '<span style="font-size:0.75rem;color:#22c55e">✅ You hit 4,000 cal today!</span>';
+    } else {
+      document.getElementById('calGap').innerHTML = 'Need <strong>'+gap+'</strong> more cal';
+      document.getElementById('calGap').style.color = 'var(--gold)';
+      var suggestions = [];
+      if (gap >= 1000) { suggestions = [{f:'Double cheeseburger + fries',c:900},{f:'Large pizza (3 slices)',c:800},{f:'Chicken teriyaki bowl',c:850},{f:'Peanut butter sandwich x2 + milk',c:700},{f:'Protein pasta with meatballs',c:750}]; }
+      else if (gap >= 500) { suggestions = [{f:'Protein shake + banana',c:400},{f:'Greek yogurt + granola',c:350},{f:'Turkey sandwich + chips',c:450},{f:'Rice + chicken thigh',c:500},{f:'Trail mix (1 cup)',c:350}]; }
+      else { suggestions = [{f:'Banana + peanut butter',c:250},{f:'Protein bar',c:250},{f:'Glass of milk + toast',c:200},{f:'Handful of almonds',c:170},{f:'Orange juice + egg',c:200}]; }
+      document.getElementById('calSuggestList').innerHTML = suggestions.map(function(s) {
+        return '<button class="ans-btn" onclick="document.getElementById(\'calFood\').value=\''+s.f+'\';document.getElementById(\'calAmount\').value=\''+s.c+'\';logCalorie()" style="font-size:11px;padding:6px 12px">'+s.f+'<br><small style="color:var(--gold)">'+s.c+' cal</small></button>';
       }).join(' ');
     }
-  }catch(e){}
+  } catch(e) {}
 }
-function logCalorie(){
+function logCalorie() {
   var f=document.getElementById('calFood'),a=document.getElementById('calAmount');
   if(!f.value.trim()||!a.value||parseInt(a.value)<1)return;
-  fetch('https://chat-api-tawny-zeta.vercel.app/api/calorie',{
-    method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({student:'Carter',food:f.value.trim(),calories:parseInt(a.value)})
-  }).then(function(){f.value='';a.value='';loadCalories()}).catch(function(){});
+  fetch('https://chat-api-tawny-zeta.vercel.app/api/calorie',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({student:'Carter',food:f.value.trim(),calories:parseInt(a.value)})})
+    .then(function(){f.value='';a.value='';loadCalories();}).catch(function(){});
 }
 
-async function Q(n){var el=document.getElementById('quizHistory'),tb=document.getElementById('quizHistoryBody');el.style.display='block';tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:var(--text-secondary)">Loading...</td></tr>';try{var r=await fetch(H,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({student:n})});var d=await r.json(),ss=d.sessions||[];if(!ss.length){tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:var(--text-secondary)">No sessions yet</td></tr>';return}tb.innerHTML=ss.slice(-10).reverse().map(function(s){var p=s.percent||Math.round(s.correct/s.total*100),pa=p>=80;var tp=s.topics?Object.keys(s.topics).slice(0,2).map(function(t){return '<span class="quiz-topic">'+t.replace(/_/g,' ')+'</span>'}).join(' '):'<span class="quiz-topic">general</span>';return '<tr><td>'+(s.date||'—')+'</td><td>'+(s.mode||'quiz')+'</td><td><strong>'+s.correct+'/'+s.total+'</strong> ('+p+'%)</td><td>'+tp+'</td><td class="'+(pa?'quiz-pass':'quiz-fail')+'">'+(pa?'✅ Pass':'❌ Review')+'</td></tr>'}).join('')}catch(e){tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:var(--red-diff)">Could not load history</td></tr>'}}
-function logout(){localStorage.removeItem('tutor_user');document.getElementById('dashboard').classList.remove('show');document.getElementById('loginScreen').classList.remove('hidden');document.getElementById('studentFirstName').value='';document.getElementById('studentLastName').value=''}
+function logout() {
+  localStorage.removeItem('tutor_user');
+  document.getElementById('dashboard').classList.remove('show');
+  document.getElementById('loginScreen').classList.remove('hidden');
+  document.getElementById('studentFirstName').value = '';
+  document.getElementById('studentLastName').value = '';
+  if (refreshTimer) clearInterval(refreshTimer);
+}
+
+// === INIT ===
+(function init() {
+  // Fetch users from GitHub
+  fetchUsers(true);
+  // Check for cached login
+  var saved = localStorage.getItem('tutor_user');
+  if (saved) {
+    try {
+      var u = JSON.parse(saved);
+      // Wait for users to load, then match
+      var checkLoaded = setInterval(function() {
+        if (usersData.length) {
+          clearInterval(checkLoaded);
+          var match = usersData.find(function(x) { return x.id === u.id; });
+          if (match) { currentUser = match; showDashboard(match); startAutoRefresh(); }
+          else { localStorage.removeItem('tutor_user'); }
+        }
+      }, 200);
+      // Timeout after 10s
+      setTimeout(function() { clearInterval(checkLoaded); }, 10000);
+    } catch(e) { localStorage.removeItem('tutor_user'); }
+  }
+})();
+
+// Inject button styles
+var ds = document.createElement('style');
+ds.textContent = '.btn-dynamic{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:12px;font-family:Inter,system-ui,sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none;transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);border:none;cursor:pointer;position:relative;overflow:hidden;letter-spacing:0.02em}.btn-dynamic::before{content:"";position:absolute;inset:0;border-radius:12px;opacity:0;transition:opacity 0.3s;background:linear-gradient(135deg,rgba(255,255,255,0.15) 0%,transparent 50%);pointer-events:none}.btn-dynamic:hover::before{opacity:1}.btn-dynamic:hover{animation:btnPop 0.4s cubic-bezier(0.34,1.56,0.64,1);transform:translateY(-3px)}.btn-dynamic:active{transform:translateY(0) scale(0.96)}.btn-primary{background:linear-gradient(135deg,#667eea,#764ba2,#667eea);background-size:200% 200%;color:white;box-shadow:0 4px 15px rgba(102,126,234,0.3),0 0 0 1px rgba(102,126,234,0.3)}.btn-primary:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(102,126,234,0.5),0 0 30px rgba(102,126,234,0.2)}.btn-fire{background:linear-gradient(135deg,#ef4444,#f97316,#ef4444);background-size:200% 200%;color:white;box-shadow:0 4px 15px rgba(239,68,68,0.3),0 0 0 1px rgba(239,68,68,0.3)}.btn-fire:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(239,68,68,0.5),0 0 30px rgba(239,68,68,0.2)}.btn-continue{background:linear-gradient(135deg,#22c55e,#4ade80,#22c55e);background-size:200% 200%;color:white;box-shadow:0 4px 15px rgba(34,197,94,0.3),0 0 0 1px rgba(34,197,94,0.3)}.btn-continue:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(34,197,94,0.5),0 0 30px rgba(34,197,94,0.2)}.btn-review{background:linear-gradient(135deg,#f59e0b,#eab308,#f59e0b);background-size:200% 200%;color:#0a0a0a;box-shadow:0 4px 15px rgba(245,158,11,0.3),0 0 0 1px rgba(245,158,11,0.3)}.btn-review:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(245,158,11,0.5),0 0 30px rgba(245,158,11,0.2)}.btn-hot{background:linear-gradient(135deg,#ef4444,#667eea,#ef4444);background-size:200% 200%;color:white;box-shadow:0 4px 15px rgba(239,68,68,0.3),0 0 0 1px rgba(239,68,68,0.3)}.btn-hot:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(239,68,68,0.5),0 0 30px rgba(239,68,68,0.2)}.btn-game{background:linear-gradient(135deg,#eab308,#facc15,#eab308);background-size:200% 200%;color:#0a0a0a;font-weight:800;box-shadow:0 4px 15px rgba(234,179,8,0.4),0 0 0 1px rgba(234,179,8,0.3)}.btn-game:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(234,179,8,0.6),0 0 30px rgba(234,179,8,0.2)}.btn-baby{background:linear-gradient(135deg,#ff6b9d,#ff85ab,#ff6b9d);background-size:200% 200%;color:white;font-weight:800;box-shadow:0 4px 15px rgba(255,107,157,0.3),0 0 0 1px rgba(255,107,157,0.3)}.btn-baby:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(255,107,157,0.5),0 0 30px rgba(255,107,157,0.2)}.btn-sm{padding:9px 20px;font-size:0.85rem}';
+document.head.appendChild(ds);
 </script>
-<script src="/chat-widget.js"></script>
 </body>
 </html>
