@@ -236,9 +236,9 @@ function renderStats(u) {
   if (u.focus) document.getElementById('focusDisplay').textContent = u.focus;
   ['today','mtd','ytd'].forEach(function(key) {
     var val = u[key];
-    var el = document.getElementById('score' + key.charAt(0).toUpperCase() + key.slice(1));
-    var bar = document.getElementById('bar' + key.charAt(0).toUpperCase() + key.slice(1));
-    var sub = document.getElementById('score' + key.charAt(0).toUpperCase() + key.slice(1) + 'Sub');
+    var el = document.getElementById('score' + key.toUpperCase());
+    var bar = document.getElementById('bar' + key.toUpperCase());
+    var sub = document.getElementById('score' + key.toUpperCase() + 'Sub');
     if (val && val !== '—') {
       var m = val.match(/(\d+)\/(\d+)/);
       var p = extractPct(val);
