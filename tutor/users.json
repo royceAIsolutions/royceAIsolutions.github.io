@@ -100,31 +100,31 @@
     "last": "Johnson",
     "id": "pearl johnson",
     "name": "Pearl Johnson",
-    "subjects": "Preschool Play",
+    "subjects": "Preschool Play, Letters, Numbers",
     "active": true,
     "today": "\u2014",
     "mtd": "\u2014",
     "ytd": "\u2014",
     "topics": "\u2014",
     "difficulty": "\ud83c\udfa8 Preschool \u2014 Play Mode",
-    "focus": "Colors, Shapes, Letters, Numbers",
+    "focus": "ABCs, 123s, Colors, Shapes",
     "plan": "Daily 15min fun learning",
-    "cards": "baby"
+    "cards": "baby,preschool"
   },
   {
     "first": "Ruby",
     "last": "Johnson",
     "id": "ruby johnson",
     "name": "Ruby Johnson",
-    "subjects": "Reading / Math",
+    "subjects": "Reading / Math / Grade 2",
     "active": true,
     "today": "\u2014",
     "mtd": "\u2014",
     "ytd": "\u2014",
     "topics": "\u2014",
     "difficulty": "\ud83d\udcda Grade 2 \u2014 Foundations",
-    "focus": "Reading Comprehension, Addition, Subtraction",
+    "focus": "Reading Comprehension, Addition, Subtraction, Phonics",
     "plan": "Daily 20min reading & math",
-    "cards": "reading"
+    "cards": "reading,math,grade2"
   }
 ]
