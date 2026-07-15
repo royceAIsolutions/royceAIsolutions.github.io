@@ -368,24 +368,29 @@ function updateButtons(u) {
 function login() {
   var fi = document.getElementById('studentFirstName'), li = document.getElementById('studentLastName'), er = document.getElementById('loginError');
   var fn = fi.value.trim(), ln = li.value.trim(), id = (fn + ' ' + ln).toLowerCase();
+  var btn = document.querySelector('.login-box .btn');
   if (!fn) { er.textContent = 'Enter your first name.'; er.classList.add('show'); return; }
+  er.classList.remove('show');
+  if (btn) btn.textContent = 'Loading...';
+  var attempts = 0;
   function tryLogin() {
     if (!usersData.length) {
-      er.textContent = 'Loading...';
+      attempts++;
+      if (attempts > 6) { er.textContent = 'Could not load student data. Check connection.'; er.classList.add('show'); if (btn) btn.textContent = 'Log in →'; return; }
+      er.textContent = 'Loading student data...';
       er.classList.add('show');
       fetchUsers(true);
-      setTimeout(tryLogin, 500);
+      setTimeout(tryLogin, 1000);
       return;
     }
     var u = usersData.find(function(x) { return x.id === id; });
-    if (!u) { er.textContent = "Name not found. Check your spelling."; er.classList.add('show'); return; }
+    if (!u) { er.textContent = "Name not found. Try: " + fn + " " + ln; er.classList.add('show'); if (btn) btn.textContent = 'Log in →'; return; }
     er.classList.remove('show');
     localStorage.setItem('tutor_user', JSON.stringify(u));
     currentUser = u;
     showDashboard(u);
   }
   tryLogin();
-  setTimeout(function() { if (!usersData.length) er.textContent = "Still loading... try again."; }, 5000);
 }
 
 function showDashboard(u) {
