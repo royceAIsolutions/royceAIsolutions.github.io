@@ -140,7 +140,7 @@ nav {
 
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 24px;
   max-width: var(--max-w);
   margin: 0 auto;
@@ -148,6 +148,8 @@ nav {
 }
 
 .blog-card {
+  max-width: 600px;
+  margin: 0 auto;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
