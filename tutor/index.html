@@ -96,6 +96,41 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-i
 footer{border-top:1px solid var(--border);padding:36px 20px;max-width:var(--max-w);margin:0 auto;text-align:center}
 footer .copy{color:var(--text-secondary);font-size:0.75rem}
 @media(max-width:640px){.nav-links a:not(.nav-cta){display:none}.scoreboard-grid{grid-template-columns:1fr}.scoreboard-header{flex-direction:column;gap:6px}.dash-actions{top:56px;right:12px}}
+
+/* === KIDS GAMES === */
+.game-section{max-width:700px;margin:0 auto;padding:0 20px 28px}
+.game-area{display:none}
+.game-area.show{display:block}
+.game-header{text-align:center;margin-bottom:16px}
+.game-header h2{font-size:1.2rem;font-weight:700;margin-bottom:2px}
+.game-header p{color:var(--text-secondary);font-size:0.85rem}
+.game-scorebar{display:flex;justify-content:center;align-items:center;gap:20px;margin-bottom:16px;padding:12px 20px;background:var(--bg-card);border-radius:12px;border:1px solid var(--border)}
+.game-scorebar .pts{font-size:1.3rem;font-weight:900;color:var(--gold);display:flex;align-items:center;gap:6px}
+.game-scorebar .streak{font-size:0.85rem;color:var(--accent);font-weight:600}
+.game-board{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;text-align:center;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.game-question{font-size:1.2rem;font-weight:700;margin-bottom:20px;line-height:1.5}
+.game-options{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.game-opt{width:90px;height:90px;border-radius:16px;border:3px solid rgba(255,255,255,0.1);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:2rem;transition:all 0.2s;background:var(--bg-elevated)}
+.game-opt:hover{transform:scale(1.1);border-color:var(--accent)}
+.game-opt.correct{border-color:#22c55e;background:rgba(34,197,94,0.15);animation:pop 0.3s}
+.game-opt.wrong{border-color:#ef4444;background:rgba(239,68,68,0.15);animation:shake 0.3s}
+.game-opt.disabled{pointer-events:none;opacity:0.6}
+.game-opt-num{width:auto;min-width:80px;height:70px;padding:0 16px;font-size:1.1rem;font-weight:700;color:var(--text);border-radius:12px;background:var(--bg-elevated);border:2px solid var(--border)}
+.game-opt-num:hover{border-color:var(--accent)}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.15)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.game-result{text-align:center;padding:24px;display:none}
+.game-result.show{display:block}
+.game-result .big{font-size:3rem;margin-bottom:12px}
+.game-result h3{font-size:1.2rem;margin-bottom:4px}
+.game-result p{color:var(--text-secondary);font-size:0.9rem;margin-bottom:16px}
+.game-result .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 24px;border-radius:10px;font-weight:700;font-size:0.9rem;text-decoration:none;cursor:pointer;border:none;font-family:var(--font);transition:all 0.2s}
+.game-result .btn-primary{background:var(--accent);color:white}
+.game-result .btn-primary:hover{transform:scale(1.05)}
+.game-result .btn-gold{background:linear-gradient(135deg,#eab308,#facc15);color:#0a0a0a}
+.game-result .btn-gold:hover{transform:scale(1.05)}
+.game-mode-badge{padding:4px 14px;border-radius:20px;background:rgba(234,179,8,0.15);color:#eab308;border:1px solid rgba(234,179,8,0.3);font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;gap:4px;margin-bottom:10px}
+
 </style></head>
 <body>
 <nav>
@@ -155,6 +190,54 @@ footer .copy{color:var(--text-secondary);font-size:0.75rem}
       <div id="calSuggestions" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06)"><p style="font-size:0.7rem;color:var(--text-secondary);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em">💡 To close the gap, try:</p><div id="calSuggestList" style="display:flex;flex-wrap:wrap;gap:4px"></div></div>
     </div>
   </div>
+
+  <!-- KIDS GAMES -->
+  <div class="game-section" id="gameSection">
+    <div class="game-area" id="colorGame">
+      <div class="game-header">
+        <div class="game-mode-badge">🎨 Color Match — Pearl</div>
+        <h2>Find the Color!</h2>
+        <p>Tap the matching color</p>
+      </div>
+      <div class="game-scorebar">
+        <span class="pts">⭐ <span id="pearlScore">0</span></span>
+        <span class="streak" id="pearlStreak">🔥 0 streak</span>
+      </div>
+      <div class="game-board" id="pearlBoard">
+        <div class="game-question" id="pearlQuestion">Find the <strong style="font-size:1.4rem" id="colorWord">RED</strong> one!</div>
+        <div class="game-options" id="pearlOptions"></div>
+      </div>
+      <div class="game-result" id="pearlResult">
+        <div class="big">🎉</div>
+        <h3>Great job, Pearl!</h3>
+        <p>You got <strong id="pearlFinalScore">0</strong> right!</p>
+        <button class="btn btn-gold" onclick="startColorGame()">🔄 Play Again</button>
+      </div>
+    </div>
+
+    <div class="game-area" id="mathGame">
+      <div class="game-header">
+        <div class="game-mode-badge">🧮 Math Pop — Ruby</div>
+        <h2>Math Time!</h2>
+        <p>Solve it and tap the answer</p>
+      </div>
+      <div class="game-scorebar">
+        <span class="pts">⭐ <span id="rubyScore">0</span></span>
+        <span class="streak" id="rubyStreak">🔥 0 streak</span>
+      </div>
+      <div class="game-board" id="rubyBoard">
+        <div class="game-question" id="rubyQuestion">What is <strong>5 + 3</strong>?</div>
+        <div class="game-options" id="rubyOptions"></div>
+      </div>
+      <div class="game-result" id="rubyResult">
+        <div class="big">🌟</div>
+        <h3>Amazing, Ruby!</h3>
+        <p>You got <strong id="rubyFinalScore">0</strong> right!</p>
+        <button class="btn btn-gold" onclick="startMathGame()">🔄 Play Again</button>
+      </div>
+    </div>
+  </div>
+
 <div class="quiz-history" id="quizHistory" style="display:none">
     <h3>📋 <span>Quiz History</span> — Last 10</h3>
     <table class="quiz-table"><thead><tr><th>Date</th><th>Mode</th><th>Score</th><th>Topics</th><th>Result</th></tr></thead><tbody id="quizHistoryBody"></tbody></table>
@@ -327,6 +410,7 @@ function showDashboard(u) {
   if (u.first === 'Carter') loadCalories();
   // Quiz history for Jiho/Carter/Josh
   if (u.first === 'Jiho' || u.first === 'Carter' || u.first === 'Josh') loadHistory(u.first);
+  if (u.first === 'Pearl' || u.first === 'Ruby') document.getElementById('gameSection').style.display = 'block';
   // Save lead
   try { localStorage.setItem('royceai_lead', JSON.stringify({name: u.name, email: u.name.toLowerCase().replace(/\s+/g, '.') + '@student.tutor', phone: '000-000-0000', timestamp: new Date().toISOString()})); } catch(e) {}
 }
@@ -391,6 +475,128 @@ function logCalorie() {
   if(!f.value.trim()||!a.value||parseInt(a.value)<1)return;
   fetch('https://chat-api-tawny-zeta.vercel.app/api/calorie',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({student:'Carter',food:f.value.trim(),calories:parseInt(a.value)})})
     .then(function(){f.value='';a.value='';loadCalories();}).catch(function(){});
+}
+
+
+// === PEARL COLOR GAME ===
+const COLORS = [
+  {name:'RED', hex:'#ef4444', emoji:'🔴'},
+  {name:'BLUE', hex:'#3b82f6', emoji:'🔵'},
+  {name:'GREEN', hex:'#22c55e', emoji:'🟢'},
+  {name:'YELLOW', hex:'#eab308', emoji:'🟡'},
+  {name:'PURPLE', hex:'#a855f7', emoji:'🟣'},
+  {name:'ORANGE', hex:'#f97316', emoji:'🟠'},
+  {name:'PINK', hex:'#ec4899', emoji:'💗'},
+];
+let pearlCorrect = 0, pearlTotal = 0;
+function startColorGame() {
+  document.getElementById('colorGame').classList.add('show');
+  document.getElementById('pearlResult').classList.remove('show');
+  document.getElementById('pearlBoard').style.display = 'flex';
+  pearlCorrect = 0; pearlTotal = 0;
+  updatePearlScore();
+  nextColorQ();
+}
+function nextColorQ() {
+  if (pearlTotal >= 10) { endPearlGame(); return; }
+  var target = COLORS[Math.floor(Math.random() * COLORS.length)];
+  var opts = [target];
+  while (opts.length < 4) {
+    var c = COLORS[Math.floor(Math.random() * COLORS.length)];
+    if (!opts.find(function(o){return o.name===c.name})) opts.push(c);
+  }
+  opts.sort(function(){return Math.random()-0.5});
+  document.getElementById('pearlQuestion').innerHTML = 'Find the <strong style="font-size:1.6rem;color:'+target.hex+'">'+target.name+'</strong> one!';
+  document.getElementById('pearlOptions').innerHTML = opts.map(function(c){return '<div class="game-opt" data-color="'+c.name+'" onclick="checkPearl(this,''+target.name+'')" style="background:'+c.hex+'">'+c.emoji+'</div>';}).join('');
+}
+function checkPearl(el, target) {
+  if (el.classList.contains('disabled')) return;
+  document.querySelectorAll('#pearlOptions .game-opt').forEach(function(o){o.classList.add('disabled');});
+  pearlTotal++;
+  if (el.dataset.color === target) {
+    el.classList.add('correct');
+    pearlCorrect++;
+    updatePearlScore();
+    setTimeout(nextColorQ, 600);
+  } else {
+    el.classList.add('wrong');
+    // Show correct one
+    document.querySelector('#pearlOptions [data-color="'+target+'"]').classList.add('correct');
+    setTimeout(nextColorQ, 800);
+  }
+}
+function updatePearlScore() {
+  document.getElementById('pearlScore').textContent = pearlCorrect;
+  document.getElementById('pearlStreak').textContent = pearlCorrect >= 5 ? '🔥 '+pearlCorrect+' streak' : '⭐ Keep going!';
+}
+function endPearlGame() {
+  document.getElementById('pearlBoard').style.display = 'none';
+  var r = document.getElementById('pearlResult');
+  r.classList.add('show');
+  document.getElementById('pearlFinalScore').textContent = pearlCorrect + '/10';
+  r.querySelector('.big').textContent = pearlCorrect >= 8 ? '🏆' : pearlCorrect >= 5 ? '🎉' : '💪';
+  r.querySelector('h3').textContent = pearlCorrect >= 8 ? 'You are a superstar!' : pearlCorrect >= 5 ? 'Good job, Pearl!' : 'Try again!';
+  // Save score
+  if (pearlCorrect > 0) {
+    try { fetch('https://chat-api-tawny-zeta.vercel.app/api/save-score', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({student:'Pearl Johnson',correct:pearlCorrect,total:10,subject:'preschool'})}); } catch(e){}
+  }
+}
+
+// === RUBY MATH GAME ===
+let rubyCorrect = 0, rubyTotal = 0;
+function startMathGame() {
+  document.getElementById('mathGame').classList.add('show');
+  document.getElementById('rubyResult').classList.remove('show');
+  document.getElementById('rubyBoard').style.display = 'flex';
+  rubyCorrect = 0; rubyTotal = 0;
+  updateRubyScore();
+  nextMathQ();
+}
+function nextMathQ() {
+  if (rubyTotal >= 10) { endRubyGame(); return; }
+  var a = Math.floor(Math.random() * 20) + 1;
+  var b = Math.floor(Math.random() * a) + 1;
+  var answer = a + b, ops = ['+'];
+  // Subtraction every other question
+  if (rubyTotal % 2 === 1) { ops = ['-']; answer = a - b; if (answer < 0) { a = a + b + Math.floor(Math.random()*5); answer = a - b; } }
+  var opts = [answer];
+  while (opts.length < 4) {
+    var n = answer + (Math.floor(Math.random() * 10) - 5);
+    if (n >= 0 && !opts.includes(n)) opts.push(n);
+  }
+  opts.sort(function(){return Math.random()-0.5});
+  document.getElementById('rubyQuestion').innerHTML = 'What is <strong>'+a+' '+ops[0]+' '+b+'</strong>?';
+  document.getElementById('rubyOptions').innerHTML = opts.map(function(n){return '<div class="game-opt game-opt-num" data-num="'+n+'" onclick="checkRuby(this,'+answer+')">'+n+'</div>';}).join('');
+}
+function checkRuby(el, answer) {
+  if (el.classList.contains('disabled')) return;
+  document.querySelectorAll('#rubyOptions .game-opt').forEach(function(o){o.classList.add('disabled');});
+  rubyTotal++;
+  if (parseInt(el.dataset.num) === answer) {
+    el.classList.add('correct');
+    rubyCorrect++;
+    updateRubyScore();
+    setTimeout(nextMathQ, 600);
+  } else {
+    el.classList.add('wrong');
+    document.querySelector('#rubyOptions [data-num="'+answer+'"]').classList.add('correct');
+    setTimeout(nextMathQ, 800);
+  }
+}
+function updateRubyScore() {
+  document.getElementById('rubyScore').textContent = rubyCorrect;
+  document.getElementById('rubyStreak').textContent = rubyCorrect >= 5 ? '🔥 '+rubyCorrect+' streak' : '⭐ Keep going!';
+}
+function endRubyGame() {
+  document.getElementById('rubyBoard').style.display = 'none';
+  var r = document.getElementById('rubyResult');
+  r.classList.add('show');
+  document.getElementById('rubyFinalScore').textContent = rubyCorrect + '/10';
+  r.querySelector('.big').textContent = rubyCorrect >= 8 ? '🏆' : rubyCorrect >= 5 ? '🌟' : '💪';
+  r.querySelector('h3').textContent = rubyCorrect >= 8 ? 'You are a math star!' : rubyCorrect >= 5 ? 'Great work, Ruby!' : 'Keep practicing!';
+  if (rubyCorrect > 0) {
+    try { fetch('https://chat-api-tawny-zeta.vercel.app/api/save-score', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({student:'Ruby Johnson',correct:rubyCorrect,total:10,subject:'math'})}); } catch(e){}
+  }
 }
 
 function logout() {
