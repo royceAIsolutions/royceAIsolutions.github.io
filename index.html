@@ -535,44 +535,7 @@ footer .copy {
     <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
 </nav>
-<script>
-function u(){try{
-var u=JSON.parse(localStorage.getItem("tutor_user"));
-var nav=document.querySelector(".nav-links");
-var t=document.querySelector('a[href="/tutor"]');
-var e=document.getElementById("studentBadge");
-if(e)e.remove();
-if(u&&u.first&&nav){
- var b=document.createElement("span");b.id="studentBadge";
- b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";
- var i=document.createElement("span");
- i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";
- i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");
- var n=document.createElement("span");n.textContent=u.first;
- b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);
- if(t){t.innerHTML="📚 Dashboard";t.style.cssText="";t.href="/tutor"}
- // Update hero section for students
- var h=document.querySelector(".hero h1");
- var p=document.querySelector(".hero p");
- var a=document.querySelector(".hero-actions");
- if(h&&p&&a){
-  h.innerHTML="Ready to study, <span class="gradient">"+u.first+"</span>";
-  p.textContent="Your personalized learning dashboard is ready. Pick up where you left off.";
-  a.innerHTML='<a href="/tutor" class="btn btn-primary" style="background:linear-gradient(135deg,#667eea,#764ba2);color:white">📚 Go to Dashboard</a><a href="/chat?subject='+(u.cards||"math").split(",")[0]+'" class="btn btn-secondary">⚡ Start Quiz</a>';
- }
-}else if(t){
- t.innerHTML="✨ Tutor";
- t.style.cssText="animation:pulse-glow 2.5s ease-in-out infinite;background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"
-}}catch(e){}
-}
-document.addEventListener("DOMContentLoaded",u);u();
-</script>
-
-
-
-
-
-
+<script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/tutor"]');var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(t){t.innerHTML="📚 Dashboard";t.style.cssText="";t.href="/tutor"}}else if(t){t.innerHTML="✨ Tutor";t.style.cssText="animation:pulse-glow 2.5s ease-in-out infinite;background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
 <section class="hero">
   <div class="hero-badge reveal">🤖 AI Solutions for Business</div>
   <h1 class="reveal" style="transition-delay:0.1s">
