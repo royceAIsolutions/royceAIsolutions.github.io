@@ -415,6 +415,9 @@ async function sendQuizMessage(text) {
 }
 
 function checkSaveScore(reply) {
+  if (!reply || !quizMode) return;
+  var isDone = reply.match(/Quiz complete|Q10.10|completed|Complete|done|final|Great|good work/i);
+  if (!isDone) return;
   var m = reply.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i) || reply.match(/(\d+)\s*\/\s*(\d+)\s*(?:correct|questions|answered)/i) || reply.match(/Final score.*?(\d+)\s*\/\s*(\d+)/i);
   if (!m) return;
   var c = parseInt(m[1]), t = parseInt(m[2]);
