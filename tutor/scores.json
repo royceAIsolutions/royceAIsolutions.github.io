@@ -81,60 +81,6 @@
     "ts": 1784133483722
   },
   {
-    "student": "Carter Koh",
-    "correct": 1,
-    "total": 10,
-    "percent": 10,
-    "subject": "grade11",
-    "date": "2026-07-15",
-    "ts": 1784136358330
-  },
-  {
-    "student": "Carter Koh",
-    "correct": 2,
-    "total": 10,
-    "percent": 20,
-    "subject": "grade11",
-    "date": "2026-07-15",
-    "ts": 1784136398847
-  },
-  {
-    "student": "Carter Koh",
-    "correct": 3,
-    "total": 10,
-    "percent": 30,
-    "subject": "grade11",
-    "date": "2026-07-15",
-    "ts": 1784136430648
-  },
-  {
-    "student": "Carter Koh",
-    "correct": 3,
-    "total": 10,
-    "percent": 30,
-    "subject": "grade11",
-    "date": "2026-07-15",
-    "ts": 1784136507236
-  },
-  {
-    "student": "Carter Koh",
-    "correct": 4,
-    "total": 10,
-    "percent": 40,
-    "subject": "grade11",
-    "date": "2026-07-15",
-    "ts": 1784136543231
-  },
-  {
-    "student": "Carter Koh",
-    "correct": 5,
-    "total": 10,
-    "percent": 50,
-    "subject": "grade11",
-    "date": "2026-07-15",
-    "ts": 1784136622964
-  },
-  {
     "student": "Test",
     "correct": 5,
     "total": 10,
@@ -142,41 +88,5 @@
     "subject": "math",
     "date": "2026-07-15",
     "ts": 1784136653252
-  },
-  {
-    "student": "Carter Koh",
-    "correct": 6,
-    "total": 10,
-    "percent": 60,
-    "subject": "grade11",
-    "date": "2026-07-15",
-    "ts": 1784136656434
-  },
-  {
-    "student": "Carter Koh",
-    "correct": 6,
-    "total": 10,
-    "percent": 60,
-    "subject": "grade11",
-    "date": "2026-07-15",
-    "ts": 1784136741243
-  },
-  {
-    "student": "Carter Koh",
-    "correct": 7,
-    "total": 10,
-    "percent": 70,
-    "subject": "grade11",
-    "date": "2026-07-15",
-    "ts": 1784136792681
-  },
-  {
-    "student": "Carter Koh",
-    "correct": 8,
-    "total": 10,
-    "percent": 80,
-    "subject": "grade11",
-    "date": "2026-07-15",
-    "ts": 1784136847620
   }
 ]
