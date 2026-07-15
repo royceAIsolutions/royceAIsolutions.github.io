@@ -338,6 +338,119 @@ async function sendMessage() {
     addMessage('💡 Want to continue later? Bookmark this page and come back.', 'system');
   }
 }
+
+// === QUIZ MODE ===
+const QUIZ_API = 'https://chat-api-tawny-zeta.vercel.app/api/quiz';
+const SAVE_API = 'https://chat-api-tawny-zeta.vercel.app/api/save-score';
+let quizMode = false;
+
+function getSubject() {
+  try { return new URLSearchParams(window.location.search).get('subject'); } catch(e) { return null; }
+}
+
+function initQuiz() {
+  var subject = getSubject();
+  if (!subject) return;
+  quizMode = true;
+  document.getElementById('quickBtns').style.display = 'none';
+  document.getElementById('welcomeMsg').innerHTML = '📋 ' + subject.charAt(0).toUpperCase() + subject.slice(1) + ' Quiz';
+  setTimeout(function() { sendQuizMessage('Start ' + subject + ' quiz'); }, 500);
+}
+
+function formatQuizReply(text) {
+  // Strip option text from user messages, keep buttons
+  text = text.replace(/^[A-D][.)]\s*[^\n]*\n?/gm, '');
+  return formatReply(text);
+}
+
+function renderAnswerButtons(reply) {
+  var opts = reply.match(/[A-D][)]\s*[^\n]+/g);
+  if (!opts || opts.length < 2) return;
+  var area = document.createElement('div');
+  area.className = 'ans-area';
+  area.style.cssText = 'display:flex;flex-wrap:wrap;gap:4px;padding:4px 0 8px;align-self:flex-start';
+  opts.forEach(function(o) {
+    var b = document.createElement('button');
+    b.style.cssText = 'padding:8px 16px;margin:3px;border-radius:10px;border:1px solid rgba(102,126,234,0.3);background:rgba(102,126,234,0.08);color:#f5f5f5;font-family:Inter,sans-serif;font-size:13px;cursor:pointer;';
+    b.textContent = o.trim();
+    b.onclick = function() { sendQuizMessage(o.charAt(0).toLowerCase()); };
+    area.appendChild(b);
+  });
+  var msgs = document.getElementById('messages');
+  msgs.appendChild(area);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+async function sendQuizMessage(text) {
+  var input = document.getElementById('userInput');
+  var t = text || input.value.trim();
+  if (!t) return;
+  if (input) input.value = '';
+  document.getElementById('sendBtn').disabled = true;
+  addMessage(t, 'user');
+  showTyping(true);
+  history.push({role: 'user', content: t});
+  try {
+    var r = await fetch(QUIZ_API, {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({message: t, history: history.slice(-30)})
+    });
+    var d = await r.json();
+    var reply = d.reply || 'Type next for next question';
+    history.push({role: 'assistant', content: reply});
+    showTyping(false);
+    addMessage(formatQuizReply(reply), 'bot');
+    renderAnswerButtons(reply);
+    checkSaveScore(reply);
+    // Auto-advance for correct/incorrect (skip on final score)
+    if (reply.match(/Correct|Incorrect/i) && !reply.match(/Quiz complete|Final score/i)) {
+      setTimeout(function() { sendQuizMessage('next'); }, 1200);
+    }
+  } catch(e) {
+    showTyping(false);
+    addMessage('Error. Try again.', 'bot');
+  }
+  document.getElementById('sendBtn').disabled = false;
+}
+
+function checkSaveScore(reply) {
+  var m = reply.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i) || reply.match(/(\d+)\s*\/\s*(\d+)\s*(?:correct|questions|answered)/i) || reply.match(/Final score.*?(\d+)\s*\/\s*(\d+)/i);
+  if (!m) return;
+  var c = parseInt(m[1]), t = parseInt(m[2]);
+  if (!t || t < 1 || c > t) return;
+  var name = 'Student';
+  if (leadInfo && leadInfo.name) name = leadInfo.name;
+  try {
+    fetch(SAVE_API, {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({student: name, correct: c, total: t, subject: getSubject() || 'quiz'})
+    }).catch(function(){});
+  } catch(e) {}
+}
+
+// Override sendMessage in quiz mode
+var origSend = sendMessage;
+sendMessage = function() {
+  if (quizMode) {
+    var text = document.getElementById('userInput').value.trim();
+    if (!text) return;
+    document.getElementById('userInput').value = '';
+    sendQuizMessage(text);
+  } else {
+    origSend();
+  }
+};
+sendQuick = function(text) {
+  if (quizMode) {
+    sendQuizMessage(text);
+  } else {
+    document.getElementById('userInput').value = text;
+    origSend();
+  }
+};
+
+// Init quiz if subject param present
+initQuiz();
 </script>
 </body>
 </html>
