@@ -345,7 +345,7 @@ function showDashboard(u) {
   if (u.first === 'Ruby') startMathGame();
   if (u.first === 'Carter') loadCalories();
   if (u.first === 'Jiho' || u.first === 'Carter' || u.first === 'Josh') loadHistory(u.first);
-  try { localStorage.setItem('royceai_lead', JSON.stringify({name: u.name, email: '', phone: '', timestamp: new Date().toISOString()})); } catch(e) {}
+  
 }
 
 function renderScoreboard(u) {
