@@ -2,181 +2,342 @@
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>RoyceAI Tutor — Free AI Tutoring</title>
-<meta name="theme-color" content="#0a0a0a">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat — Royce AI Solutions</title>
+<meta name="description" content="Chat with RoyceAI. Get started by sharing your contact info.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0a0a;--bg-card:#111;--bg-elevated:#1a1a1a;--text:#f5f5f5;--text-secondary:#a1a1aa;--border:rgba(255,255,255,0.08);--accent:#667eea;--accent-hover:#7c93f5;--accent-glow:rgba(102,126,234,0.2);--accent-bg:rgba(102,126,234,0.08);--purple-deep:#764ba2;--radius:12px;--radius-sm:8px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.3s cubic-bezier(.16,1,.3,1)}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
-@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font);background:var(--bg);color:var(--text);height:100vh;display:flex;flex-direction:column;overflow:hidden}
-nav{display:flex;align-items:center;padding:0 16px;height:56px;border-bottom:1px solid var(--border);flex-shrink:0;background:rgba(10,10,10,.9);backdrop-filter:blur(12px)}
-.nav-logo{font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:6px;color:var(--text);text-decoration:none}
-.nav-logo .logo-icon{width:24px;height:24px;background:linear-gradient(135deg,var(--accent),var(--purple-deep));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:white}
-.nav-logo span{color:var(--accent)}
-.nav-back{margin-left:auto;color:var(--text-secondary);font-size:.75rem;text-decoration:none;padding:6px 12px;border-radius:6px;transition:all .2s}
-.nav-back:hover{background:var(--accent-bg);color:var(--accent)}
-#leadOverlay{position:fixed;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;z-index:50;background:var(--bg)}
-#leadOverlay.hidden{display:none}
-.lead-card{width:100%;max-width:380px;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px 28px;text-align:center}
-.lead-card h1{font-size:1.3rem;font-weight:700;margin-bottom:4px}
-.lead-card h1 span{background:linear-gradient(135deg,#667eea,#764ba2,#667eea);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientShift 3s ease-in-out infinite}
-.lead-card p{font-size:.8rem;color:var(--text-secondary);margin-bottom:24px}
-.input-group{text-align:left;margin-bottom:14px}
-.input-group label{display:block;font-size:.65rem;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
-.input-group input{width:100%;padding:10px 12px;border-radius:8px;background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:var(--font);font-size:.85rem;outline:none;transition:border .2s}
-.input-group input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
-.input-group.invalid input{border-color:#ef4444}
-.input-group .err{font-size:.65rem;color:#ef4444;margin-top:2px;display:none}
-.input-group.invalid .err{display:block}
-.lead-btn{width:100%;padding:11px;border:none;border-radius:8px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;font-family:var(--font);font-weight:600;font-size:.85rem;cursor:pointer;transition:all .25s;margin-top:4px}
-.lead-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px var(--accent-glow)}
-#leadSent{display:none;text-align:center;padding:40px 0}
-#leadSent.active{display:block}
-#leadSent h2{font-size:1.5rem;margin-bottom:8px}
-#leadSent p{font-size:.85rem;color:var(--text-secondary)}
-#chatApp{display:none;flex-direction:column;flex:1;overflow:hidden}
-#chatApp.active{display:flex}
-.chat-header{text-align:center;padding:12px 16px;flex-shrink:0}
-.chat-header h2{font-size:.95rem;font-weight:600}
-.chat-header p{font-size:.7rem;color:var(--text-secondary)}
-#messages{flex:1;overflow-y:auto;padding:8px 16px 16px;display:flex;flex-direction:column;gap:6px;scroll-behavior:smooth}
-.msg{max-width:85%;padding:10px 14px;border-radius:12px;font-size:.82rem;line-height:1.5;animation:fadeIn .3s ease;word-wrap:break-word}
-.msg.user{align-self:flex-end;background:var(--accent);color:white;border-bottom-right-radius:4px}
-.msg.bot{align-self:flex-start;background:var(--bg-elevated);border:1px solid var(--border);border-bottom-left-radius:4px}
-.msg.bot strong{color:var(--accent)}
-.msg.system{align-self:center;font-size:.7rem;color:var(--text-secondary);background:transparent;border:none;padding:4px}
-.typing{display:flex;gap:4px;padding:8px 0;align-self:flex-start}
-.typing-dot{width:8px;height:8px;border-radius:50%;background:var(--text-secondary);animation:pulse 1.5s ease-in-out infinite}
-.typing-dot:nth-child(2){animation-delay:.3s}
-.typing-dot:nth-child(3){animation-delay:.6s}
-.input-area{display:flex;gap:8px;padding:10px 16px 16px;border-top:1px solid var(--border);flex-shrink:0}
-.input-area input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg-elevated);color:var(--text);font-family:var(--font);font-size:.85rem;outline:none;transition:border .2s}
-.input-area input:focus{border-color:var(--accent)}
-.input-area button{padding:10px 18px;border:none;border-radius:10px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;font-size:1.1rem;cursor:pointer;transition:all .2s;flex-shrink:0}
-.input-area button:hover{transform:scale(1.05)}
-.input-area button:disabled{opacity:.4;cursor:not-allowed;transform:none}
-.ans-btn{display:inline-block;padding:8px 16px;margin:3px;border-radius:10px;border:1px solid rgba(102,126,234,0.3);background:rgba(102,126,234,0.08);color:#f5f5f5;font-family:Inter,sans-serif;font-size:13px;cursor:pointer;transition:all .2s}.ans-btn:hover{background:rgba(102,126,234,0.2);border-color:#667eea;transform:scale(1.03)}.ans-btn:active{transform:scale(0.97)}.ans-area{display:flex;flex-wrap:wrap;gap:4px;padding:4px 0 8px;align-self:flex-start}
-.suggestions{display:flex;gap:6px;padding:4px 16px 8px;overflow-x:auto;flex-shrink:0}
-.suggestions button{flex-shrink:0;padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:var(--bg-elevated);color:var(--text-secondary);font-family:var(--font);font-size:.75rem;cursor:pointer;transition:all .2s;white-space:nowrap}
-.suggestions button:hover{background:var(--accent-bg);color:var(--accent);border-color:var(--accent)}
-@media(max-width:480px){.msg{max-width:92%}.lead-card{padding:24px 20px}}
+:root {
+  --bg: #0a0a0a;
+  --bg-card: #111;
+  --bg-elevated: #1a1a1a;
+  --text: #f5f5f5;
+  --text-secondary: #a1a1aa;
+  --border: rgba(255,255,255,0.06);
+  --accent: #667eea;
+  --accent-hover: #7c93f5;
+  --accent-glow: rgba(102,126,234,0.15);
+  --accent-bg: rgba(102,126,234,0.1);
+  --red: #ef4444;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{height:100%;}
+body{
+  font-family:var(--font);background:var(--bg);color:var(--text);
+  height:100%;display:flex;flex-direction:column;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Nav */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 24px;height:56px;border-bottom:1px solid var(--border);flex-shrink:0;
+}
+.nav-logo{
+  font-size:17px;font-weight:700;letter-spacing:-0.3px;
+  display:flex;align-items:center;gap:8px;
+}
+.nav-logo span{color:var(--accent);}
+.nav-back{
+  font-size:13px;color:var(--text-secondary);text-decoration:none;
+  display:flex;align-items:center;gap:6px;transition:color var(--transition);
+}
+.nav-back:hover{color:var(--accent);}
+
+/* Lead capture form */
+.lead-overlay{
+  position:fixed;inset:0;background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  z-index:100;padding:20px;
+}
+.lead-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:40px 36px;max-width:420px;width:100%;
+}
+.lead-card h2{font-size:22px;font-weight:700;margin-bottom:6px;}
+.lead-card p{color:var(--text-secondary);font-size:14px;margin-bottom:28px;line-height:1.5;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:12px;font-weight:600;color:var(--text-secondary);margin-bottom:5px;text-transform:uppercase;letter-spacing:0.5px;}
+.form-group input{
+  width:100%;padding:11px 14px;background:var(--bg);border:1px solid var(--border);
+  border-radius:var(--radius-sm);color:var(--text);font-size:14px;font-family:var(--font);
+  outline:none;transition:border-color var(--transition);
+}
+.form-group input:focus{border-color:var(--accent);}
+.form-group input::placeholder{color:var(--text-secondary);}
+.form-group .error{color:var(--red);font-size:11px;margin-top:4px;display:none;}
+.form-group.invalid input{border-color:var(--red);}
+.form-group.invalid .error{display:block;}
+.btn-submit{
+  width:100%;padding:12px;background:var(--accent);color:#fff;border:none;
+  border-radius:var(--radius-sm);font-size:14px;font-weight:600;cursor:pointer;
+  font-family:var(--font);transition:all var(--transition);margin-top:4px;
+}
+.btn-submit:hover{background:var(--accent-hover);}
+.btn-submit:disabled{opacity:0.4;cursor:not-allowed;}
+.lead-footer{text-align:center;margin-top:16px;font-size:11px;color:var(--text-secondary);}
+
+/* Hidden until form submitted */
+.chat-app{display:none;flex-direction:column;height:100%;}
+.chat-app.active{display:flex;}
+
+/* Chat messages */
+.chat-wrap{flex:1;display:flex;flex-direction:column;max-width:720px;width:100%;margin:0 auto;padding:0 16px 16px;overflow:hidden;}
+.messages{flex:1;overflow-y:auto;padding:20px 4px 12px;display:flex;flex-direction:column;gap:8px;scroll-behavior:smooth;}
+.messages::-webkit-scrollbar{width:4px;}
+.messages::-webkit-scrollbar-track{background:transparent;}
+.messages::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+.msg{max-width:88%;padding:10px 16px;border-radius:var(--radius-sm);line-height:1.6;font-size:14px;animation:msgIn 0.25s ease;}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px) scale(0.97);}to{opacity:1;transform:translateY(0) scale(1);}}
+.msg.user{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:4px;}
+.msg.bot{align-self:flex-start;background:var(--bg-card);color:var(--text);border-bottom-left-radius:4px;border:1px solid var(--border);}
+.msg.system{align-self:center;background:transparent;color:var(--text-secondary);font-size:12px;text-align:center;padding:6px 12px;}
+.msg.bot a,.msg.bot strong{color:var(--accent);}
+.msg.bot a{text-decoration:underline;}
+.typing{align-self:flex-start;background:var(--bg-card);padding:12px 18px;border-radius:var(--radius-sm);border-bottom-left-radius:4px;border:1px solid var(--border);display:flex;gap:5px;align-items:center;}
+.typing-dot{width:7px;height:7px;background:var(--text-secondary);border-radius:50%;animation:typingBounce 1.4s infinite ease-in-out;}
+.typing-dot:nth-child(2){animation-delay:0.2s;}
+.typing-dot:nth-child(3){animation-delay:0.4s;}
+@keyframes typingBounce{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-6px);}}
+.input-area{display:flex;gap:8px;padding:10px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);margin-top:8px;transition:border-color var(--transition);}
+.input-area:focus-within{border-color:var(--accent);}
+.input-area input{flex:1;border:none;outline:none;font-size:14px;font-family:var(--font);background:transparent;color:var(--text);}
+.input-area input::placeholder{color:var(--text-secondary);}
+.input-area button{background:var(--accent);color:#fff;border:none;width:38px;height:38px;border-radius:var(--radius-sm);font-size:16px;cursor:pointer;transition:all var(--transition);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.input-area button:hover{background:var(--accent-hover);transform:scale(1.05);}
+.input-area button:disabled{background:var(--border);cursor:not-allowed;transform:none;}
+.quick-btns{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:10px 0 4px;}
+.quick-btns button{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;font-size:12px;cursor:pointer;font-family:var(--font);transition:all var(--transition);color:var(--text-secondary);}
+.quick-btns button:hover{background:var(--accent-bg);color:var(--accent);border-color:var(--accent);}
+
+.lead-sent{display:none;text-align:center;padding:40px 20px;}
+.lead-sent.active{display:block;}
+.lead-sent h3{font-size:18px;margin-bottom:8px;}
+.lead-sent p{color:var(--text-secondary);font-size:13px;}
+
+@media(max-width:480px){
+  .nav{padding:10px 16px;}
+  .lead-card{padding:28px 20px;}
+  .msg{max-width:92%;font-size:13px;}
+  .quick-btns button{font-size:11px;padding:6px 12px;}
+}
 </style>
 </head>
 <body>
-<nav>
-  <a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
-  <a href="/tutor" class="nav-back">← Dashboard</a>
-</nav>
 
-<div id="leadOverlay" style="display:none">
-  <div class="lead-card" id="leadForm">
-    <h1>Welcome to <span>Royce AI</span></h1>
-    <p id="leadSubtitle">Enter your name to get started.</p>
-    <div class="input-group" id="nameGroup">
+<!-- Lead Capture -->
+<div class="lead-overlay" id="leadOverlay">
+  <div class="lead-card" id="leadCard">
+    <h2>👋 Let's talk</h2>
+    <p>Leave your details and I'll connect you right in.</p>
+    <div class="form-group" id="nameGroup">
       <label>Your Name</label>
-      <input type="text" id="leadName" placeholder="Full name" autocomplete="off">
-      <div class="err">Please enter your name</div>
+      <input type="text" id="leadName" placeholder="e.g. John Smith" autocomplete="name">
+      <div class="error">Please enter your name</div>
     </div>
-    <button class="lead-btn" onclick="submitLead()">Start Chatting →</button>
+    <div class="form-group" id="emailGroup">
+      <label>Email</label>
+      <input type="email" id="leadEmail" placeholder="john@example.com" autocomplete="email">
+      <div class="error">Please enter a valid email</div>
+    </div>
+    <div class="form-group" id="phoneGroup">
+      <label>Phone Number</label>
+      <input type="tel" id="leadPhone" placeholder="+1 (555) 123-4567" autocomplete="tel">
+      <div class="error">Please enter a valid phone number</div>
+    </div>
+    <button class="btn-submit" id="submitLead" onclick="submitLead()">Start Chatting →</button>
+    <div class="lead-footer">We'll keep your info private.</div>
   </div>
-  <div id="leadSent">
-    <h2>Thanks!</h2>
-    <p>Let me connect you...</p>
+  <div class="lead-sent" id="leadSent">
+    <h3>✅ You're all set</h3>
+    <p>Redirecting you to the chat...</p>
   </div>
 </div>
 
-<div id="chatApp">
-  <div class="chat-header">
-    <h2 id="welcomeMsg">💬 Royce AI Assistant</h2>
-    <p id="chatSubtitle">No account needed. Start learning immediately.</p>
+<!-- Chat App -->
+<div class="chat-app" id="chatApp">
+  <div class="nav">
+    <div class="nav-logo">Royce<span>AI</span></div>
+    <a href="https://royceaisolutions.github.io" class="nav-back">← Back to site</a>
   </div>
-  <div id="messages">
-    <div class="msg bot">Hi! I'm Royce AI. How can I help you today?</div>
-  </div>
-  <div class="suggestions" id="suggestions">
-    <button onclick="sq('What tutoring do you offer?')">What tutoring?</button>
-    <button onclick="sq('Start math quiz')">Math Quiz</button>
-    <button onclick="sq('Start sat quiz')">SAT Quiz</button>
-    <button onclick="sq('Tell me about Royce AI')">About Royce AI</button>
-  </div>
-  <div class="input-area">
-    <input type="text" id="userInput" placeholder="Type a message..." autocomplete="off">
-    <button id="sendBtn" onclick="sendMessage()">➤</button>
+  <div class="chat-wrap">
+    <div class="messages" id="messages">
+      <div class="msg bot" id="welcomeMsg">
+        👋 Hey! I'm RoyceAI. Ask me about:
+        <br><br>
+        • <b>AI Receptionists</b> — 24/7 call answering<br>
+        • <b>Tutoring</b> — Math, Science, English, Korean<br>
+        • <b>Websites</b> — Custom, AI-integrated<br>
+        • <b>Business AI</b> — Automations, chatbots<br><br>
+        What can I help you with?
+      </div>
+    </div>
+    <div class="quick-btns" id="quickBtns">
+      <button onclick="sendQuick('Tell me about your AI receptionist')">📞 AI Receptionist</button>
+      <button onclick="sendQuick('I need a tutor')">🧠 Tutoring</button>
+      <button onclick="sendQuick('I need a website')">🌐 Website</button>
+      <button onclick="sendQuick('Pricing?')">💰 Pricing</button>
+    </div>
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Ask me anything..." autofocus onkeydown="if(event.key==='Enter') sendMessage()">
+      <button id="sendBtn" onclick="sendMessage()">➤</button>
+    </div>
   </div>
 </div>
 
 <script>
-const C='https://chat-api-tawny-zeta.vercel.app/api/chat',Q='https://chat-api-tawny-zeta.vercel.app/api/quiz',S='https://chat-api-tawny-zeta.vercel.app/api/save-score';
-let history=[],msgCount=0,leadInfo=null,quizMode=false;
-function gp(){try{return JSON.parse(localStorage.getItem('royceai_lead'))}catch(e){return null}}
-function sp(i){try{localStorage.setItem('royceai_lead',JSON.stringify(i))}catch(e){}}
-function lh(){try{var d=JSON.parse(localStorage.getItem('royceai_chat_history'));if(d&&Array.isArray(d))return d}catch(e){}return[]}
-function sh(){try{localStorage.setItem('royceai_chat_history',JSON.stringify(history.slice(-100)))}catch(e){}}
-function rh(){var s=lh();if(!s.length)return false;history=s;var m=document.getElementById('messages');m.innerHTML='';for(var i=0;i<history.length;i++){var msg=history[i];if(msg.role==='user'||msg.role==='assistant'){var d=document.createElement('div');d.className='msg '+(msg.role==='user'?'user':'bot');d.innerHTML=msg.role==='assistant'?fr(msg.content):msg.content;m.appendChild(d)}}return true}
-function gs(){try{var p=new URLSearchParams(window.location.search);return p.get('subject')}catch(e){return null}}
-function init(){
-  var subject=gs();quizMode=!!subject;
-  if(subject){
-    var sn=subject;try{var tu=JSON.parse(localStorage.getItem('tutor_user'));if(tu&&tu.name)sn=tu.name}catch(e){}
-    leadInfo={name:sn,email:sn.toLowerCase().replace(/\s+/g,'.')+'@q.royceai.com',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo);
+const API_URL = 'https://chat-api-tawny-zeta.vercel.app/api/chat';
+let history = [];
+let msgCount = 0;
+let leadInfo = null;
+
+// Check if lead already submitted
+const saved = localStorage.getItem('royceai_lead');
+if (saved) {
+  try {
+    leadInfo = JSON.parse(saved);
     showChat();
-    setTimeout(function(){var inp=document.getElementById('userInput');if(inp){inp.value='Start '+subject+' quiz';sendMessage()}},500);
-    return;
+  } catch(e) {}
+}
+
+function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+function validatePhone(p) {
+  const cleaned = p.replace(/[\s\-\(\)\.]/g, '');
+  // Accept +1XXXXXXXXXX, 1XXXXXXXXXX, or XXXXXXXXXX (10 digits)
+  return /^(\+?1?\d{10})$/.test(cleaned) || /^\d{10}$/.test(cleaned);
+}
+
+function submitLead() {
+  const name = document.getElementById('leadName').value.trim();
+  const email = document.getElementById('leadEmail').value.trim();
+  const phone = document.getElementById('leadPhone').value.trim();
+  let valid = true;
+
+  if (!name) {
+    document.getElementById('nameGroup').classList.add('invalid');
+    valid = false;
+  } else {
+    document.getElementById('nameGroup').classList.remove('invalid');
   }
-  var tu=null;try{var u=JSON.parse(localStorage.getItem('tutor_user'));if(u&&u.name)tu=u}catch(e){}
-  var sl=gp();
-  if(sl)leadInfo=sl;
-  else if(tu){leadInfo={name:tu.name,email:'t@t',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo)}
-  if(leadInfo){showChat();var h=rh();if(h){var msg=document.getElementById('messages');var s=document.createElement('div');s.className='msg system';s.textContent='Welcome back';msg.appendChild(s)}}
-  else{var o=document.getElementById('leadOverlay');if(o)o.style.display='flex'}
+
+  if (!email || !validateEmail(email)) {
+    document.getElementById('emailGroup').classList.add('invalid');
+    valid = false;
+  } else {
+    document.getElementById('emailGroup').classList.remove('invalid');
+  }
+
+  if (!phone || !validatePhone(phone)) {
+    document.getElementById('phoneGroup').classList.add('invalid');
+    valid = false;
+  } else {
+    document.getElementById('phoneGroup').classList.remove('invalid');
+  }
+
+  if (!valid) return;
+
+  const btn = document.getElementById('submitLead');
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+
+  leadInfo = { name, email, phone, timestamp: new Date().toISOString() };
+  localStorage.setItem('royceai_lead', JSON.stringify(leadInfo));
+
+  // Save to API with retry
+  function saveLead(leadData, retries) {
+    fetch(API_URL.replace('/api/chat', '/api/lead'), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(leadData),
+    }).catch(function() {
+      if (retries > 0) setTimeout(function() { saveLead(leadData, retries - 1); }, 2000);
+    });
+  }
+  saveLead(leadInfo, 2);
+
+  document.getElementById('leadSent').classList.add('active');
+  setTimeout(showChat, 800);
 }
-function submitLead(){var n=document.getElementById('leadName').value.trim();if(!n){document.getElementById('nameGroup').classList.add('invalid');return}
-document.getElementById('nameGroup').classList.remove('invalid')
-leadInfo={name:n,email:n.replace(/\s+/g,'.')+'@c.royceai.com',phone:'000-000-0000',timestamp:new Date().toISOString()};sp(leadInfo)
-document.getElementById('leadSent').classList.add('active');setTimeout(showChat,800)}
-function showChat(){document.getElementById('leadOverlay').style.display='none';document.getElementById('chatApp').classList.add('active');document.getElementById('userInput').focus()
-if(quizMode){document.getElementById('welcomeMsg').innerHTML='Quiz Mode';document.getElementById('chatSubtitle').style.display='none'}else{document.getElementById('chatSubtitle').style.display='block'}}
-function am(c,s){var m=document.getElementById('messages'),d=document.createElement('div');d.className='msg '+s;d.innerHTML=c;m.appendChild(d);m.scrollTop=m.scrollHeight}
-function st(s){var e=document.querySelector('.typing');if(e)e.remove();if(!s)return;var d=document.createElement('div');d.className='typing';d.innerHTML='<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';document.getElementById('messages').appendChild(d);document.getElementById('messages').scrollTop=document.getElementById('messages').scrollHeight}
-function sq(t){document.getElementById('userInput').value=t;sendMessage()}
-function fr(t){if(quizMode)t=t.replace(/^[A-Da-d][.)]\s*[^\n]*\n?/gm,'').replace(/^Please select your answer\.?\s*\n?/im,'').trim();return t.replace(/### (.+)/g,'<b>$1</b><br>').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')}
-function renderAnswers(reply,container){
-  if(!reply||!quizMode)return;
-  var opts=reply.match(/[A-Da-d][.)]\s*[^\n]+/g);
-  if(!opts||opts.length<2)return;
-  var area=document.createElement('div');area.className='ans-area';
-  opts.forEach(function(o){
-    var b=document.createElement('button');b.className='ans-btn';
-    b.textContent=o.trim();b.onclick=function(){sq(o.charAt(0).toLowerCase())};
-    area.appendChild(b);
-  });
-  if(container&&container.parentNode)container.parentNode.insertBefore(area,container.nextSibling);
+
+function showChat() {
+  document.getElementById('leadOverlay').style.display = 'none';
+  document.getElementById('chatApp').classList.add('active');
+  document.getElementById('userInput').focus();
 }
-function checkSave(reply){
-  if(!quizMode||!reply)return;
-  var m=reply.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i)||reply.match(/(\d+)\s*\/\s*(\d+)\s*(?:correct|questions|answered)/i)||reply.match(/Final score.*?(\d+)\s*\/\s*(\d+)/i);
-  if(!m)return;
-  var c=parseInt(m[1]),t=parseInt(m[2]);
-  if(!t||t<1||c>t)return;
-  if(t>=10&&(reply.match(/Q10.10|completed|Complete|done|final|Great|good work/i)||c>=6)){
-    var subj=gs()||'quiz';
-    fetch(S,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({student:leadInfo?leadInfo.name:'Student',correct:c,total:t,subject:subj})}).catch(function(){});
-    setTimeout(function(){am('Saved: '+c+'/'+t+' ('+Math.round(c/t*100)+'%)','system')},600);
+
+function addMessage(content, sender) {
+  const msgs = document.getElementById('messages');
+  const div = document.createElement('div');
+  div.className = 'msg ' + sender;
+  div.innerHTML = content;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping(show) {
+  const existing = document.querySelector('.typing');
+  if (existing) existing.remove();
+  if (!show) return;
+  const div = document.createElement('div');
+  div.className = 'typing';
+  div.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+  document.getElementById('messages').appendChild(div);
+  document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+}
+
+function sendQuick(text) {
+  document.getElementById('userInput').value = text;
+  sendMessage();
+}
+
+function formatReply(text) {
+  let html = text
+    .replace(/### (.*)/g, '<strong>$1</strong><br>')
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br>');
+  return html;
+}
+
+async function sendMessage() {
+  const input = document.getElementById('userInput');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  document.getElementById('sendBtn').disabled = true;
+  addMessage(text, 'user');
+  showTyping(true);
+  history.push({ role: 'user', content: text });
+  try {
+    const resp = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: text,
+        history: history.slice(-20),
+        lead: leadInfo,
+      }),
+    });
+    const data = await resp.json();
+    let reply = data.reply || 'Sorry, I had trouble with that.';
+    history.push({ role: 'assistant', content: reply });
+    showTyping(false);
+    addMessage(formatReply(reply), 'bot');
+  } catch (e) {
+    showTyping(false);
+    addMessage('⚠️ Connection error. Try again later.', 'bot');
+  }
+  document.getElementById('sendBtn').disabled = false;
+  msgCount++;
+  if (msgCount === 3) {
+    addMessage('💡 Want to continue later? Bookmark this page and come back.', 'system');
   }
 }
-async function sendMessage(){var inp=document.getElementById('userInput'),t=inp.value.trim();if(!t)return;inp.value='';document.getElementById('sendBtn').disabled=true
-am(t,'user');st(true);history.push({role:'user',content:t});sh()
-try{var url=quizMode?Q:C;var body={message:t,lead:leadInfo,history:history.slice(-30)};if(quizMode)body={message:t,history:history.slice(-20),student:leadInfo?leadInfo.name:''}
-var r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});var d=await r.json()
-st(false);var reply=d.reply||(quizMode?'Type next for next question':'Thanks!');history.push({role:'assistant',content:reply});am(fr(reply),'bot');sh()
-if(quizMode){checkSave(reply);var msgs=document.getElementById('messages');var last=msgs.lastElementChild;if(last)renderAnswers(reply,last)
-if(reply.match(/Correct|Incorrect/i)&&!reply.match(/Q[2-9]\/10|Question\s+[2-9]\/10/i)){setTimeout(function(){sq('next')},1200)}}
-catch(e){st(false);am('Error. Try again.','bot')}
-document.getElementById('sendBtn').disabled=false;msgCount++}
-init();
 </script>
 </body>
 </html>
