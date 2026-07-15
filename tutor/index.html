@@ -1,4 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoyceAI Tutor — Your AI Learning Dashboard</title>
+<link rel="stylesheet" href="/tutor/cal.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--bg-card:#111;--bg-elevated:#1a1a1a;--text:#f5f5f5;--text-secondary:#a1a1aa;--border:rgba(255,255,255,0.06);--accent:#667eea;--accent-hover:#7c93f5;--accent-glow:rgba(102,126,234,0.2);--accent-bg:rgba(102,126,234,0.08);--purple-deep:#764ba2;--green:#22c55e;--gold:#eab308;--red-diff:#ef4444;--radius:16px;--radius-sm:10px;--max-w:1000px;--nav-h:60px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.3s cubic-bezier(0.16,1,0.3,1)}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes score-in{from{opacity:0;transform:translateY(10px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.4}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 20px;max-width:var(--max-w);margin:0 auto;z-index:100;background:rgba(10,10,10,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{font-weight:700;font-size:1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:6px}
+.nav-logo .logo-icon{width:26px;height:26px;background:linear-gradient(135deg,var(--accent),var(--purple-deep));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:white}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.8rem;font-weight:500;padding:5px 12px;border-radius:6px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links a.active{color:var(--accent);background:var(--accent-bg)}
+.login-screen{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:100px 20px 60px;max-width:400px;margin:0 auto;text-align:center}
+.login-screen.hidden{display:none}
+.login-screen h1{font-size:clamp(1.6rem,4vw,2rem);font-weight:700;margin-bottom:6px}
+.login-screen h1 .gradient{background:linear-gradient(135deg,#667eea 0%,#764ba2 50%,#667eea 100%);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 3s ease-in-out infinite}
+.login-screen p{color:var(--text-secondary);font-size:0.85rem;margin-bottom:28px}
+.login-box{width:100%;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:left}
+.login-box label{display:block;font-size:0.75rem;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:6px}
+.login-box input{width:100%;padding:11px 14px;border-radius:var(--radius-sm);background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:var(--font);font-size:0.9rem;outline:none;transition:border 0.2s;margin-bottom:14px}
+.login-box input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+.login-box .btn{width:100%;justify-content:center}
+.login-box .error{color:var(--red-diff);font-size:0.75rem;margin-top:10px;display:none}
+.login-box .error.show{display:block}
+.dashboard{display:none}
+.dashboard.show{display:block}
+.dash-header{padding:90px 20px 16px;max-width:var(--max-w);margin:0 auto;text-align:center}
+.dash-header h1{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;margin-bottom:2px}
+.dash-header h1 .gradient{background:linear-gradient(135deg,#667eea 0%,#764ba2 50%,#667eea 100%);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 3s ease-in-out infinite}
+.dash-header p{color:var(--text-secondary);font-size:0.8rem}
+.dash-actions{position:fixed;top:58px;right:20px;z-index:99;display:flex;gap:8px}
+.dash-actions .logout-btn{padding:6px 14px;border-radius:8px;background:rgba(239,68,68,0.12);color:#ef4444;border:1px solid rgba(239,68,68,0.25);font-family:var(--font);font-size:0.75rem;font-weight:600;cursor:pointer;transition:all 0.2s;text-decoration:none;display:flex;align-items:center;gap:4px}
+.dash-actions .logout-btn:hover{background:rgba(239,68,68,0.2);transform:scale(1.04)}
+.freshness{position:fixed;bottom:12px;right:16px;font-size:0.6rem;color:var(--text-secondary);background:var(--bg-card);padding:4px 10px;border-radius:6px;border:1px solid var(--border);z-index:50;animation:blink 2s ease-in-out infinite}
+.freshness.ok{color:var(--green);animation:none}
+.freshness.stale{color:var(--gold);animation:none}
+.freshness.error{color:var(--red-diff);animation:none}
+.scoreboard{max-width:900px;margin:0 auto;padding:0 20px 16px}
+.scoreboard-inner{background:linear-gradient(135deg,rgba(102,126,234,0.04) 0%,transparent 100%);border:1px solid rgba(102,126,234,0.2);border-radius:var(--radius);padding:20px;animation:score-in 0.5s ease}
+.scoreboard-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.scoreboard-title{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-secondary);display:flex;align-items:center;gap:6px}
+.scoreboard-title span{color:var(--accent)}
+.scoreboard-badges{display:flex;align-items:center;gap:6px}
+.scoreboard-streak{font-size:0.8rem;font-weight:600;color:var(--gold);padding:3px 10px;border-radius:6px;background:rgba(234,179,8,0.1);display:flex;align-items:center;gap:4px}
+.diff-badge{padding:3px 10px;border-radius:6px;font-size:0.7rem;font-weight:700;letter-spacing:0.04em;white-space:nowrap}
+.diff-grade10-12{background:rgba(239,68,68,0.15);color:#ef4444;border:1px solid rgba(239,68,68,0.3)}
+.diff-grade7-9{background:rgba(234,179,8,0.15);color:#eab308;border:1px solid rgba(234,179,8,0.3)}
+.diff-grade4-6{background:rgba(102,126,234,0.15);color:#667eea;border:1px solid rgba(102,126,234,0.3)}
+.diff-grade1-3{background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.3)}
+.scoreboard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.score-stat{text-align:center;padding:12px 8px;border-radius:8px;background:var(--bg-card);border:1px solid var(--border)}
+.score-stat .label{font-size:0.6rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-secondary);margin-bottom:4px}
+.score-stat .score{font-size:clamp(1rem,2.5vw,1.4rem);font-weight:900;letter-spacing:-0.02em}
+.score-stat .score.green{color:var(--green)}
+.score-stat .score.gold{color:var(--gold)}
+.score-stat .score.accent{color:var(--accent)}
+.score-stat .sub{font-size:0.65rem;color:var(--text-secondary);margin-top:2px}
+.score-stat .bar{width:100%;height:3px;border-radius:2px;background:var(--bg-elevated);margin-top:4px;overflow:hidden}
+.score-stat .bar-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--purple-deep));transition:width 0.8s ease}
+.topics-row{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.topics-row .label{font-size:0.65rem;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.05em}
+.topics-row .tag{padding:2px 8px;border-radius:4px;background:var(--accent-bg);color:var(--accent);font-size:0.7rem;font-weight:500}
+.quiz-history{max-width:900px;margin:0 auto;padding:0 20px 28px}
+.quiz-history h3{font-size:0.9rem;font-weight:700;margin-bottom:10px;color:var(--text-secondary);display:flex;align-items:center;gap:6px}
+.quiz-history h3 span{color:var(--accent)}
+.quiz-table{width:100%;border-collapse:collapse}
+.quiz-table th{text-align:left;font-size:0.6rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-secondary);padding:6px 10px;border-bottom:1px solid var(--border)}
+.quiz-table td{padding:6px 10px;font-size:0.75rem;border-bottom:1px solid rgba(255,255,255,0.03)}
+.quiz-table tr:hover td{background:var(--accent-bg)}
+.quiz-pass{color:var(--green);font-weight:600}
+.quiz-fail{color:var(--red-diff);font-weight:600}
+.quiz-topic{padding:2px 6px;border-radius:4px;background:var(--accent-bg);color:var(--accent);font-size:0.65rem}
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:var(--max-w);margin:0 auto;padding:0 20px 80px}
+.dash-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;transition:all var(--transition)}
+.dash-card:hover{border-color:rgba(102,126,234,0.3);transform:translateY(-2px)}
+.dash-card .icon{font-size:1.8rem;margin-bottom:10px;display:block}
+.dash-card h3{font-size:0.95rem;font-weight:600;margin-bottom:4px}
+.dash-card p{color:var(--text-secondary);font-size:0.8rem;margin-bottom:14px;line-height:1.5}
+footer{border-top:1px solid var(--border);padding:36px 20px;max-width:var(--max-w);margin:0 auto;text-align:center}
+footer .copy{color:var(--text-secondary);font-size:0.75rem}
+@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}.scoreboard-grid{grid-template-columns:1fr}.scoreboard-header{flex-direction:column;gap:6px}.dash-actions{top:56px;right:12px}}
+</style></head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/products">Products</a><a href="/tutor" class="active" style="background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);animation:pulse-glow 2s ease-in-out infinite;padding:5px 14px;font-weight:700">✨ Tutor</a><a href="/blog">Blog</a><a href="/chat" class="nav-cta">💬 Chat</a>
+  </div>
+</nav>
+
+<div class="login-screen" id="loginScreen">
+  <h1>Log in to <span class="gradient">study</span></h1>
+  <p id="loginSubtitle">Enter your name to access your personalized learning dashboard.</p>
+  <div class="login-box">
+    <label for="studentFirstName">First Name</label>
+    <input type="text" id="studentFirstName" placeholder="First name" autocomplete="off">
+    <label for="studentLastName" style="margin-top:4px">Last Name</label>
+    <input type="text" id="studentLastName" placeholder="Last name" autocomplete="off">
+    <button class="btn btn-primary" onclick="login()">Log in →</button>
+    <div class="error" id="loginError">Name not found. New here? <a href="/chat" style="color:var(--accent)">Start a free trial</a> — no account needed.</div>
+  </div>
+  <p style="font-size:0.75rem;color:var(--text-secondary);margin-top:12px">New to RoyceAI? <a href="/chat" style="color:var(--accent);font-weight:600">Try our AI tutor free →</a></p>
+</div>
+
+<div class="dashboard" id="dashboard">
+  <div class="dash-actions"><button class="logout-btn" onclick="logout()">🚪 Logout</button></div>
+  <div class="dash-header">
+    <h1>Welcome, <span class="gradient" id="studentName">Student</span></h1>
+    <p id="studentInfo">Your personalized learning dashboard</p>
+  </div>
+  <div class="freshness" id="freshnessBadge">⟳ loading...</div>
+  <div class="scoreboard">
+    <div class="scoreboard-inner">
+      <div class="scoreboard-header">
+        <div class="scoreboard-title">🎮 <span>Scoreboard</span></div>
+        <div class="scoreboard-badges"><div id="difficultyBadge" class="diff-badge" style="display:none"></div><div class="scoreboard-streak" id="streakDisplay">🔥 0</div></div>
+      </div>
+      <div class="scoreboard-grid">
+        <div class="score-stat"><div class="label">📅 Today</div><div class="score accent" id="scoreToday">—</div><div class="sub" id="scoreTodaySub">—</div><div class="bar"><div class="bar-fill" id="barToday" style="width:0%"></div></div></div>
+        <div class="score-stat"><div class="label">📊 Month</div><div class="score gold" id="scoreMTD">—</div><div class="sub" id="scoreMTDSub">—</div><div class="bar"><div class="bar-fill" id="barMTD" style="width:0%"></div></div></div>
+        <div class="score-stat"><div class="label">🏆 All Time</div><div class="score green" id="scoreYTD">—</div><div class="sub" id="scoreYTDSub">—</div><div class="bar"><div class="bar-fill" id="barYTD" style="width:0%"></div></div></div>
+      </div>
+      <div class="topics-row">
+        <span class="label">🎯 Topics:</span><span id="topicsList"><span class="tag">—</span></span>
+        <span class="label" style="margin-left:8px">🧠 Focus:</span><span id="focusDisplay" style="color:var(--text-secondary);font-size:0.75rem">—</span>
+      </div>
+    </div>
+  </div>
+  <div class="cal-tracker" id="calTracker" style="display:none"><div class="cal-card"><h3>🔥 Calorie Tracker</h3><div class="cal-stats"><span>Consumed: <strong id="calConsumed">0</strong> cal</span><span>Goal: <strong>4,000</strong> cal</span></div><div class="cal-bar"><div class="cal-fill" id="calFill" style="width:0%"></div></div><div class="cal-inputs"><input type="text" id="calFood" placeholder="Food (e.g. Chicken Rice Bowl)"><input type="number" id="calAmount" placeholder="Calories" min="1" max="5000"><button class="cal-log-btn" onclick="logCalorie()">+ Log</button></div><div class="cal-items" id="calItems"></div></div></div>
+  <div class="cal-tracker" id="calTracker2" style="display:none">
+    <div class="cal-card">
+      <h3>🔥 Calorie Tracker</h3>
+      <div class="cal-stats"><span>Consumed: <strong id="calConsumed">0</strong> / <strong>4,000</strong> cal</span><span id="calGap" style="color:var(--gold)">Need <strong>4,000</strong> more</span></div>
+      <div class="cal-bar"><div class="cal-fill" id="calFill" style="width:0%"></div></div>
+      <div class="cal-inputs"><input type="text" id="calFood" placeholder="Food (e.g. Chicken Rice Bowl)"><input type="number" id="calAmount" placeholder="Calories" min="1" max="5000"><button class="cal-log-btn" onclick="logCalorie()">+ Log</button></div>
+      <div class="cal-items" id="calItems"></div>
+      <div id="calSuggestions" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06)"><p style="font-size:0.7rem;color:var(--text-secondary);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em">💡 To close the gap, try:</p><div id="calSuggestList" style="display:flex;flex-wrap:wrap;gap:4px"></div></div>
+    </div>
+  </div>
+<div class="quiz-history" id="quizHistory" style="display:none">
+    <h3>📋 <span>Quiz History</span> — Last 10</h3>
+    <table class="quiz-table"><thead><tr><th>Date</th><th>Mode</th><th>Score</th><th>Topics</th><th>Result</th></tr></thead><tbody id="quizHistoryBody"></tbody></table>
+  </div>
+  <div class="dash-grid">
+    <div class="dash-card" data-subject="math"><span class="icon">📐</span><h3>Math</h3><p>Algebra, Geometry, Precalculus.</p><a href="/chat?subject=math" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
+    <div class="dash-card" data-subject="sat"><span class="icon">🎯</span><h3>SAT Prep</h3><p>Math, Reading, Writing.</p><a href="/chat?subject=sat" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
+    <div class="dash-card" data-subject="series66"><span class="icon">📋</span><h3>Series 66</h3><p>Uniform Combined State Law.</p><a href="/chat?subject=series66" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
+    <div class="dash-card" data-subject="series7"><span class="icon">📋</span><h3>Series 7</h3><p>General Securities Exam.</p><a href="/chat?subject=series7" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
+    <div class="dash-card" data-subject="rn"><span class="icon">🩺</span><h3>RN Training</h3><p>NCLEX-RN, Pharmacology, Anatomy.</p><a href="/chat?subject=rn" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
     <div class="dash-card" data-subject="grade9"><span class="icon">📚</span><h3>9th Grade Prep</h3><p>Math 1, Biology, English 9, World History.</p><a href="/chat?subject=grade9" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
     <div class="dash-card" data-subject="grade11"><span class="icon">📖</span><h3>11th Grade Prep</h3><p>Precalculus, Chemistry, English 11, US History, SAT.</p><a href="/chat?subject=grade11" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
     <div class="dash-card" data-subject="reading"><span class="icon">🎮</span><h3>Reading Games</h3><p>Phonics, letters, sight words.</p><a href="/tutor/game" class="btn btn-dynamic btn-game btn-sm">⭐ Play Now</a></div>
     <div class="dash-card" data-subject="baby"><span class="icon">👶</span><h3>Baby Play</h3><p>Sensory, colors, sounds.</p><a href="/tutor/game/baby" class="btn btn-dynamic btn-baby btn-sm">🎈 Play Now</a></div>
+  </div>
+</div>
+<footer><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
+<script>
+const USERS_URL = 'https://raw.githubusercontent.com/royceAIsolutions/royceAIsolutions.github.io/main/tutor/users.json';
+const HIST_URL = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
+let usersData = [];
+let currentUser = null;
+let refreshTimer = null;
+let lastFetchTime = null;
+
+// === FETCH USERS FROM GITHUB (single source of truth) ===
+async function fetchUsers(showError) {
+  try {
+    var r = await fetch(USERS_URL + '?_=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    var data = await r.json();
+    if (!data || !data.length) throw new Error('Empty data');
+    usersData = data;
+    lastFetchTime = Date.now();
+    var badge = document.getElementById('freshnessBadge');
+    if (badge) { badge.textContent = '✓ Live ' + new Date().toLocaleTimeString(); badge.className = 'freshness ok'; }
+    // Update current user's stats if logged in
+    if (currentUser) {
+      var fresh = usersData.find(function(x) { return x.id === currentUser.id; });
+      if (fresh) {
+        currentUser = fresh;
+        renderStats(currentUser);
+        updateButtons(currentUser);
+      }
+    }
+    // Cache in localStorage
+    try { localStorage.setItem('tutor_users_cache', JSON.stringify({ts: Date.now(), data: data})); } catch(e) {}
+  } catch (e) {
+    // Try cache
+    try {
+      var cached = JSON.parse(localStorage.getItem('tutor_users_cache'));
+      if (cached && cached.data && cached.data.length) {
+        usersData = cached.data;
+        if (currentUser) {
+          var fresh = usersData.find(function(x) { return x.id === currentUser.id; });
+          if (fresh) { currentUser = fresh; renderStats(currentUser); updateButtons(currentUser); }
+        }
+        var age = Math.round((Date.now() - cached.ts) / 1000);
+        var badge = document.getElementById('freshnessBadge');
+        if (badge) { badge.textContent = '⚠ Cached ' + age + 's ago'; badge.className = 'freshness stale'; }
+        return;
+      }
+    } catch(e2) {}
+    if (showError) {
+      var badge = document.getElementById('freshnessBadge');
+      if (badge) { badge.textContent = '✗ Offline'; badge.className = 'freshness error'; }
+    }
+  }
+}
+
+// === STATS PARSING ===
+function extractPct(s) {
+  try {
+    var m = s.match(/\((\d+)%\)/);
+    if (m) return parseInt(m[1]);
+    m = s.match(/(\d+)\/(\d+)/);
+    if (m) return Math.round(parseInt(m[1]) / parseInt(m[2]) * 100);
+  } catch(e) {}
+  return 0;
+}
+
+// === RENDER SCOREBOARD ===
+function renderStats(u) {
+  if (!u) return;
+  if (u.focus) document.getElementById('focusDisplay').textContent = u.focus;
+  var _keys = {today:'Today',mtd:'MTD',ytd:'YTD'};
+['today','mtd','ytd'].forEach(function(key) {
+    var val = u[key];
+    var suf = _keys[key];
+    var el = document.getElementById('score' + suf);
+    var bar = document.getElementById('bar' + suf);
+    var sub = document.getElementById('score' + suf + 'Sub');
+    if (val && val !== '—') {
+      var m = val.match(/(\d+)\/(\d+)/);
+      var p = extractPct(val);
+      if (m) { el.textContent = m[0] + ' (' + p + '%)'; bar.style.width = Math.min(p, 100) + '%'; sub.textContent = p + '%'; }
+      else { el.textContent = val; bar.style.width = '0%'; sub.textContent = val; }
+    } else {
+      el.textContent = '—'; bar.style.width = '0%'; sub.textContent = '—';
+    }
+  });
+  if (u.topics) {
+    document.getElementById('topicsList').innerHTML = u.topics.split(',').map(function(t) { return '<span class="tag">' + t.trim() + '</span>'; }).join(' ');
+  }
+  if (u.difficulty) {
+    var db = document.getElementById('difficultyBadge');
+    db.textContent = u.difficulty; db.style.display = 'inline-block';
+  }
+}
+
+// === BUTTON UPDATES ===
+function updateButtons(u) {
+  document.querySelectorAll('.dash-card').forEach(function(card) {
+    if (card.style.display !== 'block') return;
+    var btn = card.querySelector('.btn-dynamic');
+    if (!btn) return;
+    var tp = extractPct(u.today);
+    var yp = extractPct(u.ytd);
+    if (tp >= 90) { btn.innerHTML = '⚡ On Fire!'; btn.className = 'btn btn-dynamic btn-fire btn-sm'; }
+    else if (tp >= 80) { btn.innerHTML = '✅ Continue'; btn.className = 'btn btn-dynamic btn-continue btn-sm'; }
+    else if (tp > 0) { btn.innerHTML = '📚 Review'; btn.className = 'btn btn-dynamic btn-review btn-sm'; }
+    else if (yp >= 90) { btn.innerHTML = '🔥 Start Quiz'; btn.className = 'btn btn-dynamic btn-hot btn-sm'; }
+    else { btn.innerHTML = '⚡ Start Quiz'; btn.className = 'btn btn-dynamic btn-primary btn-sm'; }
+  });
+}
+
+// === LOGIN ===
+function login() {
+  var fi = document.getElementById('studentFirstName'), li = document.getElementById('studentLastName'), er = document.getElementById('loginError');
+  var fn = fi.value.trim(), ln = li.value.trim(), id = (fn + ' ' + ln).toLowerCase();
+  if (!fn) { er.textContent = 'Enter your first name.'; er.classList.add('show'); return; }
+  if (!usersData.length) { er.textContent = 'Loading student data... try again in a moment.'; er.classList.add('show'); return; }
+  var u = usersData.find(function(x) { return x.id === id; });
+  if (!u) { er.textContent = 'Name not found. Try again or chat with us.'; er.classList.add('show'); return; }
+  er.classList.remove('show');
+  localStorage.setItem('tutor_user', JSON.stringify(u));
+  currentUser = u;
+  showDashboard(u);
+}
+
+function showDashboard(u) {
+  document.getElementById('loginScreen').classList.add('hidden');
+  document.getElementById('dashboard').classList.add('show');
+  document.getElementById('studentName').textContent = u.name;
+  document.getElementById('studentInfo').textContent = (u.subjects || '') + ' — ' + (u.plan || '');
+  var k = u.cards ? u.cards.split(',') : ['math'];
+  document.querySelectorAll('.dash-card').forEach(function(c) { c.style.display = k.indexOf(c.dataset.subject) >= 0 ? 'block' : 'none'; });
+  renderStats(u);
+  updateButtons(u);
+  // Calorie tracker for Carter
+  var ct = document.getElementById('calTracker');
+  if (ct) ct.style.display = u.first === 'Carter' ? 'block' : 'none';
+  if (u.first === 'Carter') loadCalories();
+  // Quiz history for Jiho/Carter/Josh
+  if (u.first === 'Jiho' || u.first === 'Carter' || u.first === 'Josh') loadHistory(u.first);
+  // Save lead
+  try { localStorage.setItem('royceai_lead', JSON.stringify({name: u.name, email: u.name.toLowerCase().replace(/\s+/g, '.') + '@student.tutor', phone: '000-000-0000', timestamp: new Date().toISOString()})); } catch(e) {}
+}
+
+// === AUTO-REFRESH ===
+function startAutoRefresh() {
+  if (refreshTimer) clearInterval(refreshTimer);
+  refreshTimer = setInterval(function() { fetchUsers(false); }, 30000);
+}
+
+// === QUIZ HISTORY ===
+async function loadHistory(n) {
+  var el = document.getElementById('quizHistory'), tb = document.getElementById('quizHistoryBody');
+  el.style.display = 'block';
+  tb.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-secondary)">Loading...</td></tr>';
+  try {
+    var r = await fetch(HIST_URL, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({student: n})});
+    var d = await r.json(), ss = d.sessions || [];
+    if (!ss.length) { tb.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-secondary)">No sessions yet</td></tr>'; return; }
+    tb.innerHTML = ss.slice(-10).reverse().map(function(s) {
+      var p = s.percent || Math.round(s.correct/s.total*100), pa = p >= 80;
+      var tp = s.topics ? Object.keys(s.topics).slice(0,2).map(function(t){return '<span class="quiz-topic">'+t.replace(/_/g,' ')+'</span>';}).join(' ') : '<span class="quiz-topic">general</span>';
+      return '<tr><td>'+(s.date||'—')+'</td><td>'+(s.mode||'quiz')+'</td><td><strong>'+s.correct+'/'+s.total+'</strong> ('+p+'%)</td><td>'+tp+'</td><td class="'+(pa?'quiz-pass':'quiz-fail')+'">'+(pa?'✅ Pass':'❌ Review')+'</td></tr>';
+    }).join('');
+  } catch(e) { tb.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--red-diff)">Could not load history</td></tr>'; }
+}
+
+// === CALORIE TRACKER ===
+async function loadCalories() {
+  try {
+    var r = await fetch('https://chat-api-tawny-zeta.vercel.app/api/calorie?student=Carter');
+    var d = await r.json();
+    var total = 0;
+    if (d.entries && d.entries.length) {
+      total = d.today_total || d.entries.reduce(function(a,b) { return a+parseInt(b.calories||0); }, 0);
+      document.getElementById('calConsumed').textContent = total;
+      document.getElementById('calFill').style.width = Math.min(total/4000*100,100)+'%';
+      document.getElementById('calItems').innerHTML = d.entries.slice(-6).reverse().map(function(i) {
+        return '<div class="cal-item"><span class="cal-item-food">'+i.food+'</span><span class="cal-item-cal">'+i.calories+' cal</span></div>';
+      }).join('\n');
+    }
+    var gap = 4000 - total;
+    if (gap <= 0) {
+      document.getElementById('calGap').innerHTML = '🎯 Goal met! <strong>'+total+'</strong>/4,000';
+      document.getElementById('calGap').style.color = '#22c55e';
+      document.getElementById('calSuggestList').innerHTML = '<span style="font-size:0.75rem;color:#22c55e">✅ You hit 4,000 cal today!</span>';
+    } else {
+      document.getElementById('calGap').innerHTML = 'Need <strong>'+gap+'</strong> more cal';
+      document.getElementById('calGap').style.color = 'var(--gold)';
+      var suggestions = [];
+      if (gap >= 1000) { suggestions = [{f:'Double cheeseburger + fries',c:900},{f:'Large pizza (3 slices)',c:800},{f:'Chicken teriyaki bowl',c:850},{f:'Peanut butter sandwich x2 + milk',c:700},{f:'Protein pasta with meatballs',c:750}]; }
+      else if (gap >= 500) { suggestions = [{f:'Protein shake + banana',c:400},{f:'Greek yogurt + granola',c:350},{f:'Turkey sandwich + chips',c:450},{f:'Rice + chicken thigh',c:500},{f:'Trail mix (1 cup)',c:350}]; }
+      else { suggestions = [{f:'Banana + peanut butter',c:250},{f:'Protein bar',c:250},{f:'Glass of milk + toast',c:200},{f:'Handful of almonds',c:170},{f:'Orange juice + egg',c:200}]; }
+      document.getElementById('calSuggestList').innerHTML = suggestions.map(function(s) {
+        return '<button class="ans-btn" onclick="document.getElementById(\'calFood\').value=\''+s.f+'\';document.getElementById(\'calAmount\').value=\''+s.c+'\';logCalorie()" style="font-size:11px;padding:6px 12px">'+s.f+'<br><small style="color:var(--gold)">'+s.c+' cal</small></button>';
+      }).join(' ');
+    }
+  } catch(e) {}
+}
+function logCalorie() {
+  var f=document.getElementById('calFood'),a=document.getElementById('calAmount');
+  if(!f.value.trim()||!a.value||parseInt(a.value)<1)return;
+  fetch('https://chat-api-tawny-zeta.vercel.app/api/calorie',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({student:'Carter',food:f.value.trim(),calories:parseInt(a.value)})})
+    .then(function(){f.value='';a.value='';loadCalories();}).catch(function(){});
+}
+
+function logout() {
+  localStorage.removeItem('tutor_user');
+  document.getElementById('dashboard').classList.remove('show');
+  document.getElementById('loginScreen').classList.remove('hidden');
+  document.getElementById('studentFirstName').value = '';
+  document.getElementById('studentLastName').value = '';
+  if (refreshTimer) clearInterval(refreshTimer);
+}
+
+// === INIT ===
+(function init() {
+  // Fetch users from GitHub
+  fetchUsers(true);
+  // Check for cached login
+  var saved = localStorage.getItem('tutor_user');
+  if (saved) {
+    try {
+      var u = JSON.parse(saved);
+      // Wait for users to load, then match
+      var checkLoaded = setInterval(function() {
+        if (usersData.length) {
+          clearInterval(checkLoaded);
+          var match = usersData.find(function(x) { return x.id === u.id; });
+          if (match) { currentUser = match; showDashboard(match); startAutoRefresh(); }
+          else { localStorage.removeItem('tutor_user'); }
+        }
+      }, 200);
+      // Timeout after 10s
+      setTimeout(function() { clearInterval(checkLoaded); }, 10000);
+    } catch(e) { localStorage.removeItem('tutor_user'); }
+  }
+})();
+
+// Inject button styles
+var ds = document.createElement('style');
+ds.textContent = '.btn-dynamic{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:12px;font-family:Inter,system-ui,sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none;transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);border:none;cursor:pointer;position:relative;overflow:hidden;letter-spacing:0.02em}.btn-dynamic::before{content:"";position:absolute;inset:0;border-radius:12px;opacity:0;transition:opacity 0.3s;background:linear-gradient(135deg,rgba(255,255,255,0.15) 0%,transparent 50%);pointer-events:none}.btn-dynamic:hover::before{opacity:1}.btn-dynamic:hover{animation:btnPop 0.4s cubic-bezier(0.34,1.56,0.64,1);transform:translateY(-3px)}.btn-dynamic:active{transform:translateY(0) scale(0.96)}.btn-primary{background:linear-gradient(135deg,#667eea,#764ba2,#667eea);background-size:200% 200%;color:white;box-shadow:0 4px 15px rgba(102,126,234,0.3),0 0 0 1px rgba(102,126,234,0.3)}.btn-primary:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(102,126,234,0.5),0 0 30px rgba(102,126,234,0.2)}.btn-fire{background:linear-gradient(135deg,#ef4444,#f97316,#ef4444);background-size:200% 200%;color:white;box-shadow:0 4px 15px rgba(239,68,68,0.3),0 0 0 1px rgba(239,68,68,0.3)}.btn-fire:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(239,68,68,0.5),0 0 30px rgba(239,68,68,0.2)}.btn-continue{background:linear-gradient(135deg,#22c55e,#4ade80,#22c55e);background-size:200% 200%;color:white;box-shadow:0 4px 15px rgba(34,197,94,0.3),0 0 0 1px rgba(34,197,94,0.3)}.btn-continue:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(34,197,94,0.5),0 0 30px rgba(34,197,94,0.2)}.btn-review{background:linear-gradient(135deg,#f59e0b,#eab308,#f59e0b);background-size:200% 200%;color:#0a0a0a;box-shadow:0 4px 15px rgba(245,158,11,0.3),0 0 0 1px rgba(245,158,11,0.3)}.btn-review:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(245,158,11,0.5),0 0 30px rgba(245,158,11,0.2)}.btn-hot{background:linear-gradient(135deg,#ef4444,#667eea,#ef4444);background-size:200% 200%;color:white;box-shadow:0 4px 15px rgba(239,68,68,0.3),0 0 0 1px rgba(239,68,68,0.3)}.btn-hot:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(239,68,68,0.5),0 0 30px rgba(239,68,68,0.2)}.btn-game{background:linear-gradient(135deg,#eab308,#facc15,#eab308);background-size:200% 200%;color:#0a0a0a;font-weight:800;box-shadow:0 4px 15px rgba(234,179,8,0.4),0 0 0 1px rgba(234,179,8,0.3)}.btn-game:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(234,179,8,0.6),0 0 30px rgba(234,179,8,0.2)}.btn-baby{background:linear-gradient(135deg,#ff6b9d,#ff85ab,#ff6b9d);background-size:200% 200%;color:white;font-weight:800;box-shadow:0 4px 15px rgba(255,107,157,0.3),0 0 0 1px rgba(255,107,157,0.3)}.btn-baby:hover{animation:btnPop 0.4s,btnShine 2s linear infinite;background-position:100% center;box-shadow:0 6px 25px rgba(255,107,157,0.5),0 0 30px rgba(255,107,157,0.2)}.btn-sm{padding:9px 20px;font-size:0.85rem}';
+document.head.appendChild(ds);
+</script>
+</body>
+</html>
