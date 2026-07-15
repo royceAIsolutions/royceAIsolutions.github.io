@@ -255,6 +255,10 @@ footer .copy{color:var(--text-secondary);font-size:0.75rem}
   </div>
 </div>
 <footer><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
+<script>var usersData = [{"first": "Jiho", "last": "Pak", "id": "jiho pak", "name": "Jiho Pak", "subjects": "Math", "active": true, "today": "96/100 (96%)", "mtd": "461/492 (94%)", "ytd": "461/492 (94%)", "topics": "Jul 15 Quiz, Factoring, Geometry", "difficulty": "\ud83d\udd25 Math 3 \u2014 94%", "focus": "Radicals, Quadratics, Polynomials", "plan": "free_trial", "cards": "math,grade9", "authorized": true}, {"first": "Carter", "last": "Koh", "id": "carter koh", "name": "Carter Koh", "subjects": "Math / SAT / Basketball", "active": true, "today": "86/109 (79%)", "mtd": "150/189 (79%)", "ytd": "150/189 (79%)", "topics": "SAT Prep, Calorie Tracking", "difficulty": "\u26a1 SAT \u2014 On Track", "focus": "SAT prep + 4K cal daily + Bench Builder", "plan": "free_trial", "cards": "sat,math,grade11", "authorized": true}, {"first": "Angel", "last": "Koh", "id": "angel koh", "name": "Angel Koh", "subjects": "RN Training / Health", "active": true, "today": "\u2014", "mtd": "\u2014", "ytd": "\u2014", "topics": "NCLEX-RN Training", "difficulty": "\ud83e\ude7a RN Training \u2014 Active", "focus": "NCLEX-RN, Pharmacology, Anatomy", "plan": "free_trial", "cards": "rn", "authorized": true}, {"first": "Paxton", "last": "Koh", "id": "paxton koh", "name": "Paxton Koh", "subjects": "Reading Games", "active": true, "today": "\u2014", "mtd": "\u2014", "ytd": "\u2014", "topics": "\u2014", "difficulty": "\ud83c\udfae Grade 1 \u2014 Game Mode", "focus": "Letter Recognition, Phonics, Sight Words", "plan": "free_trial", "cards": "reading", "authorized": true}, {"first": "Josh", "last": "Lucero", "id": "josh lucero", "name": "Josh Lucero", "subjects": "Series 66, 7", "active": true, "today": "27/30 (90%)", "mtd": "27/30 (90%)", "ytd": "27/30 (90%)", "topics": "Series 66, Series 7", "difficulty": "\ud83d\udccb Series 66 \u2014 27/30 (90%)", "focus": "Series 66 (Uniform Combined), Series 7", "plan": "free_trial", "cards": "series66,series7", "authorized": true}, {"first": "Mason", "last": "Min", "id": "mason min", "name": "Mason Min", "subjects": "Baby Play", "active": true, "today": "\u2014", "mtd": "\u2014", "ytd": "\u2014", "topics": "Sensory Play", "difficulty": "\ud83d\udc76 Baby Play \u2014 Sensory", "focus": "Sensory, Colors, Sounds", "plan": "free_trial", "cards": "baby", "authorized": true}, {"first": "Pearl", "last": "Johnson", "id": "pearl johnson", "name": "Pearl Johnson", "subjects": "Preschool Play, Letters, Numbers", "active": true, "today": "\u2014", "mtd": "\u2014", "ytd": "\u2014", "topics": "\u2014", "difficulty": "\ud83c\udfa8 Preschool \u2014 Play Mode", "focus": "ABCs, 123s, Colors, Shapes", "plan": "free_trial", "cards": "baby,preschool", "authorized": true}, {"first": "Ruby", "last": "Johnson", "id": "ruby johnson", "name": "Ruby Johnson", "subjects": "Reading / Math / Grade 2", "active": true, "today": "\u2014", "mtd": "\u2014", "ytd": "\u2014", "topics": "\u2014", "difficulty": "\ud83d\udcda Grade 2 \u2014 Foundations", "focus": "Reading Comprehension, Addition, Subtraction, Phonics", "plan": "free_trial", "cards": "reading,math,grade2", "authorized": true}, {"first": "Carter", "last": "Touch", "id": "carter touch", "name": "Carter Touch", "subjects": "Grade 9 / Liberty High School", "active": true, "today": "\u2014", "mtd": "\u2014", "ytd": "\u2014", "topics": "\u2014", "difficulty": "\ud83d\udcda Freshman \u2014 Liberty HS", "focus": "Algebra 1, Biology, English 9", "plan": "free_trial", "cards": "math,grade9", "authorized": true}, {"first": "Chase", "last": "Touch", "id": "chase touch", "name": "Chase Touch", "subjects": "Grade 7 / Nelson Middle School", "active": true, "today": "\u2014", "mtd": "\u2014", "ytd": "\u2014", "topics": "\u2014", "difficulty": "\ud83d\udcda 7th Grade \u2014 Nelson MS", "focus": "Pre-Algebra, Reading, Science", "plan": "free_trial", "cards": "math,reading,grade7", "authorized": true}];
+var currentUser = null;
+var USERS_URL = "...";
+</script>
 <script>
 const USERS_URL = 'https://raw.githubusercontent.com/royceAIsolutions/royceAIsolutions.github.io/main/tutor/users.json';
 const HIST_URL = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
@@ -293,23 +297,19 @@ function login() {
   var fn = fi.value.trim();
   var ln = li.value.trim();
   if (!fn) { er.textContent = 'Enter your first name.'; er.style.display = 'block'; return; }
-  if (btn) btn.textContent = 'Loading...';
+  btn.textContent = 'Loading...';
   er.style.display = 'none';
   var id = (fn + ' ' + ln).toLowerCase();
-  
-  if (!usersData.length) {
-    fetchUsers().then(function() {
-      if (!usersData.length) {
-        er.textContent = 'Could not load. Try again.';
-        er.style.display = 'block';
-        if (btn) btn.textContent = 'Log in \u2192';
-        return;
-      }
-      matchUser(id, er, btn);
-    });
+  var u = usersData.find(function(x) { return x.id === id; });
+  if (!u) {
+    er.textContent = 'Name not found: ' + id;
+    er.style.display = 'block';
+    btn.textContent = 'Log in \u2192';
     return;
   }
-  matchUser(id, er, btn);
+  currentUser = u;
+  localStorage.setItem('tutor_user', JSON.stringify(u));
+  showDashboard(u);
 }
 
 function matchUser(id, er, btn) {
