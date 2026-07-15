@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Assistant — Royce AI</title>
+<meta name="description" content="Undetectable AI coding interview assistant. Real-time solutions during technical interviews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--bg-card:#111;--bg-elevated:#1a1a1a;--text:#f5f5f5;--text-secondary:#a1a1aa;--border:rgba(255,255,255,0.06);--accent:#667eea;--accent-hover:#7c93f5;--accent-glow:rgba(102,126,234,0.2);--accent-bg:rgba(102,126,234,0.08);--purple-deep:#764ba2;--green:#22c55e;--gold:#eab308;--radius:16px;--radius-sm:10px;--max-w:1000px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.3s cubic-bezier(0.16,1,0.3,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto;z-index:100;background:rgba(10,10,10,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:6px}
+.nav-logo .icon{width:28px;height:28px;background:linear-gradient(135deg,var(--accent),var(--purple-deep));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:white}
+.nav-logo span{color:var(--accent)}
+.hero{padding:140px 24px 80px;max-width:var(--max-w);margin:0 auto;text-align:center}
+.hero .badge{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:20px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);font-size:0.8rem;font-weight:600;color:#ef4444;margin-bottom:20px}
+.hero h1{font-size:clamp(2.5rem,6vw,3.8rem);font-weight:900;letter-spacing:-0.04em;line-height:1.05;margin-bottom:16px}
+.hero h1 .gradient{background:linear-gradient(135deg,#667eea 0%,#764ba2 50%,#667eea 100%);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 3s ease-in-out infinite}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero p{color:var(--text-secondary);font-size:1.1rem;max-width:550px;margin:0 auto 32px;line-height:1.7}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:var(--radius-sm);font-family:var(--font);font-size:1rem;font-weight:700;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--purple-deep));color:white;box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 0 1px var(--accent),0 8px 30px var(--accent-glow)}
+.btn-ghost{background:rgba(255,255,255,0.06);color:var(--text);border:1px solid var(--border)}
+.btn-ghost:hover{background:rgba(255,255,255,0.1)}
+.section{padding:80px 24px;max-width:var(--max-w);margin:0 auto}
+.section h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;text-align:center;margin-bottom:8px;letter-spacing:-0.02em}
+.section h2 .gradient{background:linear-gradient(135deg,#667eea,#764ba2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.section .sub{text-align:center;color:var(--text-secondary);font-size:0.95rem;margin-bottom:48px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all var(--transition)}
+.feature-card:hover{border-color:rgba(102,126,234,0.3);transform:translateY(-2px)}
+.feature-card .icon{font-size:1.8rem;margin-bottom:12px;display:block}
+.feature-card h3{font-size:1rem;font-weight:600;margin-bottom:4px}
+.feature-card p{color:var(--text-secondary);font-size:0.85rem;line-height:1.6}
+.pricing-card{max-width:380px;margin:0 auto;background:var(--bg-card);border:1px solid rgba(102,126,234,0.2);border-radius:var(--radius);padding:40px;text-align:center;background:linear-gradient(135deg,rgba(102,126,234,0.04),transparent)}
+.pricing-card .amount{font-size:clamp(2.5rem,5vw,3.5rem);font-weight:900;letter-spacing:-0.03em;margin:8px 0}
+.pricing-card .period{color:var(--text-secondary);font-size:0.9rem;margin-bottom:20px}
+.pricing-card .features{list-style:none;text-align:left;margin:24px 0;display:block}
+.pricing-card .features li{padding:8px 0;font-size:0.85rem;color:var(--text-secondary);display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,0.04)}
+.pricing-card .features li:last-child{border:none}
+.pricing-card .features li .check{color:var(--green);font-weight:700}
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;counter-reset:step}
+.how-step{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center;position:relative}
+.how-step .num{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--purple-deep));color:white;font-weight:800;font-size:0.9rem;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.how-step h3{font-size:0.95rem;font-weight:600;margin-bottom:4px}
+.how-step p{color:var(--text-secondary);font-size:0.8rem;line-height:1.5}
+.cta-section{text-align:center;padding:100px 24px;max-width:var(--max-w);margin:0 auto}
+.cta-section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:12px}
+.cta-section p{color:var(--text-secondary);font-size:1rem;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+footer{border-top:1px solid var(--border);padding:48px 24px;max-width:var(--max-w);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+footer .copy{color:var(--text-secondary);font-size:0.8rem}
+footer .links{display:flex;gap:20px}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+footer .links a:hover{color:var(--accent)}
+@media(max-width:640px){.hero{padding:100px 20px 60px}.section{padding:60px 20px}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><span class="icon">R</span> Royce<span>AI</span></a>
+</nav>
+
+<section class="hero">
+  <div class="badge">🔥 Undetectable AI — Built for coding interviews</div>
+  <h1>Ace your coding<br><span class="gradient">interview with AI</span></h1>
+  <p>Real-time AI assistance during live technical interviews. Invisible to screen sharing. Works with CoderPad, HackerRank, LeetCode, and any coding platform.</p>
+  <div class="hero-actions">
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=royceaisolutions%40gmail.com&item_name=Interview+Assistant&a3=50&p3=1&t3=M&src=1&sra=1&currency_code=USD&return=https%3A%2F%2Froyceai.com%2Fthanks&cancel_return=https%3A%2F%2Froyceai.com%2Finterview-assistant" class="btn btn-primary">Subscribe $50/mo →</a>
+    <a href="#how" class="btn btn-ghost">How it works</a>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <h2>How it <span class="gradient">works</span></h2>
+  <p class="sub">Three seconds. One solution.</p>
+  <div class="how-grid">
+    <div class="how-step"><div class="num">1</div><h3>Install Extension</h3><p>Load the Chrome extension. One click, no setup.</p></div>
+    <div class="how-step"><div class="num">2</div><h3>Press Ctrl+Shift+P</h3><p>Captures the coding problem from your interview screen.</p></div>
+    <div class="how-step"><div class="num">3</div><h3>Get the Answer</h3><p>AI generates the optimal solution shown in an invisible overlay.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Why <span class="gradient">RoyceAI</span></h2>
+  <p class="sub">Built by engineers who actually interview.</p>
+  <div class="features">
+    <div class="feature-card"><span class="icon">👻</span><h3>Invisible to Screen Share</h3><p>The overlay uses GPU compositing tricks that screen recording software cannot capture. Your interviewer sees only your code editor.</p></div>
+    <div class="feature-card"><span class="icon">⚡</span><h3>Real-time Solutions</h3><p>AI generates optimal code with complexity analysis in seconds. Focus on the interview, not the puzzle.</p></div>
+    <div class="feature-card"><span class="icon">🛡️</span><h3>Undetectable</h3><p>Daily tested against Zoom, Meet, Teams, CoderPad, HackerRank. If a platform updates detection, we patch within 24 hours.</p></div>
+    <div class="feature-card"><span class="icon">🧠</span><h3>Multiple Languages</h3><p>Python, JavaScript, Java, C++, Go — AI detects the language from your editor and responds accordingly.</p></div>
+    <div class="feature-card"><span class="icon">🎯</span><h3>Problem Capture</h3><p>Auto-detects problems on CoderPad, HackerRank, LeetCode, CodeSignal. Manual capture works on any page.</p></div>
+    <div class="feature-card"><span class="icon">🔑</span><h3>Licensed Access</h3><p>Every subscription generates a unique license key. Your key, your account, unlimited use during interviews.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="pricing-card">
+    <h3 style="font-size:0.9rem;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Interview Assistant</h3>
+    <div class="amount">$50</div>
+    <div class="period">per month · cancel anytime</div>
+    <ul class="features">
+      <li><span class="check">✓</span> Chrome extension with stealth overlay</li>
+      <li><span class="check">✓</span> AI coding solutions in real-time</li>
+      <li><span class="check">✓</span> Works with all interview platforms</li>
+      <li><span class="check">✓</span> Undetectable screen share protection</li>
+      <li><span class="check">✓</span> License key delivered after payment</li>
+      <li><span class="check">✓</span> Updates & compatibility patches</li>
+    </ul>
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=royceaisolutions%40gmail.com&item_name=Interview+Assistant&a3=50&p3=1&t3=M&src=1&sra=1&currency_code=USD&return=https%3A%2F%2Froyceai.com%2Fthanks&cancel_return=https%3A%2F%2Froyceai.com%2Finterview-assistant" class="btn btn-primary" style="width:100%;justify-content:center">Subscribe Now →</a>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Ready to pass your interview?</h2>
+  <p>Join engineers using RoyceAI to ace FAANG and startup interviews. First payment unlocks your license.</p>
+  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=royceaisolutions%40gmail.com&item_name=Interview+Assistant&a3=50&p3=1&t3=M&src=1&sra=1&currency_code=USD&return=https%3A%2F%2Froyceai.com%2Fthanks&cancel_return=https%3A%2F%2Froyceai.com" class="btn btn-primary">Subscribe $50/mo →</a>
+</section>
+
+<footer>
+  <div class="copy">RoyceAI Solutions. Irvine, CA</div>
+  <div class="links">
+    <a href="/">Home</a>
+    <a href="/products">Products</a>
+    <a href="/chat">Chat</a>
+  </div>
+</footer>
+</body>
+</html>
