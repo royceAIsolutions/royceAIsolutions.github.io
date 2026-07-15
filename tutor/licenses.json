@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "key": "RAI-1281178BA2",
+    "customer": "Royce Demo",
+    "status": "active",
+    "created": "2026-07-15T00:00:00Z",
+    "expires": "2026-08-15T00:00:00Z",
+    "plan": "monthly"
+  }
+]
