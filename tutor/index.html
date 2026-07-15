@@ -378,13 +378,14 @@ function login() {
       return;
     }
     var u = usersData.find(function(x) { return x.id === id; });
-    if (!u) { er.textContent = 'Name not found. Check your spelling.'; er.classList.add('show'); return; }
+    if (!u) { er.textContent = "Name not found. Check your spelling."; er.classList.add('show'); return; }
     er.classList.remove('show');
     localStorage.setItem('tutor_user', JSON.stringify(u));
     currentUser = u;
     showDashboard(u);
   }
   tryLogin();
+  setTimeout(function() { if (!usersData.length) er.textContent = "Still loading... try again."; }, 5000);
 }
 
 function showDashboard(u) {
