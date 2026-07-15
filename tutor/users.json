@@ -94,5 +94,37 @@
     "focus": "Sensory, Colors, Sounds",
     "plan": "Daily sensory play",
     "cards": "baby"
+  },
+  {
+    "first": "Pearl",
+    "last": "Johnson",
+    "id": "pearl johnson",
+    "name": "Pearl Johnson",
+    "subjects": "Preschool Play",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83c\udfa8 Preschool \u2014 Play Mode",
+    "focus": "Colors, Shapes, Letters, Numbers",
+    "plan": "Daily 15min fun learning",
+    "cards": "baby"
+  },
+  {
+    "first": "Ruby",
+    "last": "Johnson",
+    "id": "ruby johnson",
+    "name": "Ruby Johnson",
+    "subjects": "Reading / Math",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83d\udcda Grade 2 \u2014 Foundations",
+    "focus": "Reading Comprehension, Addition, Subtraction",
+    "plan": "Daily 20min reading & math",
+    "cards": "reading"
   }
 ]
