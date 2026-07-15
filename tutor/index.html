@@ -262,14 +262,21 @@ let usersData = [];
 let currentUser = null;
 
 async function fetchUsers() {
+  var cs = document.getElementById('connStatus');
   try {
-    var r = await fetch(USERS_URL + '?_=' + Date.now());
+    if (cs) cs.textContent = '⟳ Loading students...';
+    var ctrl = new AbortController();
+    var tid = setTimeout(function() { ctrl.abort(); }, 8000);
+    var r = await fetch(USERS_URL + '?_=' + Date.now(), { signal: ctrl.signal });
+    clearTimeout(tid);
     if (!r.ok) throw new Error('HTTP ' + r.status);
     var data = await r.json();
     if (!data || !data.length) throw new Error('Empty');
     usersData = data;
+    if (cs) { cs.textContent = '✓ Connected (' + data.length + ' students)'; cs.style.color = '#22c55e'; }
     try { localStorage.setItem('tutor_users_cache', JSON.stringify({ts: Date.now(), data: data})); } catch(e) {}
   } catch (e) {
+    if (cs) { cs.textContent = '⚠ Offline — using cached data'; cs.style.color = '#eab308'; }
     try {
       var cached = JSON.parse(localStorage.getItem('tutor_users_cache'));
       if (cached && cached.data && cached.data.length) { usersData = cached.data; }
