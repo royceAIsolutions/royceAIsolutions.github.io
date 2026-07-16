@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="version" content="v4-jul15-2026">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RoyceAI Tutor — Your AI Learning Dashboard</title>
 <link rel="stylesheet" href="/tutor/cal.css">
@@ -289,20 +290,33 @@ async function fetchUsers() {
 }
 
 function login() {
+  console.log('[LOGIN] Button clicked');
   var fi = document.getElementById('studentFirstName');
   var li = document.getElementById('studentLastName');
   var er = document.getElementById('loginError');
   var btn = document.querySelector('.login-box button');
-  if (!fi || !li) return;
+  if (!fi) { console.error('[LOGIN] firstName input not found'); return; }
+  if (!li) { console.error('[LOGIN] lastName input not found'); return; }
+  if (!er) { console.error('[LOGIN] error div not found'); return; }
+  if (!btn) { console.error('[LOGIN] button not found'); return; }
   var fn = fi.value.trim();
   var ln = li.value.trim();
+  console.log('[LOGIN] Inputs:', fn, ln);
   if (!fn) { er.textContent = 'Enter your first name.'; er.style.display = 'block'; return; }
   btn.textContent = 'Loading...';
   er.style.display = 'none';
   var id = (fn + ' ' + ln).toLowerCase();
+  if (!usersData || !usersData.length) {
+    console.error('[LOGIN] usersData empty or undefined');
+    er.textContent = 'Data not loaded. Refresh the page.';
+    er.style.display = 'block';
+    btn.textContent = 'Log in \u2192';
+    return;
+  }
   var u = usersData.find(function(x) { return x.id === id; });
+  console.log('[LOGIN] Looking for:', id, 'Found:', u ? u.name : 'NO MATCH');
   if (!u) {
-    er.textContent = 'Name not found: ' + id;
+    er.textContent = 'Name not found. Try: ' + id;
     er.style.display = 'block';
     btn.textContent = 'Log in \u2192';
     return;
@@ -498,5 +512,7 @@ var ds = document.createElement('style');
 ds.textContent = '.btn-dynamic{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:12px;font-family:Inter,system-ui,sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none;transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);border:none;cursor:pointer}.btn-primary{background:linear-gradient(135deg,#667eea,#764ba2,#667eea);background-size:200% 200%;color:white;box-shadow:0 4px 15px rgba(102,126,234,0.3)}.btn-game{background:linear-gradient(135deg,#eab308,#facc15,#eab308);background-size:200% 200%;color:#0a0a0a;font-weight:800}.btn-baby{background:linear-gradient(135deg,#ff6b9d,#ff85ab,#ff6b9d);background-size:200% 200%;color:white;font-weight:800}.btn-sm{padding:9px 20px;font-size:0.85rem}';
 document.head.appendChild(ds);
 </script>
+<div id="debugInfo" style="display:none"></div>
+<script>console.log('[LOGIN] Page loaded, usersData:', typeof usersData, usersData ? usersData.length : 0);</script>
 </body>
 </html>
