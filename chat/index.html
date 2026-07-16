@@ -12,7 +12,7 @@ gtag('config', 'G-XXXXXXXX');
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chat — Royce AI Solutions</title>
+<title>Chat — RoyceAI Solutions</title>
 <meta name="description" content="Chat with RoyceAI. Get started by sharing your contact info.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -335,7 +335,7 @@ async function sendMessage() {
     // Content safety check
     var dirty = text.match(/(ignore|ignore all|forget|reset|new prompt|system prompt|you are|your instructions|your system|jailbreak|dan|do anything|no filters|no restrictions|admin|password|secret|token|api.?key|bypass|override|hack|exploit|injection)/i);
     if (dirty) {
-      addMessage('I can only help with Royce AI products and services. Let me know what you need help with.', 'bot');
+      addMessage('I can only help with RoyceAI products and services. Let me know what you need help with.', 'bot');
       document.getElementById('sendBtn').disabled = false;
       fetch('/api/lead', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:'FLAG', type:'injection_attempt', content:text, timestamp:new Date().toISOString(), lead:leadInfo})}).catch(function(){});
       return;
