@@ -94,6 +94,35 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 @media(min-width:641px) and (max-width:1023px){.bento{grid-template-columns:repeat(2,1fr)}.bento-card.wide{grid-column:span 2}}
 
 .ys{color:#f59e0b;font-size:0.85rem;letter-spacing:1px}.yl{color:var(--accent-light);text-decoration:none;font-size:0.8rem;white-space:nowrap}.yl:hover{text-decoration:underline}
+
+.blog-post{max-width:800px;margin:0 auto;padding:2rem 1rem 4rem;line-height:1.7;color:var(--text);animation:fade-up 0.5s ease-out}
+.blog-post h1{font-size:2rem;margin-bottom:0.3rem;color:#fff}
+.blog-post .meta{color:var(--text-secondary);font-size:0.85rem;margin-bottom:2rem}
+.blog-post h2{font-size:1.3rem;margin:2.5rem 0 1rem;color:var(--accent-light);border-bottom:1px solid var(--border);padding-bottom:0.5rem}
+.blog-post p{margin:0.8rem 0;line-height:1.7}
+.back-link{display:inline-block;margin-bottom:1.5rem;color:var(--accent-light);text-decoration:none;font-size:0.9rem}
+.back-link:hover{text-decoration:underline}
+.blog-post .restaurant-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.5rem;margin:1.2rem 0;transition:all var(--transition);box-shadow:var(--shadow-card)}
+.blog-post .restaurant-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.blog-post .restaurant-card h3{margin:0 0 0.3rem;color:#fff}
+.blog-post .restaurant-card .details{color:var(--text-secondary);font-size:0.9rem}
+.blog-post .restaurant-card .rating{color:#f59e0b}
+.blog-post .r{display:flex;align-items:baseline;padding:0.5rem 0;border-bottom:1px solid var(--border);gap:6px;flex-wrap:wrap}
+.blog-post .r .n{color:var(--accent-light);font-weight:700;min-width:26px;font-size:0.9rem}
+.blog-post .r .s{color:#fff}
+.blog-post .r .t{background:var(--accent-bg);color:var(--accent-light);padding:0 7px;border-radius:3px;font-size:0.7rem;white-space:nowrap}
+.blog-post .r .ys{color:#f59e0b;font-size:0.85rem;letter-spacing:1px}
+.blog-post .r .yl{color:var(--accent-light);text-decoration:none;font-size:0.8rem;white-space:nowrap}
+.blog-post .r .yl:hover{text-decoration:underline}
+.blog-post .r .i{color:var(--text-secondary);font-size:0.83rem;width:100%;margin-top:2px;padding-left:32px}
+@media(max-width:640px){
+  .blog-post{padding:1rem}
+  .blog-post h1{font-size:1.5rem}
+  .blog-post h2{font-size:1.15rem}
+  .blog-post .r .i{padding-left:0;margin-top:3px}
+  .blog-post .restaurant-card{padding:0.8rem 1rem}
+}
+
 </style>
 </head>
 <body>
