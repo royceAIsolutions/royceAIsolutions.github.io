@@ -95,6 +95,49 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 }
 @media(min-width:641px) and (max-width:1023px){.bento{grid-template-columns:repeat(2,1fr)}.bento-card.wide{grid-column:span 2}}
 
+
+/* Tutor Dashboard */
+.dashboard{max-width:900px;margin:4rem auto 2rem;padding:0 24px;animation:fade-up 0.6s ease-out}
+.dash-header{text-align:center;margin-bottom:2rem}
+.dash-header h2{font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:4px}
+.dash-header p{color:var(--text-secondary);font-size:0.9rem}
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:2rem}
+.dash-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow-card);transition:all var(--transition)}
+.dash-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.dash-card h3{font-size:0.85rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-secondary);font-weight:600;margin-bottom:8px}
+.dash-card .stat{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.dash-card .stat span{font-size:0.9rem;font-weight:400;color:var(--text-muted)}
+.dash-actions{display:flex;gap:10px;flex-wrap:wrap;margin:1.5rem 0}
+/* Scoreboard */
+.scoreboard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:2rem;box-shadow:var(--shadow-card)}
+.scoreboard-title{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:12px}
+.scoreboard-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.scoreboard-inner{display:flex;gap:24px;flex-wrap:wrap}
+.scoreboard-streak{display:flex;align-items:center;gap:8px;font-size:1.3rem;font-weight:700;color:#f59e0b}
+.scoreboard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.score-stat{display:flex;justify-content:space-between;padding:8px 12px;background:var(--bg-elevated);border-radius:8px;font-size:0.9rem;color:var(--text-secondary)}
+.score-stat .val{font-weight:600;color:#fff}
+.scoreboard-badges{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+/* Cal Card */
+.cal-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-card)}
+.cal-card h3{font-size:0.9rem;font-weight:600;color:var(--text-secondary);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.03em}
+/* Game */
+.game-board{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:2rem;box-shadow:var(--shadow-card)}
+.game-scorebar{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.game-scorebar .score{font-size:1rem;color:var(--text-secondary)}
+.game-scorebar .score strong{color:#fff}
+.score{font-size:0.9rem;color:var(--text-secondary)}
+/* Loading state */
+.loading{color:var(--text-muted);text-align:center;padding:40px 0;font-size:0.9rem}
+@media(max-width:640px){
+  .dashboard{padding:0 16px;margin-top:2rem}
+  .dash-grid{grid-template-columns:1fr}
+  .dash-header h2{font-size:1.4rem}
+  .scoreboard-inner{flex-direction:column;gap:12px}
+  .scoreboard-grid{grid-template-columns:1fr}
+  .game-board{padding:16px}
+}
+
 </style></head>
 <body>
   <div class="orb orb-1"></div>
