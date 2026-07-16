@@ -102,7 +102,7 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 }
 @media(min-width:641px) and (max-width:1023px){.bento{grid-template-columns:repeat(2,1fr)}.bento-card.wide{grid-column:span 2}}
 .dashboard{max-width:900px;margin:4rem auto 2rem;padding:0 24px;animation:fade-up 0.6s ease-out;text-align:center}
-.dash-header{text-align:center;margin-bottom:2rem}
+.dash-header{text-align:center;margin-bottom:1rem}
 .dash-header h2{font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:4px}
 .dash-header p{color:var(--text-secondary);font-size:0.9rem}
 .dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:0 auto 2rem;max-width:800px}
@@ -112,21 +112,20 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 .dash-card .stat{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.02em;text-align:center}
 .dash-card .stat span{font-size:0.9rem;font-weight:400;color:var(--text-muted)}
 .dash-actions{display:flex;gap:10px;flex-wrap:wrap;margin:1.5rem 0}
-.scoreboard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin:0 auto 2rem;box-shadow:var(--shadow-card);max-width:800px}
+.scoreboard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;margin:0 auto 1rem;box-shadow:var(--shadow-card);max-width:800px}
 .scoreboard-title{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:12px}
-.scoreboard-header{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:16px;gap:8px}
+.scoreboard-header{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:8px;gap:4px}
 .scoreboard-inner{display:flex;gap:24px;flex-wrap:wrap}
 .scoreboard-streak{display:flex;align-items:center;gap:8px;font-size:1.3rem;font-weight:700;color:#f59e0b}
-.scoreboard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;justify-items:center}
-.score-stat{display:flex;justify-content:space-between;padding:10px 16px;background:var(--bg-elevated);border-radius:8px;font-size:0.9rem;color:var(--text-secondary);width:100%;max-width:320px}
+.scoreboard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;justify-items:center}
+.score-stat{display:flex;justify-content:space-between;padding:8px 14px;background:var(--bg-elevated);border-radius:8px;font-size:0.85rem;color:var(--text-secondary);width:100%;max-width:300px}
 .score-stat .val{font-weight:600;color:#fff}
 .scoreboard-badges{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
 
-.dash-actions{display:flex;gap:10px;flex-wrap:wrap;margin:1.5rem 0;justify-content:center}
 .score-stat.empty{opacity:0.35}
 .dash-header .sub{color:var(--text-muted);font-size:0.9rem}
 .score-stat .sub{color:var(--text-muted);font-size:0.7rem;display:none}
-.topics-row{display:flex;flex-wrap:wrap;gap:4px;align-items:center;justify-content:center;text-align:center;margin-top:16px;width:100%}.quiz-history{max-width:800px;margin:0 auto 2rem;animation:fade-up 0.6s ease-out;text-align:center}.quiz-table{width:100%;border-collapse:separate;border-spacing:0;text-align:center}.quiz-table th,.quiz-table td{text-align:center}.cal-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-card);text-align:center}
+.topics-row{display:flex;flex-wrap:wrap;gap:4px;align-items:center;justify-content:center;text-align:center;margin-top:8px;width:100%}.quiz-history{max-width:800px;margin:0 auto 2rem;animation:fade-up 0.6s ease-out;text-align:center}.quiz-table{width:100%;border-collapse:separate;border-spacing:0;text-align:center}.quiz-table th,.quiz-table td{text-align:center}.cal-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-card);text-align:center}
 .cal-card h3{font-size:0.9rem;font-weight:600;color:var(--text-secondary);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.03em}
 .game-board{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:2rem;box-shadow:var(--shadow-card)}
 .game-scorebar{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
@@ -242,7 +241,6 @@ var HIST_URL = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
 </div>
 
 
-<div class="dash-actions hidden"><button class="logout-btn" onclick="logout()">🚪 Logout</button></div>
 <div class="cal-toggle"><label style="font-size:0.8rem;color:var(--text-secondary);display:flex;align-items:center;gap:8px;margin-bottom:8px"><input type="checkbox" id="calToggle" onchange="var ct=document.getElementById('calTracker');var show=this.checked;if(ct)ct.style.display=show?'block':'none';try{var u=JSON.parse(localStorage.getItem('tutor_user'));if(u)localStorage.setItem('cal_show_'+u.id,show)}catch(e){}"> Show Calorie Counter</label></div>
 <div class="cal-tracker" id="calTracker" style="display:none">
 <div class="cal-card hidden">
