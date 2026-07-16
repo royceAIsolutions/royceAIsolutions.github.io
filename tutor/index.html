@@ -176,6 +176,10 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 .empty-state .icon{font-size:2rem;margin-bottom:8px;display:block}
 /* Scoreboard fix */
 .scoreboard.hidden{display:none}
+.kpi-stat{display:none}
+.kpi-stat .score.purple{color:#a855f7;font-weight:700}
+.kpi-stat .score.green{color:#22c55e;font-weight:700}
+.kpi-stat .score.pink{color:#ec4899;font-weight:700}
 .cal-card.hidden{display:none}
 .game-board.hidden{display:none}
 .dash-actions.hidden{display:none}
@@ -250,6 +254,9 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
         <div class="score-stat"><div class="label">📅 Today</div><div class="score accent" id="scoreToday">—</div><div class="sub" id="scoreTodaySub">—</div><div class="bar"><div class="bar-fill" id="barToday" style="width:0%"></div></div></div>
         <div class="score-stat"><div class="label">📊 Month</div><div class="score gold" id="scoreMTD">—</div><div class="sub" id="scoreMTDSub">—</div><div class="bar"><div class="bar-fill" id="barMTD" style="width:0%"></div></div></div>
         <div class="score-stat"><div class="label">🏆 All Time</div><div class="score green" id="scoreYTD">—</div><div class="sub" id="scoreYTDSub">—</div><div class="bar"><div class="bar-fill" id="barYTD" style="width:0%"></div></div></div>
+        <div class="score-stat kpi-stat" id="kpi1" style="display:none"><div class="label" id="kpi1Label">KPI 1</div><div class="score purple" id="kpi1Val">—</div></div>
+        <div class="score-stat kpi-stat" id="kpi2" style="display:none"><div class="label" id="kpi2Label">KPI 2</div><div class="score green" id="kpi2Val">—</div></div>
+        <div class="score-stat kpi-stat" id="kpi3" style="display:none"><div class="label" id="kpi3Label">KPI 3</div><div class="score pink" id="kpi3Val">—</div></div>
       </div>
       <div class="topics-row">
         <span class="label">🎯 Topics:</span><span id="topicsList"><span class="tag">—</span></span>
@@ -441,7 +448,7 @@ function showDashboard(u) {
   if (u.first === 'Pearl' || u.first === 'Ruby') document.getElementById('gameSection').style.display = 'block';
   if (u.first === 'Pearl') startColorGame();
   if (u.first === 'Ruby') startMathGame();
-  if (u.first === 'Carter') loadCalories();
+  if (u.first === 'Carter') 
   if (u.first === 'Jiho' || u.first === 'Carter' || u.first === 'Josh') loadHistory(u.first);
   
 }
