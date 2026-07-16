@@ -200,5 +200,25 @@
       "tutor",
       "therapy"
     ]
+  },
+  {
+    "first": "Tommy",
+    "last": "Touch",
+    "id": "tommy touch",
+    "name": "Tommy Touch",
+    "subjects": "Therapy Bot",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83e\udde0 Therapy",
+    "focus": "Mental wellness, Therapy Bot",
+    "plan": "free_trial",
+    "cards": "therapy",
+    "authorized": true,
+    "products": [
+      "therapy"
+    ]
   }
 ]
