@@ -138,6 +138,40 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
   .game-board{padding:16px}
 }
 
+
+/* Tutor Login */
+.login-section{min-height:70vh;display:flex;align-items:center;justify-content:center;padding:100px 24px 40px}
+.login-box{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 36px;max-width:400px;width:100%;box-shadow:var(--shadow-elevated);text-align:center}
+.login-box .avatar{width:56px;height:56px;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 3s ease-in-out infinite;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 16px;box-shadow:0 4px 20px var(--accent-glow)}
+.login-box h2{font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:4px}
+.login-box .sub{color:var(--text-secondary);font-size:0.85rem;margin-bottom:24px}
+.login-box .input-group{position:relative;margin-bottom:14px;text-align:left}
+.login-box .input-group label{display:block;font-size:0.75rem;color:var(--text-muted);margin-bottom:4px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em}
+.login-box .input-group input{width:100%;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:#fff;font-size:0.9rem;font-family:var(--font);outline:none;transition:all 0.2s;box-sizing:border-box}
+.login-box .input-group input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+.login-box button{width:100%;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:13px;font-weight:600;font-family:var(--font);font-size:0.95rem;cursor:pointer;transition:all 0.2s;margin-top:4px}
+.login-box button:hover{background:var(--accent-light);transform:translateY(-1px);box-shadow:0 4px 20px var(--accent-glow)}
+.login-box .error{color:#ef4444;font-size:0.82rem;margin-top:10px;display:none;padding:8px 12px;background:rgba(239,68,68,0.08);border-radius:8px;border:1px solid rgba(239,68,68,0.15)}
+.login-box .logout-link{display:inline-block;margin-top:14px;color:var(--text-muted);font-size:0.8rem;text-decoration:none;cursor:pointer}
+.login-box .logout-link:hover{color:var(--accent-light)}
+/* App container - hidden before login */
+.app-container{display:none}
+.app-container.show{display:block;animation:fade-up 0.5s ease-out}
+/* Loading spinner */
+.spinner{width:20px;height:20px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite;display:inline-block;vertical-align:middle;margin-right:8px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading{color:var(--text-muted);text-align:center;padding:60px 0;font-size:0.9rem}
+.loading.hidden{display:none}
+/* Empty state */
+.empty-state{text-align:center;padding:24px;color:var(--text-muted);font-size:0.85rem}
+.empty-state .icon{font-size:2rem;margin-bottom:8px;display:block}
+/* Scoreboard fix */
+.scoreboard.hidden{display:none}
+.cal-card.hidden{display:none}
+.game-board.hidden{display:none}
+.dash-actions.hidden{display:none}
+.metric{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.2}
+
 </style></head>
 <body>
   <div class="orb orb-1"></div>
@@ -164,15 +198,16 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
   
 </div>
 
+<div class="app-container" id="appContainer">
 <div class="dashboard" id="dashboard">
-  <div class="dash-actions"><button class="logout-btn" onclick="logout()">🚪 Logout</button></div>
+  <div class= hidden"dash-actions"><button class="logout-btn" onclick="logout()">🚪 Logout</button></div>
   <div class="dash-header">
     <div id="greetingRow" style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:2px;min-height:1.3em">☀️ Good Morning</div>
     <h1><span class="gradient" id="studentName" style="display:inline-block">Student</span> <span id="vibeEmoji" style="font-size:1.5rem;display:inline-block">📚</span></h1>
     <p id="studentInfo">Your personalized learning dashboard</p>
   </div>
   <div class="freshness" id="freshnessBadge">⟳ loading...</div>
-  <div class="scoreboard">
+  <div class="scoreboard hidden">
     <div class="scoreboard-inner">
       <div class="scoreboard-header">
         <div class="scoreboard-title">🎮 <span>Scoreboard</span></div>
@@ -191,7 +226,7 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
   </div>
 
   <div class="cal-tracker" id="calTracker2" style="display:none">
-    <div class="cal-card">
+    <div class="cal-card hidden">
       <h3>🔥 Calorie Tracker</h3>
       <div class="cal-stats"><span>Consumed: <strong id="calConsumed">0</strong> / <strong>4,000</strong> cal</span><span id="calGap" style="color:var(--gold)">Need <strong>4,000</strong> more</span></div>
       <div class="cal-bar"><div class="cal-fill" id="calFill" style="width:0%"></div></div>
@@ -213,7 +248,7 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
         <span class="pts">⭐ <span id="pearlScore">0</span></span>
         <span class="streak" id="pearlStreak">🔥 0 streak</span>
       </div>
-      <div class="game-board" id="pearlBoard">
+      <div class="game-board hidden" id="pearlBoard">
         <div class="game-question" id="pearlQuestion">Find the <strong style="font-size:1.4rem" id="colorWord">RED</strong> one!</div>
         <div class="game-options" id="pearlOptions"></div>
       </div>
@@ -263,6 +298,7 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
     <div class="dash-card" data-subject="reading"><span class="icon">🎮</span><h3>Reading Games</h3><p>Phonics, letters, sight words.</p><a href="/tutor/game" class="btn btn-dynamic btn-game btn-sm">⭐ Play Now</a></div>
     <div class="dash-card" data-subject="baby"><span class="icon">👶</span><h3>Baby Play</h3><p>Sensory, colors, sounds.</p><a href="/tutor/game/baby" class="btn btn-dynamic btn-baby btn-sm">🎈 Play Now</a></div>
   </div>
+</div>
 </div>
 <footer><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
 <script>var usersData = [{"first": "Jiho", "last": "Pak", "id": "jiho pak", "name": "Jiho Pak", "subjects": "Math", "active": true, "today": "96/100 (96%)", "mtd": "461/492 (94%)", "ytd": "461/492 (94%)", "topics": "Jul 15 Quiz, Factoring, Geometry", "difficulty": "\ud83d\udd25 Math 3 \u2014 94%", "focus": "Radicals, Quadratics, Polynomials", "plan": "free_trial", "cards": "math,grade9", "authorized": true}, {"first": "Carter", "last": "Koh", "id": "carter koh", "name": "Carter Koh", "subjects": "Math / SAT / Basketball", "active": true, "today": "86/109 (79%)", "mtd": "150/189 (79%)", "ytd": "150/189 (79%)", "topics": "SAT Prep, Calorie Tracking", "difficulty": "\u26a1 SAT \u2014 On Track", "focus": "SAT prep + 4K cal daily + Bench Builder", "plan": "free_trial", "cards": "sat,math,grade11", "authorized": true}, {"first": "Angel", "last": "Koh", "id": "angel koh", "name": "Angel Koh", "subjects": "RN Training / Health", "active": true, "today": "\u2014", "mtd": "\u2014", "ytd": "\u2014", "topics": "NCLEX-RN Training", "difficulty": "\ud83e\ude7a RN Training \u2014 Active", "focus": "NCLEX-RN, Pharmacology, Anatomy", "plan": "free_trial", "cards": "rn", "authorized": true}, {"first": "Paxton", "last": "Koh", "id": "paxton koh", "name": "Paxton Koh", "subjects": "Reading Games", "active": true, "today": "\u2014", "mtd": "\u2014", "ytd": "\u2014", "topics": "\u2014", "difficulty": "\ud83c\udfae Grade 1 \u2014 Game Mode", "focus": "Letter Recognition, Phonics, Sight Words", "plan": "free_trial", "cards": "reading", "authorized": true}, {"first": "Josh", "last": "Lucero", "id": "josh lucero", "name": "Josh Lucero", "subjects": "Series 66, 7", "active": true, "today": "27/30 (90%)", "mtd": "27/30 (90%)", "ytd": "27/30 (90%)", "topics": "Series 66, Series 7", "difficulty": "\ud83d\udccb Series 66 \u2014 27/30 (90%)", "focus": "Series 66 (Uniform Combined), Series 7", "plan": "free_trial", "cards": "series66,series7", "authorized": true}, {"first": "Mason", "last": "Min", "id": "mason min", "name": "Mason Min", "subjects": "Baby Play", "active": true, "today": "\u2014", "mtd": "\u2014", "ytd": "\u2014", "topics": "Sensory Play", "difficulty": "\ud83d\udc76 Baby Play \u2014 Sensory", "focus": "Sensory, Colors, Sounds", "plan": "free_trial", "cards": "baby", "authorized": true}, {"first": "Pearl", "last": "Johnson", "id": "pearl johnson", "name": "Pearl Johnson", "subjects": "Preschool Play, Letters, Numbers", "active": true, "today": "\u2014", "mtd": "\u2014", "ytd": "\u2014", "topics": "\u2014", "difficulty": "\ud83c\udfa8 Preschool \u2014 Play Mode", "focus": "ABCs, 123s, Colors, Shapes", "plan": "free_trial", "cards": "baby,preschool", "authorized": true}, {"first": "Ruby", "last": "Johnson", "id": "ruby johnson", "name": "Ruby Johnson", "subjects": "Reading / Math / Grade 2", "active": true, "today": "\u2014", "mtd": "\u2014", "ytd": "\u2014", "topics": "\u2014", "difficulty": "\ud83d\udcda Grade 2 \u2014 Foundations", "focus": "Reading Comprehension, Addition, Subtraction, Phonics", "plan": "free_trial", "cards": "reading,math,grade2", "authorized": true}, {"first": "Carter", "last": "Touch", "id": "carter touch", "name": "Carter Touch", "subjects": "Grade 9 / Liberty High School", "active": true, "today": "\u2014", "mtd": "\u2014", "ytd": "\u2014", "topics": "\u2014", "difficulty": "\ud83d\udcda Freshman \u2014 Liberty HS", "focus": "Algebra 1, Biology, English 9", "plan": "free_trial", "cards": "math,grade9", "authorized": true}, {"first": "Chase", "last": "Touch", "id": "chase touch", "name": "Chase Touch", "subjects": "Grade 7 / Nelson Middle School", "active": true, "today": "\u2014", "mtd": "\u2014", "ytd": "\u2014", "topics": "\u2014", "difficulty": "\ud83d\udcda 7th Grade \u2014 Nelson MS", "focus": "Pre-Algebra, Reading, Science", "plan": "free_trial", "cards": "math,reading,grade7", "authorized": true}];
@@ -349,6 +385,8 @@ function matchUser(id, er, btn) {
 }
 
 function showDashboard(u) {
+  document.getElementById('appContainer').classList.add('show');
+  document.querySelector('.login-section').style.display = 'none';
   document.getElementById('loginScreen').classList.add('hidden');
   document.getElementById('dashboard').classList.add('show');
   var h = new Date().getHours();
@@ -362,6 +400,11 @@ function showDashboard(u) {
   if (si) si.textContent = (u.subjects || '') + ' \u2014 ' + (u.plan || '');
   var k = u.cards ? u.cards.split(',') : ['math'];
   document.querySelectorAll('.dash-card').forEach(function(c) { c.style.display = k.indexOf(c.dataset.subject) >= 0 ? 'block' : 'none'; });
+  document.querySelector('.scoreboard').classList.remove('hidden');
+  document.querySelector('.cal-card').classList.remove('hidden');
+  document.querySelector('.game-board').classList.remove('hidden');
+  document.querySelector('.dash-actions').classList.remove('hidden');
+  document.querySelector('.loading').classList.add('hidden');
   renderScoreboard(u);
   if (u.first === 'Pearl' || u.first === 'Ruby') document.getElementById('gameSection').style.display = 'block';
   if (u.first === 'Pearl') startColorGame();
