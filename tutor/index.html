@@ -420,11 +420,11 @@ function showDashboard(u) {
   if (si) si.textContent = (u.subjects || '') + ' \u2014 ' + (u.plan || '');
   var k = u.cards ? u.cards.split(',') : ['math'];
   document.querySelectorAll('.dash-card').forEach(function(c) { c.style.display = k.indexOf(c.dataset.subject) >= 0 ? 'block' : 'none'; });
-  document.querySelector('.scoreboard').classList.remove('hidden');
-  document.querySelector('.cal-card').classList.remove('hidden');
-  document.querySelector('.game-board').classList.remove('hidden');
-  document.querySelector('.dash-actions').classList.remove('hidden');
-  document.querySelector('.loading').classList.add('hidden');
+  var _sb=document.querySelector('.scoreboard');if(_sb)_sb.classList.remove('hidden');
+  var _cc=document.querySelector('.cal-card');if(_cc)_cc.classList.remove('hidden');
+  var _gb=document.querySelector('.game-board');if(_gb)_gb.classList.remove('hidden');
+  var _da=document.querySelector('.dash-actions');if(_da)_da.classList.remove('hidden');
+  var _ld=document.querySelector('.loading');if(_ld)_ld.classList.add('hidden');
   renderScoreboard(u);
   if (u.first === 'Pearl' || u.first === 'Ruby') document.getElementById('gameSection').style.display = 'block';
   if (u.first === 'Pearl') startColorGame();
