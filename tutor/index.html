@@ -265,7 +265,8 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
     </div>
   </div>
 
-  <div class="cal-tracker" id="calTracker" style="display:none">
+  <div class="cal-toggle"><label style="font-size:0.8rem;color:var(--text-secondary);display:flex;align-items:center;gap:8px;margin-bottom:8px"><input type="checkbox" id="calToggle" onchange="var ct=document.getElementById('calTracker');var show=this.checked;ct.style.display=show?'block':'none';try{var u=JSON.parse(localStorage.getItem('tutor_user'));if(u)localStorage.setItem('cal_show_'+u.id,show)}catch(e){}"> Show Calorie Counter</label></div>
+<div class="cal-tracker" id="calTracker" style="display:none">
     <div class="cal-card hidden">
       <h3>🔥 Calorie Tracker</h3>
       <div class="cal-stats"><span>Consumed: <strong id="calConsumed">0</strong> / <strong>4,000</strong> cal</span><span id="calGap" style="color:var(--gold)">Need <strong>4,000</strong> more</span></div>
