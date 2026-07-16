@@ -178,6 +178,13 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 
 body.tutor-page{padding-top:0}
 
+
+body.tutor-page nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100}
+body.tutor-page .login-section{padding-top:calc(80px + var(--nav-h))}
+@media(max-width:640px){
+  body.tutor-page .login-section{padding-top:calc(60px + var(--nav-h))}
+}
+
 </style></head>
 <body class="tutor-page">
   <div class="orb orb-1"></div>
