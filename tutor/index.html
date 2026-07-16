@@ -213,18 +213,11 @@ var HIST_URL = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
 </div>
 <div class="app-container" id="appContainer">
 <div class="dashboard" id="dashboard">
-<div class="dash-actions hidden"><button class="logout-btn" onclick="logout()">🚪 Logout</button></div>
-<div class="dash-header">
-<div id="greetingRow">☀️ Good Morning</div>
-<h1><span class="gradient" id="studentName" style="display:inline-block">Student</span> <span id="vibeEmoji" style="font-size:1.5rem;display:inline-block">📚</span></h1>
-<p id="studentInfo">Your personalized learning dashboard</p>
-</div>
-<div class="freshness" id="freshnessBadge">⟳ loading...</div>
 <div class="scoreboard hidden">
 <div class="scoreboard-inner">
 <div class="scoreboard-header">
 <div class="scoreboard-title">🎮 <span>Scoreboard</span></div>
-<div class="scoreboard-badges"><div id="difficultyBadge" class="diff-badge" style="display:none"></div><div class="scoreboard-streak" id="streakDisplay">🔥 0</div></div>
+<div class="scoreboard-badges"><div class="scoreboard-streak" id="streakDisplay">🔥 0</div></div>
 </div>
 <div class="scoreboard-grid">
 <div class="score-stat"><div class="label">📅 Today</div><div class="score accent" id="scoreToday">—</div><div class="sub" id="scoreTodaySub">—</div><div class="bar"><div class="bar-fill" id="barToday" style="width:0%"></div></div></div>
@@ -235,10 +228,18 @@ var HIST_URL = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
 <div class="score-stat kpi-stat" id="kpi3" style="display:none"><div class="label" id="kpi3Label">KPI 3</div><div class="score pink" id="kpi3Val">—</div></div>
 </div>
 <div class="topics-row">
+<span id="difficultyBadge" class="diff-badge" style="display:none;margin-right:4px"></span>
 <span class="label">🎯 Topics:</span><span id="topicsList"><span class="tag">—</span></span>
 <span class="label" style="margin-left:8px">🧠 Focus:</span><span id="focusDisplay" style="color:var(--text-secondary);font-size:0.75rem">—</span>
 </div>
 </div>
+</div>
+
+<div class="dash-actions hidden"><button class="logout-btn" onclick="logout()">🚪 Logout</button></div>
+<div class="dash-header">
+<div id="greetingRow">☀️ Good Morning</div>
+<h1><span class="gradient" id="studentName" style="display:inline-block">Student</span> <span id="vibeEmoji" style="font-size:1.5rem;display:inline-block">📚</span></h1>
+<p id="studentInfo">Your personalized learning dashboard</p>
 </div>
 <div class="cal-toggle"><label style="font-size:0.8rem;color:var(--text-secondary);display:flex;align-items:center;gap:8px;margin-bottom:8px"><input type="checkbox" id="calToggle" onchange="var ct=document.getElementById('calTracker');var show=this.checked;if(ct)ct.style.display=show?'block':'none';try{var u=JSON.parse(localStorage.getItem('tutor_user'));if(u)localStorage.setItem('cal_show_'+u.id,show)}catch(e){}"> Show Calorie Counter</label></div>
 <div class="cal-tracker" id="calTracker" style="display:none">
