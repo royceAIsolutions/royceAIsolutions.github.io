@@ -1,1 +1,340 @@
-PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CjwhLS0gR29vZ2xlIHRhZyAoZ3RhZy5qcykgLS0+CjxzY3JpcHQgYXN5bmMgc3JjPSJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbS9ndGFnL2pzP2lkPUctWFhYWFhYWFgiPjwvc2NyaXB0Pgo8c2NyaXB0Pgp3aW5kb3cuZGF0YUxheWVyID0gd2luZG93LmRhdGFMYXllciB8fCBbXTsKZnVuY3Rpb24gZ3RhZygpe2RhdGFMYXllci5wdXNoKGFyZ3VtZW50cyk7fQpndGFnKCdqcycsIG5ldyBEYXRlKCkpOwpHdGFnKCdjb25maWcnLCAnRy1YWFhYWFhYWCcpOwo8L3NjcmlwdD4KCjxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KPG1ldGEgbmFtZT0idmVyc2lvbiIgY29udGVudD0idjUtanVsMTUtMjAyNiI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MS4wIj4KPHRpdGxlPlJveWNlQUkgVHV0b3Ig4oSQIFlvdXIgQUkgTGVhcm5pbmcgRGFzaGJvYXJkPC90aXRsZT4KPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSIvdHV0b3IvY2FsLmNzcyI+CjxsaW5rIHJlbD0icHJlY29ubmVjdCIgaHJlZj0iaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbSI+CjxsaW5rIGhyZWY9Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9SW50ZXI6d2dodEA0MDA7NTAwOzYwMDs3MDA7ODAwOzkwMCZkaXNwbGF5PXN3YXAiIHJlbD0ic3R5bGVzaGVldCI+CjxzdHlsZT46cm9vdHstLWJnOiMwNzA3MGE7LS1iZy1jYXJkOiMwZTBlMTI7LS1iZy1lbGV2YXRlZDojMTUxNTFiOy0tdGV4dDojZWVlZWYwOy0tdGV4dC1zZWNvbmRhcnk6Izg4ODg5YTstLXRleHQtbXV0ZWQ6IzVjNWM2ZTstLWJvcmRlcjpyZ2JhKDI1NSwyNTUsMjU1LDAuMDYpOy0tYm9yZGVyLWhvdmVyOnJnYmEoMjU1LDI1NSwyNTUsMC4xKTstLWFjY2VudDojN2M1NWZjOy0tYWNjZW50LWxpZ2h0OiNhNzhiZmE7LS1hY2NlbnQtZGFyazojNWIzY2Q0Oy0tYWNjZW50LWdsb3c6cmdiYSgxMjQsOTIsMjUyLDAuMik7LS1hY2NlbnQtYmc6cmdiYSgxMjQsOTIsMjUyLDAuMDgpOy0tYWNjZW50LWdyYWRpZW50OmxpbmVhci1ncmFkaWVudCgxMzVkZywjN2M1NWZjIDAlLCNhNzhiZmEgNTAlLCM3YzVjZmMgMTAwJSk7LS1yYWRpdXM6MTZweDstLXJhZGl1cy1zbToxMHB4Oy0tbWF4LXc6MTIwMHB4Oy0tbmF2LWh6OjY0cHg7LS1mb250OidJbnRlcicsc3lzdGVtLXVpLC1hcHBsZS1zYW5zLXNlcmlmOy0tdHJhbnNpdGlvbjowLjM1cyBjdWJpYy1iZXppZXIoMC4xNiwxLDAuMywxKTstLXNoYWRvdy1jYXJkOjAgMnB4IDIwcHggcmdiYSgwLDAsMCwwLjMpLDAgMCAwIDFweCByZ2JhKDI1NSwyNTUsMjU1LDAuMDMpOy0tc2hhZG93LWVsZXZhdGVkOjAgOHB4IDQwcHggcmdiYSgwLDAsMCwwLjQpLDAgMCAwIDFweCByZ2JhKDI1NSwyNTUsMjU1LDAuMDQpfQoqLCo6OmJlZm9yZSwqOjphZnRlcntib3gtc2l6aW5nOmJvcmRlci1ib3g7bWFyZ2luOjA7cGFkZGluZzowfQpodG1se3Njcm9sbC1iZWhhdmlvcjpzbW9vdGg7LXdlYmtpdC1mb250LXNtb290aGluZzphbnRpYWxpYXNlZH0KYm9keXtmb250LWZhbWlseTp2YXIoLS1mb250KTtiYWNrZ3JvdW5kOnZhcigtLWJnKTtjb2xvcjp2YXIoLS10ZXh0KTtsaW5lLWhlaWdodDoxLjY7b3ZlcmZsb3cteDpoaWRkZW47YmFja2dyb3VuZC1pbWFnZTpyYWRpYWwtZ3JhZGllbnQoZWxsaXBzZSA4MCUgNTAlIGF0IDUwJSAtMjAlLHJnYmEoMTI0LDkyLDI1MiwwLjA0KSAwJSx0cmFuc3BhcmVudCA3MCUpfQpib2R5OjpiZWZvcmV7Y29udGVudDonJztwb3NpdGlvbjpmaXhlZDtpbnNldDowO29wYWNpdHk6MC4wMTI7cG9pbnRlci1ldmVudHM6bm9uZTt6LWluZGV4Ojk5OTk7YmFja2dyb3VuZC1pbWFnZTp1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0Nzdmcgdmlld0JveD0nMCAwIDI1NiAyNTYnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyclM0UlM0NmaWx0ZXIgaWQ9J24nJTNFJTNDZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nMC45JyBudW1PY3RhdmVzPSc0JyBzdGl0Y2hUaWxlcz0nc3RpdGNoJy8lM0UlM0MvZmlsdGVyJTNFJTNDcmVjdCB3aWR0aD0nMTAwJTI1JyBoZWlnaHQ9JzEwMCUyNScgZmlsdGVyPSd1cmwoJTIzbiknLyUzRSUzQy9zdmclM0UiKTtiYWNrZ3JvdW5kLXJlcGVhdDpyZXBlYXQ7YmFja2dyb3VuZC1zaXplOjI1NnB4IDI1NnB4fQoub3Jie3Bvc2l0aW9uOmZpeGVkO2JvcmRlci1yYWRpdXM6NTAlO2ZpbHRlcjpibHVyKDgwcHgpO3BvaW50ZXItZXZlbnRzOm5vbmU7ei1pbmRleDotMTtvcGFjaXR5OjAuM30KLm9yYi0xe3dpZHRoOjYwMHB4O2hlaWdodDo2MDBweDtiYWNrZ3JvdW5kOnJnYmEoMTI0LDkyLDI1MiwwLjA4KTt0b3A6LTMwMHB4O3JpZ2h0Oi0yMDBweH0KLm9yYi0ye3dpZHRoOjUwMHB4O2hlaWdodDo1MDBweDtiYWNrZ3JvdW5kOnJnYmEoMTY4LDg1LDI0NywwLjA1KTtib3R0b206LTI1MHB4O2xlZnQ6LTE1MHB4fQpAa2V5ZnJhbWVzIHNoaW1tZXJ7MCV7YmFja2dyb3VuZC1wb3NpdGlvbjowJSA1MCV9NTAle2JhY2tncm91bmQtcG9zaXRpb246MTAwJSA1MCV9MTAwJXtiYWNrZ3JvdW5kLXBvc2l0aW9uOjAlIDUwJX19CkBrZXlmcmFtZXMgcHVsc2UtZ2xvd3swJSwxMDAle2JveC1zaGFkb3c6MCAwIDAgMXB4IHZhcigtLWFjY2VudCksMCA0cHggMjBweCB2YXIoLS1hY2NlbnQtZ2xvdyl9NTAle2JveC1zaGFkb3c6MCAwIDAgMXB4IHZhcigtLWFjY2VudCksMCA0cHggNDBweCB2YXIoLS1hY2NlbnQtZ2xvdyksMCAwIDYwcHggdmFyKC0tYWNjZW50LWdsb3cpfX0KQGtleWZyYW1lcyBmbG9hdHswJSwxMDAle3RyYW5zZm9ybTp0cmFuc2xhdGVZKDApfTUwJXt0cmFuc2Zvcm06dHJhbnNsYXRlWSgtNnB4KX19CkBrZXlmcmFtZXMgZmFkZS11cHtmcm9te29wYWNpdHk6MDt0cmFuc2Zvcm06dHJhbnNsYXRlWSgyMHB4KX10b3tvcGFjaXR5OjE7dHJhbnNmb3JtOnRyYW5zbGF0ZVkoMCl9fQpuYXZ7cG9zaXRpb246Zml4ZWQ7dG9wOjA7bGVmdDowO3JpZ2h0OjA7aGVpZ2h0OnZhcigtLW5hdi1oKTt6LWluZGV4OjEwMDtiYWNrZ3JvdW5kOnJnYmEoNyw3LDEwLDAuOCk7YmFja2Ryb3AtZmlsdGVyOmJsdXIoMjBweCkgc2F0dXJhdGUoMS41KTstd2Via2l0LWJhY2tkcm9wLWZpbHRlcjpibHVyKDIwcHgpIHNhdHVyYXRlKDEuNSk7Ym9yZGVyLWJvdHRvbToxcHggc29saWQgdmFyKC0tYm9yZGVyKTtkaXNwbGF5OmZsZXg7YWxpZ24taXRlbXM6Y2VudGVyO2p1c3RpZnktY29udGVudDpzcGFjZS1iZXR3ZWVuO3BhZGRpbmc6MCAyNHB4O21heC13aWR0aDp2YXIoLS1tYXgtdyk7bWFyZ2luOjAgYXV0b30KLm5hdi1sb2dve2ZvbnQtd2VpZ2h0OjcwMDtmb250LXNpemU6MS4xcmVtO2xldHRlci1zcGFjaW5nOi0wLjAyZW07Y29sb3I6dmFyKC0tdGV4dCk7dGV4dC1kZWNvcmF0aW9uOm5vbmU7ZGlzcGxheTpmbGV4O2FsaWduLWl0ZW1zOmNlbnRlcjtnYXA6OHB4fQoubmF2LWxvZ28gLmxvZ28taWNvbnt3aWR0aDozMHB4O2hlaWdodDozMHB4O2JhY2tncm91bmQ6dmFyKC0tYWNjZW50LWdyYWRpZW50KTtiYWNrZ3JvdW5kLXNpemU6MjAwJSAyMDAlO2FuaW1hdGlvbjpzaGltbWVyIDNzIGVhc2UtaW4tb3V0IGluZmluaXRlO2JvcmRlci1yYWRpdXM6OXB4O2Rpc3BsYXk6ZmxleDthbGlnbi1pdGVtczpjZW50ZXI7anVzdGlmeS1jb250ZW50OmNlbnRlcjtmb250LXNpemU6MTNweDtmb250LXdlaWdodDo4MDA7Y29sb3I6I2ZmZjtib3gtc2hhZG93OjAgMnB4IDEycHggcmdiYSgxMjQsOTIsMjUyLDAuMyl9Ci5uYXYtbG9nbyBzcGFue2NvbG9yOnZhcigtLWFjY2VudC1saWdodCl9Ci5uYXYtbGlua3N7ZGlzcGxheTpmbGV4O2FsaWduLWl0ZW1zOmNlbnRlcjtnYXA6NHB4fQoubmF2LWxpbmtzIGF7Y29sb3I6dmFyKC0tdGV4dC1zZWNvbmRhcnkpO3RleHQtZGVjb3JhdGlvbjpub25lO2ZvbnQtc2l6ZTowLjg3NXJlbTtmb250LXdlaWdodDo1MDA7cGFkZGluZzo3cHggMTRweDtib3JkZXItcmFkaXVzOjhweDt0cmFuc2l0aW9uOmFsbCAwLjJzfQoubmF2LWxpbmtzIGE6aG92ZXJ7Y29sb3I6dmFyKC0tdGV4dCk7YmFja2dyb3VuZDp2YXIoLS1hY2NlbnQtYmcpfQoubmF2LWxpbmtzIC5uYXYtY3Rhe2JhY2tncm91bmQ6dmFyKC0tYWNjZW50KTtjb2xvcjojZmZmIWltcG9ydGFudDtmb250LXdlaWdodDo2MDA7cGFkZGluZzo4cHggMjBweDtib3JkZXItcmFkaXVzOjhweDthbmltYXRpb246cHVsc2UtZ2xvdyAyLjVzIGVhc2UtaW4tb3V0IGluZmluaXRlfQoubmF2LWxpbmtzIC5uYXYtY3RhOmhvdmVye2JhY2tncm91bmQ6dmFyKC0tYWNjZW50LWxpZ2h0KTt0cmFuc2Zvcm06c2NhbGUoMS4wNSl9Ci5oZXJve21pbi1oZWlnaHQ6MTAwdmg7ZGlzcGxheTpmbGV4O2ZsZXgtZGlyZWN0aW9uOmNvbHVtbjtqdXN0aWZ5LWNvbnRlbnQ6Y2VudGVyO3BhZGRpbmc6MTIwcHggMjRweCA4MHB4O21heC13aWR0aDp2YXIoLS1tYXgtdyk7bWFyZ2luOjAgYXV0bztwb3NpdGlvbjpyZWxhdGl2ZTthbmltYXRpb246ZmFkZS11cCAwLjZzIGVhc2Utb3V0fQouaGVyby1iYWRnZXtkaXNwbGF5OmlubGluZS1mbGV4O2FsaWduLWl0ZW1zOmNlbnRlcjtnYXA6NnB4O3BhZGRpbmc6NnB4IDE0cHg7Ym9yZGVyLXJhZGl1czoxMDBweDtiYWNrZ3JvdW5kOnZhcigtLWFjY2VudC1iZyk7Ym9yZGVyOjFweCBzb2xpZCByZ2JhKDEyNCw5MiwyNTIsMC4xNSk7Zm9udC1zaXplOjAuOHJlbTtmb250LXdlaWdodDo1MDA7Y29sb3I6dmFyKC0tYWNjZW50LWxpZ2h0KTttYXJnaW4tYm90dG9tOjMycHg7d2lkdGg6Zml0LWNvbnRlbnR9Ci5oZXJvIGgxe2ZvbnQtc2l6ZTpjbGFtcCgyLjVyZW0sOHZ3LDVyZW0pO2ZvbnQtd2VpZ2h0OjgwMDtsaW5lLWhlaWdodDoxLjA1O2xldHRlci1zcGFjaW5nOi0wLjAzZW07bWFyZ2luLWJvdHRvbToyNHB4O21heC13aWR0aDo5MDBweH0KLmhlcm8gaDEgLmdyYWRpZW50e2JhY2tncm91bmQ6dmFyKC0tYWNjZW50LWdyYWRpZW50KTtiYWNrZ3JvdW5kLXNpemU6MjAwJSAyMDAlOy13ZWJraXQtYmFja2dyb3VuZC1jbGlwOnRleHQ7LXdlYmtpdC10ZXh0LWZpbGwtY29sb3I6dHJhbnNwYXJlbnQ7YmFja2dyb3VuZC1jbGlwOnRleHQ7YW5pbWF0aW9uOnNoaW1tZXIgM3MgZWFzZS1pbi1vdXQgaW5maW5pdGV9Ci5oZXJvIHB7Zm9udC1zaXplOmNsYW1wKDFyZW0sMnZ3LDEuMnJlbSk7Y29sb3I6dmFyKC0tdGV4dC1zZWNvbmRhcnkpO21heC13aWR0aDo2MDBweDtsaW5lLWhlaWdodDoxLjc1O21hcmdpbi1ib3R0b206NDBweH0KLmhlcm8tYWN0aW9uc3tkaXNwbGF5OmZsZXg7Z2FwOjEycHg7ZmxleC13cmFwOndyYXB9Ci5idG57ZGlzcGxheTppbmxpbmUtZmxleDthbGlnbi1pdGVtczpjZW50ZXI7Z2FwOjhweDtwYWRkaW5nOjEycHggMjhweDtib3JkZXItcmFkaXVzOnZhcigtLXJhZGl1cy1zbSk7Zm9udC1mYW1pbHk6dmFyKC0tZm9udCk7Zm9udC1zaXplOjAuOTVyZW07Zm9udC13ZWlnaHQ6NjAwO3RleHQtZGVjb3JhdGlvbjpub25lO3RyYW5zaXRpb246YWxsIDAuMnM7Ym9yZGVyOm5vbmU7Y3Vyc29yOnBvaW50ZXJ9Ci5idG46YWN0aXZle3RyYW5zZm9ybTpzY2FsZSgwLjk3KX0KLmJ0bi1wcmltYXJ5e2JhY2tncm91bmQ6dmFyKC0tYWNjZW50KTtjb2xvcjojZmZmO2JveC1zaGFkb3c6MCAwIDAgMXB4IHZhcigtLWFjY2VudCksMCA0cHggMjBweCB2YXIoLS1hY2NlbnQtZ2xvdyk7YW5pbWF0aW9uOnB1bHNlLWdsb3cgMi41cyBlYXNlLWluLW91dCBpbmZpbml0ZX0KLmJ0bi1wcmltYXJ5OmhvdmVye2JhY2tncm91bmQ6dmFyKC0tYWNjZW50LWxpZ2h0KTt0cmFuc2Zvcm06dHJhbnNsYXRlWSgtMnB4KSBzY2FsZSgxLjAzKTtib3gtc2hhZG93OjAgMCAwIDFweCB2YXIoLS1hY2NlbnQtbGlnaHQpLDAgNnB4IDMwcHggdmFyKC0tYWNjZW50LWdsb3cpLDAgMCA2MHB4IHZhcigtLWFjY2VudC1nbG93KX0KLmJ0bi1zZWNvbmRhcnl7YmFja2dyb3VuZDp2YXIoLS1iZy1lbGV2YXRlZCk7Y29sb3I6dmFyKC0tdGV4dCk7Ym94LXNoYWRvdzowIDAgMCAxcHggdmFyKC0tYm9yZGVyKX0KLmJ0bi1zZWNvbmRhcnk6aG92ZXJ7YmFja2dyb3VuZDp2YXIoLS1iZy1jYXJkKTtib3gtc2hhZG93OjAgMCAwIDFweCB2YXIoLS1hY2NlbnQpO3RyYW5zZm9ybTp0cmFuc2xhdGVZKC0xcHgpfQ==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXX');
+</script>
+<meta charset="UTF-8">
+<meta name="version" content="v5-jul15-2026">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoyceAI Tutor — Your AI Learning Dashboard</title>
+<link rel="stylesheet" href="/tutor/cal.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--radius:16px;--radius-sm:10px;--max-w:1200px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--shadow-elevated:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
+body::before{content:'';position:fixed;inset:0;opacity:0.012;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .logo-icon{width:30px;height:30px;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 3s ease-in-out infinite;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;box-shadow:0 2px 12px rgba(124,92,252,0.3)}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;animation:pulse-glow 2.5s ease-in-out infinite}
+.nav-links .nav-cta:hover{background:var(--accent-light);transform:scale(1.05)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 80px;max-width:var(--max-w);margin:0 auto;position:relative;animation:fade-up 0.6s ease-out}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--accent-bg);border:1px solid rgba(124,92,252,0.15);font-size:0.8rem;font-weight:500;color:var(--accent-light);margin-bottom:32px;width:fit-content}
+.hero h1{font-size:clamp(2.5rem,8vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:24px;max-width:900px}
+.hero h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero p{font-size:clamp(1rem,2vw,1.2rem);color:var(--text-secondary);max-width:600px;line-height:1.75;margin-bottom:40px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius-sm);font-family:var(--font);font-size:0.95rem;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer}
+.btn:active{transform:scale(0.97)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow);animation:pulse-glow 2.5s ease-in-out infinite}
+.btn-primary:hover{background:var(--accent-light);transform:translateY(-2px) scale(1.03);box-shadow:0 0 0 1px var(--accent-light),0 6px 30px var(--accent-glow),0 0 60px var(--accent-glow)}
+.btn-secondary{background:var(--bg-elevated);color:var(--text);box-shadow:0 0 0 1px var(--border)}
+.btn-secondary:hover{background:var(--bg-card);box-shadow:0 0 0 1px var(--accent);transform:translateY(-1px)}
+.hero-sub{min-height:40vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 60px;max-width:var(--max-w);margin:0 auto;text-align:center}
+.hero-sub h1{font-size:clamp(2rem,6vw,4rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:12px}
+.hero-sub h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero-sub p{color:var(--text-secondary);font-size:1rem;max-width:500px;margin:0 auto}
+.section{padding:100px 24px;max-width:var(--max-w);margin:0 auto}
+.section-header{text-align:center;margin-bottom:64px}
+.section-header h2{font-size:clamp(2rem,5vw,3rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:12px}
+.section-header h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.section-header p{color:var(--text-secondary);font-size:1.05rem;max-width:500px;margin:0 auto}
+.bento{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.bento-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:all var(--transition);position:relative;overflow:hidden;box-shadow:var(--shadow-card)}
+.bento-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
+.bento-card.wide{grid-column:span 2}
+.bento-card .icon{font-size:2rem;margin-bottom:16px;display:block}
+.bento-card h3{font-size:1.15rem;font-weight:600;margin-bottom:8px;letter-spacing:-0.01em}
+.bento-card p{color:var(--text-secondary);font-size:0.9rem;line-height:1.7}
+.bento-card .price{display:inline-block;margin-top:16px;padding:4px 12px;border-radius:6px;background:var(--accent-bg);color:var(--accent-light);font-size:0.85rem;font-weight:600}
+.bento-card.accent{border-color:rgba(124,92,252,0.15);background:linear-gradient(135deg,rgba(124,92,252,0.04) 0%,transparent 100%)}
+.bento-card.accent::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(124,92,252,0.06) 0%,transparent 70%);pointer-events:none}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;margin:0 auto}
+.pricing-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;transition:all var(--transition);position:relative;box-shadow:var(--shadow-card)}
+.pricing-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-elevated);border-color:var(--border-hover)}
+.pricing-card.featured{border-color:rgba(124,92,252,0.2);background:linear-gradient(135deg,rgba(124,92,252,0.04) 0%,transparent 100%)}
+.pricing-card.featured::before{content:'Popular';position:absolute;top:-10px;left:50%;transform:translateX(-50%);padding:4px 16px;border-radius:100px;background:var(--accent);color:#fff;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em}
+.pricing-card h3{font-size:1rem;font-weight:600;margin-bottom:4px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.04em}
+.pricing-card .amount{font-size:clamp(2rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.03em;margin:16px 0 8px}
+.pricing-card .desc{color:var(--text-secondary);font-size:0.875rem;margin-bottom:24px;line-height:1.7}
+.pricing-card .btn{width:100%;justify-content:center}
+.cta-section{text-align:center;padding:120px 24px;max-width:var(--max-w);margin:0 auto}
+.cta-section h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:16px}
+.cta-section p{color:var(--text-secondary);font-size:1.1rem;margin-bottom:40px}
+footer{border-top:1px solid var(--border);padding:48px 24px;max-width:var(--max-w);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+footer .logo{font-weight:700;font-size:1rem;color:var(--text-secondary)}
+footer .logo span{color:var(--accent-light)}
+footer .links{display:flex;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;transition:color 0.2s}
+footer .links a:hover{color:var(--accent-light)}
+footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:center}
+.reveal{opacity:0;transform:translateY(24px);transition:all 0.6s cubic-bezier(0.16,1,0.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:640px){
+  .nav-links a{font-size:0.75rem;padding:5px 8px}
+  .bento-card.wide,.bento-card{grid-column:span 1}
+  .bento{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(2rem,10vw,3rem)}
+  .hero{padding:100px 20px 60px}
+  .section{padding:80px 20px}
+  .cta-section{padding:80px 20px}
+  .pricing-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center}
+}
+@media(min-width:641px) and (max-width:1023px){.bento{grid-template-columns:repeat(2,1fr)}.bento-card.wide{grid-column:span 2}}
+.dashboard{max-width:900px;margin:4rem auto 2rem;padding:0 24px;animation:fade-up 0.6s ease-out;text-align:center}
+.dash-header{text-align:center;margin-bottom:2rem}
+.dash-header h2{font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:4px}
+.dash-header p{color:var(--text-secondary);font-size:0.9rem}
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:0 auto 2rem;max-width:800px}
+.dash-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow-card);transition:all var(--transition)}
+.dash-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.dash-card h3{font-size:0.85rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-secondary);font-weight:600;margin-bottom:8px}
+.dash-card .stat{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.dash-card .stat span{font-size:0.9rem;font-weight:400;color:var(--text-muted)}
+.dash-actions{display:flex;gap:10px;flex-wrap:wrap;margin:1.5rem 0}
+.scoreboard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin:0 auto 2rem;box-shadow:var(--shadow-card);max-width:800px}
+.scoreboard-title{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:12px}
+.scoreboard-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.scoreboard-inner{display:flex;gap:24px;flex-wrap:wrap}
+.scoreboard-streak{display:flex;align-items:center;gap:8px;font-size:1.3rem;font-weight:700;color:#f59e0b}
+.scoreboard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.score-stat{display:flex;justify-content:space-between;padding:10px 16px;background:var(--bg-elevated);border-radius:8px;font-size:0.9rem;color:var(--text-secondary)}
+.score-stat .val{font-weight:600;color:#fff}
+.scoreboard-badges{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.cal-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-card)}
+.cal-card h3{font-size:0.9rem;font-weight:600;color:var(--text-secondary);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.03em}
+.game-board{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:2rem;box-shadow:var(--shadow-card)}
+.game-scorebar{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.game-scorebar .score{font-size:1rem;color:var(--text-secondary)}
+.game-scorebar .score strong{color:#fff}
+.score{font-size:0.9rem;color:var(--text-secondary)}
+.loading{color:var(--text-muted);text-align:center;padding:40px 0;font-size:0.9rem}
+@media(max-width:640px){
+  .dashboard{padding:0 16px;margin-top:2rem}
+  .dash-grid{grid-template-columns:1fr}
+  .dash-header h2{font-size:1.4rem}
+  .scoreboard-inner{flex-direction:column;gap:12px}
+  .scoreboard-grid{grid-template-columns:1fr}
+  .game-board{padding:16px}
+}
+.login-section,.login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 24px 60px}
+.login-box{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 36px;max-width:400px;width:100%;box-shadow:var(--shadow-elevated);text-align:center}
+.login-box .avatar{width:56px;height:56px;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 3s ease-in-out infinite;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 16px;box-shadow:0 4px 20px var(--accent-glow)}
+.login-box h2{font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:4px}
+.login-box .sub{color:var(--text-secondary);font-size:0.85rem;margin-bottom:24px}
+.login-box .input-group{position:relative;margin-bottom:14px;text-align:left}
+.login-box .input-group label{display:block;font-size:0.75rem;color:var(--text-muted);margin-bottom:4px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em}
+.login-box .input-group input{width:100%;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:#fff;font-size:0.9rem;font-family:var(--font);outline:none;transition:all 0.2s;box-sizing:border-box}
+.login-box .input-group input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+.login-box button{width:100%;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:13px;font-weight:600;font-family:var(--font);font-size:0.95rem;cursor:pointer;transition:all 0.2s;margin-top:4px}
+.login-box button:hover{background:var(--accent-light);transform:translateY(-1px);box-shadow:0 4px 20px var(--accent-glow)}
+.login-box .error{color:#ef4444;font-size:0.82rem;margin-top:10px;display:none;padding:8px 12px;background:rgba(239,68,68,0.08);border-radius:8px;border:1px solid rgba(239,68,68,0.15)}
+.login-box .logout-link{display:inline-block;margin-top:14px;color:var(--text-muted);font-size:0.8rem;text-decoration:none;cursor:pointer}
+.login-box .logout-link:hover{color:var(--accent-light)}
+.app-container{display:none}
+.app-container.show{display:block;animation:fade-up 0.5s ease-out}
+.spinner{width:20px;height:20px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite;display:inline-block;vertical-align:middle;margin-right:8px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading{color:var(--text-muted);text-align:center;padding:60px 0;font-size:0.9rem}
+.loading.hidden{display:none}
+.empty-state{text-align:center;padding:24px;color:var(--text-muted);font-size:0.85rem}
+.empty-state .icon{font-size:2rem;margin-bottom:8px;display:block}
+.scoreboard.hidden{display:none}
+.kpi-stat{display:none}
+.kpi-stat .score.purple{color:#a855f7;font-weight:700}
+.kpi-stat .score.green{color:#22c55e;font-weight:700}
+.kpi-stat .score.pink{color:#ec4899;font-weight:700}
+.cal-card.hidden{display:none}
+.game-board.hidden{display:none}
+.dash-actions.hidden{display:none}
+.metric{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.2}
+.dash-header #greetingRow{font-size:0.85rem;color:var(--text-secondary);margin-bottom:2px;min-height:1.3em}
+body.tutor-page{padding-top:0}
+body.tutor-page nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100}
+body.tutor-page .login-section{padding-top:calc(80px + var(--nav-h))}
+@media(max-width:640px){body.tutor-page .login-section{padding-top:calc(60px + var(--nav-h))}}
+section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
+.btn-dynamic{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:12px;font-family:Inter,system-ui,sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none;transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);border:none;cursor:pointer}
+.btn-primary.btn-dynamic{background:linear-gradient(135deg,#667eea,#764ba2,#667eea);background-size:200% 200%;color:white;box-shadow:0 4px 15px rgba(102,126,234,0.3)}
+.btn-game{background:linear-gradient(135deg,#eab308,#facc15,#eab308);background-size:200% 200%;color:#0a0a0a;font-weight:800}
+.btn-baby{background:linear-gradient(135deg,#ff6b9d,#ff85ab,#ff6b9d);background-size:200% 200%;color:white;font-weight:800}
+.btn-sm{padding:9px 20px;font-size:0.85rem}
+</style>
+<script>
+var usersData = [{"first":"Jiho","last":"Pak","id":"jiho pak","name":"Jiho Pak","subjects":"Math","active":true,"today":"96/100 (96%)","mtd":"461/492 (94%)","ytd":"461/492 (94%)","topics":"Jul 15 Quiz, Factoring, Geometry","difficulty":"🔥 Math 3 — 94%","focus":"Radicals, Quadratics, Polynomials","plan":"free_trial","cards":"math,grade9","authorized":true,"products":["tutor"],"kpis":[{"label":"📚 Math","val":"96/100"},{"label":"🔥 Streak","val":"7 days"},{"label":"⏰ Focus Time","val":"45 min/day"}],"calories":false},{"first":"Carter","last":"Koh","id":"carter koh","name":"Carter Koh","subjects":"Math / SAT / Basketball","active":true,"today":"86/109 (79%)","mtd":"150/189 (79%)","ytd":"150/189 (79%)","topics":"SAT Prep, Calorie Tracking","difficulty":"⚡ SAT — On Track","focus":"SAT prep + 4K cal daily + Bench Builder","plan":"free_trial","cards":"sat,math,grade11","authorized":true,"products":["tutor"],"kpis":[{"label":"📚 SAT","val":"64/80"},{"label":"💪 Bench","val":"185 lb"},{"label":"🔥 Streak","val":"5 days"}],"calories":true},{"first":"Angel","last":"Koh","id":"angel koh","name":"Angel Koh","subjects":"RN Training / Health","active":true,"today":"—","mtd":"—","ytd":"—","topics":"NCLEX-RN Training","difficulty":"🩺 RN Training — Active","focus":"NCLEX-RN, Pharmacology, Anatomy","plan":"free_trial","cards":"rn","authorized":true,"products":["tutor"],"kpis":[{"label":"🩺 NCLEX","val":"72%"},{"label":"📖 Modules","val":"8/12"},{"label":"⏰ Study Time","val":"30 min/day"}],"calories":false},{"first":"Paxton","last":"Koh","id":"paxton koh","name":"Paxton Koh","subjects":"Reading Games","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"🎮 Grade 1 — Game Mode","focus":"Letter Recognition, Phonics, Sight Words","plan":"free_trial","cards":"reading","authorized":true,"products":["tutor"],"kpis":[{"label":"📚 Reading","val":"12 books"},{"label":"🎮 Games","val":"8 played"},{"label":"🌟 Stars","val":"42 earned"}],"calories":false},{"first":"Josh","last":"Lucero","id":"josh lucero","name":"Josh Lucero","subjects":"Series 66, 7","active":true,"today":"27/30 (90%)","mtd":"27/30 (90%)","ytd":"27/30 (90%)","topics":"Series 66, Series 7","difficulty":"📋 Series 66 — 27/30 (90%)","focus":"Series 66 (Uniform Combined), Series 7","plan":"free_trial","cards":"series66,series7","authorized":true,"products":["tutor"],"kpis":[{"label":"💰 Series 66","val":"74%"},{"label":"📈 Progress","val":"60%"},{"label":"⏰ Study Time","val":"25 min/day"}],"calories":false},{"first":"Mason","last":"Min","id":"mason min","name":"Mason Min","subjects":"Baby Play","active":true,"today":"—","mtd":"—","ytd":"—","topics":"Sensory Play","difficulty":"👶 Baby Play — Sensory","focus":"Sensory, Colors, Sounds","plan":"free_trial","cards":"baby","authorized":true,"products":["tutor"],"kpis":[{"label":"👶 Age","val":"Toddler"},{"label":"📚 Learning","val":"ABCs"},{"label":"🌟 Milestones","val":"On track"}],"calories":false},{"first":"Pearl","last":"Johnson","id":"pearl johnson","name":"Pearl Johnson","subjects":"Preschool Play, Letters, Numbers","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"🎨 Preschool — Play Mode","focus":"ABCs, 123s, Colors, Shapes","plan":"free_trial","cards":"baby,preschool","authorized":true,"products":["tutor"],"kpis":[{"label":"🎨 Colors","val":"6/6"},{"label":"🎮 Games","val":"3 played"},{"label":"🌟 Stars","val":"15"}],"calories":false},{"first":"Ruby","last":"Johnson","id":"ruby johnson","name":"Ruby Johnson","subjects":"Reading / Math / Grade 2","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"📚 Grade 2 — Foundations","focus":"Reading Comprehension, Addition, Subtraction, Phonics","plan":"free_trial","cards":"reading,math,grade2","authorized":true,"products":["tutor"],"kpis":[{"label":"📚 Math","val":"4/5"},{"label":"🎮 Games","val":"2 played"},{"label":"🌟 Stars","val":"8"}],"calories":false},{"first":"Carter","last":"Touch","id":"carter touch","name":"Carter Touch","subjects":"Grade 9 / Liberty High School","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"📚 Freshman — Liberty HS","focus":"Algebra 1, Biology, English 9","plan":"free_trial","cards":"math,grade9","authorized":true,"products":["tutor","therapy"],"kpis":[{"label":"📚 GPA","val":"3.5"},{"label":"🏀 Liberty HS","val":"Freshman"},{"label":"⏰ Sessions","val":"0"}],"calories":false},{"first":"Chase","last":"Touch","id":"chase touch","name":"Chase Touch","subjects":"Grade 7 / Nelson Middle School","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"📚 7th Grade — Nelson MS","focus":"Pre-Algebra, Reading, Science","plan":"free_trial","cards":"math,reading,grade7","authorized":true,"products":["tutor","therapy"],"kpis":[{"label":"📚 Pre-Alg","val":"B+"},{"label":"🏫 Nelson MS","val":"7th Grade"},{"label":"⏰ Sessions","val":"0"}],"calories":false},{"first":"Tommy","last":"Touch","id":"tommy touch","name":"Tommy Touch","subjects":"Therapy Bot","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"🧠 Therapy","focus":"Mental wellness, Therapy Bot","plan":"free_trial","cards":"therapy","authorized":true,"products":["therapy"],"kpis":[{"label":"🧠 Therapy","val":"Active"},{"label":"📅 Sessions","val":"0"},{"label":"🌟 Streak","val":"New"}],"calories":false}];
+var currentUser = null;
+var USERS_URL = 'https://raw.githubusercontent.com/royceAIsolutions/royceAIsolutions.github.io/main/tutor/users.json';
+var HIST_URL = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
+</script>
+</head>
+<body class="tutor-page">
+<div class="orb orb-1"></div><div class="orb orb-2"></div>
+<nav>
+<a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
+<div class="nav-links">
+<a href="/products">Products</a><a href="/tutor" class="active" style="background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);animation:pulse-glow 2s ease-in-out infinite;padding:5px 14px;font-weight:700">✨ Tutor</a><a href="/blog">Blog</a><a href="/chat" class="nav-cta">💬 Chat</a>
+</div>
+</nav>
+<div class="login-screen" id="loginScreen">
+<div class="login-box">
+<div class="avatar">R</div>
+<h2>Log in to study</h2>
+<p class="sub">Enter your first and last name exactly as registered.</p>
+<div class="input-group"><label for="studentFirstName">First Name</label><input type="text" id="studentFirstName" placeholder="Enter your first name" autocomplete="off"></div>
+<div class="input-group"><label for="studentLastName">Last Name</label><input type="text" id="studentLastName" placeholder="Enter your last name" autocomplete="off"></div>
+<button onclick="login()">Log in →</button>
+<div class="error" id="loginError"></div>
+</div>
+</div>
+<div class="app-container" id="appContainer">
+<div class="dashboard" id="dashboard">
+<div class="dash-actions hidden"><button class="logout-btn" onclick="logout()">🚪 Logout</button></div>
+<div class="dash-header">
+<div id="greetingRow">☀️ Good Morning</div>
+<h1><span class="gradient" id="studentName" style="display:inline-block">Student</span> <span id="vibeEmoji" style="font-size:1.5rem;display:inline-block">📚</span></h1>
+<p id="studentInfo">Your personalized learning dashboard</p>
+</div>
+<div class="freshness" id="freshnessBadge">⟳ loading...</div>
+<div class="scoreboard hidden">
+<div class="scoreboard-inner">
+<div class="scoreboard-header">
+<div class="scoreboard-title">🎮 <span>Scoreboard</span></div>
+<div class="scoreboard-badges"><div id="difficultyBadge" class="diff-badge" style="display:none"></div><div class="scoreboard-streak" id="streakDisplay">🔥 0</div></div>
+</div>
+<div class="scoreboard-grid">
+<div class="score-stat"><div class="label">📅 Today</div><div class="score accent" id="scoreToday">—</div><div class="sub" id="scoreTodaySub">—</div><div class="bar"><div class="bar-fill" id="barToday" style="width:0%"></div></div></div>
+<div class="score-stat"><div class="label">📊 Month</div><div class="score gold" id="scoreMtd">—</div><div class="sub" id="scoreMtdSub">—</div><div class="bar"><div class="bar-fill" id="barMtd" style="width:0%"></div></div></div>
+<div class="score-stat"><div class="label">🏆 All Time</div><div class="score green" id="scoreYtd">—</div><div class="sub" id="scoreYtdSub">—</div><div class="bar"><div class="bar-fill" id="barYtd" style="width:0%"></div></div></div>
+<div class="score-stat kpi-stat" id="kpi1" style="display:none"><div class="label" id="kpi1Label">KPI 1</div><div class="score purple" id="kpi1Val">—</div></div>
+<div class="score-stat kpi-stat" id="kpi2" style="display:none"><div class="label" id="kpi2Label">KPI 2</div><div class="score green" id="kpi2Val">—</div></div>
+<div class="score-stat kpi-stat" id="kpi3" style="display:none"><div class="label" id="kpi3Label">KPI 3</div><div class="score pink" id="kpi3Val">—</div></div>
+</div>
+<div class="topics-row">
+<span class="label">🎯 Topics:</span><span id="topicsList"><span class="tag">—</span></span>
+<span class="label" style="margin-left:8px">🧠 Focus:</span><span id="focusDisplay" style="color:var(--text-secondary);font-size:0.75rem">—</span>
+</div>
+</div>
+</div>
+<div class="cal-toggle"><label style="font-size:0.8rem;color:var(--text-secondary);display:flex;align-items:center;gap:8px;margin-bottom:8px"><input type="checkbox" id="calToggle" onchange="var ct=document.getElementById('calTracker');var show=this.checked;if(ct)ct.style.display=show?'block':'none';try{var u=JSON.parse(localStorage.getItem('tutor_user'));if(u)localStorage.setItem('cal_show_'+u.id,show)}catch(e){}"> Show Calorie Counter</label></div>
+<div class="cal-tracker" id="calTracker" style="display:none">
+<div class="cal-card hidden">
+<h3>🔥 Calorie Tracker</h3>
+<div class="cal-stats"><span>Consumed: <strong id="calConsumed">0</strong> / <strong>4,000</strong> cal</span><span id="calGap" style="color:var(--gold)">Need <strong>4,000</strong> more</span></div>
+<div class="cal-bar"><div class="cal-fill" id="calFill" style="width:0%"></div></div>
+<div class="cal-inputs"><input type="text" id="calFood" placeholder="Food (e.g. Chicken Rice Bowl)"><input type="number" id="calAmount" placeholder="Calories" min="1" max="5000"><button class="cal-log-btn" onclick="logCalorie()">+ Log</button></div>
+<div class="cal-items" id="calItems"></div>
+<div id="calSuggestions" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06)"><p style="font-size:0.7rem;color:var(--text-secondary);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em">💡 To close the gap, try:</p><div id="calSuggestList" style="display:flex;flex-wrap:wrap;gap:4px"></div></div>
+</div>
+</div>
+<div class="game-section" id="gameSection">
+<div class="game-area" id="colorGame">
+<div class="game-header">
+<div class="game-mode-badge">🎨 Color Match — Pearl</div>
+<h2>Find the Color!</h2>
+<p>Tap the matching color</p>
+</div>
+<div class="game-scorebar">
+<span class="pts">⭐ <span id="pearlScore">0</span></span>
+<span class="streak" id="pearlStreak">🔥 0 streak</span>
+</div>
+<div class="game-board hidden" id="pearlBoard">
+<div class="game-question" id="pearlQuestion">Find the <strong style="font-size:1.4rem" id="colorWord">RED</strong> one!</div>
+<div class="game-options" id="pearlOptions"></div>
+</div>
+<div class="game-result" id="pearlResult">
+<div class="big">🎉</div>
+<h3>Great job, Pearl!</h3>
+<p>You got <strong id="pearlFinalScore">0</strong> right!</p>
+<button class="btn btn-gold" onclick="startColorGame()">🔄 Play Again</button>
+</div>
+</div>
+<div class="game-area" id="mathGame">
+<div class="game-header">
+<div class="game-mode-badge">🧮 Math Pop — Ruby</div>
+<h2>Math Time!</h2>
+<p>Solve it and tap the answer</p>
+</div>
+<div class="game-scorebar">
+<span class="pts">⭐ <span id="rubyScore">0</span></span>
+<span class="streak" id="rubyStreak">🔥 0 streak</span>
+</div>
+<div class="game-board" id="rubyBoard">
+<div class="game-question" id="rubyQuestion">What is <strong>5 + 3</strong>?</div>
+<div class="game-options" id="rubyOptions"></div>
+</div>
+<div class="game-result" id="rubyResult">
+<div class="big">🌟</div>
+<h3>Amazing, Ruby!</h3>
+<p>You got <strong id="rubyFinalScore">0</strong> right!</p>
+<button class="btn btn-gold" onclick="startMathGame()">🔄 Play Again</button>
+</div>
+</div>
+</div>
+<div class="quiz-history" id="quizHistory" style="display:none">
+<h3>📋 <span>Quiz History</span> — Last 10</h3>
+<table class="quiz-table"><thead><tr><th>Date</th><th>Mode</th><th>Score</th><th>Topics</th><th>Result</th></tr></thead><tbody id="quizHistoryBody"></tbody></table>
+</div>
+<div class="dash-grid">
+<div class="dash-card" data-subject="math"><span class="icon">📐</span><h3>Math</h3><p>Algebra, Geometry, Precalculus.</p><a href="/chat?subject=math" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="sat"><span class="icon">🎯</span><h3>SAT Prep</h3><p>Math, Reading, Writing.</p><a href="/chat?subject=sat" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="series66"><span class="icon">📋</span><h3>Series 66</h3><p>Uniform Combined State Law.</p><a href="/chat?subject=series66" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="series7"><span class="icon">📋</span><h3>Series 7</h3><p>General Securities Exam.</p><a href="/chat?subject=series7" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="rn"><span class="icon">🩺</span><h3>RN Training</h3><p>NCLEX-RN, Pharmacology, Anatomy.</p><a href="/chat?subject=rn" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="grade9"><span class="icon">📚</span><h3>9th Grade Prep</h3><p>Math 1, Biology, English 9, World History.</p><a href="/chat?subject=grade9" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="grade11"><span class="icon">📖</span><h3>11th Grade Prep</h3><p>Precalculus, Chemistry, English 11, US History, SAT.</p><a href="/chat?subject=grade11" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="reading"><span class="icon">🎮</span><h3>Reading Games</h3><p>Phonics, letters, sight words.</p><a href="/tutor/game" class="btn btn-dynamic btn-game btn-sm">⭐ Play Now</a></div>
+<div class="dash-card" data-subject="baby"><span class="icon">👶</span><h3>Baby Play</h3><p>Sensory, colors, sounds.</p><a href="/tutor/game/baby" class="btn btn-dynamic btn-baby btn-sm">🎈 Play Now</a></div>
+</div>
+</div>
+</div>
+<footer><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
+<script>
+async function fetchUsers() { var cs = document.getElementById('connStatus'); try { if (cs) cs.textContent = '⟳ Loading students...'; var ctrl = new AbortController(); var tid = setTimeout(function() { ctrl.abort(); }, 8000); var r = await fetch(USERS_URL + '?_=' + Date.now(), { signal: ctrl.signal }); clearTimeout(tid); if (!r.ok) throw new Error('HTTP ' + r.status); var data = await r.json(); if (!data || !data.length) throw new Error('Empty'); usersData = data; if (cs) { cs.textContent = '✓ Connected (' + data.length + ' students)'; cs.style.color = '#22c55e'; } try { localStorage.setItem('tutor_users_cache', JSON.stringify({ts: Date.now(), data: data})); } catch(e) {} } catch (e) { if (cs) { cs.textContent = '⚠ Offline — using cached data'; cs.style.color = '#eab308'; } try { var cached = JSON.parse(localStorage.getItem('tutor_users_cache')); if (cached && cached.data && cached.data.length) { usersData = cached.data; } } catch(e2) {} } }
+function login() { console.log('[LOGIN] Button clicked'); var fi = document.getElementById('studentFirstName'); var li = document.getElementById('studentLastName'); var er = document.getElementById('loginError'); var btn = document.querySelector('.login-box button'); if (!fi) { console.error('[LOGIN] firstName input not found'); return; } if (!li) { console.error('[LOGIN] lastName input not found'); return; } if (!er) { console.error('[LOGIN] error div not found'); return; } if (!btn) { console.error('[LOGIN] button not found'); return; } var fn = fi.value.trim(); var ln = li.value.trim(); console.log('[LOGIN] Inputs:', fn, ln); if (!fn || !ln) { er.textContent = 'Enter both first and last name.'; er.style.display = 'block'; return; } btn.textContent = '⟳ Loading...'; er.style.display = 'none'; var id = (fn + ' ' + ln).toLowerCase(); if (!usersData || !usersData.length) { console.log('[LOGIN] usersData empty, fetching...'); btn.textContent = '⟳ Fetching data...'; fetchUsers().then(function() { if (usersData && usersData.length) { matchUser(id, er, btn); } else { er.textContent = 'Could not load student data. Check your connection.'; er.style.display = 'block'; btn.textContent = 'Log in →'; } }).catch(function() { er.textContent = 'Could not load student data. Check your connection.'; er.style.display = 'block'; btn.textContent = 'Log in →'; }); return; } matchUser(id, er, btn); }
+function matchUser(id, er, btn) { var u = usersData.find(function(x) { return x.id === id; }); if (!u) { er.textContent = 'Name not found: ' + id; er.style.display = 'block'; if (btn) btn.textContent = 'Log in →'; return; } currentUser = u; localStorage.setItem('tutor_user', JSON.stringify(u)); showDashboard(u); }
+function showDashboard(u) { var appContainer = document.getElementById('appContainer'); if (appContainer) appContainer.classList.add('show'); var loginScreen = document.getElementById('loginScreen'); if (loginScreen) loginScreen.style.display = 'none'; var card = document.querySelector('.scoreboard'); if (card) card.classList.remove('hidden'); card = document.querySelector('.cal-card'); if (card) card.classList.remove('hidden'); var gb = document.querySelector('.game-board'); if (gb) gb.classList.remove('hidden'); var da = document.querySelector('.dash-actions'); if (da) da.classList.remove('hidden'); var ld = document.querySelector('.loading'); if (ld) ld.classList.add('hidden'); var h = new Date().getHours(); var gr = document.getElementById('greetingRow'); if (gr) gr.textContent = (h < 12 ? '☀️ Good Morning' : h < 17 ? '⛅ Good Afternoon' : '🌙 Good Evening') + ', ' + u.first; var sn = document.getElementById('studentName'); if (sn) sn.textContent = u.name; var ve = document.getElementById('vibeEmoji'); if (ve) ve.textContent = '📚'; var si = document.getElementById('studentInfo'); if (si) si.textContent = (u.subjects || '') + ' — ' + (u.plan || ''); var k = u.cards ? u.cards.split(',') : ['math']; var cards = document.querySelectorAll('.dash-card'); for (var i = 0; i < cards.length; i++) { cards[i].style.display = k.indexOf(cards[i].dataset.subject) >= 0 ? 'block' : 'none'; } renderScoreboard(u); var gs = document.getElementById('gameSection'); if (gs) { if (u.first === 'Pearl' || u.first === 'Ruby') { gs.style.display = 'block'; if (u.first === 'Pearl') startColorGame(); if (u.first === 'Ruby') startMathGame(); } else { gs.style.display = 'none'; } } if (u.first === 'Jiho' || u.first === 'Carter' || u.first === 'Josh') loadHistory(u.first); }
+function renderScoreboard(u) { if (!u) return; var keys = ['today','mtd','ytd']; for (var i = 0; i < keys.length; i++) { var key = keys[i]; var val = u[key]; var suf = key.charAt(0).toUpperCase() + key.slice(1); var el = document.getElementById('score' + suf); var bar = document.getElementById('bar' + suf); if (!el) continue; if (val && val !== '—') { var m = val.match(/(\d+)\/(\d+)/); var p = 0; if (m) p = Math.round(parseInt(m[1]) / parseInt(m[2]) * 100); el.textContent = val; if (bar) bar.style.width = Math.min(p, 100) + '%'; } else { el.textContent = '—'; if (bar) bar.style.width = '0%'; } } if (u.difficulty) { var db = document.getElementById('difficultyBadge'); if (db) { db.textContent = u.difficulty; db.style.display = 'inline-block'; } } if (u.topics) { var tl = document.getElementById('topicsList'); if (tl) { var topics = u.topics.split(','); tl.innerHTML = topics.map(function(t) { return '<span class="tag">' + t.trim() + '</span>'; }).join(' '); } } var kpis = u.kpis || []; for (var j = 0; j < 3; j++) { var box = document.getElementById('kpi' + (j+1)); var labelEl = document.getElementById('kpi' + (j+1) + 'Label'); var valEl = document.getElementById('kpi' + (j+1) + 'Val'); var subEl = document.getElementById('kpi' + (j+1) + 'Sub'); if (!box || !labelEl || !valEl) continue; if (kpis[j]) { box.style.display = 'block'; labelEl.textContent = kpis[j].label || 'KPI ' + (j+1); valEl.textContent = kpis[j].val || '—'; if (subEl) subEl.textContent = kpis[j].sub || '—'; } else { box.style.display = 'none'; } } var ct = document.getElementById('calTracker'); if (ct) ct.style.display = u.calories ? 'block' : 'none'; }
+async function loadHistory(n) { var el = document.getElementById('quizHistory'); var tb = document.getElementById('quizHistoryBody'); if (!el || !tb) return; el.style.display = 'block'; tb.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-secondary)">Loading...</td></tr>'; try { var r = await fetch(HIST_URL, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({student: n})}); var d = await r.json(); var ss = d.sessions || []; if (!ss.length) { tb.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-secondary)">No sessions yet</td></tr>'; return; } tb.innerHTML = ss.slice(-10).reverse().map(function(s) { var p = Math.round(s.correct/s.total*100); return '<tr><td>'+(s.date||'—')+'</td><td>'+(s.mode||'quiz')+'</td><td><strong>'+s.correct+'/'+s.total+'</strong> ('+p+'%)</td><td>'+(p>=80?'✅ Pass':'❌ Review')+'</td></tr>'; }).join(''); } catch(e) { tb.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-secondary)">Error loading history</td></tr>'; console.error('[HIST] load error:', e); } }
+function logout() { localStorage.removeItem('tutor_user'); var loginScreen = document.getElementById('loginScreen'); if (loginScreen) loginScreen.style.display = ''; var appContainer = document.getElementById('appContainer'); if (appContainer) appContainer.classList.remove('show'); var fi = document.getElementById('studentFirstName'); var li = document.getElementById('studentLastName'); if (fi) fi.value = ''; if (li) li.value = ''; currentUser = null; }
+var calData = []; try { var saved = localStorage.getItem('tutor_cal_data'); if (saved) calData = JSON.parse(saved); } catch(e) {}
+function logCalorie() { var f = document.getElementById('calFood'); var a = document.getElementById('calAmount'); if (!f || !a) return; var food = f.value.trim(); var amount = parseInt(a.value); if (!food || !amount || amount < 1) return; calData.push({food: food, cal: amount, ts: Date.now()}); try { localStorage.setItem('tutor_cal_data', JSON.stringify(calData)); } catch(e) {} f.value = ''; a.value = ''; renderCalories(); }
+function renderCalories() { var total = 0; var target = 4000; for (var i = 0; i < calData.length; i++) { var c = calData[i]; var d = new Date(c.ts); var today = new Date(); if (d.getDate() === today.getDate() && d.getMonth() === today.getMonth() && d.getFullYear() === today.getFullYear()) { total += c.cal; } } var ce = document.getElementById('calConsumed'); if (ce) ce.textContent = total; var gap = target - total; var cg = document.getElementById('calGap'); if (cg) cg.innerHTML = gap > 0 ? 'Need <strong>' + gap + '</strong> more' : '✅ Goal met!'; var cf = document.getElementById('calFill'); if (cf) cf.style.width = Math.min(100, Math.round(total/target*100)) + '%'; var ci = document.getElementById('calItems'); if (!ci) return; var todayItems = []; for (var j = 0; j < calData.length; j++) { var item = calData[j]; var d2 = new Date(item.ts); var today2 = new Date(); if (d2.getDate() === today2.getDate() && d2.getMonth() === today2.getMonth() && d2.getFullYear() === today2.getFullYear()) { todayItems.push(item); } } if (todayItems.length) { ci.innerHTML = todayItems.slice(-10).reverse().map(function(item) { return '<div class="cal-item"><span class="cal-food">' + item.food + '</span><span class="cal-val">' + item.cal + ' cal</span></div>'; }).join(''); } else { ci.innerHTML = '<div class="cal-empty" style="color:var(--text-muted);font-size:0.75rem">Nothing logged today</div>'; } }
+var COLORS = [{name:'RED',hex:'#ef4444',emoji:'🔴'},{name:'BLUE',hex:'#3b82f6',emoji:'🔵'},{name:'GREEN',hex:'#22c55e',emoji:'🟢'},{name:'YELLOW',hex:'#eab308',emoji:'🟡'},{name:'PURPLE',hex:'#a855f7',emoji:'🟣'},{name:'ORANGE',hex:'#f97316',emoji:'🟠'},{name:'PINK',hex:'#ec4899',emoji:'💗'}];
+var pearlScore = 0; var pearlTotal = 0; var rubyScore = 0; var rubyTotal = 0;
+function startColorGame() { var cg = document.getElementById('colorGame'); if (cg) cg.classList.add('show'); var pr = document.getElementById('pearlResult'); if (pr) pr.classList.remove('show'); var pb = document.getElementById('pearlBoard'); if (pb) pb.style.display = 'flex'; pearlScore = 0; pearlTotal = 0; nextColorQ(); }
+function nextColorQ() { if (pearlTotal >= 10) { endPearlGame(); return; } var t = COLORS[Math.floor(Math.random() * COLORS.length)]; var opts = [t]; while (opts.length < 4) { var c = COLORS[Math.floor(Math.random() * COLORS.length)]; if (!opts.find(function(o) {return o.name===c.name;})) opts.push(c); } opts.sort(function() {return Math.random()-0.5;}); var pq = document.getElementById('pearlQuestion'); if (pq) pq.innerHTML = 'Find the <strong style="font-size:1.6rem;color:'+t.hex+'">'+t.name+'</strong> one!'; var po = document.getElementById('pearlOptions'); if (po) po.innerHTML = opts.map(function(c) {return '<div class="game-opt" data-color="'+c.name+'" onclick="checkPearl(this,\''+t.name+'\')" style="background:'+c.hex+'">'+c.emoji+'</div>';}).join(''); }
+function checkPearl(el, target) { if (!el || el.classList.contains('disabled')) return; var all = document.querySelectorAll('#pearlOptions .game-opt'); for (var i = 0; i < all.length; i++) { all[i].classList.add('disabled'); } pearlTotal++; if (el.dataset.color === target) { el.classList.add('correct'); pearlScore++; } else { el.classList.add('wrong'); var correctEl = document.querySelector('#pearlOptions [data-color="'+target+'"]'); if (correctEl) correctEl.classList.add('correct'); } var ps = document.getElementById('pearlScore'); if (ps) ps.textContent = pearlScore; setTimeout(nextColorQ, 700); }
+function endPearlGame() { var pb = document.getElementById('pearlBoard'); if (pb) pb.style.display = 'none'; var r = document.getElementById('pearlResult'); if (!r) return; r.classList.add('show'); var pfs = document.getElementById('pearlFinalScore'); if (pfs) pfs.textContent = pearlScore + '/10'; var big = r.querySelector('.big'); if (big) big.textContent = pearlScore >= 8 ? '🏆' : pearlScore >= 5 ? '🎉' : '💪'; if (pearlScore > 0) { try { fetch('https://chat-api-tawny-zeta.vercel.app/api/save-score',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({student:'Pearl Johnson',correct:pearlScore,total:10,subject:'preschool'})}); } catch(e) {} } }
+function startMathGame() { var mg = document.getElementById('mathGame'); if (mg) mg.classList.add('show'); var rr = document.getElementById('rubyResult'); if (rr) rr.classList.remove('show'); var rb = document.getElementById('rubyBoard'); if (rb) rb.style.display = 'flex'; rubyScore = 0; rubyTotal = 0; nextMathQ(); }
+function nextMathQ() { if (rubyTotal >= 10) { endRubyGame(); return; } var a = Math.floor(Math.random()*20)+1; var b = Math.floor(Math.random()*a)+1; var answer = a + b; var op = '+'; if (rubyTotal%2===1) { op='-'; answer=a-b; if(answer<0) { a=a+b+Math.floor(Math.random()*5); answer=a-b; } } var opts = [answer]; while (opts.length<4) { var n=answer+(Math.floor(Math.random()*10)-5); if(n>=0&&!opts.includes(n)) opts.push(n); } opts.sort(function() {return Math.random()-0.5;}); var rq = document.getElementById('rubyQuestion'); if (rq) rq.innerHTML = 'What is <strong>'+a+' '+op+' '+b+'</strong>?'; var ro = document.getElementById('rubyOptions'); if (ro) ro.innerHTML = opts.map(function(n) {return '<div class="game-opt game-opt-num" data-num="'+n+'" onclick="checkRuby(this,'+answer+')">'+n+'</div>';}).join(''); }
+function checkRuby(el, answer) { if (!el || el.classList.contains('disabled')) return; var all = document.querySelectorAll('#rubyOptions .game-opt'); for (var i = 0; i < all.length; i++) { all[i].classList.add('disabled'); } rubyTotal++; if (parseInt(el.dataset.num)===answer) { el.classList.add('correct'); rubyScore++; } else { el.classList.add('wrong'); var correctEl = document.querySelector('#rubyOptions [data-num="'+answer+'"]'); if (correctEl) correctEl.classList.add('correct'); } var rs = document.getElementById('rubyScore'); if (rs) rs.textContent = rubyScore; setTimeout(nextMathQ, 700); }
+function endRubyGame() { var rb = document.getElementById('rubyBoard'); if (rb) rb.style.display = 'none'; var r = document.getElementById('rubyResult'); if (!r) return; r.classList.add('show'); var rfs = document.getElementById('rubyFinalScore'); if (rfs) rfs.textContent = rubyScore + '/10'; var big = r.querySelector('.big'); if (big) big.textContent = rubyScore >= 8 ? '🏆' : rubyScore >= 5 ? '🌟' : '💪'; if (rubyScore > 0) { try { fetch('https://chat-api-tawny-zeta.vercel.app/api/save-score',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({student:'Ruby Johnson',correct:rubyScore,total:10,subject:'math'})}); } catch(e) {} } }
+fetchUsers();
+var saved = localStorage.getItem('tutor_user');
+if (saved) { try { var u = JSON.parse(saved); (function check() { if (usersData.length) { var match = usersData.find(function(x) { return x.id === u.id; }); if (match) { currentUser = match; showDashboard(match); } else { localStorage.removeItem('tutor_user'); } } else { setTimeout(check, 300); } })(); } catch(e) { localStorage.removeItem('tutor_user'); } }
+if (calData.length) renderCalories();
+</script>
+<div id="debugInfo" style="display:none"></div>
+<script>console.log('[TUTOR] Page loaded, usersData:', typeof usersData, usersData ? usersData.length : 0);</script>
+</body>
+</html>
