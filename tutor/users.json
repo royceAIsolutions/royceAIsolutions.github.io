@@ -14,7 +14,10 @@
     "focus": "Radicals, Quadratics, Polynomials",
     "plan": "free_trial",
     "cards": "math,grade9",
-    "authorized": true
+    "authorized": true,
+    "products": [
+      "tutor"
+    ]
   },
   {
     "first": "Carter",
@@ -31,7 +34,10 @@
     "focus": "SAT prep + 4K cal daily + Bench Builder",
     "plan": "free_trial",
     "cards": "sat,math,grade11",
-    "authorized": true
+    "authorized": true,
+    "products": [
+      "tutor"
+    ]
   },
   {
     "first": "Angel",
@@ -48,7 +54,10 @@
     "focus": "NCLEX-RN, Pharmacology, Anatomy",
     "plan": "free_trial",
     "cards": "rn",
-    "authorized": true
+    "authorized": true,
+    "products": [
+      "tutor"
+    ]
   },
   {
     "first": "Paxton",
@@ -65,7 +74,10 @@
     "focus": "Letter Recognition, Phonics, Sight Words",
     "plan": "free_trial",
     "cards": "reading",
-    "authorized": true
+    "authorized": true,
+    "products": [
+      "tutor"
+    ]
   },
   {
     "first": "Josh",
@@ -82,7 +94,10 @@
     "focus": "Series 66 (Uniform Combined), Series 7",
     "plan": "free_trial",
     "cards": "series66,series7",
-    "authorized": true
+    "authorized": true,
+    "products": [
+      "tutor"
+    ]
   },
   {
     "first": "Mason",
@@ -99,7 +114,10 @@
     "focus": "Sensory, Colors, Sounds",
     "plan": "free_trial",
     "cards": "baby",
-    "authorized": true
+    "authorized": true,
+    "products": [
+      "tutor"
+    ]
   },
   {
     "first": "Pearl",
@@ -116,7 +134,10 @@
     "focus": "ABCs, 123s, Colors, Shapes",
     "plan": "free_trial",
     "cards": "baby,preschool",
-    "authorized": true
+    "authorized": true,
+    "products": [
+      "tutor"
+    ]
   },
   {
     "first": "Ruby",
@@ -133,7 +154,10 @@
     "focus": "Reading Comprehension, Addition, Subtraction, Phonics",
     "plan": "free_trial",
     "cards": "reading,math,grade2",
-    "authorized": true
+    "authorized": true,
+    "products": [
+      "tutor"
+    ]
   },
   {
     "first": "Carter",
@@ -150,7 +174,11 @@
     "focus": "Algebra 1, Biology, English 9",
     "plan": "free_trial",
     "cards": "math,grade9",
-    "authorized": true
+    "authorized": true,
+    "products": [
+      "tutor",
+      "therapy"
+    ]
   },
   {
     "first": "Chase",
@@ -167,6 +195,10 @@
     "focus": "Pre-Algebra, Reading, Science",
     "plan": "free_trial",
     "cards": "math,reading,grade7",
-    "authorized": true
+    "authorized": true,
+    "products": [
+      "tutor",
+      "therapy"
+    ]
   }
 ]
