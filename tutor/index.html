@@ -114,7 +114,7 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 .dash-actions{display:flex;gap:10px;flex-wrap:wrap;margin:1.5rem 0}
 .scoreboard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin:0 auto 2rem;box-shadow:var(--shadow-card);max-width:800px}
 .scoreboard-title{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:12px}
-.scoreboard-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.scoreboard-header{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:16px;gap:8px}
 .scoreboard-inner{display:flex;gap:24px;flex-wrap:wrap}
 .scoreboard-streak{display:flex;align-items:center;gap:8px;font-size:1.3rem;font-weight:700;color:#f59e0b}
 .scoreboard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;justify-items:center}
@@ -213,6 +213,12 @@ var HIST_URL = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
 </div>
 <div class="app-container" id="appContainer">
 <div class="dashboard" id="dashboard">
+<div class="dash-header">
+<div id="greetingRow">☀️ Good Morning</div>
+<h1><span class="gradient" id="studentName" style="display:inline-block">Student</span> <span id="vibeEmoji" style="font-size:1.5rem;display:inline-block">📚</span></h1>
+<p id="studentInfo">Your personalized learning dashboard</p>
+</div>
+
 <div class="scoreboard hidden">
 <div class="scoreboard-inner">
 <div class="scoreboard-header">
@@ -235,12 +241,8 @@ var HIST_URL = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
 </div>
 </div>
 
+
 <div class="dash-actions hidden"><button class="logout-btn" onclick="logout()">🚪 Logout</button></div>
-<div class="dash-header">
-<div id="greetingRow">☀️ Good Morning</div>
-<h1><span class="gradient" id="studentName" style="display:inline-block">Student</span> <span id="vibeEmoji" style="font-size:1.5rem;display:inline-block">📚</span></h1>
-<p id="studentInfo">Your personalized learning dashboard</p>
-</div>
 <div class="cal-toggle"><label style="font-size:0.8rem;color:var(--text-secondary);display:flex;align-items:center;gap:8px;margin-bottom:8px"><input type="checkbox" id="calToggle" onchange="var ct=document.getElementById('calTracker');var show=this.checked;if(ct)ct.style.display=show?'block':'none';try{var u=JSON.parse(localStorage.getItem('tutor_user'));if(u)localStorage.setItem('cal_show_'+u.id,show)}catch(e){}"> Show Calorie Counter</label></div>
 <div class="cal-tracker" id="calTracker" style="display:none">
 <div class="cal-card hidden">
