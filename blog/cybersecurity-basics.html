@@ -3,45 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cybersecurity Basics for Small Business 2026 — Royce AI</title>
-<meta name="description" content="Essential cybersecurity practices for small businesses. Phishing protection, password security, backups, MFA. Affordable security solutions.">
-<link rel="stylesheet" href="/assets/css/main.css">
+<title>Cybersecurity for Small Business: Complete Technical Guide 2026 — Royce AI</title>
+<meta name="description" content="Technical cybersecurity guide for small businesses. Covers phishing defense, MFA implementation, EDR/XDR, network segmentation, password policies, incident response, and compliance. Updated weekly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  .blog-post { max-width: 720px; margin: 0 auto; padding: 2rem 1rem 4rem; line-height: 1.8; color: #e0e0e0; }
-  .blog-post h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #fff; }
-  .blog-post .meta { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
-  .blog-post h2 { font-size: 1.4rem; margin-top: 2.5rem; color: #c084fc; }
-  .blog-post p { margin: 1rem 0; }
-  .back-link { display: inline-block; margin-bottom: 1.5rem; color: #c084fc; text-decoration: none; }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:Inter,system-ui,sans-serif;background:#0a0a0a;color:#f5f5f5}
-  nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;height:60px;max-width:1200px;margin:0 auto;border-bottom:1px solid rgba(255,255,255,0.06)}
-  .nav-logo{font-weight:700;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:6px}
-  .nav-logo span{color:#667eea}
-  .nav-links a{color:#a1a1aa;text-decoration:none;font-size:0.875rem;padding:6px 12px;border-radius:6px}
-  .nav-links a:hover{color:#f5f5f5}
-  .nav-links .nav-cta{background:#667eea;color:white!important;padding:8px 20px;border-radius:8px;font-weight:600}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,sans-serif;background:#0a0a0a;color:#f5f5f5;line-height:1.8}
+nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;height:64px;max-width:1200px;margin:0 auto;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(10,10,10,0.85);backdrop-filter:blur(16px);position:fixed;top:0;left:0;right:0;z-index:100}
+.nav-logo{font-weight:700;font-size:1.1rem;color:#f5f5f5;text-decoration:none}
+.nav-logo span{color:#667eea}
+.nav-links{display:flex;align-items:center;gap:8px}
+.nav-links a{color:#a1a1aa;text-decoration:none;font-size:0.875rem;padding:6px 14px;border-radius:8px}
+.nav-links a:hover{color:#f5f5f5;background:rgba(102,126,234,0.08)}
+.nav-links .nav-cta{background:#667eea;color:white!important;font-weight:600;padding:8px 20px;border-radius:8px}
+.blog-post{max-width:780px;margin:0 auto;padding:6rem 1rem 4rem}
+.blog-post h1{font-size:2rem;margin-bottom:.5rem;color:#fff}
+.blog-post .meta{color:#888;font-size:.9rem;margin-bottom:2rem;border-bottom:1px solid #222;padding-bottom:1rem}
+.blog-post h2{font-size:1.4rem;margin-top:2.5rem;color:#c084fc}
+.blog-post h3{font-size:1.15rem;margin-top:1.5rem;color:#e0e0e0}
+.blog-post p{margin:1rem 0;color:#d0d0d0}
+.blog-post .highlight{background:rgba(192,132,252,0.1);border-left:3px solid #c084fc;padding:1rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+.blog-post code{background:#1a1a2e;padding:0.1rem 0.3rem;border-radius:4px;font-size:0.9rem;color:#c084fc}
+.blog-post pre{background:#111;border:1px solid #222;border-radius:8px;padding:1rem;overflow-x:auto;margin:1rem 0;font-size:0.85rem}
+.blog-post ul{padding-left:1.5rem;color:#d0d0d0}
+.blog-post li{margin:0.5rem 0}
+.back-link{display:inline-block;margin-bottom:1.5rem;color:#c084fc;text-decoration:none}
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1200px;margin:0 auto;text-align:center;color:#a1a1aa;font-size:.85rem}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"Cybersecurity Basics for Small Business 2026","datePublished":"2026-07-15","description":"Essential cybersecurity practices for small businesses. Phishing protection, password security, backups, MFA. Affordable security solutions.","author":{"@type":"Person","name":"RoyceAI"}}
-</script>
 </head>
 <body>
-  <nav>
-    <a href="/" class="nav-logo"><span style="background:linear-gradient(135deg,#667eea,#764ba2);border-radius:6px;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:white">R</span> Royce<span>AI</span></a>
-    <div class="nav-links">
-      <a href="/products">Products</a>
-      <a href="/tutor">Tutor</a>
-      <a href="/blog">Blog</a>
-      <a href="/chat" class="nav-cta">💬 Chat</a>
-    </div>
-  </nav><script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/tutor"]');var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(t){t.innerHTML="\ud83d\udcda Dashboard";t.style.cssText="";t.href="/tutor"}}else if(t){t.innerHTML="\u2728 Tutor";t.style.cssText="animation:pulse-glow 2.5s ease-in-out infinite;background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
-  <div class="blog-post">
-    <a href="/blog" class="back-link">← Back to Blog</a>
-    <h1>Cybersecurity Basics for Small Business</h1>
-    <div class="meta">July 2026 • 4 min read</div>
-    <p>Essential cybersecurity practices every small business needs. Protect your data, your customers, and your reputation.</p>
-    <p>For more information about how RoyceAI can help you with this topic, <a href="/chat" style="color:#667eea">chat with us</a> or explore our <a href="/products" style="color:#667eea">products</a>.</p>
-  </div>
+<nav>
+<a href="/" class="nav-logo">Royce<span>AI</span></a>
+<div class="nav-links">
+<a href="/products">Products</a>
+<a href="/tutor">Tutor</a>
+<a href="/blog">Blog</a>
+<a href="/chat" class="nav-cta">💬 Chat</a>
+</div>
+</nav>
+<script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/tutor"]');var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(t){t.innerHTML="📚 Dashboard";t.style.cssText="";t.href="/tutor"}}else if(t){t.innerHTML="✨ Tutor";t.style.cssText="animation:pulse-glow 2.5s ease-in-out infinite;background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
+
+<div class="blog-post">
+<a href="/blog" class="back-link">← Back to Blog</a>
+<h1>Cybersecurity for Small Business: A Technical Reference</h1>
+<div class="meta">Updated Weekly • Last Update: July 15, 2026 • 8 min read</div>
+
+<p>Most small businesses operate with the security posture of a consumer — a password, maybe antivirus, and hope. That worked in 2010. In 2026, ransomware-as-a-service, AI-generated spear phishing, and credential-stuffing bots mean small businesses are <strong>targeted daily</strong>.</p>
+
+<div class="highlight"><p><strong>Threat Level:</strong> 63% of SMBs experienced a cyber attack in the past 12 months. Average cost of a breach for businesses under 500 employees: $2.98M (IBM 2025).</p></div>
+
+<h2>1. Identity & Access Management</h2>
+
+<h3>Multi-Factor Authentication (MFA)</h3>
+<p>This is the single highest-ROI security control you can implement. Google's research shows MFA blocks 99.9% of automated attacks, 96% of bulk phishing, and 76% of targeted attacks.</p>
+<p><strong>Implementation priority:</strong></p>
+<ul>
+<li>Email (Google Workspace / Microsoft 365) — app passwords + TOTP or hardware key</li>
+<li>Domain registrar — SMS or TOTP at minimum; hardware key (YubiKey) preferred</li>
+<li>Banking & payment processors — app-based 2FA, never SMS</li>
+<li>Internal tools (CRM, accounting, payroll) — SSO if available, otherwise TOTP</li>
+</ul>
+<p><strong>Tools:</strong> Google Authenticator, Authy, 1Password (built-in TOTP), YubiKey 5 Series, Nitrokey.</p>
+
+<h3>Password Policy</h3>
+<p>NIST SP 800-63B (2024 revision) no longer recommends periodic password rotation for standard users — strong, unique passwords + MFA outperforms forced rotation.</p>
+<ul>
+<li>Minimum 16 characters for privileged accounts</li>
+<li>Password manager (1Password Business, Bitwarden, Keeper) — non-negotiable</li>
+<li>Block common passwords via a deny list (haveibeenpwned API)</li>
+<li>No password reuse across services</li>
+</ul>
+
+<h3>Privileged Access</h3>
+<p>Limit admin accounts. Every employee should operate with standard user privileges day-to-day and elevate only when needed (just-in-time access).</p>
+
+<h2>2. Endpoint Protection</h2>
+
+<h3>Modern EDR/XDR vs Traditional Antivirus</h3>
+<p>Traditional signature-based AV (Norton, McAfee) catches known malware. Modern EDR (CrowdStrike, SentinelOne, Microsoft Defender for Business) detects behavior — ransomware behavior, lateral movement, unusual PowerShell — regardless of whether the binary has ever been seen before.</p>
+<p><strong>For small business:</strong> Microsoft Defender for Business ($3/user/mo) or SentinelOne Core ($4/endpoint/mo). Both include EDR, automated response, and 24/7 SOC.</p>
+
+<h3>Application Allowlisting</h3>
+<p>Only approved software can run. Windows Defender Application Control (WDAC) or third-party tools. This alone would have prevented 85% of ransomware incidents (Microsoft Digital Defense Report).</p>
+
+<h2>3. Email Security</h2>
+
+<p>Email remains the primary attack vector (91% of cyber attacks start with email).</p>
+
+<h3>SPF, DKIM, DMARC (Configuring Sending)</h3>
+<p>These DNS records tell receiving mail servers that your email is legitimate and not spoofed.</p>
+<ul>
+<li><strong>SPF</strong> — lists authorized senders for your domain</li>
+<li><strong>DKIM</strong> — cryptographic signature proving email wasn't tampered with</li>
+<li><strong>DMARC</strong> — policy telling receivers what to do with unauthenticated email (none / quarantine / reject)</li>
+</ul>
+<p><strong>Tool:</strong> MXToolbox, dmarcian, or Google Workspace's built-in email routing setup.</p>
+
+<h3>Inbound Filtering</h3>
+<p>Google Workspace's default spam filter catches most bulk spam. For business-grade protection, add a gateway like Mimecast, Proofpoint Essentials, or Cloudflare Area 1 ($3-5/user/mo). These catch advanced phishing, business email compromise (BEC), and zero-day threats.</p>
+
+<h2>4. Network Security</h2>
+
+<h3>Segmentation</h3>
+<p>Separate guest Wi-Fi from business network. Separate IoT devices (printers, cameras) from workstations. If you have a server, put it in a separate VLAN with firewall rules controlling what can reach it.</p>
+<p>Consumer routers (Eero, Google Nest, Orbi) don't support VLANs. Business-grade options: Ubiquiti UniFi, TP-Link Omada, or a simple pfSense firewall.</p>
+
+<h3>DNS Filtering</h3>
+<p>Block malware, phishing, and ransomware domains at the DNS level — before the browser even tries to connect. Services like Cloudflare Gateway ($7/user/mo, includes DNS filtering + Zero Trust), Quad9 (free), or Cisco Umbrella.</p>
+
+<h2>5. Backup & Recovery</h2>
+
+<p>Ransomware recovery depends on clean backups. The 3-2-1 rule: 3 copies, 2 media types, 1 offsite.</p>
+<ul>
+<li><strong>Local:</strong> Veeam Agent + NAS/USB drive (daily)</li>
+<li><strong>Cloud:</strong> Backblaze B2 or Wasabi (immutable buckets — cannot be deleted or encrypted by ransomware)</li>
+<li><strong>Test:</strong> Verify restoration quarterly. A backup you can't restore is a paperweight.</li>
+</ul>
+
+<h2>6. Security Awareness</h2>
+
+<p>Your employees are your first line of defense OR your biggest vulnerability. Security awareness training reduces successful phishing from 30% to under 5%.</p>
+<p><strong>Free options:</strong> KnowBe4's free phishing test (10 users), CISA's free training materials. <strong>Paid:</strong> KnowBe4, Proofpoint Security Awareness, or Hoxhunt ($5-15/user/year).</p>
+
+<h2>7. Incident Response Plan</h2>
+
+<p>Document what to do when (not if) an incident occurs:</p>
+<ol>
+<li>Disconnect affected device from network immediately</li>
+<li>Change passwords (start with privileged accounts)</li>
+<li>Contact your IT provider or incident response retainer</li>
+<li>Determine scope: what data was accessed / encrypted / exfiltrated</li>
+<li>Notify affected parties (clients, regulators) — timing may be legally required</li>
+<li>Preserve logs and forensic evidence</li>
+</ol>
+
+<h2>Tools Summary (All Budgets)</h2>
+<p><strong>Free / Low-Cost:</strong> Quad9 DNS, Google Workspace security center, HaveIBeenPwned, Bitwarden, Veeam Agent, CISA resources.</p>
+<p><strong>Small Budget ($5-15/user/mo):</strong> Microsoft Defender for Business ($3), Cloudflare Gateway ($7), KnowBe4 ($5), Backblaze B2 ($6/TB/mo).</p>
+<p><strong>Serious ($20-50/user/mo):</strong> CrowdStrike Falcon, SentinelOne, Proofpoint, Mimecast, CrowdStrike + Splunk.</p>
+
+<div class="highlight"><p><strong>Updated weekly.</strong> Security landscape changes fast. This guide is updated every Monday with current threat intel, tool pricing, and mitigation strategies. Have a specific threat or tool you want covered? <a href="/chat" style="color:#667eea">Chat with us</a>.</p></div>
+</div>
+<footer>RoyceAI Solutions. Irvine, CA</footer>
 </body>
 </html>
