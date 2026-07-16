@@ -406,7 +406,7 @@ function matchUser(id, er, btn) {
 
 function showDashboard(u) {
   document.getElementById('appContainer').classList.add('show');
-  document.querySelector('.login-section').style.display = 'none';
+  var ls = document.getElementById('loginScreen'); if(ls) ls.style.display = 'none';
   document.getElementById('loginScreen').classList.add('hidden');
   document.getElementById('dashboard').classList.add('show');
   var h = new Date().getHours();
