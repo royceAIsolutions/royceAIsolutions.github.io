@@ -17,7 +17,22 @@
     "authorized": true,
     "products": [
       "tutor"
-    ]
+    ],
+    "kpis": [
+      {
+        "label": "\ud83d\udcda Math",
+        "val": "96/100"
+      },
+      {
+        "label": "\ud83d\udd25 Streak",
+        "val": "7 days"
+      },
+      {
+        "label": "\u23f0 Focus Time",
+        "val": "45 min/day"
+      }
+    ],
+    "calories": true
   },
   {
     "first": "Carter",
@@ -37,7 +52,22 @@
     "authorized": true,
     "products": [
       "tutor"
-    ]
+    ],
+    "kpis": [
+      {
+        "label": "\ud83d\udcda SAT",
+        "val": "64/80"
+      },
+      {
+        "label": "\ud83d\udcaa Bench",
+        "val": "185 lb"
+      },
+      {
+        "label": "\ud83d\udd25 Streak",
+        "val": "5 days"
+      }
+    ],
+    "calories": true
   },
   {
     "first": "Angel",
@@ -57,7 +87,22 @@
     "authorized": true,
     "products": [
       "tutor"
-    ]
+    ],
+    "kpis": [
+      {
+        "label": "\ud83e\ude7a NCLEX",
+        "val": "72%"
+      },
+      {
+        "label": "\ud83d\udcd6 Modules",
+        "val": "8/12"
+      },
+      {
+        "label": "\u23f0 Study Time",
+        "val": "30 min/day"
+      }
+    ],
+    "calories": true
   },
   {
     "first": "Paxton",
@@ -77,7 +122,22 @@
     "authorized": true,
     "products": [
       "tutor"
-    ]
+    ],
+    "kpis": [
+      {
+        "label": "\ud83d\udcda Reading",
+        "val": "12 books"
+      },
+      {
+        "label": "\ud83c\udfae Games",
+        "val": "8 played"
+      },
+      {
+        "label": "\ud83c\udf1f Stars",
+        "val": "42 earned"
+      }
+    ],
+    "calories": false
   },
   {
     "first": "Josh",
@@ -97,7 +157,22 @@
     "authorized": true,
     "products": [
       "tutor"
-    ]
+    ],
+    "kpis": [
+      {
+        "label": "\ud83d\udcb0 Series 66",
+        "val": "74%"
+      },
+      {
+        "label": "\ud83d\udcc8 Progress",
+        "val": "60%"
+      },
+      {
+        "label": "\u23f0 Study Time",
+        "val": "25 min/day"
+      }
+    ],
+    "calories": false
   },
   {
     "first": "Mason",
@@ -117,7 +192,22 @@
     "authorized": true,
     "products": [
       "tutor"
-    ]
+    ],
+    "kpis": [
+      {
+        "label": "\ud83d\udc76 Age",
+        "val": "Toddler"
+      },
+      {
+        "label": "\ud83d\udcda Learning",
+        "val": "ABCs"
+      },
+      {
+        "label": "\ud83c\udf1f Milestones",
+        "val": "On track"
+      }
+    ],
+    "calories": false
   },
   {
     "first": "Pearl",
@@ -137,7 +227,22 @@
     "authorized": true,
     "products": [
       "tutor"
-    ]
+    ],
+    "kpis": [
+      {
+        "label": "\ud83c\udfa8 Colors",
+        "val": "6/6"
+      },
+      {
+        "label": "\ud83c\udfae Games",
+        "val": "3 played"
+      },
+      {
+        "label": "\ud83c\udf1f Stars",
+        "val": "15"
+      }
+    ],
+    "calories": false
   },
   {
     "first": "Ruby",
@@ -157,7 +262,22 @@
     "authorized": true,
     "products": [
       "tutor"
-    ]
+    ],
+    "kpis": [
+      {
+        "label": "\ud83d\udcda Math",
+        "val": "4/5"
+      },
+      {
+        "label": "\ud83c\udfae Games",
+        "val": "2 played"
+      },
+      {
+        "label": "\ud83c\udf1f Stars",
+        "val": "8"
+      }
+    ],
+    "calories": false
   },
   {
     "first": "Carter",
@@ -178,7 +298,22 @@
     "products": [
       "tutor",
       "therapy"
-    ]
+    ],
+    "kpis": [
+      {
+        "label": "\ud83d\udcda GPA",
+        "val": "3.5"
+      },
+      {
+        "label": "\ud83c\udfc0 Liberty HS",
+        "val": "Freshman"
+      },
+      {
+        "label": "\u23f0 Sessions",
+        "val": "0"
+      }
+    ],
+    "calories": true
   },
   {
     "first": "Chase",
@@ -199,7 +334,22 @@
     "products": [
       "tutor",
       "therapy"
-    ]
+    ],
+    "kpis": [
+      {
+        "label": "\ud83d\udcda Pre-Alg",
+        "val": "B+"
+      },
+      {
+        "label": "\ud83c\udfeb Nelson MS",
+        "val": "7th Grade"
+      },
+      {
+        "label": "\u23f0 Sessions",
+        "val": "0"
+      }
+    ],
+    "calories": true
   },
   {
     "first": "Tommy",
@@ -219,6 +369,21 @@
     "authorized": true,
     "products": [
       "therapy"
-    ]
+    ],
+    "kpis": [
+      {
+        "label": "\ud83e\udde0 Therapy",
+        "val": "Active"
+      },
+      {
+        "label": "\ud83d\udcc5 Sessions",
+        "val": "0"
+      },
+      {
+        "label": "\ud83c\udf1f Streak",
+        "val": "New"
+      }
+    ],
+    "calories": false
   }
 ]
