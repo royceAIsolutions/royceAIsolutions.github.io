@@ -172,6 +172,9 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 .dash-actions.hidden{display:none}
 .metric{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.2}
 
+
+.dash-header #greetingRow{font-size:0.85rem;color:var(--text-secondary);margin-bottom:2px;min-height:1.3em}
+
 </style></head>
 <body>
   <div class="orb orb-1"></div>
@@ -188,21 +191,28 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
   <h1>Log in to <span class="gradient">study</span></h1>
   <p id="loginSubtitle">Enter your first and last name exactly as registered.</p>
   <div class="login-box">
-    <label for="studentFirstName">First Name</label>
-    <input type="text" id="studentFirstName" placeholder="First name" autocomplete="off">
-    <label for="studentLastName" style="margin-top:4px">Last Name</label>
-    <input type="text" id="studentLastName" placeholder="Last name" autocomplete="off">
-    <button class="btn btn-primary" onclick="login()">Log in →</button>
-    <div class="error" id="loginError">Name not found. Check your spelling or contact us for help.</div>
+    <div class="avatar">R</div>
+    <h2>Log in to study</h2>
+    <p class="sub">Enter your first and last name exactly as registered.</p>
+    <div class="input-group">
+      <label for="studentFirstName">First Name</label>
+      <input type="text" id="studentFirstName" placeholder="Enter your first name" autocomplete="off">
+    </div>
+    <div class="input-group">
+      <label for="studentLastName">Last Name</label>
+      <input type="text" id="studentLastName" placeholder="Enter your last name" autocomplete="off">
+    </div>
+    <button onclick="login()">Log in →</button>
+    <div class="error" id="loginError"></div>
   </div>
   
 </div>
 
 <div class="app-container" id="appContainer">
 <div class="dashboard" id="dashboard">
-  <div class= hidden"dash-actions"><button class="logout-btn" onclick="logout()">🚪 Logout</button></div>
+  <div class="dash-actions hidden"><button class="logout-btn" onclick="logout()">🚪 Logout</button></div>
   <div class="dash-header">
-    <div id="greetingRow" style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:2px;min-height:1.3em">☀️ Good Morning</div>
+    <div id="greetingRow">☀️ Good Morning</div>
     <h1><span class="gradient" id="studentName" style="display:inline-block">Student</span> <span id="vibeEmoji" style="font-size:1.5rem;display:inline-block">📚</span></h1>
     <p id="studentInfo">Your personalized learning dashboard</p>
   </div>
