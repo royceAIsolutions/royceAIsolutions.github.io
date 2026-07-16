@@ -93,7 +93,7 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 .reveal{opacity:0;transform:translateY(24px);transition:all 0.6s cubic-bezier(0.16,1,0.3,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 @media(max-width:640px){
-  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none}
+  .nav-links a{font-size:0.75rem;padding:5px 8px}
   .bento-card.wide,.bento-card{grid-column:span 1}
   .bento{grid-template-columns:1fr}
   .hero h1{font-size:clamp(2rem,10vw,3rem)}
@@ -605,7 +605,7 @@ function logCalorie() {
 
 function renderCalories() {
   var total = 0;
-  var target = 4000;
+  var target = (currentUser && currentUser.first === "Carter" ? 4000 : 2000);
   for (var i = 0; i < calData.length; i++) {
     var c = calData[i];
     var d = new Date(c.ts);
