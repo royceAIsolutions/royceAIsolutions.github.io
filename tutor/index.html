@@ -258,7 +258,7 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
     </div>
   </div>
 
-  <div class="cal-tracker" id="calTracker2" style="display:none">
+  <div class="cal-tracker" id="calTracker" style="display:none">
     <div class="cal-card hidden">
       <h3>🔥 Calorie Tracker</h3>
       <div class="cal-stats"><span>Consumed: <strong id="calConsumed">0</strong> / <strong>4,000</strong> cal</span><span id="calGap" style="color:var(--gold)">Need <strong>4,000</strong> more</span></div>
@@ -473,6 +473,26 @@ function renderScoreboard(u) {
     var tl = document.getElementById('topicsList');
     if (tl) tl.innerHTML = u.topics.split(',').map(function(t) { return '<span class=\"tag\">' + t.trim() + '</span>'; }).join(' ');
   }
+  // Custom KPIs
+  var kpis = u.kpis || [];
+  for (var i = 0; i < 3; i++) {
+    var box = document.getElementById('kpi' + (i+1));
+    var label = document.getElementById('kpi' + (i+1) + 'Label');
+    var val = document.getElementById('kpi' + (i+1) + 'Val');
+    var sub = document.getElementById('kpi' + (i+1) + 'Sub');
+    if (!box || !label || !val) continue;
+    if (kpis[i]) {
+      box.style.display = 'block';
+      label.textContent = kpis[i].label || 'KPI ' + (i+1);
+      val.textContent = kpis[i].val || '\u2014';
+      if (sub) sub.textContent = kpis[i].sub || '\u2014';
+    } else {
+      box.style.display = 'none';
+    }
+  }
+  // Universal calorie tracker
+  var ct = document.getElementById('calTracker');
+  if (ct) ct.style.display = u.calories ? 'block' : 'none';
 }
 
 async function loadHistory(n) {
@@ -500,13 +520,8 @@ function logout() {
   document.getElementById('studentLastName').value = '';
 }
 
-// === CALORIE TRACKER (Carter only) ===
-var calTracker = null;
-function loadCalories() {
-  var ct = document.getElementById('calTracker');
-  if (ct) ct.style.display = 'block';
-  // Simplified - just show the tracker
-}
+// === CALORIE TRACKER (Universal) ===
+// Show/hide controlled by renderScoreboard based on user.calories flag
 
 // === KIDS GAMES ===
 const COLORS = [{name:'RED',hex:'#ef4444',emoji:'\ud83d\udd34'},{name:'BLUE',hex:'#3b82f6',emoji:'\ud83d\udd35'},{name:'GREEN',hex:'#22c55e',emoji:'\ud83d\udfe2'},{name:'YELLOW',hex:'#eab308',emoji:'\ud83d\udfe1'},{name:'PURPLE',hex:'#a855f7',emoji:'\ud83d\udfe3'},{name:'ORANGE',hex:'#f97316',emoji:'\ud83d\udfe0'},{name:'PINK',hex:'#ec4899',emoji:'\ud83d\udc97'}];
