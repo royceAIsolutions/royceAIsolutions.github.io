@@ -378,6 +378,13 @@ function initQuiz() {
   var subject = getSubject();
   if (!subject) return;
   quizMode = true;
+  // Skip lead form for quiz mode — student is already authenticated from tutor dashboard
+  if (!leadInfo || !leadInfo.email) {
+    leadInfo = { name: 'Student', email: 'quiz@royceai.com', phone: '000-000-0000', timestamp: new Date().toISOString() };
+    localStorage.setItem('royceai_lead', JSON.stringify(leadInfo));
+  }
+  document.getElementById('leadOverlay').style.display = 'none';
+  document.getElementById('chatApp').classList.add('active');
   document.getElementById('quickBtns').style.display = 'none';
   document.getElementById('welcomeMsg').innerHTML = '📋 ' + subject.charAt(0).toUpperCase() + subject.slice(1) + ' Quiz';
   setTimeout(function() { sendQuizMessage('Start ' + subject + ' quiz'); }, 500);
