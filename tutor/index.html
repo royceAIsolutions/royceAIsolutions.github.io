@@ -134,7 +134,7 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 .score{font-size:0.9rem;color:var(--text-secondary)}
 .loading{color:var(--text-muted);text-align:center;padding:40px 0;font-size:0.9rem}
 @media(max-width:640px){
-  .dashboard{padding:0 16px;margin-top:2rem}.dash-header h1{font-size:1.3rem}
+  .dashboard{padding:0 16px;margin-top:0.5rem}.dash-header h1{font-size:1.3rem}
   .dash-grid{grid-template-columns:1fr}
   .dash-header h2{font-size:1.4rem}
   .scoreboard-inner{flex-direction:column;gap:12px}
@@ -156,7 +156,7 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 .login-box .logout-link{display:inline-block;margin-top:14px;color:var(--text-muted);font-size:0.8rem;text-decoration:none;cursor:pointer}
 .login-box .logout-link:hover{color:var(--accent-light)}
 .app-container{display:none}
-.app-container.show{display:block;animation:fade-up 0.5s ease-out}
+.app-container.show{display:block;animation:fade-up 0.5s ease-out}.app-container.show .dashboard{padding-top:calc(var(--nav-h) + 0.5rem)}
 .spinner{width:20px;height:20px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite;display:inline-block;vertical-align:middle;margin-right:8px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .loading{color:var(--text-muted);text-align:center;padding:60px 0;font-size:0.9rem}
