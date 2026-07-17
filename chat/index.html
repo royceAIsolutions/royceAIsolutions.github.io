@@ -494,5 +494,8 @@ sendQuick = function(text) {
 // Init quiz if subject param present - run on DOM ready
 try { if (typeof initQuiz === "function") initQuiz(); else setTimeout(function initCheck() { if (typeof initQuiz === "function") initQuiz(); else setTimeout(initCheck, 100); }, 100); } catch(e) { console.log("initQuiz error", e); }
 </script>
+<script>
+// FINAL QUIZ LAUNCH GUARD - runs last, catches any case
+(function(){try{var q=new URLSearchParams(window.location.search).get("subject");if(q){var o=document.getElementById("leadOverlay");if(o&&o.style.display!=="none"){o.style.display="none";}var c=document.getElementById("chatApp");if(c)c.classList.add("active");var qb=document.getElementById("quickBtns");if(qb)qb.style.display="none";var w=document.getElementById("welcomeMsg");if(w)w.innerHTML="📋 "+q.charAt(0).toUpperCase()+q.slice(1)+" Quiz";localStorage.setItem("royceai_lead",JSON.stringify({name:"Student",email:"quiz@royceai.com",phone:"000-000-0000"}));}})catch(e){console.log("quiz_guard",e)}})();<\/script>
 </body>
 </html>
