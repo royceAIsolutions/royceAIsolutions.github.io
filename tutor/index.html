@@ -300,35 +300,18 @@ var HIST_URL = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
 <h3>📋 <span>Quiz History</span> — Last 10</h3>
 <table class="quiz-table"><thead><tr><th>Date</th><th>Mode</th><th>Score</th><th>Topics</th><th>Result</th></tr></thead><tbody id="quizHistoryBody"></tbody></table>
 </div>
-<div class="dash-grid" id="dashGrid">
-<div class="dash-card" data-subject="math"><span class="icon">📐</span><h3>Math</h3><p>Algebra, Geometry, Precalculus.</p><a href="javascript:void(0)" class="btn btn-dynamic btn-primary btn-sm" onclick="startQuiz(\'math\')">⚡ Start Quiz</a></div>
-<div class="dash-card" data-subject="sat"><span class="icon">🎯</span><h3>SAT Prep</h3><p>Math, Reading, Writing.</p><a href="javascript:void(0)" class="btn btn-dynamic btn-primary btn-sm" onclick="startQuiz(\'sat\')">⚡ Start Quiz</a></div>
-<div class="dash-card" data-subject="series66"><span class="icon">📋</span><h3>Series 66</h3><p>Uniform Combined State Law.</p><a href="javascript:void(0)" class="btn btn-dynamic btn-primary btn-sm" onclick="startQuiz(\'series66\')">⚡ Start Quiz</a></div>
-<div class="dash-card" data-subject="series7"><span class="icon">📋</span><h3>Series 7</h3><p>General Securities Exam.</p><a href="javascript:void(0)" class="btn btn-dynamic btn-primary btn-sm" onclick="startQuiz(\'series7\')">⚡ Start Quiz</a></div>
-<div class="dash-card" data-subject="rn"><span class="icon">🩺</span><h3>RN Training</h3><p>NCLEX-RN, Pharmacology, Anatomy.</p><a href="javascript:void(0)" class="btn btn-dynamic btn-primary btn-sm" onclick="startQuiz(\'rn\')">⚡ Start Quiz</a></div>
-<div class="dash-card" data-subject="grade9"><span class="icon">📚</span><h3>9th Grade Prep</h3><p>Math 1, Biology, English 9, World History.</p><a href="javascript:void(0)" class="btn btn-dynamic btn-primary btn-sm" onclick="startQuiz(\'grade9\')">⚡ Start Quiz</a></div>
-<div class="dash-card" data-subject="grade11"><span class="icon">📖</span><h3>11th Grade Prep</h3><p>Precalculus, Chemistry, English 11, US History, SAT.</p><a href="javascript:void(0)" class="btn btn-dynamic btn-primary btn-sm" onclick="startQuiz(\'grade11\')">⚡ Start Quiz</a></div>
+<div class="dash-grid">
+<div class="dash-card" data-subject="math"><span class="icon">📐</span><h3>Math</h3><p>Algebra, Geometry, Precalculus.</p><a href="/chat?subject= class="btn btn-dynamic btn-primary btn-sm" onclick="startQuiz(\'math\')">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="sat"><span class="icon">🎯</span><h3>SAT Prep</h3><p>Math, Reading, Writing.</p><a href="/chat?subject= class="btn btn-dynamic btn-primary btn-sm" onclick="startQuiz(\'sat\')">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="series66"><span class="icon">📋</span><h3>Series 66</h3><p>Uniform Combined State Law.</p><a href="/chat?subject= class="btn btn-dynamic btn-primary btn-sm" onclick="startQuiz(\'series66\')">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="series7"><span class="icon">📋</span><h3>Series 7</h3><p>General Securities Exam.</p><a href="/chat?subject= class="btn btn-dynamic btn-primary btn-sm" onclick="startQuiz(\'series7\')">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="rn"><span class="icon">🩺</span><h3>RN Training</h3><p>NCLEX-RN, Pharmacology, Anatomy.</p><a href="/chat?subject= class="btn btn-dynamic btn-primary btn-sm" onclick="startQuiz(\'rn\')">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="grade9"><span class="icon">📚</span><h3>9th Grade Prep</h3><p>Math 1, Biology, English 9, World History.</p><a href="/chat?subject= class="btn btn-dynamic btn-primary btn-sm" onclick="startQuiz(\'grade9\')">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="grade11"><span class="icon">📖</span><h3>11th Grade Prep</h3><p>Precalculus, Chemistry, English 11, US History, SAT.</p><a href="/chat?subject= class="btn btn-dynamic btn-primary btn-sm" onclick="startQuiz(\'grade11\')">⚡ Start Quiz</a></div>
 <div class="dash-card" data-subject="reading"><span class="icon">🎮</span><h3>Reading Games</h3><p>Phonics, letters, sight words.</p><a href="/tutor/game" class="btn btn-dynamic btn-game btn-sm">⭐ Play Now</a></div>
 <div class="dash-card" data-subject="baby"><span class="icon">👶</span><h3>Baby Play</h3><p>Sensory, colors, sounds.</p><a href="/tutor/game/baby" class="btn btn-dynamic btn-baby btn-sm">🎈 Play Now</a></div>
 
-<div id="inlineQuiz" style="display:none;animation:fade-up 0.4s ease-out;max-width:800px;margin:0 auto;text-align:center">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px">
-    <button onclick="closeQuiz()" style="background:none;border:1px solid var(--border);color:var(--text-secondary);padding:8px 16px;border-radius:10px;font-size:0.85rem;cursor:pointer;font-family:var(--font)">← Back to Dashboard</button>
-    <span id="quizProgress" style="color:var(--text-secondary);font-size:0.85rem;font-weight:600">Q1/20</span>
-    <span id="quizScore" style="color:var(--accent-light);font-size:0.85rem;font-weight:600">Score: 0/0</span>
-  </div>
-  <div id="quizSubject" style="font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Subject</div>
-  <div id="quizQuestion" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:16px;text-align:left;font-size:1rem;line-height:1.7;color:var(--text);box-shadow:var(--shadow-card);min-height:100px">
-    Loading question...
-  </div>
-  <div id="quizAnswers" style="display:flex;flex-direction:column;gap:8px"></div>
-  <div id="quizFeedback" style="display:none;margin-top:12px;padding:16px;background:var(--bg-elevated);border-radius:var(--radius-sm);border:1px solid var(--border);text-align:left;font-size:0.9rem;line-height:1.7;color:var(--text-secondary)"></div>
-  <div id="quizNextBtn" style="display:none;margin-top:16px">
-    <button onclick="nextQuizQuestion()" style="background:var(--accent);color:#fff;border:none;padding:12px 32px;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;font-family:var(--font);transition:all 0.2s">Next Question →</button>
-  </div>
-</div>
-
-</div>
+/div>
 </div>
 <footer><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
 <script>
@@ -352,150 +335,6 @@ function startMathGame() { var mg = document.getElementById('mathGame'); if (mg)
 function nextMathQ() { if (rubyTotal >= 10) { endRubyGame(); return; } var a = Math.floor(Math.random()*20)+1; var b = Math.floor(Math.random()*a)+1; var answer = a + b; var op = '+'; if (rubyTotal%2===1) { op='-'; answer=a-b; if(answer<0) { a=a+b+Math.floor(Math.random()*5); answer=a-b; } } var opts = [answer]; while (opts.length<4) { var n=answer+(Math.floor(Math.random()*10)-5); if(n>=0&&!opts.includes(n)) opts.push(n); } opts.sort(function() {return Math.random()-0.5;}); var rq = document.getElementById('rubyQuestion'); if (rq) rq.innerHTML = 'What is <strong>'+a+' '+op+' '+b+'</strong>?'; var ro = document.getElementById('rubyOptions'); if (ro) ro.innerHTML = opts.map(function(n) {return '<div class="game-opt game-opt-num" data-num="'+n+'" onclick="checkRuby(this,'+answer+')">'+n+'</div>';}).join(''); }
 function checkRuby(el, answer) { if (!el || el.classList.contains('disabled')) return; var all = document.querySelectorAll('#rubyOptions .game-opt'); for (var i = 0; i < all.length; i++) { all[i].classList.add('disabled'); } rubyTotal++; if (parseInt(el.dataset.num)===answer) { el.classList.add('correct'); rubyScore++; } else { el.classList.add('wrong'); var correctEl = document.querySelector('#rubyOptions [data-num="'+answer+'"]'); if (correctEl) correctEl.classList.add('correct'); } var rs = document.getElementById('rubyScore'); if (rs) rs.textContent = rubyScore; setTimeout(nextMathQ, 700); }
 function endRubyGame() { var rb = document.getElementById('rubyBoard'); if (rb) rb.style.display = 'none'; var r = document.getElementById('rubyResult'); if (!r) return; r.classList.add('show'); var rfs = document.getElementById('rubyFinalScore'); if (rfs) rfs.textContent = rubyScore + '/10'; var big = r.querySelector('.big'); if (big) big.textContent = rubyScore >= 8 ? '🏆' : rubyScore >= 5 ? '🌟' : '💪'; if (rubyScore > 0) { try { fetch('https://chat-api-tawny-zeta.vercel.app/api/save-score',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({student:'Ruby Johnson',correct:rubyScore,total:10,subject:'math'})}); } catch(e) {} } }
-
-// === INLINE QUIZ ===
-var quizHistory = [];
-var quizSubject = '';
-var quizQuestionNum = 0;
-var quizCorrect = 0;
-var quizTotal = 0;
-var quizWaiting = false;
-
-function startQuiz(subject) {
-  quizSubject = subject;
-  quizQuestionNum = 0;
-  quizCorrect = 0;
-  quizTotal = 0;
-  quizHistory = [];
-  quizWaiting = false;
-  
-  document.getElementById('dashGrid').style.display = 'none';
-  document.getElementById('quizHistory').style.display = 'none';
-  document.getElementById('inlineQuiz').style.display = 'block';
-  document.getElementById('quizSubject').textContent = subject.charAt(0).toUpperCase() + subject.slice(1);
-  document.getElementById('quizFeedback').style.display = 'none';
-  document.getElementById('quizNextBtn').style.display = 'none';
-  document.getElementById('quizQuestion').textContent = 'Starting quiz...';
-  document.getElementById('quizAnswers').innerHTML = '';
-  updateQuizScore();
-  
-  sendQuizMsg('Start ' + subject + ' quiz');
-}
-
-function closeQuiz() {
-  document.getElementById('inlineQuiz').style.display = 'none';
-  document.getElementById('dashGrid').style.display = '';
-  document.getElementById('quizHistory').style.display = '';
-}
-
-function updateQuizScore() {
-  document.getElementById('quizProgress').textContent = 'Q' + (quizQuestionNum + 1) + '/20';
-  document.getElementById('quizScore').textContent = 'Score: ' + quizCorrect + '/' + quizTotal;
-}
-
-function sendQuizMsg(text) {
-  quizWaiting = true;
-  document.getElementById('quizAnswers').innerHTML = '<div style="color:var(--text-muted);padding:20px">Thinking...</div>';
-  
-  fetch('https://chat-api-tawny-zeta.vercel.app/api/quiz', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({message: text, history: quizHistory.slice(-30)})
-  })
-  .then(function(r) { return r.json(); })
-  .then(function(data) {
-    var reply = data.reply || 'No response';
-    quizHistory.push({role: 'user', content: text});
-    quizHistory.push({role: 'assistant', content: reply});
-    quizWaiting = false;
-    
-    // Check if quiz is done
-    if (reply.match(/Quiz complete|completed|Complete|done|final/gi)) {
-      showQuizDone(reply);
-      return;
-    }
-    
-    // Show the question text (strip answer options from display)
-    var questionText = reply.replace(/^[A-D][)]\s*[^\n]*\n?/gm, '').trim();
-    document.getElementById('quizQuestion').innerHTML = questionText.replace(/\n/g, '<br>');
-    
-    // Extract answer options
-    var opts = reply.match(/(?:^|[\n])([A-D][)]\s*[^\n*]+)/g);
-    if (opts) opts = opts.map(function(o) { return o.replace(/^[\n]/, '').trim(); });
-    if (!opts || opts.length < 2) {
-      // No clean options - add text input
-      document.getElementById('quizAnswers').innerHTML = '<div style="color:var(--text-muted);font-size:0.9rem">Type A, B, C, or D below</div>';
-      return;
-    }
-    
-    var html = '';
-    for (var i = 0; i < opts.length; i++) {
-      var letter = opts[i].charAt(0).toLowerCase();
-      html += '<button onclick="answerQuiz('' + letter + '',this)" style="padding:14px 18px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);font-size:0.9rem;text-align:left;cursor:pointer;font-family:var(--font);transition:all 0.15s;display:flex;align-items:center;gap:10px" onmouseover="this.style.borderColor=\'var(--accent)\';this.style.background=\'var(--accent-bg)\'" onmouseout="this.style.borderColor=\'var(--border)\';this.style.background=\'var(--bg-card)\'">' +
-        '<span style="background:var(--accent);color:#fff;width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;flex-shrink:0">' + opts[i].charAt(0) + '</span>' +
-        '<span>' + opts[i].substring(2).trim() + '</span></button>';
-    }
-    document.getElementById('quizAnswers').innerHTML = html;
-  })
-  .catch(function(e) {
-    quizWaiting = false;
-    document.getElementById('quizQuestion').textContent = 'Error: ' + e.message;
-    document.getElementById('quizAnswers').innerHTML = '<button onclick="sendQuizMsg('' + (quizHistory.length ? quizHistory[quizHistory.length-1].content : 'Start ' + quizSubject + ' quiz') + '')" style="padding:12px 24px;background:var(--accent);color:#fff;border:none;border-radius:10px;cursor:pointer;font-size:0.9rem">Retry</button>';
-  });
-}
-
-function answerQuiz(letter, btn) {
-  if (quizWaiting) return;
-  // Disable all buttons
-  var btns = document.querySelectorAll('#quizAnswers button');
-  for (var i = 0; i < btns.length; i++) btns[i].disabled = true;
-  
-  quizTotal++;
-  
-  // Mark selected button
-  if (btn) {
-    btn.style.borderColor = 'var(--accent)';
-    btn.style.background = 'rgba(124,92,252,0.15)';
-  }
-  
-  quizQuestionNum++;
-  updateQuizScore();
-  
-  // Also show loading feedback
-  document.getElementById('quizFeedback').style.display = 'block';
-  document.getElementById('quizFeedback').innerHTML = 'Checking answer...';
-  
-  sendQuizMsg(letter);
-}
-
-function nextQuizQuestion() {
-  document.getElementById('quizFeedback').style.display = 'none';
-  document.getElementById('quizNextBtn').style.display = 'none';
-}
-
-function showQuizDone(reply) {
-  // Extract score
-  var m = reply.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i) || reply.match(/(\d+)\s*\/\s*(\d+)\s*(?:correct|questions)/i);
-  var correct = quizCorrect, total = quizTotal;
-  if (m) { correct = parseInt(m[1]); total = parseInt(m[2]); }
-  
-  document.getElementById('quizQuestion').innerHTML = reply.replace(/\n/g, '<br>');
-  document.getElementById('quizAnswers').innerHTML = '';
-  document.getElementById('quizFeedback').style.display = 'none';
-  document.getElementById('quizNextBtn').style.display = 'none';
-  
-  // Save score
-  var name = 'Student';
-  try { if (currentUser && currentUser.name) name = currentUser.name; } catch(e) {}
-  fetch('https://chat-api-tawny-zeta.vercel.app/api/save-score', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({student: name, correct: correct, total: total, subject: quizSubject})
-  }).catch(function(){});
-  
-  // Add finish button
-  document.getElementById('quizAnswers').innerHTML = '<button onclick="closeQuiz()" style="margin-top:16px;padding:14px 32px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;font-family:var(--font)">← Back to Dashboard</button>';
-}
 
 fetchUsers();
 var saved = localStorage.getItem('tutor_user');
