@@ -207,6 +207,8 @@ const API_URL = 'https://chat-api-tawny-zeta.vercel.app/api/chat';
 let history = [];
 let msgCount = 0;
 let leadInfo = null;
+// Early quiz detection - hide lead overlay immediately if subject param present
+(function(){try{var s=new URLSearchParams(window.location.search).get('subject');if(s){document.getElementById('leadOverlay').style.display='none';document.getElementById('chatApp').classList.add('active');}}catch(e){}})();
 
 // Check if lead already submitted
 const saved = localStorage.getItem('royceai_lead');
@@ -486,8 +488,8 @@ sendQuick = function(text) {
   }
 };
 
-// Init quiz if subject param present
-initQuiz();
+// Init quiz if subject param present - run on DOM ready
+try { if (typeof initQuiz === "function") initQuiz(); else setTimeout(function initCheck() { if (typeof initQuiz === "function") initQuiz(); else setTimeout(initCheck, 100); }, 100); } catch(e) { console.log("initQuiz error", e); }
 </script>
 </body>
 </html>
