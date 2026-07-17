@@ -172,7 +172,7 @@
         "val": "25 min/day"
       }
     ],
-    "calories": true
+    "calories": false
   },
   {
     "first": "Mason",
