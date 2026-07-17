@@ -203,6 +203,9 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
   </div>
 
 <script>
+// EARLY QUIZ LAUNCH - runs before any other code
+(function(){try{var s=(new URLSearchParams(window.location.search)).get("subject");if(s){(document.getElementById("leadOverlay")||{}).style="none";(document.getElementById("chatApp")||{}).classList.add("active");localStorage.setItem("royceai_lead",JSON.stringify({name:"Student",email:"quiz@royceai.com",phone:"000-000-0000"}));}}catch(e){}})();
+
 const API_URL = 'https://chat-api-tawny-zeta.vercel.app/api/chat';
 let history = [];
 let msgCount = 0;
