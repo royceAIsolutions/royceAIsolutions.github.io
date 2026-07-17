@@ -380,7 +380,7 @@ function initQuiz() {
   quizMode = true;
   // Skip lead form for quiz mode — student is already authenticated from tutor dashboard
   if (!leadInfo || !leadInfo.email) {
-    leadInfo = { name: 'Student', email: 'quiz@royceai.com', phone: '000-000-0000', timestamp: new Date().toISOString() };
+    var tutorUser = null; try { var tu = JSON.parse(localStorage.getItem('tutor_user')); if (tu && tu.name) tutorUser = tu.name; } catch(e){} leadInfo = { name: tutorUser || 'Student', email: 'quiz@royceai.com', phone: '000-000-0000', timestamp: new Date().toISOString() };
     localStorage.setItem('royceai_lead', JSON.stringify(leadInfo));
   }
   document.getElementById('leadOverlay').style.display = 'none';
@@ -397,8 +397,13 @@ function formatQuizReply(text) {
 }
 
 function renderAnswerButtons(reply) {
-  var opts = reply.match(/[A-D][)]\s*[^\n]+/g);
-  if (!opts || opts.length < 2) return;
+  // Only match A) B) C) D) at LINE START, exclude explanation markers (** and Type: prompts)
+  var opts = reply.match(/^[A-D][)]\s*[^\n\*]+/gm);
+  if (!opts || opts.length < 2) {
+    opts = reply.match(/[\n][A-D][)]\s*[^\n\*]+/g);
+    if (opts) opts = opts.map(function(x) { return x.replace(/^\n/, ''); });
+  }
+  if (!opts || opts.length < 2) {
   var area = document.createElement('div');
   area.className = 'ans-area';
   area.style.cssText = 'display:flex;flex-wrap:wrap;gap:4px;padding:4px 0 8px;align-self:flex-start';
