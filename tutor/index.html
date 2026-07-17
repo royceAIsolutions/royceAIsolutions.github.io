@@ -323,13 +323,13 @@ var HIST_URL = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
 <table class="quiz-table"><thead><tr><th>Date</th><th>Mode</th><th>Score</th><th>Topics</th><th>Result</th></tr></thead><tbody id="quizHistoryBody"></tbody></table>
 </div>
 <div class="dash-grid">
-<div class="dash-card" data-subject="math"><span class="icon">📐</span><h3>Math</h3><p>Algebra, Geometry, Precalculus.</p><a href="/chat?subject=math" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
-<div class="dash-card" data-subject="sat"><span class="icon">🎯</span><h3>SAT Prep</h3><p>Math, Reading, Writing.</p><a href="/chat?subject=sat" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
-<div class="dash-card" data-subject="series66"><span class="icon">📋</span><h3>Series 66</h3><p>Uniform Combined State Law.</p><a href="/chat?subject=series66" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
-<div class="dash-card" data-subject="series7"><span class="icon">📋</span><h3>Series 7</h3><p>General Securities Exam.</p><a href="/chat?subject=series7" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
-<div class="dash-card" data-subject="rn"><span class="icon">🩺</span><h3>RN Training</h3><p>NCLEX-RN, Pharmacology, Anatomy.</p><a href="/chat?subject=rn" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
-<div class="dash-card" data-subject="grade9"><span class="icon">📚</span><h3>9th Grade Prep</h3><p>Math 1, Biology, English 9, World History.</p><a href="/chat?subject=grade9" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
-<div class="dash-card" data-subject="grade11"><span class="icon">📖</span><h3>11th Grade Prep</h3><p>Precalculus, Chemistry, English 11, US History, SAT.</p><a href="/chat?subject=grade11" class="btn btn-dynamic btn-primary btn-sm">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="math"><span class="icon">📐</span><h3>Math</h3><p>Algebra, Geometry, Precalculus.</p><a href="javascript:void(0)" class="btn btn-dynamic btn-primary btn-sm" onclick="startInlineQuiz('math')">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="sat"><span class="icon">🎯</span><h3>SAT Prep</h3><p>Math, Reading, Writing.</p><a href="javascript:void(0)" class="btn btn-dynamic btn-primary btn-sm" onclick="startInlineQuiz('sat')">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="series66"><span class="icon">📋</span><h3>Series 66</h3><p>Uniform Combined State Law.</p><a href="javascript:void(0)" class="btn btn-dynamic btn-primary btn-sm" onclick="startInlineQuiz('series66')">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="series7"><span class="icon">📋</span><h3>Series 7</h3><p>General Securities Exam.</p><a href="javascript:void(0)" class="btn btn-dynamic btn-primary btn-sm" onclick="startInlineQuiz('series7')">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="rn"><span class="icon">🩺</span><h3>RN Training</h3><p>NCLEX-RN, Pharmacology, Anatomy.</p><a href="javascript:void(0)" class="btn btn-dynamic btn-primary btn-sm" onclick="startInlineQuiz('rn')">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="grade9"><span class="icon">📚</span><h3>9th Grade Prep</h3><p>Math 1, Biology, English 9, World History.</p><a href="javascript:void(0)" class="btn btn-dynamic btn-primary btn-sm" onclick="startInlineQuiz('grade9')">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="grade11"><span class="icon">📖</span><h3>11th Grade Prep</h3><p>Precalculus, Chemistry, English 11, US History, SAT.</p><a href="javascript:void(0)" class="btn btn-dynamic btn-primary btn-sm" onclick="startInlineQuiz('grade11')">⚡ Start Quiz</a></div>
 <div class="dash-card" data-subject="reading"><span class="icon">🎮</span><h3>Reading Games</h3><p>Phonics, letters, sight words.</p><a href="/chat?subject=reading" class="btn btn-dynamic btn-game btn-sm">⭐ Play Now</a></div>
 <div class="dash-card" data-subject="baby"><span class="icon">👶</span><h3>Baby Play</h3><p>Sensory, colors, sounds.</p><a href="/chat?subject=baby" class="btn btn-dynamic btn-baby btn-sm">🎈 Play Now</a></div>
 
@@ -362,6 +362,176 @@ fetchUsers();
 var saved = localStorage.getItem('tutor_user');
 if (saved) { try { var u = JSON.parse(saved); (function check() { if (usersData.length) { var match = usersData.find(function(x) { return x.id === u.id; }); if (match) { currentUser = match; showDashboard(match); } else { localStorage.removeItem('tutor_user'); } } else { setTimeout(check, 300); } })(); } catch(e) { localStorage.removeItem('tutor_user'); } }
 if (calData.length) renderCalories();
+
+// === INLINE QUIZ (v2 - safe, no escaping issues) ===
+var iqHist = [];
+var iqSubj = "";
+var iqNum = 0;
+var iqCorrect = 0;
+var iqTotal = 0;
+var iqBusy = false;
+
+function startInlineQuiz(subject) {
+  iqSubj = subject;
+  iqNum = 0;
+  iqCorrect = 0;
+  iqTotal = 0;
+  iqHist = [];
+  iqBusy = false;
+  
+  document.getElementById("dashGrid").style.display = "none";
+  document.getElementById("quizHistory").style.display = "none";
+  document.getElementById("inlineQuizPanel").style.display = "block";
+  
+  document.getElementById("quizSubj").textContent = subject.charAt(0).toUpperCase() + subject.slice(1);
+  document.getElementById("quizFb").style.display = "none";
+  document.getElementById("quizNextBtn").style.display = "none";
+  document.getElementById("quizQ").textContent = "Loading...";
+  document.getElementById("quizA").innerHTML = "";
+  updateIQScore();
+  askIQ("Start " + subject + " quiz");
+}
+
+function closeIQ() {
+  document.getElementById("inlineQuizPanel").style.display = "none";
+  document.getElementById("dashGrid").style.display = "";
+  document.getElementById("quizHistory").style.display = "";
+}
+
+function updateIQScore() {
+  document.getElementById("quizProg").textContent = "Q" + (iqNum + 1) + "/20";
+  document.getElementById("quizScr").textContent = iqCorrect + "/" + iqTotal;
+}
+
+function askIQ(msg) {
+  iqBusy = true;
+  document.getElementById("quizA").innerHTML = "<div style='color:var(--text-muted);padding:16px'>Loading...</div>";
+  
+  fetch("https://chat-api-tawny-zeta.vercel.app/api/quiz", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({message: msg, history: iqHist.slice(-30)})
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    var reply = data.reply || "No response";
+    iqHist.push({role: "user", content: msg});
+    iqHist.push({role: "assistant", content: reply});
+    iqBusy = false;
+    
+    if (reply.match(/Quiz complete|completed|Complete|done|final|finished/gi)) {
+      finishIQ(reply);
+      return;
+    }
+    
+    var qText = reply.replace(/^[A-D][)]\s*[^\n]*\n?/gm, "").trim();
+    document.getElementById("quizQ").innerHTML = qText.replace(/\n/g, "<br>");
+    
+    var opts = reply.match(/(?:^|[\n])([A-D][)]\s*[^\n*]+)/g);
+    if (opts) opts = opts.map(function(o) { return o.replace(/^[\n]/, "").trim(); });
+    
+    if (!opts || opts.length < 2) {
+      var retryBtn = document.createElement("button");
+      retryBtn.textContent = "Retry";
+      retryBtn.style.cssText = "padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer";
+      retryBtn.onclick = function() { askIQ("Repeat question"); };
+      document.getElementById("quizA").innerHTML = "";
+      document.getElementById("quizA").appendChild(retryBtn);
+      return;
+    }
+    
+    var html = "";
+    for (var i = 0; i < opts.length; i++) {
+      html += "<button data-letter='" + opts[i].charAt(0).toLowerCase() + "' class='iq-btn'>";
+      html += "<span class='iq-letter'>" + opts[i].charAt(0) + "</span>";
+      html += "<span>" + opts[i].substring(2).trim() + "</span></button>";
+    }
+    document.getElementById("quizA").innerHTML = html;
+    
+    var btns = document.querySelectorAll(".iq-btn");
+    for (var j = 0; j < btns.length; j++) {
+      btns[j].addEventListener("click", handleIQClick);
+    }
+  })
+  .catch(function(e) {
+    iqBusy = false;
+    document.getElementById("quizQ").textContent = "Error: " + e.message;
+    var retryBtn = document.createElement("button");
+    var lastMsg = iqHist.length ? iqHist[iqHist.length - 1].content : "Start " + iqSubj + " quiz";
+    retryBtn.textContent = "Retry";
+    retryBtn.style.cssText = "padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer;margin-top:10px";
+    retryBtn.onclick = function() { askIQ(lastMsg); };
+    document.getElementById("quizA").innerHTML = "";
+    document.getElementById("quizA").appendChild(retryBtn);
+  });
+}
+
+function handleIQClick(e) {
+  if (iqBusy) return;
+  var btn = e.currentTarget;
+  var letter = btn.getAttribute("data-letter");
+  if (!letter) return;
+  
+  iqTotal++;
+  iqNum++;
+  updateIQScore();
+  
+  var all = document.querySelectorAll(".iq-btn");
+  for (var i = 0; i < all.length; i++) {
+    all[i].removeEventListener("click", handleIQClick);
+    all[i].style.opacity = "0.5";
+  }
+  
+  btn.style.borderColor = "var(--accent)";
+  btn.style.background = "rgba(124,92,252,0.15)";
+  
+  document.getElementById("quizFb").style.display = "block";
+  document.getElementById("quizFb").innerHTML = "Checking...";
+  
+  askIQ(letter);
+}
+
+function finishIQ(reply) {
+  var correct = iqCorrect;
+  var total = iqTotal;
+  var m = reply.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i);
+  if (!m) m = reply.match(/(\d+)\s*\/\s*(\d+)\s*(?:correct|questions)/i);
+  if (m) { correct = parseInt(m[1]); total = parseInt(m[2]); }
+  
+  document.getElementById("quizQ").innerHTML = reply.replace(/\n/g, "<br>");
+  document.getElementById("quizA").innerHTML = "";
+  document.getElementById("quizFb").style.display = "none";
+  document.getElementById("quizNextBtn").style.display = "none";
+  
+  var name = "Student";
+  try { if (currentUser && currentUser.name) name = currentUser.name; } catch(e) {}
+  fetch("https://chat-api-tawny-zeta.vercel.app/api/save-score", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({student: name, correct: correct, total: total, subject: iqSubj})
+  });
+  
+  var backBtn = document.createElement("button");
+  backBtn.textContent = "\u2190 Back to Dashboard";
+  backBtn.style.cssText = "margin-top:16px;padding:12px 28px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer";
+  backBtn.onclick = function() { closeIQ(); location.reload(); };
+  document.getElementById("quizA").appendChild(backBtn);
+}
+
+var iqStyle = document.createElement("style");
+iqStyle.textContent = ".iq-btn{display:flex;align-items:center;gap:10px;width:100%;padding:12px 16px;border-radius:10px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);font-size:0.85rem;text-align:left;cursor:pointer;font-family:var(--font);transition:all 0.15s}.iq-btn:hover{border-color:var(--accent);background:var(--accent-bg)}.iq-letter{background:var(--accent);color:#fff;width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75rem;flex-shrink:0}";
+document.head.appendChild(iqStyle);
+
+document.addEventListener("DOMContentLoaded", function() {
+  var bb = document.getElementById("quizBackBtn");
+  if (bb) bb.addEventListener("click", closeIQ);
+  var nb = document.getElementById("quizNextBtn");
+  if (nb) nb.addEventListener("click", function() {
+    document.getElementById("quizFb").style.display = "none";
+    nb.style.display = "none";
+  });
+});
+
 </script>
 <div id="debugInfo" style="display:none"></div>
 <script>console.log('[TUTOR] Page loaded, usersData:', typeof usersData, usersData ? usersData.length : 0);</script>
