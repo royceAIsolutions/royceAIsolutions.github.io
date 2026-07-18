@@ -345,6 +345,8 @@ var HIST_URL = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
     <div id="quizSubj" style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px">Subject</div>
     <div id="quizQ" style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:12px;text-align:left;font-size:0.95rem;line-height:1.7;color:var(--text);min-height:80px">Starting quiz...</div>
     <div id="quizA" style="display:flex;flex-direction:column;gap:6px"></div>
+    <div id="quizFb" style="display:none;margin-top:10px;padding:12px;background:var(--bg-elevated);border-radius:8px;border:1px solid var(--border);text-align:left;font-size:0.85rem;color:var(--text-secondary)"></div>
+    <button id="quizNextBtn" style="display:none;margin-top:12px;background:var(--accent);color:#fff;border:none;padding:10px 28px;border-radius:10px;font-size:0.9rem;font-weight:600;cursor:pointer;font-family:var(--font)">Next →</button>
   </div>
 </div>
 
@@ -396,14 +398,14 @@ function startInlineQuiz(subject) {
   
   var dg=document.getElementById("dashGrid");if(dg)dg.style.display="none";
   var ip=document.getElementById("inlineQuizPanel");if(!ip){alert("Quiz panel not loaded. Please refresh.");return;}
-  document.getElementById("quizHistory").style.display = "none";
+  var qh=document.getElementById("quizHistory");if(qh)qh.style.display="none";
   document.getElementById("inlineQuizPanel").style.display = "block";
   
-  document.getElementById("quizSubj").textContent = subject.charAt(0).toUpperCase() + subject.slice(1);
-  document.getElementById("quizFb").style.display = "none";
-  document.getElementById("quizNextBtn").style.display = "none";
-  document.getElementById("quizQ").textContent = "Loading...";
-  document.getElementById("quizA").innerHTML = "";
+  var qs=document.getElementById("quizSubj");if(qs)qs.textContent=subject.charAt(0).toUpperCase()+subject.slice(1);
+  var qf=document.getElementById("quizFb");if(qf)qf.style.display="none";
+  var qn=document.getElementById("quizNextBtn");if(qn)qn.style.display="none";
+  var qq=document.getElementById("quizQ");if(qq)qq.textContent="Loading...";
+  var qa=document.getElementById("quizA");if(qa)qa.innerHTML="";
   updateIQScore();
   askIQ("Start " + subject + " quiz");
 }
@@ -411,7 +413,7 @@ function startInlineQuiz(subject) {
 function closeIQ() {
   document.getElementById("inlineQuizPanel").style.display = "none";
   var dg=document.getElementById("dashGrid");if(dg)dg.style.display="";
-  document.getElementById("quizHistory").style.display = "";
+  var qh2=document.getElementById("quizHistory");if(qh2)qh2.style.display="";
 }
 
 function updateIQScore() {
@@ -441,7 +443,7 @@ function askIQ(msg) {
     }
     
     var qText = reply.replace(/^[A-D][)]\s*[^\n]*\n?/gm, "").trim();
-    document.getElementById("quizQ").innerHTML = qText.replace(/\n/g, "<br>");
+    var qq2=document.getElementById("quizQ");if(qq2)qq2.innerHTML=qText.replace(/\n/g, "<br>");
     
     var opts = reply.match(/(?:^|[\n])([A-D][)]\s*[^\n*]+)/g);
     if (opts) opts = opts.map(function(o) { return o.replace(/^[\n]/, "").trim(); });
@@ -451,7 +453,7 @@ function askIQ(msg) {
       retryBtn.textContent = "Retry";
       retryBtn.style.cssText = "padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer";
       retryBtn.onclick = function() { askIQ("Repeat question"); };
-      document.getElementById("quizA").innerHTML = "";
+      var qa=document.getElementById("quizA");if(qa)qa.innerHTML="";
       document.getElementById("quizA").appendChild(retryBtn);
       return;
     }
@@ -477,7 +479,7 @@ function askIQ(msg) {
     retryBtn.textContent = "Retry";
     retryBtn.style.cssText = "padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer;margin-top:10px";
     retryBtn.onclick = function() { askIQ(lastMsg); };
-    document.getElementById("quizA").innerHTML = "";
+    var qa=document.getElementById("quizA");if(qa)qa.innerHTML="";
     document.getElementById("quizA").appendChild(retryBtn);
   });
 }
@@ -515,9 +517,9 @@ function finishIQ(reply) {
   if (m) { correct = parseInt(m[1]); total = parseInt(m[2]); }
   
   document.getElementById("quizQ").innerHTML = reply.replace(/\n/g, "<br>");
-  document.getElementById("quizA").innerHTML = "";
-  document.getElementById("quizFb").style.display = "none";
-  document.getElementById("quizNextBtn").style.display = "none";
+  var qa=document.getElementById("quizA");if(qa)qa.innerHTML="";
+  var qf=document.getElementById("quizFb");if(qf)qf.style.display="none";
+  var qn=document.getElementById("quizNextBtn");if(qn)qn.style.display="none";
   
   var name = "Student";
   try { if (currentUser && currentUser.name) name = currentUser.name; } catch(e) {}
@@ -543,7 +545,7 @@ document.addEventListener("DOMContentLoaded", function() {
   if (bb) bb.addEventListener("click", closeIQ);
   var nb = document.getElementById("quizNextBtn");
   if (nb) nb.addEventListener("click", function() {
-    document.getElementById("quizFb").style.display = "none";
+    var qf=document.getElementById("quizFb");if(qf)qf.style.display="none";
     nb.style.display = "none";
   });
 });
