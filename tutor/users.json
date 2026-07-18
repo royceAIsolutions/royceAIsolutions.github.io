@@ -15,24 +15,9 @@
     "plan": "free_trial",
     "cards": "math,grade9",
     "authorized": true,
-    "products": [
-      "tutor"
-    ],
-    "kpis": [
-      {
-        "label": "📚 Math",
-        "val": "96/100"
-      },
-      {
-        "label": "🔥 Streak",
-        "val": "7 days"
-      },
-      {
-        "label": "⏰ Focus Time",
-        "val": "45 min/day"
-      }
-    ],
-    "calories": true
+    "products": ["tutor"],
+    "kpis": [{"label": "📚 Math","val": "96/100"},{"label": "🔥 Streak","val": "7 days"},{"label": "⏰ Focus Time","val": "45 min/day"}],
+    "calories": false
   },
   {
     "first": "Carter",
@@ -50,24 +35,9 @@
     "plan": "free_trial",
     "cards": "sat,math,grade11",
     "authorized": true,
-    "products": [
-      "tutor"
-    ],
-    "kpis": [
-      {
-        "label": "📚 SAT",
-        "val": "64/80"
-      },
-      {
-        "label": "💪 Bench",
-        "val": "185 lb"
-      },
-      {
-        "label": "🔥 Streak",
-        "val": "5 days"
-      }
-    ],
-    "calories": true
+    "products": ["tutor"],
+    "kpis": [{"label": "📚 SAT","val": "64/80"},{"label": "💪 Bench","val": "185 lb"},{"label": "🔥 Streak","val": "5 days"}],
+    "calories": false
   },
   {
     "first": "Angel",
@@ -85,24 +55,9 @@
     "plan": "free_trial",
     "cards": "rn",
     "authorized": true,
-    "products": [
-      "tutor"
-    ],
-    "kpis": [
-      {
-        "label": "🩺 NCLEX",
-        "val": "72%"
-      },
-      {
-        "label": "📖 Modules",
-        "val": "8/12"
-      },
-      {
-        "label": "⏰ Study Time",
-        "val": "30 min/day"
-      }
-    ],
-    "calories": true
+    "products": ["tutor"],
+    "kpis": [{"label": "🩺 NCLEX","val": "72%"},{"label": "📖 Modules","val": "8/12"},{"label": "⏰ Study Time","val": "30 min/day"}],
+    "calories": false
   },
   {
     "first": "Paxton",
@@ -120,24 +75,9 @@
     "plan": "free_trial",
     "cards": "reading",
     "authorized": true,
-    "products": [
-      "tutor"
-    ],
-    "kpis": [
-      {
-        "label": "📚 Reading",
-        "val": "12 books"
-      },
-      {
-        "label": "🎮 Games",
-        "val": "8 played"
-      },
-      {
-        "label": "🌟 Stars",
-        "val": "42 earned"
-      }
-    ],
-    "calories": true
+    "products": ["tutor"],
+    "kpis": [{"label": "📚 Reading","val": "12 books"},{"label": "🎮 Games","val": "8 played"},{"label": "🌟 Stars","val": "42 earned"}],
+    "calories": false
   },
   {
     "first": "Josh",
@@ -146,32 +86,17 @@
     "name": "Josh Lucero",
     "subjects": "Series 66, 7",
     "active": true,
-    "today": "0/20 (0%)",
-    "mtd": "27/50 (54%)",
-    "ytd": "27/50 (54%)",
+    "today": "20/20 (100%)",
+    "mtd": "47/50 (94%)",
+    "ytd": "47/50 (94%)",
     "topics": "Series 66, Series 7",
     "difficulty": "📋 Series 66 — 27/30 (90%)",
     "focus": "Series 66 (Uniform Combined), Series 7",
     "plan": "free_trial",
     "cards": "series66,series7",
     "authorized": true,
-    "products": [
-      "tutor"
-    ],
-    "kpis": [
-      {
-        "label": "💰 Series 66",
-        "val": "74%"
-      },
-      {
-        "label": "📈 Progress",
-        "val": "60%"
-      },
-      {
-        "label": "⏰ Study Time",
-        "val": "25 min/day"
-      }
-    ],
+    "products": ["tutor"],
+    "kpis": [{"label": "💰 Series 66","val": "74%"},{"label": "📈 Progress","val": "60%"},{"label": "⏰ Study Time","val": "25 min/day"}],
     "calories": false
   },
   {
@@ -190,24 +115,9 @@
     "plan": "free_trial",
     "cards": "baby",
     "authorized": true,
-    "products": [
-      "tutor"
-    ],
-    "kpis": [
-      {
-        "label": "👶 Age",
-        "val": "Toddler"
-      },
-      {
-        "label": "📚 Learning",
-        "val": "ABCs"
-      },
-      {
-        "label": "🌟 Milestones",
-        "val": "On track"
-      }
-    ],
-    "calories": true
+    "products": ["tutor"],
+    "kpis": [{"label": "👶 Age","val": "Toddler"},{"label": "📚 Learning","val": "ABCs"},{"label": "🌟 Milestones","val": "On track"}],
+    "calories": false
   },
   {
     "first": "Pearl",
@@ -225,24 +135,9 @@
     "plan": "free_trial",
     "cards": "baby,preschool",
     "authorized": true,
-    "products": [
-      "tutor"
-    ],
-    "kpis": [
-      {
-        "label": "🎨 Colors",
-        "val": "6/6"
-      },
-      {
-        "label": "🎮 Games",
-        "val": "3 played"
-      },
-      {
-        "label": "🌟 Stars",
-        "val": "15"
-      }
-    ],
-    "calories": true
+    "products": ["tutor"],
+    "kpis": [{"label": "🎨 Colors","val": "6/6"},{"label": "🎮 Games","val": "3 played"},{"label": "🌟 Stars","val": "15"}],
+    "calories": false
   },
   {
     "first": "Ruby",
@@ -260,24 +155,9 @@
     "plan": "free_trial",
     "cards": "reading,math,grade2",
     "authorized": true,
-    "products": [
-      "tutor"
-    ],
-    "kpis": [
-      {
-        "label": "📚 Math",
-        "val": "4/5"
-      },
-      {
-        "label": "🎮 Games",
-        "val": "2 played"
-      },
-      {
-        "label": "🌟 Stars",
-        "val": "8"
-      }
-    ],
-    "calories": true
+    "products": ["tutor"],
+    "kpis": [{"label": "📚 Math","val": "4/5"},{"label": "🎮 Games","val": "2 played"},{"label": "🌟 Stars","val": "8"}],
+    "calories": false
   },
   {
     "first": "Carter",
@@ -295,25 +175,9 @@
     "plan": "free_trial",
     "cards": "math,grade9",
     "authorized": true,
-    "products": [
-      "tutor",
-      "therapy"
-    ],
-    "kpis": [
-      {
-        "label": "📚 GPA",
-        "val": "3.5"
-      },
-      {
-        "label": "🏀 Liberty HS",
-        "val": "Freshman"
-      },
-      {
-        "label": "⏰ Sessions",
-        "val": "0"
-      }
-    ],
-    "calories": true
+    "products": ["tutor","therapy"],
+    "kpis": [{"label": "📚 GPA","val": "3.5"},{"label": "🏀 Liberty HS","val": "Freshman"},{"label": "⏰ Sessions","val": "0"}],
+    "calories": false
   },
   {
     "first": "Chase",
@@ -331,25 +195,9 @@
     "plan": "free_trial",
     "cards": "math,reading,grade7",
     "authorized": true,
-    "products": [
-      "tutor",
-      "therapy"
-    ],
-    "kpis": [
-      {
-        "label": "📚 Pre-Alg",
-        "val": "B+"
-      },
-      {
-        "label": "🏫 Nelson MS",
-        "val": "7th Grade"
-      },
-      {
-        "label": "⏰ Sessions",
-        "val": "0"
-      }
-    ],
-    "calories": true
+    "products": ["tutor","therapy"],
+    "kpis": [{"label": "📚 Pre-Alg","val": "B+"},{"label": "🏫 Nelson MS","val": "7th Grade"},{"label": "⏰ Sessions","val": "0"}],
+    "calories": false
   },
   {
     "first": "Tommy",
@@ -367,23 +215,8 @@
     "plan": "free_trial",
     "cards": "therapy",
     "authorized": true,
-    "products": [
-      "therapy"
-    ],
-    "kpis": [
-      {
-        "label": "🧠 Therapy",
-        "val": "Active"
-      },
-      {
-        "label": "📅 Sessions",
-        "val": "0"
-      },
-      {
-        "label": "🌟 Streak",
-        "val": "New"
-      }
-    ],
-    "calories": true
+    "products": ["therapy"],
+    "kpis": [{"label": "🧠 Therapy","val": "Active"},{"label": "📅 Sessions","val": "0"},{"label": "🌟 Streak","val": "New"}],
+    "calories": false
   }
 ]
