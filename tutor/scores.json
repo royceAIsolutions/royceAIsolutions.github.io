@@ -106,5 +106,14 @@
     "subject": "sat",
     "date": "2026-07-15",
     "ts": 1784138746086
+  },
+  {
+    "student": "Josh Lucero",
+    "correct": 0,
+    "total": 20,
+    "percent": 0,
+    "subject": "series66",
+    "date": "2026-07-18",
+    "ts": 1784417068212
   }
 ]
