@@ -333,7 +333,20 @@ var HIST_URL = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
 <div class="dash-card" data-subject="reading"><span class="icon">🎮</span><h3>Reading Games</h3><p>Phonics, letters, sight words.</p><a href="/chat?subject=reading" class="btn btn-dynamic btn-game btn-sm">⭐ Play Now</a></div>
 <div class="dash-card" data-subject="baby"><span class="icon">👶</span><h3>Baby Play</h3><p>Sensory, colors, sounds.</p><a href="/chat?subject=baby" class="btn btn-dynamic btn-baby btn-sm">🎈 Play Now</a></div>
 
-/div>
+<div id="inlineQuizPanel" style="display:none;max-width:800px;margin:0 auto;animation:fade-up 0.3s ease-out">
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <button id="quizBackBtn" style="background:none;border:1px solid var(--border);color:var(--text-secondary);padding:8px 16px;border-radius:8px;font-size:0.85rem;cursor:pointer;font-family:var(--font)">← Back</button>
+      <span id="quizProg" style="color:var(--text-secondary);font-size:0.8rem;font-weight:600">Q1/20</span>
+      <span id="quizScr" style="color:var(--accent-light);font-size:0.8rem;font-weight:600">0/0</span>
+    </div>
+    <div id="quizSubj" style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px">Subject</div>
+    <div id="quizQ" style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:12px;text-align:left;font-size:0.95rem;line-height:1.7;color:var(--text);min-height:80px">Starting quiz...</div>
+    <div id="quizA" style="display:flex;flex-direction:column;gap:6px"></div>
+  </div>
+</div>
+
+</div>
 </div>
 <footer><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
 <script>
@@ -380,6 +393,7 @@ function startInlineQuiz(subject) {
   iqBusy = false;
   
   var dg=document.getElementById("dashGrid");if(dg)dg.style.display="none";
+  var ip=document.getElementById("inlineQuizPanel");if(!ip){alert("Quiz panel not loaded. Please refresh.");return;}
   document.getElementById("quizHistory").style.display = "none";
   document.getElementById("inlineQuizPanel").style.display = "block";
   
