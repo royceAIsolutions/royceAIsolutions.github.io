@@ -81,15 +81,6 @@
     "ts": 1784133483722
   },
   {
-    "student": "Test",
-    "correct": 5,
-    "total": 10,
-    "percent": 50,
-    "subject": "math",
-    "date": "2026-07-15",
-    "ts": 1784136653252
-  },
-  {
     "student": "Carter Koh",
     "correct": 8,
     "total": 10,
@@ -115,32 +106,5 @@
     "subject": "sat",
     "date": "2026-07-15",
     "ts": 1784138746086
-  },
-  {
-    "student": "test",
-    "correct": 5,
-    "total": 10,
-    "percent": 50,
-    "subject": "quiz",
-    "date": "2026-07-16",
-    "ts": 1784166022405
-  },
-  {
-    "student": "Student",
-    "correct": 7,
-    "total": 10,
-    "percent": 70,
-    "subject": "sat",
-    "date": "2026-07-16",
-    "ts": 1784223539212
-  },
-  {
-    "student": "Josh Lucero",
-    "correct": 0,
-    "total": 20,
-    "percent": 0,
-    "subject": "series66",
-    "date": "2026-07-18",
-    "ts": 1784417068212
   }
 ]
