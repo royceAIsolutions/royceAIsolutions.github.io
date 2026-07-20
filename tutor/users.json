@@ -119,9 +119,9 @@
     "name": "Paxton Koh",
     "subjects": "Reading Games, ABCs, Colors",
     "active": true,
-    "today": "12 books \ud83d\udcda",
-    "mtd": "8 games \ud83c\udfae",
-    "ytd": "42 stars \u2b50",
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
     "topics": "\u2014",
     "difficulty": "\ud83c\udfae Grade 1 \u2014 Game Mode",
     "focus": "Letter Recognition, Phonics, Sight Words",
@@ -131,23 +131,10 @@
     "products": [
       "tutor"
     ],
-    "kpis": [
-      {
-        "label": "Reading",
-        "val": "12 books"
-      },
-      {
-        "label": "Games",
-        "val": "8 played"
-      },
-      {
-        "label": "Stars",
-        "val": "42 earned"
-      }
-    ],
+    "kpis": [],
     "calories": false,
-    "sessions": "5",
-    "streak": "2 days"
+    "sessions": "0",
+    "streak": "-"
   },
   {
     "first": "Josh",
