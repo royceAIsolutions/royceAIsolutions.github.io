@@ -84,3 +84,100 @@ body.tutor-page .login-screen{padding-top:calc(80px + var(--nav-h))}
   .nav-links a{font-size:0.75rem;padding:6px 10px}
 }
 </style>
+<script>
+var usersData = [{"first":"Jiho","last":"Pak","id":"jiho pak","name":"Jiho Pak","subjects":"Math","active":true,"today":"—","mtd":"461/492 (94%)","ytd":"461/492 (94%)","topics":"Jul 15 Quiz, Factoring, Geometry","difficulty":"🔥 Math 3 — 94%","focus":"Radicals, Quadratics, Polynomials","plan":"free_trial","cards":"math,grade9","authorized":true,"products":["tutor"],"kpis":[{"label":"📚 Math","val":"96/100"},{"label":"🔥 Streak","val":"7 days"},{"label":"⏰ Focus Time","val":"45 min/day"}],"calories":false},{"first":"Carter","last":"Koh","id":"carter koh","name":"Carter Koh","subjects":"Math / SAT / Basketball","active":true,"today":"—","mtd":"150/189 (79%)","ytd":"150/189 (79%)","topics":"SAT Prep, Calorie Tracking","difficulty":"⚡ SAT — On Track","focus":"SAT prep + 4K cal daily + Bench Builder","plan":"free_trial","cards":"sat,math,grade11","authorized":true,"products":["tutor"],"kpis":[{"label":"📚 SAT","val":"64/80"},{"label":"💪 Bench","val":"185 lb"},{"label":"🔥 Streak","val":"5 days"}],"calories":false},{"first":"Angel","last":"Koh","id":"angel koh","name":"Angel Koh","subjects":"RN Training / Health","active":true,"today":"—","mtd":"—","ytd":"—","topics":"NCLEX-RN Training","difficulty":"🩺 RN Training — Active","focus":"NCLEX-RN, Pharmacology, Anatomy","plan":"free_trial","cards":"rn","authorized":true,"products":["tutor"],"kpis":[{"label":"🩺 NCLEX","val":"72%"},{"label":"📖 Modules","val":"8/12"},{"label":"⏰ Study Time","val":"30 min/day"}],"calories":false},{"first":"Paxton","last":"Koh","id":"paxton koh","name":"Paxton Koh","subjects":"Reading Games","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"🎮 Grade 1 — Game Mode","focus":"Letter Recognition, Phonics, Sight Words","plan":"free_trial","cards":"reading","authorized":true,"products":["tutor"],"kpis":[{"label":"📚 Reading","val":"12 books"},{"label":"🎮 Games","val":"8 played"},{"label":"🌟 Stars","val":"42 earned"}],"calories":false},{"first":"Josh","last":"Lucero","id":"josh lucero","name":"Josh Lucero","subjects":"Series 66, 7","active":true,"today":"20/20 (100%)","mtd":"47/50 (94%)","ytd":"47/50 (94%)","topics":"Series 66, Series 7","difficulty":"📋 Series 66 — 27/30 (90%)","focus":"Series 66 (Uniform Combined), Series 7","plan":"free_trial","cards":"series66,series7","authorized":true,"products":["tutor"],"kpis":[{"label":"💰 Series 66","val":"74%"},{"label":"📈 Progress","val":"60%"},{"label":"⏰ Study Time","val":"25 min/day"}],"calories":false},{"first":"Mason","last":"Min","id":"mason min","name":"Mason Min","subjects":"Baby Play","active":true,"today":"—","mtd":"—","ytd":"—","topics":"Sensory Play","difficulty":"👶 Baby Play — Sensory","focus":"Sensory, Colors, Sounds","plan":"free_trial","cards":"baby","authorized":true,"products":["tutor"],"kpis":[{"label":"👶 Age","val":"Toddler"},{"label":"📚 Learning","val":"ABCs"},{"label":"🌟 Milestones","val":"On track"}],"calories":false},{"first":"Pearl","last":"Johnson","id":"pearl johnson","name":"Pearl Johnson","subjects":"Preschool Play, Letters, Numbers","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"🎨 Preschool — Play Mode","focus":"ABCs, 123s, Colors, Shapes","plan":"free_trial","cards":"baby,preschool","authorized":true,"products":["tutor"],"kpis":[{"label":"🎨 Colors","val":"6/6"},{"label":"🎮 Games","val":"3 played"},{"label":"🌟 Stars","val":"15"}],"calories":false},{"first":"Ruby","last":"Johnson","id":"ruby johnson","name":"Ruby Johnson","subjects":"Reading / Math / Grade 2","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"📚 Grade 2 — Foundations","focus":"Reading Comprehension, Addition, Subtraction, Phonics","plan":"free_trial","cards":"reading,math,grade2","authorized":true,"products":["tutor"],"kpis":[{"label":"📚 Math","val":"4/5"},{"label":"🎮 Games","val":"2 played"},{"label":"🌟 Stars","val":"8"}],"calories":false},{"first":"Carter","last":"Touch","id":"carter touch","name":"Carter Touch","subjects":"Grade 9 / Liberty High School","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"📚 Freshman — Liberty HS","focus":"Algebra 1, Biology, English 9","plan":"free_trial","cards":"math,grade9","authorized":true,"products":["tutor","therapy"],"kpis":[{"label":"📚 GPA","val":"3.5"},{"label":"🏀 Liberty HS","val":"Freshman"},{"label":"⏰ Sessions","val":"0"}],"calories":false},{"first":"Chase","last":"Touch","id":"chase touch","name":"Chase Touch","subjects":"Grade 7 / Nelson Middle School","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"📚 7th Grade — Nelson MS","focus":"Pre-Algebra, Reading, Science","plan":"free_trial","cards":"math,reading,grade7","authorized":true,"products":["tutor","therapy"],"kpis":[{"label":"📚 Pre-Alg","val":"B+"},{"label":"🏫 Nelson MS","val":"7th Grade"},{"label":"⏰ Sessions","val":"0"}],"calories":false},{"first":"Tommy","last":"Touch","id":"tommy touch","name":"Tommy Touch","subjects":"Therapy Bot","active":true,"today":"—","mtd":"—","ytd":"—","topics":"—","difficulty":"🧠 Therapy","focus":"Mental wellness, Therapy Bot","plan":"free_trial","cards":"therapy","authorized":true,"products":["therapy"],"kpis":[{"label":"🧠 Therapy","val":"Active"},{"label":"📅 Sessions","val":"0"},{"label":"🌟 Streak","val":"New"}],"calories":false}];
+var currentUser = null;
+var HIST_URL = 'https://chat-api-tawny-zeta.vercel.app/api/quiz-history';
+</script></head>
+<body class="tutor-page">
+<nav>
+<a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
+<div class="nav-links">
+<a href="/products">Products</a><button class="logout-btn nav-logout-btn" id="navLogoutBtn" onclick="logout()" style="display:none">🚪 Logout</button><a href="/tutor" style="background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);padding:6px 16px;font-weight:700">✨ Tutor</a><a href="/blog">Blog</a><a href="/chat" class="nav-cta">💬 Chat</a>
+</div>
+</nav>
+<div class="login-screen" id="loginScreen">
+<div class="login-box">
+<div class="nav-logo" style="margin:0 auto 16px;justify-content:center"><span class="logo-icon">R</span></div>
+<h2>Log in to study</h2>
+<p class="sub">Enter your first and last name exactly as registered.</p>
+<div class="input-group"><label for="studentFirstName">First Name</label><input type="text" id="studentFirstName" placeholder="Enter your first name" autocomplete="off"></div>
+<div class="input-group"><label for="studentLastName">Last Name</label><input type="text" id="studentLastName" placeholder="Enter your last name" autocomplete="off"></div>
+<button onclick="login()">Log in →</button>
+<div class="error" id="loginError"></div>
+</div>
+</div>
+<div class="app-container" id="appContainer">
+<div class="dashboard">
+<div class="dash-header">
+<div id="greetingRow">☀️ Good Morning</div>
+<h1><span id="studentName">Student</span></h1>
+<p id="studentInfo">Your personalized learning dashboard</p>
+</div>
+<div class="scoreboard hidden">
+<div class="scoreboard-title">🎮 Scoreboard</div>
+<div class="scoreboard-grid">
+<div class="score-stat"><span>📅 Today</span><span class="score accent" id="scoreToday">—</span></div>
+<div class="score-stat"><span>📊 Month</span><span class="score gold" id="scoreMtd">—</span></div>
+<div class="score-stat"><span>🏆 All Time</span><span class="score green" id="scoreYtd">—</span></div>
+<div class="score-stat kpi-stat" id="kpi1" style="display:none"><span id="kpi1Label">KPI 1</span><span class="score purple" id="kpi1Val">—</span></div>
+<div class="score-stat kpi-stat" id="kpi2" style="display:none"><span id="kpi2Label">KPI 2</span><span class="score green" id="kpi2Val">—</span></div>
+<div class="score-stat kpi-stat" id="kpi3" style="display:none"><span id="kpi3Label">KPI 3</span><span class="score pink" id="kpi3Val">—</span></div>
+</div>
+<div class="topics-row">
+<span id="difficultyBadge" style="display:none"></span>
+<span>🎯 Topics:</span><span id="topicsList">—</span>
+</div>
+</div>
+</div>
+<div class="quiz-history" id="quizHistory" style="display:none">
+<h3>📋 Quiz History — Last 10</h3>
+<table class="quiz-table"><thead><tr><th>Date</th><th>Mode</th><th>Score</th><th>Result</th></tr></thead><tbody id="quizHistoryBody"></tbody></table>
+</div>
+<div class="dash-grid" id="dashGrid">
+<div class="dash-card" data-subject="math"><span class="icon">📐</span><h3>Math</h3><p>Algebra, Geometry, Precalculus.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('math');return false">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="sat"><span class="icon">🎯</span><h3>SAT Prep</h3><p>Math, Reading, Writing.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('sat');return false">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="series66"><span class="icon">📋</span><h3>Series 66</h3><p>Uniform Combined State Law.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('series66');return false">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="series7"><span class="icon">📋</span><h3>Series 7</h3><p>General Securities Exam.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('series7');return false">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="rn"><span class="icon">🩺</span><h3>RN Training</h3><p>NCLEX-RN, Pharmacology, Anatomy.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('rn');return false">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="grade9"><span class="icon">📚</span><h3>9th Grade Prep</h3><p>Math 1, Biology, English 9.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('grade9');return false">⚡ Start Quiz</a></div>
+<div class="dash-card" data-subject="grade11"><span class="icon">📖</span><h3>11th Grade Prep</h3><p>Precalculus, Chemistry, English 11.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('grade11');return false">⚡ Start Quiz</a></div>
+</div>
+</div>
+<div id="quizPanel" style="display:none;max-width:var(--max-w);margin:0 auto;padding:0 32px">
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+<button id="quizBackBtn" style="background:none;border:1px solid var(--border);color:var(--text-secondary);padding:10px 20px;border-radius:8px;font-size:0.85rem;cursor:pointer;font-family:var(--font)">← Back</button>
+<span id="quizProg" style="color:var(--text-secondary);font-size:0.85rem;font-weight:600">Q1/20</span>
+<span id="quizScr" style="color:var(--accent-light);font-size:0.85rem;font-weight:600">0/0</span>
+</div>
+<div id="quizQ" style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:28px;margin-bottom:16px;font-size:0.95rem;line-height:1.7;color:var(--text);min-height:100px">Starting quiz...</div>
+<div id="quizA" style="display:flex;flex-direction:column;gap:8px"></div>
+</div>
+</div>
+<footer>RoyceAI Solutions. Irvine, CA</footer>
+<script>
+function login(){var fi=document.getElementById('studentFirstName'),li=document.getElementById('studentLastName'),er=document.getElementById('loginError');if(!fi||!li||!er)return;var fn=fi.value.trim(),ln=li.value.trim();if(!fn||!ln){er.textContent='Enter both first and last name.';er.style.display='block';return;}
+var u=usersData.find(function(x){return x.id===(fn+' '+ln).toLowerCase()});if(!u){er.textContent='Name not found: '+(fn+' '+ln);er.style.display='block';return;}
+currentUser=u;localStorage.setItem('tutor_user',JSON.stringify(u));showDashboard(u);}
+function showDashboard(u){document.getElementById('appContainer').classList.add('show');document.getElementById('loginScreen').style.display='none';document.querySelector('.scoreboard').classList.remove('hidden');document.getElementById('navLogoutBtn').style.display='inline-flex';var h=new Date().getHours();document.getElementById('greetingRow').textContent=(h<12?'☀️ Good Morning':h<17?'⛅ Good Afternoon':'🌙 Good Evening')+', '+u.first;document.getElementById('studentName').textContent=u.name;document.getElementById('studentInfo').textContent=(u.subjects||'')+' — '+(u.plan||'');var k=u.cards?u.cards.split(','):['math'];document.querySelectorAll('.dash-card').forEach(function(c){c.style.display=k.indexOf(c.dataset.subject)>=0?'block':'none'});renderScoreboard(u);loadHistory(u.first);}
+function renderScoreboard(u){if(!u)return;['today','mtd','ytd'].forEach(function(k){var v=u[k],el=document.getElementById('score'+k.charAt(0).toUpperCase()+k.slice(1));if(!el)return;el.textContent=v&&v!=='—'?v:'—'});(u.kpis||[]).forEach(function(k,i){var j=i+1,box=document.getElementById('kpi'+j),lab=document.getElementById('kpi'+j+'Label'),val=document.getElementById('kpi'+j+'Val');if(!box||!lab||!val)return;box.style.display='block';lab.textContent=k.label||'';val.textContent=k.val||'—'});var db=document.getElementById('difficultyBadge');if(db&&u.difficulty){db.textContent=u.difficulty;db.style.display='inline-block'}var tl=document.getElementById('topicsList');if(tl&&u.topics)tl.innerHTML=u.topics.split(',').map(function(t){return'<span>'+t.trim()+'</span>'}).join(' ');}
+async function loadHistory(n){var el=document.getElementById('quizHistory'),tb=document.getElementById('quizHistoryBody');if(!el||!tb)return;el.style.display='block';tb.innerHTML='<tr><td colspan="4" style="text-align:center;color:var(--text-secondary)">Loading...</td></tr>';try{var r=await fetch(HIST_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({student:n})});var d=await r.json(),ss=d.sessions||[];if(!ss.length){tb.innerHTML='<tr><td colspan="4" style="text-align:center;color:var(--text-secondary)">No sessions yet</td></tr>';return;}
+tb.innerHTML=ss.slice(-10).reverse().map(function(s){var p=Math.round(s.correct/s.total*100);return'<tr><td>'+(s.date||'—')+'</td><td>'+(s.mode||'quiz')+'</td><td><strong>'+s.correct+'/'+s.total+'</strong> ('+p+'%)</td><td>'+(p>=80?'✅ Pass':'❌ Review')+'</td></tr>'}).join('')}catch(e){tb.innerHTML='<tr><td colspan="4" style="text-align:center;color:var(--text-secondary)">Error</td></tr>'}}
+function logout(){localStorage.removeItem('tutor_user');document.getElementById('loginScreen').style.display='';document.getElementById('appContainer').classList.remove('show');document.getElementById('studentFirstName').value='';document.getElementById('studentLastName').value='';currentUser=null;document.getElementById('navLogoutBtn').style.display='none';}
+var saved=localStorage.getItem('tutor_user');if(saved){try{var u=JSON.parse(saved),match=usersData.find(function(x){return x.id===u.id});if(match){currentUser=match;showDashboard(match)}else localStorage.removeItem('tutor_user')}catch(e){localStorage.removeItem('tutor_user')}}
+var iqHist=[],iqSubj="",iqNum=0,iqCorrect=0,iqTotal=0,iqBusy=false;
+function startInlineQuiz(s){iqSubj=s;iqNum=0;iqCorrect=0;iqTotal=0;iqHist=[];iqBusy=false;document.getElementById('dashGrid').style.display='none';document.getElementById('quizHistory').style.display='none';document.getElementById('quizPanel').style.display='block';document.getElementById('quizQ').textContent='Loading...';document.getElementById('quizA').innerHTML='';askIQ('Start '+s+' quiz')}
+function closeIQ(){document.getElementById('quizPanel').style.display='none';document.getElementById('dashGrid').style.display='';document.getElementById('quizHistory').style.display=''}
+function askIQ(msg){iqBusy=true;document.getElementById('quizA').innerHTML="<div style='color:var(--text-muted);padding:20px'>Loading...</div>";fetch('https://chat-api-tawny-zeta.vercel.app/api/quiz',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:msg,history:iqHist.slice(-30)})}).then(function(r){return r.json()}).then(function(data){var reply=data.reply||'No response';iqHist.push({role:'user',content:msg},{role:'assistant',content:reply});iqBusy=false;if(reply.match(/Quiz complete|completed|done|final|finished/gi)){finishIQ(reply);return;}
+var qText=reply.replace(/^[A-D][)]\s*[^\n]*\n?/gm,'').trim();document.getElementById('quizQ').innerHTML=qText.replace(/\n/g,'<br>');var opts=reply.match(/(?:^|[\n])([A-D][)]\s*[^\n*]+)/g);if(opts)opts=opts.map(function(o){return o.replace(/^[\n]/,'').trim()});if(!opts||opts.length<2){document.getElementById('quizA').innerHTML='<button onclick="askIQ(\'Repeat question\')" style="padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer">Retry</button>';return;}
+document.getElementById('quizA').innerHTML=opts.map(function(o){return'<button data-letter="'+o.charAt(0).toLowerCase()+'" class="iq-btn"><span class="iq-letter">'+o.charAt(0)+'</span><span>'+o.substring(2).trim()+'</span></button>'}).join('');document.querySelectorAll('.iq-btn').forEach(function(b){b.addEventListener('click',handleIQClick)})}).catch(function(e){iqBusy=false;document.getElementById('quizQ').textContent='Error: '+e.message})}
+function handleIQClick(e){if(iqBusy)return;var btn=e.currentTarget,letter=btn.getAttribute('data-letter');if(!letter)return;iqTotal++;iqNum++;document.querySelectorAll('.iq-btn').forEach(function(b){b.removeEventListener('click',handleIQClick);b.style.opacity='0.5'});btn.style.borderColor='var(--accent)';btn.style.background='rgba(124,92,252,0.15)';askIQ(letter);}
+function finishIQ(reply){var correct=iqCorrect,total=iqTotal,m=reply.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i);if(!m)m=reply.match(/(\d+)\s*\/\s*(\d+)\s*(?:correct|questions)/i);if(m){correct=parseInt(m[1]);total=parseInt(m[2])}
+if(!m&&!correct&&total>0){var all=reply.match(/(\d+)\s*\/\s*(\d+)/g);if(all&&all.length){var last=all[all.length-1].split('/');correct=parseInt(last[0]);total=parseInt(last[1])}}
+document.getElementById('quizQ').innerHTML=reply.replace(/\n/g,'<br>');document.getElementById('quizA').innerHTML='';var name='Student';try{if(currentUser&&currentUser.name)name=currentUser.name}catch(e){}
+fetch('https://chat-api-tawny-zeta.vercel.app/api/save-score',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({student:name,correct:correct,total:total,subject:iqSubj})});document.getElementById('quizA').innerHTML='<button onclick="closeIQ();location.reload()" style="margin-top:16px;padding:12px 28px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer">← Back to Dashboard</button>'}
+var s=document.createElement('style');s.textContent='.iq-btn{display:flex;align-items:center;gap:10px;width:100%;padding:14px 18px;border-radius:10px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);font-size:0.9rem;text-align:left;cursor:pointer;font-family:var(--font);transition:all 0.15s}.iq-btn:hover{border-color:var(--accent);background:var(--accent-bg)}.iq-letter{background:var(--accent);color:#fff;width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;flex-shrink:0}';document.head.appendChild(s);
+</script>
+</body>
+</html>
