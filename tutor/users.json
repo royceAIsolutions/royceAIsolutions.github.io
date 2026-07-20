@@ -32,7 +32,10 @@
         "val": "45 min/day"
       }
     ],
-    "calories": false
+    "calories": false,
+    "week": "15/16 (94%)",
+    "sessions": "12",
+    "streak": "7 days"
   },
   {
     "first": "Carter",
@@ -67,7 +70,10 @@
         "val": "5 days"
       }
     ],
-    "calories": false
+    "calories": false,
+    "week": "8/10 (80%)",
+    "sessions": "6",
+    "streak": "5 days"
   },
   {
     "first": "Angel",
@@ -102,7 +108,9 @@
         "val": "30 min/day"
       }
     ],
-    "calories": false
+    "calories": false,
+    "sessions": "4",
+    "streak": "3 days"
   },
   {
     "first": "Paxton",
@@ -137,7 +145,9 @@
         "val": "42 earned"
       }
     ],
-    "calories": false
+    "calories": false,
+    "sessions": "5",
+    "streak": "2 days"
   },
   {
     "first": "Josh",
@@ -172,7 +182,9 @@
         "val": "25 min/day"
       }
     ],
-    "calories": false
+    "calories": false,
+    "sessions": "3",
+    "streak": "2 days"
   },
   {
     "first": "Mason",
@@ -242,7 +254,8 @@
         "val": "15"
       }
     ],
-    "calories": false
+    "calories": false,
+    "sessions": "3"
   },
   {
     "first": "Ruby",
@@ -277,7 +290,8 @@
         "val": "8"
       }
     ],
-    "calories": false
+    "calories": false,
+    "sessions": "2"
   },
   {
     "first": "Carter",
@@ -313,7 +327,8 @@
         "val": "0"
       }
     ],
-    "calories": false
+    "calories": false,
+    "sessions": "0"
   },
   {
     "first": "Chase",
@@ -349,7 +364,8 @@
         "val": "0"
       }
     ],
-    "calories": false
+    "calories": false,
+    "sessions": "0"
   },
   {
     "first": "Tommy",
@@ -384,6 +400,8 @@
         "val": "New"
       }
     ],
-    "calories": false
+    "calories": false,
+    "sessions": "0",
+    "streak": "New"
   }
 ]
