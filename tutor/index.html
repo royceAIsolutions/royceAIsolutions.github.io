@@ -33,8 +33,6 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;backgrou
 .score-stat .score.green{color:#22c55e}
 .score-stat .score.purple{color:#a855f7}
 .score-stat .score.pink{color:#ec4899}
-.score-stat .score.cyan{color:#06b6d4}
-.score-stat .score.orange{color:#f97316}
 .scoreboard.hidden{display:none}
 #greetingRow{font-size:0.85rem;color:var(--text-secondary);margin-bottom:var(--space-sm)}
 .topics-row{display:flex;flex-wrap:wrap;gap:var(--space-sm) var(--space-md);align-items:center;justify-content:center;margin-top:var(--space-lg);font-size:0.85rem;color:var(--text-secondary)}
@@ -102,25 +100,18 @@ body.tutor-page .login-screen{padding-top:calc(80px + var(--nav-h))}
 <div class="scoreboard hidden">
 <div class="scoreboard-title">&#x1f3ae; Scoreboard</div>
 <div class="scoreboard-grid">
-<div class="score-stat"><span>&#x1f4c5; Today</span><span class="score accent" id="scoreToday">&mdash;</span></div>
-<div class="score-stat"><span>&#x1f4c6; Week</span><span class="score purple" id="scoreWeek">&mdash;</span></div>
-<div class="score-stat"><span>&#x1f4ca; Month</span><span class="score gold" id="scoreMtd">&mdash;</span></div>
-<div class="score-stat"><span>&#x1f3c6; All Time</span><span class="score green" id="scoreYtd">&mdash;</span></div>
-<div class="score-stat kpi-stat" id="kpi1"><span id="kpi1Label">KPI 1</span><span class="score purple" id="kpi1Val">&mdash;</span></div>
-<div class="score-stat kpi-stat" id="kpi2"><span id="kpi2Label">KPI 2</span><span class="score green" id="kpi2Val">&mdash;</span></div>
-<div class="score-stat kpi-stat" id="kpi3"><span id="kpi3Label">KPI 3</span><span class="score pink" id="kpi3Val">&mdash;</span></div>
-<div class="score-stat"><span>&#x1f4dd; Sessions</span><span class="score cyan" id="scoreSessions">&mdash;</span></div>
-<div class="score-stat"><span>&#x1f525; Streak</span><span class="score orange" id="scoreStreak">&mdash;</span></div>
+  <div class="score-stat"><span>&#x1f4c5; Today</span><span class="score accent" id="scoreToday">&mdash;</span></div>
+  <div class="score-stat"><span>&#x1f4ca; Month</span><span class="score gold" id="scoreMtd">&mdash;</span></div>
+  <div class="score-stat"><span>&#x1f3c6; All Time</span><span class="score green" id="scoreYtd">&mdash;</span></div>
+  <div class="score-stat kpi-stat" id="kpi1"><span id="kpi1Label">KPI 1</span><span class="score purple" id="kpi1Val">&mdash;</span></div>
+  <div class="score-stat kpi-stat" id="kpi2"><span id="kpi2Label">KPI 2</span><span class="score green" id="kpi2Val">&mdash;</span></div>
+  <div class="score-stat kpi-stat" id="kpi3"><span id="kpi3Label">KPI 3</span><span class="score pink" id="kpi3Val">&mdash;</span></div>
 </div>
 <div class="topics-row">
 <span id="difficultyBadge" style="display:none"></span>
 <span>&#x1f3af; Topics:</span><span id="topicsList">&mdash;</span>
 </div>
 </div>
-</div>
-<div class="quiz-history" id="quizHistory" style="display:none">
-<h3>&#x1f4cb; Quiz History &mdash; Last 10</h3>
-<table class="quiz-table"><thead><tr><th>Date</th><th>Mode</th><th>Score</th><th>Result</th></tr></thead><tbody id="quizHistoryBody"></tbody></table>
 </div>
 <div class="dash-grid" id="dashGrid">
 <div class="dash-card" data-subject="math"><span class="icon">&#x1f4d0;</span><h3>Math</h3><p>Algebra, Geometry, Precalculus.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('math');return false">&#x26a1; Start Quiz</a></div>
@@ -130,6 +121,10 @@ body.tutor-page .login-screen{padding-top:calc(80px + var(--nav-h))}
 <div class="dash-card" data-subject="rn"><span class="icon">&#x1fa9a;</span><h3>RN Training</h3><p>NCLEX-RN, Pharmacology, Anatomy.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('rn');return false">&#x26a1; Start Quiz</a></div>
 <div class="dash-card" data-subject="grade9"><span class="icon">&#x1f4da;</span><h3>9th Grade Prep</h3><p>Math 1, Biology, English 9.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('grade9');return false">&#x26a1; Start Quiz</a></div>
 <div class="dash-card" data-subject="grade11"><span class="icon">&#x1f4d6;</span><h3>11th Grade Prep</h3><p>Precalculus, Chemistry, English 11.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('grade11');return false">&#x26a1; Start Quiz</a></div>
+</div>
+<div class="quiz-history" id="quizHistory" style="display:none">
+<h3>&#x1f4cb; Quiz History &mdash; Last 10</h3>
+<table class="quiz-table"><thead><tr><th>Date</th><th>Mode</th><th>Score</th><th>Result</th></tr></thead><tbody id="quizHistoryBody"></tbody></table>
 </div>
 </div>
 <div id="quizPanel" style="display:none;max-width:var(--max-w);margin:0 auto;padding:0 32px">
@@ -177,12 +172,6 @@ function renderSB(u){
   ["today","mtd","ytd"].forEach(function(k){
     var v=u[k],el=document.getElementById("score"+k.charAt(0).toUpperCase()+k.slice(1));
     if(!el)return;el.textContent=v&&v!=="-"?v:"-";
-  });
-  ["week","sessions","streak"].forEach(function(k){
-    var el=document.getElementById("score"+k.charAt(0).toUpperCase()+k.slice(1));
-    if(!el)return;
-    var v=u[k];
-    el.textContent=v&&v!=="-"?v:"-";
   });
   (u.kpis||[]).forEach(function(k,i){
     var j=i+1,lab=document.getElementById("kpi"+j+"Label"),val=document.getElementById("kpi"+j+"Val");
