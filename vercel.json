@@ -1,0 +1,23 @@
+{
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 30,
+      "includeFiles": "**/*.json"
+    }
+  },
+  "rewrites": [
+    { "source": "/tutor", "destination": "/tutor/index.html" },
+    { "source": "/tutor/", "destination": "/tutor/index.html" },
+    { "source": "/(.*)", "destination": "/api/$1" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
+      ]
+    }
+  ]
+}
