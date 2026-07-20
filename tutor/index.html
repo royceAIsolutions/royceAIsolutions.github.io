@@ -1,1 +1,86 @@
-placeholder
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="version" content="v6-jul20-2026b">
+<title>RoyceAI Tutor — Your AI Learning Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--radius:16px;--radius-sm:10px;--max-w:960px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--space-xs:4px;--space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:32px;--space-2xl:48px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 32px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-logo .logo-icon{width:32px;height:32px;background:var(--accent-gradient);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 22px;border-radius:8px}
+.nav-links .nav-cta:hover{background:var(--accent-light)}
+.dashboard{max-width:var(--max-w);margin:5rem auto 3rem;padding:0 32px;text-align:center}
+.dash-header{margin-bottom:var(--space-xl)}
+.dash-header h1{font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:var(--space-sm)}
+.dash-header p{color:var(--text-secondary);font-size:0.95rem}
+.scoreboard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:var(--space-xl) var(--space-xl);margin:0 auto var(--space-xl);max-width:var(--max-w)}
+.scoreboard-title{font-size:1rem;font-weight:700;color:#fff;margin-bottom:var(--space-lg);text-align:center}
+.scoreboard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--space-md)}
+.score-stat{display:flex;flex-direction:column;align-items:center;gap:var(--space-sm);padding:var(--space-lg) var(--space-md);background:var(--bg-elevated);border-radius:10px;font-size:0.9rem;color:var(--text-secondary)}
+.score-stat span:first-child{font-size:0.85rem;font-weight:500}.score-stat .score{font-weight:800;font-size:1.25rem;letter-spacing:-0.02em}
+.score-stat .score.accent{color:var(--accent-light)}
+.score-stat .score.gold{color:#f59e0b}
+.score-stat .score.green{color:#22c55e}
+.score-stat .score.purple{color:#a855f7}
+.score-stat .score.pink{color:#ec4899}
+.kpi-stat{display:none}
+.scoreboard.hidden{display:none}
+#greetingRow{font-size:0.85rem;color:var(--text-secondary);margin-bottom:var(--space-sm)}
+.topics-row{display:flex;flex-wrap:wrap;gap:var(--space-sm) var(--space-md);align-items:center;justify-content:center;margin-top:var(--space-lg);font-size:0.85rem;color:var(--text-secondary)}
+.quiz-history{max-width:var(--max-w);margin:0 auto 2rem;text-align:center}
+.quiz-history h3{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:var(--space-lg)}
+.quiz-table{width:100%;border-collapse:separate;border-spacing:0;text-align:center}
+.quiz-table th{font-size:0.8rem;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.04em;padding:var(--space-md) var(--space-lg);border-bottom:1px solid var(--border)}
+.quiz-table td{font-size:0.9rem;padding:var(--space-md) var(--space-lg);border-bottom:1px solid rgba(255,255,255,0.03)}.quiz-table tbody tr:hover{background:var(--accent-bg)}
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-lg);margin:0 auto var(--space-2xl);max-width:var(--max-w)}
+.dash-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:var(--space-xl) var(--space-xl);text-align:left}
+.dash-card:hover{border-color:rgba(255,255,255,0.1);transform:translateY(-2px);transition:all 0.2s}
+.dash-card .icon{font-size:1.8rem;margin-bottom:var(--space-md);display:block}
+.dash-card h3{font-size:0.95rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-secondary);font-weight:600;margin-bottom:var(--space-sm)}
+.dash-card p{color:var(--text-muted);font-size:0.85rem;line-height:1.6;margin-bottom:var(--space-lg)}
+.app-container{display:none}
+.app-container.show{display:block}
+.app-container.show .dashboard{padding-top:calc(var(--nav-h) + 0.5rem)}
+.login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 24px}
+.login-box{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:var(--space-2xl) 40px;max-width:420px;width:100%;text-align:center}
+.login-box h2{font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:var(--space-sm)}
+.login-box .sub{color:var(--text-secondary);font-size:0.85rem;margin-bottom:var(--space-xl)}
+.login-box .input-group{margin-bottom:var(--space-lg);text-align:left}
+.login-box .input-group label{display:block;font-size:0.75rem;color:var(--text-muted);margin-bottom:var(--space-sm);font-weight:500;text-transform:uppercase;letter-spacing:0.04em}
+.login-box .input-group input{width:100%;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:var(--space-md) var(--space-md);color:#fff;font-size:0.9rem;font-family:var(--font);outline:none}
+.login-box .input-group input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+.login-box button{width:100%;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:var(--space-md);font-weight:600;font-size:0.95rem;cursor:pointer;font-family:var(--font);margin-top:var(--space-sm)}
+.login-box button:hover{background:var(--accent-light)}
+.login-box .error{color:#ef4444;font-size:0.82rem;margin-top:var(--space-md);display:none;padding:10px 14px;background:rgba(239,68,68,0.08);border-radius:8px}
+footer{padding:var(--space-2xl) var(--space-xl);max-width:var(--max-w);margin:0 auto;text-align:center;color:var(--text-muted);font-size:0.8rem;border-top:1px solid var(--border);margin-top:var(--space-2xl)}
+body.tutor-page{padding-top:0}
+body.tutor-page nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100}
+body.tutor-page .login-screen{padding-top:calc(80px + var(--nav-h))}
+.btn-dynamic{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:12px;font-family:Inter,sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none;border:none;cursor:pointer}
+.btn-primary.btn-dynamic{background:linear-gradient(135deg,#667eea,#764ba2);color:white}
+.logout-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:10px;font-family:var(--font);font-size:0.8rem;font-weight:600;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:var(--text-secondary);cursor:pointer}
+.logout-btn:hover{background:rgba(239,68,68,0.1);border-color:rgba(239,68,68,0.25);color:#ef4444}
+.nav-logout-btn:hover{background:rgba(239,68,68,0.15)!important}
+@media(max-width:640px){
+  .dashboard{padding:0 16px;margin-top:3rem}
+  .dash-header h1{font-size:1.3rem}
+  .dash-grid{grid-template-columns:1fr;gap:14px}
+  .scoreboard-grid{grid-template-columns:1fr}
+  .scoreboard{padding:16px}
+  .score-stat{padding:10px 14px}
+  .dash-card{padding:18px 20px}
+  .quiz-table th,.quiz-table td{padding:8px 10px;font-size:0.8rem}
+  nav{padding:0 16px}
+  .nav-links a{font-size:0.75rem;padding:6px 10px}
+}
+</style>
