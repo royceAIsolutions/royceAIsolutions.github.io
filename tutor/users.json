@@ -414,6 +414,8 @@
         "label": "Streak",
         "val": "1 day"
       }
-    ]
+    ],
+    "sessions": "3",
+    "streak": "1 day"
   }
 ]
