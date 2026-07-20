@@ -417,5 +417,32 @@
     ],
     "sessions": "3",
     "streak": "1 day"
+  },
+  {
+    "id": "test user",
+    "first": "Test",
+    "last": "User",
+    "subjects": "Math, SAT Prep, Science",
+    "today": "8/10 (80%)",
+    "mtd": "15/20 (75%)",
+    "ytd": "15/20 (75%)",
+    "sessions": "3",
+    "streak": "1 day",
+    "plan": "free_trial",
+    "cards": "math,sat,grade9",
+    "kpis": [
+      {
+        "label": "Math",
+        "val": "8/10"
+      },
+      {
+        "label": "SAT",
+        "val": "70/80"
+      },
+      {
+        "label": "Streak",
+        "val": "1 day"
+      }
+    ]
   }
 ]
