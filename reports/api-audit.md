@@ -10,9 +10,9 @@
 | Metric | Value |
 |--------|-------|
 | **Current Provider** | DeepSeek (deepseek-v4-flash) |
-| **Current Monthly Cost** | $16.50 |
-| **Cheapest Option** | $11.00/mo — **Google gemini-2.0-flash** |
-| **Best Value** | $16.50/mo — **DeepSeek deepseek-v4-flash** |
+| **Current Monthly Cost** | $50.59 |
+| **Cheapest Option** | $50.59/mo — **DeepSeek deepseek-v4-flash** |
+| **Best Value** | $301.60/mo — **Google gemini-2.0-flash** |
 | **Providers Checked** | 10 |
 
 ---
@@ -21,32 +21,32 @@
 
 | Provider | Model | Input $/1M | Output $/1M | Monthly Cost | vs Current | Quality |
 |----------|-------|-----------|------------|-------------|-----------|---------|
-| Google | gemini-2.0-flash | $0.10 | $0.40 | **$11.00** | ✅ -$5.50 | 7.0/10 |
-| DeepSeek | deepseek-v4-flash | $0.15 | $0.60 | **$16.50** | current | 7.5/10 |
-| OpenAI | gpt-4o-mini | $0.15 | $0.60 | **$16.50** | current | 7.0/10 |
-| Anthropic | claude-3-haiku | $0.25 | $1.25 | **$31.25** | ⚠️ +$14.75 | 6.5/10 |
-| Nous Research | hermes-3 | $0.30 | $1.20 | **$33.00** | ⚠️ +$16.50 | 7.0/10 |
-| Mistral | mistral-large | $2.00 | $6.00 | **$190.00** | ⚠️ +$173.50 | 7.5/10 |
-| Google | gemini-2.0-pro | $2.00 | $8.00 | **$220.00** | ⚠️ +$203.50 | 8.5/10 |
-| xAI | grok-2 | $2.00 | $10.00 | **$250.00** | ⚠️ +$233.50 | 7.0/10 |
-| OpenAI | gpt-4o | $2.50 | $10.00 | **$275.00** | ⚠️ +$258.50 | 9.0/10 |
-| Anthropic | claude-sonnet-4 | $3.00 | $15.00 | **$375.00** | ⚠️ +$358.50 | 9.5/10 |
+| DeepSeek | deepseek-v4-flash | $0.0028-$0.14 | $0.28 | **$50.59** | current | 7.5/10 |
+| Google | gemini-2.0-flash | $0.10 | $0.40 | **$301.60** | ⚠️ +$251.01 | 7.0/10 |
+| OpenAI | gpt-4o-mini | $0.15 | $0.60 | **$452.40** | ⚠️ +$401.81 | 7.0/10 |
+| Anthropic | claude-3-haiku | $0.25 | $1.25 | **$761.25** | ⚠️ +$710.66 | 6.5/10 |
+| Nous Research | hermes-3 | $0.30 | $1.20 | **$904.80** | ⚠️ +$854.21 | 7.0/10 |
+| Mistral | mistral-large | $2.00 | $6.00 | **$5974.00** | ⚠️ +$5923.41 | 7.5/10 |
+| Google | gemini-2.0-pro | $2.00 | $8.00 | **$6032.00** | ⚠️ +$5981.41 | 8.5/10 |
+| xAI | grok-2 | $2.00 | $10.00 | **$6090.00** | ⚠️ +$6039.41 | 7.0/10 |
+| OpenAI | gpt-4o | $2.50 | $10.00 | **$7540.00** | ⚠️ +$7489.41 | 9.0/10 |
+| Anthropic | claude-sonnet-4 | $3.00 | $15.00 | **$9135.00** | ⚠️ +$9084.41 | 9.5/10 |
 
 ---
 
 ## 🏆 Top 3 Recommendations
 
-### 1. **Google gemini-2.0-flash** — $11.00/mo 🏆
-**Why:** Cheapest option overall. Saves $0.05/1M input vs DeepSeek.
-**Quality:** 7.0/10
-**Pros:** cheapest, huge context, fast
-**Cons:** quality drops on complex tasks, Google infra
-
-### 2. **DeepSeek deepseek-v4-flash** — $16.50/mo 
-**Why:** Best quality-price ratio.
+### 1. **DeepSeek deepseek-v4-flash** — $50.59/mo 🏆
+**Why:** Most cost-effective option for our workload.
 **Quality:** 7.5/10
+**Pros:** coding, math, reasoning
+**Cons:** peak pricing variable, uptime
 
-### 3. **DeepSeek deepseek-v4-flash** — $16.50/mo (current)
+### 2. **Google gemini-2.0-flash** — $301.60/mo 
+**Why:** Best quality-price ratio.
+**Quality:** 7.0/10
+
+### 3. **DeepSeek deepseek-v4-flash** — $50.59/mo (current)
 **Why:** Already integrated. Decent quality for tutoring/quiz workloads.
 
 ---
@@ -55,11 +55,11 @@
 
 | Workload | Current Score | Best Model | Best Score | Switch? |
 |----------|-------------|-----------|-----------|---------|
-| Tutoring | 7.5/10 | Anthropic claude-sonnet-4 | 8.0/10 | ⚠️ Maybe |
-| Quiz Generation | 7.5/10 | DeepSeek deepseek-v4-flash | 7.5/10 | ❌ No |
-| Lead Qualification | 8.0/10 | OpenAI gpt-4o-mini | 8.5/10 | ⚠️ Maybe |
+| Tutoring | 7.0/10 | Anthropic claude-sonnet-4 | 8.0/10 | ✅ Yes |
+| Quiz Generation | 6.5/10 | Anthropic claude-sonnet-4 | 7.5/10 | ✅ Yes |
+| Lead Qualification | 7.0/10 | OpenAI gpt-4o | 7.5/10 | ⚠️ Maybe |
 | Blog Generation | 6.5/10 | Anthropic claude-sonnet-4 | 7.5/10 | ✅ Yes |
-| Cron Automation | 8.0/10 | OpenAI gpt-4o-mini | 8.5/10 | ⚠️ Maybe |
+| Cron Automation | 7.0/10 | OpenAI gpt-4o | 7.5/10 | ⚠️ Maybe |
 
 ---
 
@@ -82,15 +82,13 @@
 
 ## 💡 Cheaper Options Than DeepSeek
 
-| Provider | Model | $/mo | Savings | Quality Tradeoff |
-|----------|-------|------|---------|-----------------|
-| Google | gemini-2.0-flash | $11.00 | $5.50/mo | -0.5/10 quality |
+No cheaper options found. DeepSeek is already the cheapest.
 
 ---
 
 ## 📋 Action Items
 
-1. **Try switching tutoring to Google** — saves $5.50/mo
+1. **Try switching tutoring to DeepSeek** — saves $0.00/mo
 2. **Benchmark**: Run 20 tutor quizzes on each candidate before switching
 3. **Monitor**: Re-run this audit weekly (automated)
 
