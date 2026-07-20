@@ -12,7 +12,7 @@
 | **Current Provider** | DeepSeek (deepseek-v4-flash) |
 | **Current Monthly Cost** | $50.59 |
 | **Cheapest Option** | $50.59/mo — **DeepSeek deepseek-v4-flash** |
-| **Best Value** | $301.60/mo — **Google gemini-2.0-flash** |
+| **Best Value** | $137.61/mo — **DeepSeek deepseek-v4-pro** |
 | **Providers Checked** | 10 |
 
 ---
@@ -22,15 +22,15 @@
 | Provider | Model | Input $/1M | Output $/1M | Monthly Cost | vs Current | Quality |
 |----------|-------|-----------|------------|-------------|-----------|---------|
 | DeepSeek | deepseek-v4-flash | $0.0028-$0.14 | $0.28 | **$50.59** | current | 7.5/10 |
-| Google | gemini-2.0-flash | $0.10 | $0.40 | **$301.60** | ⚠️ +$251.01 | 7.0/10 |
+| DeepSeek | deepseek-v4-pro | $0.0036-$0.43 | $0.87 | **$137.61** | ⚠️ +$87.02 | 8.0/10 |
+| Google | gemini-2.5-flash-lite | $0.05 | $0.20 | **$150.80** | ⚠️ +$100.21 | 6.0/10 |
+| Google | gemini-2.5-flash | $0.10 | $0.40 | **$301.60** | ⚠️ +$251.01 | 6.5/10 |
 | OpenAI | gpt-4o-mini | $0.15 | $0.60 | **$452.40** | ⚠️ +$401.81 | 7.0/10 |
-| Anthropic | claude-3-haiku | $0.25 | $1.25 | **$761.25** | ⚠️ +$710.66 | 6.5/10 |
-| Nous Research | hermes-3 | $0.30 | $1.20 | **$904.80** | ⚠️ +$854.21 | 7.0/10 |
-| Mistral | mistral-large | $2.00 | $6.00 | **$5974.00** | ⚠️ +$5923.41 | 7.5/10 |
-| Google | gemini-2.0-pro | $2.00 | $8.00 | **$6032.00** | ⚠️ +$5981.41 | 8.5/10 |
-| xAI | grok-2 | $2.00 | $10.00 | **$6090.00** | ⚠️ +$6039.41 | 7.0/10 |
+| Anthropic | claude-haiku-4.5 | $1.00 | $5.00 | **$3045.00** | ⚠️ +$2994.41 | 7.0/10 |
+| Google | gemini-2.5-pro | $1.25 | $10.00 | **$3915.00** | ⚠️ +$3864.41 | 8.0/10 |
 | OpenAI | gpt-4o | $2.50 | $10.00 | **$7540.00** | ⚠️ +$7489.41 | 9.0/10 |
-| Anthropic | claude-sonnet-4 | $3.00 | $15.00 | **$9135.00** | ⚠️ +$9084.41 | 9.5/10 |
+| Anthropic | claude-sonnet-5 | $3.00 | $15.00 | **$9135.00** | ⚠️ +$9084.41 | 9.0/10 |
+| Anthropic | claude-opus-4.8 | $5.00 | $25.00 | **$15225.00** | ⚠️ +$15174.41 | 9.5/10 |
 
 ---
 
@@ -42,9 +42,9 @@
 **Pros:** coding, math, reasoning
 **Cons:** peak pricing variable, uptime
 
-### 2. **Google gemini-2.0-flash** — $301.60/mo 
+### 2. **DeepSeek deepseek-v4-pro** — $137.61/mo 
 **Why:** Best quality-price ratio.
-**Quality:** 7.0/10
+**Quality:** 8.0/10
 
 ### 3. **DeepSeek deepseek-v4-flash** — $50.59/mo (current)
 **Why:** Already integrated. Decent quality for tutoring/quiz workloads.
@@ -55,10 +55,10 @@
 
 | Workload | Current Score | Best Model | Best Score | Switch? |
 |----------|-------------|-----------|-----------|---------|
-| Tutoring | 7.0/10 | Anthropic claude-sonnet-4 | 8.0/10 | ✅ Yes |
-| Quiz Generation | 6.5/10 | Anthropic claude-sonnet-4 | 7.5/10 | ✅ Yes |
+| Tutoring | 7.0/10 | Anthropic claude-opus-4.8 | 7.5/10 | ⚠️ Maybe |
+| Quiz Generation | 6.5/10 | Anthropic claude-opus-4.8 | 7.5/10 | ✅ Yes |
 | Lead Qualification | 7.0/10 | OpenAI gpt-4o | 7.5/10 | ⚠️ Maybe |
-| Blog Generation | 6.5/10 | Anthropic claude-sonnet-4 | 7.5/10 | ✅ Yes |
+| Blog Generation | 6.5/10 | Anthropic claude-opus-4.8 | 7.5/10 | ✅ Yes |
 | Cron Automation | 7.0/10 | OpenAI gpt-4o | 7.5/10 | ⚠️ Maybe |
 
 ---
@@ -68,15 +68,15 @@
 | Provider | Source | Status |
 |----------|--------|--------|
 | DeepSeek | [deepseek-v4-flash](https://api-docs.deepseek.com/quick_start/pricing) | 📋 Cached |
-| OpenAI | [gpt-4o](https://openai.com/api/pricing/) | 📋 Cached |
+| DeepSeek | [deepseek-v4-pro](https://api-docs.deepseek.com/quick_start/pricing) | 📋 Cached |
+| Google | [gemini-2.5-flash-lite](https://ai.google.dev/pricing) | ✅ Live |
+| Google | [gemini-2.5-flash](https://ai.google.dev/pricing) | ✅ Live |
 | OpenAI | [gpt-4o-mini](https://openai.com/api/pricing/) | 📋 Cached |
-| Anthropic | [claude-sonnet-4](https://www.anthropic.com/pricing) | 📋 Cached |
-| Anthropic | [claude-3-haiku](https://www.anthropic.com/pricing) | 📋 Cached |
-| Google | [gemini-2.0-flash](https://ai.google.dev/pricing) | ✅ Live |
-| Google | [gemini-2.0-pro](https://ai.google.dev/pricing) | ✅ Live |
-| Mistral | [mistral-large](https://mistral.ai/technology/#pricing) | 📋 Cached |
-| xAI | [grok-2](https://x.ai/api) | 📋 Cached |
-| Nous Research | [hermes-3](https://nousresearch.com/) | 📋 Cached |
+| Anthropic | [claude-haiku-4.5](https://docs.anthropic.com/en/docs/about-claude/models) | 📋 Cached |
+| OpenAI | [gpt-4o](https://openai.com/api/pricing/) | 📋 Cached |
+| Anthropic | [claude-sonnet-5](https://docs.anthropic.com/en/docs/about-claude/models) | 📋 Cached |
+| Anthropic | [claude-opus-4.8](https://docs.anthropic.com/en/docs/about-claude/models) | 📋 Cached |
+| Google | [gemini-2.5-pro](https://ai.google.dev/pricing) | ✅ Live |
 
 ---
 
