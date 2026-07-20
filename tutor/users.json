@@ -6,17 +6,32 @@
     "name": "Jiho Pak",
     "subjects": "Math",
     "active": true,
-    "today": "—",
-    "mtd": "461/492 (94%)",
-    "ytd": "461/492 (94%)",
+    "today": "8/10 (80%)",
+    "mtd": "469/502 (93%)",
+    "ytd": "469/502 (93%)",
     "topics": "Jul 15 Quiz, Factoring, Geometry",
     "difficulty": "🔥 Math 3 — 94%",
     "focus": "Radicals, Quadratics, Polynomials",
     "plan": "free_trial",
     "cards": "math,grade9",
     "authorized": true,
-    "products": ["tutor"],
-    "kpis": [{"label": "📚 Math","val": "96/100"},{"label": "🔥 Streak","val": "7 days"},{"label": "⏰ Focus Time","val": "45 min/day"}],
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "📚 Math",
+        "val": "96/100"
+      },
+      {
+        "label": "🔥 Streak",
+        "val": "7 days"
+      },
+      {
+        "label": "⏰ Focus Time",
+        "val": "45 min/day"
+      }
+    ],
     "calories": false
   },
   {
@@ -35,8 +50,23 @@
     "plan": "free_trial",
     "cards": "sat,math,grade11",
     "authorized": true,
-    "products": ["tutor"],
-    "kpis": [{"label": "📚 SAT","val": "64/80"},{"label": "💪 Bench","val": "185 lb"},{"label": "🔥 Streak","val": "5 days"}],
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "📚 SAT",
+        "val": "64/80"
+      },
+      {
+        "label": "💪 Bench",
+        "val": "185 lb"
+      },
+      {
+        "label": "🔥 Streak",
+        "val": "5 days"
+      }
+    ],
     "calories": false
   },
   {
@@ -55,8 +85,23 @@
     "plan": "free_trial",
     "cards": "rn",
     "authorized": true,
-    "products": ["tutor"],
-    "kpis": [{"label": "🩺 NCLEX","val": "72%"},{"label": "📖 Modules","val": "8/12"},{"label": "⏰ Study Time","val": "30 min/day"}],
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "🩺 NCLEX",
+        "val": "72%"
+      },
+      {
+        "label": "📖 Modules",
+        "val": "8/12"
+      },
+      {
+        "label": "⏰ Study Time",
+        "val": "30 min/day"
+      }
+    ],
     "calories": false
   },
   {
@@ -75,8 +120,23 @@
     "plan": "free_trial",
     "cards": "reading",
     "authorized": true,
-    "products": ["tutor"],
-    "kpis": [{"label": "📚 Reading","val": "12 books"},{"label": "🎮 Games","val": "8 played"},{"label": "🌟 Stars","val": "42 earned"}],
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "📚 Reading",
+        "val": "12 books"
+      },
+      {
+        "label": "🎮 Games",
+        "val": "8 played"
+      },
+      {
+        "label": "🌟 Stars",
+        "val": "42 earned"
+      }
+    ],
     "calories": false
   },
   {
@@ -95,8 +155,23 @@
     "plan": "free_trial",
     "cards": "series66,series7",
     "authorized": true,
-    "products": ["tutor"],
-    "kpis": [{"label": "💰 Series 66","val": "74%"},{"label": "📈 Progress","val": "60%"},{"label": "⏰ Study Time","val": "25 min/day"}],
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "💰 Series 66",
+        "val": "74%"
+      },
+      {
+        "label": "📈 Progress",
+        "val": "60%"
+      },
+      {
+        "label": "⏰ Study Time",
+        "val": "25 min/day"
+      }
+    ],
     "calories": false
   },
   {
@@ -115,8 +190,23 @@
     "plan": "free_trial",
     "cards": "baby",
     "authorized": true,
-    "products": ["tutor"],
-    "kpis": [{"label": "👶 Age","val": "Toddler"},{"label": "📚 Learning","val": "ABCs"},{"label": "🌟 Milestones","val": "On track"}],
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "👶 Age",
+        "val": "Toddler"
+      },
+      {
+        "label": "📚 Learning",
+        "val": "ABCs"
+      },
+      {
+        "label": "🌟 Milestones",
+        "val": "On track"
+      }
+    ],
     "calories": false
   },
   {
@@ -135,8 +225,23 @@
     "plan": "free_trial",
     "cards": "baby,preschool",
     "authorized": true,
-    "products": ["tutor"],
-    "kpis": [{"label": "🎨 Colors","val": "6/6"},{"label": "🎮 Games","val": "3 played"},{"label": "🌟 Stars","val": "15"}],
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "🎨 Colors",
+        "val": "6/6"
+      },
+      {
+        "label": "🎮 Games",
+        "val": "3 played"
+      },
+      {
+        "label": "🌟 Stars",
+        "val": "15"
+      }
+    ],
     "calories": false
   },
   {
@@ -155,8 +260,23 @@
     "plan": "free_trial",
     "cards": "reading,math,grade2",
     "authorized": true,
-    "products": ["tutor"],
-    "kpis": [{"label": "📚 Math","val": "4/5"},{"label": "🎮 Games","val": "2 played"},{"label": "🌟 Stars","val": "8"}],
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "📚 Math",
+        "val": "4/5"
+      },
+      {
+        "label": "🎮 Games",
+        "val": "2 played"
+      },
+      {
+        "label": "🌟 Stars",
+        "val": "8"
+      }
+    ],
     "calories": false
   },
   {
@@ -175,8 +295,24 @@
     "plan": "free_trial",
     "cards": "math,grade9",
     "authorized": true,
-    "products": ["tutor","therapy"],
-    "kpis": [{"label": "📚 GPA","val": "3.5"},{"label": "🏀 Liberty HS","val": "Freshman"},{"label": "⏰ Sessions","val": "0"}],
+    "products": [
+      "tutor",
+      "therapy"
+    ],
+    "kpis": [
+      {
+        "label": "📚 GPA",
+        "val": "3.5"
+      },
+      {
+        "label": "🏀 Liberty HS",
+        "val": "Freshman"
+      },
+      {
+        "label": "⏰ Sessions",
+        "val": "0"
+      }
+    ],
     "calories": false
   },
   {
@@ -195,8 +331,24 @@
     "plan": "free_trial",
     "cards": "math,reading,grade7",
     "authorized": true,
-    "products": ["tutor","therapy"],
-    "kpis": [{"label": "📚 Pre-Alg","val": "B+"},{"label": "🏫 Nelson MS","val": "7th Grade"},{"label": "⏰ Sessions","val": "0"}],
+    "products": [
+      "tutor",
+      "therapy"
+    ],
+    "kpis": [
+      {
+        "label": "📚 Pre-Alg",
+        "val": "B+"
+      },
+      {
+        "label": "🏫 Nelson MS",
+        "val": "7th Grade"
+      },
+      {
+        "label": "⏰ Sessions",
+        "val": "0"
+      }
+    ],
     "calories": false
   },
   {
@@ -215,8 +367,23 @@
     "plan": "free_trial",
     "cards": "therapy",
     "authorized": true,
-    "products": ["therapy"],
-    "kpis": [{"label": "🧠 Therapy","val": "Active"},{"label": "📅 Sessions","val": "0"},{"label": "🌟 Streak","val": "New"}],
+    "products": [
+      "therapy"
+    ],
+    "kpis": [
+      {
+        "label": "🧠 Therapy",
+        "val": "Active"
+      },
+      {
+        "label": "📅 Sessions",
+        "val": "0"
+      },
+      {
+        "label": "🌟 Streak",
+        "val": "New"
+      }
+    ],
     "calories": false
   }
 ]
