@@ -282,10 +282,29 @@ function finishQ(reply){
   if(m){corr=parseInt(m[1]);tot=parseInt(m[2])}
   if(!m&&!corr&&tot>0){var all=reply.match(/(\d+)\s*\/\s*(\d+)/g);if(all&&all.length){var last=all[all.length-1].split("/");corr=parseInt(last[0]);tot=parseInt(last[1])}}
   document.getElementById("quizQ").innerHTML=reply.replace(/\n/g,"<br>");
-  document.getElementById("quizA").innerHTML="";
+  document.getElementById("quizA").innerHTML="<div style='color:var(--text-muted);padding:10px'>Saving score...</div>";
   var name=CU?CU.first+" "+CU.last:"Student";
-  fetch(API+"/save-score",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:name,correct:corr,total:tot,subject:iqSubj})});
-  document.getElementById("quizA").innerHTML="<button onclick=closeIQ();location.reload() style='margin-top:16px;padding:12px 28px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer'>&larr; Back to Dashboard</button>";
+  fetch(API+"/save-score",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:name,correct:corr,total:tot,subject:iqSubj})})
+  .then(function(r){return r.json()})
+  .then(function(){
+    document.getElementById("quizA").innerHTML="<div style='color:var(--text-muted);padding:10px'>Updating stats...</div>";
+    return fetch(API+"/student-stats",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:name})});
+  })
+  .then(function(r){return r.json()})
+  .then(function(d){
+    if(d.found&&d.data){
+      var u=d.data;
+      if(CU){CU.today=u.today||"-";CU.mtd=u.mtd||"-";CU.ytd=u.ytd||"-";CU.kpis=u.kpis||CU.kpis}
+      renderSB(CU);
+      document.getElementById("topicsList").textContent=iqSubj||"-";
+    }
+    document.getElementById("quizA").innerHTML="<button onclick=closeIQ() style='margin-top:16px;padding:12px 28px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer'>&larr; Back to Dashboard</button>";
+    document.getElementById("quizProg").textContent="Done!";
+    document.getElementById("quizScr").textContent=corr+"/"+tot;
+  })
+  .catch(function(){
+    document.getElementById("quizA").innerHTML="<button onclick=closeIQ() style='margin-top:16px;padding:12px 28px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer'>&larr; Back to Dashboard</button>";
+  });
 }
 
 var s=document.createElement("style");
