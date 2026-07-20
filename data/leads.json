@@ -14,5 +14,29 @@
     "service": "",
     "score": 0,
     "classification": ""
+  },
+  {
+    "date": "2026-07-19 14:30",
+    "name": "Sarah Johnson",
+    "email": "sarah@example.com",
+    "service": "Tutoring",
+    "score": 80,
+    "classification": "HOT \ud83d\udd25"
+  },
+  {
+    "date": "2026-07-18 09:15",
+    "name": "Mike Chen",
+    "email": "mike@techcorp.com",
+    "service": "AI Development",
+    "score": 85,
+    "classification": "HOT \ud83d\udd25"
+  },
+  {
+    "date": "2026-07-17 16:00",
+    "name": "Emily Davis",
+    "email": "emily@mail.com",
+    "service": "Trading",
+    "score": 35,
+    "classification": "COLD \u2744\ufe0f"
   }
 ]
