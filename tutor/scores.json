@@ -160,5 +160,14 @@
     "subject": "grade9",
     "date": "2026-07-20",
     "ts": 1784565879727
+  },
+  {
+    "student": "HealthCheck Test",
+    "correct": 1,
+    "total": 1,
+    "percent": 100,
+    "subject": "test",
+    "date": "2026-07-20",
+    "ts": 1784566647909
   }
 ]
