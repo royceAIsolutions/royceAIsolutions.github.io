@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="version" content="v6-jul20-2026d">
+<meta name="version" content="v6-jul20-2026e">
 <title>RoyceAI Tutor - Your AI Learning Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -207,9 +207,10 @@ function logout(){
   document.getElementById("navLogoutBtn").style.display="none";
 }
 
-var iqHist=[],iqSubj="",iqCorr=0,iqTot=0,iqBusy=false,iqRetry=0;
+var iqHist=[],iqSubj="",iqCorr=0,iqTot=0,iqBusy=false,iqRetry=0,iqPrevQs=[];
+var IQ_MIN=10;
 function startInlineQuiz(s){
-  iqSubj=s;iqCorr=0;iqTot=0;iqHist=[];iqBusy=false;iqRetry=0;
+  iqSubj=s;iqCorr=0;iqTot=0;iqHist=[];iqBusy=false;iqRetry=0;iqPrevQs=[];
   document.getElementById("dashGrid").style.display="none";
   document.getElementById("quizHistory").style.display="none";
   document.getElementById("quizPanel").style.display="block";
@@ -232,7 +233,15 @@ function askQ(msg){
     var reply=d.reply||"No response";
     iqHist.push({role:"user",content:msg},{role:"assistant",content:reply});
     iqBusy=false;
-    if(reply.match(/Quiz complete|completed|done|final|finished/gi)){finishQ(reply);return;}
+    if(reply.match(/Quiz complete|completed|done|final|finished/gi)){
+      if(iqTot<IQ_MIN){
+        document.getElementById("quizQ").innerHTML="<div style='color:var(--text-muted);padding:10px'>Keep going! "+(IQ_MIN-iqTot)+" more questions...</div>";
+        document.getElementById("quizA").innerHTML="";
+        setTimeout(function(){askQ("Next question - "+(IQ_MIN-iqTot)+" more needed");},800);
+        return;
+      }
+      finishQ(reply);return;
+    }
     showQ(reply);
   })
   .catch(function(e){
@@ -258,6 +267,22 @@ function showQ(reply){
     return;
   }
   iqRetry=0;
+  // Deduplication: check if this question text was already asked
+  var prevQ=document.getElementById("quizQ").textContent.trim();
+  if(prevQ&&prevQ!="Loading..."&&prevQ!="Loading next question..."&&prevQ!="Checking answer..."){
+    for(var pi=0;pi<iqPrevQs.length;pi++){
+      if(iqPrevQs[pi]===prevQ||iqPrevQs[pi].indexOf(prevQ.slice(0,20))>=0||prevQ.indexOf(iqPrevQs[pi].slice(0,20))>=0){
+        iqRetry++;
+        if(iqRetry<3){
+          document.getElementById("quizQ").innerHTML="<div style='color:var(--text-muted);padding:10px'>Loading next question...</div>";
+          document.getElementById("quizA").innerHTML="";
+          setTimeout(function(){askQ("Next question - different topic please");},800);
+        }
+        return;
+      }
+    }
+    iqPrevQs.push(prevQ);
+  }
   document.getElementById("quizA").innerHTML=opts.map(function(o){
     return "<button data-letter='"+o.charAt(0).toLowerCase()+"' class='iq-btn' onclick='ansQ(this)'><span class='iq-letter'>"+o.charAt(0)+"</span><span>"+o.substring(2).trim()+"</span></button>";
   }).join("");
@@ -282,7 +307,16 @@ function ansQ(btn){
     iqHist.push({role:"user",content:letter},{role:"assistant",content:reply});
     iqBusy=false;
     if(reply.match(/correct/i)&&!reply.match(/incorrect/i))iqCorr++;
-    if(reply.match(/Quiz complete|completed|done|final|finished/gi)){finishQ(reply);return;}
+    // Enforce minimum questions: never accept "Quiz complete" before IQ_MIN
+    if(reply.match(/Quiz complete|completed|done|final|finished/gi)){
+      if(iqTot<IQ_MIN){
+        document.getElementById("quizQ").innerHTML="<div style='color:var(--text-muted);padding:10px'>Keep going! "+(IQ_MIN-iqTot)+" more questions to go...</div>";
+        document.getElementById("quizA").innerHTML="";
+        setTimeout(function(){askQ("Next question - keep going, "+(IQ_MIN-iqTot)+" more needed");},800);
+        return;
+      }
+      finishQ(reply);return;
+    }
     showQ(reply);
   })
   .catch(function(e){
