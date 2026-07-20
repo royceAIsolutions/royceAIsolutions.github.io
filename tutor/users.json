@@ -4,13 +4,13 @@
     "last": "Pak",
     "id": "jiho pak",
     "name": "Jiho Pak",
-    "subjects": "Math",
+    "subjects": "Math, 9th Grade Prep, Bible Study",
     "active": true,
     "today": "22/24 (92%)",
     "mtd": "483/516 (94%)",
     "ytd": "483/516 (94%)",
     "topics": "Jul 15 Quiz, Factoring, Geometry",
-    "difficulty": "🔥 Math 3 — 94%",
+    "difficulty": "\ud83d\udd25 Math 3 \u2014 94%",
     "focus": "Radicals, Quadratics, Polynomials",
     "plan": "free_trial",
     "cards": "math,grade9",
@@ -20,15 +20,15 @@
     ],
     "kpis": [
       {
-        "label": "📚 Math",
+        "label": "Math",
         "val": "96/100"
       },
       {
-        "label": "🔥 Streak",
+        "label": "Streak",
         "val": "7 days"
       },
       {
-        "label": "⏰ Focus Time",
+        "label": "Focus Time",
         "val": "45 min/day"
       }
     ],
@@ -39,13 +39,13 @@
     "last": "Koh",
     "id": "carter koh",
     "name": "Carter Koh",
-    "subjects": "Math / SAT / Basketball",
+    "subjects": "SAT Prep, Basketball, 11th Grade",
     "active": true,
-    "today": "—",
+    "today": "\u2014",
     "mtd": "150/189 (79%)",
     "ytd": "150/189 (79%)",
     "topics": "SAT Prep, Calorie Tracking",
-    "difficulty": "⚡ SAT — On Track",
+    "difficulty": "\u26a1 SAT \u2014 On Track",
     "focus": "SAT prep + 4K cal daily + Bench Builder",
     "plan": "free_trial",
     "cards": "sat,math,grade11",
@@ -55,15 +55,15 @@
     ],
     "kpis": [
       {
-        "label": "📚 SAT",
+        "label": "SAT",
         "val": "64/80"
       },
       {
-        "label": "💪 Bench",
+        "label": "Bench",
         "val": "185 lb"
       },
       {
-        "label": "🔥 Streak",
+        "label": "Streak",
         "val": "5 days"
       }
     ],
@@ -74,13 +74,13 @@
     "last": "Koh",
     "id": "angel koh",
     "name": "Angel Koh",
-    "subjects": "RN Training / Health",
+    "subjects": "RN Training, NCLEX, Health",
     "active": true,
-    "today": "—",
-    "mtd": "—",
-    "ytd": "—",
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
     "topics": "NCLEX-RN Training",
-    "difficulty": "🩺 RN Training — Active",
+    "difficulty": "\ud83e\ude7a RN Training \u2014 Active",
     "focus": "NCLEX-RN, Pharmacology, Anatomy",
     "plan": "free_trial",
     "cards": "rn",
@@ -90,15 +90,15 @@
     ],
     "kpis": [
       {
-        "label": "🩺 NCLEX",
+        "label": "NCLEX",
         "val": "72%"
       },
       {
-        "label": "📖 Modules",
+        "label": "Modules",
         "val": "8/12"
       },
       {
-        "label": "⏰ Study Time",
+        "label": "Study Time",
         "val": "30 min/day"
       }
     ],
@@ -109,13 +109,13 @@
     "last": "Koh",
     "id": "paxton koh",
     "name": "Paxton Koh",
-    "subjects": "Reading Games",
+    "subjects": "Reading Games, ABCs, Numbers",
     "active": true,
-    "today": "—",
-    "mtd": "—",
-    "ytd": "—",
-    "topics": "—",
-    "difficulty": "🎮 Grade 1 — Game Mode",
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83c\udfae Grade 1 \u2014 Game Mode",
     "focus": "Letter Recognition, Phonics, Sight Words",
     "plan": "free_trial",
     "cards": "reading",
@@ -125,15 +125,15 @@
     ],
     "kpis": [
       {
-        "label": "📚 Reading",
+        "label": "Reading",
         "val": "12 books"
       },
       {
-        "label": "🎮 Games",
+        "label": "Games",
         "val": "8 played"
       },
       {
-        "label": "🌟 Stars",
+        "label": "Stars",
         "val": "42 earned"
       }
     ],
@@ -144,13 +144,13 @@
     "last": "Lucero",
     "id": "josh lucero",
     "name": "Josh Lucero",
-    "subjects": "Series 66, 7",
+    "subjects": "Series 66, Series 7, Finance",
     "active": true,
-    "today": "—",
+    "today": "\u2014",
     "mtd": "47/50 (94%)",
     "ytd": "47/50 (94%)",
     "topics": "Series 66, Series 7",
-    "difficulty": "📋 Series 66 — 27/30 (90%)",
+    "difficulty": "\ud83d\udccb Series 66 \u2014 27/30 (90%)",
     "focus": "Series 66 (Uniform Combined), Series 7",
     "plan": "free_trial",
     "cards": "series66,series7",
@@ -160,15 +160,15 @@
     ],
     "kpis": [
       {
-        "label": "💰 Series 66",
+        "label": "Series 66",
         "val": "74%"
       },
       {
-        "label": "📈 Progress",
+        "label": "Progress",
         "val": "60%"
       },
       {
-        "label": "⏰ Study Time",
+        "label": "Study Time",
         "val": "25 min/day"
       }
     ],
@@ -179,13 +179,13 @@
     "last": "Min",
     "id": "mason min",
     "name": "Mason Min",
-    "subjects": "Baby Play",
+    "subjects": "Baby Play, ABCs, Colors",
     "active": true,
-    "today": "—",
-    "mtd": "—",
-    "ytd": "—",
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
     "topics": "Sensory Play",
-    "difficulty": "👶 Baby Play — Sensory",
+    "difficulty": "\ud83d\udc76 Baby Play \u2014 Sensory",
     "focus": "Sensory, Colors, Sounds",
     "plan": "free_trial",
     "cards": "baby",
@@ -195,15 +195,15 @@
     ],
     "kpis": [
       {
-        "label": "👶 Age",
+        "label": "Age",
         "val": "Toddler"
       },
       {
-        "label": "📚 Learning",
+        "label": "Learning",
         "val": "ABCs"
       },
       {
-        "label": "🌟 Milestones",
+        "label": "Milestones",
         "val": "On track"
       }
     ],
@@ -216,11 +216,11 @@
     "name": "Pearl Johnson",
     "subjects": "Preschool Play, Letters, Numbers",
     "active": true,
-    "today": "—",
-    "mtd": "—",
-    "ytd": "—",
-    "topics": "—",
-    "difficulty": "🎨 Preschool — Play Mode",
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83c\udfa8 Preschool \u2014 Play Mode",
     "focus": "ABCs, 123s, Colors, Shapes",
     "plan": "free_trial",
     "cards": "baby,preschool",
@@ -230,15 +230,15 @@
     ],
     "kpis": [
       {
-        "label": "🎨 Colors",
+        "label": "Colors",
         "val": "6/6"
       },
       {
-        "label": "🎮 Games",
+        "label": "Games",
         "val": "3 played"
       },
       {
-        "label": "🌟 Stars",
+        "label": "Stars",
         "val": "15"
       }
     ],
@@ -249,13 +249,13 @@
     "last": "Johnson",
     "id": "ruby johnson",
     "name": "Ruby Johnson",
-    "subjects": "Reading / Math / Grade 2",
+    "subjects": "Reading, Math, Grade 2",
     "active": true,
-    "today": "—",
-    "mtd": "—",
-    "ytd": "—",
-    "topics": "—",
-    "difficulty": "📚 Grade 2 — Foundations",
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83d\udcda Grade 2 \u2014 Foundations",
     "focus": "Reading Comprehension, Addition, Subtraction, Phonics",
     "plan": "free_trial",
     "cards": "reading,math,grade2",
@@ -265,15 +265,15 @@
     ],
     "kpis": [
       {
-        "label": "📚 Math",
+        "label": "Math",
         "val": "4/5"
       },
       {
-        "label": "🎮 Games",
+        "label": "Games",
         "val": "2 played"
       },
       {
-        "label": "🌟 Stars",
+        "label": "Stars",
         "val": "8"
       }
     ],
@@ -284,13 +284,13 @@
     "last": "Touch",
     "id": "carter touch",
     "name": "Carter Touch",
-    "subjects": "Grade 9 / Liberty High School",
+    "subjects": "Grade 9, Liberty HS, Math",
     "active": true,
-    "today": "—",
-    "mtd": "—",
-    "ytd": "—",
-    "topics": "—",
-    "difficulty": "📚 Freshman — Liberty HS",
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83d\udcda Freshman \u2014 Liberty HS",
     "focus": "Algebra 1, Biology, English 9",
     "plan": "free_trial",
     "cards": "math,grade9",
@@ -301,15 +301,15 @@
     ],
     "kpis": [
       {
-        "label": "📚 GPA",
+        "label": "GPA",
         "val": "3.5"
       },
       {
-        "label": "🏀 Liberty HS",
+        "label": "Liberty HS",
         "val": "Freshman"
       },
       {
-        "label": "⏰ Sessions",
+        "label": "Sessions",
         "val": "0"
       }
     ],
@@ -320,13 +320,13 @@
     "last": "Touch",
     "id": "chase touch",
     "name": "Chase Touch",
-    "subjects": "Grade 7 / Nelson Middle School",
+    "subjects": "Grade 7, Nelson MS, Pre-Algebra",
     "active": true,
-    "today": "—",
-    "mtd": "—",
-    "ytd": "—",
-    "topics": "—",
-    "difficulty": "📚 7th Grade — Nelson MS",
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83d\udcda 7th Grade \u2014 Nelson MS",
     "focus": "Pre-Algebra, Reading, Science",
     "plan": "free_trial",
     "cards": "math,reading,grade7",
@@ -337,15 +337,15 @@
     ],
     "kpis": [
       {
-        "label": "📚 Pre-Alg",
+        "label": "Pre-Alg",
         "val": "B+"
       },
       {
-        "label": "🏫 Nelson MS",
+        "label": "Nelson MS",
         "val": "7th Grade"
       },
       {
-        "label": "⏰ Sessions",
+        "label": "Sessions",
         "val": "0"
       }
     ],
@@ -356,13 +356,13 @@
     "last": "Touch",
     "id": "tommy touch",
     "name": "Tommy Touch",
-    "subjects": "Therapy Bot",
+    "subjects": "Therapy Bot, Social Skills, Emotional Growth",
     "active": true,
-    "today": "—",
-    "mtd": "—",
-    "ytd": "—",
-    "topics": "—",
-    "difficulty": "🧠 Therapy",
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83e\udde0 Therapy",
     "focus": "Mental wellness, Therapy Bot",
     "plan": "free_trial",
     "cards": "therapy",
@@ -372,15 +372,15 @@
     ],
     "kpis": [
       {
-        "label": "🧠 Therapy",
+        "label": "Therapy",
         "val": "Active"
       },
       {
-        "label": "📅 Sessions",
+        "label": "Sessions",
         "val": "0"
       },
       {
-        "label": "🌟 Streak",
+        "label": "Streak",
         "val": "New"
       }
     ],
