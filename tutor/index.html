@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="version" content="v6-jul20-2026e">
+<meta name="version" content="v6-jul20-2026d">
 <title>RoyceAI Tutor - Your AI Learning Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -130,11 +130,12 @@ body.tutor-page .login-screen{padding-top:calc(80px + var(--nav-h))}
 </div>
 </div>
 <div id="quizPanel" style="display:none;max-width:var(--max-w);margin:0 auto;padding:0 32px">
-<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
-<button id="quizBackBtn" onclick="closeIQ()" style="background:none;border:1px solid var(--border);color:var(--text-secondary);padding:10px 20px;border-radius:8px;font-size:.85rem;cursor:pointer;font-family:var(--font)">&larr; Back</button>
-<span id="quizProg" style="color:var(--text-secondary);font-size:.85rem;font-weight:600">Q1/20</span>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding:12px 0;border-bottom:1px solid var(--border)">
+<span style="display:flex;align-items:center;gap:8px"><button id="quizBackBtn" onclick="closeIQ()" style="background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:8px;font-size:.8rem;cursor:pointer;font-family:var(--font)">&larr; Back</button><span id="quizSubj" style="color:var(--accent-light);font-weight:600">Quiz</span><span style="color:var(--text-secondary);font-size:.75rem">80% to pass</span></span>
+<span style="display:flex;align-items:center;gap:16px">
+<span id="quizProg" style="color:var(--text-secondary);font-size:.85rem;font-weight:600">0% (0/0)</span>
 <span id="quizScr" style="color:var(--accent-light);font-size:.85rem;font-weight:600">0/0</span>
+</span>
 </div>
 <div id="quizQ" style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:28px;margin-bottom:16px;font-size:.95rem;line-height:1.7;color:var(--text);min-height:100px">Starting quiz...</div>
 <div id="quizA" style="display:flex;flex-direction:column;gap:8px"></div>
@@ -144,7 +145,7 @@ body.tutor-page .login-screen{padding-top:calc(80px + var(--nav-h))}
 <script>
 var API='https://chat-api-tawny-zeta.vercel.app/api';
 var HIST=API+'/quiz-history';
-var UDATA=[{"first": "Jiho", "last": "Pak", "subjects": "Math, 9th Grade Prep, Bible Study", "today": "32/34 (94%)", "mtd": "493/526 (94%)", "ytd": "493/526 (94%)", "plan": "free_trial", "cards": "math,grade9", "kpis": [{"label": "Math", "val": "96/100"}, {"label": "Streak", "val": "7 days"}, {"label": "Focus Time", "val": "45 min/day"}]},{"first": "Carter", "last": "Koh", "subjects": "SAT Prep, Basketball, 11th Grade", "today": "17/20 (85%)", "mtd": "167/209 (80%)", "ytd": "167/209 (80%)", "plan": "free_trial", "cards": "sat,math,grade11", "kpis": [{"label": "SAT", "val": "64/80"}, {"label": "Bench", "val": "185 lb"}, {"label": "Streak", "val": "5 days"}]},{"first": "Angel", "last": "Koh", "subjects": "RN Training, NCLEX, Health", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "rn", "kpis": [{"label": "NCLEX", "val": "72%"}, {"label": "Modules", "val": "8/12"}, {"label": "Study Time", "val": "30 min/day"}]},{"first": "Paxton", "last": "Koh", "subjects": "Reading Games, ABCs, Colors", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "reading,preschool", "kpis": []},{"first": "Josh", "last": "Lucero", "subjects": "Series 66, Series 7, Finance", "today": "—", "mtd": "47/50 (94%)", "ytd": "47/50 (94%)", "plan": "free_trial", "cards": "series66,series7", "kpis": [{"label": "Series 66", "val": "74%"}, {"label": "Progress", "val": "60%"}, {"label": "Study Time", "val": "25 min/day"}]},{"first": "Mason", "last": "Min", "subjects": "Baby Play, ABCs, Colors", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "baby", "kpis": [{"label": "Age", "val": "Toddler"}, {"label": "Learning", "val": "ABCs"}, {"label": "Milestones", "val": "On track"}]},{"first": "Pearl", "last": "Johnson", "subjects": "Preschool Play, Letters, Numbers", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "baby,preschool", "kpis": [{"label": "Colors", "val": "6/6"}, {"label": "Games", "val": "3 played"}, {"label": "Stars", "val": "15"}]},{"first": "Ruby", "last": "Johnson", "subjects": "Reading, Math, Grade 2", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "reading,math,grade2", "kpis": [{"label": "Math", "val": "4/5"}, {"label": "Games", "val": "2 played"}, {"label": "Stars", "val": "8"}]},{"first": "Carter", "last": "Touch", "subjects": "Grade 9, Liberty HS, Math", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,grade9", "kpis": [{"label": "GPA", "val": "3.5"}, {"label": "Liberty HS", "val": "Freshman"}, {"label": "Sessions", "val": "0"}]},{"first": "Chase", "last": "Touch", "subjects": "Grade 7, Nelson MS, Pre-Algebra", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,reading,grade7", "kpis": [{"label": "Pre-Alg", "val": "B+"}, {"label": "Nelson MS", "val": "7th Grade"}, {"label": "Sessions", "val": "0"}]},{"first": "Tommy", "last": "Touch", "subjects": "Therapy Bot, Social Skills, Emotional Growth", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "therapy", "kpis": [{"label": "Therapy", "val": "Active"}, {"label": "Sessions", "val": "0"}, {"label": "Streak", "val": "New"}]},{"first": "Test", "last": "User", "subjects": "Math, SAT Prep, Science", "today": "8/10 (80%)", "mtd": "15/20 (75%)", "ytd": "15/20 (75%)", "plan": "free_trial", "cards": "math,sat,grade9", "kpis": [{"label": "Math", "val": "8/10"}, {"label": "SAT", "val": "70/80"}, {"label": "Streak", "val": "1 day"}]},{"first": "Test", "last": "User", "subjects": "Math, SAT Prep, Science", "today": "8/10 (80%)", "mtd": "15/20 (75%)", "ytd": "15/20 (75%)", "plan": "free_trial", "cards": "math,sat,grade9", "kpis": [{"label": "Math", "val": "8/10"}, {"label": "SAT", "val": "70/80"}, {"label": "Streak", "val": "1 day"}]}];
+var UDATA=[{"first": "Jiho", "last": "Pak", "subjects": "Math, 9th Grade Prep, Bible Study", "today": "—", "mtd": "493/526 (94%)", "ytd": "493/526 (94%)", "plan": "free_trial", "cards": "math,grade9", "kpis": [{"label": "Math", "val": "96/100"}, {"label": "Streak", "val": "7 days"}, {"label": "Focus Time", "val": "45 min/day"}]},{"first": "Carter", "last": "Koh", "subjects": "SAT Prep, Basketball, 11th Grade", "today": "45/52 (87%)", "mtd": "281/354 (79%)", "ytd": "281/354 (79%)", "plan": "free_trial", "cards": "sat,math,grade11", "kpis": [{"label": "SAT", "val": "64/80"}, {"label": "Bench", "val": "185 lb"}, {"label": "Streak", "val": "5 days"}]},{"first": "Angel", "last": "Koh", "subjects": "RN Training, NCLEX, Health", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "rn", "kpis": [{"label": "NCLEX", "val": "72%"}, {"label": "Modules", "val": "8/12"}, {"label": "Study Time", "val": "30 min/day"}]},{"first": "Paxton", "last": "Koh", "subjects": "Reading Games, ABCs, Colors", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "reading,preschool", "kpis": []},{"first": "Josh", "last": "Lucero", "subjects": "Series 66, Series 7, Finance", "today": "—", "mtd": "47/50 (94%)", "ytd": "47/50 (94%)", "plan": "free_trial", "cards": "series66,series7", "kpis": [{"label": "Series 66", "val": "74%"}, {"label": "Progress", "val": "60%"}, {"label": "Study Time", "val": "25 min/day"}]},{"first": "Mason", "last": "Min", "subjects": "Baby Play, ABCs, Colors", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "baby", "kpis": [{"label": "Age", "val": "Toddler"}, {"label": "Learning", "val": "ABCs"}, {"label": "Milestones", "val": "On track"}]},{"first": "Pearl", "last": "Johnson", "subjects": "Preschool Play, Letters, Numbers", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "baby,preschool", "kpis": [{"label": "Colors", "val": "6/6"}, {"label": "Games", "val": "3 played"}, {"label": "Stars", "val": "15"}]},{"first": "Ruby", "last": "Johnson", "subjects": "Reading, Math, Grade 2", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "reading,math,grade2", "kpis": [{"label": "Math", "val": "4/5"}, {"label": "Games", "val": "2 played"}, {"label": "Stars", "val": "8"}]},{"first": "Carter", "last": "Touch", "subjects": "Grade 9, Liberty HS, Math", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,grade9", "kpis": [{"label": "GPA", "val": "3.5"}, {"label": "Liberty HS", "val": "Freshman"}, {"label": "Sessions", "val": "0"}]},{"first": "Chase", "last": "Touch", "subjects": "Grade 7, Nelson MS, Pre-Algebra", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,reading,grade7", "kpis": [{"label": "Pre-Alg", "val": "B+"}, {"label": "Nelson MS", "val": "7th Grade"}, {"label": "Sessions", "val": "0"}]},{"first": "Tommy", "last": "Touch", "subjects": "Therapy Bot, Social Skills, Emotional Growth", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "therapy", "kpis": [{"label": "Therapy", "val": "Active"}, {"label": "Sessions", "val": "0"}, {"label": "Streak", "val": "New"}]},{"first": "Test", "last": "User", "subjects": "Math, SAT Prep, Science", "today": "8/10 (80%)", "mtd": "15/20 (75%)", "ytd": "15/20 (75%)", "plan": "free_trial", "cards": "math,sat,grade9", "kpis": [{"label": "Math", "val": "8/10"}, {"label": "SAT", "val": "70/80"}, {"label": "Streak", "val": "1 day"}]},{"first": "Test", "last": "User", "subjects": "Math, SAT Prep, Science", "today": "8/10 (80%)", "mtd": "15/20 (75%)", "ytd": "15/20 (75%)", "plan": "free_trial", "cards": "math,sat,grade9", "kpis": [{"label": "Math", "val": "8/10"}, {"label": "SAT", "val": "70/80"}, {"label": "Streak", "val": "1 day"}]}];
 var CU=null;
 
 function login(){
@@ -207,16 +208,16 @@ function logout(){
   document.getElementById("navLogoutBtn").style.display="none";
 }
 
-var iqHist=[],iqSubj="",iqCorr=0,iqTot=0,iqBusy=false,iqRetry=0,iqPrevQs=[];
-var IQ_MIN=10;
+var iqHist=[],iqSubj="",iqCorr=0,iqTot=0,iqBusy=false,iqRetry=0;
 function startInlineQuiz(s){
-  iqSubj=s;iqCorr=0;iqTot=0;iqHist=[];iqBusy=false;iqRetry=0;iqPrevQs=[];
+  iqSubj=s;iqCorr=0;iqTot=0;iqHist=[];iqBusy=false;iqRetry=0;
   document.getElementById("dashGrid").style.display="none";
   document.getElementById("quizHistory").style.display="none";
   document.getElementById("quizPanel").style.display="block";
   document.getElementById("quizQ").textContent="Loading...";
   document.getElementById("quizA").innerHTML="";
-  document.getElementById("quizProg").textContent="Q1/?";
+  document.getElementById("quizProg").textContent="0% (0/0)";
+  document.getElementById("quizScr").textContent="0/0";
   askQ("Start "+s+" quiz");
 }
 function closeIQ(){
@@ -233,15 +234,7 @@ function askQ(msg){
     var reply=d.reply||"No response";
     iqHist.push({role:"user",content:msg},{role:"assistant",content:reply});
     iqBusy=false;
-    if(reply.match(/Quiz complete|completed|done|final|finished/gi)){
-      if(iqTot<IQ_MIN){
-        document.getElementById("quizQ").innerHTML="<div style='color:var(--text-muted);padding:10px'>Keep going! "+(IQ_MIN-iqTot)+" more questions...</div>";
-        document.getElementById("quizA").innerHTML="";
-        setTimeout(function(){askQ("Next question - "+(IQ_MIN-iqTot)+" more needed");},800);
-        return;
-      }
-      finishQ(reply);return;
-    }
+    if(reply.match(/Quiz complete|completed|done|final|finished/gi)){finishQ(reply);return;}
     showQ(reply);
   })
   .catch(function(e){
@@ -267,29 +260,13 @@ function showQ(reply){
     return;
   }
   iqRetry=0;
-  // Deduplication: check if this question text was already asked
-  var prevQ=document.getElementById("quizQ").textContent.trim();
-  if(prevQ&&prevQ!="Loading..."&&prevQ!="Loading next question..."&&prevQ!="Checking answer..."){
-    for(var pi=0;pi<iqPrevQs.length;pi++){
-      if(iqPrevQs[pi]===prevQ||iqPrevQs[pi].indexOf(prevQ.slice(0,20))>=0||prevQ.indexOf(iqPrevQs[pi].slice(0,20))>=0){
-        iqRetry++;
-        if(iqRetry<3){
-          document.getElementById("quizQ").innerHTML="<div style='color:var(--text-muted);padding:10px'>Loading next question...</div>";
-          document.getElementById("quizA").innerHTML="";
-          setTimeout(function(){askQ("Next question - different topic please");},800);
-        }
-        return;
-      }
-    }
-    iqPrevQs.push(prevQ);
-  }
   document.getElementById("quizA").innerHTML=opts.map(function(o){
     return "<button data-letter='"+o.charAt(0).toLowerCase()+"' class='iq-btn' onclick='ansQ(this)'><span class='iq-letter'>"+o.charAt(0)+"</span><span>"+o.substring(2).trim()+"</span></button>";
   }).join("");
-  // Update progress display
-  var qm=reply.match(/Q(\d+)\/(\d+)/i);
-  if(qm){document.getElementById("quizProg").textContent="Q"+qm[1]+"/"+qm[2];}
-  else{document.getElementById("quizProg").textContent="Q"+(iqTot+1)+"/?";}
+  // Update progress display — show running score instead of Q count
+  var pct=Math.round(iqCorr/Math.max(iqTot,1)*100);
+  document.getElementById("quizProg").textContent=pct+"% ("+iqCorr+"/"+Math.max(iqTot,1)+")";
+  document.getElementById("quizScr").textContent=iqCorr+"/"+Math.max(iqTot,1);
 }
 function ansQ(btn){
   if(iqBusy)return;
@@ -307,16 +284,11 @@ function ansQ(btn){
     iqHist.push({role:"user",content:letter},{role:"assistant",content:reply});
     iqBusy=false;
     if(reply.match(/correct/i)&&!reply.match(/incorrect/i))iqCorr++;
-    // Enforce minimum questions: never accept "Quiz complete" before IQ_MIN
-    if(reply.match(/Quiz complete|completed|done|final|finished/gi)){
-      if(iqTot<IQ_MIN){
-        document.getElementById("quizQ").innerHTML="<div style='color:var(--text-muted);padding:10px'>Keep going! "+(IQ_MIN-iqTot)+" more questions to go...</div>";
-        document.getElementById("quizA").innerHTML="";
-        setTimeout(function(){askQ("Next question - keep going, "+(IQ_MIN-iqTot)+" more needed");},800);
-        return;
-      }
-      finishQ(reply);return;
-    }
+    // Check 80% mastery: minimum 10 questions, need 80%+ accuracy, max 50
+    var pct=Math.round(iqCorr/Math.max(iqTot,1)*100);
+    document.getElementById("quizScr").textContent=iqCorr+"/"+iqTot+" ("+pct+"%)";
+    if(iqTot>=10&&pct>=80){finishQ(reply);return;}
+    if(iqTot>=50){finishQ("Quiz complete — 50 questions max. Score: "+iqCorr+"/"+iqTot);return;}
     showQ(reply);
   })
   .catch(function(e){
