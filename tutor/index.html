@@ -52,7 +52,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;backgrou
 .app-container.show{display:block}
 .app-container.show .dashboard{padding-top:calc(var(--nav-h) + .5rem)}
 .login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 24px}
-.login-box{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:var(--space-2xl) 40px;max-width:420px;width:100%;text-align:center}
+.login-box{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:var(--space-xl) 32px;max-width:420px;width:100%;text-align:center}
 .login-box h2{font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:var(--space-sm)}
 .login-box .sub{color:var(--text-secondary);font-size:0.85rem;margin-bottom:var(--space-xl)}
 .login-box .input-group{margin-bottom:var(--space-lg);text-align:left}
@@ -70,7 +70,8 @@ body.tutor-page .login-screen{padding-top:calc(80px + var(--nav-h))}
 .btn-primary.btn-dynamic{background:linear-gradient(135deg,#667eea,#764ba2);color:white}
 .logout-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:10px;font-family:var(--font);font-size:.8rem;font-weight:600;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text-secondary);cursor:pointer}
 .logout-btn:hover{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.25);color:#ef4444}
-@media(max-width:640px){.dashboard{padding:0 16px;margin-top:3rem}.dash-header h1{font-size:1.3rem}.dash-grid{grid-template-columns:1fr;gap:14px}.scoreboard-grid{grid-template-columns:repeat(2,1fr)}.scoreboard{padding:16px}.score-stat{padding:10px 14px}.score-stat .score{font-size:1.1rem}.dash-card{padding:18px 20px}.quiz-table th,.quiz-table td{padding:8px 10px;font-size:.8rem}nav{padding:0 16px}.nav-links a{font-size:.75rem;padding:6px 10px}}
+@media(max-width:640px){.dashboard{padding:0 16px;margin-top:3rem}.dash-header h1{font-size:1.3rem}.dash-grid{grid-template-columns:1fr;gap:14px}.scoreboard-grid{grid-template-columns:repeat(2,1fr)}.scoreboard{padding:16px}.score-stat{padding:10px 14px}.score-stat .score{font-size:1.1rem}.dash-card{padding:18px 20px}.quiz-table th,.quiz-table td{padding:8px 10px;font-size:.8rem}nav{padding:0 16px}.nav-links a{font-size:.75rem;padding:6px 10px}.login-screen{padding:60px 16px}.login-box{padding:var(--space-lg) 20px}.login-box h2{font-size:1.3rem}}
+@media(max-width:400px){.dashboard{padding:0 12px;margin-top:2rem}.dash-header h1{font-size:1.1rem}.scoreboard{padding:12px}.score-stat{padding:8px 10px}.score-stat .score{font-size:1rem}.login-screen{padding:40px 12px}.login-box{padding:var(--space-md) 16px}.login-box h2{font-size:1.15rem}.login-box .sub{font-size:.8rem;margin-bottom:var(--space-lg)}.login-box .input-group input{padding:var(--space-sm) var(--space-md)}.dash-card{padding:14px 16px}nav{padding:0 12px}.nav-links a{font-size:.7rem;padding:4px 8px}.nav-links .nav-cta{padding:6px 14px;font-size:.75rem}.quiz-panel{padding:0 12px}}
 </style>
 </head><body class="tutor-page">
 <nav>
