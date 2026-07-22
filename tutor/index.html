@@ -77,7 +77,7 @@ body.tutor-page .login-screen{padding-top:calc(80px + var(--nav-h))}
 <nav>
 <a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
 <div class="nav-links">
-<a href="/products">Products</a><button class="logout-btn nav-logout-btn" id="navLogoutBtn" onclick="logout()" style="display:none">&#x1f6aa; Logout</button><a href="/tutor" style="background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);padding:6px 16px;font-weight:700">&#x2728; Tutor</a><a href="/blog">Blog</a><a href="/chat" class="nav-cta">&#x1f4ac; Chat</a>
+<a href="/products">Products</a><button class="logout-btn nav-logout-btn" id="navLogoutBtn" onclick="logout()" style="display:none">🔪 Logout</button><a href="/tutor" style="background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);padding:6px 16px;font-weight:700">✨ Tutor</a><a href="/blog">Blog</a>
 </div>
 </nav>
 <div class="login-screen" id="loginScreen">
@@ -374,28 +374,5 @@ if(saved){
 .lc-thanks p{color:#a0a0c0;font-size:.85rem;margin:0}
 .lc-error{color:#ef4444;font-size:.8rem;margin-top:4px;display:none}
 </style>
-<div id="lc-root">
-<button class="lc-btn" id="lcBtn" onclick="toggleLeadPanel()">💬</button>
-<div class="lc-panel" id="lcPanel">
-<div class="lc-header"><span>☄️ Talk to RoyceAI</span><button class="lc-close" onclick="toggleLeadPanel()">x</button></div>
-<div class="lc-body" id="lcForm">
-<p style="color:#a0a0c0;font-size:.85rem;margin:0 0 12px">Tell us about your needs.</p>
-<label>Full Name *</label><input id="lcName" placeholder="Your name">
-<label>Email *</label><input id="lcEmail" type="email" placeholder="your@email.com">
-<label>What service?</label><select id="lcService"><option value="">Select...</option><option value="Tutoring">Tutoring</option><option value="Trading">Trading</option><option value="AI Development">AI Development</option><option value="Other">Other</option></select>
-<label>Who is this for?</label><input id="lcFor" placeholder="Me / My child / My business">
-<label>Budget</label><select id="lcBudget"><option value="">Select...</option><option value="Under $100/mo">Under $100/mo</option><option value="$100-500/mo">$100-500/mo</option><option value="$500-1k/mo">$500-1k/mo</option><option value="$1k+/mo">$1k+/mo</option><option value="Not sure">Not sure</option></select>
-<label>How soon?</label><select id="lcTimeline"><option value="">Select...</option><option value="ASAP">ASAP</option><option value="This month">This month</option><option value="Next month">Next month</option><option value="Just exploring">Just exploring</option></select>
-<label>Where heard?</label><select id="lcSource"><option value="">Select...</option><option value="Google">Google</option><option value="Friend">Friend</option><option value="Social Media">Social Media</option><option value="Telegram">Telegram</option><option value="Other">Other</option></select>
-<label>Message</label><textarea id="lcMessage" placeholder="Tell us more..."></textarea>
-<div class="lc-error" id="lcError"></div>
-<button class="lc-submit" onclick="submitLead()">Send</button>
-</div>
-<div class="lc-thanks" id="lcThanks"><h3>Sent!</h3><p>We'll get back within 24 hours.</p></div>
-</div></div>
-<script>
-function toggleLeadPanel(){document.getElementById('lcPanel').classList.toggle('open')}
-function submitLead(){var n=document.getElementById('lcName').value.trim(),e=document.getElementById('lcEmail').value.trim(),er=document.getElementById('lcError');if(!n){er.textContent='Name required';er.style.display='block';return}if(!e||!e.includes('@')){er.textContent='Valid email required';er.style.display='block';return}er.style.display='none';fetch('https://chat-api-tawny-zeta.vercel.app/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,email:e,service:document.getElementById('lcService').value,for_whom:document.getElementById('lcFor').value.trim(),budget:document.getElementById('lcBudget').value,timeline:document.getElementById('lcTimeline').value,source:document.getElementById('lcSource').value,message:document.getElementById('lcMessage').value.trim(),date:new Date().toISOString(),source_page:window.location.pathname})}).then(function(){document.getElementById('lcForm').style.display='none';document.getElementById('lcThanks').classList.add('show');setTimeout(function(){toggleLeadPanel()},4000)}).catch(function(){er.textContent='Network error';er.style.display='block'})}
-</script>
 </body>
 </html>
