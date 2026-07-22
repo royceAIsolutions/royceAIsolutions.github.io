@@ -226,7 +226,7 @@ function startInlineQuiz(s){
   document.getElementById("quizQ").textContent="Loading...";
   document.getElementById("quizA").innerHTML="";
   document.getElementById("quizProg").textContent="Q0/"+iqTotal;
-  document.getElementById("quizScr").textContent="0/0";
+  document.getElementById("quizScr").textContent="—";
   askQ("Start "+s+" quiz");
 }
 function closeIQ(){
@@ -276,7 +276,7 @@ function showQ(reply){
   }).join("");
   // Update score display
   var pct=Math.round(iqCorr/Math.max(iqTot,1)*100);
-  document.getElementById("quizScr").textContent=iqCorr+"/"+Math.max(iqTot,1);
+  document.getElementById("quizScr").textContent=pct+"%";
 }
 function ansQ(btn){
   if(iqBusy)return;
@@ -297,7 +297,7 @@ function ansQ(btn){
     // Check 80% mastery: minimum 33 questions, need 80%+ accuracy, max 50
     var pct=Math.round(iqCorr/Math.max(iqTot,1)*100);
     document.getElementById("quizProg").textContent="Q"+iqTot+"/"+iqTotal;
-    document.getElementById("quizScr").textContent=iqCorr+"/"+iqTot+" ("+pct+"%)";
+    document.getElementById("quizScr").textContent=pct+"%";
     if(iqTot>=33&&pct>=80){finishQ(reply);return;}
     if(iqTot>=50){finishQ("Quiz complete — 50 questions max. Score: "+iqCorr+"/"+iqTot);return;}
     showQ(reply);
@@ -331,8 +331,9 @@ function finishQ(reply){
       document.getElementById("topicsList").textContent=CU.subjects||iqSubj||"-";
     }
     document.getElementById("quizA").innerHTML="<button onclick=closeIQ() style='margin-top:16px;padding:12px 28px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer'>&larr; Back to Dashboard</button>";
-    document.getElementById("quizProg").textContent="Done!";
-    document.getElementById("quizScr").textContent=corr+"/"+tot;
+    document.getElementById("quizProg").textContent="✓ Done!";
+    var fpct=Math.round(corr/Math.max(tot,1)*100);
+    document.getElementById("quizScr").textContent=fpct+"%";
   })
   .catch(function(){
     document.getElementById("quizA").innerHTML="<button onclick=closeIQ() style='margin-top:16px;padding:12px 28px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer'>&larr; Back to Dashboard</button>";
