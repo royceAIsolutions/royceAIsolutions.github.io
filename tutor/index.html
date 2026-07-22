@@ -400,11 +400,9 @@ if(saved){
 .lc-error{color:#ef4444;font-size:.8rem;margin-top:4px;display:none}
 </style>
 <script>
-// Scoreboard auto-refresh
-function refreshSB(){
+// Auto-refresh scoreboard every 30s (silent, no button)
+setInterval(function(){
   if(!CU)return;
-  var el=document.getElementById("scoreRefreshBtn");
-  if(el){el.textContent="⟳ Refreshing...";el.disabled=true;el.style.opacity="0.6"}
   fetch(API+"/student-stats",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:CU.first+" "+CU.last})})
   .then(function(r){return r.json()})
   .then(function(d){
@@ -413,21 +411,8 @@ function refreshSB(){
       CU.today=u.today||"-";CU.mtd=u.mtd||"-";CU.ytd=u.ytd||"-";CU.kpis=u.kpis||CU.kpis;
       renderSB(CU);
     }
-    if(el){el.textContent="⟳ Refresh";el.disabled=false;el.style.opacity="1"}
-  })
-  .catch(function(){
-    if(el){el.textContent="⟳ Refresh";el.disabled=false;el.style.opacity="1"}
-    var td=document.getElementById("scoreToday");
-    if(td)td.textContent="⚠️ err";
-  });
-}
-// Wire refresh button (script at bottom of page, DOM already ready)
-(function(){
-  var btn=document.getElementById('scoreRefreshBtn');
-  if(btn)btn.addEventListener('click',refreshSB);
-})();
-// Auto-refresh every 30s while logged in
-setInterval(function(){if(CU)refreshSB()},30000);
+  }).catch(function(){});
+},30000);
 </script>
 </body>
 </html>
