@@ -295,7 +295,7 @@ function ansQ(btn){
     var reply=d.reply||"No response";
     iqHist.push({role:"user",content:letter},{role:"assistant",content:reply});
     iqBusy=false;
-    if(reply.match(/correct/i)&&!reply.match(/incorrect/i))iqCorr++;
+    if(reply.match(/^Correct/i))iqCorr++;
     // Check 80% mastery: minimum 33 questions, need 80%+ accuracy, max 50
     var pct=Math.round(iqCorr/Math.max(iqTot,1)*100);
     document.getElementById("quizProg").textContent="Q"+iqTot+"/"+iqTotal;
