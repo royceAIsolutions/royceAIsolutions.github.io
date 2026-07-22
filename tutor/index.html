@@ -205,7 +205,10 @@ async function loadHist(n){
     if(!ss.length){tb.innerHTML='<tr><td colspan="4" style="text-align:center;color:var(--text-secondary)">No sessions yet</td></tr>';return;}
     tb.innerHTML=ss.slice(-10).reverse().map(function(s){
       var p=Math.round(s.correct/s.total*100);
-      return '<tr><td>'+(s.date||"-")+"</td><td>"+(s.mode||"quiz")+'</td><td><strong>'+s.correct+"/"+s.total+"</strong> ("+p+"%)</td><td>"+(p>=80?"Pass":"Review")+"</td></tr>";
+      var t='';
+      if(s.time){var d=new Date(s.time);t=d.toLocaleDateString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}).replace(',','')}
+      else{t=s.date||'-'}
+      return '<tr><td>'+t+'</td><td>'+(s.mode||"quiz")+'</td><td><strong>'+s.correct+"/"+s.total+"</strong> ("+p+"%)</td><td>"+(p>=80?"✅ Pass":"📖 Review")+"</td></tr>";
     }).join("");
   }catch(e){tb.innerHTML='<tr><td colspan="4" style="text-align:center;color:var(--text-secondary)">Error</td></tr>';}
 }
