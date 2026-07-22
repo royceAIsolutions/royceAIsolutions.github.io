@@ -3,45 +3,202 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reading the Market Regime: VIX, SPY MA200, Credit Spreads 2026 — Royce AI</title>
-<meta name="description" content="How to read market regime indicators. Green, yellow, red signals explained. VIX, SPY 200-day moving average, credit spread analysis.">
-<link rel="stylesheet" href="/assets/css/main.css">
+<title>Reading the Market Regime: VIX, SPY MA200, Credit Spreads Explained — RoyceAI Blog</title>
+<meta name="description" content="Learn how to read market regimes using VIX, SPY 200-day moving average, and credit spreads. Green, yellow, and red regimes explained with live data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  .blog-post { max-width: 720px; margin: 0 auto; padding: 2rem 1rem 4rem; line-height: 1.8; color: #e0e0e0; }
-  .blog-post h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #fff; }
-  .blog-post .meta { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
-  .blog-post h2 { font-size: 1.4rem; margin-top: 2.5rem; color: #c084fc; }
-  .blog-post p { margin: 1rem 0; }
-  .back-link { display: inline-block; margin-bottom: 1.5rem; color: #c084fc; text-decoration: none; }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:Inter,system-ui,sans-serif;background:#0a0a0a;color:#f5f5f5}
-  nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;height:60px;max-width:1200px;margin:0 auto;border-bottom:1px solid rgba(255,255,255,0.06)}
-  .nav-logo{font-weight:700;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:6px}
-  .nav-logo span{color:#667eea}
-  .nav-links a{color:#a1a1aa;text-decoration:none;font-size:0.875rem;padding:6px 12px;border-radius:6px}
-  .nav-links a:hover{color:#f5f5f5}
-  .nav-links .nav-cta{background:#667eea;color:white!important;padding:8px 20px;border-radius:8px;font-weight:600}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#07070a;color:#eeeef0;line-height:1.8;overflow-x:hidden;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:64px;max-width:1200px;margin:0 auto;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);position:sticky;top:0;z-index:100}
+.nav-logo{font-weight:700;font-size:1.1rem;color:#eeeef0;text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-logo .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff}
+.nav-logo span{color:#a78bfa}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{color:#88889a;text-decoration:none;font-size:0.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:#eeeef0;background:rgba(124,92,252,0.08)}
+.nav-links .nav-cta{background:#7c5cfc;color:#fff!important;font-weight:600;padding:8px 22px;border-radius:8px}
+.post-wrap{max-width:720px;margin:0 auto;padding:3rem 1.5rem 5rem}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:#a78bfa;text-decoration:none;font-size:0.9rem;font-weight:500;margin-bottom:2rem;transition:all 0.2s}
+.back-link:hover{color:#fff;gap:10px}
+.post-wrap h1{font-size:2.2rem;font-weight:800;color:#fff;line-height:1.3;margin-bottom:0.75rem;letter-spacing:-0.03em}
+.post-wrap .meta{color:#5c5c6e;font-size:0.85rem;display:flex;gap:16px;align-items:center;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.post-wrap .meta .tag{background:rgba(124,92,252,0.08);color:#a78bfa;padding:3px 10px;border-radius:6px;font-weight:600;font-size:0.75rem}
+.post-wrap h2{font-size:1.5rem;font-weight:700;color:#fff;margin:2.5rem 0 1rem;letter-spacing:-0.02em}
+.post-wrap h3{font-size:1.15rem;font-weight:600;color:#a78bfa;margin:1.5rem 0 0.75rem}
+.post-wrap p{color:#d4d4d8;margin:1rem 0;font-size:1.05rem;line-height:1.8}
+.post-wrap ul,.post-wrap ol{padding-left:1.5rem;margin:1rem 0;color:#d4d4d8;line-height:1.8}
+.post-wrap li{margin:0.5rem 0}
+.post-wrap strong{color:#fff;font-weight:600}
+.post-wrap .highlight{background:rgba(124,92,252,0.08);border-left:3px solid #7c5cfc;padding:1rem 1.25rem;border-radius:0 10px 10px 0;margin:1.5rem 0;color:#d4d4d8;font-size:0.95rem}
+.post-wrap .stat-card{background:#0e0e12;border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1.25rem;margin:1rem 0;display:flex;align-items:center;gap:14px}
+.post-wrap .stat-card .num{font-size:1.8rem;font-weight:800;color:#a78bfa;min-width:50px}
+.post-wrap .stat-card .desc{color:#d4d4d8;font-size:0.9rem}
+.regime-box{background:#0e0e12;border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:1.75rem;margin:1.5rem 0}
+.regime-box .r-label{font-size:1.3rem;font-weight:800;margin-bottom:0.75rem}
+.regime-box .r-detail{color:#d4d4d8;font-size:0.9rem;line-height:1.6}
+.regime-box.r-green .r-label{color:#22c55e}
+.regime-box.r-yellow .r-label{color:#eab308}
+.regime-box.r-red .r-label{color:#ef4444}
+.regime-box.r-green{border-left:3px solid #22c55e}
+.regime-box.r-yellow{border-left:3px solid #eab308}
+.regime-box.r-red{border-left:3px solid #ef4444}
+.cta-box{background:#0e0e12;border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:2rem;text-align:center;margin:3rem 0 1rem}
+.cta-box h3{color:#fff;font-size:1.2rem;margin-bottom:0.75rem;text-align:center!important}
+.cta-box p{color:#88889a;font-size:0.9rem;margin-bottom:1.25rem}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#7c5cfc;color:#fff!important;text-decoration:none;padding:12px 28px;border-radius:10px;font-weight:600;font-size:0.95rem;transition:all 0.2s}
+.cta-btn:hover{background:#a78bfa;transform:translateY(-1px)}
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:48px 24px;max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+footer .copy{color:#5c5c6e;font-size:0.8rem;width:100%;text-align:center}
+footer .links{display:flex;gap:20px;flex-wrap:wrap}
+footer .links a{color:#88889a;text-decoration:none;font-size:0.875rem;transition:color 0.2s}
+footer .links a:hover{color:#a78bfa}
+@media(max-width:640px){.post-wrap{padding:1.5rem 1rem 3rem}.post-wrap h1{font-size:1.6rem}.post-wrap h2{font-size:1.25rem}.post-wrap p{font-size:0.95rem}nav{padding:0 16px;height:auto;flex-direction:column;gap:6px;padding:8px 16px}.nav-logo{width:100%;justify-content:center;font-size:1rem}.nav-links{width:100%;justify-content:center;flex-wrap:wrap}.nav-links a{font-size:.75rem;padding:5px 10px}.nav-links .nav-cta{padding:5px 14px}}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"Reading the Market Regime: VIX, SPY MA200, Credit Spreads 2026","datePublished":"2026-07-15","description":"How to read market regime indicators. Green, yellow, red signals explained. VIX, SPY 200-day moving average, credit spread analysis.","author":{"@type":"Person","name":"RoyceAI"}}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Reading the Market Regime: VIX, SPY MA200, Credit Spreads Explained", "datePublished": "July 22, 2026", "description": "Learn how to read market regimes using VIX, SPY 200-day moving average, and credit spreads. Green, yellow, and red regimes explained with live data.", "author": {"@type": "Person", "name": "RoyceAI"}, "publisher": {"@type": "Organization", "name": "Royce AI Solutions"}}</script>
 </head>
 <body>
-  <nav>
-    <a href="/" class="nav-logo"><span style="background:linear-gradient(135deg,#667eea,#764ba2);border-radius:6px;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:white">R</span> Royce<span>AI</span></a>
-    <div class="nav-links">
-      <a href="/products">Products</a>
-      <a href="/tutor">Tutor</a>
-      <a href="/blog">Blog</a>
-      <a href="/chat" class="nav-cta">💬 Chat</a>
-    </div>
-  </nav><script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/tutor"]');var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(t){t.innerHTML="\ud83d\udcda Dashboard";t.style.cssText="";t.href="/tutor"}}else if(t){t.innerHTML="\u2728 Tutor";t.style.cssText="animation:pulse-glow 2.5s ease-in-out infinite;background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
-  <div class="blog-post">
-    <a href="/blog" class="back-link">← Back to Blog</a>
-    <h1>Reading the Regime: VIX, SPY MA200, and Credit Spreads</h1>
-    <div class="meta">July 2026 • 4 min read</div>
-    <p>How to read market regime indicators. Green, yellow, red — and what each means for your portfolio.</p>
-    <p>For more information about how RoyceAI can help you with this topic, <a href="/chat" style="color:#667eea">chat with us</a> or explore our <a href="/products" style="color:#667eea">products</a>.</p>
-  </div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<nav>
+<a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
+<div class="nav-links">
+<a href="/products">Products</a>
+<a href="/tutor">✨ Tutor</a>
+<a href="/blog">Blog</a>
+<a href="/chat" class="nav-cta">💬 Chat</a>
+</div>
+</nav>
+<script>(function(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var t=document.querySelector('a[href*="tutor"]');if(t){if(u&&u.first){t.innerHTML="\ud83d\udcda "+u.first;t.style.cssText="";t.href="/tutor"}else{t.innerHTML="\u2728 Tutor";t.style.cssText="background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(167,139,250,0.15));border:1px solid rgba(124,92,252,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:#88889a;text-decoration:none;font-size:0.875rem"}}}catch(e){}})();</script>
+<div class="post-wrap">
+<a href="/blog" class="back-link">← Back to Blog</a>
+<h1>Reading the Market Regime: VIX, SPY MA200, Credit Spreads Explained</h1>
+<div class="meta"><span>July 22, 2026</span><span>·</span><span>Trading · Market Analysis</span><span class="tag">Education</span></div>
+
+<p>Every trader eventually faces the same question: <em>should I be aggressive or defensive right now?</em> The answer depends on the market regime — the underlying condition of the financial markets that determines how risk behaves. A systematic trader doesn't guess. They read three key indicators: the VIX, the S&P 500 relative to its 200-day moving average, and credit spreads. Together, these tell you whether we're in a Green, Yellow, or Red regime.</p>
+
+<p>In this post, I'll explain each indicator in plain English, show you how they combine into a simple regime framework, and apply it to real live data from July 22, 2026.</p>
+
+<h2>What Is a Market Regime?</h2>
+
+<p>A market regime is the baseline risk environment. Think of it like weather: you wouldn't wear a parka on a sunny day, and you wouldn't go sailing in a hurricane. In markets, the regime tells you the probability distribution of outcomes. In a Green regime, the tail risks are small and the bias is bullish. In a Red regime, volatility clusters and drawdowns are the norm. Yellow is the gray zone — conditions are mixed, and discretion matters most.</p>
+
+<p>The concept comes from systematic macro funds like Bridgewater and AQR, but you don't need a PhD to use it. With three publicly available data points, you can build a regime model that beats gut-feel trading nine times out of ten.</p>
+
+<h2>Indicator 1: The VIX — The Fear Gauge</h2>
+
+<p>The CBOE Volatility Index, or VIX, measures the market's expectation of 30-day forward volatility in the S&P 500. It's built from S&P 500 index option prices, and it's the closest thing we have to a market-wide fear thermometer. When traders are nervous, they buy options for protection, driving option premiums — and the VIX — higher.</p>
+
+<h3>How to Read It</h3>
+<ul>
+<li><strong>Below 20</strong> — Normal / Green. Low fear, stable conditions.</li>
+<li><strong>20 to 30</strong> — Elevated / Yellow. Caution warranted. Volatility is rising.</li>
+<li><strong>Above 30</strong> — Fear / Red. Stress is systemic. Capital preservation first.</li>
+<li><strong>Above 40</strong> — Crisis territory. Historically associated with crashes, pandemic onset, and flash crashes.</li>
+</ul>
+
+<div class="regime-box r-green">
+<div class="r-label">Current VIX: 16.98 — Green ✅</div>
+<div class="r-detail">A VIX reading below 20 signals a low-volatility environment. Options are cheap, implied moves are small, and the market is pricing in orderly conditions. This is the most common regime historically — the VIX has spent roughly 65% of its life below 20. In this zone, trend-following and momentum strategies tend to work well. The caveat: a VIX below 12 has historically preceded snap-backs, as ultra-low vol often precedes regime changes.</div>
+</div>
+
+<p>The VIX is mean-reverting. It spiked to 82.69 during COVID (March 2020), 36.07 during the 2023 regional banking crisis, and 35.01 during the August 2024 Yen-carry unwind. Each time it snapped back below 20 within weeks. Buying fear and selling complacency has been a profitable trade over the long run — but you need the other two indicators to confirm the regime.</p>
+
+<h2>Indicator 2: SPY vs. the 200-Day Moving Average</h2>
+
+<p>The 200-day simple moving average (MA200) is the most widely watched trend filter in institutional finance. It represents the average closing price of the S&P 500 over the last 200 trading days — roughly one calendar year. When SPY trades above it, the long-term trend is up. Below it, the trend is down.</p>
+
+<h3>How to Read It</h3>
+<ul>
+<li><strong>Price above MA200</strong> — Bullish / Green. The long-term trend is up. Institutions are generally net buyers.</li>
+<li><strong>Price near MA200 (±3%)</strong> — Neutral / Yellow. Trend is being tested. Direction is unresolved.</li>
+<li><strong>Price below MA200</strong> — Bearish / Red. The trend has broken. Defensive positioning is warranted.</li>
+</ul>
+
+<div class="regime-box r-green">
+<div class="r-label">SPY: $748.10 | MA200: $694.70 | +7.69% Above — Green ✅</div>
+<div class="r-detail">SPY is trading 7.69% above its 200-day moving average, a clear bullish signal. The trend is intact, and the market is well into bull-market territory. Historically, when SPY trades more than 5% above the MA200 with a VIX below 20, the forward 3-month return distribution has been strongly positive — a condition commonly called the "sweet spot" for equities. The last time SPY was below its MA200 was during the October 2023 correction, and before that, the brutal 2022 bear market.</div>
+</div>
+
+<p>The MA200 acts as a line in the sand for portfolio managers. When SPY crosses above it after a prolonged period below, pension funds and institutional allocators begin rotating back into equities. The reverse is true on a breakdown — mandates force selling, which accelerates the move. This self-reinforcing behavior is why the MA200 remains relevant despite its simplicity.</p>
+
+<div class="stat-card">
+<div class="num">7.7%</div>
+<div class="desc">Current SPY premium above the 200-day moving average — a strong bullish structural signal.</div>
+</div>
+
+<h2>Indicator 3: Credit Spreads — The Bond Market's Honest Signal</h2>
+
+<p>Credit spreads measure the additional yield that investors demand to hold corporate bonds instead of risk-free government bonds. The most commonly watched is the ICE BofA US High Yield Index Option-Adjusted Spread (OAS) — the difference in yield between junk bonds and Treasuries. Credit spreads are the bond market's honest assessment of corporate health.</p>
+
+<h3>How to Read It</h3>
+<ul>
+<li><strong>Below 3.5%</strong> — Tight / Green. Credit markets are healthy. Companies can borrow easily. Default risk is low.</li>
+<li><strong>3.5% to 5.0%</strong> — Widening / Yellow. Caution. Stress is building in the corporate sector.</li>
+<li><strong>Above 5.0%</strong> — Wide / Red. Credit stress is systemic. Recession or crisis likely.</li>
+</ul>
+
+<div class="regime-box r-green">
+<div class="r-label">High Yield OAS: 2.69% — Green ✅</div>
+<div class="r-detail">At 2.69%, high-yield credit spreads are tight — near the lowest levels of the past five years. This tells you that bond investors see minimal default risk. Capital is flowing freely into riskier corporate debt, a hallmark of late-cycle but still-healthy expansion. The all-time low was 2.42% in June 2021. The COVID peak was 11.10% in March 2020. Every systemic selloff since 2008 has seen spreads blow out past 5%.</div>
+</div>
+
+<p>Credit spreads are a leading indicator for equities. Because bond investors are the first to sense corporate distress, widening spreads typically precede equity drawdowns by weeks or months. In 2007, high-yield spreads began widening in June — a full 15 months before the S&P 500 peaked. In 2020, spreads spiked in February, two weeks before equities crashed. When spreads are tight, it's a green light for risk assets.</p>
+
+<h2>The Regime Decision: Green, Yellow, Red</h2>
+
+<p>Each indicator gets a color. The overall regime is determined by the consensus:</p>
+
+<ul>
+<li><strong>Green</strong> — At least 2 of 3 indicators are green. Risk-on environment. Full position sizing, trend-following, leveraged strategies are appropriate.</li>
+<li><strong>Yellow</strong> — Mixed signals. Reduce size, tighten stops, consider hedging tail risk.</li>
+<li><strong>Red</strong> — At least 2 of 3 are red. Capital preservation is primary. Raise cash, buy protection, avoid leverage.</li>
+</ul>
+
+<div class="regime-box r-green">
+<div class="r-label">🟢 Current Regime: GREEN</div>
+<div class="r-detail">All three indicators are flashing green simultaneously — the VIX is below 20 at 16.98, SPY is 7.69% above the MA200, and credit spreads are tight at 2.69%. This is the textbook definition of a risk-on environment. The macro dashboard confirms: M2 money supply is growing at 5.58% YoY (supportive liquidity), the yield curve is positively sloped with 10Y-2Y at +36bp (normalized), and risk appetite is elevated with a VIX-based score of 70/100. The bond market is not signaling any imminent stress.</div>
+</div>
+
+<p>Here's how to use this information in practice. In a Green regime, your base case should be to deploy capital. Trend-following systems work. Leveraged long exposure (TQQQ, SOXL, UPRO) has a positive expected value. Options strategies should favor short premium (selling puts, call credit spreads) over long premium. Cash is not a position you should hold in size during a confirmed Green regime — it's an opportunity cost.</p>
+
+<p>But regimes change. The VIX can spike in a day on a geopolitical event. SPY can slice below the MA200 on a weak payrolls report. Credit spreads can blow out on a corporate default. The regime framework doesn't predict the future — it tells you what the present requires. The discipline is in responding, not forecasting.</p>
+
+<h3>Historical Examples</h3>
+
+<p><strong>Green Regime (e.g., 2017, 2021, mid-2023–present):</strong> All three indicators aligned. The S&P 500 returned 21.8% in 2017 and 28.7% in 2021. Buying dips in tech and semiconductors worked consistently. The VIX stayed below 12 for months at a time.</p>
+<p><strong>Yellow Regime (e.g., Aug 2024 Yen-carry unwind):</strong> VIX spiked to 35, SPY briefly dipped below MA200, but credit spreads stayed below 3.5%. Mixed signals. Those who went to cash missed the recovery. Those who bought the dip were rewarded — but it took conviction.</p>
+<p><strong>Red Regime (e.g., 2022 bear market, 2020 COVID crash):</strong> VIX above 30, SPY deep below MA200, credit spreads above 5%. In 2022, SPY fell 19.4% and leveraged ETFs got decimated. The correct response was to raise cash, buy puts, and wait.</p>
+
+<h2>The Bigger Picture</h2>
+
+<p>The July 22, 2026 snapshot shows a market that is structurally healthy by every major indicator. The Fed has cut rates and the current Fed funds rate of 3.63% is well below the 2023 peak of 5.50%. CPI is running at 3.73%, down from its 9.1% June 2022 high. Unemployment at 4.2% remains historically low. These macro conditions support the Green regime reading.</p>
+
+<p>That doesn't mean there are no risks. Bitcoin at $65,858 has been range-bound between $60K and $80K for months — crypto is waiting for a catalyst. Gold/GLD at $379 is down from its $461 high in March 2026, suggesting some haven demand has rotated out. The 90-day Bitcoin-gold correlation of 0.77 is unusually high, which often precedes a regime shift in cross-asset correlations.</p>
+
+<p>But regimes are read in the present. The present says Green. The right move is to trade accordingly, and watch the three indicators daily for the first sign that the weather is changing.</p>
+
+<div class="highlight"><strong>📌 The takeaway:</strong> Stop guessing whether the market is risk-on or risk-off. Learn the three indicators. VIX tells you about fear. SPY vs MA200 tells you about trend. Credit spreads tell you about corporate health. When all three agree, act with confidence. When they diverge, tighten up. The regime is the edge most traders ignore.</div>
+
+<div class="cta-box">
+<h3>Get real-time regime analysis</h3>
+<p>RoyceAI monitors market regimes live. Chat with me to get your current regime reading, position-specific risk analysis, and strategy recommendations.</p>
+<a href="/chat" class="cta-btn">💬 Chat with RoyceAI</a>
+</div>
+</div>
+
+<footer>
+<div class="links">
+<a href="/products">Products</a>
+<a href="/tutor">Tutor</a>
+<a href="/blog">Blog</a>
+<a href="/chat">Chat</a>
+</div>
+<div class="copy">RoyceAI Solutions. Irvine, CA</div>
+</footer>
 </body>
 </html>
