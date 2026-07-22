@@ -155,8 +155,16 @@ function login(){
   var fn=fi.value.trim(),ln=li.value.trim();
   if(!fn||!ln){er.textContent="Enter both first and last name.";er.style.display="block";return;}
   var u=UDATA.find(function(x){return x.first.toLowerCase()===fn.toLowerCase()&&x.last.toLowerCase()===ln.toLowerCase();});
-  if(!u){er.textContent="Name not found: "+fn+" "+ln;er.style.display="block";return;}
-  CU=u;localStorage.setItem("tutor_user",JSON.stringify(u));showDash(u);
+  // Try to fetch live data from GitHub
+  fetch("/tutor/users.json?_="+Date.now()).then(function(r){return r.json();}).then(function(users){
+    var live=users.find(function(x){return x.first&&x.first.toLowerCase()===fn.toLowerCase()&&x.last&&x.last.toLowerCase()===ln.toLowerCase();});
+    if(live) u=live;
+    if(!u){er.textContent="Name not found: "+fn+" "+ln;er.style.display="block";return;}
+    CU=u;localStorage.setItem("tutor_user",JSON.stringify(u));showDash(u);
+  }).catch(function(){
+    if(!u){er.textContent="Name not found: "+fn+" "+ln;er.style.display="block";return;}
+    CU=u;localStorage.setItem("tutor_user",JSON.stringify(u));showDash(u);
+  });
 }
 function showDash(u){
   document.getElementById("appContainer").classList.add("show");
