@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="version" content="v6-jul20-2026d">
+<meta name="version" content="v7-jul22-2026">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>RoyceAI Tutor - Your AI Learning Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -144,6 +147,14 @@ body.tutor-page .login-screen{padding-top:calc(80px + var(--nav-h))}
 </div>
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
+// Cache-buster: if version doesn't match, force reload
+var PAGE_VER='v7-jul22-2026';
+try{
+  var cv=localStorage.getItem('tutor_page_ver');
+  if(cv&&cv!==PAGE_VER){localStorage.clear();location.reload(true)}
+  localStorage.setItem('tutor_page_ver',PAGE_VER);
+}catch(e){}
+// ─── Config ─────────────────────────────────────────────────────
 var API='https://chat-api-tawny-zeta.vercel.app/api';
 var HIST=API+'/quiz-history';
 var UDATA=[{"first": "Jiho", "last": "Pak", "subjects": "Math, 9th Grade Prep, Bible Study", "today": "—", "mtd": "493/526 (94%)", "ytd": "493/526 (94%)", "plan": "free_trial", "cards": "math,grade9", "kpis": [{"label": "Math", "val": "96/100"}, {"label": "Streak", "val": "7 days"}, {"label": "Focus Time", "val": "45 min/day"}]},{"first": "Carter", "last": "Koh", "subjects": "SAT Prep, Basketball, 11th Grade", "today": "—", "mtd": "281/354 (79%)", "ytd": "281/354 (79%)", "plan": "free_trial", "cards": "sat,math,grade11", "kpis": [{"label": "SAT", "val": "64/80"}, {"label": "Bench", "val": "185 lb"}, {"label": "Streak", "val": "5 days"}]},{"first": "Angel", "last": "Koh", "subjects": "RN Training, NCLEX, Health", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "rn", "kpis": [{"label": "NCLEX", "val": "72%"}, {"label": "Modules", "val": "8/12"}, {"label": "Study Time", "val": "30 min/day"}]},{"first": "Paxton", "last": "Koh", "subjects": "Reading Games, ABCs, Colors", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "reading,preschool", "kpis": []},{"first": "Josh", "last": "Lucero", "subjects": "Series 66, Series 7, Finance", "today": "—", "mtd": "47/50 (94%)", "ytd": "47/50 (94%)", "plan": "free_trial", "cards": "series66,series7", "kpis": [{"label": "Series 66", "val": "74%"}, {"label": "Progress", "val": "60%"}, {"label": "Study Time", "val": "25 min/day"}]},{"first": "Mason", "last": "Min", "subjects": "Baby Play, ABCs, Colors", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "baby", "kpis": [{"label": "Age", "val": "Toddler"}, {"label": "Learning", "val": "ABCs"}, {"label": "Milestones", "val": "On track"}]},{"first": "Pearl", "last": "Johnson", "subjects": "Preschool Play, Letters, Numbers", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "baby,preschool", "kpis": [{"label": "Colors", "val": "6/6"}, {"label": "Games", "val": "3 played"}, {"label": "Stars", "val": "15"}]},{"first": "Ruby", "last": "Johnson", "subjects": "Reading, Math, Grade 2", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "reading,math,grade2", "kpis": [{"label": "Math", "val": "4/5"}, {"label": "Games", "val": "2 played"}, {"label": "Stars", "val": "8"}]},{"first": "Carter", "last": "Touch", "subjects": "Grade 9, Liberty HS, Math", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,grade9", "kpis": [{"label": "GPA", "val": "3.5"}, {"label": "Liberty HS", "val": "Freshman"}, {"label": "Sessions", "val": "0"}]},{"first": "Chase", "last": "Touch", "subjects": "Grade 7, Nelson MS, Pre-Algebra", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,reading,grade7", "kpis": [{"label": "Pre-Alg", "val": "B+"}, {"label": "Nelson MS", "val": "7th Grade"}, {"label": "Sessions", "val": "0"}]},{"first": "Tommy", "last": "Touch", "subjects": "Therapy Bot, Social Skills, Emotional Growth", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "therapy", "kpis": [{"label": "Therapy", "val": "Active"}, {"label": "Sessions", "val": "0"}, {"label": "Streak", "val": "New"}]},{"first": "Test", "last": "User", "subjects": "Math, SAT Prep, Science", "today": "8/10 (80%)", "mtd": "15/20 (75%)", "ytd": "15/20 (75%)", "plan": "free_trial", "cards": "math,sat,grade9", "kpis": [{"label": "Math", "val": "8/10"}, {"label": "SAT", "val": "70/80"}, {"label": "Streak", "val": "1 day"}]},{"first": "Test", "last": "User", "subjects": "Math, SAT Prep, Science", "today": "8/10 (80%)", "mtd": "15/20 (75%)", "ytd": "15/20 (75%)", "plan": "free_trial", "cards": "math,sat,grade9", "kpis": [{"label": "Math", "val": "8/10"}, {"label": "SAT", "val": "70/80"}, {"label": "Streak", "val": "1 day"}]}];
