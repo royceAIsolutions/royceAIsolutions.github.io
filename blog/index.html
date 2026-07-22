@@ -111,6 +111,12 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 .blog-card h3{font-size:1.05rem;margin:0.5rem 0;color:#fff;line-height:1.4}
 .blog-card p{font-size:0.85rem;color:var(--text-secondary);margin:0.3rem 0;line-height:1.6}
 .blog-card .date{font-size:0.75rem;color:var(--text-muted);display:block;margin-top:0.5rem}
+.blog-card-image{width:100%;height:200px;background:linear-gradient(135deg,#1a1a3e 0%,#0a0a0f 100%);display:flex;align-items:center;justify-content:center;font-size:48px;border:1px solid #1a1a2e;border-radius:10px;margin-bottom:12px}
+.blog-card-meta{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.blog-card-date{font-size:13px;color:#6366f1;font-weight:500}
+.blog-card-tag{font-size:11px;font-weight:600;color:#6366f1;text-transform:uppercase;letter-spacing:1px;background:rgba(99,102,241,0.1);padding:4px 10px;border-radius:20px}
+.blog-card-link{font-size:13px;font-weight:600;color:#6366f1;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap 0.2s;margin-top:8px}
+.blog-card-link:hover{gap:10px}
 .blog-category{margin-bottom:2rem}
 .blog-category>h3{font-size:1.3rem;color:var(--accent-light);margin-bottom:1rem;font-weight:700}
 @media(max-width:640px){.blog-list{grid-template-columns:1fr;padding:0 16px}.blog-card{padding:1rem}.blog-card h3{font-size:0.95rem}}
@@ -135,13 +141,30 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
             <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
 </nav>
-<script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/tutor"]');var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(t){t.innerHTML="\ud83d\udcda Dashboard";t.style.cssText="";t.href="/tutor"}}else if(t){t.innerHTML="\u2728 Tutor";t.style.cssText="animation:pulse-glow 2.5s ease-in-out infinite;background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
+<script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/tutor"]');var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(t){t.innerHTML="📚 Dashboard";t.style.cssText="";t.href="/tutor"}}else if(t){t.innerHTML="✨ Tutor";t.style.cssText="animation:pulse-glow 2.5s ease-in-out infinite;background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
 <section class="hero-sub">
   <h1><span class="gradient">Blog</span></h1>
   <p>AI insights, tutoring tips, and business tech.</p>
 </section>
 
 <div class="blog-categories">
+
+  <div class="blog-category">
+    <h3>Entertainment</h3>
+    <a class="blog-card" href="/blog/netflix-top-99-2026-07-21.html">
+      <div class="blog-card-image">🎬</div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-date">July 21, 2026</span>
+          <span class="blog-card-tag">Entertainment</span>
+        </div>
+        <h3>Top 99 Movies & Shows on Netflix — Week of July 21, 2026</h3>
+        <p>Your weekly guide to the best 99 movies and shows on Netflix. Updated every week so you never run out of things to watch.</p>
+        <span class="blog-card-link">Read More →</span>
+      </div>
+    </a>
+  </div>
+
   <div class="blog-category">
     <h3>Food & Dining</h3>
     <a class="blog-card" href="/blog/top-99-restaurants-oc.html"><h3>Top 99 Restaurants in Orange County</h3><p>The definitive guide — Michelin-starred to hidden gems, every cuisine, every city.</p></a>
@@ -184,20 +207,25 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
     <a href="/my">Dashboard</a>
     <a href="/blog">Blog</a>
     <a href="/chat">Chat</a>
-  
-            <a href="/blog/netflix-top-99-2026-07-21.html" class="blog-card">
-                <div class="blog-card-image">&#x1F3AC;</div>
-                <div class="blog-card-body">
-                    <div class="blog-card-meta">
-                        <span class="blog-card-date">July 21, 2026</span>
-                        <span class="blog-card-tag">Entertainment</span>
-                    </div>
-                    <h2>Top 99 Movies & Shows on Netflix — Week of July 21, 2026</h2>
-                    <p>Your weekly guide to the best 99 movies and shows on Netflix. Updated every week.</p>
-                    <span class="blog-card-link">Read More &rarr;</span>
-                </div>
-            </a>
-</div>
+  </div>
 </footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+// Nav background on scroll
+document.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  nav.style.borderBottomColor = window.scrollY > 20 ? 'var(--border)' : 'transparent';
+});
+</script>
 </body>
 </html>
