@@ -155,13 +155,15 @@ function login(){
   var fn=fi.value.trim(),ln=li.value.trim();
   if(!fn||!ln){er.textContent="Enter both first and last name.";er.style.display="block";return;}
   var u=UDATA.find(function(x){return x.first.toLowerCase()===fn.toLowerCase()&&x.last.toLowerCase()===ln.toLowerCase();});
-  // Try to fetch live data from GitHub
-  fetch("/tutor/users.json?_="+Date.now()).then(function(r){return r.json();}).then(function(users){
-    var live=users.find(function(x){return x.first&&x.first.toLowerCase()===fn.toLowerCase()&&x.last&&x.last.toLowerCase()===ln.toLowerCase();});
-    if(live) u=live;
+  // Fetch live data from Vercel API (hits GitHub API directly — always fresh, no CDN cache)
+  fetch(API+"/student-stats",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:fn+" "+ln})})
+  .then(function(r){return r.json()})
+  .then(function(d){
+    if(d.found&&d.data) u=d.data;
     if(!u){er.textContent="Name not found: "+fn+" "+ln;er.style.display="block";return;}
     CU=u;localStorage.setItem("tutor_user",JSON.stringify(u));showDash(u);
-  }).catch(function(){
+  })
+  .catch(function(){
     if(!u){er.textContent="Name not found: "+fn+" "+ln;er.style.display="block";return;}
     CU=u;localStorage.setItem("tutor_user",JSON.stringify(u));showDash(u);
   });
