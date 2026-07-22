@@ -239,7 +239,7 @@ function closeIQ(){
 function askQ(msg){
   iqBusy=true;
   document.getElementById("quizA").innerHTML="<div style='color:var(--text-muted);padding:20px'>Loading...</div>";
-  fetch(API+"/quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:msg,history:iqHist.slice(-30)})})
+  fetch(API+"/quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:msg,history:iqHist.slice(-30),subject:iqSubj})})
   .then(function(r){return r.json()})
   .then(function(d){
     var reply=d.reply||"No response";
@@ -289,7 +289,7 @@ function ansQ(btn){
   btn.style.borderColor="var(--accent)";btn.style.background="rgba(124,92,252,0.15)";
   document.getElementById("quizA").innerHTML="";
   document.getElementById("quizQ").innerHTML="<div style='color:var(--text-muted);padding:10px'>Checking answer...</div>";
-  fetch(API+"/quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:letter,history:iqHist.slice(-30)})})
+  fetch(API+"/quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:letter,history:iqHist.slice(-30),subject:iqSubj})})
   .then(function(r){return r.json()})
   .then(function(d){
     var reply=d.reply||"No response";
