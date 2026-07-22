@@ -364,7 +364,16 @@ var saved=localStorage.getItem("tutor_user");
 if(saved){
   try{
     var u=JSON.parse(saved),match=UDATA.find(function(x){return x.first===u.first&&x.last===u.last;});
-    if(match){CU=match;showDash(match);}else localStorage.removeItem("tutor_user");
+    if(match){
+      CU=match;
+      // Fetch live data from API (UDATA has stale today: "—")
+      fetch(API+"/student-stats",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:match.first+" "+match.last})})
+      .then(function(r){return r.json()})
+      .then(function(d){
+        if(d.found&&d.data){CU=d.data;showDash(CU)}else showDash(match);
+      })
+      .catch(function(){showDash(match);});
+    }else localStorage.removeItem("tutor_user");
   }catch(e){localStorage.removeItem("tutor_user");}
 }
 </script>
