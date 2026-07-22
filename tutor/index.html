@@ -153,8 +153,8 @@ try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/?v='+PAGE_VER}
   // Also check if URL has the version param — if not, redirect once
-  if(location.search.indexOf('v='+PAGE_VER)<0){location.href='https://royceai.com/tutor/?v='+PAGE_VER;return}
-  localStorage.setItem('tutor_page_ver',PAGE_VER);
+  if(location.search.indexOf('v='+PAGE_VER)<0){location.href='https://royceai.com/tutor/?v='+PAGE_VER}
+  else localStorage.setItem('tutor_page_ver',PAGE_VER);
 }catch(e){}
 // ─── Config ─────────────────────────────────────────────────────
 var API='https://chat-api-tawny-zeta.vercel.app/api';
