@@ -104,22 +104,24 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 @media(min-width:641px) and (max-width:1023px){.bento{grid-template-columns:repeat(2,1fr)}.bento-card.wide{grid-column:span 2}}
 
 
-.blog-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:0 24px;max-width:var(--max-w);margin:0 auto}
-.blog-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;color:var(--text);transition:all var(--transition);display:block;box-shadow:var(--shadow-card)}
+.blog-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.blog-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;text-decoration:none;color:var(--text);transition:all var(--transition);display:block;box-shadow:var(--shadow-card)}
 .blog-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
-.blog-card .tag{display:inline-block;background:var(--accent-bg);color:var(--accent-light);padding:2px 10px;border-radius:4px;font-size:0.75rem;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.03em;font-weight:600}
-.blog-card h3{font-size:1.05rem;margin:0.5rem 0;color:#fff;line-height:1.4}
-.blog-card p{font-size:0.85rem;color:var(--text-secondary);margin:0.3rem 0;line-height:1.6}
-.blog-card .date{font-size:0.75rem;color:var(--text-muted);display:block;margin-top:0.5rem}
+.blog-card .tag{display:inline-block;background:var(--accent-bg);color:var(--accent-light);padding:3px 12px;border-radius:4px;font-size:0.7rem;margin-bottom:0.75rem;text-transform:uppercase;letter-spacing:0.04em;font-weight:700}
+.blog-card h3{font-size:1.1rem;margin:0.5rem 0 0.4rem;color:#fff;line-height:1.4}
+.blog-card p{font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0 0.5rem;line-height:1.7}
+.blog-card .date{font-size:0.75rem;color:var(--text-muted);display:block;margin-top:0.75rem}
 .blog-card-image{width:100%;height:200px;background:linear-gradient(135deg,#1a1a3e 0%,#0a0a0f 100%);display:flex;align-items:center;justify-content:center;font-size:48px;border:1px solid #1a1a2e;border-radius:10px;margin-bottom:12px}
 .blog-card-meta{display:flex;align-items:center;gap:12px;margin-bottom:10px}
 .blog-card-date{font-size:13px;color:#6366f1;font-weight:500}
 .blog-card-tag{font-size:11px;font-weight:600;color:#6366f1;text-transform:uppercase;letter-spacing:1px;background:rgba(99,102,241,0.1);padding:4px 10px;border-radius:20px}
 .blog-card-link{font-size:13px;font-weight:600;color:#6366f1;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap 0.2s;margin-top:8px}
 .blog-card-link:hover{gap:10px}
-.blog-category{margin-bottom:2rem}
-.blog-category>h3{font-size:1.3rem;color:var(--accent-light);margin-bottom:1rem;font-weight:700}
-@media(max-width:640px){.blog-list{grid-template-columns:1fr;padding:0 16px}.blog-card{padding:1rem}.blog-card h3{font-size:0.95rem}}
+.blog-category{margin-bottom:3rem}
+.blog-category>h3{font-size:1.3rem;color:var(--accent-light);margin-bottom:1.25rem;font-weight:700;display:flex;align-items:center;gap:8px}
+.blog-category>.blog-card{margin-bottom:16px}
+.blog-category>.blog-card:last-child{margin-bottom:0}
+@media(max-width:640px){.blog-list{grid-template-columns:1fr;padding:0 16px;gap:16px}.blog-card{padding:1.25rem}.blog-card h3{font-size:0.95rem}.blog-category{margin-bottom:2rem}.blog-category>h3{margin-bottom:1rem}}
 
 
 /* Fix: nav overlap on anchored sections */
@@ -148,15 +150,6 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
 </section>
 
 <div class="blog-categories">
-  <div class="blog-category">
-    <h3>📈 Financial Markets</h3>
-    <a class="blog-card" href="/blog/leveraged-etfs-2026-07-22.html">
-      <span class="tag">Leveraged ETFs</span>
-      <h3>Leveraged ETF Watch — July 22, 2026</h3>
-      <p>Weekly financial markets update — July 22, 2026.</p>
-      <span class="date">July 22, 2026</span>
-    </a>
-  </div>
 
   <div class="blog-category">
     <h3>📈 Financial Markets</h3>
@@ -166,84 +159,20 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
       <p>Weekly financial markets update — July 22, 2026.</p>
       <span class="date">July 22, 2026</span>
     </a>
-  </div>
-
-  <div class="blog-category">
-    <h3>📈 Financial Markets</h3>
-    <a class="blog-card" href="/blog/leveraged-etfs-2026-07-22.html">
-      <span class="tag">Leveraged ETFs</span>
-      <h3>Leveraged ETF Watch — July 22, 2026</h3>
+    <a class="blog-card" href="/blog/market-brief-2026-07-22.html">
+      <span class="tag">Markets</span>
+      <h3>Market Brief — July 22, 2026</h3>
       <p>Weekly financial markets update — July 22, 2026.</p>
       <span class="date">July 22, 2026</span>
     </a>
   </div>
 
   <div class="blog-category">
-    <h3>📈 Financial Markets</h3>
-    <a class="blog-card" href="/blog/leveraged-etfs-2026-07-22.html">
-      <span class="tag">Leveraged ETFs</span>
-      <h3>Leveraged ETF Watch — July 22, 2026</h3>
-      <p>Weekly financial markets update — July 22, 2026.</p>
-      <span class="date">July 22, 2026</span>
-    </a>
-  </div>
-
-  <div class="blog-category">
-    <h3>📈 Financial Markets</h3>
-    <a class="blog-card" href="/blog/leveraged-etfs-2026-07-22.html">
-      <span class="tag">Leveraged ETFs</span>
-      <h3>Leveraged ETF Watch — July 22, 2026</h3>
-      <p>Weekly financial markets update — July 22, 2026.</p>
-      <span class="date">July 22, 2026</span>
-    </a>
-  </div>
-
-  <div class="blog-category">
-    <h3>📈 Financial Markets</h3>
-    <a class="blog-card" href="/blog/leveraged-etfs-2026-07-22.html">
-      <span class="tag">Leveraged ETFs</span>
-      <h3>Leveraged ETF Watch — July 22, 2026</h3>
-      <p>Weekly financial markets update — July 22, 2026.</p>
-      <span class="date">July 22, 2026</span>
-    </a>
-  </div>
-
-  <div class="blog-category">
-    <h3>📈 Financial Markets</h3>
-    <a class="blog-card" href="/blog/leveraged-etfs-2026-07-22.html">
-      <span class="tag">Leveraged ETFs</span>
-      <h3>Leveraged ETF Watch — July 22, 2026</h3>
-      <p>Weekly financial markets update — July 22, 2026.</p>
-      <span class="date">July 22, 2026</span>
-    </a>
-  </div>
-
-  <div class="blog-category">
-    <h3>📈 Financial Markets</h3>
-    <a class="blog-card" href="/blog/leveraged-etfs-2026-07-22.html">
-      <span class="tag">Leveraged ETFs</span>
-      <h3>Leveraged ETF Watch — July 22, 2026</h3>
-      <p>Weekly financial markets update — July 22, 2026.</p>
-      <span class="date">July 22, 2026</span>
-    </a>
-  </div>
-
-  <div class="blog-category">
-    <h3>📈 Financial Markets</h3>
-    <a class="blog-card" href="/blog/leveraged-etfs-2026-07-22.html">
-      <span class="tag">Leveraged ETFs</span>
-      <h3>Leveraged ETF Watch — July 22, 2026</h3>
-      <p>Weekly financial markets update — July 22, 2026.</p>
-      <span class="date">July 22, 2026</span>
-    </a>
-  </div>
-
-  <div class="blog-category">
-    <h3>📈 Financial Markets</h3>
-    <a class="blog-card" href="/blog/leveraged-etfs-2026-07-22.html">
-      <span class="tag">Leveraged ETFs</span>
-      <h3>Leveraged ETF Watch — July 22, 2026</h3>
-      <p>Weekly financial markets update — July 22, 2026.</p>
+    <h3>🤖 AI Solutions</h3>
+    <a class="blog-card" href="/blog/ai-receptionist-2026-07-22.html">
+      <span class="tag">AI Receptionist</span>
+      <h3>AI Receptionist Weekly — July 22, 2026</h3>
+      <p>Weekly AI solutions update — July 22, 2026.</p>
       <span class="date">July 22, 2026</span>
     </a>
   </div>
@@ -257,37 +186,6 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
       <span class="date">July 22, 2026</span>
     </a>
   </div>
-
-  <div class="blog-category">
-    <h3>📊 Financial Markets</h3>
-    <a class="blog-card" href="/blog/market-brief-2026-07-22.html">
-      <span class="tag">Markets</span>
-      <h3>Market Brief — July 22, 2026</h3>
-      <p>Weekly financial markets update — July 22, 2026.</p>
-      <span class="date">July 22, 2026</span>
-    </a>
-  </div>
-
-  <div class="blog-category">
-    <h3>📈 Financial Markets</h3>
-    <a class="blog-card" href="/blog/leveraged-etfs-2026-07-22.html">
-      <span class="tag">Leveraged ETFs</span>
-      <h3>Leveraged ETF Watch — July 22, 2026</h3>
-      <p>Weekly financial markets update — July 22, 2026.</p>
-      <span class="date">July 22, 2026</span>
-    </a>
-  </div>
-
-  <div class="blog-category">
-    <h3>🤖 AI Solutions</h3>
-    <a class="blog-card" href="/blog/ai-receptionist-2026-07-22.html">
-      <span class="tag">AI Receptionist</span>
-      <h3>AI Receptionist: July 22, 2026</h3>
-      <p>Weekly ai solutions update — July 22, 2026.</p>
-      <span class="date">July 22, 2026</span>
-    </a>
-  </div>
-
 
   <div class="blog-category">
     <h3>Entertainment</h3>
