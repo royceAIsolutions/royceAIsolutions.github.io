@@ -102,7 +102,7 @@ body.tutor-page .login-screen{padding-top:calc(80px + var(--nav-h))}
 <p id="studentInfo">Your personalized learning dashboard</p>
 </div>
 <div class="scoreboard hidden">
-<div class="scoreboard-title">&#x1f3ae; Scoreboard <button id="scoreRefreshBtn" onclick="refreshSB()" title="Refresh scores now" style="background:var(--accent);color:#fff;border:none;border-radius:8px;padding:6px 14px;cursor:pointer;font-size:.8rem;font-weight:600;vertical-align:middle;margin-left:10px;transition:all .15s">⟳ Refresh</button></div>
+<div class="scoreboard-title">&#x1f3ae; Scoreboard <button id="scoreRefreshBtn" title="Refresh scores now" style="background:var(--accent);color:#fff;border:none;border-radius:8px;padding:6px 14px;cursor:pointer;font-size:.8rem;font-weight:600;vertical-align:middle;margin-left:10px;transition:all .15s">⟳ Refresh</button></div>
 <div class="scoreboard-grid">
   <div class="score-stat"><span>&#x1f4c5; Today</span><span class="score accent" id="scoreToday">&mdash;</span></div>
   <div class="score-stat"><span>&#x1f4ca; Month</span><span class="score gold" id="scoreMtd">&mdash;</span></div>
@@ -151,7 +151,9 @@ body.tutor-page .login-screen{padding-top:calc(80px + var(--nav-h))}
 var PAGE_VER='v7-jul22-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
-  if(cv&&cv!==PAGE_VER){localStorage.clear();location.reload(true)}
+  if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/?v='+PAGE_VER}
+  // Also check if URL has the version param — if not, redirect once
+  if(location.search.indexOf('v='+PAGE_VER)<0){location.href='https://royceai.com/tutor/?v='+PAGE_VER;return}
   localStorage.setItem('tutor_page_ver',PAGE_VER);
 }catch(e){}
 // ─── Config ─────────────────────────────────────────────────────
@@ -419,6 +421,11 @@ function refreshSB(){
     if(td)td.textContent="⚠️ err";
   });
 }
+// Wire refresh button (script at bottom of page, DOM already ready)
+(function(){
+  var btn=document.getElementById('scoreRefreshBtn');
+  if(btn)btn.addEventListener('click',refreshSB);
+})();
 // Auto-refresh every 30s while logged in
 setInterval(function(){if(CU)refreshSB()},30000);
 </script>
