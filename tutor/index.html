@@ -293,10 +293,10 @@ function ansQ(btn){
     iqHist.push({role:"user",content:letter},{role:"assistant",content:reply});
     iqBusy=false;
     if(reply.match(/correct/i)&&!reply.match(/incorrect/i))iqCorr++;
-    // Check 80% mastery: minimum 10 questions, need 80%+ accuracy, max 50
+    // Check 80% mastery: minimum 33 questions, need 80%+ accuracy, max 50
     var pct=Math.round(iqCorr/Math.max(iqTot,1)*100);
     document.getElementById("quizScr").textContent=iqCorr+"/"+iqTot+" ("+pct+"%)";
-    if(iqTot>=10&&pct>=80){finishQ(reply);return;}
+    if(iqTot>=33&&pct>=80){finishQ(reply);return;}
     if(iqTot>=50){finishQ("Quiz complete — 50 questions max. Score: "+iqCorr+"/"+iqTot);return;}
     showQ(reply);
   })
