@@ -217,7 +217,7 @@ function logout(){
   document.getElementById("navLogoutBtn").style.display="none";
 }
 
-var iqHist=[],iqSubj="",iqCorr=0,iqTot=0,iqBusy=false,iqRetry=0;
+var iqHist=[],iqSubj="",iqCorr=0,iqTot=0,iqTotal=33,iqBusy=false,iqRetry=0;
 function startInlineQuiz(s){
   iqSubj=s;iqCorr=0;iqTot=0;iqHist=[];iqBusy=false;iqRetry=0;
   document.getElementById("dashGrid").style.display="none";
@@ -225,7 +225,7 @@ function startInlineQuiz(s){
   document.getElementById("quizPanel").style.display="block";
   document.getElementById("quizQ").textContent="Loading...";
   document.getElementById("quizA").innerHTML="";
-  document.getElementById("quizProg").textContent="0% (0/0)";
+  document.getElementById("quizProg").textContent="Q0/"+iqTotal;
   document.getElementById("quizScr").textContent="0/0";
   askQ("Start "+s+" quiz");
 }
@@ -244,6 +244,8 @@ function askQ(msg){
     iqHist.push({role:"user",content:msg},{role:"assistant",content:reply});
     iqBusy=false;
     if(reply.match(/Quiz complete|completed|done|final|finished/gi)){finishQ(reply);return;}
+    // Parse total question count from format like "Q1/33:" or "Q1/33 "
+    if(!iqTot){var tm=reply.match(/Q\d+\/(\d+)/);if(tm)iqTotal=parseInt(tm[1]);}
     showQ(reply);
   })
   .catch(function(e){
@@ -272,9 +274,8 @@ function showQ(reply){
   document.getElementById("quizA").innerHTML=opts.map(function(o){
     return "<button data-letter='"+o.charAt(0).toLowerCase()+"' class='iq-btn' onclick='ansQ(this)'><span class='iq-letter'>"+o.charAt(0)+"</span><span>"+o.substring(2).trim()+"</span></button>";
   }).join("");
-  // Update progress display — show running score instead of Q count
+  // Update score display
   var pct=Math.round(iqCorr/Math.max(iqTot,1)*100);
-  document.getElementById("quizProg").textContent=pct+"% ("+iqCorr+"/"+Math.max(iqTot,1)+")";
   document.getElementById("quizScr").textContent=iqCorr+"/"+Math.max(iqTot,1);
 }
 function ansQ(btn){
@@ -295,6 +296,7 @@ function ansQ(btn){
     if(reply.match(/correct/i)&&!reply.match(/incorrect/i))iqCorr++;
     // Check 80% mastery: minimum 33 questions, need 80%+ accuracy, max 50
     var pct=Math.round(iqCorr/Math.max(iqTot,1)*100);
+    document.getElementById("quizProg").textContent="Q"+iqTot+"/"+iqTotal;
     document.getElementById("quizScr").textContent=iqCorr+"/"+iqTot+" ("+pct+"%)";
     if(iqTot>=33&&pct>=80){finishQ(reply);return;}
     if(iqTot>=50){finishQ("Quiz complete — 50 questions max. Score: "+iqCorr+"/"+iqTot);return;}
