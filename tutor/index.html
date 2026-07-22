@@ -102,7 +102,7 @@ body.tutor-page .login-screen{padding-top:calc(80px + var(--nav-h))}
 <p id="studentInfo">Your personalized learning dashboard</p>
 </div>
 <div class="scoreboard hidden">
-<div class="scoreboard-title">&#x1f3ae; Scoreboard</div>
+<div class="scoreboard-title">&#x1f3ae; Scoreboard <button id="scoreRefreshBtn" onclick="refreshSB()" title="Refresh" style="background:none;border:1px solid var(--border);border-radius:6px;padding:2px 8px;cursor:pointer;font-size:.85rem;color:var(--text-secondary);vertical-align:middle;margin-left:8px">⟳</button></div>
 <div class="scoreboard-grid">
   <div class="score-stat"><span>&#x1f4c5; Today</span><span class="score accent" id="scoreToday">&mdash;</span></div>
   <div class="score-stat"><span>&#x1f4ca; Month</span><span class="score gold" id="scoreMtd">&mdash;</span></div>
@@ -388,5 +388,26 @@ if(saved){
 .lc-thanks p{color:#a0a0c0;font-size:.85rem;margin:0}
 .lc-error{color:#ef4444;font-size:.8rem;margin-top:4px;display:none}
 </style>
+<script>
+// Scoreboard auto-refresh
+function refreshSB(){
+  if(!CU)return;
+  var el=document.getElementById("scoreRefreshBtn");
+  if(el){el.textContent="⟳";el.style.opacity="0.5"}
+  fetch(API+"/student-stats",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:CU.first+" "+CU.last})})
+  .then(function(r){return r.json()})
+  .then(function(d){
+    if(d.found&&d.data){
+      var u=d.data;
+      CU.today=u.today||"-";CU.mtd=u.mtd||"-";CU.ytd=u.ytd||"-";CU.kpis=u.kpis||CU.kpis;
+      renderSB(CU);
+    }
+    if(el){el.textContent="⟳";el.style.opacity="1"}
+  })
+  .catch(function(){if(el){el.textContent="⟳";el.style.opacity="1"}});
+}
+// Auto-refresh every 30s while logged in
+setInterval(function(){if(CU)refreshSB()},30000);
+</script>
 </body>
 </html>
