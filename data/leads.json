@@ -21,7 +21,7 @@
     "email": "sarah@example.com",
     "service": "Tutoring",
     "score": 80,
-    "classification": "HOT 🔥"
+    "classification": "HOT \ud83d\udd25"
   },
   {
     "date": "2026-07-18 09:15",
@@ -29,7 +29,7 @@
     "email": "mike@techcorp.com",
     "service": "AI Development",
     "score": 85,
-    "classification": "HOT 🔥"
+    "classification": "HOT \ud83d\udd25"
   },
   {
     "date": "2026-07-17 16:00",
@@ -37,20 +37,6 @@
     "email": "emily@mail.com",
     "service": "Trading",
     "score": 35,
-    "classification": "COLD ❄️"
-  },
-  {
-    "name": "",
-    "email": "",
-    "phone": "",
-    "timestamp": "2026-07-22T23:00:59.316Z",
-    "ip": ""
-  },
-  {
-    "name": "",
-    "email": "",
-    "phone": "",
-    "timestamp": "2026-07-23T03:00:32.665Z",
-    "ip": ""
+    "classification": "COLD \u2744\ufe0f"
   }
 ]
