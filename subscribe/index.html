@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subscribe — RoyceAI Pro</title>
+<meta name="description" content="RoyceAI Pro: AI-powered trading signals, polymarket picks, ETF scoring, and daily market intelligence. Join serious traders getting the edge.">
+<link rel="canonical" href="https://royceai.com/subscribe/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--green:#34d399;--green-bg:rgba(52,211,153,0.08);--radius:16px;--radius-sm:10px;--max-w:1100px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(52,211,153,0.04);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .logo-icon{width:30px;height:30px;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 3s ease-in-out infinite;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px}
+
+/* Hero */
+.hero{min-height:60vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 60px;max-width:var(--max-w);margin:0 auto;text-align:center;animation:fade-up 0.6s ease-out}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:16px;line-height:1.1}
+.hero h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero p{font-size:1.1rem;color:var(--text-secondary);max-width:600px;margin:0 auto 40px}
+.hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat .num{font-size:2rem;font-weight:800;color:#fff}
+.hero-stat .label{font-size:0.85rem;color:var(--text-secondary);margin-top:4px}
+
+/* Plans */
+.section{padding:80px 24px;max-width:var(--max-w);margin:0 auto}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1000px;margin:0 auto}
+.plan{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 32px;transition:all var(--transition);position:relative;display:flex;flex-direction:column}
+.plan:hover{transform:translateY(-4px);border-color:var(--border-hover)}
+.plan.featured{border-color:rgba(124,92,252,0.2);background:linear-gradient(135deg,rgba(124,92,252,0.04) 0%,transparent 100%)}
+.plan.featured::before{content:'Best Value';position:absolute;top:-10px;left:50%;transform:translateX(-50%);padding:4px 16px;border-radius:100px;background:var(--accent);color:#fff;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em}
+.plan .name{font-size:0.9rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-secondary);margin-bottom:8px}
+.plan .price{font-size:3rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:4px}
+.plan .price span{font-size:1rem;font-weight:500;color:var(--text-secondary)}
+.plan .desc{color:var(--text-secondary);font-size:0.9rem;margin-bottom:24px;line-height:1.5}
+.plan ul{list-style:none;padding:0;margin:0 0 32px;flex:1}
+.plan ul li{padding:10px 0;border-top:1px solid var(--border);font-size:0.9rem;display:flex;align-items:center;gap:10px}
+.plan ul li::before{content:'✓';color:var(--green);font-weight:700;font-size:1rem}
+.plan .btn{display:block;text-align:center;padding:14px;border-radius:var(--radius-sm);font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;font-size:1rem;font-family:var(--font)}
+.plan .btn-primary{background:var(--accent);color:#fff}
+.plan .btn-primary:hover{background:var(--accent-light);transform:translateY(-2px)}
+.plan .btn-secondary{background:var(--bg-elevated);color:var(--text);border:1px solid var(--border)}
+.plan .btn-secondary:hover{background:var(--bg-card);border-color:var(--accent)}
+
+/* Proof section */
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.proof-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all var(--transition)}
+.proof-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.proof-card .icon{font-size:1.8rem;margin-bottom:12px}
+.proof-card h3{font-size:1rem;font-weight:600;margin-bottom:6px}
+.proof-card p{color:var(--text-secondary);font-size:0.88rem;line-height:1.6}
+
+/* FAQ */
+.faq{max-width:700px;margin:0 auto}
+.faq details{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px;padding:16px 20px;cursor:pointer;transition:border-color 0.2s}
+.faq details[open]{border-color:var(--accent)}
+.faq summary{font-weight:600;font-size:0.95rem;color:var(--text);outline:none}
+.faq .answer{color:var(--text-secondary);font-size:0.9rem;padding-top:12px;line-height:1.6}
+
+/* Trust bar */
+.trust{text-align:center;padding:40px 24px;color:var(--text-muted);font-size:0.85rem}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius-sm);font-family:var(--font);font-size:0.95rem;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer}
+
+/* Guarantee badge */
+.guarantee{text-align:center;padding:16px;color:var(--text-muted);font-size:0.85rem}
+.guarantee strong{color:var(--green)}
+.footer-note{text-align:center;padding:40px 24px 60px;color:var(--text-muted);font-size:0.8rem}
+.footer-note a{color:var(--accent-light)}
+</style>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<nav>
+  <a href="/" class="nav-logo"><div class="logo-icon">R</div>RoyceAI</a>
+  <div class="nav-links">
+    <a href="/products">Products</a>
+    <a href="/tutor">Tutor</a>
+    <a href="/blog">Blog</a>
+    <a href="/subscribe" class="nav-cta">Subscribe</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1><span class="gradient">Trading Intelligence</span><br>That Prints While You Sleep</h1>
+  <p>AI-powered trading signals, real-time macro alerts, Polymarket sprint picks, and ETF scoring — delivered daily by bots that never sleep.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">500+</div><div class="label">Markets Scanned Every 2h</div></div>
+    <div class="hero-stat"><div class="num">9</div><div class="label">ETF Score Ranked Daily</div></div>
+    <div class="hero-stat"><div class="num">3</div><div class="label">Years Building Trading AI</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="plans">
+    <!-- Free -->
+    <div class="plan">
+      <div class="name">Free</div>
+      <div class="price">$0<span>/mo</span></div>
+      <div class="desc">Daily market intelligence to keep you informed.</div>
+      <ul>
+        <li>Daily market recap (SPY, QQQ, IWM, VIX)</li>
+        <li>Weekly leveraged ETF blog post</li>
+        <li>Public X/Twitter feed</li>
+        <li>Regime change alerts</li>
+      </ul>
+      <a href="/" class="btn btn-secondary">Start Free</a>
+    </div>
+
+    <!-- Pro -->
+    <div class="plan featured">
+      <div class="name">Pro</div>
+      <div class="price">$100<span>/mo</span></div>
+      <div class="desc">Full trading edge for serious market participants.</div>
+      <ul>
+        <li>Daily trading signals with entry/exit levels</li>
+        <li>Polymarket sprint picks (2x daily)</li>
+        <li>Real-time macro risk alerts</li>
+        <li>AI ETF scorer — top 9 ranked every session</li>
+        <li>Private Telegram group</li>
+        <li>Weekly strategy call recording</li>
+      </ul>
+      <a href="/pay?plan=pro" class="btn btn-primary">Subscribe — $100/mo</a>
+    </div>
+
+    <!-- Elite -->
+    <div class="plan">
+      <div class="name">Elite</div>
+      <div class="price">$500<span>/mo</span></div>
+      <div class="desc">Full concierge — direct access and custom strategies.</div>
+      <ul>
+        <li>Everything in Pro</li>
+        <li>Direct Telegram access to RoyceAI</li>
+        <li>Custom position sizing recommendations</li>
+        <li>Portfolio review &amp; optimization</li>
+        <li>Early access to new trading bots</li>
+        <li>Monthly 1-on-1 strategy call</li>
+      </ul>
+      <a href="/pay?plan=elite" class="btn btn-secondary">Subscribe — $500/mo</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 style="text-align:center;font-size:1.6rem;font-weight:700;margin-bottom:40px">What You Get</h2>
+  <div class="proof-grid">
+    <div class="proof-card">
+      <div class="icon">🤖</div>
+      <h3>Automated Polymarket Scanner</h3>
+      <p>Scans 500+ markets every 2 hours. Filters for edge, ROI, and time horizon. Delivers actionable picks.</p>
+    </div>
+    <div class="proof-card">
+      <div class="icon">📊</div>
+      <h3>Leveraged ETF Scorer</h3>
+      <p>Proprietary scoring system ranks the top 9 leveraged ETFs. Momentum, volatility, trend alignment — all factored in.</p>
+    </div>
+    <div class="proof-card">
+      <div class="icon">🛡️</div>
+      <h3>Macro Risk Monitor</h3>
+      <p>Real-time tracking of BOJ/JGB risk, yen carry trade unwind, VIX regime shifts, and geopolitical threats.</p>
+    </div>
+    <div class="proof-card">
+      <div class="icon">📰</div>
+      <h3>Daily Market Recap</h3>
+      <p>SPY, QQQ, IWM, VIX with regime classification. Know whether to lean in or sit out — every day.</p>
+    </div>
+    <div class="proof-card">
+      <div class="icon">💬</div>
+      <h3>Private Telegram Group</h3>
+      <p>Real-time alerts, live discussion, and direct Q&A with the team. Signals hit Telegram before anywhere else.</p>
+    </div>
+    <div class="proof-card">
+      <div class="icon">📈</div>
+      <h3>Proven Track Record</h3>
+      <p>Daily P&L logs, win rates, and trade history published transparently. No cherry-picking — all trades recorded.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 style="text-align:center;font-size:1.6rem;font-weight:700;margin-bottom:40px">FAQ</h2>
+  <div class="faq">
+    <details>
+      <summary>What makes RoyceAI different from other signal services?</summary>
+      <div class="answer">RoyceAI is fully automated — no human bias, no emotions, no skipping days. Bots scan, score, and deliver 24/7. You get the edge without needing to stare at screens.</div>
+    </details>
+    <details>
+      <summary>How are Polymarket picks generated?</summary>
+      <div class="answer">The sprint bot scans 500+ active markets every 2 hours, filtering by ROI potential, time horizon, and probability edge. Only the strongest setups are surfaced.</div>
+    </details>
+    <details>
+      <summary>Can I cancel anytime?</summary>
+      <div class="answer">Yes. Month-to-month subscriptions. Cancel anytime with one click — no questions asked.</div>
+    </details>
+    <details>
+      <summary>What's included in the Elite 1-on-1 call?</summary>
+      <div class="answer">A monthly 30-minute strategy session where we review your portfolio, discuss positioning, and optimize your approach based on current market conditions.</div>
+    </details>
+    <details>
+      <summary>Is there a trial?</summary>
+      <div class="answer">Yes — $1 for 7 days of Pro. Full access, no limits. If you don't see the edge in 7 days, you're out $1.</div>
+    </details>
+  </div>
+</section>
+
+<div class="guarantee">
+  <strong>⚡ $1 for 7 days.</strong> Full Pro access. Cancel anytime.
+</div>
+
+<div class="trust">
+  RoyceAI Solutions &middot; Irvine, CA
+</div>
+
+<div class="footer-note">
+  <a href="/">Home</a> &middot; <a href="/products">Products</a> &middot; <a href="/tutor">Tutor</a> &middot; <a href="/blog">Blog</a>
+</div>
+
+</body>
+</html>
