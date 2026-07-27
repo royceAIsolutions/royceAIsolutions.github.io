@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>IQ Test — RoyceAI Tutor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{width:100%;height:100%;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:#0f0f13;color:#eee;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+.nav{width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:rgba(15,15,19,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;z-index:100}
+.nav-logo{font-weight:800;font-size:15px;color:#eee;display:flex;align-items:center;gap:6px}
+.nav-logo span{color:#7c5cfc}
+.nav-back{padding:6px 16px;background:rgba(124,92,252,0.12);color:#a78bfa;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.nav-back:hover{background:rgba(124,92,252,0.2)}
+
+/* START SCREEN */
+.screen{display:none;flex-direction:column;align-items:center;justify-content:center;width:100%;max-width:600px;padding:40px 24px;min-height:90vh}
+.screen.active{display:flex}
+#startScreen h1{font-size:clamp(32px,6vw,48px);font-weight:900;margin-bottom:8px;background:linear-gradient(135deg,#7c5cfc,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#startScreen p{color:#888;font-size:15px;margin-bottom:8px;text-align:center;line-height:1.6}
+#startScreen .sub{color:#666;font-size:13px;margin-bottom:32px}
+.question-types{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;margin-bottom:32px}
+.qtype{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:12px;text-align:center}
+.qtype .emoji{font-size:20px;margin-bottom:4px}
+.qtype .name{font-size:11px;font-weight:600;color:#888}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 40px;border-radius:10px;font-family:'Inter',sans-serif;font-size:16px;font-weight:700;border:none;cursor:pointer;transition:all 0.2s}
+.btn-primary{background:#7c5cfc;color:#fff}
+.btn-primary:hover{background:#6a4de6;transform:translateY(-2px)}
+.btn-secondary{background:rgba(255,255,255,0.06);color:#eee;border:1px solid rgba(255,255,255,0.1)}
+.btn-secondary:hover{background:rgba(255,255,255,0.1)}
+
+/* QUIZ SCREEN */
+#quizScreen{gap:0;justify-content:flex-start;padding-top:20px}
+.progress-bar{width:100%;height:4px;background:rgba(255,255,255,0.06);border-radius:4px;margin-bottom:24px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#7c5cfc,#a78bfa);border-radius:4px;transition:width 0.5s ease}
+.quiz-header{width:100%;display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.quiz-header .qnum{font-size:13px;font-weight:600;color:#888}
+.quiz-header .qtype-badge{padding:4px 10px;border-radius:6px;background:rgba(124,92,252,0.1);color:#a78bfa;font-size:11px;font-weight:600}
+.question-text{font-size:clamp(18px,3vw,22px);font-weight:700;line-height:1.5;margin-bottom:24px;width:100%}
+.question-context{color:#999;font-size:14px;margin-bottom:16px;line-height:1.6;width:100%}
+
+/* Pattern Grid */
+.pattern-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;max-width:300px;margin:0 auto 24px}
+.pattern-cell{aspect-ratio:1;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700}
+
+/* Answers */
+.answers{display:grid;gap:10px;width:100%}
+.answer-btn{width:100%;padding:14px 18px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);color:#ccc;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all 0.2s;text-align:left;display:flex;align-items:center;gap:12px}
+.answer-btn:hover{border-color:rgba(124,92,252,0.3);background:rgba(124,92,252,0.05)}
+.answer-btn.selected{border-color:#7c5cfc;background:rgba(124,92,252,0.1);color:#fff}
+.answer-btn .letter{width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#666;flex-shrink:0}
+.answer-btn.selected .letter{background:#7c5cfc;color:#fff}
+
+/* Number grid for pattern Q */
+.number-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;width:100%;max-width:240px;margin:0 auto 16px}
+.num-cell{aspect-ratio:1;border-radius:8px;background:rgba(124,92,252,0.06);border:1px solid rgba(124,92,252,0.1);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700}
+.num-cell.highlight{border-color:#7c5cfc;background:rgba(124,92,252,0.15)}
+.num-cell.missing{background:rgba(124,92,252,0.02);border:2px dashed rgba(124,92,252,0.3);color:#666;font-size:14px}
+
+/* Submit */
+.submit-row{width:100%;margin-top:16px;display:flex;justify-content:flex-end}
+.submit-btn{padding:12px 32px;border-radius:8px;background:#7c5cfc;color:#fff;border:none;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;display:none}
+.submit-btn.show{display:inline-flex}
+.submit-btn:hover{background:#6a4de6}
+.submit-btn:disabled{opacity:0.4;cursor:not-allowed}
+
+/* RESULT SCREEN */
+#resultScreen{text-align:center}
+.result-badge{width:120px;height:120px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:16px;box-shadow:0 0 40px rgba(124,92,252,0.2)}
+.result-badge.gold{background:linear-gradient(135deg,#f59e0b,#d97706);box-shadow:0 0 40px rgba(245,158,11,0.3)}
+.result-badge.silver{background:linear-gradient(135deg,#94a3b8,#64748b);box-shadow:0 0 40px rgba(148,163,184,0.3)}
+.result-badge.bronze{background:linear-gradient(135deg,#a78bfa,#7c5cfc);box-shadow:0 0 40px rgba(124,92,252,0.3)}
+.result-badge.gray{background:linear-gradient(135deg,#52525b,#3f3f46);box-shadow:0 0 40px rgba(82,82,91,0.3)}
+#resultScreen h1{font-size:clamp(28px,5vw,36px);font-weight:900;margin-bottom:4px}
+#resultScreen .level-title{font-size:18px;color:#a78bfa;font-weight:700;margin-bottom:4px}
+#resultScreen .score{font-size:48px;font-weight:900;color:#eee;margin-bottom:4px}
+#resultScreen .score-label{font-size:13px;color:#888;margin-bottom:20px}
+.result-breakdown{width:100%;margin-bottom:24px}
+.rb-row{display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px}
+.rb-row .cat{color:#888}
+.rb-row .val{font-weight:700;color:#a78bfa}
+.result-desc{color:#999;font-size:14px;line-height:1.7;margin-bottom:24px;max-width:450px}
+.result-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.result-actions .btn{padding:12px 24px;font-size:13px}
+
+/* Timer */
+.timer{font-size:12px;color:#666;font-weight:600}
+.timer.warning{color:#f59e0b}
+
+@media(max-width:480px){
+  .question-types{grid-template-columns:1fr 1fr}
+  #startScreen h1{font-size:28px}
+  .question-text{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="/tutor">Royce<span>AI</span> Tutor</a>
+  <a class="nav-back" href="/tutor">← Back</a>
+</nav>
+
+<!-- START SCREEN -->
+<div class="screen active" id="startScreen">
+  <h1>🧠 IQ Test</h1>
+  <p>Test your intelligence across 5 domains</p>
+  <p class="sub">20 questions · ~10 minutes · No registration needed</p>
+  <div class="question-types">
+    <div class="qtype"><div class="emoji">🔢</div><div class="name">Math & Logic</div></div>
+    <div class="qtype"><div class="emoji">🧩</div><div class="name">Patterns</div></div>
+    <div class="qtype"><div class="emoji">📖</div><div class="name">Verbal</div></div>
+    <div class="qtype"><div class="emoji">🔲</div><div class="name">Spatial</div></div>
+    <div class="qtype" style="grid-column:span 2"><div class="emoji">💡</div><div class="name">Reasoning</div></div>
+  </div>
+  <button class="btn btn-primary" onclick="startQuiz()">Start Test →</button>
+</div>
+
+<!-- QUIZ SCREEN -->
+<div class="screen" id="quizScreen">
+  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  <div class="quiz-header">
+    <span class="qnum" id="qNum">Question 1/20</span>
+    <span class="qtype-badge" id="qTypeBadge">Math</span>
+    <span class="timer" id="timer">—</span>
+  </div>
+  <div class="question-text" id="questionText"></div>
+  <div class="question-context" id="questionContext"></div>
+  <div class="answers" id="answers"></div>
+  <div class="submit-row"><button class="submit-btn" id="submitBtn" onclick="submitAnswer()">Submit →</button></div>
+</div>
+
+<!-- RESULT SCREEN -->
+<div class="screen" id="resultScreen">
+  <div class="result-badge" id="resultBadge">🧠</div>
+  <div class="level-title" id="levelTitle">Genius</div>
+  <div class="score" id="finalScore">0</div>
+  <div class="score-label">/ 160 IQ equivalent</div>
+  <div class="result-breakdown" id="resultBreakdown"></div>
+  <div class="result-desc" id="resultDesc"></div>
+  <div class="result-actions">
+    <button class="btn btn-primary" onclick="startQuiz()">Take Again</button>
+    <a href="/tutor" class="btn btn-secondary">Back to Tutor</a>
+  </div>
+</div>
+
+<script>
+// ── Questions ──────────────────────────────────────────────
+const QUESTIONS = [
+  // MATH & LOGIC (1-4)
+  {type:"Math",q:"What is the next number in the sequence?<br>2, 6, 12, 20, 30, ?",opts:["36","38","42","44"],ans:2,cat:"math"},
+  {type:"Math",q:"If a clock reads 3:15, what is the angle between the hour and minute hand?",opts:["0°","7.5°","15°","30°"],ans:1,cat:"math"},
+  {type:"Math",q:"A bat and a ball cost $1.10. The bat costs $1.00 more than the ball. How much is the ball?",opts:["$0.05","$0.10","$0.15","$0.01"],ans:0,cat:"math"},
+  {type:"Math",q:"How many squares are on a chessboard?",opts:["64","128","204","256"],ans:2,cat:"math"},
+  
+  // PATTERNS (5-8)
+  {type:"Patterns",q:"Which figure completes the pattern?<br><br>⬤ ◻ ⬤ ◻ ⬤ ?",opts:["◻","⬤","△","○"],ans:0,cat:"patterns"},
+  {type:"Patterns",q:"Complete the sequence:<br>A, E, F, H, I, ?",opts:["J","K","L","M"],ans:1,cat:"patterns"},
+  {type:"Patterns",q:"Find the odd one out:<br>3, 5, 7, 9, 11, 13",opts:["3","5","7","9"],ans:3,cat:"patterns"},
+  {type:"Patterns",q:"What comes next?<br>1, 1, 2, 3, 5, 8, 13, ?",opts:["18","21","24","34"],ans:1,cat:"patterns"},
+  
+  // VERBAL (9-12)
+  {type:"Verbal",q:"Which word does NOT belong with the others?",opts:["Apple","Mango","Potato","Banana"],ans:2,cat:"verbal"},
+  {type:"Verbal",q:"Choose the synonym of LUMINOUS:",opts:["Dim","Radiant","Heavy","Slow"],ans:1,cat:"verbal"},
+  {type:"Verbal",q:"Which word best completes the analogy?<br>Book : Chapter :: Tree : ?",opts:["Leaf","Root","Branch","Trunk"],ans:2,cat:"verbal"},
+  {type:"Verbal",q:"What is the meaning of EPHEMERAL?",opts:["Eternal","Short-lived","Powerful","Ancient"],ans:1,cat:"verbal"},
+  
+  // SPATIAL (13-16)
+  {type:"Spatial",q:"How many cubes are in a 3×3×3 Rubik's cube (including hidden ones)?",opts:["9","18","27","36"],ans:2,cat:"spatial"},
+  {type:"Spatial",q:"If you fold this net into a cube, which face is opposite the face marked 'X'?",ctx:"Imagine a cube net with X on the center square.",opts:["Top","Bottom","Left","Cannot determine"],ans:1,cat:"spatial"},
+  {type:"Spatial",q:"A rectangular prism has dimensions 3×4×5. How many unit cubes can fit inside?",opts:["60","70","120","150"],ans:0,cat:"spatial"},
+  {type:"Spatial",q:"If you rotate a square 90 degrees clockwise 4 times, what shape do you get?",opts:["Same square","Circle","Tilted square","Can't tell"],ans:0,cat:"spatial"},
+  
+  // REASONING (17-20)
+  {type:"Reasoning",q:"All roses are flowers. Some flowers fade quickly. Therefore:",opts:["Roses fade quickly","Some roses may fade quickly","Roses never fade","Flowers are roses"],ans:1,cat:"reasoning"},
+  {type:"Reasoning",q:"If all Borks are Floops, and no Floops are Zings, then:",opts:["All Zings are Borks","No Borks are Zings","Some Floops are Borks","Both B and C"],ans:3,cat:"reasoning"},
+  {type:"Reasoning",q:"A train leaves Station A at 60 mph. Another leaves Station B 200 miles away at 40 mph heading towards it. When do they meet?",opts:["1 hour","2 hours","3 hours","4 hours"],ans:1,cat:"reasoning"},
+  {type:"Reasoning",q:"You have a 3-gallon jug and a 5-gallon jug. How can you measure exactly 4 gallons?",opts:["Fill 5, pour to 3, empty 3, pour 2 from 5, fill 5, pour to 3","Fill 3, pour to 5, fill 3, pour to 5","Fill 5, fill 3, subtract","It's impossible"],ans:0,cat:"reasoning"},
+];
+
+const LEVELS = [
+  {min:140,title:"Genius",badge:"gold",badgeEmoji:"🏆",
+   desc:"You have an exceptional mind. Your cognitive abilities place you in the top 1% of the population. You excel at abstract reasoning, pattern recognition, and complex problem-solving. The world needs minds like yours."},
+  {min:120,title:"Gifted",badge:"silver",badgeEmoji:"⭐",
+   desc:"You are highly intelligent with strong analytical skills. You see connections others miss and solve problems efficiently. You're in the top 10% — capable of exceptional achievement."},
+  {min:100,title:"Above Average",badge:"bronze",badgeEmoji:"💪",
+   desc:"You have solid cognitive abilities and think clearly. You handle complex ideas well and learn quickly. With focus and effort, you can master almost any subject."},
+  {min:80,title:"Average",badge:"gray",badgeEmoji:"🧠",
+   desc:"You have normal cognitive function and everyday problem-solving ability. Everyone has unique strengths — curiosity and effort matter more than raw IQ."},
+  {min:0,title:"Keep Trying!",badge:"gray",badgeEmoji:"📚",
+   desc:"Don't be discouraged! Intelligence is multifaceted and grows with effort. Practice, learn new skills, and challenge your brain daily. Retake the test after some practice!"},
+];
+
+// ── State ──────────────────────────────────────────────────
+let state = {
+  current: 0,
+  answers: new Array(QUESTIONS.length).fill(-1),
+  selected: -1,
+  startTime: null,
+  timerInterval: null,
+  timePerQuestion: [],
+};
+
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function startQuiz() {
+  state = {
+    current: 0,
+    answers: new Array(QUESTIONS.length).fill(-1),
+    selected: -1,
+    startTime: Date.now(),
+    timerInterval: null,
+    timePerQuestion: [],
+  };
+  
+  // Shuffle questions
+  // (keeping original order for consistency, but could shuffle)
+  
+  document.getElementById('startScreen').classList.remove('active');
+  document.getElementById('resultScreen').classList.remove('active');
+  document.getElementById('quizScreen').classList.add('active');
+  
+  // Start timer
+  state.startTime = Date.now();
+  state.timerInterval = setInterval(updateTimer, 1000);
+  
+  showQuestion();
+}
+
+function showQuestion() {
+  const q = QUESTIONS[state.current];
+  state.selected = -1;
+  
+  document.getElementById('progressFill').style.width = ((state.current) / QUESTIONS.length * 100) + '%';
+  document.getElementById('qNum').textContent = `Question ${state.current+1}/${QUESTIONS.length}`;
+  document.getElementById('qTypeBadge').textContent = q.type;
+  document.getElementById('questionText').innerHTML = q.q;
+  document.getElementById('questionContext').innerHTML = q.ctx || '';
+  
+  // Render answers
+  const container = document.getElementById('answers');
+  container.innerHTML = '';
+  const letters = ['A','B','C','D'];
+  
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'answer-btn';
+    if (state.answers[state.current] === i) btn.classList.add('selected');
+    btn.innerHTML = `<span class="letter">${letters[i]}</span> ${opt}`;
+    btn.onclick = () => selectAnswer(i);
+    container.appendChild(btn);
+  });
+  
+  document.getElementById('submitBtn').classList.remove('show');
+  if (state.answers[state.current] >= 0) {
+    document.getElementById('submitBtn').classList.add('show');
+    document.getElementById('submitBtn').disabled = false;
+  }
+  
+  // Track time for this question
+  state.questionStart = Date.now();
+}
+
+function selectAnswer(idx) {
+  state.selected = idx;
+  state.answers[state.current] = idx;
+  
+  // Highlight selected
+  document.querySelectorAll('.answer-btn').forEach((btn, i) => {
+    btn.classList.toggle('selected', i === idx);
+  });
+  
+  document.getElementById('submitBtn').classList.add('show');
+  document.getElementById('submitBtn').disabled = false;
+}
+
+function submitAnswer() {
+  if (state.selected < 0) return;
+  
+  // Track time
+  state.timePerQuestion.push(Date.now() - state.questionStart);
+  
+  if (state.current < QUESTIONS.length - 1) {
+    state.current++;
+    showQuestion();
+  } else {
+    // End of quiz
+    showResults();
+  }
+}
+
+function updateTimer() {
+  const elapsed = Math.floor((Date.now() - state.startTime) / 1000);
+  const mins = Math.floor(elapsed / 60);
+  const secs = elapsed % 60;
+  const timer = document.getElementById('timer');
+  timer.textContent = `${mins}:${secs.toString().padStart(2,'0')}`;
+  if (elapsed > 300) timer.classList.add('warning'); // >5 min warning
+}
+
+function showResults() {
+  clearInterval(state.timerInterval);
+  
+  document.getElementById('quizScreen').classList.remove('active');
+  document.getElementById('resultScreen').classList.add('active');
+  
+  // Score calculation
+  let correct = 0;
+  let catScores = {};
+  QUESTIONS.forEach((q, i) => {
+    const isCorrect = state.answers[i] === q.ans;
+    if (isCorrect) correct++;
+    if (!catScores[q.cat]) catScores[q.cat] = {correct:0,total:0};
+    catScores[q.cat].total++;
+    if (isCorrect) catScores[q.cat].correct++;
+  });
+  
+  // IQ equivalent (scaled: 20 Q = 160 max, ~8 avg correct = 100)
+  const rawScore = Math.round((correct / QUESTIONS.length) * 160);
+  const finalScore = Math.max(40, Math.min(160, rawScore));
+  
+  // Find level
+  let level = LEVELS.find(l => finalScore >= l.min) || LEVELS[LEVELS.length-1];
+  
+  // Animate score
+  const scoreEl = document.getElementById('finalScore');
+  const totalTime = Math.floor((Date.now() - state.startTime) / 1000);
+  const timeStr = `${Math.floor(totalTime/60)}m ${totalTime%60}s`;
+  
+  let currentScore = 0;
+  const anim = setInterval(() => {
+    currentScore += 2;
+    if (currentScore >= finalScore) {
+      currentScore = finalScore;
+      clearInterval(anim);
+    }
+    scoreEl.textContent = currentScore;
+  }, 20);
+  
+  document.getElementById('resultBadge').className = 'result-badge ' + level.badge;
+  document.getElementById('resultBadge').textContent = level.badgeEmoji;
+  document.getElementById('levelTitle').textContent = level.title;
+  document.getElementById('scoreLabel') || null;
+  document.querySelector('.score-label').textContent = `/${correct} correct · ${timeStr}`;
+  
+  // Breakdown
+  const bd = document.getElementById('resultBreakdown');
+  bd.innerHTML = '';
+  const catNames = {math:'Math & Logic',patterns:'Patterns',verbal:'Verbal',spatial:'Spatial',reasoning:'Reasoning'};
+  for (const [k,v] of Object.entries(catScores)) {
+    const row = document.createElement('div');
+    row.className = 'rb-row';
+    const pct = Math.round(v.correct/v.total * 100);
+    row.innerHTML = `<span class="cat">${catNames[k]||k}</span><span class="val">${v.correct}/${v.total} (${pct}%)</span>`;
+    bd.appendChild(row);
+  }
+  
+  document.getElementById('resultDesc').textContent = level.desc;
+}
+
+// Keyboard shortcut
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    const submitBtn = document.getElementById('submitBtn');
+    if (submitBtn.classList.contains('show') && !submitBtn.disabled) {
+      submitAnswer();
+    }
+  }
+  // Number keys 1-4 for answers
+  const num = parseInt(e.key);
+  if (num >= 1 && num <= 4) {
+    const btns = document.querySelectorAll('.answer-btn');
+    if (btns[num-1]) selectAnswer(num-1);
+  }
+});
+</script>
+
+</body>
+</html>
