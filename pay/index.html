@@ -266,10 +266,29 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
 
 <section class="hero-sub">
   <h1>Subscribe <span class="gradient">& Pay</span></h1>
-  <p>Secure PayPal payments. Subscriptions renew monthly — cancel anytime. All prices in USD.</p>
+  <p id="planIndicator">Secure PayPal payments. Subscriptions renew monthly — cancel anytime. All prices in USD.</p>
 </section>
 
 <div class="pay-grid">
+
+  <div class="pay-card" id="pro">
+    <h3>RoyceAI Pro — Trading Signals</h3>
+    <div class="price">$100 <span>/month</span></div>
+    <p>Daily trading signals, Polymarket picks, ETF scorer, macro risk alerts, private Telegram. Cancel anytime. 🔄 Monthly</p>
+    <a class="paypal-btn" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=royceaisolutions%40gmail.com&item_name=RoyceAI+Pro&a3=100&p3=1&t3=M&src=1&sra=1&currency_code=USD&return=https%3A%2F%2Froyceai.com%2Fthanks%3Fplan%3Dpro&cancel_return=https%3A%2F%2Froyceai.com%2Fsubscribe" target="_blank">
+      Subscribe with PayPal →
+    </a>
+  </div>
+
+  <div class="pay-card" id="elite">
+    <h3>RoyceAI Elite — Direct Access</h3>
+    <div class="price">$500 <span>/month</span></div>
+    <p>Everything in Pro + direct Telegram access, custom sizing, portfolio reviews, monthly 1-on-1 calls. 🔄 Monthly</p>
+    <a class="paypal-btn" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=royceaisolutions%40gmail.com&item_name=RoyceAI+Elite&a3=500&p3=1&t3=M&src=1&sra=1&currency_code=USD&return=https%3A%2F%2Froyceai.com%2Fthanks%3Fplan%3Delite&cancel_return=https%3A%2F%2Froyceai.com%2Fsubscribe" target="_blank" style="background:linear-gradient(135deg,#7c5cfc,#a78bfa)">
+      Subscribe with PayPal →
+    </a>
+  </div>
+
   <div class="pay-card">
     <h3>High School Tutor</h3>
     <div class="price">$100 <span>/month</span></div>
@@ -321,6 +340,28 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
   </div>
   <div class="copy">RoyceAI Solutions. Irvine, CA</div>
 </footer>
+
+<script>
+// Auto-select plan from URL parameter
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var plan = params.get('plan');
+  if (plan) {
+    var el = document.getElementById(plan);
+    if (el) {
+      setTimeout(function() {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.style.borderColor = 'rgba(124,92,252,0.4)';
+        el.style.background = 'linear-gradient(135deg,rgba(124,92,252,0.06) 0%,transparent 100%)';
+        var indicator = document.getElementById('planIndicator');
+        if (indicator) {
+          indicator.textContent = 'Selected: ' + plan.toUpperCase() + ' plan ($' + (plan === 'elite' ? '500' : '100') + '/mo). Scroll down to pay.';
+        }
+      }, 300);
+    }
+  }
+})();
+</script>
 
 </body>
 </html>
