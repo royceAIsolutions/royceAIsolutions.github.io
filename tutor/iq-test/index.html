@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>IQ Test — RoyceAI Tutor</title>
+<title>Grade Level Test — RoyceAI Tutor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -106,8 +106,8 @@ body{font-family:'Inter',sans-serif;background:#0f0f13;color:#eee;min-height:100
 
 <!-- START SCREEN -->
 <div class="screen active" id="startScreen">
-  <h1>🧠 IQ Test</h1>
-  <p>Test your intelligence across 5 domains</p>
+  <h1>🧠 Grade Level Test</h1>
+  <p>Find out what grade level your thinking matches</p>
   <p class="sub">20 questions · ~10 minutes · No registration needed</p>
   <div class="question-types">
     <div class="qtype"><div class="emoji">🔢</div><div class="name">Math & Logic</div></div>
@@ -182,16 +182,18 @@ const QUESTIONS = [
 ];
 
 const LEVELS = [
-  {min:140,title:"Genius",badge:"gold",badgeEmoji:"🏆",
-   desc:"You have an exceptional mind. Your cognitive abilities place you in the top 1% of the population. You excel at abstract reasoning, pattern recognition, and complex problem-solving. The world needs minds like yours."},
-  {min:120,title:"Gifted",badge:"silver",badgeEmoji:"⭐",
-   desc:"You are highly intelligent with strong analytical skills. You see connections others miss and solve problems efficiently. You're in the top 10% — capable of exceptional achievement."},
-  {min:100,title:"Above Average",badge:"bronze",badgeEmoji:"💪",
-   desc:"You have solid cognitive abilities and think clearly. You handle complex ideas well and learn quickly. With focus and effort, you can master almost any subject."},
-  {min:80,title:"Average",badge:"gray",badgeEmoji:"🧠",
-   desc:"You have normal cognitive function and everyday problem-solving ability. Everyone has unique strengths — curiosity and effort matter more than raw IQ."},
-  {min:0,title:"Keep Trying!",badge:"gray",badgeEmoji:"📚",
-   desc:"Don't be discouraged! Intelligence is multifaceted and grows with effort. Practice, learn new skills, and challenge your brain daily. Retake the test after some practice!"},
+  {min:19,title:"College Level",grade:"College",badge:"gold",badgeEmoji:"🎓",
+   desc:"College-level thinking. You handle complex multi-step problems, abstract reasoning, and advanced logic with ease. This is the level expected of university students and professionals."},
+  {min:17,title:"Grade 11-12",grade:"11-12",badge:"silver",badgeEmoji:"⭐",
+   desc:"High school senior level. Strong analytical skills, good vocabulary, solid math reasoning. You think like a top high school graduate ready for college."},
+  {min:13,title:"Grade 9-10",grade:"9-10",badge:"bronze",badgeEmoji:"💪",
+   desc:"Early high school level. Solid foundation in logical reasoning and problem-solving. With continued practice, you're on track for advanced work."},
+  {min:9,title:"Grade 7-8",grade:"7-8",badge:"gray",badgeEmoji:"📚",
+   desc:"Middle school level. You grasp core concepts and solve straightforward problems well. Keep challenging yourself — this is a key growth stage."},
+  {min:5,title:"Grade 5-6",grade:"5-6",badge:"gray",badgeEmoji:"🧩",
+   desc:"Upper elementary level. Basic logic and problem-solving skills are developing. Practice puzzles, math games, and reading to build your skills."},
+  {min:0,title:"Grade 3-4",grade:"3-4",badge:"gray",badgeEmoji:"🌱",
+   desc:"Elementary level. Everyone starts here! Keep learning, stay curious, and try again after some practice. Intelligence grows with effort."},
 ];
 
 // ── State ──────────────────────────────────────────────────
@@ -324,33 +326,31 @@ function showResults() {
     if (isCorrect) catScores[q.cat].correct++;
   });
   
-  // IQ equivalent (scaled: 20 Q = 160 max, ~8 avg correct = 100)
-  const rawScore = Math.round((correct / QUESTIONS.length) * 160);
-  const finalScore = Math.max(40, Math.min(160, rawScore));
+  // Grade level (based on correct answers, not scaled IQ)
+  const finalScore = correct;  // Use raw correct count (0-20)
   
   // Find level
   let level = LEVELS.find(l => finalScore >= l.min) || LEVELS[LEVELS.length-1];
   
-  // Animate score
+  // Animate score (show correct count)
   const scoreEl = document.getElementById('finalScore');
   const totalTime = Math.floor((Date.now() - state.startTime) / 1000);
   const timeStr = `${Math.floor(totalTime/60)}m ${totalTime%60}s`;
   
   let currentScore = 0;
   const anim = setInterval(() => {
-    currentScore += 2;
+    currentScore += 1;
     if (currentScore >= finalScore) {
       currentScore = finalScore;
       clearInterval(anim);
     }
-    scoreEl.textContent = currentScore;
-  }, 20);
+    scoreEl.textContent = currentScore + '/20';
+  }, 40);
   
   document.getElementById('resultBadge').className = 'result-badge ' + level.badge;
   document.getElementById('resultBadge').textContent = level.badgeEmoji;
   document.getElementById('levelTitle').textContent = level.title;
-  document.getElementById('scoreLabel') || null;
-  document.querySelector('.score-label').textContent = `/${correct} correct · ${timeStr}`;
+  document.querySelector('.score-label').textContent = `${correct} correct · ${timeStr} · Grade ${level.grade}`;
   
   // Breakdown
   const bd = document.getElementById('resultBreakdown');
