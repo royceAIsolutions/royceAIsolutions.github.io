@@ -69,7 +69,8 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;backgrou
 .btn-quiz:hover .arrow{transform:translateX(4px)}
 .quiz-social{color:var(--text-muted);font-size:0.85rem;margin-top:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center}
 .quiz-social span{display:flex;align-items:center;gap:4px}
-.quiz-scroll{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--text-muted);font-size:0.75rem;animation:float 2s ease-in-out infinite;cursor:pointer;z-index:1;text-decoration:none}
+.quiz-scroll{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--text-muted);font-size:0.75rem;animation:float 2s ease-in-out infinite;cursor:pointer;z-index:2;text-decoration:none;pointer-events:none}
+.quiz-scroll span{pointer-events:auto}
 
 /* Rest of existing styles */
 .hero-sub{min-height:40vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 60px;max-width:var(--max-w);margin:0 auto;text-align:center}
@@ -123,15 +124,17 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
   .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none}
   .bento-card.wide,.bento-card{grid-column:span 1}
   .bento{grid-template-columns:1fr}
-  .quiz-hero{padding:calc(80px + var(--nav-h)) 20px 60px}
+  .quiz-hero{padding:calc(60px + var(--nav-h)) 20px 40px;min-height:auto}
   .quiz-hero h1{font-size:clamp(2rem,10vw,2.8rem)}
+  .section-header h2{font-size:clamp(1.6rem,7vw,2rem)}
   .quiz-stats{gap:20px;padding:16px 20px}
   .qs-num{font-size:1.6rem}
   .btn-quiz{padding:16px 28px;font-size:0.95rem;width:100%}
   .quiz-domains{gap:6px}
   .qd-item{padding:6px 12px;font-size:0.78rem}
-  .section{padding:80px 20px}
-  .cta-section{padding:80px 20px}
+  .section{padding:60px 20px}
+  .cta-section{padding:60px 20px}
+  .quiz-scroll{display:none}
   .pricing-grid{grid-template-columns:1fr}
   footer{flex-direction:column;text-align:center}
 }
