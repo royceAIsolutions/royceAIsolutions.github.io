@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXX');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoyceAI Data Business — Trading Intelligence Subscriptions</title>
+<meta name="description" content="AI-powered trading signals, Polymarket picks, ETF scoring, and macro risk alerts. Subscribe on X and get daily market intelligence delivered by autonomous bots.">
+<link rel="canonical" href="https://royceai.com/data/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--green:#34d399;--green-bg:rgba(52,211,153,0.08);--orange:#f59e0b;--radius:16px;--radius-sm:10px;--max-w:1100px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(52,211,153,0.04);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .logo-icon{width:30px;height:30px;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 3s ease-in-out infinite;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;box-shadow:0 2px 12px rgba(124,92,252,0.3)}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;animation:pulse-glow 2.5s ease-in-out infinite}
+.nav-links .nav-cta:hover{background:var(--accent-light);transform:scale(1.05)}
+.hero{min-height:70vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 60px;max-width:var(--max-w);margin:0 auto;animation:fade-up 0.6s ease-out}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--accent-bg);border:1px solid rgba(124,92,252,0.15);font-size:0.8rem;font-weight:500;color:var(--accent-light);margin-bottom:32px;width:fit-content}
+.hero h1{font-size:clamp(2.5rem,7vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:24px;max-width:900px}
+.hero h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero p{font-size:clamp(1rem,2vw,1.2rem);color:var(--text-secondary);max-width:600px;line-height:1.75;margin-bottom:40px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius-sm);font-family:var(--font);font-size:0.95rem;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow);animation:pulse-glow 2.5s ease-in-out infinite}
+.btn-primary:hover{background:var(--accent-light);transform:translateY(-2px) scale(1.03)}
+.btn-secondary{background:var(--bg-elevated);color:var(--text);box-shadow:0 0 0 1px var(--border)}
+.btn-secondary:hover{background:var(--bg-card);box-shadow:0 0 0 1px var(--accent);transform:translateY(-1px)}
+.btn-x{background:#000;color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,0.1)}
+.btn-x:hover{background:#222;transform:translateY(-2px)}
+.section{padding:80px 24px;max-width:var(--max-w);margin:0 auto}
+.section-header{text-align:center;margin-bottom:56px}
+.section-header h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:12px}
+.section-header h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.section-header p{color:var(--text-secondary);font-size:1.05rem;max-width:500px;margin:0 auto}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1000px;margin:0 auto}
+.plan{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 32px;transition:all var(--transition);position:relative;display:flex;flex-direction:column}
+.plan:hover{transform:translateY(-4px);border-color:var(--border-hover)}
+.plan.featured{border-color:rgba(124,92,252,0.2);background:linear-gradient(135deg,rgba(124,92,252,0.04) 0%,transparent 100%)}
+.plan.featured::before{content:'Best Value';position:absolute;top:-10px;left:50%;transform:translateX(-50%);padding:4px 16px;border-radius:100px;background:var(--accent);color:#fff;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em}
+.plan .name{font-size:0.9rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-secondary);margin-bottom:8px}
+.plan .price{font-size:2.8rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:4px}
+.plan .price span{font-size:1rem;font-weight:500;color:var(--text-secondary)}
+.plan .desc{color:var(--text-secondary);font-size:0.9rem;margin-bottom:24px;line-height:1.5}
+.plan ul{list-style:none;padding:0;margin:0 0 32px;flex:1}
+.plan ul li{padding:10px 0;border-top:1px solid var(--border);font-size:0.9rem;display:flex;align-items:center;gap:10px}
+.plan ul li::before{content:'✓';color:var(--green);font-weight:700;font-size:1rem}
+.plan .btn{display:block;text-align:center;padding:14px;border-radius:var(--radius-sm);font-weight:600;text-decoration:none;transition:all 0.2s;font-size:1rem;font-family:var(--font);width:100%}
+.plan .btn-primary{background:var(--accent);color:#fff}
+.plan .btn-primary:hover{background:var(--accent-light);transform:translateY(-2px)}
+.plan .btn-secondary{background:var(--bg-elevated);color:var(--text);border:1px solid var(--border)}
+.plan .btn-secondary:hover{background:var(--bg-card);border-color:var(--accent)}
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.how-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center;transition:all var(--transition)}
+.how-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.how-card .step{font-size:2.5rem;font-weight:800;color:var(--accent);opacity:0.3;margin-bottom:8px}
+.how-card h3{font-size:1rem;font-weight:600;margin-bottom:6px}
+.how-card p{color:var(--text-secondary);font-size:0.88rem;line-height:1.6}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:800px;margin:40px auto 0}
+.stat-card{text-align:center;padding:24px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius)}
+.stat-card .num{font-size:2.2rem;font-weight:800;color:var(--accent-light)}
+.stat-card .label{color:var(--text-secondary);font-size:0.85rem;margin-top:4px}
+.testimonial{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;max-width:700px;margin:32px auto 0}
+.testimonial .quote{color:var(--text-secondary);font-size:1rem;line-height:1.7;font-style:italic;margin-bottom:16px}
+.testimonial .author{font-weight:600;font-size:0.9rem}
+.testimonial .author span{color:var(--text-muted);font-weight:400}
+.faq{max-width:700px;margin:0 auto}
+.faq details{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px;padding:16px 20px;cursor:pointer;transition:border-color 0.2s}
+.faq details[open]{border-color:var(--accent)}
+.faq summary{font-weight:600;font-size:0.95rem;color:var(--text);outline:none}
+.faq .answer{color:var(--text-secondary);font-size:0.9rem;padding-top:12px;line-height:1.6}
+.cta-section{text-align:center;padding:120px 24px;max-width:var(--max-w);margin:0 auto}
+.cta-section h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:16px}
+.cta-section p{color:var(--text-secondary);font-size:1.1rem;margin-bottom:40px}
+footer{border-top:1px solid var(--border);padding:48px 24px;max-width:var(--max-w);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+footer .logo{font-weight:700;font-size:1rem;color:var(--text-secondary)}
+footer .logo span{color:var(--accent-light)}
+footer .links{display:flex;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;transition:color 0.2s}
+footer .links a:hover{color:var(--accent-light)}
+footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:center}
+@media(max-width:640px){
+  .nav-links a:not(.nav-cta){display:none}
+  .plans{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(2rem,10vw,3rem)}
+  .hero{padding:calc(60px + var(--nav-h)) 20px 60px}
+  .section{padding:60px 20px}
+  footer{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<nav>
+  <a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/products">Products</a>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/blog">Blog</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">🤖 Autonomous Trading Intelligence</div>
+  <h1><span class="gradient">Turn Data Into<br>Decisions</span> While You Sleep</h1>
+  <p>AI-powered trading signals, real-time macro alerts, Polymarket sprint picks, and ETF scoring — delivered daily by bots that never sleep. Subscribe on X or directly.</p>
+  <div class="hero-actions">
+    <a href="#plans" class="btn btn-primary">View Plans →</a>
+    <a href="https://x.com/royceai" class="btn btn-x">𝕏 Follow on X</a>
+  </div>
+</section>
+
+<section class="section" id="plans">
+  <div class="section-header">
+    <h2>Choose Your <span class="gradient">Edge</span></h2>
+    <p>Three tiers. One goal: put you in the right market at the right time.</p>
+  </div>
+  <div class="plans">
+    <!-- Free -->
+    <div class="plan">
+      <div class="name">Free</div>
+      <div class="price">$0<span>/mo</span></div>
+      <div class="desc">Daily market intelligence to keep you informed.</div>
+      <ul>
+        <li>Daily market recap (SPY, QQQ, IWM, VIX)</li>
+        <li>Weekly leveraged ETF blog post</li>
+        <li>Public X/Twitter feed</li>
+        <li>Regime change alerts</li>
+      </ul>
+      <a href="/" class="btn btn-secondary">Start Free</a>
+    </div>
+
+    <!-- Pro -->
+    <div class="plan featured">
+      <div class="name">Pro</div>
+      <div class="price">$100<span>/mo</span></div>
+      <div class="desc">Full trading edge for serious market participants.</div>
+      <ul>
+        <li>Daily trading signals with entry/exit levels</li>
+        <li>Polymarket sprint picks (2x daily)</li>
+        <li>Real-time macro risk alerts</li>
+        <li>AI ETF scorer — top 9 ranked every session</li>
+        <li>Private Telegram group</li>
+        <li>Weekly strategy call recording</li>
+      </ul>
+      <a href="/pay?plan=pro" class="btn btn-primary">Subscribe — $100/mo</a>
+    </div>
+
+    <!-- Elite -->
+    <div class="plan">
+      <div class="name">Elite</div>
+      <div class="price">$500<span>/mo</span></div>
+      <div class="desc">Full concierge — direct access and custom strategies.</div>
+      <ul>
+        <li>Everything in Pro</li>
+        <li>Direct Telegram access to RoyceAI</li>
+        <li>Custom position sizing recommendations</li>
+        <li>Portfolio review &amp; optimization</li>
+        <li>Early access to new trading bots</li>
+        <li>Monthly 1-on-1 strategy call</li>
+      </ul>
+      <a href="/pay?plan=elite" class="btn btn-secondary">Subscribe — $500/mo</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2>How It <span class="gradient">Works</span></h2>
+    <p>Autonomous bots. Daily delivery. Zero screen time required.</p>
+  </div>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="step">01</div>
+      <h3>Subscribe</h3>
+      <p>Pick Pro or Elite. Pay via PayPal or subscribe through X. $1 for 7 days trial available.</p>
+    </div>
+    <div class="how-card">
+      <div class="step">02</div>
+      <h3>Receive Signals</h3>
+      <p>Bots scan 500+ markets every 2 hours. Picks delivered to your portal, Telegram, and X feed daily.</p>
+    </div>
+    <div class="how-card">
+      <div class="step">03</div>
+      <h3>Execute &amp; Profit</h3>
+      <p>Entry, exit, rationale, and position sizing — everything you need to act. No analysis paralysis.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2>What <span class="gradient">Kevin Xu</span> Proved</h2>
+    <p>600 subscribers × $200/mo = $120K/mo passive. This is the model.</p>
+  </div>
+  <div class="stats">
+    <div class="stat-card">
+      <div class="num">600</div>
+      <div class="label">Subscribers</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">$200</div>
+      <div class="label">Price/Month</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">$120K</div>
+      <div class="label">Monthly Revenue</div>
+    </div>
+  </div>
+  <div class="testimonial">
+    <div class="quote">"The algorithm boost from X subscriptions changes everything. High price = quality filter. Low churn because commitment is high. This is the business model for creators."</div>
+    <div class="author">Kevin Xu <span>— X Subscription Case Study</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2>FAQ</h2>
+  </div>
+  <div class="faq">
+    <details>
+      <summary>How do I subscribe?</summary>
+      <div class="answer">Click Subscribe above to pay via PayPal, or subscribe through X (Twitter) for the algorithm boost. Either way, you get a portal login link emailed to you.</div>
+    </details>
+    <details>
+      <summary>Why subscribe through X?</summary>
+      <div class="answer">X subscriptions give you an algorithm boost — your content reaches more people. RoyceAI subscribers on X get amplified reach automatically. Plus X takes only 10% vs Apple's 30%.</div>
+    </details>
+    <details>
+      <summary>What's the $1 trial?</summary>
+      <div class="answer">$1 for 7 days of full Pro access. All features, no limits. If you don't see the edge in 7 days, you're out $1. Cancel anytime.</div>
+    </details>
+    <details>
+      <summary>How are signals generated?</summary>
+      <div class="answer">Autonomous bots scan 500+ Polymarket markets, 17 leveraged ETFs, and macro indicators every 2 hours. Signals are scored, ranked, and delivered — no human bias.</div>
+    </details>
+    <details>
+      <summary>Can I cancel anytime?</summary>
+      <div class="answer">Yes. Month-to-month. Cancel anytime with one click.</div>
+    </details>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Ready for the <span class="gradient">Edge</span>?</h2>
+  <p>$1 for 7 days. Full Pro access. No risk.</p>
+  <a href="/pay?plan=pro" class="btn btn-primary">Start Trial — $1 →</a>
+</section>
+
+<footer>
+  <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
+  <div class="links">
+    <a href="/products">Products</a>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/portal">Portal</a>
+    <a href="/blog">Blog</a>
+    <a href="/chat">Chat</a>
+  </div>
+  <div class="copy">RoyceAI Solutions. Irvine, CA</div>
+</footer>
+
+</body>
+</html>

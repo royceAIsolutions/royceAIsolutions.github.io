@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-07-28T02:19:01.399576+00:00",
+  "active_count": 0,
+  "mrr": 0,
+  "plans": {
+    "pro": {
+      "price": 100,
+      "features": [
+        "Daily trading signals with entry/exit levels",
+        "Polymarket sprint picks (2x daily)",
+        "Real-time macro risk alerts",
+        "AI ETF scorer \u2014 top 9 ranked every session",
+        "Private Telegram group",
+        "Weekly strategy call recording"
+      ]
+    },
+    "elite": {
+      "price": 500,
+      "features": [
+        "Everything in Pro",
+        "Direct Telegram access to RoyceAI",
+        "Custom position sizing recommendations",
+        "Portfolio review & optimization",
+        "Early access to new trading bots",
+        "Monthly 1-on-1 strategy call"
+      ]
+    }
+  },
+  "tokens": {}
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXX');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal — RoyceAI Subscriber</title>
+<meta name="description" content="Subscriber portal for RoyceAI Pro and Elite members. Access your trading signals, Polymarket picks, and market intelligence.">
+<link rel="canonical" href="https://royceai.com/portal/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--green:#34d399;--green-bg:rgba(52,211,153,0.08);--red:#ef4444;--radius:16px;--radius-sm:10px;--max-w:800px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(52,211,153,0.04);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .logo-icon{width:30px;height:30px;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 3s ease-in-out infinite;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;box-shadow:0 2px 12px rgba(124,92,252,0.3)}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+header{max-width:var(--max-w);margin:0 auto;padding:100px 24px 40px;text-align:center;animation:fade-up 0.6s ease-out}
+header h1{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:8px}
+header p{color:var(--text-secondary)}
+.auth-box{max-width:480px;margin:0 auto;padding:40px 24px}
+.auth-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 32px;text-align:center}
+.auth-card h2{font-size:1.2rem;font-weight:600;margin-bottom:8px}
+.auth-card p{color:var(--text-secondary);font-size:0.9rem;margin-bottom:24px}
+.auth-card input{width:100%;padding:12px 16px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-elevated);color:var(--text);font-family:var(--font);font-size:0.95rem;outline:none;transition:border-color 0.2s;margin-bottom:16px}
+.auth-card input:focus{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-glow)}
+.auth-card .btn{width:100%;padding:12px;border-radius:var(--radius-sm);font-weight:600;font-size:1rem;font-family:var(--font);border:none;cursor:pointer;transition:all 0.2s;background:var(--accent);color:#fff}
+.auth-card .btn:hover{background:var(--accent-light);transform:translateY(-1px)}
+.auth-card .btn:disabled{opacity:0.5;cursor:not-allowed;transform:none}
+.dashboard{display:none;max-width:var(--max-w);margin:0 auto;padding:0 24px 80px;animation:fade-up 0.6s ease-out}
+.dashboard.show{display:block}
+.sub-info{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 32px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.sub-info .sub-status{display:flex;align-items:center;gap:8px}
+.sub-info .sub-status .dot{width:10px;height:10px;border-radius:50%;background:var(--green)}
+.sub-info .plan-badge{padding:4px 14px;border-radius:100px;background:var(--accent-bg);color:var(--accent-light);font-size:0.85rem;font-weight:600;text-transform:uppercase}
+.sub-info .expiry{color:var(--text-muted);font-size:0.85rem}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-bottom:24px}
+.content-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all var(--transition)}
+.content-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.content-card .icon{font-size:1.8rem;margin-bottom:12px}
+.content-card h3{font-size:1rem;font-weight:600;margin-bottom:6px}
+.content-card p{color:var(--text-secondary);font-size:0.88rem;line-height:1.6}
+.content-card .feature-list{margin-top:12px;list-style:none;padding:0}
+.content-card .feature-list li{padding:6px 0;font-size:0.85rem;color:var(--text-secondary);display:flex;align-items:center;gap:8px}
+.content-card .feature-list li::before{content:'✓';color:var(--green);font-weight:700}
+.logout-btn{text-align:center;margin-top:32px}
+.logout-btn a{color:var(--text-muted);font-size:0.85rem;cursor:pointer;text-decoration:underline}
+.logout-btn a:hover{color:var(--red)}
+.error-message{color:var(--red);font-size:0.85rem;margin-top:8px;display:none}
+footer{border-top:1px solid var(--border);padding:48px 24px;max-width:var(--max-w);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+footer .logo{font-weight:700;font-size:1rem;color:var(--text-secondary)}
+footer .logo span{color:var(--accent-light)}
+footer .links{display:flex;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;transition:color 0.2s}
+footer .links a:hover{color:var(--accent-light)}
+footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:center}
+@media(max-width:640px){
+  .card-grid{grid-template-columns:1fr}
+  .sub-info{flex-direction:column;text-align:center}
+  header{padding:80px 20px 30px}
+  .auth-box{padding:20px}
+}
+</style>
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<nav>
+  <a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/data">Data Business</a>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/blog">Blog</a>
+  </div>
+</nav>
+
+<header>
+  <h1>Subscriber <span style="background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Portal</span></h1>
+  <p>Enter your access token to view your plan and content.</p>
+</header>
+
+<div class="auth-box" id="authBox">
+  <div class="auth-card">
+    <h2>🔑 Enter Token</h2>
+    <p>Paste the token from your subscription confirmation email.</p>
+    <input type="text" id="tokenInput" placeholder="Paste your access token..." autocomplete="off" spellcheck="false">
+    <button class="btn" id="verifyBtn" onclick="verifyToken()">Verify Access →</button>
+    <div class="error-message" id="errorMsg">Invalid or expired token. Please check and try again.</div>
+    <p style="margin-top:16px;font-size:0.8rem;color:var(--text-muted)">No token? <a href="/subscribe" style="color:var(--accent-light)">Subscribe here</a></p>
+  </div>
+</div>
+
+<div class="dashboard" id="dashboard">
+  <div class="sub-info" id="subInfo">
+    <div class="sub-status">
+      <span class="dot"></span>
+      <span>Active</span>
+    </div>
+    <div>
+      <span class="plan-badge" id="planBadge">PRO</span>
+    </div>
+    <div class="expiry">Expires: <span id="expiryDate">—</span></div>
+  </div>
+
+  <div class="card-grid" id="contentCards">
+    <div class="content-card">
+      <div class="icon">📊</div>
+      <h3>Daily Trading Signals</h3>
+      <p>Entry/exit levels, rationale, and position sizing for each signal.</p>
+      <ul class="feature-list" id="signalFeatures"></ul>
+    </div>
+    <div class="content-card">
+      <div class="icon">🎯</div>
+      <h3>Polymarket Picks</h3>
+      <p>AI-scanned markets with edge analysis. Updated every 2 hours.</p>
+      <ul class="feature-list" id="polyFeatures"></ul>
+    </div>
+    <div class="content-card">
+      <div class="icon">🛡️</div>
+      <h3>Macro Risk Monitor</h3>
+      <p>Real-time BOJ, VIX, geopolitical threat tracking.</p>
+      <ul class="feature-list" id="macroFeatures"></ul>
+    </div>
+  </div>
+
+  <div class="logout-btn">
+    <a onclick="logout()">← Sign out</a>
+  </div>
+</div>
+
+<footer>
+  <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
+  <div class="links">
+    <a href="/products">Products</a>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/blog">Blog</a>
+    <a href="/chat">Chat</a>
+  </div>
+  <div class="copy">RoyceAI Solutions. Irvine, CA</div>
+</footer>
+
+<script>
+// SHA-256 hash function
+async function sha256(msg) {
+  const enc = new TextEncoder().encode(msg);
+  const hash = await crypto.subtle.digest('SHA-256', enc);
+  return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+let portalData = null;
+
+// Load portal data
+async function loadPortalData() {
+  try {
+    const resp = await fetch('/data/portal.json?' + Date.now());
+    portalData = await resp.json();
+  } catch(e) {
+    console.log('Portal data not loaded:', e);
+  }
+}
+
+// Auto-verify if token in URL hash
+async function checkUrlToken() {
+  if (window.location.hash && window.location.hash.length > 10) {
+    const token = window.location.hash.substring(1);
+    document.getElementById('tokenInput').value = token;
+    await verifyToken();
+  }
+}
+
+async function verifyToken() {
+  const input = document.getElementById('tokenInput');
+  const btn = document.getElementById('verifyBtn');
+  const error = document.getElementById('errorMsg');
+  const token = input.value.trim();
+
+  if (!token) {
+    error.style.display = 'block';
+    error.textContent = 'Please enter your access token.';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Verifying...';
+  error.style.display = 'none';
+
+  // Load portal data if not loaded
+  if (!portalData) await loadPortalData();
+
+  if (!portalData || !portalData.tokens) {
+    error.style.display = 'block';
+    error.textContent = 'Portal data unavailable. Contact support.';
+    btn.disabled = false;
+    btn.textContent = 'Verify Access →';
+    return;
+  }
+
+  // Hash the input token and compare
+  const hash = await sha256(token);
+
+  if (portalData.tokens[hash]) {
+    const sub = portalData.tokens[hash];
+
+    // Show dashboard
+    document.getElementById('authBox').style.display = 'none';
+    document.getElementById('dashboard').classList.add('show');
+
+    // Fill info
+    document.getElementById('planBadge').textContent = sub.plan.toUpperCase();
+    document.getElementById('expiryDate').textContent = sub.expires_at;
+
+    // Fill features based on plan
+    const plans = portalData.plans || {};
+    const planData = plans[sub.plan] || { features: [] };
+
+    const sigList = document.getElementById('signalFeatures');
+    const polyList = document.getElementById('polyFeatures');
+    const macroList = document.getElementById('macroFeatures');
+
+    sigList.innerHTML = '';
+    polyList.innerHTML = '';
+    macroList.innerHTML = '';
+
+    if (planData.features) {
+      planData.features.forEach(f => {
+        const li = document.createElement('li');
+        li.textContent = f;
+        if (f.includes('Polymarket') || f.includes('sprint')) {
+          polyList.appendChild(li);
+        } else if (f.includes('macro') || f.includes('risk') || f.includes('ETF') || f.includes('scorer')) {
+          macroList.appendChild(li);
+        } else {
+          sigList.appendChild(li);
+        }
+      });
+    }
+
+    // Store in session
+    sessionStorage.setItem('royceai_token', hash.substring(0, 16));
+    window.location.hash = token;
+  } else {
+    error.style.display = 'block';
+    error.textContent = 'Invalid or expired token. Please check and try again.';
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Verify Access →';
+}
+
+function logout() {
+  document.getElementById('authBox').style.display = 'block';
+  document.getElementById('dashboard').classList.remove('show');
+  document.getElementById('tokenInput').value = '';
+  sessionStorage.removeItem('royceai_token');
+  window.location.hash = '';
+}
+
+// Load portal data and check URL token on page load
+loadPortalData();
+checkUrlToken();
+</script>
+</body>
+</html>
