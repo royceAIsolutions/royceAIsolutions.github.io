@@ -108,7 +108,7 @@ body{font-family:'Inter',sans-serif;background:#0f0f13;color:#eee;min-height:100
 <div class="screen active" id="startScreen">
   <h1>🧠 Grade Level Test</h1>
   <p>Find out what grade level your thinking matches</p>
-  <p class="sub">20 questions · ~10 minutes · No registration needed</p>
+  <p class="sub">9 questions · ~5 minutes · No registration needed</p>
   <div class="question-types">
     <div class="qtype"><div class="emoji">🔢</div><div class="name">Math & Logic</div></div>
     <div class="qtype"><div class="emoji">🧩</div><div class="name">Patterns</div></div>
@@ -123,7 +123,7 @@ body{font-family:'Inter',sans-serif;background:#0f0f13;color:#eee;min-height:100
 <div class="screen" id="quizScreen">
   <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
   <div class="quiz-header">
-    <span class="qnum" id="qNum">Question 1/20</span>
+    <span class="qnum" id="qNum">Question 1/9</span>
     <span class="qtype-badge" id="qTypeBadge">Math</span>
     <span class="timer" id="timer">—</span>
   </div>
@@ -138,7 +138,7 @@ body{font-family:'Inter',sans-serif;background:#0f0f13;color:#eee;min-height:100
   <div class="result-badge" id="resultBadge">🧠</div>
   <div class="level-title" id="levelTitle">Genius</div>
   <div class="score" id="finalScore">0</div>
-  <div class="score-label">/ 160 IQ equivalent</div>
+  <div class="score-label">/ 9 correct</div>
   <div class="result-breakdown" id="resultBreakdown"></div>
   <div class="result-desc" id="resultDesc"></div>
   <div class="result-actions">
@@ -150,50 +150,39 @@ body{font-family:'Inter',sans-serif;background:#0f0f13;color:#eee;min-height:100
 <script>
 // ── Questions ──────────────────────────────────────────────
 const QUESTIONS = [
-  // MATH & LOGIC (1-4)
-  {type:"Math",q:"What is the next number in the sequence?<br>2, 6, 12, 20, 30, ?",opts:["36","38","42","44"],ans:2,cat:"math"},
-  {type:"Math",q:"If a clock reads 3:15, what is the angle between the hour and minute hand?",opts:["0°","7.5°","15°","30°"],ans:1,cat:"math"},
+  // MATH & LOGIC (1-2)
   {type:"Math",q:"A bat and a ball cost $1.10. The bat costs $1.00 more than the ball. How much is the ball?",opts:["$0.05","$0.10","$0.15","$0.01"],ans:0,cat:"math"},
-  {type:"Math",q:"How many squares are on a chessboard?",opts:["64","128","204","256"],ans:2,cat:"math"},
+  {type:"Math",q:"If a clock reads 3:15, what is the angle between the hour and minute hand?",opts:["0°","7.5°","15°","30°"],ans:1,cat:"math"},
   
-  // PATTERNS (5-8)
+  // PATTERNS (3-4)
   {type:"Patterns",q:"Which figure completes the pattern?<br><br>⬤ ◻ ⬤ ◻ ⬤ ?",opts:["◻","⬤","△","○"],ans:0,cat:"patterns"},
-  {type:"Patterns",q:"Complete the sequence:<br>A, E, F, H, I, ?",opts:["J","K","L","M"],ans:1,cat:"patterns"},
-  {type:"Patterns",q:"Find the odd one out:<br>3, 5, 7, 9, 11, 13",opts:["3","5","7","9"],ans:3,cat:"patterns"},
   {type:"Patterns",q:"What comes next?<br>1, 1, 2, 3, 5, 8, 13, ?",opts:["18","21","24","34"],ans:1,cat:"patterns"},
   
-  // VERBAL (9-12)
+  // VERBAL (5-6)
   {type:"Verbal",q:"Which word does NOT belong with the others?",opts:["Apple","Mango","Potato","Banana"],ans:2,cat:"verbal"},
   {type:"Verbal",q:"Choose the synonym of LUMINOUS:",opts:["Dim","Radiant","Heavy","Slow"],ans:1,cat:"verbal"},
-  {type:"Verbal",q:"Which word best completes the analogy?<br>Book : Chapter :: Tree : ?",opts:["Leaf","Root","Branch","Trunk"],ans:2,cat:"verbal"},
-  {type:"Verbal",q:"What is the meaning of EPHEMERAL?",opts:["Eternal","Short-lived","Powerful","Ancient"],ans:1,cat:"verbal"},
   
-  // SPATIAL (13-16)
+  // SPATIAL (7-8)
   {type:"Spatial",q:"How many cubes are in a 3×3×3 Rubik's cube (including hidden ones)?",opts:["9","18","27","36"],ans:2,cat:"spatial"},
-  {type:"Spatial",q:"If you fold this net into a cube, which face is opposite the face marked 'X'?",ctx:"Imagine a cube net with X on the center square.",opts:["Top","Bottom","Left","Cannot determine"],ans:1,cat:"spatial"},
   {type:"Spatial",q:"A rectangular prism has dimensions 3×4×5. How many unit cubes can fit inside?",opts:["60","70","120","150"],ans:0,cat:"spatial"},
-  {type:"Spatial",q:"If you rotate a square 90 degrees clockwise 4 times, what shape do you get?",opts:["Same square","Circle","Tilted square","Can't tell"],ans:0,cat:"spatial"},
   
-  // REASONING (17-20)
+  // REASONING (9)
   {type:"Reasoning",q:"All roses are flowers. Some flowers fade quickly. Therefore:",opts:["Roses fade quickly","Some roses may fade quickly","Roses never fade","Flowers are roses"],ans:1,cat:"reasoning"},
-  {type:"Reasoning",q:"If all Borks are Floops, and no Floops are Zings, then:",opts:["All Zings are Borks","No Borks are Zings","Some Floops are Borks","Both B and C"],ans:3,cat:"reasoning"},
-  {type:"Reasoning",q:"A train leaves Station A at 60 mph. Another leaves Station B 200 miles away at 40 mph heading towards it. When do they meet?",opts:["1 hour","2 hours","3 hours","4 hours"],ans:1,cat:"reasoning"},
-  {type:"Reasoning",q:"You have a 3-gallon jug and a 5-gallon jug. How can you measure exactly 4 gallons?",opts:["Fill 5, pour to 3, empty 3, pour 2 from 5, fill 5, pour to 3","Fill 3, pour to 5, fill 3, pour to 5","Fill 5, fill 3, subtract","It's impossible"],ans:0,cat:"reasoning"},
 ];
 
 const LEVELS = [
-  {min:19,title:"College Level",grade:"College",badge:"gold",badgeEmoji:"🎓",
-   desc:"College-level thinking. You handle complex multi-step problems, abstract reasoning, and advanced logic with ease. This is the level expected of university students and professionals."},
-  {min:17,title:"Grade 11-12",grade:"11-12",badge:"silver",badgeEmoji:"⭐",
-   desc:"High school senior level. Strong analytical skills, good vocabulary, solid math reasoning. You think like a top high school graduate ready for college."},
-  {min:13,title:"Grade 9-10",grade:"9-10",badge:"bronze",badgeEmoji:"💪",
-   desc:"Early high school level. Solid foundation in logical reasoning and problem-solving. With continued practice, you're on track for advanced work."},
-  {min:9,title:"Grade 7-8",grade:"7-8",badge:"gray",badgeEmoji:"📚",
-   desc:"Middle school level. You grasp core concepts and solve straightforward problems well. Keep challenging yourself — this is a key growth stage."},
-  {min:5,title:"Grade 5-6",grade:"5-6",badge:"gray",badgeEmoji:"🧩",
-   desc:"Upper elementary level. Basic logic and problem-solving skills are developing. Practice puzzles, math games, and reading to build your skills."},
+  {min:9,title:"College Level",grade:"College",badge:"gold",badgeEmoji:"🎓",
+   desc:"College-level thinking. Perfect score. You handle complex multi-step problems, abstract reasoning, and advanced logic with ease."},
+  {min:7,title:"Grade 11-12",grade:"11-12",badge:"silver",badgeEmoji:"⭐",
+   desc:"High school senior level. Strong analytical skills, good vocabulary, solid math reasoning."},
+  {min:5,title:"Grade 9-10",grade:"9-10",badge:"bronze",badgeEmoji:"💪",
+   desc:"Early high school level. Solid foundation in logical reasoning and problem-solving."},
+  {min:3,title:"Grade 7-8",grade:"7-8",badge:"gray",badgeEmoji:"📚",
+   desc:"Middle school level. You grasp core concepts and solve straightforward problems well."},
+  {min:1,title:"Grade 5-6",grade:"5-6",badge:"gray",badgeEmoji:"🧩",
+   desc:"Upper elementary level. Basic logic and problem-solving skills are developing."},
   {min:0,title:"Grade 3-4",grade:"3-4",badge:"gray",badgeEmoji:"🌱",
-   desc:"Elementary level. Everyone starts here! Keep learning, stay curious, and try again after some practice. Intelligence grows with effort."},
+   desc:"Elementary level. Everyone starts here! Keep learning and try again."},
 ];
 
 // ── State ──────────────────────────────────────────────────
@@ -327,8 +316,8 @@ function showResults() {
   });
   
   // Grade level (based on correct answers, not scaled IQ)
-  const finalScore = correct;  // Use raw correct count (0-20)
-  
+  const finalScore = correct;  // Use raw correct count (0-9)
+
   // Find level
   let level = LEVELS.find(l => finalScore >= l.min) || LEVELS[LEVELS.length-1];
   
@@ -344,8 +333,8 @@ function showResults() {
       currentScore = finalScore;
       clearInterval(anim);
     }
-    scoreEl.textContent = currentScore + '/20';
-  }, 40);
+    scoreEl.textContent = currentScore + '/9';
+  }, 30);
   
   document.getElementById('resultBadge').className = 'result-badge ' + level.badge;
   document.getElementById('resultBadge').textContent = level.badgeEmoji;
