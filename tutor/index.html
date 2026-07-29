@@ -245,7 +245,16 @@ function startInlineQuiz(s){
   document.getElementById("quizA").innerHTML="";
   document.getElementById("quizProg").textContent="Q0/"+iqTotal;
   document.getElementById("quizScr").textContent="—";
-  askQ("Start "+s+" quiz");
+  // Load stored topics from previous sessions to avoid repeats
+  var prevKey="tutor_seen_"+s;
+  var prevTopics=[];
+  try{var stored=localStorage.getItem(prevKey);if(stored)prevTopics=JSON.parse(stored);}catch(e){}
+  var seed=Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+  var contextMsg="Start "+s+" quiz. Seed: "+seed;
+  if(prevTopics.length>0){
+    contextMsg+=" Already asked: "+prevTopics.slice(-20).join(", ")+". Ask completely different questions.";
+  }
+  askQ(contextMsg);
 }
 function closeIQ(){
   document.getElementById("quizPanel").style.display="none";
@@ -331,6 +340,25 @@ function finishQ(reply){
   if(!m)m=reply.match(/(\d+)\s*\/\s*(\d+)\s*(?:correct|questions)/i);
   if(m){corr=parseInt(m[1]);tot=parseInt(m[2])}
   if(!m&&!corr&&tot>0){var all=reply.match(/(\d+)\s*\/\s*(\d+)/g);if(all&&all.length){var last=all[all.length-1].split("/");corr=parseInt(last[0]);tot=parseInt(last[1])}}
+  // Save seen questions to localStorage so next quiz avoids repeats
+  try{
+    var prevKey="tutor_seen_"+iqSubj;
+    var seen=[];
+    var stored=localStorage.getItem(prevKey);
+    if(stored)seen=JSON.parse(stored);
+    // Extract question topics from assistant responses
+    for(var i=0;i<iqHist.length;i++){
+      if(iqHist[i].role==="assistant"){
+        var q=iqHist[i].content;
+        // Grab first sentence or up to 60 chars as topic fingerprint
+        var topic=q.replace(/^(Correct|Incorrect)[^.]*\.\s*/,"").split("Q"+iqTot+"/")[0].split("Q"+(iqTot+1)+"/")[0].split("Score:")[0].trim().slice(0,60);
+        if(topic.length>10)seen.push(topic);
+      }
+    }
+    // Keep last 50 seen topics
+    if(seen.length>50)seen=seen.slice(-50);
+    localStorage.setItem(prevKey,JSON.stringify(seen));
+  }catch(e){}
   document.getElementById("quizQ").innerHTML=reply.replace(/\n/g,"<br>");
   document.getElementById("quizA").innerHTML="<div style='color:var(--text-muted);padding:10px'>Saving score...</div>";
   var name=CU?CU.first+" "+CU.last:"Student";
