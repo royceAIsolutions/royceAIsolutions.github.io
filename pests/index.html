@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXX');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natural Pest Control — RoyceAI Solutions</title>
+<meta name="description" content="Natural, chemical-free pest control for OC homes. CLI tool that tells you exactly what to use for ants, lizards, roaches, spiders, flies, silverfish, and rodents.">
+<link rel="canonical" href="https://royceai.com/pests">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--radius:16px;--radius-sm:10px;--max-w:1200px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--shadow-elevated:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
+body::before{content:'';position:fixed;inset:0;opacity:0.012;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .logo-icon{width:30px;height:30px;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 3s ease-in-out infinite;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;box-shadow:0 2px 12px rgba(124,92,252,0.3)}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;animation:pulse-glow 2.5s ease-in-out infinite}
+.nav-links .nav-cta:hover{background:var(--accent-light);transform:scale(1.05)}
+.hero-sub{min-height:auto;display:flex;flex-direction:column;justify-content:center;padding:100px 24px 40px;max-width:var(--max-w);margin:0 auto;text-align:center}
+.hero-sub h1{font-size:clamp(2rem,6vw,4rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:12px}
+.hero-sub h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero-sub p{color:var(--text-secondary);font-size:1rem;max-width:500px;margin:0 auto}
+.section{padding:40px 24px 80px;max-width:var(--max-w);margin:0 auto}
+.section-header{text-align:center;margin-bottom:64px}
+.section-header h2{font-size:clamp(2rem,5vw,3rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:12px}
+.section-header h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.section-header p{color:var(--text-secondary);font-size:1.05rem;max-width:500px;margin:0 auto}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:var(--max-w);margin:0 auto}
+.bento-card{color:var(--text);text-decoration:none;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:all var(--transition);position:relative;overflow:hidden;box-shadow:var(--shadow-card)}
+.bento-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
+.bento-card .icon{font-size:2rem;margin-bottom:16px;display:block}
+.bento-card h3{font-size:1.15rem;font-weight:600;margin-bottom:8px;letter-spacing:-0.01em}
+.bento-card p{color:var(--text-secondary);font-size:0.9rem;line-height:1.7}
+.bento-card .tag{display:inline-block;margin-top:16px;padding:4px 12px;border-radius:6px;background:var(--accent-bg);color:var(--accent-light);font-size:0.85rem;font-weight:600}
+.pest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:48px 0}
+.pest-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px;transition:all var(--transition)}
+.pest-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.pest-card .emoji{font-size:1.5rem;margin-bottom:8px}
+.pest-card h4{font-size:0.95rem;font-weight:600;margin-bottom:4px}
+.pest-card p{color:var(--text-secondary);font-size:0.85rem;line-height:1.6}
+.recipe-list{list-style:none;padding:0}
+.recipe-list li{padding:16px 0;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:flex-start}
+.recipe-list li:last-child{border-bottom:none}
+.recipe-list .emoji{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.recipe-list .label{font-weight:600;font-size:0.95rem;margin-bottom:2px}
+.recipe-list .desc{color:var(--text-secondary);font-size:0.85rem;line-height:1.6}
+.cta-section{text-align:center;padding:120px 24px;max-width:var(--max-w);margin:0 auto}
+.cta-section h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:16px}
+.cta-section p{color:var(--text-secondary);font-size:1.1rem;margin-bottom:40px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius-sm);font-family:var(--font);font-size:0.95rem;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer}
+.btn:active{transform:scale(0.97)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow);animation:pulse-glow 2.5s ease-in-out infinite}
+.btn-primary:hover{background:var(--accent-light);transform:translateY(-2px) scale(1.03);box-shadow:0 0 0 1px var(--accent-light),0 6px 30px var(--accent-glow),0 0 60px var(--accent-glow)}
+.btn-secondary{background:var(--bg-elevated);color:var(--text);box-shadow:0 0 0 1px var(--border)}
+.btn-secondary:hover{background:var(--bg-card);box-shadow:0 0 0 1px var(--accent);transform:translateY(-1px)}
+footer{border-top:1px solid var(--border);padding:48px 24px;max-width:var(--max-w);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+footer .logo{font-weight:700;font-size:1rem;color:var(--text-secondary)}
+footer .logo span{color:var(--accent-light)}
+footer .links{display:flex;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;transition:color 0.2s}
+footer .links a:hover{color:var(--accent-light)}
+footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:center}
+section[id], div[id], h2[id], h3[id]{scroll-margin-top:80px}
+@media(max-width:640px){
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none}
+  .hero-sub{padding:calc(60px + var(--nav-h)) 20px 40px}
+  .bento{grid-template-columns:1fr}
+  .bento-card{grid-column:span 1}
+  .pest-grid{grid-template-columns:1fr}
+  .section{padding:80px 20px}
+  .cta-section{padding:80px 20px}
+  footer{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="logo-icon">R</span>
+    Royce<span>AI</span>
+  </a>
+  <div class="nav-links">
+    <a href="/products">Products</a>
+    <a href="/blog">Blog</a>
+    <a href="/chat" class="nav-cta">Chat</a>
+  </div>
+</nav>
+
+<div class="page">
+  <section class="hero-sub">
+    <h1>Natural <span class="gradient">Pest Control</span></h1>
+    <p>Zero chemicals. Zero toxic sprays. Every method uses ingredients from your kitchen or local nursery.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Pests We <span class="gradient">Cover</span></h2>
+      <p>CLI tool that tells you exactly what to use and how.</p>
+    </div>
+
+    <div class="pest-grid">
+      <div class="pest-card">
+        <div class="emoji">🦎</div>
+        <h4>Lizards</h4>
+        <p>Patio and backyard deterrents. Cayenne pepper spray, garlic water, potted mint and lemongrass.</p>
+      </div>
+      <div class="pest-card">
+        <div class="emoji">🐜</div>
+        <h4>Ants</h4>
+        <p>Argentine ants. Borax + sugar bait, vinegar trails, cinnamon barrier, diatomaceous earth.</p>
+      </div>
+      <div class="pest-card">
+        <div class="emoji">🪳</div>
+        <h4>Roaches</h4>
+        <p>Baking soda + sugar bait, bay leaves, diatomaceous earth, essential oil sprays.</p>
+      </div>
+      <div class="pest-card">
+        <div class="emoji">🕷️</div>
+        <h4>Spiders</h4>
+        <p>Peppermint oil barrier, sticky traps, web removal, chestnuts, reduced lighting.</p>
+      </div>
+      <div class="pest-card">
+        <div class="emoji">🪰</div>
+        <h4>Flies</h4>
+        <p>Apple cider vinegar traps, basil/mint plants, drain treatments, boiling water.</p>
+      </div>
+      <div class="pest-card">
+        <div class="emoji">🐟</div>
+        <h4>Silverfish</h4>
+        <p>Diatomaceous earth, cedar oil, cinnamon sticks, dehumidifier, sticky traps.</p>
+      </div>
+      <div class="pest-card">
+        <div class="emoji">🐭</div>
+        <h4>Rodents</h4>
+        <p>Steel wool exclusion, peppermint oil, snap traps, cayenne pepper, ultrasonic repellents.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="max-width:720px">
+    <div class="section-header">
+      <h2>Kitchen <span class="gradient">Recipes</span></h2>
+      <p>Three spray mixes you can make in 10 minutes.</p>
+    </div>
+
+    <ul class="recipe-list">
+      <li>
+        <span class="emoji">🌶️</span>
+        <div>
+          <div class="label">Pepper Spray</div>
+          <div class="desc">2-3 tbsp cayenne or chili powder per gallon of water. Mix, let sit 10 minutes, dump on patio edges and cracks. Strongest natural deterrent. Reapply after rain.</div>
+        </div>
+      </li>
+      <li>
+        <span class="emoji">🧄</span>
+        <div>
+          <div class="label">Garlic Water</div>
+          <div class="desc">5-6 crushed garlic cloves soaked in water overnight. Strain and dump on patio. Milder than pepper but effective. Lasts a few days.</div>
+        </div>
+      </li>
+      <li>
+        <span class="emoji">🧪</span>
+        <div>
+          <div class="label">Vinegar Spray</div>
+          <div class="desc">50/50 white vinegar and water. Spray around edges and cracks. Deters pests and kills weeds. Safe for plants in small amounts.</div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>How It <span class="gradient">Works</span></h2>
+    </div>
+
+    <div class="bento">
+      <div class="bento-card">
+        <span class="icon">🖥️</span>
+        <h3>CLI Tool Access</h3>
+        <p>Run one command for any pest type. Get symptoms, natural remedies, step-by-step treatment plan, and pro tips instantly.</p>
+      </div>
+      <div class="bento-card">
+        <span class="icon">🧂</span>
+        <h3>Just Kitchen Ingredients</h3>
+        <p>No chemicals, no toxic sprays, no expensive pest control visits. Cayenne, garlic, vinegar, baking soda, borax — things you already have.</p>
+      </div>
+      <div class="bento-card">
+        <span class="icon">🌱</span>
+        <h3>Permanent Solutions</h3>
+        <p>Potted plants like mint, lemongrass, lavender, and rosemary repel pests year-round with zero maintenance once established.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Get the Pest Control Tool</h2>
+    <p>Included with any RoyceAI subscription. One command covers 7 pests.</p>
+    <a href="/chat" class="btn btn-primary">Chat to get started</a>
+    <a href="/products" class="btn btn-secondary" style="margin-left:12px">View all products</a>
+  </section>
+</div>
+
+<footer>
+  <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
+  <div class="links">
+    <a href="/products">Products</a>
+    <a href="/tutor">Tutor</a>
+    <a href="/my">Dashboard</a>
+    <a href="/blog">Blog</a>
+    <a href="/chat">Chat</a>
+  </div>
+  <div class="copy">RoyceAI Solutions. Irvine, CA</div>
+</footer>
+
+</body>
+</html>
