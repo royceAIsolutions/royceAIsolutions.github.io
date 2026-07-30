@@ -26,7 +26,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
 nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:var(--nav-h);max-width:var(--max-w);margin:0 auto;border-bottom:1px solid var(--border);background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);position:sticky;top:0;z-index:100}
 .nav-logo{font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:10px}
-.nav-logo .logo-icon{width:32px;height:32px;background:var(--accent-gradient);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff}
+.nav-logo .logo-icon{width:32px;height:32px;border-radius:9px;display:block;object-fit:cover}
 .nav-logo span{color:var(--accent-light)}
 .nav-links{display:flex;align-items:center;gap:6px}
 .nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all 0.2s}
@@ -74,7 +74,7 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 <nav>
-<a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
+<a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-32.jpeg" class="logo-icon" alt="R"> Royce<span>AI</span></a>
 <div class="nav-links">
 <a href="/products">Products</a>
 <a href="/tutor">✨ Tutor</a>

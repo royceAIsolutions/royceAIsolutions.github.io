@@ -24,7 +24,7 @@ gtag('config', 'G-EF23H9423B');
 body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 32px;max-width:var(--max-w);margin:0 auto}
 .nav-logo{font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:10px}
-.nav-logo .logo-icon{width:32px;height:32px;background:var(--accent-gradient);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff}
+.nav-logo .logo-icon{width:32px;height:32px;border-radius:9px;display:block;object-fit:cover}
 .nav-logo span{color:var(--accent-light)}
 .nav-links{display:flex;align-items:center;gap:6px}
 .nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all 0.2s}
@@ -87,7 +87,7 @@ body.tutor-page .login-screen{padding:100px 24px}
 </style>
 </head><body class="tutor-page">
 <nav>
-<a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
+<a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-32.jpeg" class="logo-icon" alt="R"> Royce<span>AI</span></a>
 <div class="nav-links">
 <a href="/products">Products</a>
 <a href="/tutor" id="navTutorLink">✨ Tutor</a><button class="logout-btn nav-logout-btn" id="navLogoutBtn" onclick="logout()" style="display:none">🔓 Logout</button>
@@ -99,7 +99,7 @@ body.tutor-page .login-screen{padding:100px 24px}
 </nav>
 <div class="login-screen" id="loginScreen">
 <div class="login-box">
-<div class="nav-logo" style="margin:0 auto 16px;justify-content:center"><span class="logo-icon">R</span></div>
+<div class="nav-logo" style="margin:0 auto 16px;justify-content:center"><img src="/assets/logo/royceai-logo-32.jpeg" class="logo-icon" alt="R"></div>
 <h2>Log in to study</h2>
 <p class="sub">Enter your first and last name exactly as registered.</p>
 <div class="input-group"><label for="studentFirstName">First Name</label><input type="text" id="studentFirstName" placeholder="Enter your first name" autocomplete="off"></div>
