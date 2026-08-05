@@ -444,5 +444,20 @@
         "val": "1 day"
       }
     ]
+  },
+  {
+    "id": "mackenzie koh",
+    "first": "MacKenzie",
+    "last": "Koh",
+    "subjects": "Math, Reading, Science",
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "plan": "free_trial",
+    "cards": "grade4,math",
+    "kpis": [],
+    "week": "-",
+    "sessions": "0",
+    "streak": "-"
   }
 ]
