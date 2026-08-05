@@ -456,15 +456,28 @@
     "mtd": "—",
     "ytd": "—",
     "topics": "—",
-    "difficulty": "📚 3rd Grade — Foundations",
-    "focus": "Multiplication Tables, Addition/Subtraction, Reading Comprehension",
+    "difficulty": "📚 4th Grade — Gentle Pace",
+    "focus": "Multiplication, Reading Comprehension, Science",
     "plan": "free_trial",
-    "cards": "grade3,math",
+    "cards": "grade4,math",
     "authorized": true,
     "products": [
       "tutor"
     ],
-    "kpis": [],
+    "kpis": [
+      {
+        "label": "Math",
+        "val": "—"
+      },
+      {
+        "label": "Reading",
+        "val": "—"
+      },
+      {
+        "label": "Streak",
+        "val": "0 days"
+      }
+    ],
     "calories": false,
     "sessions": "0",
     "streak": "-",
