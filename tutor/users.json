@@ -484,5 +484,42 @@
     "school": "Talbot Hill",
     "dob": "2017-06-03",
     "age": "9"
+  },
+  {
+    "first": "Charles",
+    "last": "Koh",
+    "id": "charles koh",
+    "name": "Charles Koh",
+    "subjects": "WA Real Estate, RCW/WAC, Contracts",
+    "active": true,
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
+    "topics": "—",
+    "difficulty": "🏢 WA Real Estate — Exam Prep",
+    "focus": "RCW/WAC Law, Contracts, Agency",
+    "plan": "free_trial",
+    "cards": "realestate",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Practice",
+        "val": "—"
+      },
+      {
+        "label": "Pass Rate",
+        "val": "—"
+      },
+      {
+        "label": "Streak",
+        "val": "0 days"
+      }
+    ],
+    "calories": false,
+    "sessions": "0",
+    "streak": "-"
   }
 ]
