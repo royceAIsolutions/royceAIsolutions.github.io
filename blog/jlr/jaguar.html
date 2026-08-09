@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐆 Jaguar — Land Rover Blog</title>
+<meta name="description" content="Jaguar&#x27;s reinvention — the all-electric Type 00, the new brand era and the road to 2027. — all articles.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#07070a;color:#eeeef0;line-height:1.8;overflow-x:hidden;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:64px;max-width:1200px;margin:0 auto;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);position:sticky;top:0;z-index:100}
+.nav-logo{font-weight:700;font-size:1.1rem;color:#eeeef0;text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-logo .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff}
+.nav-logo span{color:#a78bfa}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{color:#88889a;text-decoration:none;font-size:0.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:#eeeef0;background:rgba(124,92,252,0.08)}
+.nav-links .nav-cta{background:#7c5cfc;color:#fff!important;font-weight:600;padding:8px 22px;border-radius:8px}
+.hero-sub{min-height:40vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 60px;max-width:var(--max-w,1200px);margin:0 auto;text-align:center}
+.hero-sub h1{font-size:clamp(2rem,6vw,4rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:12px}
+.hero-sub h1 .gradient{background:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero-sub p{color:#88889a;font-size:1rem;max-width:600px;margin:0 auto}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.blog-list{max-width:720px;margin:0 auto;padding:0 24px 4rem;display:flex;flex-direction:column;gap:16px}
+.blog-card{background:#0e0e12;border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:1.75rem;text-decoration:none;display:block;transition:all 0.35s cubic-bezier(0.16,1,0.3,1);box-shadow:0 2px 20px rgba(0,0,0,0.3)}
+.blog-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.1);box-shadow:0 8px 40px rgba(0,0,0,0.4)}
+.blog-card .tag{display:inline-block;padding:3px 12px;border-radius:6px;background:rgba(124,92,252,0.08);color:#a78bfa;font-size:0.75rem;font-weight:600;margin-bottom:0.75rem}
+.blog-card h3{color:#fff;font-size:1.1rem;font-weight:600;margin:0.5rem 0 0.4rem;line-height:1.4}
+.blog-card p{color:#88889a;font-size:0.9rem;line-height:1.7}
+.blog-card .date{display:block;color:#5c5c6e;font-size:0.8rem;margin-top:0.75rem}
+.back{max-width:720px;margin:0 auto;padding:2rem 24px 0;text-align:center}
+.back a{color:#a78bfa;text-decoration:none;font-size:0.9rem;font-weight:500}
+.back a:hover{color:#fff}
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:48px 24px;max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+footer .copy{color:#5c5c6e;font-size:0.8rem;width:100%;text-align:center}
+footer .links{display:flex;gap:20px;flex-wrap:wrap}
+footer .links a{color:#88889a;text-decoration:none;font-size:0.875rem}
+footer .links a:hover{color:#a78bfa}
+@media(max-width:640px){.blog-list{padding:0 16px 3rem}.blog-card{padding:1.25rem}nav{padding:0 16px;height:auto;flex-direction:column;gap:6px;padding:8px 16px}.nav-logo{width:100%;justify-content:center;font-size:1rem}.nav-links{width:100%;justify-content:center;flex-wrap:wrap}.nav-links a{font-size:.75rem;padding:5px 10px}}
+</style>
+</head>
+<body>
+<div class="orb orb-1"></div><div class="orb orb-2"></div>
+
+<nav>
+<a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
+<div class="nav-links">
+<a href="/products">Products</a>
+<a href="/tutor">Tutor</a>
+<a href="/blog">Blog</a>
+<a href="/blog/jlr" style="color:#a78bfa;font-weight:600">Land Rover</a>
+<a href="/chat" class="nav-cta">Chat</a>
+</div>
+</nav>
+<div class="hero-sub">
+<h1>🐆 <span class="gradient">Jaguar</span></h1>
+<p>Jaguar&#x27;s reinvention — the all-electric Type 00, the new brand era and the road to 2027.</p>
+</div>
+<div class="back"><a href="/blog/jlr">← All Land Rover topics</a></div>
+<div class="blog-list">
+<a class="blog-card" href="/blog/jlr/articles/jaguar/jaguar-2026-08-09.html">
+<span class="tag">🐆 Jaguar</span>
+<h3>Jaguar Update — August 09, 2026</h3>
+<p>Jaguar&#x27;s reinvention — the all-electric Type 00, the new brand era and the road to 2027.</p>
+<span class="date">2026-08-09</span>
+</a>
+</div>
+<footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/blog/jlr">Land Rover Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions · Irvine, CA</div></footer>
+</body>
+</html>
