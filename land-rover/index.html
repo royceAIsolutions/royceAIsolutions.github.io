@@ -92,7 +92,7 @@ footer .links a{margin:0 10px}
 
 <section class="hero">
   <h1>Land Rover <span class="gradient">Inventory</span></h1>
-  <p>New vehicles across California Land Rover retailers · data refreshed 2026-08-16 18:15 PT</p>
+  <p>New vehicles across California Land Rover retailers · data refreshed 2026-08-16 18:20 PT</p>
   <p style="font-size:0.9rem;color:var(--text-muted);margin-top:6px">Engine badges: P250 = 2.0L 4-cyl (245 hp) · P400 = 3.0L 6-cyl (395 hp) · P530 = 4.4L 8-cyl (523 hp) · OCTA = 4.4L 8-cyl (626 hp)</p>
 </section>
 
@@ -118,9 +118,6 @@ footer .links a{margin:0 10px}
   </label>
   <label>Interior
     <select id="fInt"><option value="">All</option></select>
-  </label>
-  <label>Max Price $
-    <input id="fPrice" type="number" step="1000" placeholder="150000" style="width:110px">
   </label>
   <label>Search
     <input id="fText" type="text" placeholder="defender 110 / trim" style="width:150px">
@@ -160,7 +157,6 @@ function render() {
   const wb = document.getElementById('fWb').value;
   const col = document.getElementById('fColor').value;
   const int = document.getElementById('fInt').value;
-  const p = parseFloat(document.getElementById('fPrice').value) || Infinity;
   const t = document.getElementById('fText').value.toLowerCase().trim();
   const s = document.getElementById('fSort').value;
   let rows = data.filter(v => {
@@ -171,7 +167,6 @@ function render() {
     if (wb && (v.wheelbase || '') !== wb) return false;
     if (col && (v.colorFull || '') !== col) return false;
     if (int && (v.interiorFam || '') !== int) return false;
-    if (v.price && v.price > p) return false;
     if (t) {
       const blob = (v.title + ' ' + v.model + ' ' + (v.color||'') + ' ' + (v.colorFamily||'') + ' ' + (v.trim||'')).toLowerCase();
       if (!blob.includes(t)) return false;
@@ -192,7 +187,7 @@ function render() {
     const model = '<span class="badge badge-model">' + (v.model||'') + '</span>';
     const unitsBadge = (v.count||1) > 1 ? '<span class="badge badge-qty">' + v.count + ' units</span>' : '';
     const color = v.colorFull ? '<div class="meta">🎨 ' + v.colorFull + '</div>' : (v.color ? '<div class="meta">🎨 ' + v.color + '</div>' : '');
-    const intLine = v.interiorDisplay ? '<div class="meta">🪑 ' + v.interiorDisplay + '</div>' : '';
+    const intLine = v.interiorDisplay ? '<div class="meta">💺 ' + v.interiorDisplay + '</div>' : '';
     const loc = v.dealer ? '<div class="meta">📍 ' + v.dealer + (v.city ? ' · ' + v.city : '') + '</div>' : '';
     // Year + trim already appear in the title — meta shows ONLY the LWB marker
     // when the title doesn't already say LWB (VIN-derived for Range Rover).
@@ -213,8 +208,8 @@ function render() {
       '</div>';
   }).join('');
 }
-// Price/text/sort are render-only (not dropdowns).
-['fPrice','fText','fSort'].forEach(id => document.getElementById(id).addEventListener('input', render));
+// Text/sort are render-only (not dropdowns).
+['fText','fSort'].forEach(id => document.getElementById(id).addEventListener('input', render));
 // ALL dropdowns affect each other (Royce, Aug 16 2026): any selection
 // narrows every other dropdown to options that ACTUALLY exist in inventory
 // given the current filter state. Impossible selections reset to 'All'.
@@ -251,7 +246,7 @@ FILTER_IDS.forEach(id => document.getElementById(id).addEventListener('change', 
 refreshOptions();
 render();
 document.getElementById('fReset').addEventListener('click', () => {
-  FILTER_IDS.concat(['fPrice','fText','fSort']).forEach(id => document.getElementById(id).value = '');
+  FILTER_IDS.concat(['fText','fSort']).forEach(id => document.getElementById(id).value = '');
   refreshOptions(); render();
 });
 </script>
