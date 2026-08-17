@@ -40,9 +40,13 @@ nav{height:var(--nav-h);display:flex;align-items:center;justify-content:space-be
 @keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .hero p{color:var(--text-secondary);margin-top:12px;font-size:1.05rem}
 .controls{max-width:var(--max-w);margin:0 auto;padding:0 24px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.controls select,.controls input{background:var(--bg-elevated);border:1px solid var(--border);color:var(--text);padding:9px 14px;border-radius:var(--radius-sm);font-size:0.9rem;outline:none}
+.controls select,.controls input{background-color:var(--bg-elevated);border:1.5px solid var(--accent);color:var(--text);padding:9px 14px;border-radius:var(--radius-sm);font-size:0.9rem;outline:none;transition:border-color .15s,box-shadow .15s}
+.controls select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23a78bfa'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;min-width:120px}
+.controls select:hover,.controls input:hover{border-color:var(--accent-light);box-shadow:0 0 0 3px var(--accent-bg)}
+.btn-reset{margin-left:auto;background:transparent;border:1px solid var(--accent);color:var(--accent-light);padding:9px 16px;border-radius:var(--radius-sm);font-size:0.9rem;cursor:pointer;transition:all .15s}
+.btn-reset:hover{background:var(--accent);color:#fff}
 .controls select:focus,.controls input:focus{border-color:var(--accent)}
-.controls label{color:var(--text-secondary);font-size:0.85rem;display:flex;align-items:center;gap:6px}
+.controls label{color:var(--text);font-size:0.85rem;font-weight:600;display:flex;align-items:center;gap:6px;letter-spacing:.02em}
 .stat{background:var(--accent-bg);color:var(--accent-light);padding:4px 12px;border-radius:99px;font-size:0.85rem;font-weight:600}
 .grid{max-width:var(--max-w);margin:0 auto;padding:0 24px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
 .card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all 0.3s;display:flex;flex-direction:column;gap:8px}
@@ -82,7 +86,7 @@ footer .links a{margin:0 10px}
 
 <section class="hero">
   <h1>Land Rover <span class="gradient">Inventory</span></h1>
-  <p>New vehicles across California Land Rover retailers · data refreshed 2026-08-16 17:16 PT</p>
+  <p>New vehicles across California Land Rover retailers · data refreshed 2026-08-16 17:29 PT</p>
   <p style="font-size:0.9rem;color:var(--text-muted);margin-top:6px">Engine badges: P250 = 2.0L 4-cyl (245 hp) · P400 = 3.0L 6-cyl (395 hp) · P530 = 4.4L 8-cyl (523 hp) · OCTA = 4.4L 8-cyl (626 hp)</p>
 </section>
 
@@ -124,6 +128,7 @@ footer .links a{margin:0 10px}
       <option value="cyl">Cylinders (8→4)</option>
     </select>
   </label>
+  <button id="fReset" class="btn-reset" type="button">✕ Reset</button>
 </div>
 
 <div class="grid" id="grid"></div>
@@ -194,71 +199,47 @@ function render() {
       '</div>';
   }).join('');
 }
-['fDealer','fTrim','fCyl','fWb','fColor','fInt','fPrice','fText','fSort'].forEach(id => document.getElementById(id).addEventListener('input', render));
-document.getElementById('fModel').innerHTML = '<option value="">All</option>' +
-  [...new Set(data.map(v => v.model))].filter(Boolean).sort().map(x => '<option>' + x + '</option>').join('');
-// Dealer dropdown reflects ACTUAL availability (Royce, Aug 16 2026): it only
-// lists dealers with inventory in the current snapshot, and cascades off the
-// selected Model — pick a model -> only dealers carrying it are offered.
-const dealersByModel = {};
-data.forEach(v => {
-  if (!v.model || !v.dealer) return;
-  (dealersByModel[v.model] ||= new Set()).add(v.dealer);
-});
-function fillDealers() {
-  const m = document.getElementById('fModel').value;
-  const cur = document.getElementById('fDealer').value;
-  const opts = (m && dealersByModel[m]) ? [...dealersByModel[m]].sort()
-              : [...new Set(data.map(v => v.dealer))].filter(Boolean).sort();
-  const el = document.getElementById('fDealer');
-  el.innerHTML = '<option value="">All</option>' + opts.map(x => '<option>' + x + '</option>').join('');
-  el.value = (cur && opts.includes(cur)) ? cur : '';
+// Price/text/sort are render-only (not dropdowns).
+['fPrice','fText','fSort'].forEach(id => document.getElementById(id).addEventListener('input', render));
+// ALL dropdowns affect each other (Royce, Aug 16 2026): any selection
+// narrows every other dropdown to options that ACTUALLY exist in inventory
+// given the current filter state. Impossible selections reset to 'All'.
+const FILTER_IDS = ['fModel','fDealer','fTrim','fCyl','fWb','fColor','fInt'];
+function refreshOptions() {
+  const vals = {};
+  FILTER_IDS.forEach(id => vals[id] = document.getElementById(id).value);
+  const rows = data.filter(v =>
+    (!vals.fModel || v.model === vals.fModel) &&
+    (!vals.fDealer || v.dealer === vals.fDealer) &&
+    (!vals.fTrim || (v.trimDisplay || '') === vals.fTrim) &&
+    (!vals.fCyl || (v.cyl || 0) === parseInt(vals.fCyl)) &&
+    (!vals.fWb || (v.wheelbase || '') === vals.fWb) &&
+    (!vals.fColor || (v.colorFull || '') === vals.fColor) &&
+    (!vals.fInt || (v.interiorFam || '') === vals.fInt)
+  );
+  const fill = (id, key) => {
+    const cur = vals[id];
+    let opts = [...new Set(rows.map(v => v[key]))].filter(Boolean);
+    opts.sort((a, b) => typeof a === 'number' ? a - b : String(a).localeCompare(String(b)));
+    const el = document.getElementById(id);
+    el.innerHTML = '<option value="">All</option>' + opts.map(x => '<option>' + x + '</option>').join('');
+    el.value = (cur && opts.includes(cur)) ? cur : '';
+  };
+  fill('fModel', 'model');
+  fill('fDealer', 'dealer');
+  fill('fTrim', 'trimDisplay');
+  fill('fCyl', 'cyl');
+  fill('fWb', 'wheelbase');
+  fill('fColor', 'colorFull');
+  fill('fInt', 'interiorFam');
 }
-// Interior dropdown also cascades off the selected Model — only interiors
-// offered in that model show.
-const interiorsByModel = {};
-data.forEach(v => {
-  if (!v.model || !v.interiorFam) return;
-  (interiorsByModel[v.model] ||= new Set()).add(v.interiorFam);
-});
-function fillInt() {
-  const m = document.getElementById('fModel').value;
-  const cur = document.getElementById('fInt').value;
-  const opts = (m && interiorsByModel[m]) ? [...interiorsByModel[m]].sort()
-              : [...new Set(data.map(v => v.interiorFam))].filter(Boolean).sort();
-  const el = document.getElementById('fInt');
-  el.innerHTML = '<option value="">All</option>' + opts.map(x => '<option>' + x + '</option>').join('');
-  el.value = (cur && opts.includes(cur)) ? cur : '';
-}
-// Trim dropdown cascades off the selected Model: pick a model -> only that
-// model's trims are offered. 'All' -> every trim.
-const trimsByModel = {};
-data.forEach(v => {
-  if (!v.model || !v.trimDisplay) return;
-  (trimsByModel[v.model] ||= new Set()).add(v.trimDisplay);
-});
-function fillTrims() {
-  const m = document.getElementById('fModel').value;
-  const cur = document.getElementById('fTrim').value;
-  const opts = (m && trimsByModel[m]) ? [...trimsByModel[m]].sort()
-              : [...new Set(data.map(v => v.trimDisplay))].filter(Boolean).sort();
-  const el = document.getElementById('fTrim');
-  el.innerHTML = '<option value="">All</option>' + opts.map(x => '<option>' + x + '</option>').join('');
-  el.value = (cur && opts.includes(cur)) ? cur : '';
-}
-document.getElementById('fModel').addEventListener('change', () => { fillTrims(); fillDealers(); fillInt(); render(); });
-document.getElementById('fCyl').innerHTML = '<option value="">All</option>' +
-  [...new Set(data.map(v => v.cyl))].filter(Boolean).sort((a,b) => a-b).map(x => '<option>' + x + '</option>').join('');
-document.getElementById('fWb').innerHTML = '<option value="">All</option>' +
-  [...new Set(data.map(v => v.wheelbase))].filter(Boolean).sort().map(x => '<option>' + x + '</option>').join('');
-document.getElementById('fColor').innerHTML = '<option value="">All</option>' +
-  [...new Set(data.map(v => v.colorFull))].filter(Boolean).sort().map(x => '<option>' + x + '</option>').join('');
-document.getElementById('fInt').innerHTML = '<option value="">All</option>' +
-  [...new Set(data.map(v => v.interiorFam))].filter(Boolean).sort().map(x => '<option>' + x + '</option>').join('');
-fillTrims();
-fillDealers();
-fillInt();
+FILTER_IDS.forEach(id => document.getElementById(id).addEventListener('change', () => { refreshOptions(); render(); }));
+refreshOptions();
 render();
+document.getElementById('fReset').addEventListener('click', () => {
+  FILTER_IDS.concat(['fPrice','fText','fSort']).forEach(id => document.getElementById(id).value = '');
+  refreshOptions(); render();
+});
 </script>
 </body>
 </html>
