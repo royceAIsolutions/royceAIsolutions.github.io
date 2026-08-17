@@ -6,7 +6,7 @@
     "name": "Jiho Pak",
     "subjects": "Math, 9th Grade Prep, Bible Study",
     "active": true,
-    "today": "27/33 (82%)",
+    "today": "—",
     "mtd": "104/132 (79%)",
     "ytd": "1022/1137 (90%)",
     "topics": "Jul 15 Quiz, Factoring, Geometry",
@@ -33,7 +33,7 @@
       }
     ],
     "calories": false,
-    "week": "15/16 (94%)",
+    "week": "79/99 (80%)",
     "sessions": "12",
     "streak": "7 days"
   },
@@ -71,7 +71,7 @@
       }
     ],
     "calories": false,
-    "week": "8/10 (80%)",
+    "week": "—",
     "sessions": "6",
     "streak": "5 days"
   },
@@ -111,7 +111,7 @@
     "calories": false,
     "sessions": "4",
     "streak": "3 days",
-    "week": "-"
+    "week": "—"
   },
   {
     "first": "Paxton",
@@ -136,7 +136,7 @@
     "calories": false,
     "sessions": "0",
     "streak": "-",
-    "week": "-"
+    "week": "—"
   },
   {
     "first": "Josh",
@@ -174,7 +174,7 @@
     "calories": false,
     "sessions": "3",
     "streak": "2 days",
-    "week": "-"
+    "week": "—"
   },
   {
     "first": "Mason",
@@ -210,7 +210,7 @@
       }
     ],
     "calories": false,
-    "week": "-"
+    "week": "—"
   },
   {
     "first": "Pearl",
@@ -247,7 +247,7 @@
     ],
     "calories": false,
     "sessions": "3",
-    "week": "-"
+    "week": "—"
   },
   {
     "first": "Ruby",
@@ -284,7 +284,7 @@
     ],
     "calories": false,
     "sessions": "2",
-    "week": "-"
+    "week": "—"
   },
   {
     "first": "Carter",
@@ -322,7 +322,7 @@
     ],
     "calories": false,
     "sessions": "0",
-    "week": "-"
+    "week": "—"
   },
   {
     "first": "Chase",
@@ -360,7 +360,7 @@
     ],
     "calories": false,
     "sessions": "0",
-    "week": "-"
+    "week": "—"
   },
   {
     "first": "Tommy",
@@ -398,16 +398,16 @@
     "calories": false,
     "sessions": "0",
     "streak": "New",
-    "week": "-"
+    "week": "—"
   },
   {
     "id": "test user",
     "first": "Test",
     "last": "User",
     "subjects": "Math, SAT Prep, Science",
-    "today": "8/10 (80%)",
-    "mtd": "15/20 (75%)",
-    "ytd": "15/20 (75%)",
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
     "plan": "free_trial",
     "cards": "math,sat,grade9",
     "kpis": [
@@ -426,16 +426,16 @@
     ],
     "sessions": "3",
     "streak": "1 day",
-    "week": "-"
+    "week": "—"
   },
   {
     "id": "test user",
     "first": "Test",
     "last": "User",
     "subjects": "Math, SAT Prep, Science",
-    "today": "8/10 (80%)",
-    "mtd": "15/20 (75%)",
-    "ytd": "15/20 (75%)",
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
     "sessions": "3",
     "streak": "1 day",
     "plan": "free_trial",
@@ -454,7 +454,7 @@
         "val": "1 day"
       }
     ],
-    "week": "-"
+    "week": "—"
   },
   {
     "first": "MacKenzie",
@@ -482,7 +482,7 @@
     "school": "Talbot Hill",
     "dob": "2017-06-03",
     "age": "9",
-    "week": "-"
+    "week": "—"
   },
   {
     "first": "Charles",
@@ -520,6 +520,6 @@
     "calories": false,
     "sessions": "0",
     "streak": "-",
-    "week": "-"
+    "week": "—"
   }
 ]
