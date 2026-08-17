@@ -93,7 +93,7 @@ footer .links a{margin:0 10px}
 
 <section class="hero">
   <h1>Land Rover <span class="gradient">Inventory</span></h1>
-  <p>New vehicles across California Land Rover retailers · data refreshed 2026-08-17 12:36 PT</p>
+  <p>New vehicles across California Land Rover retailers · data refreshed 2026-08-17 13:02 PT</p>
   <p style="font-size:0.9rem;color:var(--text-muted);margin-top:6px">Engine badges: P250 = 2.0L 4-cyl (245 hp) · P400 = 3.0L 6-cyl (395 hp) · P530 = 4.4L 8-cyl (523 hp) · OCTA = 4.4L 8-cyl (626 hp)</p>
 </section>
 
@@ -158,7 +158,7 @@ function render() {
   const m = document.getElementById('fModel').value;
   const dlr = document.getElementById('fDealer').value;
   const trm = document.getElementById('fTrim').value;
-  const cyl = parseInt(document.getElementById('fCyl').value) || 0;
+  const cylVal = document.getElementById('fCyl').value;
   const wb = document.getElementById('fWb').value;
   const col = document.getElementById('fColor').value;
   const int = document.getElementById('fInt').value;
@@ -170,7 +170,11 @@ function render() {
     if (m && v.model !== m) return false;
     if (dlr && v.dealer !== dlr) return false;
     if (trm && (v.trimDisplay || '') !== trm) return false;
-    if (cyl && (v.cyl || 0) !== cyl) return false;
+    // Cylinders: numeric match OR "Plug-in Hybrid" (PHEV) match (Royce,
+    // Aug 17 2026 — parseInt on 'Hybrid' = NaN = 0 = no filter, which leaked
+    // every model incl. Discovery into the hybrid view).
+    if (cylVal === 'Plug-in Hybrid') { if (!v.hybrid) return false; }
+    else if (cylVal && (v.cyl || 0) !== parseInt(cylVal)) return false;
     if (wb && (v.wheelbase || '') !== wb) return false;
     if (col && (v.colorFull || '') !== col) return false;
     if (int && (v.interiorFam || '') !== int) return false;
@@ -237,7 +241,7 @@ function refreshOptions() {
     (!vals.fModel || v.model === vals.fModel) &&
     (!vals.fDealer || v.dealer === vals.fDealer) &&
     (!vals.fTrim || (v.trimDisplay || '') === vals.fTrim) &&
-    (!vals.fCyl || (vals.fCyl === 'Hybrid' ? !!v.hybrid : (v.cyl || 0) === parseInt(vals.fCyl))) &&
+    (!vals.fCyl || (vals.fCyl === 'Plug-in Hybrid' ? !!v.hybrid : (v.cyl || 0) === parseInt(vals.fCyl))) &&
     (!vals.fWb || (v.wheelbase || '') === vals.fWb) &&
     (!vals.fColor || (v.colorFull || '') === vals.fColor) &&
     (!vals.fInt || (v.interiorFam || '') === vals.fInt)
@@ -260,13 +264,14 @@ function refreshOptions() {
   fill('fModel', 'model');
   fill('fDealer', 'dealer');
   fill('fTrim', 'trimDisplay');
-  // Cylinders: numeric 4/6/8 + "Hybrid" (PHEV) option — only appears when the
-  // current filter set includes hybrids (Range Rover Sport / Range Rover).
-  // (Royce, Aug 17 2026)
+  // Cylinders: numeric 4/6/8 + "Plug-in Hybrid" (PHEV) option — only appears
+  // when the current filter set includes PHEVs (Range Rover Sport / Range
+  // Rover). Label is "Plug-in Hybrid" — NOT plain "Hybrid" — because JLR
+  // mild hybrids (Discovery etc.) are not PHEVs (Royce, Aug 17 2026).
   {
     const curCyl = vals.fCyl;
     let cylOpts = [...new Set(rows.map(v => v.cyl))].filter(v => v > 0).sort((a, b) => a - b).map(String);
-    if (rows.some(v => v.hybrid)) cylOpts.push('Hybrid');
+    if (rows.some(v => v.hybrid)) cylOpts.push('Plug-in Hybrid');
     const fCylEl = document.getElementById('fCyl');
     fCylEl.innerHTML = '<option value="">All</option>' + cylOpts.map(x => '<option>' + x + '</option>').join('');
     fCylEl.value = (curCyl && cylOpts.includes(curCyl)) ? curCyl : '';
