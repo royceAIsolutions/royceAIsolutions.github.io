@@ -82,7 +82,7 @@ footer .links a{margin:0 10px}
 
 <section class="hero">
   <h1>Land Rover <span class="gradient">Inventory</span></h1>
-  <p>New vehicles across California Land Rover retailers · data refreshed 2026-08-16 17:03 PT</p>
+  <p>New vehicles across California Land Rover retailers · data refreshed 2026-08-16 17:08 PT</p>
   <p style="font-size:0.9rem;color:var(--text-muted);margin-top:6px">Engine badges: P250 = 2.0L 4-cyl (245 hp) · P400 = 3.0L 6-cyl (395 hp) · P530 = 4.4L 8-cyl (523 hp) · OCTA = 4.4L 8-cyl (626 hp)</p>
 </section>
 
@@ -187,19 +187,51 @@ function render() {
       '</div>';
   }).join('');
 }
-['fModel','fDealer','fTrim','fCyl','fWb','fColor','fPrice','fText','fSort'].forEach(id => document.getElementById(id).addEventListener('input', render));
+['fDealer','fTrim','fCyl','fWb','fColor','fPrice','fText','fSort'].forEach(id => document.getElementById(id).addEventListener('input', render));
 document.getElementById('fModel').innerHTML = '<option value="">All</option>' +
   [...new Set(data.map(v => v.model))].filter(Boolean).sort().map(x => '<option>' + x + '</option>').join('');
-document.getElementById('fDealer').innerHTML = '<option value="">All</option>' +
-  [...new Set(data.map(v => v.dealer))].filter(Boolean).sort().map(x => '<option>' + x + '</option>').join('');
-document.getElementById('fTrim').innerHTML = '<option value="">All</option>' +
-  [...new Set(data.map(v => v.trimDisplay))].filter(Boolean).sort().map(x => '<option>' + x + '</option>').join('');
+// Dealer dropdown reflects ACTUAL availability (Royce, Aug 16 2026): it only
+// lists dealers with inventory in the current snapshot, and cascades off the
+// selected Model — pick a model -> only dealers carrying it are offered.
+const dealersByModel = {};
+data.forEach(v => {
+  if (!v.model || !v.dealer) return;
+  (dealersByModel[v.model] ||= new Set()).add(v.dealer);
+});
+function fillDealers() {
+  const m = document.getElementById('fModel').value;
+  const cur = document.getElementById('fDealer').value;
+  const opts = (m && dealersByModel[m]) ? [...dealersByModel[m]].sort()
+              : [...new Set(data.map(v => v.dealer))].filter(Boolean).sort();
+  const el = document.getElementById('fDealer');
+  el.innerHTML = '<option value="">All</option>' + opts.map(x => '<option>' + x + '</option>').join('');
+  el.value = (cur && opts.includes(cur)) ? cur : '';
+}
+// Trim dropdown cascades off the selected Model: pick a model -> only that
+// model's trims are offered. 'All' -> every trim.
+const trimsByModel = {};
+data.forEach(v => {
+  if (!v.model || !v.trimDisplay) return;
+  (trimsByModel[v.model] ||= new Set()).add(v.trimDisplay);
+});
+function fillTrims() {
+  const m = document.getElementById('fModel').value;
+  const cur = document.getElementById('fTrim').value;
+  const opts = (m && trimsByModel[m]) ? [...trimsByModel[m]].sort()
+              : [...new Set(data.map(v => v.trimDisplay))].filter(Boolean).sort();
+  const el = document.getElementById('fTrim');
+  el.innerHTML = '<option value="">All</option>' + opts.map(x => '<option>' + x + '</option>').join('');
+  el.value = (cur && opts.includes(cur)) ? cur : '';
+}
+document.getElementById('fModel').addEventListener('change', () => { fillTrims(); fillDealers(); render(); });
 document.getElementById('fCyl').innerHTML = '<option value="">All</option>' +
   [...new Set(data.map(v => v.cyl))].filter(Boolean).sort((a,b) => a-b).map(x => '<option>' + x + '</option>').join('');
 document.getElementById('fWb').innerHTML = '<option value="">All</option>' +
   [...new Set(data.map(v => v.wheelbase))].filter(Boolean).sort().map(x => '<option>' + x + '</option>').join('');
 document.getElementById('fColor').innerHTML = '<option value="">All</option>' +
   [...new Set(data.map(v => v.colorFull))].filter(Boolean).sort().map(x => '<option>' + x + '</option>').join('');
+fillTrims();
+fillDealers();
 render();
 </script>
 </body>
