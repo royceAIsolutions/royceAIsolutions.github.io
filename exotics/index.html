@@ -122,7 +122,9 @@ function imgFallback(el) {
   el.parentElement.innerHTML = '<div class="noimg">🏎️</div>';
 }
 
-const PRICE_BUCKETS = [["1000000","$1M – $2M"],["2000000","$2M – $5M"],["5000000","$5M+"]];
+const PRICE_BUCKETS = [["1000000",1000000,2000000,"$1M – $2M"],["2000000",2000000,5000000,"$2M – $5M"],["5000000",5000000,Infinity,"$5M+"]];
+const bucketLo = v => v === "1000000" ? 1000000 : v === "2000000" ? 2000000 : 5000000;
+const bucketHi = v => v === "1000000" ? 2000000 : v === "2000000" ? 5000000 : Infinity;
 
 function render() {
   const el = id => document.getElementById(id);
@@ -138,7 +140,7 @@ function render() {
     if (x.b && c.brand !== x.b) return false;
     if (x.st && c.state !== x.st) return false;
     if (x.pr) {
-      const lo = parseInt(x.pr); const hi = x.pr === "5000000" ? Infinity : lo + 1000000;
+      const lo = bucketLo(x.pr); const hi = bucketHi(x.pr);
       if (c.price < lo || c.price >= hi) return false;
     }
     if (x.q) {
@@ -175,7 +177,7 @@ function render() {
   fill("brand", brandOpts, f.b, "All Brands");
   fill("state", stateOpts, f.st, "All States");
   el("price").innerHTML = '<option value="">Any Price</option>'
-    + priceOpts.map(p => '<option value="' + p[0] + '"' + (p[0] === f.pr ? ' selected' : '') + '>' + p[1] + '</option>').join("");
+    + priceOpts.map(p => '<option value="' + p[0] + '"' + (p[0] === f.pr ? ' selected' : '') + '>' + p[3] + '</option>').join("");
 
   const list = CARS.filter(c => match(c, f)).sort((a, b) => f.sort === "desc" ? b.price - a.price : a.price - b.price);
   const grid = document.getElementById("grid");
