@@ -122,26 +122,62 @@ function imgFallback(el) {
   el.parentElement.innerHTML = '<div class="noimg">🏎️</div>';
 }
 
+const PRICE_BUCKETS = [["1000000","$1M – $2M"],["2000000","$2M – $5M"],["5000000","$5M+"]];
+
 function render() {
-  const q = document.getElementById("q").value.trim().toLowerCase();
-  const b = document.getElementById("brand").value;
-  const st = document.getElementById("state").value;
-  const pr = document.getElementById("price").value;
-  const sort = document.getElementById("sort").value;
-  let list = CARS.filter(c => {
-    if (b && c.brand !== b) return false;
-    if (st && c.state !== st) return false;
-    if (pr) {
-      const lo = parseInt(pr); const hi = pr === "5000000" ? Infinity : lo + 1000000;
+  const el = id => document.getElementById(id);
+  let f = {
+    q: el("q").value.trim().toLowerCase(),
+    b: el("brand").value,
+    st: el("state").value,
+    pr: el("price").value,
+    sort: el("sort").value
+  };
+  // Single source of truth for what a car matches (used by facets AND results).
+  const match = (c, x) => {
+    if (x.b && c.brand !== x.b) return false;
+    if (x.st && c.state !== x.st) return false;
+    if (x.pr) {
+      const lo = parseInt(x.pr); const hi = x.pr === "5000000" ? Infinity : lo + 1000000;
       if (c.price < lo || c.price >= hi) return false;
     }
-    if (q) {
+    if (x.q) {
       const hay = (c.brand + " " + c.model + " " + c.dealer + " " + c.city + " " + c.year).toLowerCase();
-      if (!hay.includes(q)) return false;
+      if (!hay.includes(x.q)) return false;
     }
     return true;
-  });
-  list.sort((a, b) => sort === "desc" ? b.price - a.price : a.price - b.price);
+  };
+  const uniq = arr => [...new Set(arr)].filter(Boolean).sort();
+
+  // Faceted options: each dropdown only lists values that still exist in the
+  // cars matching the OTHER active filters (cross-filtering).
+  let brandOpts = uniq(CARS.filter(c => match(c, {q: f.q, st: f.st, pr: f.pr})).map(c => c.brand));
+  let stateOpts = uniq(CARS.filter(c => match(c, {q: f.q, b: f.b, pr: f.pr})).map(c => c.state));
+  let priceOpts = PRICE_BUCKETS.filter(([v]) => CARS.some(c => match(c, {q: f.q, b: f.b, st: f.st, pr: v})));
+
+  // Reset any selection that the other filters now exclude, then recompute.
+  let changed = false;
+  if (f.b && !brandOpts.includes(f.b)) { f.b = ""; changed = true; }
+  if (f.st && !stateOpts.includes(f.st)) { f.st = ""; changed = true; }
+  if (f.pr && !priceOpts.some(p => p[0] === f.pr)) { f.pr = ""; changed = true; }
+  if (changed) {
+    brandOpts = uniq(CARS.filter(c => match(c, {q: f.q, st: f.st, pr: f.pr})).map(c => c.brand));
+    stateOpts = uniq(CARS.filter(c => match(c, {q: f.q, b: f.b, pr: f.pr})).map(c => c.state));
+    priceOpts = PRICE_BUCKETS.filter(([v]) => CARS.some(c => match(c, {q: f.q, b: f.b, st: f.st, pr: v})));
+    el("brand").value = f.b; el("state").value = f.st; el("price").value = f.pr;
+  }
+
+  // Rebuild dropdowns preserving the (possibly reset) selection.
+  const fill = (id, opts, sel, allLabel) => {
+    el(id).innerHTML = '<option value="">' + allLabel + '</option>'
+      + opts.map(v => '<option value="' + v + '"' + (v === sel ? ' selected' : '') + '>' + v + '</option>').join("");
+  };
+  fill("brand", brandOpts, f.b, "All Brands");
+  fill("state", stateOpts, f.st, "All States");
+  el("price").innerHTML = '<option value="">Any Price</option>'
+    + priceOpts.map(p => '<option value="' + p[0] + '"' + (p[0] === f.pr ? ' selected' : '') + '>' + p[1] + '</option>').join("");
+
+  const list = CARS.filter(c => match(c, f)).sort((a, b) => f.sort === "desc" ? b.price - a.price : a.price - b.price);
   const grid = document.getElementById("grid");
   const empty = document.getElementById("empty");
   grid.innerHTML = list.map(c => {
@@ -165,7 +201,10 @@ function render() {
   empty.style.display = list.length ? "none" : "block";
 }
 
-["q","brand","state","price","sort"].forEach(id => document.getElementById(id).addEventListener("input", render));
+["q","brand","state","price","sort"].forEach(id => {
+  document.getElementById(id).addEventListener("input", render);
+  document.getElementById(id).addEventListener("change", render);
+});
 render();
 </script>
 </body>
