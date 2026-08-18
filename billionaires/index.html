@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top 99 Billionaires in the World | RoyceAI</title>
+<meta name="description" content="The top 99 billionaires on Earth ranked by net worth — Musk, Bezos, Zuckerberg, Arnault, Buffett, Jensen Huang, Ambani and more. Combined wealth $5,520 billion.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#07070a;color:#eeeef0;line-height:1.6;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:64px;max-width:1200px;margin:0 auto;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);position:sticky;top:0;z-index:100}
+.nav-logo{font-weight:700;font-size:1.1rem;color:#eeeef0;text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-logo img{border-radius:9px}
+.nav-logo span{color:#a78bfa}
+.nav-links{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.nav-links a{color:#88889a;text-decoration:none;font-size:0.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:#eeeef0;background:rgba(124,92,252,0.08)}
+.nav-links a.active{color:#fff;background:rgba(124,92,252,0.15);border:1px solid rgba(124,92,252,0.3)}
+.nav-links .nav-cta{background:#7c5cfc;color:#fff!important;font-weight:600;padding:8px 22px;border-radius:8px}
+.hero{padding:3.5rem 1.5rem 1.5rem;text-align:center;max-width:900px;margin:0 auto}
+.hero h1{font-size:2.4rem;font-weight:800;letter-spacing:-0.03em;color:#fff}
+.gradient{background:linear-gradient(135deg,#a78bfa,#7c5cfc);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#88889a;margin-top:0.75rem;font-size:1rem}
+.hero .count{color:#a78bfa;font-weight:600}
+.hero .note{color:#5c5c6e;font-size:0.78rem;margin-top:0.5rem}
+.filters{max-width:1200px;margin:1.5rem auto 0;padding:0 1.5rem;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.filters input,.filters select{background:#0e0e12;border:1px solid rgba(255,255,255,0.1);color:#eeeef0;padding:10px 14px;border-radius:10px;font-size:0.875rem;outline:none;font-family:inherit}
+.filters input:focus,.filters select:focus{border-color:#7c5cfc}
+.filters input{flex:1;min-width:180px}
+.filters select{min-width:130px}
+.grid{max-width:1200px;margin:2rem auto 4rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:#0e0e12;border:1px solid rgba(255,255,255,0.07);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.2s,border-color 0.2s;position:relative}
+.card:hover{transform:translateY(-3px);border-color:rgba(124,92,252,0.4)}
+.rank{position:absolute;top:12px;left:12px;background:rgba(124,92,252,0.15);border:1px solid rgba(124,92,252,0.35);color:#c4b5fd;font-weight:800;font-size:0.8rem;padding:4px 10px;border-radius:999px;z-index:2;backdrop-filter:blur(4px)}
+.card-top{height:110px;background:linear-gradient(135deg,rgba(124,92,252,0.16),rgba(168,85,247,0.08));display:flex;align-items:center;justify-content:center;position:relative}
+.avatar{width:76px;height:76px;border-radius:50%;background:#15151b;border:2px solid rgba(124,92,252,0.4);display:flex;align-items:center;justify-content:center;font-size:2.4rem;box-shadow:0 4px 20px rgba(0,0,0,0.5)}
+.card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.name{font-size:1.12rem;font-weight:800;color:#fff;letter-spacing:-0.01em}
+.chiprow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{background:rgba(124,92,252,0.12);border:1px solid rgba(124,92,252,0.25);color:#c4b5fd;padding:3px 10px;border-radius:999px;font-size:0.72rem;font-weight:600}
+.flag{font-size:0.85rem;color:#88889a}
+.worth{font-size:1.3rem;font-weight:800;color:#fff}
+.worth small{font-size:0.75rem;color:#88889a;font-weight:400}
+.company{color:#a78bfa;font-size:0.82rem;font-weight:600}
+.empty{max-width:1200px;margin:3rem auto;text-align:center;color:#88889a;padding:0 1.5rem}
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:40px 24px;max-width:1200px;margin:0 auto;text-align:center}
+footer .copy{color:#5c5c6e;font-size:0.8rem}
+footer .links{display:flex;gap:20px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+footer .links a{color:#88889a;text-decoration:none;font-size:0.875rem}
+footer .links a:hover{color:#a78bfa}
+@media(max-width:640px){.hero h1{font-size:1.7rem}.filters{padding:0 16px}.grid{grid-template-columns:1fr;padding:0 16px}nav{padding:0 16px;flex-direction:column;height:auto;gap:6px;padding:8px 16px}.nav-logo{width:100%;justify-content:center}.nav-links{width:100%;justify-content:center}}</style>
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:36px;height:36px;border-radius:9px" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/products">Products</a>
+    <a href="/tutor">✨ Tutor</a>
+    <a href="/land-rover">🚙 Land Rover</a>
+    <a href="/exotics">🏎️ Exotics</a>
+    <a href="/billionaires" class="active">💰 Billionaires</a>
+    <a href="/blog">Blog</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1><span class="gradient">Top 99 Billionaires</span></h1>
+  <p><span class="count">99 billionaires</span> · $5.52T combined net worth · updated August 18, 2026</p>
+  <p class="note">Approximate net worth estimates (Forbes-style, mid-2026), USD billions. Ranked by net worth. Counts rounded from public reports.</p>
+</section>
+
+<div class="filters">
+  <input type="text" id="q" placeholder="Search name, company… (ex. Musk, NVIDIA, Walmart)">
+  <select id="cat"><option value="">All Industries</option><option value="energy">Energy</option><option value="fashion">Fashion</option><option value="finance">Finance</option><option value="industry">Industry</option><option value="logistics">Logistics</option><option value="media">Media</option><option value="pharma">Pharma</option><option value="realestate">Realestate</option><option value="retail">Retail</option><option value="sports">Sports</option><option value="tech">Tech</option><option value="telecom">Telecom</option></select>
+  <select id="sort">
+    <option value="rank">Rank: #1 → #99</option>
+    <option value="worth">Net Worth: High → Low</option>
+    <option value="name">Name: A → Z</option>
+  </select>
+</div>
+
+<div class="grid" id="grid"></div>
+<div class="empty" id="empty" style="display:none">Nobody matches your filters.</div>
+
+<footer>
+  <div class="links">
+    <a href="/products">Products</a><a href="/tutor">Tutor</a>
+    <a href="/land-rover">Land Rover</a><a href="/exotics">Exotics</a><a href="/billionaires">Billionaires</a>
+    <a href="/blog">Blog</a><a href="/chat">Chat</a>
+  </div>
+  <div class="copy">RoyceAI Solutions · Irvine, CA</div>
+</footer>
+
+<script>
+const PEOPLE = [{"name": "Elon Musk", "cat": "tech", "emoji": "\ud83d\ude80", "country": "\ud83c\uddff\ud83c\udde6", "born": 1971, "worth": 420, "company": "Tesla \u00b7 SpaceX \u00b7 xAI", "rank": 1}, {"name": "Jeff Bezos", "cat": "tech", "emoji": "\ud83d\udce6", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1964, "worth": 240, "company": "Amazon", "rank": 2}, {"name": "Mark Zuckerberg", "cat": "tech", "emoji": "\ud83d\udc53", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1984, "worth": 230, "company": "Meta", "rank": 3}, {"name": "Larry Ellison", "cat": "tech", "emoji": "\ud83c\udfe6", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1944, "worth": 210, "company": "Oracle", "rank": 4}, {"name": "Bernard Arnault", "cat": "retail", "emoji": "\ud83d\udc5c", "country": "\ud83c\uddeb\ud83c\uddf7", "born": 1949, "worth": 190, "company": "LVMH", "rank": 5}, {"name": "Bill Gates", "cat": "tech", "emoji": "\ud83d\udcbb", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1955, "worth": 160, "company": "Microsoft", "rank": 6}, {"name": "Larry Page", "cat": "tech", "emoji": "\ud83d\udd0d", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1973, "worth": 160, "company": "Google", "rank": 7}, {"name": "Sergey Brin", "cat": "tech", "emoji": "\ud83d\udd2c", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1973, "worth": 155, "company": "Google", "rank": 8}, {"name": "Steve Ballmer", "cat": "tech", "emoji": "\ud83c\udfc0", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1956, "worth": 150, "company": "Microsoft \u00b7 Clippers", "rank": 9}, {"name": "Warren Buffett", "cat": "finance", "emoji": "\ud83d\udcb0", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1930, "worth": 150, "company": "Berkshire Hathaway", "rank": 10}, {"name": "Jensen Huang", "cat": "tech", "emoji": "\ud83e\udde5", "country": "\ud83c\uddf9\ud83c\uddfc", "born": 1963, "worth": 130, "company": "NVIDIA", "rank": 11}, {"name": "Amancio Ortega", "cat": "retail", "emoji": "\ud83d\udc55", "country": "\ud83c\uddea\ud83c\uddf8", "born": 1936, "worth": 120, "company": "Inditex \u00b7 Zara", "rank": 12}, {"name": "Michael Dell", "cat": "tech", "emoji": "\ud83d\udda5\ufe0f", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1965, "worth": 110, "company": "Dell Technologies", "rank": 13}, {"name": "Michael Bloomberg", "cat": "finance", "emoji": "\ud83d\udcc8", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1942, "worth": 105, "company": "Bloomberg LP", "rank": 14}, {"name": "Jim Walton", "cat": "retail", "emoji": "\ud83d\uded2", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1948, "worth": 100, "company": "Walmart", "rank": 15}, {"name": "Rob Walton", "cat": "retail", "emoji": "\ud83d\ude97", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1944, "worth": 100, "company": "Walmart", "rank": 16}, {"name": "Mukesh Ambani", "cat": "energy", "emoji": "\u26fd", "country": "\ud83c\uddee\ud83c\uddf3", "born": 1957, "worth": 100, "company": "Reliance Industries", "rank": 17}, {"name": "Alice Walton", "cat": "retail", "emoji": "\ud83c\udfa8", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1949, "worth": 95, "company": "Walmart", "rank": 18}, {"name": "Gautam Adani", "cat": "industry", "emoji": "\ud83c\udfd7\ufe0f", "country": "\ud83c\uddee\ud83c\uddf3", "born": 1962, "worth": 90, "company": "Adani Group", "rank": 19}, {"name": "Francoise Bettencourt Meyers", "cat": "retail", "emoji": "\ud83d\udc84", "country": "\ud83c\uddeb\ud83c\uddf7", "born": 1953, "worth": 80, "company": "L'Or\u00e9al", "rank": 20}, {"name": "Carlos Slim", "cat": "telecom", "emoji": "\ud83d\udcde", "country": "\ud83c\uddf2\ud83c\uddfd", "born": 1940, "worth": 80, "company": "Am\u00e9rica M\u00f3vil", "rank": 21}, {"name": "Charles Koch", "cat": "energy", "emoji": "\ud83d\udee2\ufe0f", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1935, "worth": 70, "company": "Koch Industries", "rank": 22}, {"name": "Julia Koch", "cat": "energy", "emoji": "\ud83c\udf3e", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1962, "worth": 60, "company": "Koch Industries", "rank": 23}, {"name": "Zhong Shanshan", "cat": "retail", "emoji": "\ud83c\udfde\ufe0f", "country": "\ud83c\udde8\ud83c\uddf3", "born": 1954, "worth": 60, "company": "Nongfu Spring", "rank": 24}, {"name": "Zhang Yiming", "cat": "tech", "emoji": "\ud83c\udfb5", "country": "\ud83c\udde8\ud83c\uddf3", "born": 1983, "worth": 60, "company": "ByteDance \u00b7 TikTok", "rank": 25}, {"name": "David Thomson", "cat": "media", "emoji": "\ud83d\udcf0", "country": "\ud83c\udde8\ud83c\udde6", "born": 1957, "worth": 60, "company": "Thomson Reuters", "rank": 26}, {"name": "Changpeng Zhao", "cat": "tech", "emoji": "\ud83e\ude99", "country": "\ud83c\udde8\ud83c\udde6", "born": 1977, "worth": 60, "company": "Binance", "rank": 27}, {"name": "Ma Huateng", "cat": "tech", "emoji": "\ud83d\udcac", "country": "\ud83c\udde8\ud83c\uddf3", "born": 1971, "worth": 55, "company": "Tencent", "rank": 28}, {"name": "Dieter Schwarz", "cat": "retail", "emoji": "\ud83d\udecd\ufe0f", "country": "\ud83c\udde9\ud83c\uddea", "born": 1939, "worth": 50, "company": "Lidl \u00b7 Kaufland", "rank": 29}, {"name": "Colin Huang", "cat": "tech", "emoji": "\ud83d\uded2", "country": "\ud83c\udde8\ud83c\uddf3", "born": 1980, "worth": 50, "company": "PDD Holdings", "rank": 30}, {"name": "Phil Knight", "cat": "retail", "emoji": "\ud83d\udc5f", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1938, "worth": 45, "company": "Nike", "rank": 31}, {"name": "Klaus-Michael K\u00fchne", "cat": "logistics", "emoji": "\ud83d\udea2", "country": "\ud83c\udde9\ud83c\uddea", "born": 1937, "worth": 45, "company": "K\u00fchne + Nagel", "rank": 32}, {"name": "Alain Wertheimer", "cat": "fashion", "emoji": "\ud83c\udf80", "country": "\ud83c\uddeb\ud83c\uddf7", "born": 1948, "worth": 40, "company": "Chanel", "rank": 33}, {"name": "Gerard Wertheimer", "cat": "fashion", "emoji": "\ud83c\udfa9", "country": "\ud83c\uddeb\ud83c\uddf7", "born": 1951, "worth": 40, "company": "Chanel", "rank": 34}, {"name": "Tadashi Yanai", "cat": "retail", "emoji": "\ud83e\udde5", "country": "\ud83c\uddef\ud83c\uddf5", "born": 1949, "worth": 40, "company": "Uniqlo \u00b7 Fast Retailing", "rank": 35}, {"name": "Lei Jun", "cat": "tech", "emoji": "\ud83d\udcf1", "country": "\ud83c\udde8\ud83c\uddf3", "born": 1969, "worth": 40, "company": "Xiaomi", "rank": 36}, {"name": "Wang Chuanfu", "cat": "industry", "emoji": "\ud83d\ude8c", "country": "\ud83c\udde8\ud83c\uddf3", "born": 1966, "worth": 40, "company": "BYD", "rank": 37}, {"name": "Steve Schwarzman", "cat": "finance", "emoji": "\ud83c\udfe2", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1947, "worth": 40, "company": "Blackstone", "rank": 38}, {"name": "Thomas Peterffy", "cat": "finance", "emoji": "\ud83d\udcca", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1944, "worth": 40, "company": "Interactive Brokers", "rank": 39}, {"name": "Ken Griffin", "cat": "finance", "emoji": "\ud83d\udc0b", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1968, "worth": 40, "company": "Citadel", "rank": 40}, {"name": "Li Ka-shing", "cat": "industry", "emoji": "\u2693", "country": "\ud83c\udded\ud83c\uddf0", "born": 1928, "worth": 40, "company": "CK Hutchison", "rank": 41}, {"name": "Lukas Walton", "cat": "retail", "emoji": "\ud83c\udf3f", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1986, "worth": 40, "company": "Walmart", "rank": 42}, {"name": "Jacqueline Mars", "cat": "retail", "emoji": "\ud83c\udf6b", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1939, "worth": 40, "company": "Mars Inc.", "rank": 43}, {"name": "John Mars", "cat": "retail", "emoji": "\ud83c\udf6c", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1935, "worth": 40, "company": "Mars Inc.", "rank": 44}, {"name": "Dustin Moskovitz", "cat": "tech", "emoji": "\ud83d\udc65", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1984, "worth": 35, "company": "Asana \u00b7 Facebook co-founder", "rank": 45}, {"name": "Shiv Nadar", "cat": "tech", "emoji": "\ud83d\udce1", "country": "\ud83c\uddee\ud83c\uddf3", "born": 1945, "worth": 35, "company": "HCL Technologies", "rank": 46}, {"name": "Savitri Jindal", "cat": "industry", "emoji": "\ud83c\udfed", "country": "\ud83c\uddee\ud83c\uddf3", "born": 1950, "worth": 35, "company": "Jindal Group", "rank": 47}, {"name": "Jack Ma", "cat": "tech", "emoji": "\ud83d\udc0e", "country": "\ud83c\udde8\ud83c\uddf3", "born": 1964, "worth": 32, "company": "Alibaba", "rank": 48}, {"name": "Hasso Plattner", "cat": "tech", "emoji": "\ud83e\uddee", "country": "\ud83c\udde9\ud83c\uddea", "born": 1944, "worth": 30, "company": "SAP", "rank": 49}, {"name": "Dan Gilbert", "cat": "finance", "emoji": "\ud83c\udfe0", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1962, "worth": 30, "company": "Rocket Companies \u00b7 Cavaliers", "rank": 50}, {"name": "Eric Schmidt", "cat": "tech", "emoji": "\u2708\ufe0f", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1955, "worth": 30, "company": "Google", "rank": 51}, {"name": "Zeng Yuqun", "cat": "industry", "emoji": "\ud83d\udd0b", "country": "\ud83c\udde8\ud83c\uddf3", "born": 1968, "worth": 30, "company": "CATL", "rank": 52}, {"name": "Radhakishan Damani", "cat": "retail", "emoji": "\ud83d\uded2", "country": "\ud83c\uddee\ud83c\uddf3", "born": 1954, "worth": 30, "company": "DMart", "rank": 53}, {"name": "Abigail Johnson", "cat": "finance", "emoji": "\ud83d\udcbc", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1961, "worth": 30, "company": "Fidelity", "rank": 54}, {"name": "Len Blavatnik", "cat": "media", "emoji": "\ud83c\udfb5", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1957, "worth": 30, "company": "Access Industries", "rank": 55}, {"name": "Miriam Adelson", "cat": "industry", "emoji": "\ud83c\udfb0", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1945, "worth": 30, "company": "Las Vegas Sands", "rank": 56}, {"name": "Lee Shau Kee", "cat": "realestate", "emoji": "\ud83c\udfd9\ufe0f", "country": "\ud83c\udded\ud83c\uddf0", "born": 1928, "worth": 30, "company": "Henderson Land", "rank": 57}, {"name": "Dilip Shanghvi", "cat": "pharma", "emoji": "\ud83d\udc8a", "country": "\ud83c\uddee\ud83c\uddf3", "born": 1955, "worth": 25, "company": "Sun Pharma", "rank": 58}, {"name": "Cyrus Poonawalla", "cat": "pharma", "emoji": "\ud83d\udc89", "country": "\ud83c\uddee\ud83c\uddf3", "born": 1941, "worth": 25, "company": "Serum Institute", "rank": 59}, {"name": "Ding Lei", "cat": "tech", "emoji": "\ud83c\udfae", "country": "\ud83c\udde8\ud83c\uddf3", "born": 1971, "worth": 25, "company": "NetEase", "rank": 60}, {"name": "Ray Dalio", "cat": "finance", "emoji": "\ud83c\udf0a", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1949, "worth": 25, "company": "Bridgewater", "rank": 61}, {"name": "Vladimir Potanin", "cat": "industry", "emoji": "\u2744\ufe0f", "country": "\ud83c\uddf7\ud83c\uddfa", "born": 1961, "worth": 25, "company": "Norilsk Nickel", "rank": 62}, {"name": "Gennady Timchenko", "cat": "energy", "emoji": "\ud83d\udee2\ufe0f", "country": "\ud83c\uddf7\ud83c\uddfa", "born": 1952, "worth": 25, "company": "Volga Group", "rank": 63}, {"name": "Andrey Melnichenko", "cat": "industry", "emoji": "\ud83c\udf3e", "country": "\ud83c\uddf7\ud83c\uddfa", "born": 1972, "worth": 25, "company": "EuroChem \u00b7 SUEK", "rank": 64}, {"name": "Iris Fontbona", "cat": "industry", "emoji": "\u26cf\ufe0f", "country": "\ud83c\udde8\ud83c\uddf1", "born": 1943, "worth": 25, "company": "Antofagasta", "rank": 65}, {"name": "Gina Rinehart", "cat": "industry", "emoji": "\u26cf\ufe0f", "country": "\ud83c\udde6\ud83c\uddfa", "born": 1954, "worth": 25, "company": "Hancock Prospecting", "rank": 66}, {"name": "He Xiangjian", "cat": "industry", "emoji": "\ud83c\udf00", "country": "\ud83c\udde8\ud83c\uddf3", "born": 1942, "worth": 25, "company": "Midea", "rank": 67}, {"name": "Susanne Klatten", "cat": "industry", "emoji": "\ud83d\ude98", "country": "\ud83c\udde9\ud83c\uddea", "born": 1962, "worth": 25, "company": "BMW", "rank": 68}, {"name": "Stefan Quandt", "cat": "industry", "emoji": "\ud83d\udd29", "country": "\ud83c\udde9\ud83c\uddea", "born": 1966, "worth": 25, "company": "BMW", "rank": 69}, {"name": "Masayoshi Son", "cat": "tech", "emoji": "\ud83c\udfd9\ufe0f", "country": "\ud83c\uddef\ud83c\uddf5", "born": 1957, "worth": 25, "company": "SoftBank", "rank": 70}, {"name": "Kumar Birla", "cat": "industry", "emoji": "\ud83e\uddf5", "country": "\ud83c\uddee\ud83c\uddf3", "born": 1967, "worth": 20, "company": "Aditya Birla Group", "rank": 71}, {"name": "Israel Englander", "cat": "finance", "emoji": "\ud83c\udfaf", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1948, "worth": 20, "company": "Millennium Management", "rank": 72}, {"name": "Steve Cohen", "cat": "finance", "emoji": "\ud83d\uddbc\ufe0f", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1956, "worth": 20, "company": "Point72 \u00b7 Mets", "rank": 73}, {"name": "David Tepper", "cat": "finance", "emoji": "\ud83c\udfc8", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1957, "worth": 20, "company": "Appaloosa \u00b7 Panthers", "rank": 74}, {"name": "Harold Hamm", "cat": "energy", "emoji": "\u26fd", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1945, "worth": 20, "company": "Continental Resources", "rank": 75}, {"name": "Rupert Murdoch", "cat": "media", "emoji": "\ud83d\udcfa", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1931, "worth": 20, "company": "News Corp \u00b7 Fox", "rank": 76}, {"name": "Alexey Mordashov", "cat": "industry", "emoji": "\u2699\ufe0f", "country": "\ud83c\uddf7\ud83c\uddfa", "born": 1965, "worth": 20, "company": "Severstal", "rank": 77}, {"name": "Stefan Persson", "cat": "retail", "emoji": "\ud83e\uddf5", "country": "\ud83c\uddf8\ud83c\uddea", "born": 1947, "worth": 20, "company": "H&M", "rank": 78}, {"name": "Takemitsu Takizaki", "cat": "tech", "emoji": "\ud83d\udd27", "country": "\ud83c\uddef\ud83c\uddf5", "born": 1945, "worth": 20, "company": "Keyence", "rank": 79}, {"name": "Vicky Safra", "cat": "finance", "emoji": "\ud83c\udfe6", "country": "\ud83c\udde7\ud83c\uddf7", "born": 1953, "worth": 20, "company": "Banco Safra", "rank": 80}, {"name": "Eyal Ofer", "cat": "industry", "emoji": "\ud83d\udea2", "country": "\ud83c\uddee\ud83c\uddf1", "born": 1950, "worth": 20, "company": "Zodiac Maritime", "rank": 81}, {"name": "Alwaleed bin Talal", "cat": "finance", "emoji": "\ud83c\udfe8", "country": "\ud83c\uddf8\ud83c\udde6", "born": 1955, "worth": 20, "company": "Kingdom Holding", "rank": 82}, {"name": "John Fredriksen", "cat": "industry", "emoji": "\ud83d\udea2", "country": "\ud83c\uddf3\ud83c\uddf4", "born": 1944, "worth": 20, "company": "Seadrill \u00b7 Frontline", "rank": 83}, {"name": "Andrew Forrest", "cat": "industry", "emoji": "\ud83c\udf0f", "country": "\ud83c\udde6\ud83c\uddfa", "born": 1961, "worth": 20, "company": "Fortescue Metals", "rank": 84}, {"name": "Finn Rausing", "cat": "industry", "emoji": "\ud83e\udd64", "country": "\ud83c\uddf8\ud83c\uddea", "born": 1955, "worth": 20, "company": "Tetra Pak", "rank": 85}, {"name": "Sri & Gopi Hinduja", "cat": "finance", "emoji": "\ud83c\udfe6", "country": "\ud83c\uddec\ud83c\udde7", "born": 1935, "worth": 20, "company": "Hinduja Group", "rank": 86}, {"name": "Donald Bren", "cat": "realestate", "emoji": "\ud83c\udfde\ufe0f", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1932, "worth": 18, "company": "Irvine Company", "rank": 87}, {"name": "James Dyson", "cat": "industry", "emoji": "\ud83c\udf2a\ufe0f", "country": "\ud83c\uddec\ud83c\udde7", "born": 1947, "worth": 15, "company": "Dyson", "rank": 88}, {"name": "Lakshmi Mittal", "cat": "industry", "emoji": "\ud83d\udd29", "country": "\ud83c\uddee\ud83c\uddf3", "born": 1950, "worth": 15, "company": "ArcelorMittal", "rank": 89}, {"name": "Robin Li", "cat": "tech", "emoji": "\ud83d\udd0e", "country": "\ud83c\udde8\ud83c\uddf3", "born": 1968, "worth": 15, "company": "Baidu", "rank": 90}, {"name": "Liu Qiangdong", "cat": "tech", "emoji": "\ud83d\ude9a", "country": "\ud83c\udde8\ud83c\uddf3", "born": 1974, "worth": 15, "company": "JD.com", "rank": 91}, {"name": "Henry Cheng", "cat": "retail", "emoji": "\ud83d\udc8e", "country": "\ud83c\udded\ud83c\uddf0", "born": 1946, "worth": 15, "company": "Chow Tai Fook", "rank": 92}, {"name": "Charlene de Carvalho-Heineken", "cat": "retail", "emoji": "\ud83c\udf7a", "country": "\ud83c\uddf3\ud83c\uddf1", "born": 1954, "worth": 15, "company": "Heineken", "rank": 93}, {"name": "Denise Coates", "cat": "finance", "emoji": "\ud83c\udfb0", "country": "\ud83c\uddec\ud83c\udde7", "born": 1967, "worth": 15, "company": "Bet365", "rank": 94}, {"name": "Jorge Paulo Lemann", "cat": "finance", "emoji": "\ud83c\udf7a", "country": "\ud83c\udde7\ud83c\uddf7", "born": 1939, "worth": 15, "company": "3G Capital \u00b7 AB InBev", "rank": 95}, {"name": "Jerry Jones", "cat": "sports", "emoji": "\ud83c\udfc8", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1942, "worth": 15, "company": "Dallas Cowboys", "rank": 96}, {"name": "Stan Kroenke", "cat": "sports", "emoji": "\ud83c\udfdf\ufe0f", "country": "\ud83c\uddfa\ud83c\uddf8", "born": 1947, "worth": 15, "company": "Kroenke Sports \u00b7 Arsenal", "rank": 97}, {"name": "Yang Huiyan", "cat": "realestate", "emoji": "\ud83c\udfe1", "country": "\ud83c\udde8\ud83c\uddf3", "born": 1981, "worth": 15, "company": "Country Garden", "rank": 98}, {"name": "Michael Platt", "cat": "finance", "emoji": "\ud83d\udc3b", "country": "\ud83c\uddec\ud83c\udde7", "born": 1968, "worth": 15, "company": "BlueCrest", "rank": 99}];
+const fmtW = b => b >= 1000 ? "$" + (b/1000).toFixed(2).replace(/0+$/,"").replace(/\.$/,"") + "T" : "$" + b + "B";
+const CAT_ICONS = {"tech":"💻","retail":"🛒","finance":"📈","industry":"🏭","energy":"⛽","media":"📺","realestate":"🏙️","fashion":"👗","pharma":"💊","telecom":"📞","logistics":"🚢","sports":"🏆"};
+
+function render() {
+  const el = id => document.getElementById(id);
+  let f = {
+    q: el("q").value.trim().toLowerCase(),
+    cat: el("cat").value,
+    sort: el("sort").value
+  };
+  // Single source of truth for what a person matches (used by facets AND results).
+  const match = (p, x) => {
+    if (x.cat && p.cat !== x.cat) return false;
+    if (x.q) {
+      const hay = (p.name + " " + p.cat + " " + (p.company||"") + " " + (p.country||"")).toLowerCase();
+      if (!hay.includes(x.q)) return false;
+    }
+    return true;
+  };
+  const uniq = arr => [...new Set(arr)].filter(Boolean).sort();
+
+  // Faceted options: category dropdown only lists industries still present in
+  // the people matching the OTHER active filters (cross-filtering).
+  let catOpts = uniq(PEOPLE.filter(p => match(p, {q: f.q})).map(p => p.cat));
+  let changed = false;
+  if (f.cat && !catOpts.includes(f.cat)) { f.cat = ""; changed = true; }
+  if (changed) {
+    catOpts = uniq(PEOPLE.filter(p => match(p, {q: f.q})).map(p => p.cat));
+    el("cat").value = f.cat;
+  }
+  el("cat").innerHTML = '<option value="">All Industries</option>'
+    + catOpts.map(c => '<option value="' + c + '"' + (c === f.cat ? ' selected' : '') + '>' + c[0].toUpperCase() + c.slice(1) + '</option>').join("");
+
+  let list = PEOPLE.filter(p => match(p, f));
+  if (f.sort === "worth") list = list.slice().sort((a, b) => b.worth - a.worth);
+  else if (f.sort === "name") list = list.slice().sort((a, b) => a.name.localeCompare(b.name));
+  else list = list.slice().sort((a, b) => a.rank - b.rank);
+
+  const grid = document.getElementById("grid");
+  const empty = document.getElementById("empty");
+  grid.innerHTML = list.map(p => {
+    return '<div class="card">'
+      + '<div class="rank">#' + p.rank + '</div>'
+      + '<div class="card-top"><div class="avatar">' + p.emoji + '</div></div>'
+      + '<div class="card-body">'
+      + '<div class="name">' + p.name + '</div>'
+      + '<div class="chiprow"><span class="chip">' + (CAT_ICONS[p.cat]||"⭐") + ' ' + p.cat[0].toUpperCase() + p.cat.slice(1) + '</span><span class="flag">' + (p.country||"") + ' · b. ' + p.born + '</span></div>'
+      + '<div class="worth">' + fmtW(p.worth) + ' <small>net worth</small></div>'
+      + '<div class="company">' + (p.company||"") + '</div>'
+      + '</div></div>';
+  }).join("");
+  empty.style.display = list.length ? "none" : "block";
+}
+
+["q","cat","sort"].forEach(id => {
+  document.getElementById(id).addEventListener("input", render);
+  document.getElementById(id).addEventListener("change", render);
+});
+render();
+</script>
+</body>
+</html>
