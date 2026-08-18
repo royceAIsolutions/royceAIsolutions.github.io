@@ -118,6 +118,10 @@ function vinBadge(c) {
   return '<div class="vin">VIN ' + c.vin + ' <span class="' + cl + '">' + label + '</span></div>';
 }
 
+function imgFallback(el) {
+  el.parentElement.innerHTML = '<div class="noimg">🏎️</div>';
+}
+
 function render() {
   const q = document.getElementById("q").value.trim().toLowerCase();
   const b = document.getElementById("brand").value;
@@ -142,7 +146,7 @@ function render() {
   const empty = document.getElementById("empty");
   grid.innerHTML = list.map(c => {
     const img = c.photo
-      ? '<img src="' + c.photo + '" alt="' + c.year + ' ' + c.brand + ' ' + c.model + '" loading="lazy" onerror="this.parentElement.innerHTML=this.parentElement.innerHTML.replace(this.outerHTML,'<div class=noimg>🏎️</div>')">'
+      ? '<img src="' + c.photo + '" alt="' + c.year + ' ' + c.brand + ' ' + c.model + '" loading="lazy" onerror="imgFallback(this)">'
       : '<div class="noimg">🏎️</div>';
     const miles = c.miles ? c.miles.toLocaleString("en-US") + " mi" : "—";
     const dec = c.decoded_brand ? '<div class="vin">Decoded: ' + c.decoded_brand + (c.decoded_year ? " · " + c.decoded_year : "") + ' · ' + c.country + '</div>' : '';
