@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Best California Small Businesses Under $500K — SBA 7(a) Deals | RoyceAI</title>
-<meta name="description" content="California small businesses for sale under $500,000 that actually work for SBA 7(a) loans — every deal shows cash flow, DSCR (must clear the 1.25x lender bar), 10% down math and a clear 'why it's a good buy' thesis.">
+<title>Best California Small Businesses Under $1M — SBA 7(a) Deals | RoyceAI</title>
+<meta name="description" content="California small businesses for sale under $1,000,000 that actually work for SBA 7(a) loans — every deal shows cash flow, DSCR (must clear the 1.25x lender bar), 10% down math and a clear 'why it's a good buy' thesis.">
 <link rel="canonical" href="https://royceai.com/businesses/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -128,7 +128,7 @@ footer .links a:hover{color:#a78bfa}
 </nav>
 
 <section class="hero">
-  <h1><span class="gradient">Best California Small Businesses Under $500K</span></h1>
+  <h1><span class="gradient">Best California Small Businesses Under $1M</span></h1>
   <p><span class="count" id="dealCount">—</span> California SBA 7(a)-screened deals · updated August 19, 2026</p>
   <div class="chips">
     <span class="chip">📍 <b>California only</b></span>
@@ -145,6 +145,7 @@ footer .links a:hover{color:#a78bfa}
     <option value="100k">Under $100K</option>
     <option value="250k">$100K – $250K</option>
     <option value="500k">$250K – $500K</option>
+    <option value="1m">$500K – $1M</option>
   </select>
   <select id="sort">
     <option value="best">Best Deal First</option>
@@ -160,7 +161,7 @@ footer .links a:hover{color:#a78bfa}
 <section class="section">
   <div class="section-header">
     <h2>How the <span class="gradient">SBA 7(a) math</span> works</h2>
-    <p>Every deal on this page is a California business under $500K that <b style="color:#eeeef0">actually works for an SBA 7(a) loan</b>: we compute the debt service on seller-reported cash flow and only list deals that clear the 1.25x DSCR lender bar.</p>
+    <p>Every deal on this page is a California business under $1M that <b style="color:#eeeef0">actually works for an SBA 7(a) loan</b>: we compute the debt service on seller-reported cash flow and only list deals that clear the 1.25x DSCR lender bar.</p>
   </div>
   <div class="sba-cols">
     <div class="sba-col">
@@ -168,7 +169,7 @@ footer .links a:hover{color:#a78bfa}
       <ul>
         <li><b>10% down</b> on the purchase price (SBA 7(a) standard)</li>
         <li>A $300K business needs <b>~$30K down</b> + closing costs</li>
-        <li>No collateral needed for loans under $500K — <b>SBA 90% guarantee</b></li>
+        <li>No collateral required on SBA 7(a) loans up to $1M — <b>SBA 90% guarantee</b></li>
       </ul>
     </div>
     <div class="sba-col">
@@ -196,6 +197,7 @@ footer .links a:hover{color:#a78bfa}
       <tr><td>$300K</td><td>$270K</td><td>$30K</td><td><b>~$3,135</b></td><td>~$47,025/yr</td></tr>
       <tr><td>$400K</td><td>$360K</td><td>$40K</td><td><b>~$4,180</b></td><td>~$62,700/yr</td></tr>
       <tr><td>$500K</td><td>$450K</td><td>$50K</td><td><b>~$5,225</b></td><td>~$78,375/yr</td></tr>
+      <tr><td>$1M</td><td>$900K</td><td>$100K</td><td><b>~$10,450</b></td><td>~$156,750/yr</td></tr>
     </table>
   </div>
   <div class="note">⚠️ <b>Cash flow is seller-reported.</b> The DSCR and scores on these cards are computed from the listing's numbers — before you make an offer, verify with tax returns (3 years), bank statements, and a broker. Prices change and listings sell; a deal here may already be gone.</div>
@@ -286,8 +288,8 @@ function render() {
     pr: el("price").value,
     sort: el("sort").value
   };
-  const bucketLo = v => v === "100k" ? 0 : v === "250k" ? 100000 : 250000;
-  const bucketHi = v => v === "100k" ? 100000 : v === "250k" ? 250000 : 500001;
+  const bucketLo = v => v === "100k" ? 0 : v === "250k" ? 100000 : v === "500k" ? 250000 : 500000;
+  const bucketHi = v => v === "100k" ? 100000 : v === "250k" ? 250000 : v === "500k" ? 500001 : 1000001;
   const match = (d, x) => {
     if (x.pr && (d.price < bucketLo(x.pr) || d.price >= bucketHi(x.pr))) return false;
     if (x.q) {
