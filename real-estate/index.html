@@ -132,6 +132,7 @@ function render() {
     if (x.bd && Number(h.beds) !== Number(x.bd)) return false;
     if (x.pr) {
       const lo = bucketLo(x.pr); const hi = bucketHi(x.pr);
+      if (h.price == null) return false;   // no price → can't sit in a bucket
       if (h.price < lo || h.price >= hi) return false;
     }
     if (x.q) {

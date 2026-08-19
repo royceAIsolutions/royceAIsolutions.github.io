@@ -291,9 +291,17 @@ function render() {
   const bucketLo = v => v === "100k" ? 0 : v === "250k" ? 100000 : v === "500k" ? 250000 : 500000;
   const bucketHi = v => v === "100k" ? 100000 : v === "250k" ? 250000 : v === "500k" ? 500001 : 1000001;
   const match = (d, x) => {
-    if (x.pr && (d.price < bucketLo(x.pr) || d.price >= bucketHi(x.pr))) return false;
+    // PRICE BUCKET — must affect EVERY deal. A deal with no price can't be
+    // placed in a bucket: exclude it whenever a bucket is active (null < 0
+    // is false in JS, which used to let no-price deals slip into "Under
+    // $100K" — fixed Aug 19 2026: "ALWAYS MAKE SURE FILTERS EFFECT ALL").
+    if (x.pr) {
+      const p = d.price;
+      if (p == null) return false;
+      if (p < bucketLo(x.pr) || p >= bucketHi(x.pr)) return false;
+    }
     if (x.q) {
-      const hay = ((d.title||"") + " " + (d.description||"") + " " + (d.state||"") + " " + (d.source||"")).toLowerCase();
+      const hay = ((d.title||"") + " " + (d.description||"") + " " + (d.state||"") + " " + (d.location||"") + " " + (d.source||"")).toLowerCase();
       if (!hay.includes(x.q)) return false;
     }
     return true;

@@ -142,6 +142,7 @@ function render() {
     if (x.st && c.state !== x.st) return false;
     if (x.pr) {
       const lo = bucketLo(x.pr); const hi = bucketHi(x.pr);
+      if (c.price == null) return false;   // no price → can't sit in a bucket
       if (c.price < lo || c.price >= hi) return false;
     }
     if (x.q) {
