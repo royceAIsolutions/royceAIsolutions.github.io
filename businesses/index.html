@@ -25,7 +25,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px
 .nav-links a.active{color:#fff;background:rgba(124,92,252,0.15);border:1px solid rgba(124,92,252,0.3)}
 .nav-links .nav-cta{background:#7c5cfc;color:#fff!important;font-weight:600;padding:8px 22px;border-radius:8px}
 .hero{padding:3.5rem 1.5rem 1rem;text-align:center;max-width:900px;margin:0 auto}
-.hero h1{font-size:2.4rem;font-weight:800;letter-spacing:-0.03em;color:#fff}
+.hero h1{font-size:2.4rem;font-weight:800;letter-spacing:-0.03em;color:#fff;text-wrap:balance}
 .gradient{background:linear-gradient(135deg,#a78bfa,#7c5cfc);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero p{color:#88889a;margin-top:0.75rem;font-size:1rem}
 .hero .count{color:#a78bfa;font-weight:600}
@@ -43,9 +43,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
 .card-top .title{font-size:1rem;font-weight:700;color:#fff;line-height:1.35}
 .card-top .loc{color:#88889a;font-size:0.8rem;margin-top:4px}
-.card-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
-.score-badge{display:inline-flex;align-items:center;gap:6px;background:#15151b;border:1px solid rgba(255,255,255,0.1);border-radius:999px;padding:3px 10px 3px 4px;font-weight:800;color:#fff}
-.score-badge .n{font-size:1.05rem;line-height:1}
+.card-right{display:flex;flex-direction:column;align-items:flex-end;gap:7px;padding-top:2px}
+.score-badge{display:inline-flex;align-items:center;gap:6px;background:#15151b;border:1px solid rgba(255,255,255,0.1);border-radius:999px;padding:4px 12px 4px 5px;font-weight:800;color:#fff}
+.score-badge .n{font-size:1.15rem;line-height:1}
 .score-badge .g{font-size:0.72rem;font-weight:800;padding:3px 7px;border-radius:999px;color:#fff}
 .score-badge .lbl{font-size:0.58rem;color:#5c5c6e;font-weight:600;text-transform:uppercase;letter-spacing:0.04em}
 .score-badge.gA{border-color:rgba(52,211,153,0.45);background:rgba(52,211,153,0.08)}
@@ -61,10 +61,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px
 .breakdown .max{color:#3d3d4d}
 .price{font-size:1.4rem;font-weight:800;color:#34d399;white-space:nowrap}
 .price small{font-size:0.7rem;color:#5c5c6e;font-weight:400;display:block;text-align:right}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.stat{background:#15151b;border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:8px 10px;text-align:center}
-.stat span{display:block;font-size:0.65rem;color:#5c5c6e;text-transform:uppercase;letter-spacing:0.05em}
-.stat b{font-size:0.9rem;color:#eeeef0;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stat{background:#15151b;border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:8px 6px;text-align:center}
+.stat span{display:block;font-size:0.65rem;color:#5c5c6e;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px}
+.stat b{font-size:0.88rem;color:#eeeef0;font-weight:700;white-space:nowrap}
 .stat b.ok{color:#34d399}
 .stat b.warn{color:#fbbf24}
 .stat b.bad{color:#ef4444}
@@ -74,7 +74,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px
 .sba-math{font-size:0.78rem;color:#88889a}
 .sba-math b{color:#eeeef0}
 .card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:2px}
-.src{font-size:0.7rem;color:#5c5c6e}
+.src{font-size:0.75rem;color:#88889a}
 .card-link{display:inline-flex;align-items:center;background:rgba(124,92,252,0.12);border:1px solid rgba(124,92,252,0.3);color:#c4b5fd;text-decoration:none;padding:8px 14px;border-radius:10px;font-weight:600;font-size:0.83rem;transition:all 0.2s}
 .card-link:hover{background:#7c5cfc;color:#fff}
 .empty{max-width:1200px;margin:3rem auto;text-align:center;color:#88889a;padding:0 1.5rem}
@@ -95,7 +95,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px;font-size:0.85rem}
 th{color:#c4b5fd;text-align:left;padding:10px 12px;border-bottom:1px solid rgba(124,92,252,0.25);font-weight:600}
 td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:#b9b9c8}
 td b{color:#eeeef0}
-.note{max-width:800px;margin:18px auto 0;background:rgba(251,191,36,0.06);border:1px solid rgba(251,191,36,0.2);border-radius:12px;padding:14px 18px;font-size:0.82rem;color:#d8c9a0;text-align:left}
+.note{max-width:800px;margin:18px auto 0;background:rgba(251,191,36,0.06);border:1px solid rgba(251,191,36,0.2);border-radius:12px;padding:16px 20px;font-size:0.82rem;color:#d8c9a0;text-align:left}
 .cta-section{max-width:1200px;margin:0 auto 60px;padding:60px 24px;text-align:center;background:linear-gradient(180deg,rgba(124,92,252,0.06),transparent);border-top:1px solid rgba(255,255,255,0.06)}
 .cta-section h2{font-size:1.7rem;font-weight:800;margin-bottom:10px}
 .cta-section p{color:#88889a;margin-bottom:22px}
@@ -106,7 +106,7 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
 footer .links{display:flex;gap:20px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
 footer .links a{color:#88889a;text-decoration:none;font-size:0.875rem}
 footer .links a:hover{color:#a78bfa}
-@media(max-width:640px){.hero h1{font-size:1.7rem}.filters{padding:0 16px}.grid{grid-template-columns:1fr;padding:0 16px}.stats{grid-template-columns:repeat(2,1fr)}nav{padding:0 16px;flex-direction:column;height:auto;gap:6px;padding:8px 16px}.nav-logo{width:100%;justify-content:center}.nav-links{width:100%;justify-content:center}.section{padding:40px 16px}}</style>
+@media(max-width:640px){.hero h1{font-size:1.55rem}.filters{padding:0 16px}.grid{grid-template-columns:1fr;padding:0 16px}.stats{grid-template-columns:repeat(2,1fr)}nav{padding:0 16px;flex-direction:column;height:auto;gap:6px;padding:8px 16px}.nav-logo{width:100%;justify-content:center}.nav-links{width:100%;justify-content:center}.section{padding:40px 16px}}</style>
 </head>
 <body>
 <div class="orb orb-1"></div>
@@ -310,8 +310,8 @@ function render() {
       +   '<div><div class="title">' + (d.title||"Business") + '</div>'
       +   '<div class="loc">📍 ' + loc + '</div></div>'
       +   '<div class="card-right">'
-      +     '<div class="score-badge g' + (d.grade||"F") + '" title="SBA 7(a) deal score — see rubric below"><span class="n">' + (d.score||0) + '</span><span class="g">' + (d.grade||"—") + '</span><span class="lbl">score</span></div>'
       +     '<div class="price">' + fmt(d.price) + '<small>asking</small></div>'
+      +     '<div class="score-badge g' + (d.grade||"F") + '" title="SBA 7(a) deal score — see rubric below"><span class="n">' + (d.score||0) + '</span><span class="g">' + (d.grade||"—") + '</span><span class="lbl">score</span></div>'
       +   '</div>'
       + '</div>'
       + '<div class="stats">'
@@ -320,7 +320,7 @@ function render() {
       +   '<div class="stat"><span>Multiple</span><b>' + (d.multiple ? d.multiple + 'x' : '—') + '</b></div>'
       +   '<div class="stat"><span>DSCR</span><b class="' + dscrClass(d.dscr) + '">' + (d.dscr ? d.dscr + 'x' : '—') + '</b></div>'
       + '</div>'
-      + '<div class="breakdown">' + (d.breakdown ? 'Score: <b>Value ' + d.breakdown.value + '</b><span class="max">/30</span> · <b>Debt ' + d.breakdown.debt + '</b><span class="max">/30</span> · <b>Yield ' + d.breakdown.yield + '</b><span class="max">/15</span> · <b>Cash ' + d.breakdown.cash + '</b><span class="max">/10</span> · <b>Moat ' + d.breakdown.moat + '</b><span class="max">/15</span>' : '') + '</div>'
+      + '<div class="breakdown">' + (d.breakdown ? 'Score: <b>Value ' + d.breakdown.value + '</b>/30 · <b>Debt ' + d.breakdown.debt + '</b>/30 · <b>Yield ' + d.breakdown.yield + '</b>/15 · <b>Cash ' + d.breakdown.cash + '</b>/10 · <b>Moat ' + d.breakdown.moat + '</b>/15' : '') + '</div>'
       + '<div class="why"><div class="why-label">💡 Why it\'s a good buy</div><p>' + (d.thesis||"") + '</p></div>'
       + '<div class="sba-math">SBA 7(a): <b>~' + fmt(d.down) + ' down</b> · <b>~' + fmt(d.monthly) + '/mo</b> debt service</div>'
       + '<div class="card-foot"><span class="src">' + (d.source||"") + '.com</span>'
