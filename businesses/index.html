@@ -289,7 +289,7 @@ function render() {
     sort: el("sort").value
   };
   const bucketLo = v => v === "100k" ? 0 : v === "250k" ? 100000 : v === "500k" ? 250000 : 500000;
-  const bucketHi = v => v === "100k" ? 100000 : v === "250k" ? 250000 : v === "500k" ? 500001 : 1000001;
+  const bucketHi = v => v === "100k" ? 100000 : v === "250k" ? 250000 : v === "500k" ? 500000 : 1000001;
   const match = (d, x) => {
     // PRICE BUCKET — must affect EVERY deal. A deal with no price can't be
     // placed in a bucket: exclude it whenever a bucket is active (null < 0
