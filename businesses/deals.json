@@ -16,8 +16,16 @@
       "dscr": 3.04,
       "down": 35000,
       "monthly": 3657,
-      "score": 26,
-      "thesis": "priced at just 2.6x cash flow. ~38% annual cash yield — pays for itself in ~3 yrs. cash flow covers the SBA loan 3.04x — very safe. ~$35,000 down (10%), $3,657/mo debt. long-established + turnkey."
+      "score": 80,
+      "thesis": "priced at just 2.6x cash flow. ~38% annual cash yield — pays for itself in ~3 yrs. cash flow covers the SBA loan 3.04x — very safe. ~$35,000 down (10%), $3,657/mo debt. long-established + turnkey.",
+      "grade": "A",
+      "breakdown": {
+        "value": 25,
+        "debt": 30,
+        "yield": 12,
+        "cash": 8,
+        "moat": 5
+      }
     },
     {
       "source": "bizsale",
@@ -33,8 +41,16 @@
       "dscr": 4.86,
       "down": 17500,
       "monthly": 1829,
-      "score": 24,
-      "thesis": "priced at just 1.6x cash flow. ~61% annual cash yield — pays for itself in ~2 yrs. cash flow covers the SBA loan 4.86x — very safe. ~$17,500 down (10%), $1,829/mo debt. price just reduced."
+      "score": 85,
+      "thesis": "priced at just 1.6x cash flow. ~61% annual cash yield — pays for itself in ~2 yrs. cash flow covers the SBA loan 4.86x — very safe. ~$17,500 down (10%), $1,829/mo debt. price just reduced.",
+      "grade": "A",
+      "breakdown": {
+        "value": 30,
+        "debt": 30,
+        "yield": 15,
+        "cash": 8,
+        "moat": 2
+      }
     },
     {
       "source": "bizsale",
@@ -50,8 +66,16 @@
       "dscr": 2.01,
       "down": 35000,
       "monthly": 3657,
-      "score": 22,
-      "thesis": "priced at 4.0x cash flow. ~25% cash yield on price. cash flow covers the SBA loan 2.01x — very safe. ~$35,000 down (10%), $3,657/mo debt. long-established."
+      "score": 59,
+      "thesis": "priced at 4.0x cash flow. ~25% cash yield on price. cash flow covers the SBA loan 2.01x — very safe. ~$35,000 down (10%), $3,657/mo debt. long-established.",
+      "grade": "C",
+      "breakdown": {
+        "value": 14,
+        "debt": 26,
+        "yield": 9,
+        "cash": 6,
+        "moat": 4
+      }
     },
     {
       "source": "bizsale",
@@ -67,8 +91,16 @@
       "dscr": 3.44,
       "down": 22000,
       "monthly": 2299,
-      "score": 20,
-      "thesis": "priced at just 2.3x cash flow. ~43% annual cash yield — pays for itself in ~2 yrs. cash flow covers the SBA loan 3.44x — very safe. ~$22,000 down (10%), $2,299/mo debt."
+      "score": 76,
+      "thesis": "priced at just 2.3x cash flow. ~43% annual cash yield — pays for itself in ~2 yrs. cash flow covers the SBA loan 3.44x — very safe. ~$22,000 down (10%), $2,299/mo debt.",
+      "grade": "B",
+      "breakdown": {
+        "value": 25,
+        "debt": 30,
+        "yield": 15,
+        "cash": 6,
+        "moat": 0
+      }
     },
     {
       "source": "bizsale",
@@ -84,8 +116,16 @@
       "dscr": 5.56,
       "down": 17000,
       "monthly": 1776,
-      "score": 20,
-      "thesis": "priced at just 1.4x cash flow. ~70% annual cash yield — pays for itself in ~2 yrs. cash flow covers the SBA loan 5.56x — very safe. ~$17,000 down (10%), $1,776/mo debt."
+      "score": 83,
+      "thesis": "priced at just 1.4x cash flow. ~70% annual cash yield — pays for itself in ~2 yrs. cash flow covers the SBA loan 5.56x — very safe. ~$17,000 down (10%), $1,776/mo debt.",
+      "grade": "A",
+      "breakdown": {
+        "value": 30,
+        "debt": 30,
+        "yield": 15,
+        "cash": 8,
+        "moat": 0
+      }
     },
     {
       "source": "bizsale",
@@ -101,8 +141,16 @@
       "dscr": 42.22,
       "down": 2700,
       "monthly": 282,
-      "score": 20,
-      "thesis": "priced at just 0.2x cash flow. ~529% annual cash yield — pays for itself in ~2 yrs. cash flow covers the SBA loan 42.22x — very safe. ~$2,700 down (10%), $282/mo debt."
+      "score": 83,
+      "thesis": "priced at just 0.2x cash flow. ~529% annual cash yield — pays for itself in ~2 yrs. cash flow covers the SBA loan 42.22x — very safe. ~$2,700 down (10%), $282/mo debt.",
+      "grade": "A",
+      "breakdown": {
+        "value": 30,
+        "debt": 30,
+        "yield": 15,
+        "cash": 8,
+        "moat": 0
+      }
     },
     {
       "source": "bizsale",
@@ -118,8 +166,16 @@
       "dscr": 6.43,
       "down": 35000,
       "monthly": 3657,
-      "score": 20,
-      "thesis": "priced at just 1.2x cash flow. ~81% annual cash yield — pays for itself in ~2 yrs. cash flow covers the SBA loan 6.43x — very safe. ~$35,000 down (10%), $3,657/mo debt."
+      "score": 85,
+      "thesis": "priced at just 1.2x cash flow. ~81% annual cash yield — pays for itself in ~2 yrs. cash flow covers the SBA loan 6.43x — very safe. ~$35,000 down (10%), $3,657/mo debt.",
+      "grade": "A",
+      "breakdown": {
+        "value": 30,
+        "debt": 30,
+        "yield": 15,
+        "cash": 10,
+        "moat": 0
+      }
     },
     {
       "source": "bizsale",
@@ -135,8 +191,16 @@
       "dscr": 1.48,
       "down": 22500,
       "monthly": 2351,
-      "score": 18,
-      "thesis": "5.4x multiple on $41,646 cash flow. passes the 1.48x DSCR lender bar. ~$22,500 down (10%), $2,351/mo debt. long-established + motivated seller."
+      "score": 33,
+      "thesis": "5.4x multiple on $41,646 cash flow. passes the 1.48x DSCR lender bar. ~$22,500 down (10%), $2,351/mo debt. long-established + motivated seller.",
+      "grade": "F",
+      "breakdown": {
+        "value": 8,
+        "debt": 14,
+        "yield": 3,
+        "cash": 2,
+        "moat": 6
+      }
     },
     {
       "source": "bizsale",
@@ -152,8 +216,16 @@
       "dscr": 2.01,
       "down": 50000,
       "monthly": 5225,
-      "score": 18,
-      "thesis": "priced at 4.0x cash flow. ~25% cash yield on price. cash flow covers the SBA loan 2.01x — very safe. ~$50,000 down (10%), $5,225/mo debt."
+      "score": 57,
+      "thesis": "priced at 4.0x cash flow. ~25% cash yield on price. cash flow covers the SBA loan 2.01x — very safe. ~$50,000 down (10%), $5,225/mo debt.",
+      "grade": "C",
+      "breakdown": {
+        "value": 14,
+        "debt": 26,
+        "yield": 9,
+        "cash": 8,
+        "moat": 0
+      }
     },
     {
       "source": "bizsale",
@@ -169,8 +241,16 @@
       "dscr": 1.34,
       "down": 20000,
       "monthly": 2090,
-      "score": 14,
-      "thesis": "5.9x multiple on $33,731 cash flow. passes the 1.34x DSCR lender bar. ~$20,000 down (10%), $2,090/mo debt. long-established."
+      "score": 31,
+      "thesis": "5.9x multiple on $33,731 cash flow. passes the 1.34x DSCR lender bar. ~$20,000 down (10%), $2,090/mo debt. long-established.",
+      "grade": "F",
+      "breakdown": {
+        "value": 8,
+        "debt": 14,
+        "yield": 3,
+        "cash": 2,
+        "moat": 4
+      }
     },
     {
       "source": "bizsale",
@@ -186,8 +266,16 @@
       "dscr": 1.42,
       "down": 35000,
       "monthly": 3657,
-      "score": 14,
-      "thesis": "5.6x multiple on $62,367 cash flow. passes the 1.42x DSCR lender bar. ~$35,000 down (10%), $3,657/mo debt. long-established."
+      "score": 33,
+      "thesis": "5.6x multiple on $62,367 cash flow. passes the 1.42x DSCR lender bar. ~$35,000 down (10%), $3,657/mo debt. long-established.",
+      "grade": "F",
+      "breakdown": {
+        "value": 8,
+        "debt": 14,
+        "yield": 3,
+        "cash": 4,
+        "moat": 4
+      }
     },
     {
       "source": "bizsale",
@@ -203,8 +291,16 @@
       "dscr": 1.87,
       "down": 40000,
       "monthly": 4180,
-      "score": 14,
-      "thesis": "priced at 4.3x cash flow. ~23% cash yield on price. comfortable 1.87x DSCR on the SBA loan. ~$40,000 down (10%), $4,180/mo debt."
+      "score": 46,
+      "thesis": "priced at 4.3x cash flow. ~23% cash yield on price. comfortable 1.87x DSCR on the SBA loan. ~$40,000 down (10%), $4,180/mo debt.",
+      "grade": "D",
+      "breakdown": {
+        "value": 14,
+        "debt": 20,
+        "yield": 6,
+        "cash": 6,
+        "moat": 0
+      }
     },
     {
       "source": "bizsale",
@@ -220,8 +316,16 @@
       "dscr": 1.33,
       "down": 17000,
       "monthly": 1776,
-      "score": 12,
-      "thesis": "6.0x multiple on $28,431 cash flow. passes the 1.33x DSCR lender bar. ~$17,000 down (10%), $1,776/mo debt."
+      "score": 21,
+      "thesis": "6.0x multiple on $28,431 cash flow. passes the 1.33x DSCR lender bar. ~$17,000 down (10%), $1,776/mo debt.",
+      "grade": "F",
+      "breakdown": {
+        "value": 4,
+        "debt": 14,
+        "yield": 3,
+        "cash": 0,
+        "moat": 0
+      }
     },
     {
       "source": "bizsale",
@@ -237,8 +341,16 @@
       "dscr": 1.32,
       "down": 32500,
       "monthly": 3396,
-      "score": 10,
-      "thesis": "6.0x multiple on $53,822 cash flow. passes the 1.32x DSCR lender bar. ~$32,500 down (10%), $3,396/mo debt. long-established."
+      "score": 29,
+      "thesis": "6.0x multiple on $53,822 cash flow. passes the 1.32x DSCR lender bar. ~$32,500 down (10%), $3,396/mo debt. long-established.",
+      "grade": "F",
+      "breakdown": {
+        "value": 4,
+        "debt": 14,
+        "yield": 3,
+        "cash": 4,
+        "moat": 4
+      }
     },
     {
       "source": "bizsale",
@@ -254,8 +366,16 @@
       "dscr": 1.4,
       "down": 49900,
       "monthly": 5214,
-      "score": 10,
-      "thesis": "5.7x multiple on $87,856 cash flow. passes the 1.4x DSCR lender bar. ~$49,900 down (10%), $5,214/mo debt."
+      "score": 31,
+      "thesis": "5.7x multiple on $87,856 cash flow. passes the 1.4x DSCR lender bar. ~$49,900 down (10%), $5,214/mo debt.",
+      "grade": "F",
+      "breakdown": {
+        "value": 8,
+        "debt": 14,
+        "yield": 3,
+        "cash": 6,
+        "moat": 0
+      }
     },
     {
       "source": "bizsale",
@@ -271,8 +391,16 @@
       "dscr": 1.11,
       "down": 25000,
       "monthly": 2612,
-      "score": 6,
-      "thesis": "7.2x multiple on $34,916 cash flow. ~$25,000 down (10%), $2,612/mo debt. long-established."
+      "score": 16,
+      "thesis": "7.2x multiple on $34,916 cash flow. ~$25,000 down (10%), $2,612/mo debt. long-established.",
+      "grade": "F",
+      "breakdown": {
+        "value": 4,
+        "debt": 6,
+        "yield": 0,
+        "cash": 2,
+        "moat": 4
+      }
     },
     {
       "source": "bizsale",
@@ -288,8 +416,16 @@
       "dscr": 1.12,
       "down": 37500,
       "monthly": 3919,
-      "score": 6,
-      "thesis": "7.1x multiple on $52,497 cash flow. ~$37,500 down (10%), $3,919/mo debt. long-established."
+      "score": 18,
+      "thesis": "7.1x multiple on $52,497 cash flow. ~$37,500 down (10%), $3,919/mo debt. long-established.",
+      "grade": "F",
+      "breakdown": {
+        "value": 4,
+        "debt": 6,
+        "yield": 0,
+        "cash": 4,
+        "moat": 4
+      }
     },
     {
       "source": "bizsale",
@@ -305,8 +441,16 @@
       "dscr": 1.03,
       "down": 35000,
       "monthly": 3657,
-      "score": 4,
-      "thesis": "7.8x multiple on $45,081 cash flow. ~$35,000 down (10%), $3,657/mo debt."
+      "score": 12,
+      "thesis": "7.8x multiple on $45,081 cash flow. ~$35,000 down (10%), $3,657/mo debt.",
+      "grade": "F",
+      "breakdown": {
+        "value": 4,
+        "debt": 6,
+        "yield": 0,
+        "cash": 2,
+        "moat": 0
+      }
     },
     {
       "source": "bizsale",
@@ -322,8 +466,16 @@
       "dscr": 1.18,
       "down": 35000,
       "monthly": 3657,
-      "score": 4,
-      "thesis": "6.8x multiple on $51,584 cash flow. ~$35,000 down (10%), $3,657/mo debt."
+      "score": 14,
+      "thesis": "6.8x multiple on $51,584 cash flow. ~$35,000 down (10%), $3,657/mo debt.",
+      "grade": "F",
+      "breakdown": {
+        "value": 4,
+        "debt": 6,
+        "yield": 0,
+        "cash": 4,
+        "moat": 0
+      }
     },
     {
       "source": "bizsale",
@@ -340,7 +492,15 @@
       "down": 29000,
       "monthly": null,
       "score": 4,
-      "thesis": "priced at 2.1x revenue. long-established."
+      "thesis": "priced at 2.1x revenue. long-established.",
+      "grade": "F",
+      "breakdown": {
+        "value": 0,
+        "debt": 0,
+        "yield": 0,
+        "cash": 0,
+        "moat": 4
+      }
     },
     {
       "source": "bizsale",
@@ -356,8 +516,16 @@
       "dscr": null,
       "down": 45000,
       "monthly": null,
-      "score": 2,
-      "thesis": "priced at 3.5x revenue."
+      "score": 0,
+      "thesis": "priced at 3.5x revenue.",
+      "grade": "F",
+      "breakdown": {
+        "value": 0,
+        "debt": 0,
+        "yield": 0,
+        "cash": 0,
+        "moat": 0
+      }
     },
     {
       "source": "bizsale",
@@ -373,8 +541,16 @@
       "dscr": null,
       "down": 15000,
       "monthly": null,
-      "score": 2,
-      "thesis": "priced at 0.6x revenue. long-established."
+      "score": 4,
+      "thesis": "priced at 0.6x revenue. long-established.",
+      "grade": "F",
+      "breakdown": {
+        "value": 0,
+        "debt": 0,
+        "yield": 0,
+        "cash": 0,
+        "moat": 4
+      }
     }
   ]
 }
