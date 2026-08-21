@@ -309,11 +309,11 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
     </a>
   </div>
 
-  <div class="pay-card">
+  <div class="pay-card" id="tutor">
     <h3>High School Tutor</h3>
     <div class="price">$100 <span>/month</span></div>
     <p>AI tutoring in Math, Science, English, Korean. Unlimited questions.<br>Cancel anytime. 🔄 Monthly</p>
-    <a class="paypal-btn" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=royceaisolutions%40gmail.com&item_name=High+School+Tutor&a3=100&p3=1&t3=M&currency_code=USD&return=https%3A%2F%2Froyceai.com%2Fthanks&cancel_return=https%3A%2F%2Froyceai.com" target="_blank">
+    <a class="paypal-btn" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=royceaisolutions%40gmail.com&item_name=High+School+Tutor&a3=100&p3=1&t3=M&src=1&sra=1&currency_code=USD&return=https%3A%2F%2Froyceai.com%2Fthanks&cancel_return=https%3A%2F%2Froyceai.com" target="_blank">
       Subscribe with PayPal →
     </a>
   </div>
@@ -337,7 +337,7 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
     <h3>AI Receptionist</h3>
     <div class="price">$1,000 <span>/month</span></div>
     <p>24/7 AI call answering for dealerships, medical, dental, vet.<br>Cancel anytime.</p>
-    <a class="paypal-btn" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=royceaisolutions%40gmail.com&item_name=AI+Receptionist&a3=1000&p3=1&t3=M&currency_code=USD&return=https%3A%2F%2Froyceai.com%2Fthanks&cancel_return=https%3A%2F%2Froyceai.com" target="_blank" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+    <a class="paypal-btn" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=royceaisolutions%40gmail.com&item_name=AI+Receptionist&a3=1000&p3=1&t3=M&src=1&sra=1&currency_code=USD&return=https%3A%2F%2Froyceai.com%2Fthanks&cancel_return=https%3A%2F%2Froyceai.com" target="_blank" style="background:linear-gradient(135deg,#667eea,#764ba2)">
       Subscribe with PayPal →
     </a>
   </div>
@@ -375,7 +375,9 @@ footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; tex
         el.style.background = 'linear-gradient(135deg,rgba(124,92,252,0.06) 0%,transparent 100%)';
         var indicator = document.getElementById('planIndicator');
         if (indicator) {
-          indicator.textContent = 'Selected: ' + plan.toUpperCase() + ' plan ($' + (plan === 'elite' ? '500' : '100') + '/mo). Scroll down to pay.';
+          var prices = { pro: '100', elite: '500', tutor: '100' };
+          var label = plan === 'tutor' ? 'High School Tutor' : plan.toUpperCase();
+          indicator.textContent = 'Selected: ' + label + ' plan ($' + (prices[plan] || '100') + '/mo). Scroll down to pay.';
         }
       }, 300);
     }
