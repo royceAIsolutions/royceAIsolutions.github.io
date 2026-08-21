@@ -94,6 +94,22 @@ footer .links a:hover{color:#a78bfa}
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "AI Receptionist: July 22, 2026", "datePublished": "July 22, 2026", "description": "How AI receptionists are transforming auto dealerships in 2026 — answering every call, booking service around the clock, and capturing leads that would otherwise be lost.", "author": {"@type": "Person", "name": "RoyceAI"}, "publisher": {"@type": "Organization", "name": "Royce AI Solutions"}}</script>
 </head>
@@ -111,8 +127,10 @@ footer .links a:hover{color:#a78bfa}
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <script>(function(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var t=document.querySelector('a[href*="tutor"]');if(t){if(u&&u.first){t.innerHTML="\ud83d\udcda "+u.first;t.style.cssText="";t.href="/tutor"}else{t.innerHTML="\u2728 Tutor";t.style.cssText="background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(167,139,250,0.15));border:1px solid rgba(124,92,252,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:#88889a;text-decoration:none;font-size:0.875rem"}}}catch(e){}})();</script>
 
 <div class="post-wrap">
@@ -126,7 +144,10 @@ footer .links a:hover{color:#a78bfa}
 <p>The past six months have fundamentally reshaped how auto dealerships think about inbound call management. What was once a niche technology reserved for forward-thinking early adopters has become the operational backbone of hundreds of dealerships across the country. By mid-2026, the AI receptionist is no longer an experiment — it is a proven profit center that directly impacts the bottom line of every dealership that deploys it.</p>
 
 <p>This post breaks down the state of AI receptionists for auto dealerships in July 2026: where the technology stands, what real results look like, and exactly how much money your dealership is leaving on the table by not having one.</p>
-
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>The Call-Capture Crisis</h2>
 
 <p>Let's start with a problem that every dealership knows but few measure accurately. The average automotive dealership receives between 80 and 200 inbound phone calls per day. Of those, industry benchmarks show that 30% to 45% go unanswered — either because all lines are busy, because the receptionist is busy with a walk-in customer, or because the call comes in after hours. That is roughly 24 to 90 missed opportunities every single day.</p>
@@ -139,7 +160,10 @@ footer .links a:hover{color:#a78bfa}
 </div>
 
 <p>By July 2026, the solution has become clear: deploy an AI receptionist that can handle unlimited concurrent calls, answer 24/7, and never puts a customer on hold. The technology has crossed the threshold where it is not just better than nothing — it is often better than a human receptionist for many call types.</p>
-
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>How AI Receptionists Answer Calls in 2026</h2>
 
 <p>The AI receptionists of 2026 bear almost no resemblance to the interactive voice response (IVR) trees of even two years ago. Instead of pressing 1 for sales and 2 for service, callers are greeted by a natural-sounding voice that understands full sentences, detects intent, and takes action in real time.</p>
@@ -155,7 +179,10 @@ footer .links a:hover{color:#a78bfa}
 <div class="highlight">
 <strong>Key insight:</strong> In 2026, the AI receptionist does not just answer calls. It completes transactions. It captures data. It books revenue-generating appointments. Every call is a measurable conversion event, not a message-taking exercise.
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>After-Hours Lead Capture: The 50% Opportunity</h2>
 
 <p>Perhaps the single most compelling metric in the AI receptionist value proposition is the sheer volume of after-hours calls. According to aggregated data from dealerships using AI phone answering across the country, <strong>35% to 50% of all inbound calls arrive outside of normal business hours</strong> — evenings, weekends, and holidays. And these are not low-quality calls. After-hours callers tend to be further along in their buying journey because they are actively researching at unconventional times.</p>
@@ -165,7 +192,10 @@ footer .links a:hover{color:#a78bfa}
 <p>With an AI receptionist, after-hours call conversion rates jump to 40% to 60%. The AI answers immediately, qualifies the lead, books a test drive or service appointment, and sends confirmation details via SMS. The dealership wakes up the next morning with a queue of pre-qualified, ready-to-buy prospects already scheduled on the calendar.</p>
 
 <p>This is not hypothetical. A Ford dealership in Phoenix saw its after-hours lead volume go from 34 per month (almost all lost) to 128 per month (with a 52% conversion rate to scheduled appointments) in the first 90 days after deploying an AI receptionist. That translated to an additional 17 vehicle sales per month from calls that previously went straight to a voicemail box nobody checked.</p>
-
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>Service Booking: The Efficiency Engine</h2>
 
 <p>While sales gets the headlines, the service department is where AI receptionists create the most measurable operational impact. A busy dealership service drive handles 60 to 100 inbound calls daily. Most of those calls follow a pattern: "I need an oil change," "Is my car ready?", "Can I get a quote for brakes?", "Do you have an opening this afternoon?"</p>
@@ -185,7 +215,10 @@ footer .links a:hover{color:#a78bfa}
 <div class="num">40%</div>
 <div class="desc">Increase in service appointments booked after deploying an AI receptionist — driven by 24/7 availability and frictionless SMS-based scheduling.</div>
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>Lead Intelligence and CRM Integration</h2>
 
 <p>Perhaps the most overlooked advantage of modern AI receptionists is the data they generate. Every conversation produces a structured transcript, intent labels, sentiment analysis, and a scored lead profile. This data feeds directly into the dealership's CRM, enriching customer records and triggering automated follow-up sequences based on the call outcome.</p>
@@ -193,13 +226,19 @@ footer .links a:hover{color:#a78bfa}
 <p>Consider the difference between a traditional phone call and an AI-handled call. In the traditional scenario, a receptionist jots down a name and number on a sticky note that may or may not make it to the sales desk. In the AI scenario, the system captures the caller's full name, phone number, email (if provided), vehicle of interest, buying timeline, budget range, trade-in details, and preferred contact method — and writes it all to the CRM within seconds of the call ending.</p>
 
 <p>This data richness transforms the dealership's follow-up process. Instead of cold-calling a list of names, the BDC team calls warm leads with full context: "Hi Mr. Johnson, I see you spoke with Alex earlier about the blue RAV4 Hybrid and you mentioned you'd like to come in for a test drive this weekend. I have Saturday at 11 AM available — does that work for you?" That level of personalization is only possible when every inbound call is captured and analyzed, not lost to voicemail.</p>
-
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>Scalability Without Headcount Growth</h2>
 
 <p>One of the hardest problems in dealership operations is scaling phone coverage during peak periods. A dealership that gets 40 calls on a slow Tuesday might get 150 calls on a Saturday. Human receptionists cannot scale — they handle one call at a time, and adding headcount to cover peak volume means paying people to sit idle on slow days.</p>
 
 <p>AI receptionists scale instantly and infinitely. When call volume spikes on Saturday morning, the AI does not slow down. It answers every call simultaneously, with consistent quality. When volume drops on Tuesday afternoon, the AI's capacity costs the same — nothing extra. This elasticity is one of the strongest operational advantages of AI over human-only phone coverage.</p>
-
+  </div>
+</section>
+<section class="slide" id="s8">
+  <div class="slide-inner">
 <h2>What the Next Six Months Look Like</h2>
 
 <p>Looking ahead to the end of 2026 and into 2027, several trends are accelerating:</p>
@@ -211,7 +250,10 @@ footer .links a:hover{color:#a78bfa}
 <p><strong>Proactive outreach is replacing reactive answering.</strong> Leading dealerships are already using AI receptionists to make outbound calls — following up on abandoned carts, reminding customers of upcoming service appointments, and re-engaging past buyers. The AI that answers the phone is becoming the AI that picks up the phone.</p>
 
 <p><strong>Vertical-specific fine-tuning is raising the floor.</strong> AI receptionist platforms are increasingly building automotive-specific training data — knowledge of common vehicle models, features, trims, warranty terms, financing options, and service intervals. The AI of tomorrow will be even more knowledgeable about your specific inventory and processes.</p>
-
+  </div>
+</section>
+<section class="slide" id="s9">
+  <div class="slide-inner">
 <h2>The Logical Conclusion</h2>
 
 <p>In July 2026, the case for an AI receptionist at every auto dealership is closed. The technology works. The ROI is clear. The implementation is fast. The risk is near zero — most providers offer month-to-month contracts with no long-term commitment. The only question is whether your dealership will be one of the ones that captures the after-hours opportunity or one of the ones that continues to send those callers to voicemail — and to your competitors.</p>
@@ -229,8 +271,8 @@ footer .links a:hover{color:#a78bfa}
 </div>
 
 </div>
-
-<footer>
+  </div>
+</section><footer>
 <div class="links">
 <a href="/products">Products</a>
 <a href="/tutor">Tutor</a>
@@ -240,6 +282,14 @@ footer .links a:hover{color:#a78bfa}
 <div class="copy">© 2026 Royce AI Solutions. All rights reserved.</div>
 </footer>
 
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

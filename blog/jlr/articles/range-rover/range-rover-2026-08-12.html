@@ -80,6 +80,22 @@ footer .links a:hover{color:#a78bfa}
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Range Rover Update — August 12, 2026", "datePublished": "2026-08-12", "description": "Range Rover news and analysis — Range Rover Update — August 12, 2026", "author": {"@type": "Person", "name": "RoyceAI"}, "publisher": {"@type": "Organization", "name": "Royce AI Solutions"}, "about": "Range Rover"}</script>
 </head>
@@ -97,18 +113,28 @@ footer .links a:hover{color:#a78bfa}
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <div class="post-wrap">
 <a href="/blog/jlr/range-rover.html" class="back-link">← Back to 👑 Range Rover</a>
 <span class="meta"><span class="tag">👑 Range Rover</span><span>2026-08-12</span><span>~4 min read</span></span>
 <h1>Range Rover Update — August 12, 2026</h1>
 <p>Range Rover continues to define the luxury SUV segment it invented. Here's what makes the current generation — and what's coming next — worth knowing.</p>
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>Latest from the Land Rover world</h2>
 <p><strong>2026 Range Rover Specs and Features | Full Size Luxury SUV</strong> — The 2026 Range Rover focuses on refined upgrades over dramatic change, delivering subtle luxury enhancements across design, comfort, and tech. Rear Seat Entertainment is now a no-cost option on select SWB trims (Autobiography P530, P550e PHEV, ... (<a href="https://www.landroverriverside.com/2026-range-rover/" style="color:#a78bfa" target="_blank" rel="noopener">read more</a>)</p>
 <p><strong>2026 Range Rover Review, Specs, Price &amp; Photos | Land Rover Easton</strong> — In addition to some minor improvements to both performance and efficiency, the iconic Range Rover gains a new flagship model for the 2026 model year. Known as the SV Black, these ultra-lux variants are offered in both standard and long wheelbase ... (<a href="https://www.landrovereaston.com/new-range-rover-model-review-columbus-oh/" style="color:#a78bfa" target="_blank" rel="noopener">read more</a>)</p>
 <p><strong>2026 Range Rover Overview | Trims &amp; Features | Land Rover Manhattan</strong> — The 2026 Range Rover Sport Plug-In Hybrid (PHEV) brings a sharper, more athletic edge to the world of electrified luxury SUVs, seamlessly combining the Sport’s dynamic character with a capable plug-in hybrid powertrain built for life in and ... (<a href="https://www.landrovermanhattan.com/2026-range-rover-overview/" style="color:#a78bfa" target="_blank" rel="noopener">read more</a>)</p>
 <p>Range Rover is the benchmark for luxury SUVs — the car that invented the category in 1970 and still defines it. The current L460 generation pairs a serene, minimalist cabin with genuine off-road capability and a 5600-series of choices from plug-in hybrid to the supercharged V8. The brand is now going electric in a serious way: the fully electric Range Rover and the upcoming Range Rover GT grand tourer on the EMA platform mark the biggest powertrain shift in the model's history.</p>
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>What you need to know</h2>
 <ul>
 <li>The Range Rover (L460) offers two refrigerator options: a rear console fridge with crystal glassware available only with the 4-seat Executive Class Comfort Plus package on LWB models (Autobiography LWB or SV Signature Suite on SV), and a standalone front armrest/center console fridge available on 5-seat SWB models that holds four 16 fl oz bottles at 41°F.</li>
@@ -117,18 +143,42 @@ footer .links a:hover{color:#a78bfa}
 <li>The GT&#x27;s cabin is designed for calm — warm, reductive space, hidden technologies, class-leading second-row legroom, and Range Rover capability retained.</li>
 <li>Key fob battery is a standard CR2032 coin cell — a five-minute DIY swap.</li>
 </ul>
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>Range Rover line-up at a glance</h2>
 <table style="width:100%;border-collapse:collapse;margin:1rem 0 2rem;font-size:0.9rem"><tbody><tr><td>Model</td><td>Character</td><td>Seats</td><td>Powertrain</td></tr><tr><td>Range Rover</td><td>Flagship</td><td>4-7</td><td>PHEV · I6 · V8 · SV 615 hp</td></tr><tr><td>Range Rover Sport</td><td>Athletic flagship</td><td>5</td><td>PHEV · I6 · V8</td></tr><tr><td>Velar</td><td>Design statement</td><td>5</td><td>I4 · I6 · PHEV</td></tr><tr><td>Evoque</td><td>City entry</td><td>5</td><td>I4 · PHEV</td></tr><tr><td>Range Rover GT</td><td>All-electric GT (late 2026)</td><td>4</td><td>EMA EV platform</td></tr></tbody></table>
 <style>table tr:first-child td{background:rgba(124,92,252,0.1);color:#a78bfa;font-weight:600}table td{border-bottom:1px solid rgba(255,255,255,0.06);padding:10px 12px;color:#d4d4d8}</style>
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>The engineering view</h2>
 <p>Key fob battery is a standard CR2032 coin cell — a five-minute DIY swap.</p>
 <p>For fans, the detail is the point — Land Rover builds vehicles where the specification sheet tells a real story about capability, luxury, and intent. Every generation refines the formula rather than replacing it, which is exactly why the brand's enthusiasts are among the most loyal in the industry.</p>
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>The model line, explained</h2>
 <p>The Range Rover family is now five vehicles with distinct personalities. The full-size Range Rover is the flagship, offered in standard and long wheelbase with four, five, or seven seats and engines from the plug-in hybrid to the 615-hp SV. The Range Rover Sport is the athletic one — lighter on its feet, sharper on the road, still deeply luxurious. The Velar is the design statement, the most minimalist interpretation of Range Rover's reductive design language. The Evoque is the city-sized entry point, premium but compact enough for urban living. And coming late 2026 is the Range Rover GT: a grand tourer that puts the Range Rover presence into a lower, sleeker, car-shaped silhouette. Every one of them carries the brand's defining traits — commanding seating position, serene ride, and the off-road capability that no rival can match.</p>
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>Why Range Rover owners are different</h2>
 <p>Range Rover has one of the highest customer loyalty rates in the luxury segment, and it's not just the badge. Owners describe the feeling as sitting above the world — the high command driving position, the hush of the cabin, the quiet confidence of never being out of your depth on any road. There's also the practicality of it: a Range Rover does the school run, the airport run, and the mountain cabin run in the same day without breaking character. That versatility is the brand's real secret, and it's why the car holds value so well.</p>
+  </div>
+</section>
+<section class="slide" id="s8">
+  <div class="slide-inner">
 <h2>What's coming next</h2>
 <p>The electrification of Range Rover is the biggest story in the brand's 50-plus year history. The fully electric Range Rover on the MLA platform is the flagship EV, and the GT on the EMA platform pushes the design language somewhere genuinely new. For fans, the next 24 months are the most exciting period since the original launched — two new body styles, two new platforms, and the definitive proof that luxury and electric can coexist without losing any of the Range Rover character. Keep an eye on the late-2026 GT reveal; it's the one that will redefine what a Range Rover can be.</p>
+  </div>
+</section>
+<section class="slide" id="s9">
+  <div class="slide-inner">
 <h2>The takeaway</h2>
 <p>Keep following this blog for daily updates on Range Rover, Defender, Discovery, Jaguar, and everything JLR is doing in electric and hybrid technology. Something new launches almost every month — we'll be here to cover it.</p>
 <div class="cta-box">
@@ -137,7 +187,16 @@ footer .links a:hover{color:#a78bfa}
 <a class="cta-btn" href="/blog/jlr">Explore the Land Rover Blog →</a>
 </div>
 </div>
-<footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/blog/jlr">Land Rover Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions · Irvine, CA</div></footer>
+  </div>
+</section><footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/blog/jlr">Land Rover Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions · Irvine, CA</div></footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

@@ -94,6 +94,22 @@ footer .links a:hover{color:#a78bfa}
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "5 Tips for Acing High School Math", "datePublished": "July 22, 2026", "description": "Practical, battle-tested strategies for excelling in algebra, geometry, trigonometry, and precalculus. Build real math confidence.", "author": {"@type": "Person", "name": "RoyceAI"}, "publisher": {"@type": "Organization", "name": "Royce AI Solutions"}}</script>
 </head>
@@ -111,8 +127,10 @@ footer .links a:hover{color:#a78bfa}
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <script>(function(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var t=document.querySelector('a[href*="tutor"]');if(t){if(u&&u.first){t.innerHTML="📚 "+u.first;t.style.cssText="";t.href="/tutor"}else{t.innerHTML="✨ Tutor";t.style.cssText="background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(167,139,250,0.15));border:1px solid rgba(124,92,252,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:#88889a;text-decoration:none;font-size:0.875rem"}}}catch(e){}})();</script>
 
 <div class="post-wrap">
@@ -123,7 +141,10 @@ footer .links a:hover{color:#a78bfa}
 <p>Let's be honest — math is the subject most high school students struggle with, and it's not because they aren't smart. Math builds on itself in a way that no other subject does. Miss a concept in Algebra 1, and it'll show up again in Geometry, Algebra 2, Precalculus, and even on the SAT. The student who gets comfortable with math early has an enormous advantage — not just in grades, but in college admissions, standardized tests, and long-term academic confidence.</p>
 
 <p>The good news is that excelling at high school math isn't about being a "math person." It's about having the right systems, habits, and mindset. After working with dozens of high school students through the RoyceAI tutoring platform, we've identified the five strategies that consistently separate A students from everyone else. These aren't theory — they're battle-tested approaches that have helped students raise their grades by a full letter or more in subjects ranging from Algebra 1 to Precalculus.</p>
-
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>Tip 1: Master the Fundamentals Before Moving On</h2>
 
 <p>This is the single most important tip on this list, and it's the one most students ignore. High school math is aggressively cumulative. Every new topic uses skills you supposedly learned months or years ago. When a student struggles with factoring quadratics in Algebra 2, it's almost never because quadratics are hard. It's because they never fully mastered multiplying binomials in Algebra 1. The same pattern repeats endlessly: a student in Precalculus can't simplify rational expressions because they never internalized fraction arithmetic in middle school.</p>
@@ -137,7 +158,10 @@ footer .links a:hover{color:#a78bfa}
 </ul>
 
 <div class="highlight"><strong>📌 The takeaway:</strong> Math confidence comes from knowing the basics cold. When foundational skills are automatic, your brain has room to handle new, harder concepts. Every minute spent reinforcing fundamentals pays back tenfold later.</div>
-
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>Tip 2: Practice Active Recall, Not Passive Review</h2>
 
 <p>Here's a fact that might change how you study: reading your textbook and re-reading your notes is one of the least effective ways to learn math. Psychologists call this the "fluency illusion" — when you read a solved example, your brain tricks you into thinking you understand it. But understanding and doing are completely different things.</p>
@@ -153,7 +177,10 @@ footer .links a:hover{color:#a78bfa}
 </ul>
 
 <p>A student using RoyceAI's quiz engine can practice active recall across algebra, geometry, and precalculus topics with instant feedback — no flipping to the back of the textbook for answer keys. The platform generates fresh problems so you can never memorize your way through, and the live scoreboard shows your real progress, not the progress you wish you had.</p>
-
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>Tip 3: Build a System for Tracking Mistakes</h2>
 
 <p>The students who improve fastest in math aren't the ones who do the most problems. They're the ones who learn the most from each problem they get wrong. If you make a mistake and don't understand why, you'll make that same mistake on the test — guaranteed.</p>
@@ -170,7 +197,10 @@ footer .links a:hover{color:#a78bfa}
 <div class="stat-card"><div class="num">70%</div><div class="desc">of math mistakes typically fall into just 1-2 categories. Identifying yours cuts errors fast.</div></div>
 
 <p>Students on the RoyceAI tutoring platform get this built in — the system tracks every wrong answer, groups mistakes by pattern, and generates targeted practice sets for exactly the concepts you haven't mastered yet. No more hunting through old homework assignments to figure out what you don't know.</p>
-
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>Tip 4: Use Multiple Representations to Understand Concepts</h2>
 
 <p>One of the hidden secrets of math is that every concept can be represented in multiple ways: numerically, algebraically, graphically, and verbally. Strong students naturally find the representation that clicks for them. Struggling students often only see the algebraic symbols and miss the bigger picture.</p>
@@ -188,7 +218,10 @@ footer .links a:hover{color:#a78bfa}
 </ol>
 
 <p>When you can do all three, you own the concept. And owning concepts is what separates A students from students who are just going through the motions.</p>
-
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>Tip 5: Develop a Pre-Test Routine</h2>
 
 <p>The night before a math test is not the time to learn new material. Yet that's exactly what most students do — they cram, they panic, they try to absorb six weeks of content in three hours, and then they wonder why they freeze up during the exam. Cramming works for memorizing historical dates. It does not work for math, where understanding takes time to develop.</p>
@@ -203,7 +236,10 @@ footer .links a:hover{color:#a78bfa}
 </ul>
 
 <div class="highlight"><strong>📌 The takeaway:</strong> The students who ace math tests aren't the ones who studied the most the night before. They're the ones who showed up well-rested, with a clear picture of what they knew and what they didn't — and a plan for both.</div>
-
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>Putting It All Together</h2>
 
 <p>These five tips form a complete system for high school math success. Master the fundamentals first, practice with active recall, track your mistakes religiously, learn concepts through multiple representations, and take a smart approach to test preparation. None of these strategies requires natural talent or a special math gene. They just require consistency.</p>
@@ -214,8 +250,16 @@ footer .links a:hover{color:#a78bfa}
 
 <div class="cta-box"><h3>Ready to ace your next math test?</h3><p>RoyceAI Tutor generates personalized math quizzes, tracks your progress, and helps you master concepts from Algebra 1 through Precalculus.</p><a href="/tutor" class="cta-btn">📚 Try RoyceAI Tutor</a></div>
 </div>
+  </div>
+</section><footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
 
-<footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

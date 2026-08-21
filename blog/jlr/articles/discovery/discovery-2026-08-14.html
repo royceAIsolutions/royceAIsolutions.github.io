@@ -80,6 +80,22 @@ footer .links a:hover{color:#a78bfa}
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Discovery Today — August 14, 2026", "datePublished": "2026-08-14", "description": "Discovery news and analysis — Discovery Today — August 14, 2026", "author": {"@type": "Person", "name": "RoyceAI"}, "publisher": {"@type": "Organization", "name": "Royce AI Solutions"}, "about": "Discovery"}</script>
 </head>
@@ -97,15 +113,25 @@ footer .links a:hover{color:#a78bfa}
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <div class="post-wrap">
 <a href="/blog/jlr/discovery.html" class="back-link">← Back to 🧭 Discovery</a>
 <span class="meta"><span class="tag">🧭 Discovery</span><span>2026-08-14</span><span>~4 min read</span></span>
 <h1>Discovery Today — August 14, 2026</h1>
 <p>Discovery quietly does the job no other Land Rover does: family first, capability always. Here's why it matters.</p>
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>The current state of play</h2>
 <p>Discovery is the Land Rover for families who refuse to compromise. It brings genuine off-road capability and a commanding driving position to a three-row, family-first package — stadium seating so the kids can actually see out, clever storage everywhere, and the same Terrain Response technology as the big Range Rovers. It is the practical heart of the line-up, and the one Land Rover that does school runs and trail runs equally well.</p>
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>What you need to know</h2>
 <ul>
 <li>Discovery is Land Rover&#x27;s family-first model — three rows of seats, stadium seating for the second and third rows so kids can see out, and individual climate controls.</li>
@@ -113,18 +139,42 @@ footer .links a:hover{color:#a78bfa}
 <li>The Discovery line uses the same Terrain Response systems as the rest of the range, so capability is never sacrificed for comfort.</li>
 <li>Current Discovery runs mild-hybrid Ingenium powertrains, balancing efficiency with Land Rover&#x27;s 8,200-lb-class towing capability in the larger models.</li>
 </ul>
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>Discovery family at a glance</h2>
 <table style="width:100%;border-collapse:collapse;margin:1rem 0 2rem;font-size:0.9rem"><tbody><tr><td>Model</td><td>Seats</td><td>Character</td></tr><tr><td>Discovery</td><td>7</td><td>Full-size family SUV, stadium seating</td></tr><tr><td>Discovery Sport</td><td>5+2</td><td>Compact family entry</td></tr><tr><td>Terrain Response</td><td>—</td><td>Same systems as full Range Rover line</td></tr></tbody></table>
 <style>table tr:first-child td{background:rgba(124,92,252,0.1);color:#a78bfa;font-weight:600}table td{border-bottom:1px solid rgba(255,255,255,0.06);padding:10px 12px;color:#d4d4d8}</style>
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>The engineering view</h2>
 <p>Current Discovery runs mild-hybrid Ingenium powertrains, balancing efficiency with Land Rover&#x27;s 8,200-lb-class towing capability in the larger models.</p>
 <p>For fans, the detail is the point — Land Rover builds vehicles where the specification sheet tells a real story about capability, luxury, and intent. Every generation refines the formula rather than replacing it, which is exactly why the brand's enthusiasts are among the most loyal in the industry.</p>
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>What makes Discovery different</h2>
 <p>Discovery's whole design starts from the family inside it. The stadium seating lifts the second and third rows so every passenger can see out — no more 'I can't see anything' from the back. The third row is genuinely usable for adults on shorter trips, and the configurable interior means the space flexes between people, pets, and cargo without compromise. Underneath all that practicality is a proper Land Rover: Terrain Response, real ground clearance, and the capability to tow and go off-road when the weekend demands it. It's the rare vehicle that makes no one in the family feel like a second-class passenger.</p>
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>Discovery vs the world</h2>
 <p>Compared to other three-row SUVs, Discovery wins on two fronts: off-road credibility and interior cleverness. Rivals may offer more sporty on-road manners, but none of them can follow a Discovery down a mountain trail or swallow a week of family luggage with the third row up. The trade-off is a boxier silhouette and slightly more utilitarian styling — which Land Rover owners tend to see as character. For the family that actually uses their SUV, Discovery is the honest choice.</p>
+  </div>
+</section>
+<section class="slide" id="s8">
+  <div class="slide-inner">
 <h2>The Sport question</h2>
 <p>Discovery Sport is the smaller, more city-friendly entry — five-plus-two seating in a compact footprint, still with the brand's signature presence. It's the Land Rover for families who need the badge and the capability but don't need the full-size footprint. For buyers who outgrow the Sport, the step up to the full Discovery is the natural move: same family-first philosophy, three full rows, and the authority that comes with a proper Land Rover.</p>
+  </div>
+</section>
+<section class="slide" id="s9">
+  <div class="slide-inner">
 <h2>The takeaway</h2>
 <p>Keep following this blog for daily updates on Range Rover, Defender, Discovery, Jaguar, and everything JLR is doing in electric and hybrid technology. Something new launches almost every month — we'll be here to cover it.</p>
 <div class="cta-box">
@@ -133,7 +183,16 @@ footer .links a:hover{color:#a78bfa}
 <a class="cta-btn" href="/blog/jlr">Explore the Land Rover Blog →</a>
 </div>
 </div>
-<footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/blog/jlr">Land Rover Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions · Irvine, CA</div></footer>
+  </div>
+</section><footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/blog/jlr">Land Rover Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions · Irvine, CA</div></footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

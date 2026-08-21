@@ -94,6 +94,22 @@ footer .links a:hover{color:#a78bfa}
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Market Brief — July 22, 2026", "datePublished": "July 22, 2026", "description": "Daily market briefing covering SPY, VIX, bond yields, sector performance, oil, and crypto.", "author": {"@type": "Person", "name": "RoyceAI"}, "publisher": {"@type": "Organization", "name": "Royce AI Solutions"}}</script>
 </head>
@@ -111,8 +127,10 @@ footer .links a:hover{color:#a78bfa}
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <script>(function(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var t=document.querySelector('a[href*="tutor"]');if(t){if(u&&u.first){t.innerHTML="\ud83d\udcda "+u.first;t.style.cssText="";t.href="/tutor"}else{t.innerHTML="\u2728 Tutor";t.style.cssText="background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(167,139,250,0.15));border:1px solid rgba(124,92,252,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:#88889a;text-decoration:none;font-size:0.875rem"}}}catch(e){}})();</script>
 <div class="post-wrap">
 <a href="/blog" class="back-link">← Back to Blog</a>
@@ -120,12 +138,18 @@ footer .links a:hover{color:#a78bfa}
 <div class="meta"><span>July 22, 2026</span><span>·</span><span>Markets · Trading</span><span class="tag">Financial Markets</span></div>
 
 <p>Markets are treading water in Wednesday afternoon trading as traders position ahead of a blockbuster earnings session from Google parent Alphabet and Tesla after the closing bell. The S&P 500 is virtually flat, the Dow is eking out marginal gains, and the Nasdaq is slightly in the red — but beneath the surface, several important moves are taking shape. Crude oil is surging to multi-week highs on escalating Middle East tensions, bond yields are climbing, gold is catching a bid, and Bitcoin is struggling to hold $66,000. Here's your complete briefing for July 22, 2026.</p>
-
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>Executive Summary</h2>
 <div class="highlight"><strong>📊 Market Regime: GREEN</strong> — Risk-on conditions intact. VIX at 16.95 (normal), S&P 500 holds 7.7% above its 200-day moving average, and credit spreads at 2.69% remain well behaved. The macro backdrop remains supportive despite pockets of cross-asset turbulence in oil and bonds.</div>
 
 <p>The Meridian Market Regime indicator flashed green on all three pillars today: (1) the VIX is below 17, signaling normal implied volatility; (2) the S&P 500 closed 7.7% above its 200-day simple moving average of 694.70; and (3) the ICE BofA High Yield Option-Adjusted Spread sits at 2.69%, well inside the "normal" band. When all three align in the same direction, it historically suggests a favorable environment for risk assets.</p>
-
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>Equity Markets</h2>
 
 <p>The major indices are sending mixed signals ahead of tonight's tech earnings deluge:</p>
@@ -141,10 +165,16 @@ footer .links a:hover{color:#a78bfa}
 <div class="num">+7.7%</div>
 <div class="desc">S&P 500 premium above its 200-day moving average — a clear structural bullish signal, but one that leaves less margin for error if the earnings season disappoints.</div>
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>Volatility (VIX)</h2>
 <p>The CBOE Volatility Index sits at <strong>16.95</strong>, down 0.59% on the day. A VIX reading in the mid-16s is comfortably below the long-term average of ~19-20 and well inside the "normal / low stress" range. The index hasn't breached 20 since early June, and the downward drift over the past two weeks suggests complacency — or, more charitably, confidence that the macro picture is stable. The VIX term structure remains in contango, which is the normal, healthy shape for a complacent-to-constructive market. Keep an eye on whether tonight's after-hours earnings prints jolt the volatility complex tomorrow.</p>
-
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>Fixed Income &amp; Bond Yields</h2>
 
 <p>The bond market is sounding an increasingly loud alarm. The 30-year Treasury yield is flashing a warning not seen since 2007, and the 10-year yield is pressing against multi-month highs as oil's surge reignites inflation concerns.</p>
@@ -159,7 +189,10 @@ footer .links a:hover{color:#a78bfa}
 <p>The 2s10s spread — the difference between the 2-year and 10-year yields — is now positively sloped at roughly 36 basis points, meaning the yield curve has fully dis-inverted and is now in "normalization" territory. Historically, the curve dis-inverts <em>before</em> recessions, not after, so this isn't an all-clear signal — it's a "watch your step" sign.</p>
 
 <div class="highlight"><strong>⚠️ The bond-oil feedback loop:</strong> Crude oil up 3.2% → inflation expectations reprice higher → bond yields rise → rate-sensitive equities (small caps, REITs, high-duration tech) sell off. This is the key transmission mechanism to watch in the coming days.</div>
-
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>Commodities</h2>
 
 <h3>Crude Oil — The Big Move</h3>
@@ -167,7 +200,10 @@ footer .links a:hover{color:#a78bfa}
 
 <h3>Gold</h3>
 <p><strong>Gold: $4,143.20/oz (+1.64%)</strong> — The yellow metal is catching a strong bid, benefiting from a textbook trifecta: geopolitical uncertainty, rising inflation expectations, and a volatile rate environment. Gold has rallied from the $3,650 area in late June to above $4,100, a gain of roughly 13% in under a month. The 90-day Gold-Bitcoin correlation sits at 0.77, meaning the two assets have been moving together — but today they're diverging, with gold surging while Bitcoin slides. That's a relative-value signal worth monitoring.</p>
-
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>Crypto</h2>
 
 <h3>Bitcoin</h3>
@@ -177,7 +213,10 @@ footer .links a:hover{color:#a78bfa}
 
 <h3>Ethereum</h3>
 <p>Ethereum open interest has grown 16.7% over the past 30 days to $56.4 billion, significantly outpacing Bitcoin's 5.9% OI growth. ETH funding rates at 0.30% are elevated — suggesting leveraged longs are paying a premium. This makes ETH more vulnerable to a liquidation cascade if the market turns, but it also signals conviction. SOL open interest at $9.85 billion has contracted 8.4% over the past month, making it the weakest of the top three by OI trend.</p>
-
+  </div>
+</section>
+<section class="slide" id="s8">
+  <div class="slide-inner">
 <h2>Macro Indicators</h2>
 
 <p>The macro picture is one of "sticky" rather than "cooling":</p>
@@ -188,7 +227,10 @@ footer .links a:hover{color:#a78bfa}
 <li><strong>Unemployment Rate:</strong> 4.2% — The labor market is healthy but showing signs of softening. Initial jobless claims have crept higher over the past month.</li>
 <li><strong>M2 Money Supply:</strong> $23.05 trillion — Year-over-year growth of 5.58%. Money supply is expanding again after the 2022-2023 contraction, a historically bullish signal for risk assets on a 6-12 month horizon.</li>
 </ul>
-
+  </div>
+</section>
+<section class="slide" id="s9">
+  <div class="slide-inner">
 <h2>Smart Money Flows</h2>
 
 <p>Insider buying activity today caught our attention. Key filings from July 21-22 include:</p>
@@ -200,7 +242,10 @@ footer .links a:hover{color:#a78bfa}
 </ul>
 
 <p>Dark pool anomalies spotted today include <strong>Mastercard (MA)</strong> with 58.5% off-exchange volume and a Z-score of 3.36 — statistically unusual off-exchange activity that often precedes a material move. Spotify (SPOT) saw 84% of its volume trade off-exchange, the most extreme anomaly detected.</p>
-
+  </div>
+</section>
+<section class="slide" id="s10">
+  <div class="slide-inner">
 <h2>Confluence Signals</h2>
 
 <p>Our multi-source signal scoring aggregates insider, institutional, superinvestor, congress, short interest, and dark pool data into a unified conviction score:</p>
@@ -210,7 +255,10 @@ footer .links a:hover{color:#a78bfa}
 <li><strong>Meta Platforms (META) — Bullish, Score 73.8:</strong> ARK funds bought 67,912 shares across three ETFs on July 20. Viking Global is among the superinvestor buyers. Short interest is a tiny 1.6% of float.</li>
 <li><strong>Union Pacific (UNP) — Bearish, Score 61.1:</strong> Multiple institutional holders, but superinvestor selling and declining short interest (-3.3%) suggest the easy money has been made.</li>
 </ul>
-
+  </div>
+</section>
+<section class="slide" id="s11">
+  <div class="slide-inner">
 <h2>The Bottom Line</h2>
 
 <p>Today's tape tells a story of a market that's fundamentally healthy but facing near-term headwinds. The green regime signals are intact — VIX is low, the S&P 500 is above its trendline, and credit markets are functioning normally. But the oil-driven bond sell-off is a fresh source of uncertainty. If crude holds above $87 and the 10-year yield pushes through 4.70%, expect rate-sensitive assets (REITs, utilities, small caps, long-duration tech) to come under pressure.</p>
@@ -221,7 +269,16 @@ footer .links a:hover{color:#a78bfa}
 
 <div class="cta-box"><h3>Want a custom analysis?</h3><p>RoyceAI can research any market, industry, or topic and deliver a full report tailored to your needs.</p><a href="/chat" class="cta-btn">💬 Chat with RoyceAI</a></div>
 </div>
-<footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
+  </div>
+</section><footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

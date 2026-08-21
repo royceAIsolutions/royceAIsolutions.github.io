@@ -110,6 +110,22 @@ section[id]{scroll-margin-top:80px}
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style></head><body>
 <div class="orb orb-1"></div><div class="orb orb-2"></div>
 <nav>
@@ -124,19 +140,26 @@ section[id]{scroll-margin-top:80px}
   </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
 <div class="mobile-menu" id="mobileMenu"></div>
 
-<section class="hero">
+<section class="slide active hero" id="s1" >
+  <div class="slide-inner">
+
   <h1>AI Tutor That Actually <span class="gradient">Teaches</span></h1>
   <p>Unlimited, personalized one-on-one tutoring in every high school subject. Powered by advanced AI — available 24/7, patient as a librarian, smart as a valedictorian.</p>
   <div class="hero-actions">
     <a href="/pay" class="btn btn-primary">Subscribe — $100/mo →</a>
     <a href="#subjects" class="btn btn-outline">See Subjects</a>
   </div>
+
+  </div>
 </section>
 
-<section class="features">
+<section class="slide features" id="s2" >
+  <div class="slide-inner">
+
   <h2>Why Students &amp; Parents Love It</h2>
   <div class="feature-grid">
     <div class="feature-card">
@@ -170,9 +193,13 @@ section[id]{scroll-margin-top:80px}
       <p>The AI cycles through subjects every question so you get a balanced review session — not 33 questions of the same topic.</p>
     </div>
   </div>
+
+  </div>
 </section>
 
-<section class="subjects" id="subjects">
+<section class="slide subjects" id="s3"  id="subjects">
+  <div class="slide-inner">
+
   <h2>Subjects Covered</h2>
   <p>From preschool to AP exams, Series 66, and NCLEX. Every subject, every grade level.</p>
   <div class="subject-tags">
@@ -221,9 +248,13 @@ section[id]{scroll-margin-top:80px}
     <span class="subject-tag">💼 Series 66</span>
     <span class="subject-tag">💼 RN / NCLEX</span>
   </div>
+
+  </div>
 </section>
 
-<section class="pricing">
+<section class="slide pricing" id="s4" >
+  <div class="slide-inner">
+
   <div class="pricing-card">
     <div class="amount">$100 <span>/ month</span></div>
     <ul>
@@ -236,9 +267,13 @@ section[id]{scroll-margin-top:80px}
     </ul>
     <a href="/pay" class="btn btn-primary">Subscribe Now →</a>
   </div>
+
+  </div>
 </section>
 
-<section class="faq">
+<section class="slide faq" id="s5" >
+  <div class="slide-inner">
+
   <h2>FAQs</h2>
   <div class="faq-item">
     <div class="q">Does it replace a human tutor?</div>
@@ -260,14 +295,20 @@ section[id]{scroll-margin-top:80px}
     <div class="q">What grades is this for?</div>
     <div class="a">9th–12th grade core subjects. We also have SAT prep and specific grade-level tracks (9th and 11th currently).</div>
   </div>
+
+  </div>
 </section>
 
-<section class="cta-section">
+<section class="slide cta-section" id="s6" >
+  <div class="slide-inner">
+
   <h2>Ready to Try It?</h2>
   <p>First session is free — no credit card needed. Log in and start a quiz right now.</p>
   <div class="hero-actions">
     <a href="/tutor" class="btn btn-primary">Log In &amp; Start →</a>
     <a href="/products" class="btn btn-outline">← Back to Products</a>
+  </div>
+
   </div>
 </section>
 
@@ -281,6 +322,14 @@ section[id]{scroll-margin-top:80px}
     <a href="/chat">Chat</a>
   </div>
 </footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

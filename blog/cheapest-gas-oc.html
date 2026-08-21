@@ -117,6 +117,22 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 </head>
 <body>
@@ -133,8 +149,11 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div><script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/products/tutor"]');var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(t){t.innerHTML="📚 Dashboard";t.style.cssText="";t.href="/tutor"}}else if(t){t.innerHTML="✨ Tutor";t.style.cssText="animation:pulse-glow 2.5s ease-in-out infinite;background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
+<script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/products/tutor"]');var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(t){t.innerHTML="📚 Dashboard";t.style.cssText="";t.href="/tutor"}}else if(t){t.innerHTML="✨ Tutor";t.style.cssText="animation:pulse-glow 2.5s ease-in-out infinite;background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
 
 <div class="blog-post">
 <a href="/blog" class="back-link">← Back to Blog</a>
@@ -147,7 +166,10 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 <p>But here's the good news: there are genuine bargains to be found if you know where to look. A handful of stations — led by the beloved local chain <strong>Berri Brothers</strong> — consistently undercut their competition by 20 to 40 cents per gallon. Over a year of weekly fill-ups, that adds up to real savings.</p>
 
 <p>This guide covers everything you need to know: the Berri Brothers story, a price comparison across OC cities, why California gas is so expensive, and actionable tips to keep more money in your wallet.</p>
-
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>1. Berri Brothers: The Undisputed King of Cheap Gas in OC</h2>
 
 <div class="highlight-card">
@@ -174,7 +196,10 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 <h3>What to Expect at the Pump</h3>
 
 <p>The Tustin location has 8 pumps, all pay-at-the-pump with self-serve. It gets busy during peak commute hours — expect a short line between 5–6 PM on weekdays. But the pumps move fast, and the easy in/out at the Red Hill and Walnut intersection makes it a painless stop. If you're heading north on Red Hill, you can hit it on your way home from John Wayne Airport or the 5 freeway in minutes.</p>
-
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>2. Price Comparison: Cheapest Gas by OC City</h2>
 
 <p>While Berri Brothers Tustin holds the crown, it's not the only budget-friendly option in Orange County. Here's how prices shake out across the county's major cities as of late July 2026.</p>
@@ -255,7 +280,10 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 <p><strong>Huntington Beach / Costa Mesa</strong> — Beach-adjacent pricing means a 10-15 cent premium over inland stations. Your best bet is Thrifty or USA Gas on the inland edges of these cities rather than near PCH.</p>
 
 <p><strong>Newport Beach / Laguna Beach</strong> — The most expensive gas in OC. Coastal tourist traffic, high real estate costs, and a captive audience of luxury car owners push prices to $5.60-$5.80 for regular. Fill up before you drive down to the coast.</p>
-
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>3. Why Is Orange County Gas So Expensive?</h2>
 
 <p>If you've ever wondered why California gas costs a dollar or more than the national average, the answer is a perfect storm of policy, geography, and market structure. Here are the main factors.</p>
@@ -279,7 +307,10 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 <h3>No Competition in Some Areas</h3>
 
 <p>In parts of Newport Beach, Laguna Beach, and south Irvine, there simply aren't many stations competing for your business. A Chevron at a prime intersection with no ARCO or Costco within two miles can charge whatever it wants. This "gas desert" effect is especially pronounced in coastal south OC, where zoning restrictions and high land costs limit new station construction.</p>
-
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>4. Gas Saving Tips That Actually Work</h2>
 
 <p>Beyond choosing the right station, here are proven ways to spend less on gas — no gimmicks.</p>
@@ -294,7 +325,10 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 <li><strong>Use cruise control on highways.</strong> Maintaining a constant speed eliminates the micro-accelerations that waste fuel. Set it and forget it.</li>
 <li><strong>Combine errands into one trip.</strong> A warm engine is significantly more efficient than a cold one. Several short trips from a cold start use more fuel than one longer trip that covers the same distance. Plan your route strategically.</li>
 </ul>
-
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>5. The Bottom Line</h2>
 
 <p>Orange County gas prices aren't coming down anytime soon. The structural factors — taxes, CARB regulations, refinery constraints, and real estate costs — are baked into the system. But that doesn't mean you have to pay the premium.</p>
@@ -310,8 +344,8 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 <p style="color:var(--text-muted);font-size:0.85rem"><em>Prices are approximate as of July 22, 2026. Gas prices fluctuate weekly — check GasBuddy for current rates. This blog is auto-updated every Monday at 10 AM with the latest Berri Brothers prices.</em></p>
 
 </div>
-
-<footer>
+  </div>
+</section><footer>
 <div class="logo">Royce<span>AI</span> Solutions</div>
 <div class="links">
 <a href="/blog">Blog</a>
@@ -321,6 +355,14 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 </div>
 <div class="copy">© 2026 RoyceAI. Irvine, CA.</div>
 </footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

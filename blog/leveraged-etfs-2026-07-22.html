@@ -101,6 +101,22 @@ footer .links a:hover{color:#a78bfa}
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Leveraged ETF Watch — July 22, 2026", "datePublished": "July 22, 2026", "description": "Weekly leveraged ETF report covering daily movers, decay analysis, top performers, and sector rotation for July 22, 2026. Live prices, real tickers, actionable insights.", "author": {"@type": "Person", "name": "RoyceAI"}, "publisher": {"@type": "Organization", "name": "Royce AI Solutions"}}</script>
 </head>
@@ -118,8 +134,10 @@ footer .links a:hover{color:#a78bfa}
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <script>(function(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var t=document.querySelector('a[href*="tutor"]');if(t){if(u&&u.first){t.innerHTML="📚 "+u.first;t.style.cssText="";t.href="/tutor"}else{t.innerHTML="✨ Tutor";t.style.cssText="background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(167,139,250,0.15));border:1px solid rgba(124,92,252,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:#88889a;text-decoration:none;font-size:0.875rem"}}}catch(e){}})();</script>
 
 <div class="post-wrap">
@@ -130,7 +148,10 @@ footer .links a:hover{color:#a78bfa}
 <p>Welcome to this week's leveraged ETF report. Markets closed mixed on Wednesday, July 22, with the S&P 500 (SPY $748.27) essentially flat on the day while dramatic rotational flows played out beneath the surface. The market regime is firmly <strong>GREEN</strong> — VIX resting at a comfortable 16.98, SPY trading 7.69% above its 200-day moving average ($694.70), and credit spreads normal at 2.69%. This is a risk-on environment that favors leveraged exposure, but the day's action reveals a critical rotation worth your full attention.</p>
 
 <div class="highlight"><strong>Market Pulse — July 22:</strong> VIX 16.98 (Normal) · SPY $748.27 vs MA200 $694.70 (+7.69%) · Credit Spreads 2.69% (Normal) · Regime: GREEN · Crypto Fear & Greed: 34 (Fear) · BTC $66,558</div>
-
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>Today's Movers — The Story in Three Acts</h2>
 
 <p>Wednesday delivered a clear three-part narrative: gold miners exploded higher, semiconductors continued their July recovery, and everything else drifted. The standout performer was GDXU (Direxion Daily Gold Miners Bull 3X), which surged <strong>+8.42%</strong> to $84.50 — its best single-day gain in months. Gold prices firmed as the dollar softened, and the crypto Fear & Greed index at 34 (Fear) reinforced the safe-haven bid into precious metals.</p>
@@ -156,7 +177,10 @@ footer .links a:hover{color:#a78bfa}
 </table>
 
 <p>The day's biggest loser, KORU (-4.10%), reflects renewed selling pressure in South Korean equities as KOSPI weakness continues. Small caps via TNA (-2.75%) also took a hit as the Russell 2000 retreated from recent highs near its 52-week peak of $302.72 on IWM. The Russell has been range-bound since early July, and today's breakdown below $295 on IWM suggests further downside risk for small-cap leveraged plays.</p>
-
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>🏆 Top Performers — Deep Dive</h2>
 
 <h3>GDXU — The Comeback Kid</h3>
@@ -174,13 +198,19 @@ footer .links a:hover{color:#a78bfa}
 <h3>AVGU — Broadcom Finds Its Groove</h3>
 
 <p>AVGU (2x Broadcom) jumped +5.78% to $37.89, recovering from its open at $35.55. Broadcom has been a steady AI beneficiary alongside NVIDIA, and AVGU's low volume (60K shares versus 97K 2-week average) suggests institutional accumulation rather than retail speculation. The 52-week high of $63.46 (June 3) remains distant, but the stock is building a base above $35 support.</p>
-
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>📉 Weakest Links — What's Dragging</h2>
 
 <p>KORU (-4.10%) was the day's worst performer as South Korean equities sell off sharply. The 3x Korea ETF has been in freefall since peaking at $63.99 in June, losing 67% of its value in just over six weeks. The KOSPI weakness is driven by Samsung and SK Hynix — the country's two largest stocks — suffering from the same semiconductor inventory correction that hit SOXL. Any meaningful recovery in semis should lift KORU first given its extreme leverage, but buyers have been absent for six straight weeks.</p>
 
 <p>TNA (-2.75%) reflects small-cap weakness in a market that continues to show divergence. The S&P 500 is fine (SPY flat), Nasdaq is fine (QQQ -0.21%), but small caps are getting hammered. IWM (Russell 2000 ETF) closed at $293.88, below its 50-day moving average and threatening the $290 support level. Small caps need lower interest rates and economic clarity — neither of which arrives this week.</p>
-
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>⚡ Volatility Decay Analysis — What 3x Costs You</h2>
 
 <p>Volatility decay remains the single biggest hidden cost of holding leveraged ETFs. Let's look at SOXL since its June 22 high to see it in action:</p>
@@ -197,7 +227,10 @@ footer .links a:hover{color:#a78bfa}
 </ul>
 
 <p>After four days of a flat market, SOXL has lost 0.18% to decay. Over 20 days of sideways chop, that compounds to roughly -3.5% in pure decay — money you lose even though the underlying went nowhere. This is why 3x ETFs are <strong>trading instruments, not investments</strong>. The maximum efficient hold is 1-3 days; beyond that, decay eats your returns. The 2x funds (QLD, SSO, NVDL, AVGU) suffer roughly half the decay, which is why they're better suited for 3-7 day swing holds.</p>
-
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>🔄 Sector Rotation — Where the Money is Moving</h2>
 
 <p>Today's action confirms a rotation out of small caps and international (KORU, TNA) into semiconductors (SOXL) and precious metals (GDXU). The rotation signals are:</p>
@@ -209,7 +242,10 @@ footer .links a:hover{color:#a78bfa}
 <p><strong>Structural Tech.</strong> NVDL (+6.64%) and AVGU (+5.78%) confirm that AI infrastructure spending remains the dominant long-term narrative. NVIDIA and Broadcom are the picks and shovels of the AI gold rush, and their 2x leveraged ETFs offer targeted exposure with lower decay than 3x funds. These are the most "ownable" leveraged ETFs for a multi-day hold in this environment.</p>
 
 <p><strong>Korea Weakness.</strong> KORU at $20.84 is 67% below its June high. The KOSPI is in a correction driven by Samsung's memory chip glut and SK Hynix's AI demand disappointment. Until Korea semi stocks stabilize, KORU is a catch-the-knife setup. Avoid unless you see a clear catalyst.</p>
-
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>📊 Week-to-Date Scorecard</h2>
 
 <p>Midweek check-in on how the major leveraged ETFs are performing for the week beginning July 20:</p>
@@ -217,7 +253,10 @@ footer .links a:hover{color:#a78bfa}
 <p>GDXU is the clear winner, up roughly +15% for the week if today's gains hold through Thursday and Friday. SOXL is roughly flat to slightly positive for the week after today's strong close erased Monday's losses. NVDL is similarly recovering. TNA and KORU are negative for the week — KORU especially is seeing aggressive selling across all timeframes. TQQQ is mildly negative week-to-date as the Nasdaq drifts lower from recent highs near $710-715 on QQQ.</p>
 
 <p>The key observation: this is not a risk-off market. With VIX at 16.98, the regime is GREEN, and the overall trend (SPY +7.69% above MA200) is bullish. But the rotation within sectors means ETF selection matters more than directional market calls. Being in the right leveraged ETF is the difference between +8.42% (GDXU) and -4.10% (KORU) on the same day in the same market.</p>
-
+  </div>
+</section>
+<section class="slide" id="s8">
+  <div class="slide-inner">
 <h2>📋 Strategy Takeaways</h2>
 
 <p>For leveraged ETF traders, the week's action provides a few actionable themes:</p>
@@ -234,8 +273,16 @@ footer .links a:hover{color:#a78bfa}
 
 <div class="cta-box"><h3>Want a custom analysis?</h3><p>RoyceAI can research any market, industry, or topic and deliver a full report tailored to your needs.</p><a href="/chat" class="cta-btn">💬 Chat with RoyceAI</a></div>
 </div>
+  </div>
+</section><footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
 
-<footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions. Irvine, CA</div></footer>
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

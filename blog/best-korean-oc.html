@@ -121,6 +121,22 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","headline":"Best Korean Restaurants in Orange County 2026","dateModified":"2026-07-22","description":"The definitive guide to the best Korean restaurants in Orange County — Korean BBQ, tofu houses, banchan, and OC Koreatown guides with ratings, pricing, and pro tips.","author":{"@type":"Person","name":"RoyceAI"}}
@@ -140,8 +156,11 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div><script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/tutor"]');var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(t){t.innerHTML="\ud83d\udcda Dashboard";t.style.cssText="";t.href="/tutor"}}else if(t){t.innerHTML="\u2728 Tutor";t.style.cssText="animation:pulse-glow 2.5s ease-in-out infinite;background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
+<script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/tutor"]');var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(t){t.innerHTML="\ud83d\udcda Dashboard";t.style.cssText="";t.href="/tutor"}}else if(t){t.innerHTML="\u2728 Tutor";t.style.cssText="animation:pulse-glow 2.5s ease-in-out infinite;background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
 
 <div class="blog-post">
 <a href="/blog" class="back-link">← Back to Blog</a>
@@ -155,7 +174,10 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 <div class="highlight-box">
 <strong>TL;DR — Top Pick:</strong> Baekjeong in Buena Park is the best Korean BBQ experience in Orange County. For tofu, hit BCD Tofu House in Irvine. For the most authentic soup experience, Jinsol Gukbap in Buena Park is worth the drive from anywhere in OC.
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>Where Is OC's Koreatown?</h2>
 
 <p>Unlike Los Angeles, Orange County doesn't have a single officially designated Koreatown. Instead, Korean restaurants and businesses are clustered in four main areas:</p>
@@ -168,7 +190,10 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 </ul>
 
 <div class="info-note"><strong>Pro tip:</strong> Buena Park has become the new center of gravity for Korean food in OC. If you only have one day to eat Korean in Orange County, spend it in Buena Park — you'll find everything from high-end KBBQ to 24-hour soup joints within a 2-mile radius.</div>
-
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>🏆 The Best Korean BBQ in OC</h2>
 
 <h3>1. Baekjeong (Buena Park) — The Gold Standard</h3>
@@ -244,7 +269,10 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 </div>
 
 <p>Mr. BBQ in Fullerton is a quieter alternative to the Buena Park and Irvine crowds. It's a solid AYCE option with three pricing tiers. The service is fast, the grills are changed frequently (a sign of a well-run KBBQ spot), and the banchan is fresh. It's particularly popular with CSUF students and north OC locals.</p>
-
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>🍲 The Best Tofu Houses (Soondoobu)</h2>
 
 <h3>5. BCD Tofu House (Irvine) — The Gold Standard for Tofu Stew</h3>
@@ -284,7 +312,10 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 <p>YD Tofu House is the old-guard institution of Garden Grove's Korean food corridor. It's been around for decades and has a loyal local following. The vibe is no-frills, the service is efficient, and the tofu stew is consistently excellent. If BCD is the polished chain, YD is the neighborhood spot that's been perfecting the same recipes for 30+ years.</p>
 
 <p><strong>What to order:</strong> The pork and kimchi tofu stew is the standout — the kimchi is deeply fermented and adds a tangy, savory depth that the cleaner seafood versions don't have. The galbi combo here is slightly cheaper than BCD and the banchan includes a fantastic pickled cucumber salad.</p>
-
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>🥣 The Best Korean Soups & Stews</h2>
 
 <h3>7. Jinsol Gukbap (Buena Park) — Legendary Pork Soup</h3>
@@ -306,7 +337,10 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 <p>The bossam (boiled pork belly wraps) here is excellent — tender pork with a perfect fat-to-meat ratio, served with fresh lettuce, ssamjang, and raw garlic. Wrap a slice of pork with kimchi and garlic, dip in ssamjang, and chase it with a spoonful of the soup. It's a transcendent combination.</p>
 
 <p><strong>What to order:</strong> Dwaeji gukbap ($12.99) is the signature. The soondoobu jjigae is also surprisingly good for a place that specializes in pork soup. If you're with 2+ people, add the bossam ($28.99 large) for sharing. The portions are generous — one bowl of gukbap is a full meal.</p>
-
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>🥟 Banchan & Korean Sides Worth Seeking Out</h2>
 
 <p>One of the great pleasures of Korean dining is the banchan — those endless small side dishes that arrive before your meal. While most Korean BBQ and tofu house meals come with complimentary banchan, these spots are worth visiting just for their side dish game:</p>
@@ -326,7 +360,10 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 </div>
 
 <p>Hamjipark is famous for its banchan selection — you'll get 10–12 different small dishes before your meal even starts. The haemul pajeon (seafood scallion pancake) is arguably the best in OC: crispy on the outside, chewy on the inside, packed with shrimp and squid. The japchae (glass noodles) is perfectly seasoned with sesame oil and soy.</p>
-
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>🍜 Korean-Chinese & Other Must-Try Categories</h2>
 
 <h3>9. Yangji Gamjatang (Garden Grove) — Pork Bone Soup Specialists</h3>
@@ -360,7 +397,10 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 </div>
 
 <p>Tucked into the University Town Center by UC Irvine, Kaju Tofu House is a quieter, more affordable tofu option that's popular with students and vegetarians alike. They offer mushroom and vegetable broth options that are genuinely flavorful (most Korean spots just leave the meat out and call it "vegetarian" — Kaju actually builds flavor with shiitake and king oyster mushrooms).</p>
-
+  </div>
+</section>
+<section class="slide" id="s8">
+  <div class="slide-inner">
 <h2>🍶 Korean Cooking at Home: A Banchan Shopping Guide</h2>
 
 <p>If you want to recreate the Korean restaurant experience at home, these OC Korean markets have everything you need:</p>
@@ -372,7 +412,10 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 </ul>
 
 <div class="info-note"><strong>Pricing note:</strong> All prices listed are as of mid-2026 and are approximate. Orange County Korean restaurants have seen moderate price increases over the past year, but they remain considerably cheaper than comparable meals in LA. Expect to pay 10–15% less at most OC spots compared to Koreatown LA.</div>
-
+  </div>
+</section>
+<section class="slide" id="s9">
+  <div class="slide-inner">
 <h2>Final Tips for Korean Eating in OC</h2>
 
 <p><strong>1. Bring cash or cards accepted.</strong> Most Korean restaurants in OC accept all major cards now, but a few old-school joints in Garden Grove are still cash-preferred. Check before you go.</p>
@@ -390,8 +433,8 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 <p>Happy eating! (잘 먹겠습니다!)</p>
 
 </div>
-
-<footer>
+  </div>
+</section><footer>
 <div class="logo">Royce<span>AI</span> Solutions</div>
 <div class="links">
 <a href="/blog">Blog</a>
@@ -400,6 +443,14 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 </div>
 <div class="copy">© 2026 RoyceAI. Irvine, CA.</div>
 </footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

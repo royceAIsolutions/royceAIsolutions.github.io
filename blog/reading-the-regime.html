@@ -103,6 +103,22 @@ footer .links a:hover{color:#a78bfa}
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Reading the Market Regime: VIX, SPY MA200, Credit Spreads Explained", "datePublished": "July 22, 2026", "description": "Learn how to read market regimes using VIX, SPY 200-day moving average, and credit spreads. Green, yellow, and red regimes explained with live data.", "author": {"@type": "Person", "name": "RoyceAI"}, "publisher": {"@type": "Organization", "name": "Royce AI Solutions"}}</script>
 </head>
@@ -120,8 +136,10 @@ footer .links a:hover{color:#a78bfa}
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <script>(function(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var t=document.querySelector('a[href*="tutor"]');if(t){if(u&&u.first){t.innerHTML="\ud83d\udcda "+u.first;t.style.cssText="";t.href="/tutor"}else{t.innerHTML="\u2728 Tutor";t.style.cssText="background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(167,139,250,0.15));border:1px solid rgba(124,92,252,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:#88889a;text-decoration:none;font-size:0.875rem"}}}catch(e){}})();</script>
 <div class="post-wrap">
 <a href="/blog" class="back-link">← Back to Blog</a>
@@ -131,13 +149,19 @@ footer .links a:hover{color:#a78bfa}
 <p>Every trader eventually faces the same question: <em>should I be aggressive or defensive right now?</em> The answer depends on the market regime — the underlying condition of the financial markets that determines how risk behaves. A systematic trader doesn't guess. They read three key indicators: the VIX, the S&P 500 relative to its 200-day moving average, and credit spreads. Together, these tell you whether we're in a Green, Yellow, or Red regime.</p>
 
 <p>In this post, I'll explain each indicator in plain English, show you how they combine into a simple regime framework, and apply it to real live data from July 22, 2026.</p>
-
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>What Is a Market Regime?</h2>
 
 <p>A market regime is the baseline risk environment. Think of it like weather: you wouldn't wear a parka on a sunny day, and you wouldn't go sailing in a hurricane. In markets, the regime tells you the probability distribution of outcomes. In a Green regime, the tail risks are small and the bias is bullish. In a Red regime, volatility clusters and drawdowns are the norm. Yellow is the gray zone — conditions are mixed, and discretion matters most.</p>
 
 <p>The concept comes from systematic macro funds like Bridgewater and AQR, but you don't need a PhD to use it. With three publicly available data points, you can build a regime model that beats gut-feel trading nine times out of ten.</p>
-
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>Indicator 1: The VIX — The Fear Gauge</h2>
 
 <p>The CBOE Volatility Index, or VIX, measures the market's expectation of 30-day forward volatility in the S&P 500. It's built from S&P 500 index option prices, and it's the closest thing we have to a market-wide fear thermometer. When traders are nervous, they buy options for protection, driving option premiums — and the VIX — higher.</p>
@@ -156,7 +180,10 @@ footer .links a:hover{color:#a78bfa}
 </div>
 
 <p>The VIX is mean-reverting. It spiked to 82.69 during COVID (March 2020), 36.07 during the 2023 regional banking crisis, and 35.01 during the August 2024 Yen-carry unwind. Each time it snapped back below 20 within weeks. Buying fear and selling complacency has been a profitable trade over the long run — but you need the other two indicators to confirm the regime.</p>
-
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>Indicator 2: SPY vs. the 200-Day Moving Average</h2>
 
 <p>The 200-day simple moving average (MA200) is the most widely watched trend filter in institutional finance. It represents the average closing price of the S&P 500 over the last 200 trading days — roughly one calendar year. When SPY trades above it, the long-term trend is up. Below it, the trend is down.</p>
@@ -179,7 +206,10 @@ footer .links a:hover{color:#a78bfa}
 <div class="num">7.7%</div>
 <div class="desc">Current SPY premium above the 200-day moving average — a strong bullish structural signal.</div>
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>Indicator 3: Credit Spreads — The Bond Market's Honest Signal</h2>
 
 <p>Credit spreads measure the additional yield that investors demand to hold corporate bonds instead of risk-free government bonds. The most commonly watched is the ICE BofA US High Yield Index Option-Adjusted Spread (OAS) — the difference in yield between junk bonds and Treasuries. Credit spreads are the bond market's honest assessment of corporate health.</p>
@@ -197,7 +227,10 @@ footer .links a:hover{color:#a78bfa}
 </div>
 
 <p>Credit spreads are a leading indicator for equities. Because bond investors are the first to sense corporate distress, widening spreads typically precede equity drawdowns by weeks or months. In 2007, high-yield spreads began widening in June — a full 15 months before the S&P 500 peaked. In 2020, spreads spiked in February, two weeks before equities crashed. When spreads are tight, it's a green light for risk assets.</p>
-
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>The Regime Decision: Green, Yellow, Red</h2>
 
 <p>Each indicator gets a color. The overall regime is determined by the consensus:</p>
@@ -222,7 +255,10 @@ footer .links a:hover{color:#a78bfa}
 <p><strong>Green Regime (e.g., 2017, 2021, mid-2023–present):</strong> All three indicators aligned. The S&P 500 returned 21.8% in 2017 and 28.7% in 2021. Buying dips in tech and semiconductors worked consistently. The VIX stayed below 12 for months at a time.</p>
 <p><strong>Yellow Regime (e.g., Aug 2024 Yen-carry unwind):</strong> VIX spiked to 35, SPY briefly dipped below MA200, but credit spreads stayed below 3.5%. Mixed signals. Those who went to cash missed the recovery. Those who bought the dip were rewarded — but it took conviction.</p>
 <p><strong>Red Regime (e.g., 2022 bear market, 2020 COVID crash):</strong> VIX above 30, SPY deep below MA200, credit spreads above 5%. In 2022, SPY fell 19.4% and leveraged ETFs got decimated. The correct response was to raise cash, buy puts, and wait.</p>
-
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>The Bigger Picture</h2>
 
 <p>The July 22, 2026 snapshot shows a market that is structurally healthy by every major indicator. The Fed has cut rates and the current Fed funds rate of 3.63% is well below the 2023 peak of 5.50%. CPI is running at 3.73%, down from its 9.1% June 2022 high. Unemployment at 4.2% remains historically low. These macro conditions support the Green regime reading.</p>
@@ -239,8 +275,8 @@ footer .links a:hover{color:#a78bfa}
 <a href="/chat" class="cta-btn">💬 Chat with RoyceAI</a>
 </div>
 </div>
-
-<footer>
+  </div>
+</section><footer>
 <div class="links">
 <a href="/products">Products</a>
 <a href="/tutor">Tutor</a>
@@ -249,6 +285,14 @@ footer .links a:hover{color:#a78bfa}
 </div>
 <div class="copy">RoyceAI Solutions. Irvine, CA</div>
 </footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

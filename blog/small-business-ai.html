@@ -92,6 +92,22 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","headline":"AI for Small Business: Where to Start in 2026","datePublished":"2026-07-22","dateModified":"2026-07-22","description":"A practical guide for small business owners implementing AI in 2026. Customer service chatbots, marketing automation, content generation, and operational AI tools that actually deliver ROI without breaking the bank.","author":{"@type":"Person","name":"RoyceAI"},"publisher":{"@type":"Organization","name":"Royce AI Solutions"}}
@@ -110,9 +126,10 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
-
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <div class="article-wrap">
 <a href="/blog" class="back-link">← Back to Blog</a>
 
@@ -129,7 +146,10 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 <p>If you run a small business, you've probably heard that AI is transforming everything — but you may still be wondering what actually works <em>today</em> for a business your size. The good news? 2026 is the year AI finally became accessible, affordable, and genuinely useful for small and medium businesses. The bad news? The noise is deafening. Every SaaS tool, every platform, every consultant is shouting about AI. Cutting through that noise to find what actually moves the needle is the real challenge.</p>
 
 <p>This guide is built from real-world deployments at small businesses across Orange County — dental practices, auto dealerships, boutique law firms, e-commerce stores, and local service providers. These aren't theoretical use cases. They're businesses running on tighter margins than enterprise giants, where every dollar of technology spend needs to show measurable return within weeks, not quarters.</p>
-
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>Start with Customer Service — It's the Lowest Hanging Fruit</h2>
 
 <p>If you only have budget for one AI initiative in 2026, make it customer service automation. Here's why: customer service is expensive. A single phone call costs a small business $10–20 in staff time when you factor in hold time, callbacks, and follow-up admin. Most small businesses spend 15–25 hours per week on routine inquiries — appointment bookings, business hours, pricing questions, order status checks.</p>
@@ -144,7 +164,10 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 <p>The key insight is that customers <em>prefer</em> speed over a human when the question is simple. A 2025 study by Salesforce found that 67% of consumers would rather interact with an AI chatbot than wait 5+ minutes for a human agent. By 2026, that number has only climbed as the quality of AI voice and text interactions has crossed the uncanny valley. When a patient calls their dentist at 10 PM on a Sunday to book an appointment, they don't want to leave a voicemail — they want to speak to someone (or something) that can actually put them on the calendar.</p>
 
 <p>For a typical auto dealership spending $3,000–$5,000 per month on a BDC (business development center) team, an AI receptionist can reduce that cost by 40–60% while improving after-hours capture rates from near-zero to 70%+. The math works for businesses grossing as little as $500,000 per year.</p>
-
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>Marketing Automation That Actually Works</h2>
 
 <p>The second highest-ROI AI play for small businesses is marketing automation. Most small business owners wear the marketing hat themselves — and they're terrible at it because they don't have time. AI has completely changed what "good enough" marketing looks like for a local business.</p>
@@ -163,7 +186,10 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 <div class="highlight">
 <strong>⚡ Quick Win:</strong> Pick one channel your customers actually use (not all of them). For most local businesses, that's Google Business Profile + one social platform. If you're a B2B service, prioritize LinkedIn. If you're a restaurant or retail, prioritize Instagram. Use AI to batch-create a month of content in 90 minutes.
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>Operational Efficiency: AI in the Back Office</h2>
 
 <p>Customer-facing AI gets the headlines, but the biggest ROI for most small businesses in 2026 is coming from back-office automation. These are the invisible tasks that eat hours every week: appointment scheduling, invoice follow-ups, inventory tracking, data entry, and reporting.</p>
@@ -176,13 +202,19 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 
 <h3>Data Entry and Document Processing</h3>
 <p>If your business handles any volume of PDFs, scanned documents, or forms, AI document processing is a no-brainer. Tools like Nanonets, Rossum, and even Adobe's AI assistant can extract data from invoices, receipts, and contracts with 95%+ accuracy — slashing data entry from hours to minutes. A medical billing office that processes 200 claims per day can reduce manual entry time from 4 hours to 30 minutes.</p>
-
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>Customer Insights: Understanding Your Data</h2>
 
 <p>Most small businesses sit on a goldmine of customer data they never analyze. POS systems, Google Analytics, email platforms, booking systems — they all capture behavior, but nobody has time to connect the dots. AI analytics tools like Tableau's AI features, or simpler options like Luzmo and Polymer, can now ingest data from multiple sources and answer plain-English questions like "what were our top-selling menu items last month?" or "which customer segment has the lowest repeat purchase rate?"</p>
 
 <p>For a boutique retail store with a loyalty program of 5,000 members, this means discovering that customers who buy product X are 3x more likely to buy product Y within 30 days — enabling targeted cross-selling campaigns that increase average order value by 25%. Without AI, this insight would require a data analyst costing $80,000+/year. With AI, it's a 5-minute conversation with a reporting tool.</p>
-
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>Avoiding the Traps: What NOT to Do</h2>
 
 <p>For every AI success story, there are three horror stories of money wasted. Here are the pitfalls to watch out for in 2026:</p>
@@ -194,7 +226,10 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 <li><strong>Don't chase every new tool.</strong> There are hundreds of new AI tools launching every month. Stick with established platforms that have been around for at least 12–18 months. The AI graveyard is full of promising startups that pivoted, raised prices, or shut down.</li>
 <li><strong>Don't ignore your team's buy-in.</strong> The best AI tool in the world is worthless if your staff won't use it. Involve them in the selection process, show them how it makes <em>their</em> job better (not replaces them), and budget for proper onboarding.</li>
 </ul>
-
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>Building Your AI Stack: A Practical Roadmap</h2>
 
 <p>Here's a phased approach that works for a small business with a budget of $200–500 per month for AI tools:</p>
@@ -210,7 +245,10 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 <div class="highlight">
 <strong>📊 Total Monthly Investment:</strong> $300–$650/month across all four phases. For a business grossing $500,000+/year, that's less than 2% of revenue — with a conservative ROI of 5–10x through reduced labor costs, increased conversions, and improved customer retention.
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s8">
+  <div class="slide-inner">
 <h2>The Bottom Line</h2>
 
 <p>AI in 2026 is not about replacing your team or building a robot-run business. It's about removing the friction that keeps you from focusing on what actually grows your business — serving customers, improving your product, and building relationships. The tools are cheap enough, good enough, and easy enough that the question is no longer "should I use AI?" but "which specific problem do I want AI to solve first?"</p>
@@ -226,10 +264,18 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 </div>
 
 </div>
-
-<footer>
+  </div>
+</section><footer>
 <p>Irvine, CA · <a href="/" style="color:var(--accent-light);text-decoration:none">RoyceAI</a> · <a href="/tutor" style="color:var(--text-muted);text-decoration:none">Tutor</a> · <a href="/chat" style="color:var(--text-muted);text-decoration:none">Chat</a></p>
 </footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/tutor"]');var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(124,92,252,0.12),rgba(167,139,250,0.12));border:1px solid rgba(124,92,252,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:var(--accent-gradient);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=(u.first?u.first[0].toUpperCase():"")+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(t){t.innerHTML="📚 Dashboard";t.style.cssText="";t.href="/tutor"}}else if(t){t.innerHTML="✨ Tutor";t.style.cssText="background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(167,139,250,0.15));border:1px solid rgba(124,92,252,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
 

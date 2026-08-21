@@ -95,6 +95,22 @@ footer .links a:hover{color:#a78bfa}
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Building a Chatbot That Actually Sells", "datePublished": "July 22, 2026", "description": "Lessons from building RoyceAI's sales chatbot. What works, what doesn't, and how to build a conversational AI that converts visitors into customers.", "author": {"@type": "Person", "name": "RoyceAI"}, "publisher": {"@type": "Organization", "name": "Royce AI Solutions"}}</script>
 </head>
@@ -111,8 +127,10 @@ footer .links a:hover{color:#a78bfa}
   </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <div class="post-wrap">
 <a href="/blog" class="back-link">← Back to Blog</a>
 <h1>Building a Chatbot That Actually Sells</h1>
@@ -121,7 +139,10 @@ footer .links a:hover{color:#a78bfa}
 <div class="highlight">
 <strong>TL;DR:</strong> After building RoyceAI's sales chatbot and iterating through dozens of versions, we learned that conversational AI sales is fundamentally different from both live chat and traditional websites. The biggest mistake founders make is treating the chatbot as a gatekeeper instead of a closer. Here are the lessons that actually move the needle.
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>The Chatbot Trap Everyone Falls Into</h2>
 
 <p>When we started building RoyceAI's sales chatbot, we made the same mistake almost everyone makes: we built a FAQ machine. Ask a question, get an answer. Ask another, get another answer. The conversation went nowhere, and neither did our conversion rate.</p>
@@ -134,7 +155,10 @@ footer .links a:hover{color:#a78bfa}
   <span class="num">73%</span>
   <span class="desc">of buyers say they'd rather interact with a chatbot than a human for initial product research — but only if the chatbot is actually helpful. Bad chatbot experiences drive 60% of users to competitors.</span>
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>Lesson 1: Design for the Sale, Not the Conversation</h2>
 
 <p>The single most important shift we made was designing our chatbot's conversational flow backward from the desired outcome. Instead of asking "what questions will visitors ask?" we asked "what sequence of questions leads to a sale?"</p>
@@ -148,7 +172,10 @@ footer .links a:hover{color:#a78bfa}
 <li><strong>It controls the narrative.</strong> Instead of waiting for questions, it asks them. Instead of answering "how much does it cost?" with a flat number, it first understands the prospect's needs, then frames the price in context of value delivered.</li>
 <li><strong>It knows when to hand off.</strong> The best chatbots know their limits. When a prospect needs human judgment, pricing negotiation, or technical deep-dives, the chatbot should transition seamlessly — not lock the user into a dead-end loop.</li>
 </ol>
-
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>Lesson 2: Objection Handling Is the Killer Feature</h2>
 
 <p>Every sales conversation hits objections. "It's too expensive." "I'm not ready to decide." "How do I know this will work for me?" A human salesperson has a playbook for each of these. Your chatbot needs one too.</p>
@@ -158,7 +185,10 @@ footer .links a:hover{color:#a78bfa}
 <p>Here's an example of how this plays out in practice. When a visitor says "this seems expensive," a naive chatbot might respond with "our prices start at $99/month." A well-trained sales chatbot responds differently — it first acknowledges the concern, then reframes the value, then offers options. "I understand cost is a consideration. Most of our clients find that the chatbot pays for itself within the first month by capturing leads they would otherwise miss. Would you like me to walk through a quick ROI estimate?"</p>
 
 <p>This approach works because it mirrors how a skilled human salesperson handles the same objection. It doesn't argue. It doesn't get defensive. It reframes and continues the conversation.</p>
-
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>Lesson 3: Tone Is Your Conversion Lever</h2>
 
 <p>One discovery surprised us more than any other: the chatbot's tone of voice directly impacted conversion rates by a measurable margin. We tested four different voice profiles — formal consultant, friendly assistant, direct problem-solver, and casual peer — and saw conversion differences of up to 34% between them.</p>
@@ -170,7 +200,10 @@ footer .links a:hover{color:#a78bfa}
 <div class="highlight">
 <strong>📊 Our A/B test finding:</strong> A chatbot voice that says "Here's what I'd recommend based on what you've told me" converted 19% better than one that said "I can help you with that! What would you like to know?" Directness beats deference every time.
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>Lesson 4: Speed Matters More Than Perfect Answers</h2>
 
 <p>When we launched our first production chatbot, we optimized for comprehensiveness. Every answer was detailed, well-structured, and packed with information. Our response latency averaged 3-4 seconds because we were generating long, thoughtful responses.</p>
@@ -180,7 +213,10 @@ footer .links a:hover{color:#a78bfa}
 <p>We switched strategies. Instead of generating one long answer, we started generating a short, decisive answer within under a second — then offering to expand if the prospect wanted more detail. Conversions jumped by over 40%. The lesson is counterintuitive but undeniable: <strong>a fast, 80% complete answer beats a slow, 100% complete answer every single time.</strong></p>
 
 <p>This makes sense when you think about how real sales conversations work. A good salesperson doesn't deliver a monologue. They say something sharp, watch for the prospect's reaction, and build from there. Your chatbot should do the same.</p>
-
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>Lesson 5: Make the "Next Step" Obvious</h2>
 
 <p>We tracked where prospects dropped off in the chatbot conversation. The biggest single leak? Right after an information-heavy exchange, when the chatbot answered a detailed question and then... waited. There was no clear next step, no call to action, no forward momentum.</p>
@@ -196,7 +232,10 @@ footer .links a:hover{color:#a78bfa}
 </ul>
 
 <p>Each of these builds on the existing conversation instead of breaking it. Each moves the prospect closer to a decision without feeling aggressive. Most importantly, each gives the chatbot a reason to keep the conversation going even after a question has been answered.</p>
-
+  </div>
+</section>
+<section class="slide" id="s8">
+  <div class="slide-inner">
 <h2>Lesson 6: Data Is the Only Way to Improve</h2>
 
 <p>We made the mistake of treating our chatbot as a static asset — build it, deploy it, done. That lasted about two weeks before we realized we had no idea what was working and what wasn't.</p>
@@ -211,7 +250,10 @@ footer .links a:hover{color:#a78bfa}
   <span class="num">3x</span>
   <span class="desc">Repeat chatbot visitors are 3x more likely to convert than first-time users — which means conversation continuity is a revenue driver, not a nice-to-have.</span>
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s9">
+  <div class="slide-inner">
 <h2>Lesson 7: Don't Hide the Human</h2>
 
 <p>The biggest fear most business owners have about chatbots is that they'll make the company feel impersonal. That fear is valid — but the solution isn't to avoid chatbots. The solution is to be transparent about when the prospect is talking to AI and when they're talking to a human.</p>
@@ -219,7 +261,10 @@ footer .links a:hover{color:#a78bfa}
 <p>We tried three approaches: never revealing it was a bot (bad — people feel tricked), always revealing it upfront (mixed — some prospects disengage immediately), and revealing it naturally within the first three exchanges (best — it builds trust without being the first thing they hear).</p>
 
 <p>The winning approach was a simple introduction: "I'm RoyceAI's sales assistant. I can answer questions and help narrow down what you need. If we get into specifics that need a human touch, I'll bring in one of our team." This sets clear expectations, establishes capability boundaries, and creates a natural handoff trigger.</p>
-
+  </div>
+</section>
+<section class="slide" id="s10">
+  <div class="slide-inner">
 <h2>What We'd Do Differently</h2>
 
 <p>If we were starting over, three things would change:</p>
@@ -229,7 +274,10 @@ footer .links a:hover{color:#a78bfa}
 <li><strong>We'd A/B test voice profiles from day one.</strong> Tone is not a cosmetic concern. It's a conversion variable, and it should be treated with the same rigor as pricing or feature decisions.</li>
 <li><strong>We'd invest in handoff infrastructure early.</strong> The chatbot-to-human transition is the moment of truth in a sales conversation. A clumsy handoff kills deals. A smooth one closes them. This deserves engineering time from the start, not as an afterthought.</li>
 </ol>
-
+  </div>
+</section>
+<section class="slide" id="s11">
+  <div class="slide-inner">
 <h2>The Bottom Line</h2>
 
 <p>A chatbot that sells is fundamentally different from a chatbot that answers questions. It requires intentional conversation design, deep objection-handling capability, a carefully tuned voice, obsessive speed optimization, clear next-step mechanics, and relentless data-driven iteration.</p>
@@ -245,8 +293,8 @@ footer .links a:hover{color:#a78bfa}
 </div>
 
 </div>
-
-<footer>
+  </div>
+</section><footer>
   <div class="copy">RoyceAI Solutions. Irvine, CA</div>
   <div class="links">
     <a href="/products">Products</a>
@@ -256,6 +304,14 @@ footer .links a:hover{color:#a78bfa}
   </div>
 </footer>
 
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

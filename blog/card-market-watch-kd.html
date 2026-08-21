@@ -75,6 +75,22 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 </head>
 <body>
@@ -88,8 +104,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/tutor"]');var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(t){t.innerHTML="📚 Dashboard";t.style.cssText="";t.href="/tutor"}}else if(t){t.innerHTML="✨ Tutor";t.style.cssText="animation:pulse-glow 2.5s ease-in-out infinite;background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
 <div class="blog-post">
 <a href="/blog" class="back-link">← Back to Blog</a>
@@ -97,7 +115,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 <div class="meta">Updated July 22, 2026 · Monthly Market Report</div>
 
 <p>The trading card market remains one of the most dynamic alternative asset classes in the world. From the iconic 1986 Fleer Michael Jordan rookie to the elusive Pikachu Illustrator, the appetite for pristine, high-grade collectibles has never been stronger. As we move through mid-2026, several distinct trends are shaping the landscape — vintage blue-chip cards are seeing renewed institutional interest, modern PSA 10 rookies have stabilized after a multi-year correction, and the Pokémon TCG market continues to post eye-watering numbers for its rarest chase cards. This month's Card Market Watch breaks down the key movers across every major category.</p>
-
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>Pokémon — The Heavyweight Champion of TCG</h2>
 
 <p>Pokémon cards remain the single most valuable category in the entire trading card market by volume of high-value transactions. The 1998 Pikachu Illustrator (PSA 10) holds the crown as the most expensive Pokémon card ever sold, with its last known private sale rumored north of $5.25 million — making it one of the most valuable trading cards on the planet, period. The 1999 1st Edition Base Set Charizard (PSA 10) has settled in the $300,000–$400,000 range after peaking above $400,000 during the pandemic boom, though demand for gem-mint copies of the Fire Dragon remains insatiable among deep-pocketed collectors.</p>
@@ -109,7 +130,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 </div>
 
 <p>The modern Pokémon landscape is equally interesting. Scarlet & Violet era chase cards — particularly the Illustration Rares (IRs) and Special Illustration Rares (SIRs) — are setting new records for modern Pokémon. The Giratina V Alternate Art from Lost Origin continues to command $700+ in PSA 10, while the Moonbreon — Umbreon VMAX Alternate Art from Evolving Skies — remains the king of modern Pokémon, with PSA 10 copies trading comfortably above $1,800. What's remarkable is that Evolving Skies, despite being a print-to-demand set, has proven incredibly difficult to grade in gem-mint condition due to Centering issues that plagued the print run.</p>
-
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>Basketball Cards — The Blue Chip Market</h2>
 
 <p>Basketball cards remain the cornerstone of the sports card investor market. The 1986 Fleer Michael Jordan #57 PSA 10 — widely considered the single most important post-war basketball card — continues its march upward, with recent comparable sales in the $120,000–$150,000 range for high-eye-appeal copies. While that's still below the pandemic peak of $200,000+, the trajectory is clearly upward as the supply of ungraded raw Jordans shrinks by the month.</p>
@@ -129,7 +153,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 <p>The Kobe Bryant market deserves special mention. Following his tragic passing in 2020, Kobe's rookie card values spiked dramatically and, unlike many pandemic-era cards, they never fully corrected. The 1996 Topps Chrome Kobe Bryant PSA 10 has held steady in the $6,000–$16,000 range, buoyed by a relatively low pop count (under 2,000 PSA 10s) and a generation of fans who grew up idolizing the Mamba mentality. The 1996 Fleer Ultra Kobe rookie, while less iconic, has seen some of the strongest year-over-year appreciation among any basketball card in the $1,000–$3,000 tier.</p>
 
 <p>Victor Wembanyama's rookie cards are the most-watched modern basketball cards in the building. After an astronomical debut season that saw his 2023 Topps Chrome PSA 10s briefly flirt with $6,000, the market has cooled as the initial hype premium wears off. This is normal for generational prospects — Luka's Prizm rookies went through a similar cycle before stabilizing in the $2,000–$6,000 band. The long-term thesis remains intact: if Wembanyama delivers on his potential, today's prices will look like a bargain.</p>
-
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>Baseball — Vintage Rules Supreme</h2>
 
 <p>No category commands the same respect — or the same prices — as vintage baseball. The T206 Honus Wagner remains the undisputed king of all trading cards, with the PSA 2 "Gretzky" Wagner last changing hands in a private sale reported at $7.5 million. The rarity is staggering: only about 60 T206 Wagners are known to exist, and most grade well below the VG/EX threshold due to the way these tobacco cards were handled in the early 1900s.</p>
@@ -148,19 +175,28 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 <p>The 1952 Topps Mickey Mantle PSA 10 — known as "The Mona Lisa" of sports cards — has ascended to the half-million-dollar mark following a series of high-profile private sales. Only three PSA 10 copies exist, making it one of the rarest and most desirable cards in the world. The Mantle market is a textbook example of the "blue chip" effect: as wealth concentrates at the top of the market, the most iconic cards in the best condition command increasingly stratospheric premiums relative to lower-grade examples.</p>
 
 <p>Shohei Ohtani's card market has been on a tear that mirrors his on-field performance. The 2018 Topps Chrome PSA 10 — already one of the most actively traded modern baseball cards — has seen a significant boost following his record-breaking $700 million contract with the Dodgers and his continued two-way excellence. A PSA 10 of his base Topps Chrome rookie now commands $12,000–$30,000, putting it in rare air for a modern-era baseball card. The Yamamoto effect has also lifted the entire Japanese player market in baseball cards.</p>
-
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>Football & Soccer — Growing Categories</h2>
 
 <p>While basketball and baseball dominate the headlines, football and soccer cards are quietly building impressive valuations. The 2000 Playoff Contenders Tom Brady Championship Ticket #144 (autograph rookie) has become the most valuable football card in existence, with PSA 9 copies trading above $3 million and the sole PSA 10 being an untouchable grail. The 2017 Panini National Treasures Patrick Mahomes RPA (Rookie Patch Autograph) is the most actively traded high-end football card, with 1/1 and low-numbered parallels routinely fetching five and six figures.</p>
 
 <p>Soccer cards are the fastest-growing segment in the entire trading card industry. The 2017 Panini Prizm Kylian Mbappé rookie in PSA 10 has stabilized around $600–$1,200, while Lionel Messi and Cristiano Ronaldo rookies from 2004–2005 continue to appreciate as the two GOATs approach the twilight of their careers. The most recent mega-sale: a 2004 Panini Mega Cracks Cristiano Ronaldo rookie PSA 9 sold for over $200,000 at a Goldin auction in early 2026.</p>
-
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>Rare Collectibles — Beyond the Major Leagues</h2>
 
 <p>The trading card market extends well beyond the major sports and Pokémon. The 1996 Magic: The Gathering Black Lotus (Alpha, PSA 10) remains the holy grail of the TCG world, with a population of just a handful of gem-mint Alpha copies. Recent private sales suggest a Black Lotus PSA 10 is worth well north of $500,000. The entire Power Nine vintage Magic market — including the Moxes, Ancestral Recall, and Time Walk — has appreciated substantially as wealthy tech executives rediscover the cardboard they played in college.</p>
 
 <p>Yu-Gi-Oh! has its own blue-chip tier: the 1999 1st Edition LOB Blue-Eyes White Dragon (PSA 10) and the 2002 Tournament Black Luster Soldier — Envoy of the Beginning are the most desirable cards in the franchise, with the Black Luster Soldier being one of the rarest tournament prize cards ever distributed. Fewer than 10 copies are believed to exist.</p>
-
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>Market Trends to Watch</h2>
 
 <p>Here are the most important dynamics shaping the card market right now:</p>
@@ -172,7 +208,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 <p><strong>3. Japanese Pokémon Demand Is Reshaping the Market.</strong> Japanese Pokémon cards — which were historically considered inferior to English counterparts by Western collectors — have seen a dramatic reversal. Japanese print quality is superior, and the demand from Japanese and Korean collectors for gem-mint vintage Pokémon has pushed Japanese 1st Edition prices above English equivalents for several key cards. The Japanese Base Set Charizard PSA 10 now trades at a premium to its English counterpart.</p>
 
 <p><strong>4. Auction House Competition Is Driving Blue-Chip Prices.</strong> Goldin, Heritage Auctions, and the newly formed Fanatics Collectibles division are competing aggressively for high-value card consignments. The result is a steady upward drift in prices for the 50–100 most iconic cards in the hobby, as marketing budgets and buyer incentives push final hammer prices higher.</p>
-
+  </div>
+</section>
+<section class="slide" id="s8">
+  <div class="slide-inner">
 <h2>Price Table: The Top 20 Most Valuable Cards</h2>
 
 <table>
@@ -198,7 +237,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 <tr><td>19</td><td>Ken Griffey Jr. 1989 Upper Deck</td><td>Baseball</td><td>PSA 10</td><td>$1.5K–$6K</td></tr>
 <tr><td>20</td><td>Blue-Eyes White Dragon LOB 1st Ed.</td><td>Yu-Gi-Oh!</td><td>PSA 10</td><td>$8K–$15K</td></tr>
 </table>
-
+  </div>
+</section>
+<section class="slide" id="s9">
+  <div class="slide-inner">
 <h2>Collecting Strategy: Where to Focus Right Now</h2>
 
 <p>For collectors looking to build or optimize their portfolio, here's where the smart money is flowing:</p>
@@ -210,7 +252,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 <p><strong>Modern Pokémon Illustration Rares.</strong> The chase SIRs from Scarlet & Violet era sets (particularly Paldea Evolved, Paradox Rift, and the upcoming Shrouded Fable) represent the "modern vintage" of tomorrow. Buy PSA 10s of the top chase cards from each set during the release window, when prices are at their seasonal low point (typically 3–6 months after release, when the most booster boxes have been opened).</p>
 
 <p><strong>Ohtani while he's active.</strong> History shows that the GOAT-tier players see the most dramatic price appreciation after retirement, when the supply of pack-fresh cards permanently dries up. Ohtani is unique — he may be the most talented baseball player ever — and his card market, while elevated, still has room to run. The 2018 Topps Chrome PSA 10 at $12K–$30K is the entry point for serious investors.</p>
-
+  </div>
+</section>
+<section class="slide" id="s10">
+  <div class="slide-inner">
 <h2>Risks & Considerations</h2>
 
 <p>No market analysis is complete without a sober look at the risks. The trading card market has experienced bubbles before — most notably the 1990s "junk wax" era and the COVID-19 boom of 2020–2021 — and it will experience them again. Here are the key risks to monitor:</p>
@@ -220,7 +265,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 <p><strong>Counterfeit Risk.</strong> High-end counterfeits of cards like the 1986 Fleer Jordan and 2003 Topps Chrome LeBron are increasingly sophisticated. Always buy graded cards from reputable auction houses or dealers with strong return policies. For raw cards, learn to use a jeweler's loupe and check for the telltale signs: dot patterns in the printing, edge wear, and color consistency.</p>
 
 <p><strong>Market Liquidity.</strong> While the top 50 cards trade frequently, the market gets thin fast. Cards in the $200–$5,000 range can take weeks or months to sell at full market value. If you need liquidity, stick to the most actively traded cards — PSA 10 rookies from Topps Chrome, Prizm, and the Pokémon Base Set.</p>
-
+  </div>
+</section>
+<section class="slide" id="s11">
+  <div class="slide-inner">
 <h2>Final Thoughts</h2>
 
 <p>The card market in mid-2026 is healthier than it's been since the pandemic peak, but for different reasons. The speculative energy that drove prices to unsustainable levels in 2021 has been replaced by a more mature, fundamentals-driven market. Blue-chip vintage cards are appreciating steadily. Modern rookies have corrected to reasonable levels. And the Pokémon juggernaut continues to attract new collectors at a rate that far outpaces any previous era in the hobby's history.</p>
@@ -230,7 +278,16 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 <div class="highlight"><p><strong>Updated monthly.</strong> Prices based on recent eBay sales, PSA CardFacts, PWCC Marketplace, Goldin Auctions, and Heritage Auction results. Individual card values vary significantly by centering, surface quality, eye appeal, and market timing. Prices shown are estimates for average-eye-appeal PSA 10 examples. Exceptional copies — those with perfect centering, sharp corners, and flawless surfaces — can command 20–50% premiums over these baselines. This content is for informational purposes only and does not constitute investment advice.</p></div>
 
 </div>
-<footer>RoyceAI Solutions. Irvine, CA</footer>
+  </div>
+</section><footer>RoyceAI Solutions. Irvine, CA</footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

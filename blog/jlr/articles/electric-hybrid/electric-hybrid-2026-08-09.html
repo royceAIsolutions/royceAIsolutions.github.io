@@ -80,6 +80,22 @@ footer .links a:hover{color:#a78bfa}
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Electric & Hybrid Today — August 09, 2026", "datePublished": "2026-08-09", "description": "Electric & Hybrid news and analysis — Electric & Hybrid Today — August 09, 2026", "author": {"@type": "Person", "name": "RoyceAI"}, "publisher": {"@type": "Organization", "name": "Royce AI Solutions"}, "about": "Electric & Hybrid"}</script>
 </head>
@@ -97,15 +113,25 @@ footer .links a:hover{color:#a78bfa}
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <div class="post-wrap">
 <a href="/blog/jlr/electric-hybrid.html" class="back-link">← Back to ⚡ Electric &amp; Hybrid</a>
 <span class="meta"><span class="tag">⚡ Electric &amp; Hybrid</span><span>2026-08-09</span><span>~4 min read</span></span>
 <h1>Electric &amp; Hybrid Today — August 09, 2026</h1>
 <p>JLR is electrifying on two tracks at once — here's the roadmap and what it means for buyers.</p>
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>The current state of play</h2>
 <p>JLR's electrification is happening in two waves: the Range Rover Electric and GT on new dedicated platforms, and Jaguar's full reinvention as an all-electric ultra-luxury brand. The EMA platform underpins the smaller Land Rovers and the new GT, while MLA carries the full-size Range Rover Electric. Hybrids keep the V8 character available for the customers who want it — a genuinely two-track strategy.</p>
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>What you need to know</h2>
 <ul>
 <li>Range Rover GT is built on EMA — the Electric Modular Architecture — JLR&#x27;s dedicated EV platform for smaller Land Rover models and future Jaguars.</li>
@@ -114,18 +140,42 @@ footer .links a:hover{color:#a78bfa}
 <li>JLR&#x27;s roadmap: every Jaguar will be electric, Land Rover gets electric flagships alongside its hybrid and V8 options.</li>
 <li>PHEVs across the Range Rover line offer meaningful electric-only range for city driving while keeping V8-level capability for the open road.</li>
 </ul>
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>JLR electrification roadmap</h2>
 <table style="width:100%;border-collapse:collapse;margin:1rem 0 2rem;font-size:0.9rem"><tbody><tr><td>Vehicle</td><td>Platform</td><td>Status</td></tr><tr><td>Range Rover Electric</td><td>MLA</td><td>Flagship EV</td></tr><tr><td>Range Rover GT</td><td>EMA</td><td>Reveal late 2026</td></tr><tr><td>Jaguar Type 00</td><td>Bespoke Jaguar EV</td><td>Late 2026 / 2027</td></tr><tr><td>PHEV Range Rover / Sport</td><td>MLA</td><td>On sale now</td></tr></tbody></table>
 <style>table tr:first-child td{background:rgba(124,92,252,0.1);color:#a78bfa;font-weight:600}table td{border-bottom:1px solid rgba(255,255,255,0.06);padding:10px 12px;color:#d4d4d8}</style>
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>The engineering view</h2>
 <p>PHEVs across the Range Rover line offer meaningful electric-only range for city driving while keeping V8-level capability for the open road.</p>
 <p>For fans, the detail is the point — Land Rover builds vehicles where the specification sheet tells a real story about capability, luxury, and intent. Every generation refines the formula rather than replacing it, which is exactly why the brand's enthusiasts are among the most loyal in the industry.</p>
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>The platforms behind the plan</h2>
 <p>Two architectures carry JLR's electric future. MLA (Modular Longitudinal Architecture) is the flexible one — it underpins today's full-size Range Rover and Range Rover Sport in combustion, hybrid, and plug-in forms, and it will also carry the full-size Range Rover Electric. EMA (Electric Modular Architecture) is the dedicated EV platform: born electric, no compromises for combustion, and the base for the Range Rover GT and the next-generation smaller Land Rovers. The two-platform approach lets JLR electrify its most important model first on proven hardware while the dedicated EV architecture matures for everything after.</p>
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>The charging and ownership reality</h2>
 <p>For owners, the electric transition is about real-world usability. The plug-in hybrids already on sale deliver meaningful electric-only range for the daily commute — charge at home, drive electric all week, and keep the internal combustion engine for the weekend road trip. The full EVs coming next push further: the Range Rover Electric and the GT will need the fast-charging network to be genuinely useful as grand tourers, and JLR is positioning both as long-distance vehicles, not just city cars. The charging experience — reliability, speed, and convenience — will be the real test of the electric Range Rover promise.</p>
+  </div>
+</section>
+<section class="slide" id="s8">
+  <div class="slide-inner">
 <h2>Why hybrid matters to fans</h2>
 <p>The PHEV route is quietly the most important part of JLR's strategy for existing owners. It keeps the driving character fans love — the V8 soundtrack, the effortless torque, the long-range confidence — while cutting the running costs and emissions that made big SUVs a target. For the enthusiast, a plug-in hybrid Range Rover is the least-compromise answer: electric silence for the commute, V8 character for the road trip, and full off-road capability everywhere in between. The pure EVs get the headlines; the hybrids sell the cars.</p>
+  </div>
+</section>
+<section class="slide" id="s9">
+  <div class="slide-inner">
 <h2>The takeaway</h2>
 <p>Keep following this blog for daily updates on Range Rover, Defender, Discovery, Jaguar, and everything JLR is doing in electric and hybrid technology. Something new launches almost every month — we'll be here to cover it.</p>
 <div class="cta-box">
@@ -134,7 +184,16 @@ footer .links a:hover{color:#a78bfa}
 <a class="cta-btn" href="/blog/jlr">Explore the Land Rover Blog →</a>
 </div>
 </div>
-<footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/blog/jlr">Land Rover Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions · Irvine, CA</div></footer>
+  </div>
+</section><footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/blog/jlr">Land Rover Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions · Irvine, CA</div></footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

@@ -78,6 +78,22 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 </head>
 <body>
@@ -91,8 +107,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/tutor"]');var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(t){t.innerHTML="📚 Dashboard";t.style.cssText="";t.href="/tutor"}}else if(t){t.innerHTML="✨ Tutor";t.style.cssText="animation:pulse-glow 2.5s ease-in-out infinite;background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
 
 <div class="blog-post">
@@ -103,7 +121,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 <p>Most small businesses operate with the security posture of a consumer — a password, maybe antivirus, and hope. That worked in 2010. In 2026, ransomware-as-a-service, AI-generated spear phishing, and credential-stuffing bots mean small businesses are <strong>targeted daily</strong>. A single breach can shutter a business permanently.</p>
 
 <div class="highlight"><p><strong>Threat Level:</strong> 63% of SMBs experienced a cyber attack in the past 12 months. Average cost of a breach for businesses under 500 employees: $2.98M (IBM 2025). Ransomware payments average $812,360 per incident (Sophos 2026).</p></div>
-
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>1. Identity & Access Management</h2>
 
 <h3>Multi-Factor Authentication (MFA)</h3>
@@ -130,7 +151,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 
 <h3>Privileged Access</h3>
 <p>Limit admin accounts. Every employee should operate with standard user privileges day-to-day and elevate only when needed (just-in-time access). Audit admin account usage monthly. Free tools like <strong>LAPS</strong> (Local Administrator Password Solution) for Windows and <strong>Privilege Identity Management</strong> in Azure AD automate rotation of local admin passwords.</p>
-
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>2. Endpoint Protection</h2>
 
 <h3>Modern EDR/XDR vs Traditional Antivirus</h3>
@@ -140,7 +164,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 
 <h3>Application Allowlisting</h3>
 <p>Only approved software can run. Windows Defender Application Control (WDAC) or third-party tools like Airlock Digital. This alone would have prevented 85% of ransomware incidents (Microsoft Digital Defense Report). Start by blocking unsigned executables from running in <code>%AppData%</code> and <code>%Temp%</code> — most malware drops there because users have write access.</p>
-
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>3. Network Security</h2>
 
 <h3>Firewall Types: A Technical Breakdown</h3>
@@ -165,7 +192,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 
 <h3>DNS Filtering</h3>
 <p>Block malware, phishing, and ransomware domains at the DNS level — before the browser even tries to connect. Services like Cloudflare Gateway ($7/user/mo, includes DNS filtering + Zero Trust), Quad9 (free for personal use; business requires $1-3/user/mo), or Cisco Umbrella ($5/user/mo). DNS filtering alone stops 30-40% of malware infections by preventing initial C2 callbacks.</p>
-
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>4. Email Security</h2>
 <p>Email remains the primary attack vector — 91% of cyber attacks start with email. In 2026, AI-generated phishing lures are nearly indistinguishable from legitimate correspondence.</p>
 
@@ -180,7 +210,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 
 <h3>Inbound Filtering</h3>
 <p>Google Workspace's default spam filter catches most bulk spam. For business-grade protection, add a gateway like Mimecast, Proofpoint Essentials, or Cloudflare Area 1 ($3-5/user/mo). These catch advanced phishing, business email compromise (BEC), zero-day threats, and attachment-based attacks that slip past built-in filters. BEC alone accounted for $2.9B in losses in 2025 (FBI IC3).</p>
-
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>5. SIEM & Security Monitoring</h2>
 
 <h3>What is SIEM?</h3>
@@ -203,7 +236,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 <li><strong>Tier 3 (Threat Hunting):</strong> Proactively searches for threats that evaded existing defenses. Analyzes logs for indicators of compromise not covered by automated rules. Reverse-engineers malware samples.</li>
 </ul>
 <p><strong>For most SMBs:</strong> You don't need an in-house SOC. Use an <strong>MDR</strong> (Managed Detection and Response) provider like Huntress ($9-15/endpoint/mo), Expel ($5-25/user/mo), or Red Canary ($10/endpoint/mo). These provide 24/7 Tier 1-2 SOC coverage and include SIEM/log collection. They are dramatically cheaper than building your own SOC.</p>
-
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>6. Backup & Recovery</h2>
 
 <h3>The 3-2-1-1-0 Rule</h3>
@@ -234,7 +270,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 
 <h3>Testing Matters</h3>
 <p>A backup you cannot restore is a paperweight. Schedule quarterly restoration drills where you restore a random server or workstation from backup to a test VM and verify data integrity and application functionality. Document the results.</p>
-
+  </div>
+</section>
+<section class="slide" id="s8">
+  <div class="slide-inner">
 <h2>7. Incident Response Playbook</h2>
 
 <p>Every minute matters during a breach. A well-rehearsed incident response (IR) plan reduces dwell time by 54 days on average (Ponemon 2025). Below is a step-by-step playbook designed for small business teams without dedicated security staff.</p>
@@ -275,7 +314,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 <li>Update your IR playbook with lessons learned.</li>
 <li>Implement the missing controls (even if they were on the roadmap for "next quarter").</li>
 </ol>
-
+  </div>
+</section>
+<section class="slide" id="s9">
+  <div class="slide-inner">
 <h2>8. Compliance Checklist</h2>
 
 <p>Depending on your industry, specific cybersecurity regulations apply. Below is a cross-referenced compliance checklist covering the five most common frameworks for U.S. small businesses.</p>
@@ -320,13 +362,19 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 
 <h3>NIST CSF (Universal Best Practice)</h3>
 <p>Even if no regulation applies to you, the NIST Cybersecurity Framework provides a non-prescriptive, outcome-based standard. Key functions: <strong>Identify, Protect, Detect, Respond, Recover</strong>. The NIST CSF 2.0 (released early 2024) added a sixth function: <strong>Govern</strong> — establishing cybersecurity supply chain risk management and integrating security into executive governance.</p>
-
+  </div>
+</section>
+<section class="slide" id="s10">
+  <div class="slide-inner">
 <h2>9. Security Awareness Training</h2>
 
 <p>Your employees are your first line of defense OR your biggest vulnerability. Security awareness training reduces successful phishing from 30% to under 5% within the first year.</p>
 <p><strong>Key training topics:</strong> Phishing recognition (including AI-generated deepfake audio/video), password hygiene, tailgating (physical security), safe browsing habits, and the reporting workflow for suspected incidents. Employees must feel safe reporting mistakes without punishment — otherwise they will hide incidents.</p>
 <p><strong>Free options:</strong> KnowBe4's free phishing test (10 users), CISA's free training materials (cyberhygiene.tech). <strong>Paid:</strong> KnowBe4, Proofpoint Security Awareness, or Hoxhunt ($5-15/user/year). Run simulated phishing campaigns monthly for the first quarter, then quarterly after the baseline improves.</p>
-
+  </div>
+</section>
+<section class="slide" id="s11">
+  <div class="slide-inner">
 <h2>10. Tools Summary (All Budgets)</h2>
 <p><strong>Free / Low-Cost:</strong> Quad9 DNS, Google Workspace security center, HaveIBeenPwned, Bitwarden, Veeam Agent, Wazuh SIEM, CISA resources, CISA's Cyber Hygiene Vulnerability Scanning.</p>
 <p><strong>Small Budget ($5-15/user/mo):</strong> Microsoft Defender for Business ($3), Cloudflare Gateway ($7), KnowBe4 phishing testing ($5), Backblaze B2 ($6/TB/mo), Huntress MDR ($9/endpoint/mo).</p>
@@ -334,7 +382,16 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;max-width:1
 
 <div class="highlight"><p><strong>Updated weekly.</strong> The security landscape changes fast. This guide is updated every Monday with current threat intel, tool pricing, and mitigation strategies. Have a specific threat or tool you want covered? <a href="/chat" style="color:#667eea">Chat with us</a>.</p></div>
 </div>
-<footer>RoyceAI Solutions. Irvine, CA</footer>
+  </div>
+</section><footer>RoyceAI Solutions. Irvine, CA</footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

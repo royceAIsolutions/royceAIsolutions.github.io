@@ -101,6 +101,22 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","headline":"Best Leveraged ETFs for Today's Market 2026","datePublished":"2026-07-22","dateModified":"2026-07-22","description":"Complete guide to the best 3x leveraged ETFs for 2026. SOXL, TQQQ, FAS, UPRO, NVDL ranked by volume, volatility, and market setup.","author":{"@type":"Person","name":"RoyceAI"},"publisher":{"@type":"Organization","name":"Royce AI Solutions"}}
@@ -119,9 +135,10 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
-
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <div class="article-wrap">
 <a href="/blog" class="back-link">← Back to Blog</a>
 
@@ -140,7 +157,10 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 <div class="highlight">
 <strong>⚠️ Key Rule:</strong> Leveraged ETFs are <strong>trading instruments, not buy-and-hold investments</strong>. Decay from daily rebalancing means they underperform the underlying asset over long periods in choppy markets. Hold for days to weeks, not months to years.
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>Top 10 Leveraged ETFs Ranked</h2>
 
 <table class="ticker-table">
@@ -237,7 +257,10 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 </tr>
 </tbody>
 </table>
-
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>#1: SOXL — The Semiconductor King</h2>
 
 <p><strong>SOXL</strong> is the most traded leveraged ETF on the market for good reason. With $45M+ in average daily volume and a 3x leverage on the SOXX Semiconductor Index, it's the purest play on the chip cycle.</p>
@@ -254,7 +277,10 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 <div class="highlight">
 <strong>💡 Royal's take:</strong> SOXL is the #1 leveraged ETF to own when semis are in an uptrend. When it's not, avoid it entirely — the 3x decay in a flat market is brutal.
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>#2: TQQQ — Tech Leverage for the Long Haul (Sort Of)</h2>
 
 <p><strong>TQQQ</strong> tracks the Nasdaq-100 at 3x daily leverage. $55M+ daily volume makes it the most liquid leveraged fund period. It's the default for any trader who wants broad tech exposure without stock-picking.</p>
@@ -262,7 +288,10 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 <p>In a sustained bull market, TQQQ is beautiful. January-to-June 2026 saw the Nasdaq rally 14% — TQQQ returned roughly 40% over that stretch. But in the correction that followed, TQQQ dropped 25% in three weeks.</p>
 
 <p><strong>Best setup:</strong> Clear trend in QQQ. Use only when VIX is below 20 and the 50-day MA is above the 200-day. Sideways markets destroy leveraged long funds.</p>
-
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>#3: NVDL — The Singularity Bet</h2>
 
 <p><strong>NVDL</strong> is the 2x daily levered version of NVDA. It's newer than TQQQ and SOXL but has become the highest-conviction leveraged play for AI bulls.</p>
@@ -270,19 +299,28 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 <p>NVDA alone now accounts for 7-8% of the S&P 500. When NVDA moves, the whole market feels it. NVDL captures 2x of those moves with less decay than a 3x fund.</p>
 
 <p><strong>Best setup:</strong> NVDA earnings plays or AI conference catalysts (GTC, Computex). NVDL is more forgiving than 3x funds for multi-day holds.</p>
-
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>#4: FAS — Financial Sector</h2>
 
 <p><strong>FAS</strong> gives 3x daily exposure to the Financial Select Sector (XLF). In a rising rate environment, banks benefit from wider net interest margins.</p>
 
 <p>With the Fed holding rates at elevated levels through mid-2026 and deregulation tailwinds, financials have been a sleeper hit. FAS catches the upside hard when money center banks like JPM, BAC, and C report strong quarters.</p>
-
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>#5: UPRO — S&P 500 Leverage</h2>
 
 <p><strong>UPRO</strong> is the 3x S&P 500 fund. It's the most diversified leveraged play — if you believe the market is going up but don't know which sector, this is your tool.</p>
 
 <p>$25M+ daily volume ensures good fills. UPRO works best as a replacement for SPY during confirmed bull trends. Pair it with a VIX hedge for a simple but effective trend-following system.</p>
-
+  </div>
+</section>
+<section class="slide" id="s8">
+  <div class="slide-inner">
 <h2>When to Trade vs When to Sit Out</h2>
 
 <p>The difference between a profitable leveraged ETF trader and someone who blows up is simple: <strong>knowing when not to trade.</strong></p>
@@ -298,7 +336,10 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 <tr><td>Earnings week on underlying</td><td>Reduce size or exit</td><td>Gap risk can hit 20% against you</td></tr>
 </tbody>
 </table>
-
+  </div>
+</section>
+<section class="slide" id="s9">
+  <div class="slide-inner">
 <h2>Risk Management Rules</h2>
 
 <p>Trading 3x ETFs without rules is gambling. Here are the non-negotiables:</p>
@@ -314,7 +355,10 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 <div class="highlight">
 <strong>📊 Simple System:</strong> Check SOXX vs 200-day MA. If above, SOXL long. If below, cash or inverse. Add TQQQ only when QQQ is also above its 200-day. Two rules, one portfolio.
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s10">
+  <div class="slide-inner">
 <h2>Final Rankings</h2>
 
 <p>If you can only pick one leveraged ETF to buy right now:</p>
@@ -341,10 +385,18 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 </div>
 
 </div>
-
-<footer>
+  </div>
+</section><footer>
 <p>Irvine, CA · <a href="/" style="color:var(--accent-light);text-decoration:none">RoyceAI</a> · <a href="/tutor" style="color:var(--text-muted);text-decoration:none">Tutor</a> · <a href="/chat" style="color:var(--text-muted);text-decoration:none">Chat</a></p>
 </footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/tutor"]');var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(124,92,252,0.12),rgba(167,139,250,0.12));border:1px solid rgba(124,92,252,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:var(--accent-gradient);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=(u.first?u.first[0].toUpperCase():"")+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(t){t.innerHTML="📚 Dashboard";t.style.cssText="";t.href="/tutor"}}else if(t){t.innerHTML="✨ Tutor";t.style.cssText="background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(167,139,250,0.15));border:1px solid rgba(124,92,252,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem"}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
 

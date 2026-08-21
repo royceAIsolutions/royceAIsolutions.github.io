@@ -145,6 +145,22 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 </head>
 <body>
@@ -169,17 +185,24 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
 <div class="mobile-menu" id="mobileMenu"></div>
 <script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var lb=document.getElementById("navLoginBtn");var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(lb){lb.innerHTML='<a href="/tutor" style="background:var(--accent);color:#fff;padding:7px 16px;border-radius:8px;font-weight:600;font-size:0.875rem;text-decoration:none">📚 Dashboard</a>'}}else{if(lb){lb.innerHTML='<a href="/tutor" style="background:var(--accent);color:#fff;padding:7px 16px;border-radius:8px;font-weight:600;font-size:0.875rem;text-decoration:none">Log In →</a>'}}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
 
 <div class="page">
-  <section class="hero-sub">
+  <section class="slide active hero-sub" id="s1" >
+  <div class="slide-inner">
+
     <h1>Our <span class="gradient">Products</span></h1>
     <p>AI-powered solutions built for businesses and students in Irvine, CA.</p>
-  </section>
+  
+  </div>
+</section>
 
-  <section class="section">
+  <section class="slide section" id="s2" >
+  <div class="slide-inner">
+
     <div class="bento">
       <a href="/tutor" class="bento-card accent">
         <span class="icon">🧠</span>
@@ -242,13 +265,19 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
         <span class="tag">From $500/mo →</span>
       </a>
     </div>
-  </section>
+  
+  </div>
+</section>
 
-  <section class="cta-section">
+  <section class="slide cta-section" id="s3" >
+  <div class="slide-inner">
+
     <h2>Not sure what you need?</h2>
     <p>Chat with us and we'll figure it out together.</p>
     <a href="/chat" class="btn btn-primary">💬 Chat with us</a>
-  </section>
+  
+  </div>
+</section>
 </div>
 
 <footer>
@@ -265,6 +294,14 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
   <div class="copy">RoyceAI Solutions. Irvine, CA</div>
 </footer>
 
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

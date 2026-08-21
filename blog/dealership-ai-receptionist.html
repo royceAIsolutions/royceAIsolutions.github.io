@@ -94,6 +94,22 @@ footer .links a:hover{color:#a78bfa}
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why Every Dealership Needs an AI Receptionist in 2026", "datePublished": "July 22, 2026", "description": "The automotive industry is changing fast. Here's why every car dealership needs an AI receptionist to survive and thrive in 2026.", "author": {"@type": "Person", "name": "RoyceAI"}, "publisher": {"@type": "Organization", "name": "Royce AI Solutions"}}</script>
 </head>
@@ -111,8 +127,10 @@ footer .links a:hover{color:#a78bfa}
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <script>(function(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var t=document.querySelector('a[href*="tutor"]');if(t){if(u&&u.first){t.innerHTML="\ud83d\udcda "+u.first;t.style.cssText="";t.href="/tutor"}else{t.innerHTML="\u2728 Tutor";t.style.cssText="background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(167,139,250,0.15));border:1px solid rgba(124,92,252,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:#88889a;text-decoration:none;font-size:0.875rem"}}}catch(e){}})();</script>
 <div class="post-wrap">
 <a href="/blog" class="back-link">← Back to Blog</a>
@@ -126,7 +144,10 @@ footer .links a:hover{color:#a78bfa}
 <p>This is where the <strong>AI receptionist</strong> has become the single highest-ROI investment a dealership can make. Not a glorified auto-attendant. Not a clunky IVR tree. A genuinely intelligent, conversational AI that answers every call, qualifies every lead, books service appointments, and hands off only the hottest opportunities to human sales staff.</p>
 
 <p>If your dealership hasn't deployed an AI receptionist yet, you are already behind. Here is why every dealership — from a massive auto group with ten brands to a single-lot used car operation — needs one right now.</p>
-
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>The Hard Numbers: Why Dealerships Are Adopting AI Receptionists</h2>
 
 <p>Let's start with the data. According to the 2026 Auto Retail Digital Readiness Report, dealerships that deployed AI-powered call-answering solutions saw the following improvements:</p>
@@ -144,7 +165,10 @@ footer .links a:hover{color:#a78bfa}
 </div>
 
 <p>The math is straightforward. A typical dealership misses between 15 and 40 inbound calls per day. Some of those callers leave voicemails, but the vast majority simply hang up and call the next dealership on their Google search results. In 2026, the average car buyer contacts 3.7 dealerships before making a purchase decision. The first one to answer — with a knowledgeable, helpful voice — wins the sale.</p>
-
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>The After-Hours Opportunity</h2>
 
 <p>Here is a reality that most dealership owners refuse to confront: <strong>your customers are shopping at 10 PM, 11 PM, and even 2 AM.</strong> Thirty percent of all automotive lead generation happens between the hours of 8 PM and 8 AM, when your sales floor is empty and your phones are forwarded to a generic voicemail box.</p>
@@ -156,7 +180,10 @@ footer .links a:hover{color:#a78bfa}
 <div class="highlight">
 <strong>Real-world example:</strong> A Chevrolet dealership in Houston deployed an AI receptionist in January 2026. In the first month, it captured 47 after-hours leads that converted into 11 vehicle sales — worth approximately $495,000 in gross revenue. The AI receptionist cost less than a single monthly payment on a loaded Suburban.
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>Service Lane Transformation</h2>
 
 <p>While sales get most of the attention, the service department is where AI receptionists deliver the most immediate impact. A busy service drive can receive 80 to 120 inbound calls per day — customers looking to schedule oil changes, check on repair status, ask about warranty coverage, and request price estimates for common services.</p>
@@ -174,7 +201,10 @@ footer .links a:hover{color:#a78bfa}
 </ul>
 
 <p>The result is a service department that operates at maximum efficiency. Service writers focus on writing accurate repair orders and communicating with technicians rather than playing phone tag. Customers get faster, more responsive service. The dealership books more appointments and fills more bays.</p>
-
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>Lead Qualification That Actually Works</h2>
 
 <p>Every general sales manager has the same problem: too many unqualified leads and not enough time to follow up on all of them. With a human-only sales team, your top performers spend at least 30% of their day on the phone with shoppers who are nowhere near ready to buy — price-checking, tire-kicking, or simply wasting time.</p>
@@ -190,7 +220,10 @@ footer .links a:hover{color:#a78bfa}
 </ul>
 
 <p>Once the AI qualifies the lead, it can either schedule a warm handoff to a salesperson or, for lower-intent leads, automatically enroll them in a nurturing sequence with SMS follow-ups and inventory alerts. Your BDC team only talks to the people who are actually ready to buy.</p>
-
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>Cost vs. ROI: The Business Case</h2>
 
 <p>Let's talk about cost. A full-time, bilingual receptionist costs a dealership between $38,000 and $52,000 per year including taxes, benefits, and overtime. Most dealerships need at least two receptionists to cover desk hours plus phones — a combined cost of $80,000 to $110,000 annually. And even then, coverage is spotty during lunch breaks, sick days, and after hours.</p>
@@ -203,7 +236,10 @@ footer .links a:hover{color:#a78bfa}
 </div>
 
 <p>For a dealership selling 100 new and used vehicles per month at an average gross profit of $3,200 per unit, capturing just two additional sales per month through better phone coverage pays for the entire annual cost of the AI system.</p>
-
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>Multilingual Capabilities: A Game Changer</h2>
 
 <p>In markets like Southern California, Texas, Florida, and the New York metro area, a significant portion of the customer base speaks Spanish, Vietnamese, Korean, Mandarin, or Tagalog as their primary language. Hiring multilingual receptionists is expensive and often impractical — especially for languages with smaller local talent pools.</p>
@@ -211,7 +247,10 @@ footer .links a:hover{color:#a78bfa}
 <p>AI receptionists are inherently multilingual. A single deployment can handle calls in English, Spanish, and Mandarin with equal fluency, switching between languages seamlessly based on the customer's speech. This capability alone opens up entire customer segments that were previously underserved — or worse, actively avoidant because of language barriers.</p>
 
 <p>For dealerships in regions with large immigrant populations, a multilingual AI receptionist is not just a nice-to-have; it is a competitive necessity. Your customers will call the dealership that answers them in their own language.</p>
-
+  </div>
+</section>
+<section class="slide" id="s8">
+  <div class="slide-inner">
 <h2>Integration With Your Existing Stack</h2>
 
 <p>One of the biggest concerns dealerships have about new technology is whether it will play nice with their existing systems. The good news is that modern AI receptionist platforms integrate deeply with the major DMS providers (Reynolds and Reynolds, CDK Global, Dealertrack, PBS), CRM platforms, and inventory management systems.</p>
@@ -219,7 +258,10 @@ footer .links a:hover{color:#a78bfa}
 <p>When a customer calls to ask about a specific vehicle, the AI can check real-time inventory availability, read the vehicle's features and pricing from the DMS, and even offer to send a personalized link to a walkaround video — all without human intervention. When they schedule a test drive, it appears on the sales team's calendar automatically. When they book a service appointment, the bay is blocked and a reminder text goes out 24 hours in advance.</p>
 
 <p>This level of integration transforms the dealership from a reactive operation to a proactive one. Leads are not just captured — they are acted on instantly.</p>
-
+  </div>
+</section>
+<section class="slide" id="s9">
+  <div class="slide-inner">
 <h2>Common Objections — And Why They Are Wrong</h2>
 
 <h3>"Customers want to talk to a real person."</h3>
@@ -232,7 +274,10 @@ footer .links a:hover{color:#a78bfa}
 
 <h3>"It's too expensive for my small dealership."</h3>
 <p>The opposite is true. Small dealerships with limited staff benefit the most, because they have the least capacity to answer the phone. A single-lot used car dealer who closes at 6 PM is leaving every after-hours lead on the table. An AI receptionist levels the playing field, giving a small independent dealer the same phone coverage as a 500-car superstore.</p>
-
+  </div>
+</section>
+<section class="slide" id="s10">
+  <div class="slide-inner">
 <h2>The Competitive Landscape in 2026</h2>
 
 <p>The dealerships that adopted AI receptionists in 2024 and 2025 are now seeing a compounding advantage. Their phone answer rates are over 95%. Their sales teams only talk to qualified, high-intent buyers. Their service departments are fully booked because scheduling is frictionless and always available. Their Google reviews are improving because customers consistently report a great first-call experience.</p>
@@ -242,7 +287,10 @@ footer .links a:hover{color:#a78bfa}
 <div class="highlight">
 <strong>The bottom line:</strong> By 2027, an AI receptionist will be as standard in a car dealership as a CRM system or a DMS. The question is not whether to adopt — it is whether you want to be ahead of the curve or playing catch-up.
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s11">
+  <div class="slide-inner">
 <h2>Getting Started</h2>
 
 <p>Implementing an AI receptionist at your dealership is simpler than you think. Most providers offer rapid deployment in under a week. The process typically involves:</p>
@@ -267,8 +315,8 @@ footer .links a:hover{color:#a78bfa}
 </div>
 
 </div>
-
-<footer>
+  </div>
+</section><footer>
 <div class="links">
 <a href="/">Home</a>
 <a href="/products">Products</a>
@@ -278,6 +326,14 @@ footer .links a:hover{color:#a78bfa}
 </div>
 <div class="copy">© 2026 Royce AI Solutions. All rights reserved.</div>
 </footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

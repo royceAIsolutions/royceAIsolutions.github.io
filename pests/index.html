@@ -131,6 +131,22 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:80px}
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 </head>
 <body>
@@ -149,16 +165,23 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:80px}
   </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
 <div class="mobile-menu" id="mobileMenu"></div>
 
 <div class="page">
-  <section class="hero-sub">
+  <section class="slide active hero-sub" id="s1" >
+  <div class="slide-inner">
+
     <h1>Natural <span class="gradient">Pest Control</span></h1>
     <p>Zero chemicals. Zero toxic sprays. Solutions that smell good to you and kill pests. Peppermint, lavender, cinnamon — things you already like the smell of.</p>
-  </section>
+  
+  </div>
+</section>
 
-  <section class="section">
+  <section class="slide section" id="s2" >
+  <div class="slide-inner">
+
     <div class="section-header">
       <h2>Pests We <span class="gradient">Cover</span></h2>
       <p>Tailored solutions for every pest type.</p>
@@ -201,9 +224,13 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:80px}
         <p>Steel wool exclusion, peppermint oil, snap traps, cayenne pepper, ultrasonic repellents.</p>
       </div>
     </div>
-  </section>
+  
+  </div>
+</section>
 
-  <section class="section" style="max-width:720px">
+  <section class="slide section" id="s3"  style="max-width:720px">
+  <div class="slide-inner">
+
     <div class="section-header">
       <h2>Kitchen <span class="gradient">Recipes</span></h2>
       <p>Three spray mixes you can make in 10 minutes.</p>
@@ -232,9 +259,13 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:80px}
         </div>
       </li>
     </ul>
-  </section>
+  
+  </div>
+</section>
 
-  <section class="section">
+  <section class="slide section" id="s4" >
+  <div class="slide-inner">
+
     <div class="section-header">
       <h2>How It <span class="gradient">Works</span></h2>
     </div>
@@ -256,9 +287,13 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:80px}
         <p>Potted plants like mint, lemongrass, lavender, and rosemary repel pests year-round with zero maintenance once established.</p>
       </div>
     </div>
-  </section>
+  
+  </div>
+</section>
 
-  <section class="section" style="max-width:720px">
+  <section class="slide section" id="s5"  style="max-width:720px">
+  <div class="slide-inner">
+
     <div class="section-header">
       <h2>Pleasant <span class="gradient">Solutions</span></h2>
       <p>Things that smell amazing to you but pests absolutely hate.</p>
@@ -308,14 +343,20 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:80px}
         </div>
       </li>
     </ul>
-  </section>
+  
+  </div>
+</section>
 
-  <section class="cta-section">
+  <section class="slide cta-section" id="s6" >
+  <div class="slide-inner">
+
     <h2>Get the Pest Control Guide</h2>
     <p>From $1,000. Covers 7 pests. Chemical-free solutions for your home.</p>
     <a href="/chat" class="btn btn-primary">Chat to get started</a>
     <a href="/products" class="btn btn-secondary" style="margin-left:12px">View all products</a>
-  </section>
+  
+  </div>
+</section>
 </div>
 
 <footer>
@@ -330,6 +371,14 @@ section[id], div[id], h2[id], h3[id]{scroll-margin-top:80px}
   <div class="copy">RoyceAI Solutions. Irvine, CA</div>
 </footer>
 
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){

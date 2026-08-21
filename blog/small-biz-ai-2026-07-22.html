@@ -94,6 +94,22 @@ footer .links a:hover{color:#a78bfa}
 
 
 
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Small Business + AI — July 22, 2026","datePublished":"2026-07-22","dateModified":"2026-07-22","description":"Weekly AI tools update for small businesses — new tool launches, automation workflows, and pricing changes that matter this week.","author":{"@type":"Person","name":"RoyceAI"},"publisher":{"@type":"Organization","name":"Royce AI Solutions"}}</script>
 </head>
@@ -111,8 +127,10 @@ footer .links a:hover{color:#a78bfa}
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu" id="mobileMenu"></div><section class="slide active" id="s1">
+  <div class="slide-inner">
 <script>(function(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var t=document.querySelector('a[href*="tutor"]');if(t){if(u&&u.first){t.innerHTML="\ud83d\udcda "+u.first;t.style.cssText="";t.href="/tutor"}else{t.innerHTML="\u2728 Tutor";t.style.cssText="background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(167,139,250,0.15));border:1px solid rgba(124,92,252,0.3);font-weight:700;padding:5px 14px;border-radius:8px;color:#88889a;text-decoration:none;font-size:0.875rem"}}}catch(e){}})();</script>
 
 <div class="post-wrap">
@@ -124,7 +142,10 @@ footer .links a:hover{color:#a78bfa}
 <p>Welcome to the July 22 edition of <strong>Small Business + AI</strong>, your weekly briefing on the tools, trends, and pricing shifts that actually matter for small and medium businesses deploying AI. This week brought a flurry of product launches, significant price restructuring from major platforms, and a growing consensus that 2026 is the year AI moved from "nice to have" to "table stakes" for Main Street businesses.</p>
 
 <p>Here's what you need to know this week.</p>
-
+  </div>
+</section>
+<section class="slide" id="s2">
+  <div class="slide-inner">
 <h2>1. OpenAI Launches "Small Biz Tier" — GPT-4o Mini Drops to $0.25/M</h2>
 
 <p>The biggest news this week is OpenAI's new <strong>Small Business Tier</strong>, announced Monday. For $25 per month, businesses get access to GPT-4o with a dedicated workspace, team accounts for up to 5 seats, and a new <strong>GPT-4o Mini</strong> model priced at $0.25 per million input tokens — a 60% reduction from the previous mini tier. This puts enterprise-grade language AI at a price point where even a solo plumber or a two-person law firm can justify the expense.</p>
@@ -137,7 +158,10 @@ footer .links a:hover{color:#a78bfa}
 </div>
 
 <p>The takeaway for small business owners: if you've been using the free tier of ChatGPT for work tasks, this is the upgrade that makes sense. The memory improvements alone — the AI remembering your business's specific policies, price lists, and customer profiles across sessions — save enough re-explaining time to pay for itself in a week.</p>
-
+  </div>
+</section>
+<section class="slide" id="s3">
+  <div class="slide-inner">
 <h2>2. Anthropic Claude Pro Gets Business Features</h2>
 
 <p>Not to be outdone, Anthropic rolled out significant updates to Claude Pro this week. The headline feature is <strong>Claude Projects for Business</strong> — shared project workspaces where teams can upload knowledge bases, set custom instructions, and collaborate on outputs. Each project gets its own 200K token context window and can reference uploads up to 50MB.</p>
@@ -149,7 +173,10 @@ footer .links a:hover{color:#a78bfa}
 <div class="highlight">
 <strong>📌 Decision point — July 22:</strong> If your business uses AI primarily for writing and content, Claude's Business plan at $40/seat with Project knowledge bases is the better value. If you need tool use, code generation, and API integrations, OpenAI's Small Biz Tier at $25/seat is the stronger play. Many businesses are running both — roughly $65/month total for two seats — and using each for what it does best.
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s4">
+  <div class="slide-inner">
 <h2>3. Vapi Drops Voice Agent Pricing by 30%</h2>
 
 <p>Vapi, the leading AI voice agent platform for small businesses, announced a permanent 30% price reduction across all plans this week. The Starter plan drops from $39 to $27/month, which includes 500 minutes of AI phone call handling. The Growth plan — the sweet spot for most local businesses — goes from $99 to $69/month for 2,000 minutes.</p>
@@ -157,7 +184,10 @@ footer .links a:hover{color:#a78bfa}
 <p>This is a direct response to increased competition from Synthflow and new entrant Vocally, both of which have been undercutting Vapi on per-minute pricing. Vapi's counter-move is aggressive: they're also adding <strong>CRM auto-sync</strong> (Google Contacts, HubSpot, and Pipedrive) at no extra cost, which was previously a $20/month add-on.</p>
 
 <p>For a typical auto dealership or dental practice handling 1,000–1,500 minutes of inbound calls per month, the new Vapi Growth plan at $69/month represents a 40% cost reduction from the same setup six months ago. Combined with the new CRM sync, the total cost of running an AI receptionist just became cheaper than a single monthly coffee run for the front desk team.</p>
-
+  </div>
+</section>
+<section class="slide" id="s5">
+  <div class="slide-inner">
 <h2>4. Zapier Launches "Auto-Pilot" Workflows</h2>
 
 <p>Zapier — the glue that connects hundreds of business tools — launched a new feature this week called <strong>Auto-Pilot</strong>. Previous Zaps required manual triggers: "when X happens, do Y." Auto-Pilot introduces proactive automation: the AI analyzes your business data and <em>suggests</em> Zaps you didn't know you needed.</p>
@@ -167,7 +197,10 @@ footer .links a:hover{color:#a78bfa}
 <p>Auto-Pilot is available now on the Professional plan ($29.99/month) and above. Existing users get it activated automatically over the next week.</p>
 
 <p>For a small business owner running their own operations, this is huge. Most owners don't have time to sit and think about what could be automated. Auto-Pilot does that thinking for you, then hands you the finished workflow with one click to enable.</p>
-
+  </div>
+</section>
+<section class="slide" id="s6">
+  <div class="slide-inner">
 <h2>5. QuickBooks Adds AI Cash Flow Forecasting</h2>
 
 <p>Intuit quietly dropped a major update to QuickBooks Online this week: <strong>AI-powered cash flow forecasting</strong> built directly into the dashboard. No third-party integration needed. The AI analyzes your historical invoice payment patterns, upcoming bills, seasonal revenue trends, and — most interestingly — public economic data for your zip code to predict cash shortfalls up to 90 days in advance.</p>
@@ -175,7 +208,10 @@ footer .links a:hover{color:#a78bfa}
 <p>During the beta, Intuit reported that the AI correctly predicted cash flow crunches 83% of the time, with an average warning window of 16 days before the shortfall hit. For a small contracting business with tight margins and slow-paying clients, that kind of early warning is worth far more than the $35/month QuickBooks subscription costs.</p>
 
 <p>The forecasting is available now on Simple Start ($35/month) and above, with no additional charge. This is one of those updates that doesn't make headlines but will quietly save hundreds of small businesses from bounced checks and emergency credit card debt this year.</p>
-
+  </div>
+</section>
+<section class="slide" id="s7">
+  <div class="slide-inner">
 <h2>6. Google Business Profile Gets AI Post Generator</h2>
 
 <p>Google rolled out a new <strong>AI Post Generator</strong> within Google Business Profile this week — a direct shot at the small business SEO tools market. From your GBP dashboard, you can now type a sentence like "We're running a 20% off sale on brake services this weekend" and the AI generates a fully formatted GBP post with suggested images, hashtags, and a call-to-action button.</p>
@@ -183,7 +219,10 @@ footer .links a:hover{color:#a78bfa}
 <p>The feature is free and available to all verified GBP accounts. For local businesses that know they should be posting weekly but don't have the time, this removes the last excuse. Spend 5 minutes on Monday telling Google what's happening this week, and it generates a week's worth of posts for you.</p>
 
 <p>The catch: the AI-generated images are currently generic stock photography, not your actual business photos. Google says real-image generation is in testing and should roll out in Q3 2026. In the meantime, upload your own photos and the AI will incorporate them into post layouts.</p>
-
+  </div>
+</section>
+<section class="slide" id="s8">
+  <div class="slide-inner">
 <h2>7. Pricing Watch: What Went Up and Down This Week</h2>
 
 <p>A quick roundup of notable pricing changes from the past seven days:</p>
@@ -196,7 +235,10 @@ footer .links a:hover{color:#a78bfa}
 <li><strong>Flat — HubSpot:</strong> No changes this week. Still $20/month for Starter CRM with AI features included.</li>
 <li><strong>New — Mailchimp Standard AI:</strong> Mailchimp consolidated its AI writing and predictive send-time features into Standard ($39/month) rather than charging a separate AI add-on. Net savings of $15/month for businesses using those features.</li>
 </ul>
-
+  </div>
+</section>
+<section class="slide" id="s9">
+  <div class="slide-inner">
 <h2>8. Automation Workflow of the Week: The "Missed Lead Recovery" Stack</h2>
 
 <p>Every week, I highlight one automation workflow that small businesses can set up in under an hour. This week's pick: <strong>Missed Lead Recovery</strong> — the single highest-ROI automation I've seen across dozens of small business deployments in Orange County.</p>
@@ -215,7 +257,10 @@ footer .links a:hover{color:#a78bfa}
 <div class="highlight">
 <strong>⚡ This Week's Action Item:</strong> Check how many calls you missed last week. If your phone system doesn't track this, switch to one that does. Most businesses are shocked by the number. The math is simple: if you're missing 20 calls a week worth an average of $100 in lifetime value each, that's $8,000/month in lost revenue. A $100/month AI recovery stack changes that equation overnight.
 </div>
-
+  </div>
+</section>
+<section class="slide" id="s10">
+  <div class="slide-inner">
 <h2>The Big Picture: What July 22 Tells Us</h2>
 
 <p>Stepping back from the individual announcements, a clear pattern is emerging through the third quarter of 2026. The AI platform wars — OpenAI vs. Anthropic vs. Google vs. Meta — are driving prices down for end users at an accelerating rate. Every major player cut prices or introduced a lower-tier plan this month alone. For small businesses, this is the best time in history to start deploying AI, purely from a cost perspective.</p>
@@ -233,11 +278,19 @@ footer .links a:hover{color:#a78bfa}
 </div>
 
 </div>
-
-<footer>
+  </div>
+</section><footer>
 <div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/chat">Chat</a></div>
 <div class="copy">RoyceAI Solutions. Irvine, CA</div>
 </footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){
