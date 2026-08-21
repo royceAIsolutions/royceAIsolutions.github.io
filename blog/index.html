@@ -182,9 +182,17 @@ body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right
 .dc-dot.active{background:var(--accent);height:26px}
 @media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
 
+
+/* ===== SITE DECK (single-slide mode) — static hero, no fixed overlay ===== */
+body.deck-single .slide{position:static;top:auto;left:auto;right:auto;bottom:auto;height:auto;display:block;padding:calc(var(--nav-h,64px) + 24px) 24px 48px;overflow:visible;opacity:1;visibility:visible;transform:none;transition:none;z-index:auto}
+body.deck-single .slide.active{transform:none;z-index:auto}
+body.deck-single .slide.hero{padding:3.5rem 1.5rem 1.5rem}
+body.deck-single .slide-inner{width:100%;max-width:920px;margin:0 auto}
+body.deck-single .deck-controls,body.deck-single .dc-dots,body.deck-single .deck-progress{display:none!important}
+
 </style>
 </head>
-<body>
+<bodyclass="deck-single">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
 
