@@ -123,7 +123,8 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
 
 
 /* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
-html{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+html{overflow-x:clip}
+body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
 .deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
 .slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
 .slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
