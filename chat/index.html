@@ -144,7 +144,7 @@ body{
 <div class="lead-overlay" id="leadOverlay">
   <div class="lead-card" id="leadCard">
     <h2>👋 Let's talk</h2>
-    <p>Leave your details and I'll connect you right in.</p>
+    <p>Leave your details for a free consultation — Royce will reach out to you.</p>
     <div class="form-group" id="nameGroup">
       <label>Your Name</label>
       <input type="text" id="leadName" placeholder="e.g. John Smith" autocomplete="name">
@@ -161,7 +161,7 @@ body{
       <div class="error">Please enter a valid phone number</div>
     </div>
     <button class="btn-submit" id="submitLead" onclick="submitLead()">Start Chatting →</button>
-    <div class="lead-footer">We'll keep your info private.</div>
+    <div class="lead-footer">Your info is private. No payment needed.</div>
   </div>
   <div class="lead-sent" id="leadSent">
     <h3>✅ You're all set</h3>
@@ -178,22 +178,22 @@ body{
   <div class="chat-wrap">
     <div class="messages" id="messages">
       <div class="msg bot" id="welcomeMsg">
-        👋 Welcome! I'm RoyceAI Sales. Pick a service below or tell me what you need:
+        👋 Welcome! I'm RoyceAI. Tell me what you need and I'll connect you with a free consultation:
         <br><br>
-        💼 <b>AI Receptionist</b> — $500/mo &mdash; 24/7 call answering<br>
-        🧠 <b>High School Tutor</b> — $100/mo &mdash; Math, Science, English, Korean<br>
-        🌐 <b>Websites</b> — from $1,000 &mdash; Custom, AI-integrated<br>
-        ⚡ <b>Business AI</b> — Custom pricing &mdash; Chatbots, automations<br>
-        🦎 <b>Natural Pest Control</b> — from $1,000 &mdash; Chemical-free solutions for OC homes<br><br>
+        💼 <b>AI Receptionist</b> — 24/7 AI call answering<br>
+        🧠 <b>High School Tutor</b> — Math, Science, English, Korean<br>
+        🌐 <b>Websites</b> — Custom, AI-integrated<br>
+        ⚡ <b>Business AI</b> — Chatbots, automations<br>
+        🦎 <b>Natural Pest Control</b> — Chemical-free solutions for OC homes<br><br>
         Which one interests you?
       </div>
     </div>
     <div class="quick-btns" id="quickBtns">
       <button onclick="sendQuick('Tell me about your AI receptionist. How does it work?')">📞 AI Receptionist</button>
-      <button onclick="sendQuick('I need a tutor. What do you offer and how much?')">🧠 Tutoring — $100/mo</button>
-      <button onclick="sendQuick('I need a website. What do you build and how much?')">🌐 Websites — $1K+</button>
-      <button onclick="sendQuick('Tell me about your pest control service.')">🦎 Pest Control — $1K+</button>
-      <button onclick="sendQuick('Can I see all your pricing?')">💰 Full Pricing</button>
+      <button onclick="sendQuick('I need a tutor. What do you offer?')">🧠 Tutoring</button>
+      <button onclick="sendQuick('I need a website. What do you build?')">🌐 Websites</button>
+      <button onclick="sendQuick('Tell me about your pest control service.')">🦎 Pest Control</button>
+      <button onclick="sendQuick('I\'d like a free consultation. How does it work?')">✍️ Free Consultation</button>
       
     </div>
     <div class="input-area">
@@ -203,7 +203,7 @@ body{
   </div>
 
     <div style="display:flex;gap:8px;margin:8px auto 0;max-width:720px;padding:0 16px">
-      <a href="/pay" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:12px;font-size:15px;font-weight:700;text-decoration:none;font-family:Inter,sans-serif;transition:all 0.2s">Subscribe / Pay Now</a>
+      <button onclick="sendQuick('I\'d like a free consultation.')" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;background:linear-gradient(135deg,#7c5cfc,#5b3cd4);color:white;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:Inter,sans-serif;transition:all 0.2s">📅 Get a Free Consultation</button>
     </div>
   </div>
 
