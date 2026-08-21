@@ -213,5 +213,81 @@ parent-visible progress. That is the opportunity.</div>
 })();
 </script>
 
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  if(slides.length<2)return;
+  var counter=document.getElementById('dcCounter');
+  var bar=document.getElementById('deckProgressBar');
+  var dotsWrap=document.getElementById('dcDots');
+  var current=0;
+
+  slides.forEach(function(s,i){
+    var d=document.createElement('button');
+    d.className='dc-dot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    d.addEventListener('click',function(){go(i);});
+    dotsWrap.appendChild(d);
+  });
+  var dots=[].slice.call(dotsWrap.children);
+
+  function go(i){
+    if(i<0||i>=slides.length)return;
+    current=i;
+    slides.forEach(function(s,j){s.classList.toggle('active',j===i);});
+    counter.textContent=(i+1)+' / '+slides.length;
+    dots.forEach(function(d,j){d.classList.toggle('active',j===i);});
+    bar.style.width=((i+1)/slides.length*100)+'%';
+    var active=slides[i];
+    if(active.scrollTop)active.scrollTop=0;
+    active.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el){
+      el.classList.add('visible');
+    });
+  }
+  document.getElementById('dcNext').addEventListener('click',function(){go(current+1);});
+  document.getElementById('dcPrev').addEventListener('click',function(){go(current-1);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(current+1);}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(current-1);}
+    if(e.key==='Home'){e.preventDefault();go(0);}
+    if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    if(e.key===' '&&e.target===document.body){e.preventDefault();go(current+1);}
+  });
+  var lastWheel=0;
+  window.addEventListener('wheel',function(e){
+    var now=Date.now();
+    if(now-lastWheel<800)return;
+    if(Math.abs(e.deltaY)<8)return;
+    var active=slides[current];
+    var canScroll=active.scrollHeight>active.clientHeight+4;
+    var atTop=active.scrollTop<=2;
+    var atBottom=active.scrollTop+active.clientHeight>=active.scrollHeight-2;
+    if(canScroll){
+      if(e.deltaY>0&&!atBottom)return;
+      if(e.deltaY<0&&!atTop)return;
+    }
+    if(e.deltaY>0){go(current+1);}else{go(current-1);}
+    lastWheel=now;
+  },{passive:true});
+  var tsx=null,tsy=null;
+  document.addEventListener('touchstart',function(e){tsx=e.touches[0].clientX;tsy=e.touches[0].clientY;},{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(tsx===null)return;
+    var dx=e.changedTouches[0].clientX-tsx;
+    var dy=e.changedTouches[0].clientY-tsy;
+    tsx=null;tsy=null;
+    if(Math.abs(dx)<50&&Math.abs(dy)<50)return;
+    var active=slides[current];
+    var canScroll=active.scrollHeight>active.clientHeight+4;
+    var atTop=active.scrollTop<=2;
+    var atBottom=active.scrollTop+active.clientHeight>=active.scrollHeight-2;
+    if(dy<0||dx<0){if(!canScroll||atBottom)go(current+1);}
+    else{if(!canScroll||atTop)go(current-1);}
+  },{passive:true});
+  go(0);
+})();
+</script>
+
 </body>
 </html>

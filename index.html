@@ -441,8 +441,6 @@ document.addEventListener('scroll', () => {
 
 <script>
 (function(){
-  // Deck navigation is MOBILE-ONLY — desktop scrolls normally (see CSS)
-  if(window.innerWidth>=1100)return;
   var slides=[].slice.call(document.querySelectorAll('.slide'));
   if(slides.length<2)return;
   var counter=document.getElementById('dcCounter');
