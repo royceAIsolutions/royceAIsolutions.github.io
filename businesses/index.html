@@ -11,7 +11,8 @@
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EF23H9423B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-EF23H9423B');</script>
-<style>*{margin:0;padding:0;box-sizing:border-box}
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--green:#34d399;--red:#ef4444;--radius:16px;--radius-sm:10px;--max-w:1200px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3);--shadow-elevated:0 8px 40px rgba(0,0,0,0.4)}*{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#07070a;color:#eeeef0;line-height:1.6;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
 .orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
 .orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
@@ -167,6 +168,7 @@ body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right
 .dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
 .dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
 .dc-dot.active{background:var(--accent);height:26px}
+@media(min-width:1100px){.deck-progress,.deck-progress-bar,.deck-controls,.dc-dots{display:none!important}.slide{position:static;height:auto;opacity:1;visibility:visible;transform:none;display:block;padding:calc(var(--nav-h) + 32px) 24px 72px;overflow:visible}.slide.active{transform:none;z-index:auto}.slide-inner{width:100%;max-width:920px;margin:0 auto}}
 @media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
 
 </style>
