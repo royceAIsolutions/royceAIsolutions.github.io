@@ -138,21 +138,22 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
   <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px" alt="R"> Royce<span>AI</span></a>
   <div class="nav-links">
     <a href="/products">Products</a>
-    <a href="/tutor">✨ Tutor</a>
+    <a href="/tutor">✨ Tutor</a><span id="navLoginBtn"></span>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/land-rover">🚙 Land Rover</a>
     <a href="/exotics">🏎️ Exotics</a>
     <a href="/billionaires">💰 Billionaires</a>
-    <a href="/real-estate">🏠 Real Estate</a><span id="navLoginBtn"></span>
-    <a href="/subscribe">Subscribe</a>
+    <a href="/real-estate">🏠 Real Estate</a>
     <a href="/businesses">💼 SBA Deals</a>
     <a href="/livaway">🏨 LivAway</a>
     <a href="/blog">Blog</a>
     <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
-<button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
 <div class="mobile-menu" id="mobileMenu"></div>
-<script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var t=document.querySelector('a[href="/products/tutor"]');var lb=document.getElementById("navLoginBtn");var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(lb){lb.innerHTML='<a href="/tutor" style="background:var(--accent);color:#fff;padding:7px 16px;border-radius:8px;font-weight:600;font-size:0.875rem;text-decoration:none">📚 Dashboard</a>'}}else{if(lb){lb.innerHTML='<a href="/tutor" style="background:var(--accent);color:#fff;padding:7px 16px;border-radius:8px;font-weight:600;font-size:0.875rem;text-decoration:none">Log In →</a>'}}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
+<script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var lb=document.getElementById("navLoginBtn");var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(lb){lb.innerHTML='<a href="/tutor" style="background:var(--accent);color:#fff;padding:7px 16px;border-radius:8px;font-weight:600;font-size:0.875rem;text-decoration:none">📚 Dashboard</a>'}}else{if(lb){lb.innerHTML='<a href="/tutor" style="background:var(--accent);color:#fff;padding:7px 16px;border-radius:8px;font-weight:600;font-size:0.875rem;text-decoration:none">Log In →</a>'}}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
 
 <div class="page">
   <section class="hero-sub">
@@ -162,7 +163,7 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
 
   <section class="section">
     <div class="bento">
-      <a href="/products/tutor" class="bento-card accent">
+      <a href="/tutor" class="bento-card accent">
         <span class="icon">🧠</span>
         <h3>High School Tutor</h3>
         <p>Unlimited AI tutoring in all subjects — Math, Science, English, Korean, and more. Your teen can text anytime.</p>
