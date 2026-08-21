@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF23H9423B"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EF23H9423B');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LivAway × RoyceAI — The Deck — RoyceAI Solutions</title>
+<meta name="description" content="The RoyceAI pitch deck for LivAway Suites: land-finder site selection engine, per-market demand books, CEO dashboard with covenant monitoring, and one-screen data consolidation across NetSuite, Agora, Smartsheet, Hotel Key, Procore, Fintrx, and GA4.">
+<link rel="canonical" href="https://royceai.com/livaway/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--green:#34d399;--red:#ef4444;--amber:#fbbf24;--radius:16px;--radius-sm:10px;--max-w:1200px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--shadow-elevated:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo img{border-radius:9px;vertical-align:middle}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;animation:pulse-glow 2.5s ease-in-out infinite}
+.nav-links .nav-cta:hover{background:var(--accent-light);transform:scale(1.05)}
+/* ===== MOBILE NAV (hamburger + drawer) ===== */
+.nav-burger{display:none}
+@media(max-width:640px){
+  nav{z-index:1001}
+  .nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+  .nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-burger.open span:nth-child(2){opacity:0}
+  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(300px,82vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
+  .mobile-menu.open{transform:translateX(0)}
+  .mobile-menu a{color:var(--text-secondary);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
+  .mobile-menu a:hover,.mobile-menu a.active{color:var(--text);background:var(--accent-bg)}
+  .mobile-menu .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;margin-top:10px;text-align:center;animation:pulse-glow 2.5s ease-in-out infinite}
+  .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+  .mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+  .nav-links a:not(.nav-cta){display:none}
+}
+/* ===== DECK ===== */
+.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{min-height:100vh;display:flex;align-items:center;padding:calc(var(--nav-h) + 40px) 24px 80px;max-width:var(--max-w);margin:0 auto;scroll-margin-top:var(--nav-h)}
+.slide-inner{width:100%;max-width:920px;margin:0 auto}
+.slide-kicker{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--accent-bg);border:1px solid rgba(124,92,252,0.15);font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-light);margin-bottom:28px}
+.slide h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:900;letter-spacing:-0.035em;line-height:1.05;margin-bottom:20px}
+.slide h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.slide h2{font-size:clamp(1.7rem,4.5vw,2.8rem);font-weight:800;letter-spacing:-0.025em;line-height:1.15;margin-bottom:16px}
+.slide h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.slide .lede{color:var(--text-secondary);font-size:clamp(1rem,2vw,1.2rem);max-width:640px;line-height:1.7}
+.slide .lede strong{color:var(--text);font-weight:600}
+.slide .lede em{color:var(--accent-light);font-style:normal;font-weight:600}
+.slide .lede.big{font-size:clamp(1.15rem,2.4vw,1.45rem)}
+.quote{font-size:clamp(1.15rem,2.6vw,1.6rem);font-weight:600;line-height:1.5;letter-spacing:-0.01em;color:var(--text);border-left:3px solid var(--accent);padding-left:24px;margin:36px 0 12px;max-width:720px}
+.quote small{display:block;margin-top:12px;color:var(--text-muted);font-size:0.85rem;font-weight:500;letter-spacing:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.grid.two{grid-template-columns:repeat(2,1fr)}
+.grid.four{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;transition:all var(--transition);box-shadow:var(--shadow-card)}
+.card:hover{transform:translateY(-4px);border-color:var(--border-hover);box-shadow:var(--shadow-elevated)}
+.card .icon{font-size:1.8rem;display:block;margin-bottom:14px}
+.card h3{font-size:1.02rem;font-weight:700;margin-bottom:8px;letter-spacing:-0.01em}
+.card p{color:var(--text-secondary);font-size:0.875rem;line-height:1.65}
+.card .big{font-size:1.9rem;font-weight:900;letter-spacing:-0.03em;color:var(--text);margin-bottom:4px}
+.card .big .gradient{background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% 200%;animation:shimmer 3s ease-in-out infinite}
+.card .label{font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px}
+.card.accent{border-color:rgba(124,92,252,0.2);background:linear-gradient(135deg,rgba(124,92,252,0.05) 0%,transparent 100%)}
+.card.green{border-color:rgba(52,211,153,0.2);background:linear-gradient(135deg,rgba(52,211,153,0.04) 0%,transparent 100%)}
+.check{list-style:none;margin-top:24px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px;max-width:760px}
+.check li{position:relative;padding-left:30px;color:var(--text-secondary);font-size:0.98rem}
+.check li::before{content:'✓';position:absolute;left:0;top:0;color:var(--green);font-weight:700}
+.check li strong{color:var(--text)}
+.pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.pill{padding:9px 18px;border-radius:100px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-secondary);font-size:0.85rem;font-weight:500;transition:all .2s}
+.pill:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.pill b{color:var(--text)}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;transition:all var(--transition)}
+.stat:hover{transform:translateY(-4px);border-color:var(--border-hover)}
+.stat .num{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:900;letter-spacing:-0.03em;color:var(--text)}
+.stat .num .gradient{background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% 200%;animation:shimmer 3s ease-in-out infinite}
+.stat .cap{color:var(--text-muted);font-size:0.78rem;font-weight:500;margin-top:6px;letter-spacing:0.02em}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.flow-step{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;position:relative}
+.flow-step .n{position:absolute;top:-12px;left:22px;width:26px;height:26px;border-radius:8px;background:var(--accent);color:#fff;font-size:0.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px var(--bg)}
+.flow-step h3{font-size:0.95rem;font-weight:700;margin:10px 0 8px}
+.flow-step p{color:var(--text-secondary);font-size:0.85rem;line-height:1.65}
+.pipeline{display:flex;flex-direction:column;gap:12px;margin-top:36px;max-width:760px}
+.pipe{display:flex;align-items:center;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px}
+.pipe .crit{flex:0 0 210px;font-size:0.85rem;font-weight:600;color:var(--text)}
+.pipe .bar{flex:1;height:8px;border-radius:100px;background:rgba(255,255,255,0.06);overflow:hidden}
+.pipe .fill{height:100%;border-radius:100px;background:var(--accent-gradient)}
+.pipe .val{flex:0 0 200px;text-align:right;font-size:0.82rem;color:var(--text-secondary)}
+.pipe .val b{color:var(--text);font-weight:700}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.tag{font-size:0.78rem;font-weight:600;padding:6px 12px;border-radius:8px;background:var(--accent-bg);border:1px solid rgba(124,92,252,0.15);color:var(--accent-light)}
+.footnote{color:var(--text-muted);font-size:0.78rem;margin-top:36px;max-width:640px;line-height:1.6}
+/* deck nav controls */
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius-sm);font-family:var(--font);font-size:0.95rem;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;margin-top:36px}
+.btn:active{transform:scale(0.97)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow);animation:pulse-glow 2.5s ease-in-out infinite}
+.btn-primary:hover{background:var(--accent-light);transform:translateY(-2px) scale(1.03)}
+.btn-secondary{background:var(--bg-elevated);color:var(--text);box-shadow:0 0 0 1px var(--border)}
+.btn-secondary:hover{background:var(--bg-card);box-shadow:0 0 0 1px var(--accent);transform:translateY(-1px)}
+footer{border-top:1px solid var(--border);padding:48px 24px;max-width:var(--max-w);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+footer .logo{font-weight:700;font-size:1rem;color:var(--text-secondary)}
+footer .logo span{color:var(--accent-light)}
+footer .links{display:flex;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;transition:color 0.2s}
+footer .links a:hover{color:var(--accent-light)}
+footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:center}
+@media(max-width:1023px){
+  .grid,.flow{grid-template-columns:repeat(2,1fr)}
+  .grid.four,.stat-row{grid-template-columns:repeat(2,1fr)}
+  .dc-dots{display:none}
+}
+@media(max-width:640px){
+  .grid,.grid.two,.grid.four,.flow,.stat-row{grid-template-columns:1fr}
+  .check{grid-template-columns:1fr}
+  .pipe{flex-direction:column;align-items:flex-start;gap:8px}
+  .pipe .crit{flex:none}
+  .pipe .bar{width:100%}
+  .pipe .val{flex:none;text-align:left}
+  .slide{padding:calc(var(--nav-h) + 30px) 20px 60px}
+  .deck-controls{right:14px;bottom:14px}
+  footer{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:40px;height:40px" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/products">Products</a>
+    <a href="/tutor">✨ Tutor</a>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/land-rover">🚙 Land Rover</a>
+    <a href="/exotics">🏎️ Exotics</a>
+    <a href="/billionaires">💰 Billionaires</a>
+    <a href="/real-estate">🏠 Real Estate</a>
+    <a href="/businesses">💼 SBA Deals</a>
+    <a href="/livaway" style="color:var(--accent-light);font-weight:600">🏨 LivAway</a>
+    <a href="/blog">Blog</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<div class="mobile-menu" id="mobileMenu"></div>
+
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
+
+<!-- ============ SLIDE 1 — COVER ============ -->
+<section class="slide" id="s1">
+  <div class="slide-inner">
+    <div class="slide-kicker">LivAway Suites × RoyceAI · Pitch Deck</div>
+    <h1>The Operating System for the <span class="gradient">Undersupplied Opportunity</span></h1>
+    <p class="lede big">One screen that finds the land, books the demand, and tells you <strong>where to spend your energy every morning</strong> — across every property, every covenant, every investor.</p>
+    <p class="lede" style="margin-top:16px">Built for Mike Nielson &amp; the West77 Partners team. <em>Land · Leads · Ops.</em></p>
+    <div class="tag-row">
+      <span class="tag">SITE SELECTION</span><span class="tag">DEMAND BOOKS</span><span class="tag">CEO DASHBOARD</span><span class="tag">DATA CONSOLIDATION</span>
+    </div>
+    <p class="footnote">RoyceAI Solutions · Irvine, CA · royceai.com · August 2026</p>
+  </div>
+</section>
+
+<!-- ============ SLIDE 2 — THE PROBLEM ============ -->
+<section class="slide" id="s2">
+  <div class="slide-inner">
+    <div class="slide-kicker">01 · The Problem</div>
+    <h2>You're running 60+ locations from <span class="gradient">nine different screens</span></h2>
+    <p class="lede">The stack is world-class — but fragmented. There is no single place to see the business. Every answer costs logins, exports, and a spreadsheet.</p>
+    <div class="grid four" style="margin-top:36px">
+      <div class="card"><span class="icon">📒</span><h3>NetSuite</h3><p>Accounting — migrating off Sage</p></div>
+      <div class="card"><span class="icon">🏗️</span><h3>Procore</h3><p>Construction &amp; development</p></div>
+      <div class="card"><span class="icon">🏨</span><h3>Hotel Key</h3><p>Hotel operations</p></div>
+      <div class="card"><span class="icon">📊</span><h3>Smartsheet</h3><p>Development pipeline</p></div>
+      <div class="card"><span class="icon">👥</span><h3>Agora</h3><p>Investor portal + info</p></div>
+      <div class="card"><span class="icon">🎯</span><h3>Fintrx</h3><p>Investor leads</p></div>
+      <div class="card"><span class="icon">📈</span><h3>GA4</h3><p>Marketing + geofencing</p></div>
+      <div class="card accent"><span class="icon">📭</span><h3>Inbox</h3><p>130–150 emails a day</p></div>
+    </div>
+    <p class="footnote">"We have talked that we need a more centralized data warehouse for everything." — West77 leadership, Aug 2026</p>
+  </div>
+</section>
+
+<!-- ============ SLIDE 3 — THE QUOTE / WHY ============ -->
+<section class="slide" id="s3">
+  <div class="slide-inner">
+    <div class="slide-kicker">02 · Why this matters</div>
+    <div class="quote">"Tracking and identifying problems with our operations — revenue, operating expenses, debt covenants, and returns to investors — is a big thing we need to automate. A CEO dashboard I could look at daily, and from it know where I need to discuss time and energy."</div>
+    <small style="color:var(--text-muted);display:block;margin:8px 0 0 24px;font-size:0.85rem">— Mike Nielson, Founder &amp; CEO, LivAway Suites / West77 Partners</small>
+    <p class="lede" style="margin-top:40px">That is not a feature request. That is the <strong>entire operating model</strong> of the next 60 locations. RoyceAI builds it — live, API-connected, one screen.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="num"><span class="gradient">$500M+</span></div><div class="cap">CAPITAL DEPLOYED</div></div>
+      <div class="stat"><div class="num"><span class="gradient">60+</span></div><div class="cap">LOCATIONS IN PIPELINE</div></div>
+      <div class="stat"><div class="num"><span class="gradient">13</span></div><div class="cap">HOTELS OPEN</div></div>
+      <div class="stat"><div class="num"><span class="gradient">~13 mo</span></div><div class="cap">AVG. BUILD CYCLE</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 4 — THE ANSWER ============ -->
+<section class="slide" id="s4">
+  <div class="slide-inner">
+    <div class="slide-kicker">03 · The Answer</div>
+    <h2>RoyceAI = <span class="gradient">Land · Leads · Ops</span> on one screen</h2>
+    <p class="lede">RoyceAI consolidates every channel through API integration into a single dashboard — <em>saves time without logging in everywhere.</em></p>
+    <div class="flow">
+      <div class="flow-step"><span class="n">1</span><span class="icon" style="font-size:1.6rem">🗺️</span><h3>Land-Finder</h3><p>Site-selection engine that scores every candidate parcel against LivAway's exact criteria — ranked pipeline, no windshield time.</p></div>
+      <div class="flow-step"><span class="n">2</span><span class="icon" style="font-size:1.6rem">📇</span><h3>Demand Book</h3><p>Per-market book of business: 45 demand verticals scored by live locality data, with 294 verified national lead providers pre-seeded.</p></div>
+      <div class="flow-step"><span class="n">3</span><span class="icon" style="font-size:1.6rem">🖥️</span><h3>CEO Dashboard</h3><p>Revenue, opex, RevPAR, covenants, and investor returns — ranked daily so the CEO knows exactly where to spend energy.</p></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag">NETSUITE</span><span class="tag">AGORA</span><span class="tag">SMARTSHEET</span><span class="tag">HOTEL KEY</span><span class="tag">PROCORE</span><span class="tag">FINTRX</span><span class="tag">GA4</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 5 — LAND-FINDER ============ -->
+<section class="slide" id="s5">
+  <div class="slide-inner">
+    <div class="slide-kicker">04 · Pillar 1 — Land-Finder</div>
+    <h2>Every site, scored against <span class="gradient">LivAway's own criteria</span></h2>
+    <p class="lede">Feed the engine a metro — it returns a ranked parcel pipeline. No more broker deck archaeology.</p>
+    <div class="pipeline">
+      <div class="pipe"><span class="crit">Parcel size</span><div class="bar"><div class="fill" style="width:90%"></div></div><span class="val"><b>2–2.5 acres</b></span></div>
+      <div class="pipe"><span class="crit">Freeway adjacency</span><div class="bar"><div class="fill" style="width:80%"></div></div><span class="val"><b>30k+ AADT</b></span></div>
+      <div class="pipe"><span class="crit">Metro population</span><div class="bar"><div class="fill" style="width:85%"></div></div><span class="val"><b>250k+ MSA</b></span></div>
+      <div class="pipe"><span class="crit">Downtown proximity</span><div class="bar"><div class="fill" style="width:75%"></div></div><span class="val"><b>≤ 60 miles</b></span></div>
+      <div class="pipe"><span class="crit">Site constraints</span><div class="bar"><div class="fill" style="width:95%"></div></div><span class="val"><b>No slope · no wetlands · no floodplain</b></span></div>
+      <div class="pipe"><span class="crit">Zoning</span><div class="bar"><div class="fill" style="width:88%"></div></div><span class="val"><b>Hotel approved use · height ≥ 50 ft</b></span></div>
+    </div>
+    <p class="footnote">Output: ranked shortlist per market with criteria scores, zoning flags, and adjacency data — ready for the West77 development team in Smartsheet.</p>
+  </div>
+</section>
+
+<!-- ============ SLIDE 6 — DEMAND BOOK ============ -->
+<section class="slide" id="s6">
+  <div class="slide-inner">
+    <div class="slide-kicker">05 · Pillar 2 — Demand Book</div>
+    <h2>The book of business <span class="gradient">before the groundbreaking</span></h2>
+    <p class="lede">Occupancy doesn't start at 0. Each market gets a living demand book built from live locality data — who's hiring, who's deploying crews, who's rotating staff through the area.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="num"><span class="gradient">45</span></div><div class="cap">DEMAND VERTICALS</div></div>
+      <div class="stat"><div class="num"><span class="gradient">294</span></div><div class="cap">VERIFIED NATIONAL PROVIDERS</div></div>
+      <div class="stat"><div class="num"><span class="gradient">60%</span></div><div class="cap">LIVE LOCALITY DATA WEIGHT</div></div>
+      <div class="stat"><div class="num"><span class="gradient">40%</span></div><div class="cap">DEMAND-WEIGHT SCORE</div></div>
+    </div>
+    <div class="pill-row">
+      <span class="pill"><b>Travel nurses</b> · Aya, AMN</span>
+      <span class="pill"><b>Construction crews</b> · Crawford, Sundt</span>
+      <span class="pill"><b>Military PCS</b></span>
+      <span class="pill"><b>FEMA response</b></span>
+      <span class="pill"><b>Utility linemen</b></span>
+      <span class="pill"><b>Film crews</b></span>
+      <span class="pill"><b>Corporate relocation</b></span>
+      <span class="pill"><b>Data center builds</b></span>
+      <span class="pill"><b>Traveling subs</b></span>
+      <span class="pill"><b>+ 35 more</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 7 — CEO DASHBOARD ============ -->
+<section class="slide" id="s7">
+  <div class="slide-inner">
+    <div class="slide-kicker">06 · Pillar 3 — CEO Dashboard</div>
+    <h2>Where do I spend <span class="gradient">time and energy today?</span></h2>
+    <p class="lede">Every property, every covenant, every investor — ranked by exception. Green is fine. <em>Amber and red get a name, a number, and a priority.</em></p>
+    <div class="grid two" style="margin-top:40px">
+      <div class="card"><span class="icon">📈</span><h3>Operations</h3><p>Revenue, opex, RevPAR, occupancy, ADR — actual vs budget per property, flagged monthly.</p></div>
+      <div class="card"><span class="icon">⚖️</span><h3>Debt Covenants</h3><p>DSCR, interest coverage, LTV — tracked against lender minimums with 🔴 breach / 🟠 at-risk / 🟢 ok flags.</p></div>
+      <div class="card"><span class="icon">🏦</span><h3>Investor Returns</h3><p>Cash-on-cash vs preferred return per deal, distributions, equity balances — the Agora story in real time.</p></div>
+      <div class="card accent"><span class="icon">🎯</span><h3>Focus View</h3><p>One ranked list: "where to spend energy today" — pulled straight from the exceptions. No hunting.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 8 — DATA CONSOLIDATION ============ -->
+<section class="slide" id="s8">
+  <div class="slide-inner">
+    <div class="slide-kicker">07 · The Consolidation Layer</div>
+    <h2>One warehouse. <span class="gradient">One screen. Zero logins.</span></h2>
+    <p class="lede">RoyceAI connects to the tools you already run — via their APIs — and lands everything in a centralized data warehouse. The dashboard becomes the <strong>single place to look</strong>, and the inbox gets its life back.</p>
+    <div class="tag-row" style="margin-top:36px">
+      <span class="tag">NETSUITE · GL &amp; AP</span><span class="tag">AGORA · INVESTOR PORTAL</span><span class="tag">SMARTSHEET · DEVELOPMENT</span><span class="tag">HOTEL KEY · OPS</span><span class="tag">PROCORE · CONSTRUCTION</span><span class="tag">FINTRX · LEADS</span><span class="tag">GA4 · MARKETING</span>
+    </div>
+    <div class="grid two" style="margin-top:40px">
+      <div class="card green"><span class="icon">🔐</span><h3>Secure by design</h3><p>Read-only API connections, encrypted keys, per-system audit trail. Your data never leaves your control.</p></div>
+      <div class="card"><span class="icon">⚙️</span><h3>Pilot-ready</h3><p>Start with one system — NetSuite or Hotel Key — prove the daily value, then expand the connectors.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 9 — WHY ROYCEAI ============ -->
+<section class="slide" id="s9">
+  <div class="slide-inner">
+    <div class="slide-kicker">08 · Why RoyceAI</div>
+    <h2>Built like a <span class="gradient">founder's tool</span>, not a vendor's demo</h2>
+    <ul class="check">
+      <li><strong>AI-native pipeline</strong> — land scoring, demand books, and exception flags generated continuously, not quarterly</li>
+      <li><strong>Real integrations</strong> — NetSuite, Agora, Smartsheet, Hotel Key, Procore, Fintrx, GA4</li>
+      <li><strong>CEO-first design</strong> — the daily "where do I spend energy" view is the product</li>
+      <li><strong>Scales with West77</strong> — 13 open hotels today, 60+ in pipeline, one dashboard for all of it</li>
+      <li><strong>Fast pilot</strong> — working demo in days on synthetic data, live connectors after</li>
+      <li><strong>Done-for-you</strong> — RoyceAI runs the automation; the team reads the screen</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ SLIDE 10 — THE ASK ============ -->
+<section class="slide" id="s10">
+  <div class="slide-inner">
+    <div class="slide-kicker">09 · The Ask</div>
+    <h2>Let's run a <span class="gradient">90-day pilot</span></h2>
+    <div class="grid two" style="margin-top:40px">
+      <div class="card accent"><span class="icon">🗺️</span><h3>Land-Finder live</h3><p>Run the next 3 target metros through the criteria engine. Delivered ranked site shortlists.</p></div>
+      <div class="card"><span class="icon">📇</span><h3>Demand books</h3><p>Build full demand books for the 3 highest-priority pipeline locations.</p></div>
+      <div class="card"><span class="icon">🖥️</span><h3>CEO dashboard</h3><p>Live ops + covenant dashboard on pilot property data, connected to one source system.</p></div>
+      <div class="card green"><span class="icon">🤝</span><h3>Then scale</h3><p>Expand connectors to the full stack. Every location, every investor, every morning.</p></div>
+    </div>
+    <a href="/chat" class="btn btn-primary">💬 Let's talk</a>
+    <p class="footnote">RoyceAI Solutions · royceai.com · Royce Koh, Founder</p>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
+  <div class="links">
+    <a href="/products">Products</a><a href="/tutor">Tutor</a>
+    <a href="/livaway">🏨 LivAway</a>
+    <a href="/my">Dashboard</a><a href="/blog">Blog</a><a href="/chat">Chat</a>
+  </div>
+  <div class="copy">RoyceAI Solutions. Irvine, CA</div>
+</footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 10</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var counter=document.getElementById('dcCounter');
+  var bar=document.getElementById('deckProgressBar');
+  var dotsWrap=document.getElementById('dcDots');
+  var current=0;
+
+  // build dots
+  slides.forEach(function(s,i){
+    var d=document.createElement('button');
+    d.className='dc-dot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    d.addEventListener('click',function(){go(i);});
+    dotsWrap.appendChild(d);
+  });
+  var dots=[].slice.call(dotsWrap.children);
+
+  function go(i){
+    if(i<0||i>=slides.length)return;
+    current=i;
+    slides[i].scrollIntoView({behavior:'smooth',block:'start'});
+    counter.textContent=(i+1)+' / '+slides.length;
+    dots.forEach(function(d,j){d.classList.toggle('active',j===i);});
+    updateProgress();
+  }
+  function updateProgress(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    var p=max>0?h.scrollTop/max*100:0;
+    bar.style.width=p+'%';
+  }
+  function currentSlideIndex(){
+    var h=document.documentElement,b=document.body;
+    var y=h.scrollTop||b.scrollTop;
+    for(var i=slides.length-1;i>=0;i--){
+      if(slides[i].offsetTop-80<=y)return i;
+    }
+    return 0;
+  }
+  document.getElementById('dcNext').addEventListener('click',function(){go(current+1);});
+  document.getElementById('dcPrev').addEventListener('click',function(){go(current-1);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'){go(current+1);}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){go(current-1);}
+    if(e.key==='Home'){go(0);}
+    if(e.key==='End'){go(slides.length-1);}
+  });
+  window.addEventListener('scroll',function(){
+    if(Math.abs(currentSlideIndex()-current)<2){ // avoid fighting smooth scroll
+      var i=currentSlideIndex();
+      current=i;
+      counter.textContent=(i+1)+' / '+slides.length;
+      dots.forEach(function(d,j){d.classList.toggle('active',j===i);});
+    }
+    updateProgress();
+  },{passive:true});
+  updateProgress();
+
+  // ===== Mobile nav (burger + drawer) =====
+  var burger=document.getElementById('navBurger');
+  var menu=document.getElementById('mobileMenu');
+  var backdrop=document.getElementById('mobileMenuBackdrop');
+  function initMobileMenu(){
+    if(!burger||menu.dataset.mnInit)return;
+    menu.dataset.mnInit='1';
+    var links=document.querySelectorAll('.nav-links a');
+    links.forEach(function(a){menu.appendChild(a.cloneNode(true));});
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+</script>
+</body>
+</html>
