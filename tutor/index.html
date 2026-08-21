@@ -464,6 +464,14 @@ if(saved){
 .lc-thanks h3{color:#c084fc;margin:0 0 8px}
 .lc-thanks p{color:#a0a0c0;font-size:.85rem;margin:0}
 .lc-error{color:#ef4444;font-size:.8rem;margin-top:4px;display:none}
+/* NAV RESPONSIVE STANDARD — burger below 1024px, no clipping, no stacked nav */
+@media(max-width:1023px){
+  nav{flex-direction:row;flex-wrap:nowrap;height:var(--nav-h)}
+  .nav-links{width:auto;margin-left:auto;justify-content:flex-end}
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}
+  .nav-burger{display:inline-flex}
+  .nav-logo{width:auto;justify-content:flex-start}
+}
 </style>
 <script>
 // Auto-refresh scoreboard every 30s (silent, no button)
