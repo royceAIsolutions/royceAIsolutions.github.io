@@ -63,7 +63,7 @@ footer{border-top:1px solid var(--border);padding:36px 24px;max-width:var(--max-
 .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
 .mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
 @media(max-width:1099px){
-  nav{z-index:1001;flex-direction:row;flex-wrap:nowrap;height:var(--nav-h)}
+  nav{z-index:1001;flex-direction:row;flex-wrap:nowrap;height:var(--nav-h);background:var(--bg)}
   .nav-links{width:auto;margin-left:auto;justify-content:flex-end}
   .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}
   .nav-logo{width:auto;justify-content:flex-start}
@@ -255,7 +255,7 @@ fetchUsers().then(function() {
     var backdrop=document.getElementById('mobileMenuBackdrop');
     var links=document.querySelector('.nav-links');
     if(menu.children.length===0&&links){
-      links.querySelectorAll('a').forEach(function(a){menu.appendChild(a.cloneNode(true));});
+      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){menu.appendChild(a.cloneNode(true));});
     }
     var p=location.pathname;
     if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);

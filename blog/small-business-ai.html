@@ -24,7 +24,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
 .orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
 .orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
-nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:var(--nav-h);max-width:var(--max-w);margin:0 auto;border-bottom:1px solid var(--border);background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);position:sticky;top:0;z-index:100}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:var(--nav-h);max-width:var(--max-w);margin:0 auto;border-bottom:1px solid var(--border);background:var(--bg);backdrop-filter:blur(20px) saturate(1.5);position:sticky;top:0;z-index:1001}
 .nav-logo{font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:10px}
 .nav-logo .logo-icon{width:32px;height:32px;border-radius:9px;display:block;object-fit:cover}
 .nav-logo span{color:var(--accent-light)}
@@ -74,7 +74,7 @@ footer{padding:2rem 1.5rem;max-width:var(--max-w);margin:0 auto;text-align:cente
 .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
 .mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
 @media(max-width:1099px){
-  nav{z-index:1001;flex-direction:row;flex-wrap:nowrap;height:var(--nav-h)}
+  nav{z-index:1001;flex-direction:row;flex-wrap:nowrap;height:var(--nav-h);background:var(--bg)}
   .nav-links{width:auto;margin-left:auto;justify-content:flex-end}
   .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}
   .nav-logo{width:auto;justify-content:flex-start}
@@ -267,7 +267,7 @@ body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right
 </div>
   </div>
 </section><footer>
-<p>Irvine, CA · <a href="/" style="color:var(--accent-light);text-decoration:none">RoyceAI</a> · <a href="/tutor" style="color:var(--text-muted);text-decoration:none">Tutor</a> · <a href="/chat" style="color:var(--text-muted);text-decoration:none">Chat</a></p>
+<p>Irvine, CA · <a href="/" style="color:var(--accent-light);text-decoration:none">RoyceAI</a> · <a href="/tutor" style="color:var(--text-muted);text-decoration:none">Tutor</a> · </p>
 </footer>
 
 <!-- deck navigation controls -->
@@ -289,7 +289,7 @@ body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right
     var backdrop=document.getElementById('mobileMenuBackdrop');
     var links=document.querySelector('.nav-links');
     if(menu.children.length===0&&links){
-      links.querySelectorAll('a').forEach(function(a){menu.appendChild(a.cloneNode(true));});
+      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){menu.appendChild(a.cloneNode(true));});
     }
     var p=location.pathname;
     if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
