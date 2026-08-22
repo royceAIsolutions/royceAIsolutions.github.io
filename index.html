@@ -133,6 +133,7 @@ footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:cent
   .quiz-domains{gap:6px}
   .qd-item{padding:6px 12px;font-size:0.78rem}
   .section{padding:60px 20px}
+  .slide:not(.quiz-hero){padding:60px 20px}
   .cta-section{padding:60px 20px}
   .pricing-grid{grid-template-columns:1fr}
   footer{flex-direction:column;text-align:center}
@@ -180,31 +181,13 @@ section[id], div[id], h2[id], h3[id] { scroll-margin-top: 80px; }
 
 
 
-/* Desktop: sections are normal flow, deck chrome hidden */
-@media(min-width:1100px){
-  .deck-progress,.deck-progress-bar,.deck-controls,.dc-dots{display:none}
-  .slide{position:static;height:auto;opacity:1;visibility:visible;transform:none;display:block;padding:96px 24px 72px;overflow:visible}
-  .slide-inner{max-width:920px;margin:0 auto}
-}
-
-
-/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+/* ===== Normal page scroll (slide-deck removed — smooth native scrolling) ===== */
 html{overflow-x:clip}
-body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
-.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
-.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
-.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
-.slide-inner{width:100%;max-width:920px;margin:auto}
-.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
-.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
-.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
-.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
-.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
-.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
-.dc-dot.active{background:var(--accent);height:26px}
-@media(min-width:1100px){.deck-progress,.deck-progress-bar,.deck-controls,.dc-dots{display:none!important}.slide{position:static;height:auto;opacity:1;visibility:visible;transform:none;display:block;padding:calc(var(--nav-h) + 32px) 24px 72px;overflow:visible}.slide.active{transform:none;z-index:auto}.slide-inner{width:100%;max-width:920px;margin:0 auto}}
-@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
-@media(max-width:1099px){footer{display:none!important}}
+body{overflow-x:clip}
+.deck-progress,.deck-progress-bar,.deck-controls,.dc-counter,.dc-btn,.dc-dots,.dc-dot{display:none!important}
+.slide{position:static;height:auto;opacity:1;visibility:visible;transform:none;display:block;padding:96px 24px 72px;overflow:visible}
+.slide.active{transform:none;z-index:auto}
+.slide-inner{width:100%;max-width:920px;margin:0 auto}
 
 </style>
 </head>
@@ -229,7 +212,6 @@ body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
-<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
 <div class="mobile-menu" id="mobileMenu"></div>
 <script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var lb=document.getElementById("navLoginBtn");var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(lb){lb.innerHTML='<a href="/tutor" style="background:var(--accent);color:#fff;padding:7px 16px;border-radius:8px;font-weight:600;font-size:0.875rem;text-decoration:none">📚 Dashboard</a>'}}else{if(lb){lb.innerHTML='<a href="/tutor" style="background:var(--accent);color:#fff;padding:7px 16px;border-radius:8px;font-weight:600;font-size:0.875rem;text-decoration:none">Log In →</a>'}}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
@@ -391,14 +373,6 @@ body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right
   <div class="copy">RoyceAI Solutions. Irvine, CA</div>
 </footer>
 
-<!-- deck navigation controls -->
-<div class="deck-controls">
-  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
-  <span class="dc-counter" id="dcCounter">1 / 4</span>
-  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
-</div>
-<div class="dc-dots" id="dcDots"></div>
-
 <script>
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
@@ -449,86 +423,6 @@ document.addEventListener('scroll', () => {
 })();
 </script>
 
-
-<script>
-(function(){
-  var slides=[].slice.call(document.querySelectorAll('.slide'));
-  if(slides.length<2)return;
-  var counter=document.getElementById('dcCounter');
-  var bar=document.getElementById('deckProgressBar');
-  var dotsWrap=document.getElementById('dcDots');
-  var current=0;
-
-  // build dots
-  slides.forEach(function(s,i){
-    var d=document.createElement('button');
-    d.className='dc-dot'+(i===0?' active':'');
-    d.setAttribute('aria-label','Slide '+(i+1));
-    d.addEventListener('click',function(){go(i);});
-    dotsWrap.appendChild(d);
-  });
-  var dots=[].slice.call(dotsWrap.children);
-
-  function go(i){
-    if(i<0||i>=slides.length)return;
-    current=i;
-    slides.forEach(function(s,j){s.classList.toggle('active',j===i);});
-    counter.textContent=(i+1)+' / '+slides.length;
-    dots.forEach(function(d,j){d.classList.toggle('active',j===i);});
-    bar.style.width=((i+1)/slides.length*100)+'%';
-    var active=slides[i];
-    if(active.scrollTop)active.scrollTop=0;
-    // reveal content inside the newly active slide (hidden slides never
-    // intersect the observer, so force .visible on activation)
-    active.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el){
-      el.classList.add('visible');
-    });
-  }
-  document.getElementById('dcNext').addEventListener('click',function(){go(current+1);});
-  document.getElementById('dcPrev').addEventListener('click',function(){go(current-1);});
-  document.addEventListener('keydown',function(e){
-    if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(current+1);}
-    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(current-1);}
-    if(e.key==='Home'){e.preventDefault();go(0);}
-    if(e.key==='End'){e.preventDefault();go(slides.length-1);}
-    if(e.key===' '&&e.target===document.body){e.preventDefault();go(current+1);}
-  });
-  // Wheel: navigate only at slide boundaries; long slides scroll internally first
-  var lastWheel=0;
-  window.addEventListener('wheel',function(e){
-    var now=Date.now();
-    if(now-lastWheel<800)return;
-    if(Math.abs(e.deltaY)<8)return;
-    var active=slides[current];
-    var canScroll=active.scrollHeight>active.clientHeight+4;
-    var atTop=active.scrollTop<=2;
-    var atBottom=active.scrollTop+active.clientHeight>=active.scrollHeight-2;
-    if(canScroll){
-      if(e.deltaY>0&&!atBottom)return;
-      if(e.deltaY<0&&!atTop)return;
-    }
-    if(e.deltaY>0){go(current+1);}else{go(current-1);}
-    lastWheel=now;
-  },{passive:true});
-  // Touch swipe (vertical or horizontal)
-  var tsx=null,tsy=null;
-  document.addEventListener('touchstart',function(e){tsx=e.touches[0].clientX;tsy=e.touches[0].clientY;},{passive:true});
-  document.addEventListener('touchend',function(e){
-    if(tsx===null)return;
-    var dx=e.changedTouches[0].clientX-tsx;
-    var dy=e.changedTouches[0].clientY-tsy;
-    tsx=null;tsy=null;
-    if(Math.abs(dx)<50&&Math.abs(dy)<50)return;
-    var active=slides[current];
-    var canScroll=active.scrollHeight>active.clientHeight+4;
-    var atTop=active.scrollTop<=2;
-    var atBottom=active.scrollTop+active.clientHeight>=active.scrollHeight-2;
-    if(dy<0||dx<0){if(!canScroll||atBottom)go(current+1);}
-    else{if(!canScroll||atTop)go(current-1);}
-  },{passive:true});
-  go(0);
-})();
-</script>
 
 </body>
 </html>
