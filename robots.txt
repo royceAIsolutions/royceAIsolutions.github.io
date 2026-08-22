@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://royceai.com/sitemap.xml
