@@ -204,7 +204,7 @@ body{overflow-x:clip}
   <div class="nav-links">
     <a href="/products">Products</a>
     <a href="/tutor">✨ Tutor</a>
-    <a href="/my">Log In →</a>
+    <a href="/my" class="nav-drawer-only">Log In →</a>
     <a href="/subscribe">Subscribe</a>
     <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
     <a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
@@ -309,7 +309,7 @@ body{overflow-x:clip}
       <div class="stat"><div class="num"><span class="gradient">0–100</span></div><div class="cap">PARCEL SCORE</div></div>
       <div class="stat"><div class="num">51</div><div class="cap">PARCELS SCORED</div></div>
       <div class="stat"><div class="num">14</div><div class="cap">SCORED ≥ 70</div></div>
-      <div class="stat"><div class="num">2</div><div class="cap">METROS LIVE NOW</div></div>
+      <div class="stat"><div class="num">2</div><div class="cap">METROS LIVE · PHX + TUS</div></div>
     </div>
     <div class="pill-row">
       <span class="pill"><b>Acreage fit 35%</b></span>
@@ -510,7 +510,7 @@ body{overflow-x:clip}
   function initMobileMenu(){
     if(!burger||menu.dataset.mnInit)return;
     menu.dataset.mnInit='1';
-    var links=document.querySelectorAll('.nav-links a');
+    var links=document.querySelectorAll('.nav-links a:not(.nav-cta)');
     links.forEach(function(a){menu.appendChild(a.cloneNode(true));});
     function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');}
     function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');}
