@@ -256,7 +256,7 @@ try{
 // ─── Config ─────────────────────────────────────────────────────
 var API='https://chat-api-tawny-zeta.vercel.app/api';
 var HIST=API+'/quiz-history';
-var UDATA=[{"first": "Jiho", "last": "Pak", "subjects": "Math, 9th Grade Prep, Bible Study", "today": "—", "mtd": "104/132 (79%)", "ytd": "1022/1137 (90%)", "plan": "free_trial", "cards": "math,grade9", "kpis": [{"label": "Math", "val": "96/100"}, {"label": "Streak", "val": "7 days"}, {"label": "Focus Time", "val": "45 min/day"}]},{"first": "Carter", "last": "Koh", "subjects": "UCI Prep, AP Biology, 11th Grade", "today": "—", "mtd": "—", "ytd": "382/523 (73%)", "plan": "free_trial", "cards": "sat,math,grade11", "kpis": [{"label": "A-G GPA", "val": "In repair"}, {"label": "AP Bio", "val": "Junior"}, {"label": "Streak", "val": "5 days"}]},{"first": "Angel", "last": "Koh", "subjects": "RN Training, NCLEX, Health", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "rn", "kpis": [{"label": "NCLEX", "val": "72%"}, {"label": "Modules", "val": "8/12"}, {"label": "Study Time", "val": "30 min/day"}]},{"first": "Paxton", "last": "Koh", "subjects": "Reading Games, ABCs, Colors", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "reading", "kpis": []},{"first": "Josh", "last": "Lucero", "subjects": "Series 66, Series 7, Finance", "today": "—", "mtd": "—", "ytd": "47/50 (94%)", "plan": "free_trial", "cards": "series66,series7", "kpis": [{"label": "Series 66", "val": "74%"}, {"label": "Progress", "val": "60%"}, {"label": "Study Time", "val": "25 min/day"}]},{"first": "Mason", "last": "Min", "subjects": "Baby Play, ABCs, Colors", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "baby", "kpis": [{"label": "Age", "val": "Toddler"}, {"label": "Learning", "val": "ABCs"}, {"label": "Milestones", "val": "On track"}]},{"first": "Pearl", "last": "Johnson", "subjects": "Preschool Play, Letters, Numbers", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "baby,preschool", "kpis": [{"label": "Colors", "val": "6/6"}, {"label": "Games", "val": "3 played"}, {"label": "Stars", "val": "15"}]},{"first": "Ruby", "last": "Johnson", "subjects": "Reading, Math, Grade 2", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "reading,math,grade2", "kpis": [{"label": "Math", "val": "4/5"}, {"label": "Games", "val": "2 played"}, {"label": "Stars", "val": "8"}]},{"first": "Carter", "last": "Touch", "subjects": "Grade 9, Liberty HS, Math", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,grade9", "kpis": [{"label": "GPA", "val": "3.5"}, {"label": "Liberty HS", "val": "Freshman"}, {"label": "Sessions", "val": "0"}]},{"first": "Chase", "last": "Touch", "subjects": "Grade 7, Nelson MS, Pre-Algebra", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,reading,grade7", "kpis": [{"label": "Pre-Alg", "val": "B+"}, {"label": "Nelson MS", "val": "7th Grade"}, {"label": "Sessions", "val": "0"}]},{"first": "Tommy", "last": "Touch", "subjects": "Therapy Bot, Social Skills, Emotional Growth", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "therapy", "kpis": [{"label": "Therapy", "val": "Active"}, {"label": "Sessions", "val": "0"}, {"label": "Streak", "val": "New"}]},{"first": "Test", "last": "User", "subjects": "Math, SAT Prep, Science", "today": "8/10 (80%)", "mtd": "15/20 (75%)", "ytd": "15/20 (75%)", "plan": "free_trial", "cards": "math,sat,grade9", "kpis": [{"label": "Math", "val": "8/10"}, {"label": "SAT", "val": "70/80"}, {"label": "Streak", "val": "1 day"}]},{"first": "Test", "last": "User", "subjects": "Math, SAT Prep, Science", "today": "8/10 (80%)", "mtd": "15/20 (75%)", "ytd": "15/20 (75%)", "plan": "free_trial", "cards": "math,sat,grade9", "kpis": [{"label": "Math", "val": "8/10"}, {"label": "SAT", "val": "70/80"}, {"label": "Streak", "val": "1 day"}]},{"first": "MacKenzie", "last": "Koh", "subjects": "Math, Reading, Science", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "grade4,math", "kpis": []},{"first": "Charles", "last": "Koh", "subjects": "WA Real Estate, RCW/WAC, Contracts", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "realestate", "kpis": [{"label": "Practice", "val": "—"}, {"label": "Pass Rate", "val": "—"}, {"label": "Streak", "val": "0 days"}]}];
+var UDATA=[]; // Roster moved server-side (Vercel API /student-stats) — no student PII in source
 var CU=null;
 
 function login(){
@@ -491,16 +491,15 @@ var saved=localStorage.getItem("tutor_user");
 if(saved){
   try{
     var u=JSON.parse(saved),match=UDATA.find(function(x){return x.first===u.first&&x.last===u.last;});
-    if(match){
-      CU=match;
-      // Fetch live data from API (UDATA has stale today: "—")
-      fetch(API+"/student-stats",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:match.first+" "+match.last})})
-      .then(function(r){return r.json()})
-      .then(function(d){
-        if(d.found&&d.data){CU=d.data;showDash(CU)}else showDash(match);
-      })
-      .catch(function(){showDash(match);});
-    }else localStorage.removeItem("tutor_user");
+    // Validate against live API (UDATA is empty — roster is server-side)
+    fetch(API+"/student-stats",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:(match?match.first+" "+match.last:(u.first||"")+" "+(u.last||""))})})
+    .then(function(r){return r.json()})
+    .then(function(d){
+      if(d.found&&d.data){CU=d.data;showDash(CU)}
+      else if(match){showDash(match)}
+      else {localStorage.removeItem("tutor_user");}
+    })
+    .catch(function(){if(match)showDash(match);else localStorage.removeItem("tutor_user");});
   }catch(e){localStorage.removeItem("tutor_user");}
 }
 </script>

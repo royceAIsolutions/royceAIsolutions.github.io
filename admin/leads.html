@@ -35,6 +35,7 @@ tr:hover td{background:rgba(102,126,234,0.04)}
 <div id="tableWrap"></div>
 <p class="refresh" id="freshness"></p>
 <script>
+var ADMIN_PASS = 'RoyceAI-admin-2026!'; // CHANGE THIS
 async function load() {
   try {
     var r = await fetch('https://chat-api-tawny-zeta.vercel.app/api/lead?_='+Date.now());
@@ -70,8 +71,19 @@ async function load() {
     document.getElementById('tableWrap').innerHTML = '<div class="empty">Could not load leads. API may be cold-starting — try again in a moment.</div>';
   }
 }
-load();
-setInterval(load, 30000);
+if (sessionStorage.getItem('leads_admin') !== '1') {
+  var pass = window.prompt('Enter admin password:');
+  if (pass !== ADMIN_PASS) {
+    alert('Wrong password');
+  } else {
+    sessionStorage.setItem('leads_admin', '1');
+    load();
+    setInterval(load, 30000);
+  }
+} else {
+  load();
+  setInterval(load, 30000);
+}
 </script>
 </body>
 </html>

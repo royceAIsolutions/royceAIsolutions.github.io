@@ -173,7 +173,7 @@ body{
 <div class="chat-app" id="chatApp">
   <div class="nav">
     <div class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:32px;height:32px;border-radius:9px;vertical-align:middle;margin-right:6px" alt="R"> Royce<span>AI</span></div>
-    <a href="https://royceaisolutions.github.io" class="nav-back">← Back to site</a>
+    <a href="https://royceai.com" class="nav-back">← Back to site</a>
   </div>
   <div class="chat-wrap">
     <div class="messages" id="messages">
@@ -335,7 +335,7 @@ async function sendMessage() {
     if (dirty) {
       addMessage('I can only help with Royce AI products and services. Let me know what you need help with.', 'bot');
       document.getElementById('sendBtn').disabled = false;
-      fetch('/api/lead', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:'FLAG', type:'injection_attempt', content:text, timestamp:new Date().toISOString(), lead:leadInfo})}).catch(function(){});
+      fetch(API_URL.replace('/api/chat','/api/lead'), {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:'FLAG', type:'injection_attempt', content:text, timestamp:new Date().toISOString(), lead:leadInfo})}).catch(function(){});
       return;
     }
     const resp = await fetch(API_URL, {

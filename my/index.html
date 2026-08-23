@@ -155,7 +155,7 @@ body.deck-single .deck-controls,body.deck-single .dc-dots,body.deck-single .deck
 
 <script>
 // === USER DATA (embedded) ===
-var usersData = [];
+var usersData = []; // roster now served via API (student-stats) — no public PII
 var currentUser = null;
 
 // === BADGE ===
@@ -179,12 +179,6 @@ function updateNavBadge() {
       nav.insertBefore(b, nav.firstChild);
     }
   } catch(e) {}
-}
-
-function fetchUsers() {
-  return fetch("https://raw.githubusercontent.com/royceAIsolutions/royceAIsolutions.github.io/main/tutor/users.json?_=" + Date.now())
-    .then(function(r) { return r.json(); })
-    .then(function(d) { usersData = d; });
 }
 
 function showDashboard(u) {
@@ -216,15 +210,26 @@ function login() {
   var er = document.getElementById("loginError");
   if (!fn) { er.textContent = "Enter your first name."; er.style.display = "block"; return; }
   var id = fn + " " + ln;
-  var u = usersData.find(function(x) { return x.id === id; });
-  if (!u) {
+  fetch("https://chat-api-tawny-zeta.vercel.app/api/student-stats", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ student: id })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(d) {
+    if (d.found && d.data) {
+      currentUser = d.data;
+      localStorage.setItem("tutor_user", JSON.stringify(d.data));
+      showDashboard(d.data);
+    } else {
+      er.textContent = "Name not found: " + id;
+      er.style.display = "block";
+    }
+  })
+  .catch(function() {
     er.textContent = "Name not found: " + id;
     er.style.display = "block";
-    return;
-  }
-  currentUser = u;
-  localStorage.setItem("tutor_user", JSON.stringify(u));
-  showDashboard(u);
+  });
 }
 
 function logout() {
@@ -234,17 +239,33 @@ function logout() {
 }
 
 // === INIT ===
-fetchUsers().then(function() {
+(function() {
   var saved = JSON.parse(localStorage.getItem("tutor_user"));
-  if (saved) {
-    var match = usersData.find(function(x) { return x.id === saved.id; });
-    if (match) { currentUser = match; showDashboard(match); }
-    else { showLogin(); }
+  if (saved && saved.id) {
+    fetch("https://chat-api-tawny-zeta.vercel.app/api/student-stats", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ student: saved.id })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      if (d.found && d.data) {
+        currentUser = d.data;
+        showDashboard(d.data);
+      } else {
+        showLogin();
+      }
+      updateNavBadge();
+    })
+    .catch(function() {
+      showLogin();
+      updateNavBadge();
+    });
   } else {
     showLogin();
+    updateNavBadge();
   }
-  updateNavBadge();
-});
+})();
 </script>
 
 <script>
