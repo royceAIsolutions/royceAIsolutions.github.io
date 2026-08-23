@@ -1,5 +1,5 @@
 {
-  "updated": "August 21, 2026",
+  "updated": "August 23, 2026",
   "count": 2,
   "deals": [
     {
@@ -18,6 +18,7 @@
       "down": 33000,
       "monthly": 3448,
       "thesis": "priced at just 1.8x cash flow. ~55% annual cash yield — pays for itself in ~2 yrs. cash flow covers the SBA loan 4.35x — very safe. ~$33,000 down (10%), $3,448/mo debt.",
+      "hands_off": false,
       "score": 85,
       "grade": "A",
       "breakdown": {
@@ -44,6 +45,7 @@
       "down": 20000,
       "monthly": 2090,
       "thesis": "priced at just 1.1x cash flow. ~90% annual cash yield — pays for itself in ~2 yrs. cash flow covers the SBA loan 7.18x — very safe. ~$20,000 down (10%), $2,090/mo debt.",
+      "hands_off": false,
       "score": 85,
       "grade": "A",
       "breakdown": {
@@ -75,7 +77,7 @@
       "thesis": "3.0x cash flow. DSCR 2.64x — clears the 1.25 lender bar. ~$97,436/yr left after debt service. owner retiring.",
       "notes": "Full financials known: 3.0x SDE, DSCR 2.78x. Ad# 2227624, broker 973-255-7402. Verify location is CA first!",
       "source": "laundromat",
-      "last_reviewed": "2026-08-21"
+      "last_reviewed": "2026-08-23"
     },
     {
       "kind": "laundromat",
@@ -90,13 +92,13 @@
       "dscr": null,
       "down": null,
       "monthly": null,
-      "score": 14,
+      "score": 19,
       "grade": "C",
       "consider": true,
       "thesis": "$83,447 cash flow on ~$499,113 revenue — price undisclosed (NDA), call the broker. absentee-run (passive).",
       "notes": "Best passive profile found in scan; CF 83.4K meets min. Price undisclosed (NDA).",
       "source": "laundromat",
-      "last_reviewed": "2026-08-21"
+      "last_reviewed": "2026-08-23"
     },
     {
       "kind": "laundromat",
@@ -117,7 +119,7 @@
       "thesis": "Financials behind NDA — request the CIM to score it properly. established.",
       "notes": "Category page — need to identify the specific listing behind it.",
       "source": "laundromat",
-      "last_reviewed": "2026-08-21"
+      "last_reviewed": "2026-08-23"
     },
     {
       "kind": "laundromat",
@@ -138,7 +140,7 @@
       "thesis": "Financials behind NDA — request the CIM to score it properly. upside noted.",
       "notes": "Passive keyword + SD market. Financials NDA.",
       "source": "laundromat",
-      "last_reviewed": "2026-08-21"
+      "last_reviewed": "2026-08-23"
     },
     {
       "kind": "laundromat",
@@ -159,7 +161,7 @@
       "thesis": "Financials behind NDA — request the CIM to score it properly.",
       "notes": "Lower price point. Compton market — verify area/security.",
       "source": "laundromat",
-      "last_reviewed": "2026-08-21"
+      "last_reviewed": "2026-08-23"
     },
     {
       "kind": "laundromat",
@@ -180,7 +182,7 @@
       "thesis": "Financials behind NDA — request the CIM to score it properly. established.",
       "notes": "20+ yr track record + captive student market. Financials NDA.",
       "source": "laundromat",
-      "last_reviewed": "2026-08-21"
+      "last_reviewed": "2026-08-23"
     },
     {
       "kind": "laundromat",
@@ -201,7 +203,7 @@
       "thesis": "Financials behind NDA — request the CIM to score it properly. established.",
       "notes": "41 washers = real capacity. USC-adjacent = student traffic. Financials NDA.",
       "source": "laundromat",
-      "last_reviewed": "2026-08-21"
+      "last_reviewed": "2026-08-23"
     },
     {
       "kind": "laundromat",
@@ -222,7 +224,7 @@
       "thesis": "Financials behind NDA — request the CIM to score it properly.",
       "notes": "OC. $1.1M price — CF must be ~$220K+ to clear 5x / DSCR 1.25.",
       "source": "laundromat",
-      "last_reviewed": "2026-08-21"
+      "last_reviewed": "2026-08-23"
     },
     {
       "kind": "laundromat",
@@ -243,7 +245,7 @@
       "thesis": "Financials behind NDA — request the CIM to score it properly. absentee-run (passive).",
       "notes": "OC local = easiest to manage. NDA required.",
       "source": "laundromat",
-      "last_reviewed": "2026-08-21"
+      "last_reviewed": "2026-08-23"
     }
   ]
 }
