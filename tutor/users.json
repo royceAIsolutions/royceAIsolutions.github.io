@@ -1,0 +1,525 @@
+[
+  {
+    "first": "Jiho",
+    "last": "Pak",
+    "id": "jiho pak",
+    "name": "Jiho Pak",
+    "subjects": "Math, 9th Grade Prep, Bible Study",
+    "active": true,
+    "today": "—",
+    "mtd": "918/1005 (91%)",
+    "ytd": "918/1005 (91%)",
+    "topics": "Jul 15 Quiz, Factoring, Geometry",
+    "difficulty": "🔥 Math 3 — 94%",
+    "focus": "Radicals, Quadratics, Polynomials",
+    "plan": "free_trial",
+    "cards": "math,grade9",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Math",
+        "val": "96/100"
+      },
+      {
+        "label": "Streak",
+        "val": "7 days"
+      },
+      {
+        "label": "Focus Time",
+        "val": "45 min/day"
+      }
+    ],
+    "calories": false,
+    "week": "15/16 (94%)",
+    "sessions": "12",
+    "streak": "7 days"
+  },
+  {
+    "first": "Carter",
+    "last": "Koh",
+    "id": "carter koh",
+    "name": "Carter Koh",
+    "subjects": "SAT Prep, Basketball, 11th Grade",
+    "active": true,
+    "today": "64/103 (62%)",
+    "mtd": "382/523 (73%)",
+    "ytd": "382/523 (73%)",
+    "topics": "SAT Prep, Calorie Tracking",
+    "difficulty": "⚡ SAT — On Track",
+    "focus": "SAT prep + 4K cal daily + Bench Builder",
+    "plan": "free_trial",
+    "cards": "sat,math,grade11",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "SAT",
+        "val": "64/80"
+      },
+      {
+        "label": "Bench",
+        "val": "185 lb"
+      },
+      {
+        "label": "Streak",
+        "val": "5 days"
+      }
+    ],
+    "calories": false,
+    "week": "8/10 (80%)",
+    "sessions": "6",
+    "streak": "5 days"
+  },
+  {
+    "first": "Angel",
+    "last": "Koh",
+    "id": "angel koh",
+    "name": "Angel Koh",
+    "subjects": "RN Training, NCLEX, Health",
+    "active": true,
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
+    "topics": "NCLEX-RN Training",
+    "difficulty": "🩺 RN Training — Active",
+    "focus": "NCLEX-RN, Pharmacology, Anatomy",
+    "plan": "free_trial",
+    "cards": "rn",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "NCLEX",
+        "val": "72%"
+      },
+      {
+        "label": "Modules",
+        "val": "8/12"
+      },
+      {
+        "label": "Study Time",
+        "val": "30 min/day"
+      }
+    ],
+    "calories": false,
+    "sessions": "4",
+    "streak": "3 days"
+  },
+  {
+    "first": "Paxton",
+    "last": "Koh",
+    "id": "paxton koh",
+    "name": "Paxton Koh",
+    "subjects": "Reading Games, ABCs, Colors",
+    "active": true,
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
+    "topics": "—",
+    "difficulty": "🎒 Kindergarten — Game Mode",
+    "focus": "Phonics, Letter Recognition, Sight Words",
+    "plan": "free_trial",
+    "cards": "reading",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [],
+    "calories": false,
+    "sessions": "0",
+    "streak": "-"
+  },
+  {
+    "first": "Josh",
+    "last": "Lucero",
+    "id": "josh lucero",
+    "name": "Josh Lucero",
+    "subjects": "Series 66, Series 7, Finance",
+    "active": true,
+    "today": "—",
+    "mtd": "47/50 (94%)",
+    "ytd": "47/50 (94%)",
+    "topics": "Series 66, Series 7",
+    "difficulty": "📋 Series 66 — 27/30 (90%)",
+    "focus": "Series 66 (Uniform Combined), Series 7",
+    "plan": "free_trial",
+    "cards": "series66,series7",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Series 66",
+        "val": "74%"
+      },
+      {
+        "label": "Progress",
+        "val": "60%"
+      },
+      {
+        "label": "Study Time",
+        "val": "25 min/day"
+      }
+    ],
+    "calories": false,
+    "sessions": "3",
+    "streak": "2 days"
+  },
+  {
+    "first": "Mason",
+    "last": "Min",
+    "id": "mason min",
+    "name": "Mason Min",
+    "subjects": "Baby Play, ABCs, Colors",
+    "active": true,
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
+    "topics": "Sensory Play",
+    "difficulty": "👶 Baby Play — Sensory",
+    "focus": "Sensory, Colors, Sounds",
+    "plan": "free_trial",
+    "cards": "baby",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Age",
+        "val": "Toddler"
+      },
+      {
+        "label": "Learning",
+        "val": "ABCs"
+      },
+      {
+        "label": "Milestones",
+        "val": "On track"
+      }
+    ],
+    "calories": false
+  },
+  {
+    "first": "Pearl",
+    "last": "Johnson",
+    "id": "pearl johnson",
+    "name": "Pearl Johnson",
+    "subjects": "Preschool Play, Letters, Numbers",
+    "active": true,
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
+    "topics": "—",
+    "difficulty": "🎨 Preschool — Play Mode",
+    "focus": "ABCs, 123s, Colors, Shapes",
+    "plan": "free_trial",
+    "cards": "baby,preschool",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Colors",
+        "val": "6/6"
+      },
+      {
+        "label": "Games",
+        "val": "3 played"
+      },
+      {
+        "label": "Stars",
+        "val": "15"
+      }
+    ],
+    "calories": false,
+    "sessions": "3"
+  },
+  {
+    "first": "Ruby",
+    "last": "Johnson",
+    "id": "ruby johnson",
+    "name": "Ruby Johnson",
+    "subjects": "Reading, Math, Grade 2",
+    "active": true,
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
+    "topics": "—",
+    "difficulty": "📚 Grade 2 — Foundations",
+    "focus": "Reading Comprehension, Addition, Subtraction, Phonics",
+    "plan": "free_trial",
+    "cards": "reading,math,grade2",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Math",
+        "val": "4/5"
+      },
+      {
+        "label": "Games",
+        "val": "2 played"
+      },
+      {
+        "label": "Stars",
+        "val": "8"
+      }
+    ],
+    "calories": false,
+    "sessions": "2"
+  },
+  {
+    "first": "Carter",
+    "last": "Touch",
+    "id": "carter touch",
+    "name": "Carter Touch",
+    "subjects": "Grade 9, Liberty HS, Math",
+    "active": true,
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
+    "topics": "—",
+    "difficulty": "📚 Freshman — Liberty HS",
+    "focus": "Algebra 1, Biology, English 9",
+    "plan": "free_trial",
+    "cards": "math,grade9",
+    "authorized": true,
+    "products": [
+      "tutor",
+      "therapy"
+    ],
+    "kpis": [
+      {
+        "label": "GPA",
+        "val": "3.5"
+      },
+      {
+        "label": "Liberty HS",
+        "val": "Freshman"
+      },
+      {
+        "label": "Sessions",
+        "val": "0"
+      }
+    ],
+    "calories": false,
+    "sessions": "0"
+  },
+  {
+    "first": "Chase",
+    "last": "Touch",
+    "id": "chase touch",
+    "name": "Chase Touch",
+    "subjects": "Grade 7, Nelson MS, Pre-Algebra",
+    "active": true,
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
+    "topics": "—",
+    "difficulty": "📚 7th Grade — Nelson MS",
+    "focus": "Pre-Algebra, Reading, Science",
+    "plan": "free_trial",
+    "cards": "math,reading,grade7",
+    "authorized": true,
+    "products": [
+      "tutor",
+      "therapy"
+    ],
+    "kpis": [
+      {
+        "label": "Pre-Alg",
+        "val": "B+"
+      },
+      {
+        "label": "Nelson MS",
+        "val": "7th Grade"
+      },
+      {
+        "label": "Sessions",
+        "val": "0"
+      }
+    ],
+    "calories": false,
+    "sessions": "0"
+  },
+  {
+    "first": "Tommy",
+    "last": "Touch",
+    "id": "tommy touch",
+    "name": "Tommy Touch",
+    "subjects": "Therapy Bot, Social Skills, Emotional Growth",
+    "active": true,
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
+    "topics": "—",
+    "difficulty": "🧠 Therapy",
+    "focus": "Mental wellness, Therapy Bot",
+    "plan": "free_trial",
+    "cards": "therapy",
+    "authorized": true,
+    "products": [
+      "therapy"
+    ],
+    "kpis": [
+      {
+        "label": "Therapy",
+        "val": "Active"
+      },
+      {
+        "label": "Sessions",
+        "val": "0"
+      },
+      {
+        "label": "Streak",
+        "val": "New"
+      }
+    ],
+    "calories": false,
+    "sessions": "0",
+    "streak": "New"
+  },
+  {
+    "id": "test user",
+    "first": "Test",
+    "last": "User",
+    "subjects": "Math, SAT Prep, Science",
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
+    "plan": "free_trial",
+    "cards": "math,sat,grade9",
+    "kpis": [
+      {
+        "label": "Math",
+        "val": "8/10"
+      },
+      {
+        "label": "SAT",
+        "val": "70/80"
+      },
+      {
+        "label": "Streak",
+        "val": "1 day"
+      }
+    ],
+    "sessions": "3",
+    "streak": "1 day"
+  },
+  {
+    "id": "test user",
+    "first": "Test",
+    "last": "User",
+    "subjects": "Math, SAT Prep, Science",
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
+    "sessions": "3",
+    "streak": "1 day",
+    "plan": "free_trial",
+    "cards": "math,sat,grade9",
+    "kpis": [
+      {
+        "label": "Math",
+        "val": "8/10"
+      },
+      {
+        "label": "SAT",
+        "val": "70/80"
+      },
+      {
+        "label": "Streak",
+        "val": "1 day"
+      }
+    ]
+  },
+  {
+    "first": "MacKenzie",
+    "last": "Koh",
+    "id": "mackenzie koh",
+    "name": "MacKenzie Koh",
+    "subjects": "Math, Reading, Science",
+    "active": true,
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
+    "topics": "—",
+    "difficulty": "📚 4th Grade — Gentle Pace",
+    "focus": "Multiplication, Reading Comprehension, Science",
+    "plan": "free_trial",
+    "cards": "grade4,math",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Math",
+        "val": "—"
+      },
+      {
+        "label": "Reading",
+        "val": "—"
+      },
+      {
+        "label": "Streak",
+        "val": "0 days"
+      }
+    ],
+    "calories": false,
+    "sessions": "0",
+    "streak": "-",
+    "school": "Talbot Hill",
+    "dob": "2017-06-03",
+    "age": "9"
+  },
+  {
+    "first": "Charles",
+    "last": "Koh",
+    "id": "charles koh",
+    "name": "Charles Koh",
+    "subjects": "WA Real Estate, RCW/WAC, Contracts",
+    "active": true,
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
+    "topics": "—",
+    "difficulty": "🏢 WA Real Estate — Exam Prep",
+    "focus": "RCW/WAC Law, Contracts, Agency",
+    "plan": "free_trial",
+    "cards": "realestate",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Practice",
+        "val": "—"
+      },
+      {
+        "label": "Pass Rate",
+        "val": "—"
+      },
+      {
+        "label": "Streak",
+        "val": "0 days"
+      }
+    ],
+    "calories": false,
+    "sessions": "0",
+    "streak": "-"
+  }
+]
