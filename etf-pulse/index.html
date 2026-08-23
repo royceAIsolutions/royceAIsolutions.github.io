@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETF Pulse — Leveraged ETF Market Dashboard | RoyceAI</title>
+<meta name="description" content="Live ETF Pulse dashboard — 12 leveraged ETFs (SOXL, TQQQ, FNGU, TECL, SPXL, UPRO, TNA, UDOW, FAS, SQQQ, SOXS, SPXU) with 1D/5D/20D momentum, volatility and volume. Updated daily before the open.">
+<link rel="canonical" href="https://royceai.com/etf-pulse/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF23H9423B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-EF23H9423B');</script>
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--green:#34d399;--red:#ef4444;--radius:16px;--radius-sm:10px;--max-w:1200px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3);--shadow-elevated:0 8px 40px rgba(0,0,0,0.4)}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#07070a;color:#eeeef0;line-height:1.6;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(16,185,129,0.04);bottom:-250px;left:-150px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:64px;max-width:1200px;margin:0 auto;border-bottom:1px solid rgba(255,255,255,0.06);background:var(--bg);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);position:sticky;top:0;z-index:1001}
+.nav-logo{font-weight:700;font-size:1.1rem;color:#eeeef0;text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-logo span{color:#a78bfa}
+.nav-links{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.nav-links a{color:#88889a;text-decoration:none;font-size:0.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:#eeeef0;background:rgba(124,92,252,0.08)}
+.nav-links a.active{color:#fff;background:rgba(124,92,252,0.15);border:1px solid rgba(124,92,252,0.3)}
+.nav-links .nav-cta{background:#7c5cfc;color:#fff!important;font-weight:600;padding:8px 22px;border-radius:8px}
+.nav-burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:#15151b;border:1px solid rgba(255,255,255,0.06);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:#eeeef0;border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid rgba(255,255,255,0.06);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{color:#88889a;text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
+.mobile-menu a:hover,.mobile-menu a.active{color:#eeeef0;background:rgba(124,92,252,0.08)}
+.mobile-menu .nav-cta{background:#7c5cfc;color:#fff!important;font-weight:600;margin-top:10px;text-align:center}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+.mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+.hero-sub{padding:calc(60px + var(--nav-h)) 24px 40px;max-width:var(--max-w);margin:0 auto;text-align:center}
+.hero-sub h1{font-size:clamp(2rem,6vw,3rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:12px}
+.gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero-sub p{color:#88889a;font-size:1.05rem}
+.chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.chip{background:rgba(124,92,252,0.08);border:1px solid rgba(124,92,252,0.25);color:#a78bfa;padding:8px 16px;border-radius:999px;font-size:0.85rem;font-weight:500}
+.chip b{color:#eeeef0}
+.section{padding:0 24px 60px;max-width:var(--max-w);margin:0 auto}
+.warn{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);color:#ef4444;padding:12px 16px;border-radius:12px;margin-bottom:20px;font-size:0.9rem}
+.table-wrap{background:#0e0e12;border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow-x:auto;box-shadow:0 2px 20px rgba(0,0,0,0.3)}
+table{width:100%;border-collapse:collapse;min-width:720px}
+th,td{padding:14px 18px;text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{color:#5c5c6e;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid rgba(255,255,255,0.06);cursor:pointer;user-select:none}
+th:hover{color:#a78bfa}
+th .arrow{color:#7c5cfc;font-size:0.7rem}
+tbody tr{border-bottom:1px solid rgba(255,255,255,0.03);transition:background .2s}
+tbody tr:hover{background:rgba(124,92,252,0.05)}
+tbody tr:last-child{border-bottom:none}
+td.tick{font-weight:700;color:#eeeef0;font-size:0.95rem}
+td.close{font-weight:600;color:#eeeef0;font-size:0.95rem}
+.up{color:#34d399}
+.down{color:#ef4444}
+.flat{color:#88889a}
+.sub{color:#5c5c6e;font-size:0.78rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:24px}
+.card{background:#0e0e12;border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:20px;box-shadow:0 2px 20px rgba(0,0,0,0.3);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 40px rgba(0,0,0,0.4)}
+.card.up{border-left:4px solid #34d399}
+.card.down{border-left:4px solid #ef4444}
+.card.flat{border-left:4px solid #88889a}
+.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.card .tick{font-size:1.5rem;font-weight:800;color:#eeeef0}
+.card .close{font-size:1.2rem;font-weight:600;color:#eeeef0}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.badge{padding:5px 11px;border-radius:999px;font-size:0.8rem;font-weight:700}
+.badge.up{background:rgba(52,211,153,0.12);color:#34d399;border:1px solid rgba(52,211,153,0.3)}
+.badge.down{background:rgba(239,68,68,0.12);color:#ef4444;border:1px solid rgba(239,68,68,0.3)}
+.badge.flat{background:rgba(136,136,154,0.12);color:#88889a;border:1px solid rgba(136,136,154,0.3)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:0.85rem}
+.stat{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.stat span{color:#5c5c6e}
+.stat b{font-weight:600;color:#eeeef0}
+.volbar{width:100%;height:6px;background:#15151b;border-radius:3px;margin-top:12px;overflow:hidden}
+.volbar i{display:block;height:100%;background:linear-gradient(90deg,#7c5cfc,#a78bfa);border-radius:3px}
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:40px 24px;max-width:1200px;margin:0 auto;text-align:center}
+footer .links{display:flex;gap:20px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+footer .links a{color:#88889a;text-decoration:none;font-size:0.875rem}
+footer .links a:hover{color:#a78bfa}
+footer .copy{color:#5c5c6e;font-size:0.8rem}
+@media(max-width:640px){nav{padding:0 16px}.hero-sub{padding:calc(60px + var(--nav-h)) 16px 30px}.section{padding:0 16px 40px}.nav-burger{display:inline-flex}.nav-links a:not(.nav-cta){display:none}}
+</style>
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:36px;height:36px;border-radius:9px" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/products">Products</a>
+    <a href="/tutor">✨ Tutor</a>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
+    <a href="/billionaires" class="nav-drawer-only">💰 Billionaires</a>
+    <a href="/real-estate" class="nav-drawer-only">🏠 Real Estate</a>
+    <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
+    <a href="/etf-pulse" class="nav-drawer-only active">📈 ETF Pulse</a>
+    <a href="/blog" class="nav-drawer-only">Blog</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<div class="mobile-menu" id="mobileMenu"></div>
+
+<section class="hero-sub">
+  <h1>ETF <span class="gradient">Pulse</span></h1>
+  <p>12 leveraged ETFs · momentum + volatility + volume · updated 2026-08-22 21:23</p>
+  <div class="chips">
+    <span class="chip">📊 <b>12/12</b> tickers fetched</span>
+    <span class="chip">🟢 <b>9</b> positive on the day</span>
+    <span class="chip">🔎 Mean-reversion watch (|5D| ≥ 15%): <b>SOXL -20.4% (5D), SOXS +22.6% (5D)</b></span>
+  </div>
+</section>
+
+<section class="section">
+
+  <div class="table-wrap">
+    <table id="pulseTable">
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Close</th>
+          <th data-k="d1">1D% <span class="arrow"></span></th>
+          <th data-k="d5">5D% <span class="arrow"></span></th>
+          <th data-k="d20">20D% <span class="arrow"></span></th>
+          <th>Volatility</th>
+          <th>Avg Vol</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="grid" id="cards"></div>
+</section>
+
+<footer>
+  <div class="links">
+    <a href="/products">Products</a><a href="/tutor">Tutor</a>
+    <a href="/land-rover">Land Rover</a><a href="/exotics">Exotics</a>
+    <a href="/real-estate">Real Estate</a><a href="/businesses">SBA Deals</a>
+    <a href="/etf-pulse">ETF Pulse</a><a href="/blog">Blog</a>
+  </div>
+  <div class="copy">RoyceAI Solutions · Irvine, CA · ETF Pulse updates daily 7:00 AM PT</div>
+</footer>
+
+<script>
+const PULSE=[{"t": "FNGU", "c": 31.42, "d1": 1.09, "d5": -2.42, "d20": 24.58, "v": 76.1, "av": "4.0M", "trend": "RISING"}, {"t": "TECL", "c": 194.81, "d1": 0.35, "d5": -11.01, "d20": 12.87, "v": 98.2, "av": "702K", "trend": "RISING"}, {"t": "TQQQ", "c": 71.17, "d1": 0.98, "d5": -6.85, "d20": 12.26, "v": 66.7, "av": "60.1M", "trend": "RISING"}, {"t": "SPXL", "c": 286.64, "d1": 1.13, "d5": -2.83, "d20": 10.0, "v": 39.6, "av": "1.8M", "trend": "RISING"}, {"t": "UPRO", "c": 149.88, "d1": 1.08, "d5": -2.93, "d20": 9.91, "v": 39.3, "av": "2.1M", "trend": "RISING"}, {"t": "TNA", "c": 73.12, "d1": 2.14, "d5": -4.29, "d20": 6.0, "v": 46.3, "av": "3.8M", "trend": "RISING"}, {"t": "UDOW", "c": 72.87, "d1": 2.84, "d5": -1.09, "d20": 5.36, "v": 43.7, "av": "1.7M", "trend": "RISING"}, {"t": "FAS", "c": 177.52, "d1": 2.68, "d5": -0.72, "d20": 2.14, "v": 35.1, "av": "320K", "trend": "RISING"}, {"t": "SOXL", "c": 120.6, "d1": -1.32, "d5": -20.41, "d20": -5.89, "v": 162.0, "av": "73.8M", "trend": "FALLING"}, {"t": "SPXU", "c": 34.72, "d1": -1.05, "d5": 2.84, "d20": -9.79, "v": 39.3, "av": "8.1M", "trend": "FALLING"}, {"t": "SQQQ", "c": 39.02, "d1": -0.89, "d5": 7.14, "d20": -13.71, "v": 67.2, "av": "54.5M", "trend": "FALLING"}, {"t": "SOXS", "c": 47.03, "d1": 1.69, "d5": 22.6, "d20": -14.38, "v": 167.7, "av": "63.6M", "trend": "FALLING"}];
+const TS="August 22, 2026 at 21:23:07 PDT";
+const pct=v=>v>0?"+"+v.toFixed(2)+"%":v.toFixed(2)+"%";
+const cls=v=>v>0?"up":(v<0?"down":"flat");
+const fmtV=v=>v>=1000000?(v/1000000).toFixed(1)+"M":v>=1000?(v/1000).toFixed(0)+"K":String(Math.round(v));
+let sortKey="d20",sortDir=-1;
+function render(){
+  const rows=[...PULSE].sort((a,b)=>sortDir*(a[sortKey]-b[sortKey]));
+  document.getElementById("tbody").innerHTML=rows.map(r=>
+    "<tr>"+
+    "<td class="tick">"+r.t+"</td>"+
+    "<td class="close">$"+r.c.toFixed(2)+"</td>"+
+    "<td class=""+cls(r.d1)+"">"+pct(r.d1)+"</td>"+
+    "<td class=""+cls(r.d5)+"">"+pct(r.d5)+"</td>"+
+    "<td class=""+cls(r.d20)+"">"+pct(r.d20)+"</td>"+
+    "<td class=""+(r.v>120?"up":"flat")+"">"+r.v.toFixed(1)+"%</td>"+
+    "<td class="sub">"+r.av+"</td>"+
+    "</tr>").join("");
+  document.getElementById("cards").innerHTML=rows.map(r=>{
+    const w=Math.min(r.v,150);
+    return "<div class="card "+cls(r.d20)+"">"+
+      "<div class="card-top"><span class="tick">"+r.t+"</span><span class="close">$"+r.c.toFixed(2)+"</span></div>"+
+      "<div class="badges">"+
+        "<span class="badge "+cls(r.d1)+"">1D "+pct(r.d1)+"</span>"+
+        "<span class="badge "+cls(r.d5)+"">5D "+pct(r.d5)+"</span>"+
+        "<span class="badge "+cls(r.d20)+"">20D "+pct(r.d20)+"</span>"+
+      "</div>"+
+      "<div class="stats">"+
+        "<div class="stat"><span>Volatility</span><b>"+r.v.toFixed(1)+"%</b></div>"+
+        "<div class="stat"><span>Avg Volume</span><b>"+r.av+"</b></div>"+
+        "<div class="stat"><span>20D Trend</span><b class=""+cls(r.d20)+"">"+r.trend+"</b></div>"+
+      "</div>"+
+      "<div class="volbar"><i style="width:"+w+"%"></i></div>"+
+    "</div>";
+  }).join("");
+  document.querySelectorAll("th[data-k]").forEach(th=>{
+    const k=th.dataset.k;
+    th.querySelector(".arrow").textContent=k===sortKey?(sortDir>0?"▲":"▼"):"";
+  });
+}
+document.querySelectorAll("th[data-k]").forEach(th=>{
+  th.addEventListener("click",()=>{
+    const k=th.dataset.k;
+    if(k===sortKey)sortDir=-sortDir;else{sortKey=k;sortDir=-1;}
+    render();
+  });
+});
+render();
+</script>
+
+<script>
+(function(){
+  function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(menu.children.length===0&&links){
+      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){menu.appendChild(a.cloneNode(true));});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.dataset.mnInit='1';
+  }
+  initMobileMenu();
+})();
+</script>
+</body>
+</html>
