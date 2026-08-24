@@ -31,10 +31,14 @@
     '#jlr-pin button{padding:11px;background:#00a651;color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}',
     '#jlr-chat{display:none;flex-direction:column;flex:1;min-height:0}#jlr-chat.show{display:flex}',
     '#jlr-msgs{flex:1;overflow-y:auto;padding:12px 12px 4px;display:flex;flex-direction:column;gap:6px}',
-    '.jm{max-width:88%;padding:8px 12px;border-radius:10px;font-size:13px;line-height:1.5;word-wrap:break-word;white-space:pre-wrap}',
+    '.jm{position:relative;max-width:88%;padding:8px 12px;border-radius:10px;font-size:13px;line-height:1.5;word-wrap:break-word;white-space:pre-wrap;user-select:text}',
     '.jm.user{align-self:flex-end;background:#00a651;color:#fff;border-bottom-right-radius:3px}',
     '.jm.bot{align-self:flex-start;background:#15151b;border:1px solid rgba(255,255,255,.06);border-bottom-left-radius:3px;color:#f5f5f8}',
     '.jm.sys{align-self:center;color:#aeaec8;font-size:11px;background:none;border:none}',
+    '.jm-copy{position:absolute;top:5px;right:5px;display:none;padding:3px 9px;font-size:10px;font-weight:600;line-height:1.3;border-radius:6px;border:1px solid rgba(255,255,255,.18);background:rgba(10,10,14,.55);color:#d4d4e0;cursor:pointer;font-family:inherit;backdrop-filter:blur(4px)}',
+    '.jm:hover .jm-copy{display:block}',
+    '.jm-copy:hover{background:rgba(0,166,81,.28);color:#fff}',
+    '.jm-copy.done{background:#00a651;border-color:#00a651;color:#fff}',
     '#jlr-typing{display:none;gap:3px;align-self:flex-start;padding:10px 14px;background:#15151b;border-radius:10px;border:1px solid rgba(255,255,255,.06)}',
     '#jlr-typing.on{display:flex}',
     '#jlr-typing span{width:6px;height:6px;border-radius:50%;background:#6fe3a5;animation:jlrB 1.4s infinite}',
@@ -95,10 +99,53 @@
     chatEl.classList.add('show');
     inEl.focus();
   }
+  function copyText(t, btn) {
+    function done() {
+      btn.textContent = 'Copied ✓';
+      btn.classList.add('done');
+      setTimeout(function () { btn.textContent = 'Copy'; btn.classList.remove('done'); }, 1600);
+    }
+    function fail() {
+      btn.textContent = 'Copy failed';
+      setTimeout(function () { btn.textContent = 'Copy'; }, 1600);
+    }
+    function legacy(t) {
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = t;
+        ta.setAttribute('readonly', '');
+        ta.style.cssText = 'position:fixed;top:-999px;opacity:0';
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        return ok;
+      } catch (e) { return false; }
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(done, function () { legacy(t) ? done() : fail(); });
+    } else {
+      legacy(t) ? done() : fail();
+    }
+  }
+
   function addMsg(role, text) {
     var d = document.createElement('div');
     d.className = 'jm ' + (role === 'user' ? 'user' : (role === 'sys' ? 'sys' : 'bot'));
+    text = String(text).replace(/\r\n/g, '\n').replace(/\r/g, '\n');
     d.textContent = text;
+    if (role !== 'sys') {
+      var cp = document.createElement('button');
+      cp.type = 'button';
+      cp.className = 'jm-copy';
+      cp.textContent = 'Copy';
+      cp.title = 'Copy message — preserves line breaks';
+      cp.addEventListener('click', function (ev) {
+        ev.stopPropagation();
+        copyText(text, cp);
+      });
+      d.appendChild(cp);
+    }
     msgsEl.appendChild(d);
     msgsEl.scrollTop = msgsEl.scrollHeight;
     return d;
