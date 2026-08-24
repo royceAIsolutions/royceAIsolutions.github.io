@@ -210,7 +210,7 @@ footer .copy{color:var(--text-muted);font-size:0.8rem}
 
 <header class="hero-sub">
   <div class="badge">🔦 Blacklight CX — Founded by Cody Johnson</div>
-  <h1>Shine a light on where there's <span class="gradient">friction</span> — and what's killing growth.</h1>
+  <h1>Your CX is a black box. <span class="gradient">We're the blacklight.</span></h1>
   <p class="subtitle">Blacklight CX helps brands see the hidden inner workings of the customer experience function, connect CX data to business visibility, and identify what is breaking across product, packaging, fulfillment, subscription, retention, marketing, and service.</p>
   <div class="tagline">From black box to clear visibility.</div>
   <div class="hero-ctas">
@@ -517,6 +517,7 @@ footer .copy{color:var(--text-muted);font-size:0.8rem}
       <p>End-to-end CX operations run by our team.</p>
     </div>
   </div>
+  <p style="text-align:center;color:var(--accent-light);font-weight:700;margin-top:28px">Typical engagements: $20K–$80K/month · Minimal terms · Scaled to your size</p>
 </section>
 
 <section class="section" style="padding-top:20px">
@@ -640,6 +641,7 @@ footer .copy{color:var(--text-muted);font-size:0.8rem}
       '<div class="group" id="gName"><label>Your Name</label><input type="text" id="fName" placeholder="John Smith" autocomplete="name"><div class="err">Please enter your name</div></div>'+
       '<div class="group" id="gEmail"><label>Work Email</label><input type="email" id="fEmail" placeholder="john@company.com" autocomplete="email"><div class="err">Please enter a valid email</div></div>'+
       '<div class="group" id="gPhone"><label>Phone</label><input type="tel" id="fPhone" placeholder="+1 (555) 123-4567" autocomplete="tel"><div class="err">Please enter a valid phone</div></div>'+
+      '<div class="group" id="gBudget"><label>Monthly Budget Range <span style="color:var(--text-muted);font-weight:400">(optional)</span></label><input type="text" id="fBudget" placeholder="e.g. $20K–$50K/mo" autocomplete="off"></div>'+
       '<button id="leadSubmit">Request My Free Diagnostic →</button>'+
       '<div class="bot-note">No pressure. No sales pitch.</div>';
     panel.insertBefore(form,quick);
@@ -649,7 +651,7 @@ footer .copy{color:var(--text-muted);font-size:0.8rem}
       function v(id,cond){var g=document.getElementById(id);if(!cond){g.classList.add('invalid');ok=false;}else{g.classList.remove('invalid');}return cond;}
       v('gName',n.length>=2);v('gEmail',/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e));v('gPhone',/^\+?[0-9 ()-]{10,15}$/.test(p));
       if(!ok)return;
-      lead={name:n,email:e,phone:p,timestamp:new Date().toISOString(),source:'cody-consulting-bot'};
+      lead={name:n,email:e,phone:p,budget:document.getElementById('fBudget').value.trim(),timestamp:new Date().toISOString(),source:'cody-consulting-bot'};
       localStorage.setItem('cody_lead',JSON.stringify(lead));
       (function save(ld,r){fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(ld)}).catch(function(){if(r>0){setTimeout(function(){save(ld,r-1);},2000);}});})(lead,2);
       form.remove();form=null;inBar.style.display='flex';welcome();
@@ -669,7 +671,7 @@ footer .copy{color:var(--text-muted);font-size:0.8rem}
     {k:['what is blacklight','blacklight','about blacklight','who is blacklight','cx','friction','shine'],a:'<b>Blacklight CX</b> helps brands see the hidden inner workings of the customer experience function — connecting CX data to business visibility and identifying what is breaking across product, packaging, fulfillment, subscription, retention, marketing, and service. <b>From black box to clear visibility.</b> Founded by <b>Cody Johnson</b>.'},
     {k:['107','107.4','proof','story','accomplish','built','ebay','million','founder','cody','how did'],a:'Cody Johnson is a founder and executive operator with <b>15+ years across operations, CX, AI-enabled systems, and customer brands</b>. He started with <b>one eBay store</b> and built it into <b>$107.4M over 12 years</b> — CEO, Head of Brand, and COO — then led CX as Director / Head of CX at Oats Overnight. Today he runs <b>Blacklight CX</b> with operator partner Matt Gracey and a vetted specialist network.'},
     {k:['diagnostic','free','audit','assessment','review'],a:'Every qualified submission gets a <b>free initial CX diagnostic review</b> and recommendations for next steps — no pressure, no sales pitch. Tap <b>Request My Free Diagnostic</b> in the chat, drop your details, and Cody\'s team follows up personally with actionable insights. 🎯'},
-    {k:['service','engagement','help','offer','governance','qa','workforce','training','roadmap','economics','bpo','takeover','price','cost','retainer','fractional'],a:'Blacklight delivers: <b>AI Governance + Oversight</b>, <b>Custom Team Training</b>, <b>Workforce Management</b>, <b>30/60/90 Roadmaps</b>, <b>AI-Connected VOC Dashboards</b>, <b>AI QA + Human QA</b>, <b>CX Economics + Investor Audits</b>, and <b>BPO Build or Full CX Takeover</b>. Engagement models: <b>Advisory</b>, <b>Fractional Leadership</b>, <b>Embedded Partner</b>, or <b>Full CX Takeover / BPO</b> — minimal terms, scaled to your size.'},
+    {k:['service','engagement','help','offer','governance','qa','workforce','training','roadmap','economics','bpo','takeover','price','cost','retainer','fractional','budget','pricing','month'],a:'Blacklight delivers: <b>AI Governance + Oversight</b>, <b>Custom Team Training</b>, <b>Workforce Management</b>, <b>30/60/90 Roadmaps</b>, <b>AI-Connected VOC Dashboards</b>, <b>AI QA + Human QA</b>, <b>CX Economics + Investor Audits</b>, and <b>BPO Build or Full CX Takeover</b>. Engagement models: <b>Advisory</b>, <b>Fractional Leadership</b>, <b>Embedded Partner</b>, or <b>Full CX Takeover / BPO</b> — minimal terms, scaled to your size. Typical engagements run <b>$20K–$80K/month</b> depending on scope and brand size.'},
     {k:['method','process','how it works','audit assess','governance','workflow','steps'],a:'The method: <b>1) Audit + Assess</b> — full diagnostic of CX operations, tooling, workflows, AI usage, team structure, QA, signals, and economics. <b>2) AI Governance</b> — guardrails and quality standards. <b>3) Workflow Design</b> — queues, macros, escalation, knowledge systems rebuilt around root causes. <b>4) Fractional to Full Takeover</b> — engagement scales with your stage.'},
     {k:['visible','surface','upstream','sentiment','survey','report card','root'],a:'Blacklight makes visible: <b>upstream report cards</b> on root issues, <b>recurring issue detection</b> before escalation, <b>sentiment across channels</b>, <b>rotating NPS/CES surveys</b> without fatigue, <b>AI-connected KPI + VOC dashboards</b>, and <b>accountability across people, tools, and teams</b>. We surface upstream what\'s actually killing growth — product, packaging, fulfillment, supply chain, subscription, and promise-gap issues.'},
     {k:['kpi','scorecard','nps','csat','ces','frt','ttr','repeat','resolution','sentiment','churn'],a:'We optimize <b>NPS, CSAT, CES</b> trends, <b>FRT and TTR</b> (lower is better), <b>repeat contact rate</b> (lower is better), <b>resolution rate</b> (higher is better), <b>weighted QA scorecards</b>, connected performance, sentiment trend, <b>retention risk</b>, and <b>subscription churn</b>.'},
