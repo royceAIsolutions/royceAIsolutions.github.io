@@ -86,6 +86,12 @@ nav{height:var(--nav-h);display:flex;align-items:center;justify-content:space-be
 .breakdown{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:0.72rem;color:var(--text-muted);line-height:1.5;border-top:1px dashed var(--border);padding-top:8px}
 .bd-plus{color:var(--green)}
 .bd-minus{color:#fca5a5}
+.desc{border-top:1px dashed var(--border);padding-top:8px}
+.desc summary{cursor:pointer;font-size:0.78rem;font-weight:700;color:var(--accent-light);list-style:none;letter-spacing:.02em}
+.desc summary::-webkit-details-marker{display:none}
+.desc summary:before{content:'▸ ';color:var(--accent-light)}
+.desc[open] summary:before{content:'▾ '}
+.desc-body{font-size:0.82rem;color:var(--text-secondary);line-height:1.6;white-space:pre-line;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;margin-top:8px;max-height:240px;overflow-y:auto}
 .rubric{max-width:var(--max-w);margin:0 auto;padding:0 24px 20px}
 .rubric details{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 18px}
 .rubric summary{cursor:pointer;font-weight:700;color:var(--accent-light);font-size:0.9rem;letter-spacing:.02em;list-style:none}
@@ -133,8 +139,8 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
 <div class="mobile-menu" id="mobileMenu"></div>
 <section class="hero">
   <h1>Classic <span class="gradient">Mustang</span> Flip Scanner</h1>
-  <p>1964–66 Mustangs, 6-cyl &amp; V8 only — live Craigslist scan, scored by flip potential. Built, drivable cars rank first.</p>
-  <p style="margin-top:14px"><span class="stat">12 listings · scanned 2026-08-24 11:46am PT · orangecounty, losangeles, inlandempire, sandiego, ventura, santabarbara, palmsprings</span></p>
+  <p>1964–66 Mustangs, 6-cyl &amp; V8 only — live Craigslist scan, scored by flip potential. Built, drivable cars rank first; seller descriptions are read &amp; scored.</p>
+  <p style="margin-top:14px"><span class="stat">12 listings · scanned 2026-08-24 01:50pm PT · orangecounty, losangeles, inlandempire, sandiego, ventura, santabarbara, palmsprings</span></p>
 </section>
 <section class="rubric">
   <details>
@@ -149,6 +155,10 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
       <div class="neg"><b>−8</b>per project warning: project · restore · rust · not running · non-op</div>
       <div class="neg"><b>−3</b>per minor issue: as-is · check engine · needs paint · needs battery</div>
       <div class="neg"><b>−0.4/yr</b>age — older shell = more restore work</div>
+      <div><b>+24</b>seller's description confirms runs/drives — every ad's body is read &amp; scored</div>
+      <div class="neg"><b>−24</b>body contradicts a "runs" title (won't start · needs motor)</div>
+      <div><b>+6/+8</b>quality &amp; desirability the seller spells out in the description</div>
+      <div class="neg"><b>−8/−3</b>work-needed / rust language in the description — same as title</div>
     </div>
     <div class="rubric-grid" style="margin-top:14px">
       <div><b class="g-badge g-a">A</b>60+ — strong flip: built, clean, priced right</div>
@@ -156,7 +166,7 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
       <div><b class="g-badge g-c">C</b>40–49 — solid shell: needs real work</div>
       <div><b class="g-badge g-d">D</b>&lt;40 — project: budget for big restore</div>
     </div>
-    <div class="rubric-note">Filter: 1964–1966 model years only · 6-cyl or 8-cyl power (no 4-cyl). Base score 30 + clean-title bonus. Score = est. flip potential, not condition judgment — verify any listing before buying.</div>
+    <div class="rubric-note">Filter: 1964–1966 model years only · 6-cyl or 8-cyl power (no 4-cyl). Base score 30 + clean-title bonus. Every listing's seller description is read and scored — the ad's story (runs/drives, rust, needs-work) moves the score. Score = est. flip potential, not condition judgment — verify any listing before buying.</div>
   </details>
 </section>
 <section class="controls">
@@ -176,9 +186,49 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
   <button class="btn-reset" onclick="resetFilters()">Reset</button>
 </section>
 <section class="grid" id="grid">
-    <div class="card" data-gen="Gen1 (64.5-73)" data-price="13500" data-score="71.2" data-region="huntington beach">
+    <div class="card" data-gen="Gen1 (64.5-73)" data-price="16500" data-score="81.0" data-year="1966" data-region="eastvale ca">
       <div class="card-head">
-        <div class="score g-a" title="Quality flip score 0-100 — see 'How the Flip Score works'">71<span class="grade">A</span></div>
+        <div class="score g-a" title="Quality flip score 0-100 — see 'How the Flip Score works'">81<span class="grade">A</span></div>
+        <div class="year">1966</div>
+        <span class="chip chip-eng">V8</span>
+      </div>
+      <h3>1966 FORD MUSTANG___REAL GT___GREAT CRUISER</h3>
+      <div class="meta">
+        <span class="price">$16500</span>
+        <span class="loc">Eastvale ca</span>
+      </div>
+      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-plus">+18 built &amp; drivable</span> <span class="bd-plus">+8 gt</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+6 under 20k</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span> <span class="bd-plus">+6 solid (body)</span> <span class="bd-plus">+6 original (body)</span> <span class="bd-minus">-24 age/restore</span></div>
+      <div class="chips"><span class="chip chip-good">👍 gt</span><span class="chip chip-good">✅ runs and drives</span></div>
+      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">PRICED TO SALE!
+1966 FORD MUSTANG REAL GT
+V-8 289 ENGINE
+A-CODE AUTOMATIC TRANSMISSION
+RUNS AND DRIVES GOOD
+VINYL TOP, GT SIDE STRIPE
+VINTAGE AIR CONDITIONING
+DUAL TRUMPET EXHAUST
+TBI FUEL SYSTEM
+DISC BRAKES - NO POWER STEERING !!!
+FLOORS ARE ORIGINAL NO RUST !!!
+SOLID INSIDE THE TRUNK ORIGINAL
+FRAME HAS NO RUST !!!
+BLACK PONY DELUXE INTERIOR
+THIS CAR IS A CRUISER NOT PERFECT!
+NOT A SHOW CAR - IT HAS RUST BUBBLES ON THE PASSENGER DOOR BOTTOM CORNER
+OUT OF STATE CLEAN TITLE !
+YES IT IS A REAL GT [ NOT FAKE ]
+IF YOU WANT TO BUY IT, DONT WASTE MY TIME NO LOW BALL OFFERS
+NO I WILL NOT TAKE YOU FOR A RIDE IF YOU DONT HAVE CASH READY TO BUY SIMPLE
+I AM ASKING $16,500
+NO TRADES !!!
+Located in EASTVALE CA
+show contact info</p></details>
+      <a class="btn" href="https://www.craigslist.org/view/d/corona-1966-ford-mustangreal-gtgreat/aC1NcD6zvt38GyY78UzNkx" target="_blank" rel="noopener">View Listing →</a>
+    </div>
+
+    <div class="card" data-gen="Gen1 (64.5-73)" data-price="13500" data-score="75.2" data-year="1964" data-region="huntington beach">
+      <div class="card-head">
+        <div class="score g-a" title="Quality flip score 0-100 — see 'How the Flip Score works'">75<span class="grade">A</span></div>
         <div class="year">1964</div>
         <span class="chip chip-eng">V8</span>
       </div>
@@ -187,28 +237,48 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
         <span class="price">$13500</span>
         <span class="loc">HUNTINGTON BEACH</span>
       </div>
-      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-plus">+18 built &amp; drivable</span> <span class="bd-plus">+6 original</span> <span class="bd-plus">+12 under flip budget</span> <span class="bd-plus">+4 clean title</span> <span class="bd-minus">-8 restore</span> <span class="bd-minus">-8 rust</span></div>
-      <div class="chips"><span class="chip chip-good">👍 original</span> <span class="chip chip-good">👍 driver</span> <span class="chip chip-good">👍 california car</span><span class="chip chip-warn">⚠️ restore</span> <span class="chip chip-warn">⚠️ rust</span></div>
+      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-plus">+18 built &amp; drivable</span> <span class="bd-plus">+6 original</span> <span class="bd-plus">+6 california car</span> <span class="bd-plus">+12 under flip budget</span> <span class="bd-plus">+4 clean title</span> <span class="bd-plus">+6 rust-free (body)</span> <span class="bd-plus">+6 solid (body)</span> <span class="bd-minus">-8 restore</span> <span class="bd-minus">-25 age/restore</span></div>
+      <div class="chips"><span class="chip chip-good">👍 original</span> <span class="chip chip-good">👍 driver</span> <span class="chip chip-good">👍 california car</span><span class="chip chip-good">✅ drives great</span><span class="chip chip-warn">⚠️ restore</span></div>
+      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body"># 1964 Ford Mustang V8 – Original California Car – Daily Driver
+**For Sale: 1964 Ford Mustang V8**
+This is an original California Mustang that&#x27;s been driven and enjoyed—not hidden away in a garage. It starts, runs, and drives great, and I drive it to work every day.
+The paint has faded from years in the California sun, and there are a few small areas of surface rust on the body. However, what makes this Mustang truly special is what you **don&#x27;t** see—the **rust-free chassis**. Anyone who has looked for an early Mustang knows that finding an original California car with a solid, rust-free underbody is becoming increasingly rare. Most cars from the Midwest or East Coast have significant rust issues that are expensive to repair.
+**Highlights:**
+* Original California car
+* V8 engine (believed to be either the original 260 or a replacement 289)
+* Reliable daily driver
+* Rust-free chassis and undercarriage
+* Clean, straight body with only a few minor rust spots
+* Sun-faded paint that&#x27;s ready to enjoy as-is or restore to your taste
+This Mustang is an excellent candidate for someone looking for a classic they can drive today while restoring over time. The expensive part—a solid, rust-free foundation—is already here.
+If you&#x27;re looking for a genuine first-generation Mustang with California history, this is one worth seeing.
+**Price:** $___13500_____
+Serious inquiries only. No tire kickers or lowball offers. If you&#x27;re looking for a solid classic Mustang with an outstanding foundation, this car is worth every penny.</p></details>
       <a class="btn" href="https://www.craigslist.org/view/d/huntington-beach-1964-ford-mustang-v8/cw6Kj9j77gJHAY2184zVhD" target="_blank" rel="noopener">View Listing →</a>
     </div>
 
-    <div class="card" data-gen="Gen1 (64.5-73)" data-price="16500" data-score="69.0" data-region="eastvale ca">
+    <div class="card" data-gen="Gen1 (64.5-73)" data-price="18995" data-score="70.0" data-year="1966" data-region="los angeles">
       <div class="card-head">
-        <div class="score g-a" title="Quality flip score 0-100 — see 'How the Flip Score works'">69<span class="grade">A</span></div>
+        <div class="score g-a" title="Quality flip score 0-100 — see 'How the Flip Score works'">70<span class="grade">A</span></div>
         <div class="year">1966</div>
-        <span class="chip chip-eng">6/8-cyl</span>
+        <span class="chip chip-eng">V8</span>
       </div>
-      <h3>1966 FORD MUSTANG___REAL GT___GREAT CRUISER</h3>
+      <h3>1966 Ford Mustang Coupe</h3>
       <div class="meta">
-        <span class="price">$16500</span>
-        <span class="loc">Eastvale ca</span>
+        <span class="price">$18995</span>
+        <span class="loc">Los Angeles</span>
       </div>
-      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-plus">+18 built &amp; drivable</span> <span class="bd-plus">+8 gt</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+6 under 20k</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span></div>
-      <div class="chips"><span class="chip chip-good">👍 gt</span><span class="chip chip-warn">⚠️ rust</span></div>
-      <a class="btn" href="https://www.craigslist.org/view/d/corona-1966-ford-mustangreal-gtgreat/aC1NcD6zvt38GyY78UzNkx" target="_blank" rel="noopener">View Listing →</a>
+      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+6 under 20k</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span> <span class="bd-plus">+24 seller: runs great</span> <span class="bd-plus">+6 california car (body)</span> <span class="bd-plus">+6 no rust (body)</span> <span class="bd-minus">-3 as is</span></div>
+      <div class="chips"><span class="chip chip-warn">⚠️ as is</span></div>
+      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">1966 Mustang C Code, 289 V8, Manual Transmission. Power Steering, power drum brakes. California car, no rust, runs great. Reliable daily driver. We have a clean California title with current CA registration. VIN.- 6R07C146774
+Vehicle is sold AS IS with no warranty whatsoever. We are a licensed and bonded California dealer for over twenty years at the same location. California buyers are responsible for $80 Document Fee, registration and applicable sales tax in addition to final auction price.Dennis Buys Classic Cars, 8931 Venice Blvd., L.A., CA. 90034 between Robertson and National. Hours Mon-Friday 9-6PM, Sat 10-3PM, Sunday by appointment only. Tel. 310-253-9977. Website: www.dennisbuyscars.com
+We are “THE KING OF AFFORDABLE CLASSICS!” Trades are WELCOME. We handle all DMV hassle, all you do is drive off! Prices do not include tax, license and any other applicable fees. Se habla Español. &quot;Face Time&quot; Tours Now Available. All vehicles are Freshly Detailed.
+Are you SELLING or TRADING a car? WE BUY CARS, TRUCKS, MOTORCYCLES and CLASSICS TOO. Call us now or go to http//dennisbuyscars.com for a FREE consultation and quote or to see our full inventory of cars for sale.
+WE ARE VERY SLOW in returning emails and messages and we don’t need PEN PALS. Call us! 310-253-9977. Cel for international calls and WhatsApp: 310-849-4920. THANK YOU</p></details>
+      <a class="btn" href="https://www.craigslist.org/view/d/los-angeles-1966-ford-mustang-coupe/29pVzEotWWQBVmSJgqDSjy" target="_blank" rel="noopener">View Listing →</a>
     </div>
 
-    <div class="card" data-gen="Gen1 (64.5-73)" data-price="11500" data-score="66.6" data-region="riverside">
+    <div class="card" data-gen="Gen1 (64.5-73)" data-price="11500" data-score="66.6" data-year="1965" data-region="riverside">
       <div class="card-head">
         <div class="score g-a" title="Quality flip score 0-100 — see 'How the Flip Score works'">67<span class="grade">A</span></div>
         <div class="year">1965</div>
@@ -221,12 +291,18 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
       </div>
       <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-plus">+18 built &amp; drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+12 under flip budget</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span> <span class="bd-minus">-24 age/restore</span></div>
       <div class="chips"><span class="chip chip-good">👍 runs</span></div>
+      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">I&#x27;m selling my 1965 Ford Mustang
+Runs very good , disc brakes
+302 Engine / C4 Transmission
+Lots of New parts , too much to name.
+Must see to appreciate
+Call or Text if Interested</p></details>
       <a class="btn" href="https://www.craigslist.org/view/d/riverside-1965-ford-mustang-302-engine/veXkhm54MzQMwczebaeFyi" target="_blank" rel="noopener">View Listing →</a>
     </div>
 
-    <div class="card" data-gen="Gen1 (64.5-73)" data-price="16500" data-score="65.0" data-region="long beach">
+    <div class="card" data-gen="Gen1 (64.5-73)" data-price="16500" data-score="61.0" data-year="1966" data-region="long beach">
       <div class="card-head">
-        <div class="score g-a" title="Quality flip score 0-100 — see 'How the Flip Score works'">65<span class="grade">A</span></div>
+        <div class="score g-a" title="Quality flip score 0-100 — see 'How the Flip Score works'">61<span class="grade">A</span></div>
         <div class="year">1966</div>
         <span class="chip chip-eng">6-cyl</span>
       </div>
@@ -235,14 +311,89 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
         <span class="price">$16500</span>
         <span class="loc">Long Beach</span>
       </div>
-      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-plus">+18 built &amp; drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+6 under 20k</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 excellent cond</span> <span class="bd-plus">+4 clean title</span></div>
-      <div class="chips"></div>
+      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-plus">+18 built &amp; drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+6 under 20k</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span> <span class="bd-minus">-24 age/restore</span></div>
+      <div class="chips"><span class="chip chip-good">✅ runs perfect</span></div>
+      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">Must sell my 1966 Mustang
+Very desirable white color with perfect red interior
+Perfect body and paint
+Strong 200 cin 6 cylinder Engine
+Runs perfectly, transmission shifts smoothly
+Electronic ignition and high voltage coil upgrade, new spark plugs and wires
+New carburetor
+New shocks
+Recent complete brake job
+Recent suspension work and wheel alignment
+Excellent condition
+All windows work
+All gauges work
+Odometer reads 15,500
+New white wall tires all around
+Clean title - Registration good till March 2027 - Pink slip on hand
+Call or text. emails without phone numbers will be ignored</p></details>
       <a class="btn" href="https://www.craigslist.org/view/d/long-beach-1966-ford-mustang-coupe-like/6se7oVeUj2asB44AWEToYF" target="_blank" rel="noopener">View Listing →</a>
     </div>
 
-    <div class="card" data-gen="Gen1 (64.5-73)" data-price="9900" data-score="39.2" data-region="mid-city">
+    <div class="card" data-gen="Gen1 (64.5-73)" data-price="13900" data-score="61.0" data-year="1966" data-region="san diego">
       <div class="card-head">
-        <div class="score g-d" title="Quality flip score 0-100 — see 'How the Flip Score works'">39<span class="grade">D</span></div>
+        <div class="score g-a" title="Quality flip score 0-100 — see 'How the Flip Score works'">61<span class="grade">A</span></div>
+        <div class="year">1966</div>
+        <span class="chip chip-eng">V8</span>
+      </div>
+      <h3>1966 Ford Mustang Project 302 V8 100% Rust Free</h3>
+      <div class="meta">
+        <span class="price">$13900</span>
+        <span class="loc">San Diego</span>
+      </div>
+      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+6 rust free</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+12 under flip budget</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span> <span class="bd-plus">+6 original (body)</span> <span class="bd-plus">+6 no rust (body)</span> <span class="bd-plus">+8 gt (body)</span></div>
+      <div class="chips"><span class="chip chip-good">👍 rust free</span><span class="chip chip-warn">⚠️ project</span></div>
+      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">This is a nice 1966 Ford Mustang Coupe project.
+This car comes complete with everything you need to put it back together and extras.
+Recently rebuilt 302 V8 with an automatic 3 speed and power steering.
+100% Rust free.
+GT rear valance and exhaust trumpets
+The body is very straight and the paint presents nicely.
+The vinyl top is in good shape, absolutely no rust and no bubbles.
+C Code, originally came with a 289 V8.
+The pony interior is in excellent condition.
+Brand new carpet, seat covers and ‘Classic Instrument’ gauges.
+Floors are original and in good shape. No rust.
+Tires were put on about 6 months ago.
+Complete exhaust, exhaust manifolds, carburetor, intake manifold, drive shaft, power steering pump and more.
+If you have any questions or to set up a viewing. Please call or text me at 6l9. 918. 175O. Located in San Diego.
+Chevelle Mustang Convertible 390 Camaro</p></details>
+      <a class="btn" href="https://www.craigslist.org/view/d/costa-mesa-1966-ford-mustang-project/iBdsAt9qd6aKobFPKFEBxY" target="_blank" rel="noopener">View Listing →</a>
+    </div>
+
+    <div class="card" data-gen="Gen1 (64.5-73)" data-price="25000" data-score="57.0" data-year="1966" data-region="westside-southbay-310">
+      <div class="card-head">
+        <div class="score g-b" title="Quality flip score 0-100 — see 'How the Flip Score works'">57<span class="grade">B</span></div>
+        <div class="year">1966</div>
+        <span class="chip chip-eng">V8</span>
+      </div>
+      <h3>1966 Ford Mustang Coupe</h3>
+      <div class="meta">
+        <span class="price">$25000</span>
+        <span class="loc">westside-southbay-310</span>
+      </div>
+      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+4 clean title</span> <span class="bd-plus">+24 seller: drives great</span> <span class="bd-plus">+6 original (body)</span> <span class="bd-minus">-24 age/restore</span></div>
+      <div class="chips"></div>
+      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">1966 Ford Mustang Coupe Silver A/C Original 289 V8 Auto California Classic $25,000
+Beautiful 1966 Mustang Coupe finished in Silver with original interior. Powered by the original 289 V8 with a 3-speed automatic transmission. Runs strong, shifts smoothly, and drives great.
+Equipped with factory air conditioning and power steering — rare and desirable on a classic Mustang. Shows 200K miles and retains original parts: straight body, clean chrome, great stance, and a real head-turner.
+Located in Los Angeles, CA.
+💰 Price: $25,000 – Serious buyers only
+✔ Clean title
+✔ A/C, Power Steering
+✔ Original 289 V8
+✔ Automatic, RWD
+Sold AS-IS, WHERE-IS. The buyer is responsible for transport.
+Message me if you’re a serious buyer and ready to own a true American classic.</p></details>
+      <a class="btn" href="https://www.craigslist.org/view/d/pasadena-1966-ford-mustang-coupe/5TW4wxf5Sfo5W3m756Zxgo" target="_blank" rel="noopener">View Listing →</a>
+    </div>
+
+    <div class="card" data-gen="Gen1 (64.5-73)" data-price="9900" data-score="51.2" data-year="1964" data-region="mid-city">
+      <div class="card-head">
+        <div class="score g-b" title="Quality flip score 0-100 — see 'How the Flip Score works'">51<span class="grade">B</span></div>
         <div class="year">1964</div>
         <span class="chip chip-eng">6-cyl</span>
       </div>
@@ -251,12 +402,66 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
         <span class="price">$9900</span>
         <span class="loc">Mid-City</span>
       </div>
-      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+12 under flip budget</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span> <span class="bd-minus">-8 rust</span> <span class="bd-minus">-25 age/restore</span></div>
-      <div class="chips"><span class="chip chip-warn">⚠️ rust</span></div>
+      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+12 under flip budget</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span> <span class="bd-plus">+6 solid (body)</span> <span class="bd-plus">+6 original (body)</span> <span class="bd-minus">-25 age/restore</span></div>
+      <div class="chips"></div>
+      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">1964 was the first year Ford unveiled the Mustang to the American public. Its sturdy construction and distinguished design allowed this iconic classic to stand the test of time.
+I have moved out of state and cannot bring my piece of American history with me. I am selling my 1964 Mustang for $9,900.
+Vehicle Specifications:
+• Engine- Inline 6 Engine Size- 170 cubic-inches
+• Engine HP- 101hp
+• Engine Rebuild (less than 1000 miles)
+• Transmission- Manual 3 speed
+• Transmission Rebuild (less than 1000 miles)
+• Color- Poppy Red (original color)
+Vehicle Issues:
+• Paint on the hood is chipped
+• Radio is in place but disconnected
+• Gear shift has been rebuilt and functions well but rattles
+• Interior carpet is loose
+Overall, the Mustang is a solid car in good condition, with a clean title, no accidents, and no rust. I have the title in hand for the new owner.</p></details>
       <a class="btn" href="https://www.craigslist.org/view/d/san-diego-1964-ford-mustang-looking-for/qwhidyJAdRWf8xUKNbK6xC" target="_blank" rel="noopener">View Listing →</a>
     </div>
 
-    <div class="card" data-gen="Gen1 (64.5-73)" data-price="12000" data-score="38.6" data-region="rialto">
+    <div class="card" data-gen="Gen1 (64.5-73)" data-price="21995" data-score="47.6" data-year="1965" data-region="los angeles">
+      <div class="card-head">
+        <div class="score g-c" title="Quality flip score 0-100 — see 'How the Flip Score works'">48<span class="grade">C</span></div>
+        <div class="year">1965</div>
+        <span class="chip chip-eng">V8</span>
+      </div>
+      <h3>1965 Ford Mustang</h3>
+      <div class="meta">
+        <span class="price">$21995</span>
+        <span class="loc">Los Angeles</span>
+      </div>
+      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span> <span class="bd-plus">+6 rust free (body)</span> <span class="bd-plus">+6 california car (body)</span> <span class="bd-plus">+8 gt (body)</span> <span class="bd-minus">-3 as is</span> <span class="bd-minus">-24 age/restore</span></div>
+      <div class="chips"><span class="chip chip-warn">⚠️ as is</span></div>
+      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">1965 Ford Mustang Coupe Super Clean 2 Owner Rust Free California Car. &quot;C&quot; Code 289CID V8, Automatic, 4BBL HolleyCarb, Edelbrock Manifold, Dual Exhaust with Flowmasters, American Racing Alloy rims. A longtime California owner passed away and car was bought from the family. All it needed was a tune up and battery and runs like new.. This is a very reliable classic that can be driven and enjoyed every day. We have a clean California title in hand and current CA registration. VIN-5R07C224731.
+Vehicle is sold AS IS with no warranty whatsoever. We are a licensed and bonded California dealer for over twenty years at the same location. California buyers are responsible for $80 Document Fee, registration and applicable sales tax in addition to final auction price.Dennis Buys Classic Cars, 8931 Venice Blvd., L.A., CA. 90034 between Robertson and National. Hours Mon-Friday 9-6PM, Sat 10-3PM, Sunday by appointment only. Tel. 310-253-9977. Website: www.dennisbuyscars.com
+We are “THE KING OF AFFORDABLE CLASSICS!” Trades are WELCOME. We handle all DMV hassle, all you do is drive off! Prices do not include tax, license and any other applicable fees. Se habla Español. &quot;Face Time&quot; Tours Now Available. All vehicles are Freshly Detailed.
+Are you SELLING or TRADING a car? WE BUY CARS, TRUCKS, MOTORCYCLES and CLASSICS TOO. Call us now or go to http//dennisbuyscars.com for a FREE consultation and quote or to see our full inventory of cars for sale.
+WE ARE VERY SLOW in returning emails and messages and we don’t need PEN PALS. Call us! 310-253-9977. Cel for international calls and WhatsApp: 310-849-4920. THANK YOU</p></details>
+      <a class="btn" href="https://www.craigslist.org/view/d/los-angeles-1965-ford-mustang/1M74pXkED1cnXMoqFVv8Bs" target="_blank" rel="noopener">View Listing →</a>
+    </div>
+
+    <div class="card" data-gen="Gen1 (64.5-73)" data-price="19500" data-score="42.6" data-year="1965" data-region="rowland heights">
+      <div class="card-head">
+        <div class="score g-c" title="Quality flip score 0-100 — see 'How the Flip Score works'">43<span class="grade">C</span></div>
+        <div class="year">1965</div>
+        <span class="chip chip-eng">V8</span>
+      </div>
+      <h3>1965 mustang</h3>
+      <div class="meta">
+        <span class="price">$19500</span>
+        <span class="loc">Rowland Heights</span>
+      </div>
+      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+6 under 20k</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span> <span class="bd-plus">+6 original (body)</span> <span class="bd-minus">-24 age/restore</span></div>
+      <div class="chips"></div>
+      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">1965 mustang with 22k miles (possibly original) come with a 289 V8 black pony interior new suspension front and rear front and rear KYB shocks new fuel tank, aluminum radiator, MSD ignition new battery the car has hooker headers so its kind of loud I do have the original intake and carburetor there are new drum brake on the car as they only have 500 miles on them there are 14 inch wheels I may have the original 13 inch somewhere but no hub caps the wheels a five spoke American racing wheels.
+Last major upgrade is an electronic power steering assist with the original gear box so that it drives like a modern car. The car does have the original trans and rear end from what I know this car is about 80% done will need paint and body but it drives well no low ballers please</p></details>
+      <a class="btn" href="https://www.craigslist.org/view/d/rowland-heights-1965-mustang/7wR7Up4ncfQ1D6jizsUseE" target="_blank" rel="noopener">View Listing →</a>
+    </div>
+
+    <div class="card" data-gen="Gen1 (64.5-73)" data-price="12000" data-score="38.6" data-year="1965" data-region="rialto">
       <div class="card-head">
         <div class="score g-d" title="Quality flip score 0-100 — see 'How the Flip Score works'">39<span class="grade">D</span></div>
         <div class="year">1965</div>
@@ -269,76 +474,13 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
       </div>
       <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+12 under flip budget</span> <span class="bd-plus">+4 clean title</span> <span class="bd-minus">-24 age/restore</span></div>
       <div class="chips"></div>
+      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">All in good shape only need paint</p></details>
       <a class="btn" href="https://www.craigslist.org/view/d/rialto-ford-mustang-1965/pbfHWNYkSpR7KZd93fyFTJ" target="_blank" rel="noopener">View Listing →</a>
     </div>
 
-    <div class="card" data-gen="Gen1 (64.5-73)" data-price="18995" data-score="37.0" data-region="los angeles">
+    <div class="card" data-gen="Gen1 (64.5-73)" data-price="7850" data-score="20.2" data-year="1964" data-region="pomona">
       <div class="card-head">
-        <div class="score g-d" title="Quality flip score 0-100 — see 'How the Flip Score works'">37<span class="grade">D</span></div>
-        <div class="year">1966</div>
-        <span class="chip chip-eng">V8</span>
-      </div>
-      <h3>1966 Ford Mustang Coupe</h3>
-      <div class="meta">
-        <span class="price">$18995</span>
-        <span class="loc">Los Angeles</span>
-      </div>
-      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+6 under 20k</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span> <span class="bd-minus">-3 as is</span></div>
-      <div class="chips"><span class="chip chip-warn">⚠️ as is</span> <span class="chip chip-warn">⚠️ rust</span></div>
-      <a class="btn" href="https://www.craigslist.org/view/d/los-angeles-1966-ford-mustang-coupe/29pVzEotWWQBVmSJgqDSjy" target="_blank" rel="noopener">View Listing →</a>
-    </div>
-
-    <div class="card" data-gen="Gen1 (64.5-73)" data-price="19500" data-score="36.6" data-region="rowland heights">
-      <div class="card-head">
-        <div class="score g-d" title="Quality flip score 0-100 — see 'How the Flip Score works'">37<span class="grade">D</span></div>
-        <div class="year">1965</div>
-        <span class="chip chip-eng">V8</span>
-      </div>
-      <h3>1965 mustang</h3>
-      <div class="meta">
-        <span class="price">$19500</span>
-        <span class="loc">Rowland Heights</span>
-      </div>
-      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+6 under 20k</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span> <span class="bd-minus">-24 age/restore</span></div>
-      <div class="chips"></div>
-      <a class="btn" href="https://www.craigslist.org/view/d/rowland-heights-1965-mustang/7wR7Up4ncfQ1D6jizsUseE" target="_blank" rel="noopener">View Listing →</a>
-    </div>
-
-    <div class="card" data-gen="Gen1 (64.5-73)" data-price="13900" data-score="33.0" data-region="san diego">
-      <div class="card-head">
-        <div class="score g-d" title="Quality flip score 0-100 — see 'How the Flip Score works'">33<span class="grade">D</span></div>
-        <div class="year">1966</div>
-        <span class="chip chip-eng">V8</span>
-      </div>
-      <h3>1966 Ford Mustang Project 302 V8 100% Rust Free</h3>
-      <div class="meta">
-        <span class="price">$13900</span>
-        <span class="loc">San Diego</span>
-      </div>
-      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+6 rust free</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+12 under flip budget</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span></div>
-      <div class="chips"><span class="chip chip-good">👍 rust free</span><span class="chip chip-warn">⚠️ project</span> <span class="chip chip-warn">⚠️ rust</span> <span class="chip chip-warn">⚠️ project</span></div>
-      <a class="btn" href="https://www.craigslist.org/view/d/costa-mesa-1966-ford-mustang-project/iBdsAt9qd6aKobFPKFEBxY" target="_blank" rel="noopener">View Listing →</a>
-    </div>
-
-    <div class="card" data-gen="Gen1 (64.5-73)" data-price="21995" data-score="30.6" data-region="los angeles">
-      <div class="card-head">
-        <div class="score g-d" title="Quality flip score 0-100 — see 'How the Flip Score works'">31<span class="grade">D</span></div>
-        <div class="year">1965</div>
-        <span class="chip chip-eng">V8</span>
-      </div>
-      <h3>1965 Ford Mustang</h3>
-      <div class="meta">
-        <span class="price">$21995</span>
-        <span class="loc">Los Angeles</span>
-      </div>
-      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span> <span class="bd-minus">-3 as is</span> <span class="bd-minus">-8 rust</span></div>
-      <div class="chips"><span class="chip chip-warn">⚠️ as is</span> <span class="chip chip-warn">⚠️ rust</span></div>
-      <a class="btn" href="https://www.craigslist.org/view/d/los-angeles-1965-ford-mustang/1M74pXkED1cnXMoqFVv8Bs" target="_blank" rel="noopener">View Listing →</a>
-    </div>
-
-    <div class="card" data-gen="Gen1 (64.5-73)" data-price="7850" data-score="28.2" data-region="pomona">
-      <div class="card-head">
-        <div class="score g-d" title="Quality flip score 0-100 — see 'How the Flip Score works'">28<span class="grade">D</span></div>
+        <div class="score g-d" title="Quality flip score 0-100 — see 'How the Flip Score works'">20<span class="grade">D</span></div>
         <div class="year">1964</div>
         <span class="chip chip-eng">V8</span>
       </div>
@@ -349,23 +491,11 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
       </div>
       <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+12 under flip budget</span> <span class="bd-minus">-3 TITLE:missing</span> <span class="bd-minus">-8 restore</span> <span class="bd-minus">-25 age/restore</span></div>
       <div class="chips"><span class="chip chip-warn">⚠️ TITLE:missing</span> <span class="chip chip-warn">⚠️ restore</span></div>
+      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">19641/2 factory v8 260 F code ,factory Red ac car. Built May 7 1964.
+Hit in front battery apron ,Both shock towers are good ,all the glass and interior intact,needs floor work great car to restore.
+Both fenders and door tag all match.
+Serious buyers Only Price is Firm .Guys slow down a little it’s $7800 ..</p></details>
       <a class="btn" href="https://www.craigslist.org/view/d/pomona-1964-mustang-conv-factory-260-v8/pjMhz6GdZbo9vis6dyGwBV" target="_blank" rel="noopener">View Listing →</a>
-    </div>
-
-    <div class="card" data-gen="Gen1 (64.5-73)" data-price="25000" data-score="27.0" data-region="westside-southbay-310">
-      <div class="card-head">
-        <div class="score g-d" title="Quality flip score 0-100 — see 'How the Flip Score works'">27<span class="grade">D</span></div>
-        <div class="year">1966</div>
-        <span class="chip chip-eng">V8</span>
-      </div>
-      <h3>1966 Ford Mustang Coupe</h3>
-      <div class="meta">
-        <span class="price">$25000</span>
-        <span class="loc">westside-southbay-310</span>
-      </div>
-      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+4 clean title</span> <span class="bd-minus">-24 age/restore</span></div>
-      <div class="chips"></div>
-      <a class="btn" href="https://www.craigslist.org/view/d/pasadena-1966-ford-mustang-coupe/5TW4wxf5Sfo5W3m756Zxgo" target="_blank" rel="noopener">View Listing →</a>
     </div></section>
 <footer>
   <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
