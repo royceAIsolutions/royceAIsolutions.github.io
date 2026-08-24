@@ -7,8 +7,8 @@
     "subjects": "Math, 9th Grade Prep, Bible Study",
     "active": true,
     "today": "—",
-    "mtd": "918/1005 (91%)",
-    "ytd": "918/1005 (91%)",
+    "mtd": "—",
+    "ytd": "—",
     "topics": "Jul 15 Quiz, Factoring, Geometry",
     "difficulty": "🔥 Math 3 — 94%",
     "focus": "Radicals, Quadratics, Polynomials",
@@ -33,7 +33,7 @@
       }
     ],
     "calories": false,
-    "week": "15/16 (94%)",
+    "week": "—",
     "sessions": "12",
     "streak": "7 days"
   },
@@ -44,9 +44,9 @@
     "name": "Carter Koh",
     "subjects": "SAT Prep, Basketball, 11th Grade",
     "active": true,
-    "today": "64/103 (62%)",
-    "mtd": "382/523 (73%)",
-    "ytd": "382/523 (73%)",
+    "today": "—",
+    "mtd": "—",
+    "ytd": "—",
     "topics": "SAT Prep, Calorie Tracking",
     "difficulty": "⚡ SAT — On Track",
     "focus": "SAT prep + 4K cal daily + Bench Builder",
@@ -71,7 +71,7 @@
       }
     ],
     "calories": false,
-    "week": "8/10 (80%)",
+    "week": "—",
     "sessions": "6",
     "streak": "5 days"
   },
@@ -110,7 +110,8 @@
     ],
     "calories": false,
     "sessions": "4",
-    "streak": "3 days"
+    "streak": "3 days",
+    "week": "—"
   },
   {
     "first": "Paxton",
@@ -134,7 +135,8 @@
     "kpis": [],
     "calories": false,
     "sessions": "0",
-    "streak": "-"
+    "streak": "-",
+    "week": "—"
   },
   {
     "first": "Josh",
@@ -144,8 +146,8 @@
     "subjects": "Series 66, Series 7, Finance",
     "active": true,
     "today": "—",
-    "mtd": "47/50 (94%)",
-    "ytd": "47/50 (94%)",
+    "mtd": "—",
+    "ytd": "—",
     "topics": "Series 66, Series 7",
     "difficulty": "📋 Series 66 — 27/30 (90%)",
     "focus": "Series 66 (Uniform Combined), Series 7",
@@ -171,7 +173,8 @@
     ],
     "calories": false,
     "sessions": "3",
-    "streak": "2 days"
+    "streak": "2 days",
+    "week": "—"
   },
   {
     "first": "Mason",
@@ -206,7 +209,8 @@
         "val": "On track"
       }
     ],
-    "calories": false
+    "calories": false,
+    "week": "—"
   },
   {
     "first": "Pearl",
@@ -242,7 +246,8 @@
       }
     ],
     "calories": false,
-    "sessions": "3"
+    "sessions": "3",
+    "week": "—"
   },
   {
     "first": "Ruby",
@@ -278,7 +283,8 @@
       }
     ],
     "calories": false,
-    "sessions": "2"
+    "sessions": "2",
+    "week": "—"
   },
   {
     "first": "Carter",
@@ -315,7 +321,8 @@
       }
     ],
     "calories": false,
-    "sessions": "0"
+    "sessions": "0",
+    "week": "—"
   },
   {
     "first": "Chase",
@@ -352,7 +359,8 @@
       }
     ],
     "calories": false,
-    "sessions": "0"
+    "sessions": "0",
+    "week": "—"
   },
   {
     "first": "Tommy",
@@ -389,7 +397,8 @@
     ],
     "calories": false,
     "sessions": "0",
-    "streak": "New"
+    "streak": "New",
+    "week": "—"
   },
   {
     "id": "test user",
@@ -416,7 +425,8 @@
       }
     ],
     "sessions": "3",
-    "streak": "1 day"
+    "streak": "1 day",
+    "week": "—"
   },
   {
     "id": "test user",
@@ -443,7 +453,8 @@
         "label": "Streak",
         "val": "1 day"
       }
-    ]
+    ],
+    "week": "—"
   },
   {
     "first": "MacKenzie",
@@ -483,7 +494,8 @@
     "streak": "-",
     "school": "Talbot Hill",
     "dob": "2017-06-03",
-    "age": "9"
+    "age": "9",
+    "week": "—"
   },
   {
     "first": "Charles",
@@ -520,6 +532,7 @@
     ],
     "calories": false,
     "sessions": "0",
-    "streak": "-"
+    "streak": "-",
+    "week": "—"
   }
 ]
