@@ -27,13 +27,28 @@ a:hover{color:var(--accent)}
 .orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
 .orb-1{width:600px;height:600px;background:rgba(59,130,246,0.10);top:-300px;right:-200px}
 .orb-2{width:500px;height:500px;background:rgba(168,85,247,0.06);bottom:-250px;left:-150px}
-nav{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;max-width:var(--max-w);margin:0 auto;padding:0 24px;position:relative;z-index:2}
-.nav-logo{font-size:1.15rem;font-weight:700;color:var(--text)}
+nav{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;max-width:var(--max-w);margin:0 auto;padding:0 24px;position:sticky;top:0;z-index:1001;background:var(--bg);border-bottom:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(20px) saturate(1.5)}
+.nav-logo{font-size:1.15rem;font-weight:700;color:var(--text);display:flex;align-items:center;gap:10px}
+.nav-logo img{border-radius:9px}
 .nav-logo span{color:var(--accent-light)}
-.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
 .nav-links a{color:var(--text-secondary);font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
 .nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links a.active{color:var(--text);background:var(--accent-bg);border:1px solid var(--accent)}
 .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px!important;border-radius:8px}
+.nav-links a.nav-drawer-only{display:none!important}
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{color:var(--text-secondary);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--text);background:var(--accent-bg)}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+.mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+@media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
 .hero{max-width:var(--max-w);margin:0 auto;padding:60px 24px 30px;text-align:center}
 .hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;letter-spacing:-0.02em}
 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
@@ -91,7 +106,6 @@ nav{height:var(--nav-h);display:flex;align-items:center;justify-content:space-be
 .empty{grid-column:1/-1;background:var(--bg-card);border:1px dashed var(--border-hover);border-radius:var(--radius);padding:48px 24px;text-align:center;color:var(--text-secondary)}
 footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;color:var(--text-muted);font-size:0.85rem}
 @media(max-width:640px){
-  .nav-links a:not(.nav-cta){display:none}
   .grid{grid-template-columns:1fr}
   .btn-reset{margin-left:0}
 }
@@ -100,22 +114,27 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
 <body>
 <div class="orb orb-1"></div><div class="orb orb-2"></div>
 <nav>
-  <a href="/" class="nav-logo"><span>R</span> Royce<span>AI</span></a>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:36px;height:36px;border-radius:9px" alt="R"> Royce<span>AI</span></a>
   <div class="nav-links">
     <a href="/products">Products</a>
-    <a href="/billionaires">Billionaires</a>
-    <a href="/exotics">Exotics</a>
-    <a href="/real-estate">Real Estate</a>
-    <a href="/land-rover">Land Rover</a>
-    <a href="/mustangs">Mustangs</a>
-    <a href="/blog">Blog</a>
+    <a href="/tutor">✨ Tutor</a>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/mustangs" class="nav-drawer-only active">🐎 Mustangs</a>
+    <a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
+    <a href="/billionaires" class="nav-drawer-only">💰 Billionaires</a>
+    <a href="/real-estate" class="nav-drawer-only">🏠 Real Estate</a>
+    <a href="/blog" class="nav-drawer-only">Blog</a>
     <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<div class="mobile-menu" id="mobileMenu"></div>
 <section class="hero">
   <h1>Classic <span class="gradient">Mustang</span> Flip Scanner</h1>
   <p>1964–66 Mustangs, 6-cyl &amp; V8 only — live Craigslist scan, scored by flip potential. Built, drivable cars rank first.</p>
-  <p style="margin-top:14px"><span class="stat">12 listings · scanned 2026-08-24 18:46Z · orangecounty, losangeles, inlandempire, sandiego, ventura, santabarbara, palmsprings</span></p>
+  <p style="margin-top:14px"><span class="stat">12 listings · scanned 2026-08-24 11:46am PT · orangecounty, losangeles, inlandempire, sandiego, ventura, santabarbara, palmsprings</span></p>
 </section>
 <section class="rubric">
   <details>
@@ -370,6 +389,36 @@ function apply(){
 document.getElementById('fGen').onchange=apply;document.getElementById('fPrice').oninput=apply;document.getElementById('fSort').onchange=apply;
 function resetFilters(){document.getElementById('fGen').value='';document.getElementById('fPrice').value='';document.getElementById('fSort').value='score';apply();}
 apply();
+</script>
+<script>
+(function(){
+  function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(menu.children.length===0&&links){
+      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){menu.appendChild(a.cloneNode(true));});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
 </script>
 </body>
 </html>
