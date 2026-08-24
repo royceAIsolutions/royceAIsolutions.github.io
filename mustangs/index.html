@@ -149,8 +149,8 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
   </label>
   <label>Sort
     <select id="fSort">
-      <option value="price" selected>Price low→high</option>
-      <option value="score">Flip score</option>
+      <option value="score" selected>Flip score</option>
+      <option value="price">Price low→high</option>
       <option value="year">Year old→new</option>
     </select>
   </label>
@@ -368,7 +368,7 @@ function apply(){
   cards.forEach(c=>grid.appendChild(c));
 }
 document.getElementById('fGen').onchange=apply;document.getElementById('fPrice').oninput=apply;document.getElementById('fSort').onchange=apply;
-function resetFilters(){document.getElementById('fGen').value='';document.getElementById('fPrice').value='';document.getElementById('fSort').value='price';apply();}
+function resetFilters(){document.getElementById('fGen').value='';document.getElementById('fPrice').value='';document.getElementById('fSort').value='score';apply();}
 apply();
 </script>
 </body>
