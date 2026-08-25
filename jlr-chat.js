@@ -2,7 +2,7 @@
    PIN-gated (SHA-256 client-side), talks to the bridge + Hermes webhook. */
 (function () {
   'use strict';
-  var API = 'https://household-plot-biography-burlington.trycloudflare.com';
+  var API = 'https://love-textbooks-massive-both.trycloudflare.com';
   var AUTH_KEY = 'jlr_chat_pin_hash';
   var HIST_KEY = 'jlr_chat_history';
   var AUTH_TTL = 30 * 24 * 3600 * 1000; // 30 days
