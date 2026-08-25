@@ -79,5 +79,14 @@
     "subject": "test",
     "date": "2026-08-25",
     "ts": 1787626821308
+  },
+  {
+    "student": "AutoFixer Test",
+    "correct": 1,
+    "total": 1,
+    "percent": 100,
+    "subject": "test",
+    "date": "2026-08-25",
+    "ts": 1787670027440
   }
 ]
