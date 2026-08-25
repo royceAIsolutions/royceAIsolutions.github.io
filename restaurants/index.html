@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top 100 OC Restaurants | RoyceAI</title>
+<meta name="description" content="The 100 best restaurants in Orange County — scored, sorted by cuisine and price, top-3 entrees, draft beer picks. Irvine, Huntington Beach, Costa Mesa, Anaheim and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://royceai.com/restaurants/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#07070a;color:#eeeef0;line-height:1.6;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:64px;max-width:1200px;margin:0 auto;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);position:sticky;top:0;z-index:100}
+.nav-logo{font-weight:700;font-size:1.1rem;color:#eeeef0;text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-logo img{border-radius:9px}
+.nav-logo span{color:#a78bfa}
+.nav-links{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.nav-links a{color:#88889a;text-decoration:none;font-size:0.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:#eeeef0;background:rgba(124,92,252,0.08)}
+.nav-links a.active{color:#fff;background:rgba(124,92,252,0.15);border:1px solid rgba(124,92,252,0.3)}
+.nav-links .nav-cta{background:#7c5cfc;color:#fff!important;font-weight:600;padding:8px 22px;border-radius:8px}
+.hero{padding:3.5rem 1.5rem 1.5rem;text-align:center;max-width:900px;margin:0 auto}
+.hero h1{font-size:2.4rem;font-weight:800;letter-spacing:-0.03em;color:#fff}
+.gradient{background:linear-gradient(135deg,#a78bfa,#7c5cfc);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#88889a;margin-top:0.75rem;font-size:1rem}
+.hero .count{color:#a78bfa;font-weight:600}
+.filters{max-width:1200px;margin:1.5rem auto 0;padding:0 1.5rem;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.filters input,.filters select{background:#0e0e12;border:1px solid rgba(255,255,255,0.1);color:#eeeef0;padding:10px 14px;border-radius:10px;font-size:0.875rem;outline:none;font-family:inherit}
+.filters input:focus,.filters select:focus{border-color:#7c5cfc}
+.filters input{flex:1;min-width:180px}
+.filters select{min-width:130px}
+.toggle{display:inline-flex;align-items:center;gap:8px;background:#0e0e12;border:1px solid rgba(255,255,255,0.1);padding:8px 14px;border-radius:10px;font-size:0.85rem;color:#88889a;cursor:pointer;user-select:none}
+.toggle input{display:none}
+.toggle .box{width:18px;height:18px;border-radius:5px;border:1px solid rgba(255,255,255,0.2);display:inline-flex;align-items:center;justify-content:center;font-size:0.75rem;color:#fff;background:transparent}
+.toggle input:checked + .box{background:#7c5cfc;border-color:#7c5cfc}
+.toggle.on{color:#eeeef0}
+.grid{max-width:1200px;margin:2rem auto 4rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px}
+.card{background:#0e0e12;border:1px solid rgba(255,255,255,0.07);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.2s,border-color 0.2s}
+.card:hover{transform:translateY(-3px);border-color:rgba(124,92,252,0.4)}
+.card-head{padding:16px 18px 8px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.card-title{font-size:1.05rem;font-weight:700;color:#fff;line-height:1.3}
+.card-title .emoji{margin-right:6px}
+.card-meta{color:#88889a;font-size:0.8rem;margin-top:4px;display:flex;gap:10px;flex-wrap:wrap}
+.score{flex:none;min-width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(124,92,252,0.2),rgba(167,139,250,0.1));border:1px solid rgba(124,92,252,0.35);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1}
+.score b{font-size:1.25rem;color:#fff;font-weight:800}
+.score small{font-size:0.62rem;color:#a78bfa;font-weight:600;letter-spacing:0.08em}
+.badges{padding:0 18px 6px;display:flex;gap:6px;flex-wrap:wrap}
+.badge{font-size:0.7rem;font-weight:600;padding:4px 10px;border-radius:100px;letter-spacing:0.02em}
+.badge.cuisine{background:rgba(124,92,252,0.12);border:1px solid rgba(124,92,252,0.25);color:#c4b5fd}
+.badge.price{background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.25);color:#6ee7b7}
+.badge.draft{background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.3);color:#fcd34d}
+.badge.bp{background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);color:#6ee7b7}
+.badge.area{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#88889a}
+.entrees{padding:8px 18px 4px;font-size:0.82rem;color:#c4b5fd}
+.entrees b{color:#a78bfa;font-size:0.78rem;display:block;margin-bottom:4px;letter-spacing:0.04em;text-transform:uppercase}
+.entrees ol{margin:0 0 0 18px;color:#c4b5fd;display:flex;flex-direction:column;gap:3px}
+.card-note{padding:8px 18px 14px;color:#5c5c6e;font-size:0.78rem}
+.card-link{display:inline-flex;align-items:center;justify-content:center;margin-top:auto;background:rgba(124,92,252,0.12);border:1px solid rgba(124,92,252,0.3);color:#c4b5fd;text-decoration:none;padding:9px 14px;border-radius:10px;font-weight:600;font-size:0.85rem;transition:all 0.2s}
+.card-link:hover{background:#7c5cfc;color:#fff}
+.empty{max-width:1200px;margin:3rem auto;text-align:center;color:#88889a;padding:0 1.5rem}
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:40px 24px;max-width:1200px;margin:0 auto;text-align:center}
+footer .copy{color:#5c5c6e;font-size:0.8rem}
+footer .links{display:flex;gap:20px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+footer .links a{color:#88889a;text-decoration:none;font-size:0.875rem}
+footer .links a:hover{color:#a78bfa}
+@media(max-width:640px){.hero h1{font-size:1.7rem}.filters{padding:0 16px}.grid{grid-template-columns:1fr;padding:0 16px}nav{padding:0 16px;flex-direction:column;height:auto;gap:6px;padding:8px 16px}.nav-logo{width:100%;justify-content:center}.nav-links{width:100%;justify-content:center}}
+/* ===== MOBILE NAV (hamburger + drawer) ===== */
+.nav-burger{display:none}
+@media(max-width:640px){
+  nav{z-index:1001;background:var(--bg,#07070a)}
+  .nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated,#15151b);border:1px solid var(--border,rgba(255,255,255,0.06));border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+  .nav-burger span{display:block;width:18px;height:2px;background:var(--text,#eeeef0);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-burger.open span:nth-child(2){opacity:0}
+  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(300px,82vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border,rgba(255,255,255,0.06));padding:calc(var(--nav-h,64px) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
+  .mobile-menu.open{transform:translateX(0)}
+  .mobile-menu a{color:var(--text-secondary,#88889a);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
+  .mobile-menu a:hover,.mobile-menu a.active{color:var(--text,#eeeef0);background:var(--accent-bg,rgba(124,92,252,0.08))}
+  .mobile-menu .nav-cta{background:var(--accent,#7c5cfc);color:#fff!important;font-weight:600;margin-top:10px;text-align:center;animation:pulse-glow 2.5s ease-in-out infinite}
+  .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+  .mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent,#7c5cfc),0 4px 20px rgba(124,92,252,0.2)}50%{box-shadow:0 0 0 1px var(--accent,#7c5cfc),0 4px 40px rgba(124,92,252,0.2),0 0 60px rgba(124,92,252,0.2)}}
+</style>
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:36px;height:36px;border-radius:9px" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/products">Products</a>
+    <a href="/tutor">✨ Tutor</a>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/restaurants" class="active">🍽️ Restaurants</a>
+    <a href="/blog">Blog</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
+  </div>
+<button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<div class="mobile-menu" id="mobileMenu"></div>
+
+<section class="hero">
+  <h1><span class="gradient">Top 100 Restaurants in Orange County</span></h1>
+  <p><span class="count" id="count">0</span> restaurants · scored /10 · top-3 entrees · draft beer picks · updated August 25, 2026</p>
+</section>
+
+<div class="filters">
+  <input type="text" id="q" placeholder="Search restaurant, cuisine, area…">
+  <select id="cuisine"><option value="">All Cuisines</option><option value="american">American</option><option value="bar">Bar</option><option value="bbq">Bbq</option><option value="breakfast">Breakfast</option><option value="burger">Burger</option><option value="chicken">Chicken</option><option value="chinese">Chinese</option><option value="cuban">Cuban</option><option value="dessert">Dessert</option><option value="european">European</option><option value="french">French</option><option value="german">German</option><option value="indian">Indian</option><option value="italian">Italian</option><option value="japanese">Japanese</option><option value="korean">Korean</option><option value="mediterranean">Mediterranean</option><option value="mexican">Mexican</option><option value="pizza">Pizza</option><option value="ramen">Ramen</option><option value="seafood">Seafood</option><option value="spanish">Spanish</option><option value="steakhouse">Steakhouse</option><option value="thai">Thai</option><option value="vietnamese">Vietnamese</option></select>
+  <select id="price">
+    <option value="">Any Price</option>
+    <option value="$">$ (under $13)</option>
+    <option value="$$">$$ ($13–20)</option>
+    <option value="$$$">$$$ ($20–35)</option>
+    <option value="$$$$">$$$$ ($35+)</option>
+  </select>
+  <select id="area">
+    <option value="">All Areas</option>
+    <option value="irvine">Irvine</option>
+    <option value="tustin">Tustin</option>
+    <option value="hb">Huntington Beach</option>
+    <option value="costa-mesa">Costa Mesa</option>
+    <option value="anaheim">Anaheim</option>
+    <option value="orange">Orange</option>
+    <option value="garden-grove">Garden Grove</option>
+    <option value="santa-ana">Santa Ana</option>
+    <option value="laguna-beach">Laguna Beach</option>
+    <option value="newport-beach">Newport Beach</option>
+    <option value="mission-viejo">Mission Viejo</option>
+    <option value="laguna-hills">Laguna Hills</option>
+    <option value="lake-forest">Lake Forest</option>
+    <option value="san-clemente">San Clemente</option>
+    <option value="san-juan-capistrano">San Juan Capistrano</option>
+    <option value="corona-del-mar">Corona del Mar</option>
+  </select>
+  <label class="toggle" id="draftToggle"><input type="checkbox" id="draft"><span class="box">✓</span>🍺 Draft beer</label>
+  <select id="sort">
+    <option value="score">Sort: Score (best first)</option>
+    <option value="price_asc">Price: Low → High</option>
+    <option value="price_desc">Price: High → Low</option>
+    <option value="name">Name A–Z</option>
+  </select>
+</div>
+
+<div class="grid" id="grid"></div>
+<div class="empty" id="empty" style="display:none">No restaurants match your filters.</div>
+
+<footer>
+  <div class="links">
+    <a href="/products">Products</a><a href="/tutor">Tutor</a>
+    <a href="/restaurants">Restaurants</a><a href="/blog">Blog</a><a href="/chat">Chat</a>
+  </div>
+  <div class="copy">RoyceAI Solutions · Irvine, CA</div>
+</footer>
+
+<script>
+const R = [{"name": "Knife Pleat", "area": "costa-mesa", "cuisine": "french", "price": 60, "entrees": ["Tasting Menu (seasonal)", "Butter-Poached Lobster", "Baba Au Rhum"], "beer": false, "draft": false, "score": 9.6, "note": "French, $300 prefix", "rank": 1, "score_src": "Top-99 curated rank #1"}, {"name": "Hana re", "area": "costa-mesa", "cuisine": "japanese", "price": 18, "entrees": ["Omakase (kaiseki)", "Sushi Nigiri Selection", "Seasonal Tasting"], "beer": false, "draft": false, "score": 9.59, "note": "Japanese kaiseki", "rank": 2, "score_src": "Top-99 curated rank #2"}, {"name": "Omakase by Gino", "area": "tustin", "cuisine": "japanese", "price": 60, "entrees": ["Omakase (chef's choice)", "Nigiri Set", "Bluefin Toro"], "beer": false, "draft": false, "score": 9.58, "note": "Omakase sushi, OC's best", "rank": 3, "score_src": "Top-99 curated rank #3"}, {"name": "Marché Moderne", "area": "costa-mesa", "cuisine": "french", "price": 18, "entrees": ["Tasting Menu", "Maine Lobster", "Bouchon of Foie Gras"], "beer": false, "draft": false, "score": 9.57, "note": "French contemporary, Brad Johnson's #1", "rank": 4, "score_src": "Top-99 curated rank #4"}, {"name": "Bourbon Steak", "area": "dana-point", "cuisine": "steakhouse", "price": 45, "entrees": ["A5 Wagyu", "American Wagyu Ribeye", "Potato Puree Trio"], "beer": false, "draft": false, "score": 9.56, "note": "High-end steakhouse", "rank": 5, "score_src": "Top-99 curated rank #5"}, {"name": "Selanne Steak Tavern", "area": "laguna-beach", "cuisine": "steakhouse", "price": 45, "entrees": ["Filet Mignon 12oz", "Dry Aged Ribeye", "Braised Beef Short Ribs"], "beer": true, "draft": true, "score": 9.54, "note": "Historic 1934 home owned by Teemu Selanne; Michelin Recommended. Selanne On Tap draft program.", "rank": 6, "score_src": "Top-99 curated rank #6"}, {"name": "Farmhouse at Roger's Gardens", "area": "corona-del-mar", "cuisine": "american", "price": 18, "entrees": ["Heirloom Tomato Salad", "Pan-Roasted Fish", "Garden Vegetable Tart"], "beer": true, "draft": true, "score": 9.53, "note": "Farm-to-table inside Roger's Gardens nursery. Garden patio, seasonal menu.", "rank": 7, "score_src": "Top-99 curated rank #7"}, {"name": "Vaca", "area": "costa-mesa", "cuisine": "spanish", "price": 45, "entrees": ["Paella de Mariscos", "50+ Day Dry-Aged Prime Ribeye", "Smoked Chicken Cannelloni"], "beer": true, "draft": true, "score": 9.52, "note": "Chef Amar Santana's wood-fired Spanish spot near SCP. Estrella Damm on draft.", "rank": 8, "score_src": "Top-99 curated rank #8"}, {"name": "Fable & Spirit", "area": "newport-beach", "cuisine": "american", "price": 18, "entrees": ["Dry-Aged Duck", "Chef's Tasting", "Seafood Tower"], "beer": false, "draft": false, "score": 9.51, "note": "New American", "rank": 9, "score_src": "Top-99 curated rank #9"}, {"name": "The Ranch", "area": "anaheim", "cuisine": "american", "price": 18, "entrees": ["58 oz Cowboy Ribeye", "16 oz Prime Angus NY Strip", "24-Hr Braised Beef Short Rib"], "beer": true, "draft": true, "score": 9.5, "note": "Ranch-to-table", "rank": 10, "score_src": "Top-99 curated rank #10"}, {"name": "Poppy & Seed", "area": "orange", "cuisine": "american", "price": 18, "entrees": ["Seasonal Tasting", "Burrata", "Heirloom Veggie Plate"], "beer": false, "draft": false, "score": 9.49, "note": "New American, seasonal", "rank": 11, "score_src": "Top-99 curated rank #11"}, {"name": "Mayfield", "area": "san-juan-capistrano", "cuisine": "american", "price": 18, "entrees": ["Buttermilk Fried Chicken", "Ora King Salmon", "Seasonal Pasta"], "beer": false, "draft": false, "score": 9.48, "note": "Seasonal New American", "rank": 12, "score_src": "Top-99 curated rank #12"}, {"name": "Heritage Barbecue", "area": "san-juan-capistrano", "cuisine": "bbq", "addr": "31721 Camino Capistrano, San Juan Capistrano", "price": 25, "entrees": ["Brisket (1/2 lb) $15", "Pork Spare Ribs (1/2 lb) $13", "Mac & Cheese $7"], "beer": false, "draft": false, "score": 9.47, "note": "Texas-style oak pit — may sell out", "rank": 13, "score_src": "Top-99 curated rank #13"}, {"name": "Smoke Queen Barbecue", "area": "santa-ana", "cuisine": "bbq", "price": 18, "entrees": ["Brisket", "Pork Ribs", "Smoked Turkey"], "beer": false, "draft": false, "score": 9.46, "note": "Next-gen OC BBQ", "rank": 14, "score_src": "Top-99 curated rank #14"}, {"name": "Fat of the Land", "area": "santa-ana", "cuisine": "bbq", "price": 18, "entrees": ["Chicken Inasal", "Lechon Kawali", "Filipino BBQ Platter"], "beer": false, "draft": false, "score": 9.45, "note": "Filipino BBQ, Yelp's #19 in US", "rank": 15, "score_src": "Top-99 curated rank #15"}, {"name": "Matsu", "area": "santa-ana", "cuisine": "japanese", "price": 18, "entrees": ["Yakiniku Set", "Wagyu Short Rib", "Kalbi"], "beer": false, "draft": false, "score": 9.44, "note": "Japanese BBQ yakiniku", "rank": 16, "score_src": "Top-99 curated rank #16"}, {"name": "Gangnam Station", "area": "buena-park", "cuisine": "bbq", "price": 18, "entrees": ["AYCE KBBQ", "Pork Belly", "Beef Bulgogi"], "beer": false, "draft": false, "score": 9.42, "note": "Korean BBQ, 4.5 stars, AYCE", "rank": 17, "score_src": "Top-99 curated rank #17"}, {"name": "Baekjeong", "area": "irvine", "cuisine": "bbq", "price": 18, "entrees": ["Prime Pork Belly", "Beef Short Rib", "Combo Set"], "beer": false, "draft": false, "score": 9.41, "note": "Premium KBBQ, Kang Ho Dong chain", "rank": 18, "score_src": "Top-99 curated rank #18"}, {"name": "I Can Barbecue", "area": "", "cuisine": "bbq", "price": 18, "entrees": ["AYCE KBBQ", "Galbi", "Pork Belly"], "beer": false, "draft": false, "score": 9.4, "note": "AYCE KBBQ great value", "rank": 19, "score_src": "Top-99 curated rank #19"}, {"name": "Gooyi92", "area": "irvine", "cuisine": "bbq", "price": 18, "entrees": ["Premium KBBQ Set", "Beef Brisket", "Pork Collar"], "beer": false, "draft": false, "score": 9.39, "note": "Upscale KBBQ, newer buzz", "rank": 20, "score_src": "Top-99 curated rank #20"}, {"name": "Burritos La Palma", "area": "santa-ana", "cuisine": "american", "price": 18, "entrees": ["Carne Asada Burrito", "Adobada Burrito", "Breakfast Burrito"], "beer": false, "draft": false, "score": 9.38, "note": "Legendary burritos, cash only", "rank": 21, "score_src": "Top-99 curated rank #21"}, {"name": "Taco Mesita", "area": "santa-ana", "cuisine": "american", "price": 18, "entrees": ["Tacos de Asada", "Al Pastor Tacos", "Micheladas"], "beer": false, "draft": false, "score": 9.37, "note": "Tacos, micheladas", "rank": 22, "score_src": "Top-99 curated rank #22"}, {"name": "Mariscos El Yaqui", "area": "santa-ana", "cuisine": "seafood", "price": 18, "entrees": ["Aguachiles", "Ceviche Tostada", "Camaron Tacos"], "beer": false, "draft": false, "score": 9.36, "note": "Seafood, mariscos", "rank": 23, "score_src": "Top-99 curated rank #23"}, {"name": "Alta Baja Market", "area": "santa-ana", "cuisine": "mexican", "price": 18, "entrees": ["Tacos de Pescado", "Mushroom Tostada", "Mexican Brunch"], "beer": false, "draft": false, "score": 9.35, "note": "Market + Mexican kitchen", "rank": 24, "score_src": "Top-99 curated rank #24"}, {"name": "Anepalco", "area": "orange", "cuisine": "mexican", "price": 18, "entrees": ["Chilaquiles", "Mole Enchiladas", "Huevos Divorciados"], "beer": true, "draft": true, "score": 9.34, "note": "Chef Daniel Godinez's brunch favorite. HH lists tap beers, house mole, mezcal program.", "rank": 25, "score_src": "Top-99 curated rank #25"}, {"name": "Chaak", "area": "tustin", "cuisine": "mexican", "price": 18, "entrees": ["Cochinita Pibil", "Poc Chuc", "Sopa de Lima"], "beer": false, "draft": false, "score": 9.32, "note": "Modern Yucatan Mexican", "rank": 26, "score_src": "Top-99 curated rank #26"}, {"name": "Tacos Los Cholos", "addr": "Santa Ana", "cuisine": "mexican", "price": 18, "entrees": ["Loaded potato +", "Burrito + loaded potato +"], "beer": false, "draft": false, "score": 9.31, "note": "4.6 stars — tacos, burritos, loaded potatoes. Straight fire.", "yelp": "https://www.yelp.com/biz/tacos-los-cholos-santa-ana-santa-ana-7", "rank": 27, "score_src": "Top-99 curated rank #27", "area": "anaheim"}, {"name": "Fonda Moderna", "area": "anaheim", "cuisine": "american", "price": 18, "entrees": ["Birria Tacos", "Carne Asada", "Chiles Rellenos"], "beer": false, "draft": false, "score": 9.3, "note": "Elevated, former KFC building", "rank": 28, "score_src": "Top-99 curated rank #28"}, {"name": "Lola Gaspar", "area": "santa-ana", "cuisine": "mexican", "price": 18, "entrees": ["Short Rib Tacos", "Chicharron Tacos", "Smoked Salsa"], "beer": false, "draft": false, "score": 9.29, "note": "Mexican small plates", "rank": 29, "score_src": "Top-99 curated rank #29"}, {"name": "Khan Saab", "area": "fullerton", "cuisine": "indian", "price": 45, "entrees": ["Butter Chicken", "Lamb Biryani", "Chef's Tasting"], "beer": false, "draft": false, "score": 9.28, "note": "Pakistani-Indian fine dining", "rank": 30, "score_src": "Top-99 curated rank #30"}, {"name": "Ohshima", "area": "orange", "cuisine": "japanese", "price": 18, "entrees": ["Katsu Curry", "Chicken Karaage", "Tonkotsu Ramen"], "beer": false, "draft": false, "score": 9.27, "note": "Japanese comfort, katsu curry", "rank": 31, "score_src": "Top-99 curated rank #31"}, {"name": "Garlic and Chives", "area": "garden-grove", "cuisine": "vietnamese", "price": 18, "entrees": ["Bo La Lot (beef in betel leaf)", "Crispy Noodles", "Garlic Butter Wings"], "beer": false, "draft": false, "score": 9.26, "note": "Modern Vietnamese", "rank": 32, "score_src": "Top-99 curated rank #32"}, {"name": "Banh Cuon Luu Luyen", "area": "westminster", "cuisine": "american", "price": 18, "entrees": ["Steamed Rice Rolls (Banh Cuon)", "Cha Lua", "Nem Cuon"], "beer": false, "draft": false, "score": 9.25, "note": "Steamed rice rolls", "rank": 33, "score_src": "Top-99 curated rank #33"}, {"name": "Pho 79", "area": "santa-ana", "cuisine": "vietnamese", "price": 18, "entrees": ["Pho Tai", "Pho Ga", "Spring Rolls"], "beer": false, "draft": false, "score": 9.24, "note": "Iconic pho", "rank": 34, "score_src": "Top-99 curated rank #34"}, {"name": "Nep Cafe", "area": "fountain-valley", "cuisine": "vietnamese", "price": 18, "entrees": ["Salt & Pepper Wings", "Shaking Beef", "Garlic Noodles"], "beer": false, "draft": false, "score": 9.23, "note": "Modern Vietnamese", "rank": 35, "score_src": "Top-99 curated rank #35"}, {"name": "Brodard", "area": "westminster", "cuisine": "vietnamese", "price": 18, "entrees": ["Nem Nuong Cuon (spring rolls)", "Bun Cha Gio", "Grilled Pork"], "beer": false, "draft": false, "score": 9.21, "note": "Spring rolls, Vietnamese", "rank": 36, "score_src": "Top-99 curated rank #36"}, {"name": "Manaao", "area": "santa-ana", "cuisine": "thai", "price": 18, "entrees": ["Khao Soi", "Larb", "Papaya Salad"], "beer": false, "draft": false, "score": 9.2, "note": "Northern Thai", "rank": 37, "score_src": "Top-99 curated rank #37"}, {"name": "Nok's Kitchen", "area": "santa-ana", "cuisine": "thai", "price": 18, "entrees": ["Lao Sausage", "Khao Piak Sen", "Larb"], "beer": false, "draft": false, "score": 9.19, "note": "Lao/Thai, hidden gem", "rank": 38, "score_src": "Top-99 curated rank #38"}, {"name": "A&J Restaurant", "area": "irvine", "cuisine": "chinese", "price": 18, "entrees": ["Beef Noodle Soup", "Pan-Fried Dumplings", "Wonton Soup"], "beer": false, "draft": false, "score": 9.18, "note": "Taiwanese beef noodle soup", "rank": 39, "score_src": "Top-99 curated rank #39"}, {"name": "Ramen Nagi", "area": "costa-mesa", "cuisine": "ramen", "price": 18, "entrees": ["Butao King", "Black King", "Red King"], "beer": false, "draft": false, "score": 9.17, "note": "Best ramen in OC", "rank": 40, "score_src": "Top-99 curated rank #40"}, {"name": "HiroNori", "area": "tustin", "cuisine": "ramen", "price": 18, "entrees": ["Original Tonkotsu", "Garlic Tonkotsu", "Pork Gyoza"], "beer": false, "draft": false, "score": 9.16, "note": "Rich tonkotsu ramen", "rank": 41, "score_src": "Top-99 curated rank #41", "addr": "15231 Barranca Pkwy, Irvine"}, {"name": "Sushi Wasabi", "area": "buena-park", "cuisine": "japanese", "price": 60, "entrees": ["Omakase", "Nigiri Set", "Bluefin"], "beer": false, "draft": false, "score": 9.15, "note": "Hidden omakase gem", "rank": 42, "score_src": "Top-99 curated rank #42"}, {"name": "Ma's House", "area": "orange", "cuisine": "chinese", "price": 18, "entrees": ["Hand-Pulled Noodles", "Dan Dan Noodles", "Mapo Tofu"], "beer": false, "draft": false, "score": 9.14, "note": "Szechuan, hand-pulled noodles", "rank": 43, "score_src": "Top-99 curated rank #43"}, {"name": "Tim Ho Wan", "area": "irvine", "cuisine": "chinese", "price": 18, "entrees": ["BBQ Pork Buns", "Har Gow", "Cheung Fun"], "beer": false, "draft": false, "score": 9.13, "note": "Michelin dim sum from HK", "rank": 44, "score_src": "Top-99 curated rank #44"}, {"name": "Mo Ran Gak", "area": "garden-grove", "cuisine": "korean", "price": 18, "entrees": ["Galbi Jjim", "Kimchi Jjigae", "Bulgogi"], "beer": false, "draft": false, "score": 9.12, "note": "Korean homestyle", "rank": 45, "score_src": "Top-99 curated rank #45"}, {"name": "Jinsol Gukbap", "area": "buena-park", "cuisine": "korean", "price": 18, "entrees": ["Pork Gukbap", "Dwenjang Jjigae", "Bossam"], "beer": false, "draft": false, "score": 9.11, "note": "Korean pork soup", "rank": 46, "score_src": "Top-99 curated rank #46"}, {"name": "Jang Mo Jip", "area": "irvine", "cuisine": "korean", "price": 18, "entrees": ["Bossam", "Galbi", "Pajeon"], "beer": false, "draft": false, "score": 9.09, "note": "Korean homestyle", "rank": 47, "score_src": "Top-99 curated rank #47"}, {"name": "Yigah", "area": "garden-grove", "cuisine": "korean", "price": 18, "entrees": ["Jajangmyeon", "Tangsuyuk", "Korean-Chinese Set"], "beer": false, "draft": false, "score": 9.08, "note": "Korean-Chinese fusion", "rank": 48, "score_src": "Top-99 curated rank #48"}, {"name": "Gaenali Bon Ga", "area": "buena-park", "cuisine": "korean", "price": 18, "entrees": ["Galbi Tang", "Bulgogi", "Kimchi Stew"], "beer": false, "draft": false, "score": 9.07, "note": "Korean homestyle", "rank": 49, "score_src": "Top-99 curated rank #49"}, {"name": "Dookki", "area": "buena-park", "cuisine": "american", "price": 18, "entrees": ["Tteokbokki Buffet", "Fish Cake", "Fried Chicken"], "beer": false, "draft": false, "score": 9.06, "note": "Tteokbokki buffet", "rank": 50, "score_src": "Top-99 curated rank #50"}, {"name": "Fuoco", "area": "fullerton", "cuisine": "pizza", "price": 18, "entrees": ["Margherita Pizza", "Diavola Pizza", "Burrata"], "beer": false, "draft": false, "score": 9.05, "note": "Best Neapolitan pizza in OC", "rank": 51, "score_src": "Top-99 curated rank #51"}, {"name": "Truly Pizza", "area": "santa-ana", "cuisine": "pizza", "price": 18, "entrees": ["Detroit Square Pizza", "Pepperoni Square", "Vodka Sauce Square"], "beer": false, "draft": false, "score": 9.04, "note": "Detroit-style square pizza", "rank": 52, "score_src": "Top-99 curated rank #52"}, {"name": "The Parlor", "area": "santa-ana", "cuisine": "italian", "price": 18, "entrees": ["Short Rib Pappardelle", "Burrata", "Tiramisu"], "beer": false, "draft": false, "score": 9.03, "note": "Italian in a converted house", "rank": 53, "score_src": "Top-99 curated rank #53"}, {"name": "Al Baraka", "area": "anaheim", "cuisine": "mediterranean", "price": 18, "entrees": ["Shawarma Plate", "Hummus", "Mixed Grill"], "beer": false, "draft": false, "score": 9.02, "note": "Palestinian/Mediterranean", "rank": 54, "score_src": "Top-99 curated rank #54"}, {"name": "Kareem's Falafel", "area": "santa-ana", "cuisine": "mediterranean", "price": 18, "entrees": ["Falafel Wrap", "Chicken Shawarma", "Falafel Plate"], "beer": false, "draft": false, "score": 9.01, "note": "Best falafel in OC", "rank": 55, "score_src": "Top-99 curated rank #55"}, {"name": "Il Barone", "area": "tustin", "cuisine": "italian", "price": 18, "entrees": ["Chicken Parm", "Linguine Clams", "Osso Buco"], "beer": false, "draft": false, "score": 8.99, "note": "Old-school Italian", "rank": 56, "score_src": "Top-99 curated rank #56"}, {"name": "Mario's Butcher", "area": "orange", "cuisine": "italian", "price": 18, "entrees": ["Italian Sub", "Lasagna", "House Sausage"], "beer": false, "draft": false, "score": 8.98, "note": "Italian market + restaurant", "rank": 57, "score_src": "Top-99 curated rank #57"}, {"name": "Pizzeria Mozza", "area": "newport-beach", "cuisine": "pizza", "price": 18, "entrees": ["Margherita Pizza", "Burrata Pizza", "Squid Ink Chitarra"], "beer": false, "draft": false, "score": 8.97, "note": "Nancy Silverton's pizza", "rank": 58, "score_src": "Top-99 curated rank #58"}, {"name": "Monaco Italian", "area": "irvine", "cuisine": "american", "price": 18, "entrees": ["Cacio e Pepe", "Pappardelle Bolognese", "Burrata"], "beer": false, "draft": false, "score": 8.96, "note": "Newer spot, great pasta", "rank": 59, "score_src": "Top-99 curated rank #59"}, {"name": "Splashes", "area": "laguna-beach", "cuisine": "italian", "price": 18, "entrees": ["Lobster Tagliatelle", "Cioppino", "Crudo"], "beer": false, "draft": false, "score": 8.95, "note": "Coastal Italian, ocean views", "rank": 60, "score_src": "Top-99 curated rank #60"}, {"name": "A Restaurant", "area": "newport-beach", "cuisine": "american", "price": 18, "entrees": ["Wedge Salad", "Prime Rib", "Chicken Piccata"], "beer": false, "draft": false, "score": 8.94, "note": "Iconic American, 90+ years", "rank": 61, "score_src": "Top-99 curated rank #61"}, {"name": "Hook and Anchor", "area": "costa-mesa", "cuisine": "seafood", "price": 18, "entrees": ["Oysters", "Lobster Roll", "Clam Chowder"], "beer": false, "draft": false, "score": 8.93, "note": "Seafood + oyster bar", "rank": 62, "score_src": "Top-99 curated rank #62"}, {"name": "The Beachcomber", "area": "corona-del-mar", "cuisine": "breakfast", "price": 18, "entrees": ["Crab Benedict", "Beachcomber Burger", "Fish Tacos"], "beer": false, "draft": false, "score": 8.92, "note": "Beachfront brunch", "rank": 63, "score_src": "Top-99 curated rank #63"}, {"name": "Nick's Laguna", "area": "laguna-beach", "cuisine": "american", "price": 18, "entrees": ["Lobster Club", "Filet Mignon", "Margherita Flatbread"], "beer": false, "draft": false, "score": 8.91, "note": "American, great patio", "rank": 64, "score_src": "Top-99 curated rank #64"}, {"name": "Tiny's Burger", "area": "costa-mesa", "cuisine": "burger", "price": 18, "entrees": ["Smash Burger", "Tiny's Double", "Truffle Fries"], "beer": false, "draft": false, "score": 8.9, "note": "Newest smash burger", "rank": 65, "score_src": "Top-99 curated rank #65"}, {"name": "Peter's Gourmade", "area": "tustin", "cuisine": "burger", "price": 18, "entrees": ["Double Smash Burger", "Single Smash", "Burger Fries"], "beer": false, "draft": false, "score": 8.88, "note": "Best smash burger in OC", "rank": 66, "score_src": "Top-99 curated rank #66"}, {"name": "The Crack Shack", "area": "costa-mesa", "cuisine": "chicken", "addr": "Costa Mesa", "entrees": ["Firebird (fried chicken sandwich)", "Bone-In Jidori Chicken", "Nuggets"], "beer": true, "draft": true, "note": "28 rotating taps — best draft selection for chicken", "price": 16, "score": 8.87, "rank": 67, "score_src": "Top-99 curated rank #67"}, {"name": "SideDoor", "area": "corona-del-mar", "cuisine": "burger", "price": 18, "entrees": ["SideDoor Burger", "Mac & Cheese", "Deviled Eggs"], "beer": false, "draft": false, "score": 8.86, "note": "Burgers, speakeasy", "rank": 68, "score_src": "Top-99 curated rank #68"}, {"name": "Bear Flag Fish Co.", "area": "costa-mesa", "cuisine": "american", "price": 18, "entrees": ["Fish Tacos", "Poke Bowl", "Ahi Tuna Plate"], "beer": false, "draft": false, "score": 8.85, "note": "Fish tacos", "rank": 69, "score_src": "Top-99 curated rank #69"}, {"name": "La La Land Kind Cafe", "area": "newport-beach", "cuisine": "breakfast", "price": 18, "entrees": ["Avocado Toast", "Kind Latte", "Breakfast Burrito"], "beer": false, "draft": false, "score": 8.84, "note": "Coffee, brunch, viral", "rank": 70, "score_src": "Top-99 curated rank #70"}, {"name": "61Hundred Bread", "area": "santa-ana", "cuisine": "dessert", "price": 18, "entrees": ["Croissant", "Breakfast Sandwich", "Sourdough"], "beer": false, "draft": false, "score": 8.83, "note": "Bakery + sandwiches", "rank": 71, "score_src": "Top-99 curated rank #71"}, {"name": "The Latest", "area": "santa-ana", "cuisine": "american", "price": 18, "entrees": ["Chef's Small Plates", "Burrata", "Seasonal Tasting"], "beer": false, "draft": false, "score": 8.82, "note": "Small plates", "rank": 72, "score_src": "Top-99 curated rank #72"}, {"name": "Koffee Klatch", "area": "tustin", "cuisine": "breakfast", "price": 18, "entrees": ["Breakfast Burrito", "Huevos Rancheros", "Pancakes"], "beer": false, "draft": false, "score": 8.81, "note": "OG spot, breakfast burritos", "rank": 73, "score_src": "Top-99 curated rank #73"}, {"name": "Mattern Sausage", "area": "orange", "cuisine": "german", "price": 18, "entrees": ["Bratwurst", "Knockwurst", "German Potato Salad"], "beer": false, "draft": false, "score": 8.8, "note": "German deli, best sausages", "rank": 74, "score_src": "Top-99 curated rank #74"}, {"name": "Pop's Cafe", "area": "tustin", "cuisine": "american", "price": 18, "entrees": ["Biscuits & Gravy", "Country Fried Steak", "Omelettes"], "beer": false, "draft": false, "score": 8.79, "note": "Classic American breakfast", "rank": 75, "score_src": "Top-99 curated rank #75"}, {"name": "Brussels Bistro", "area": "laguna-beach", "cuisine": "european", "price": 18, "entrees": ["Moules Frites", "Belgian Waffles", "Steak Frites"], "beer": false, "draft": false, "score": 8.78, "note": "Belgian, moules frites", "rank": 76, "score_src": "Top-99 curated rank #76"}, {"name": "Le Hut Dinette", "area": "costa-mesa", "cuisine": "vietnamese", "price": 18, "entrees": ["Banh Mi", "Vietnamese Iced Coffee", "Pho"], "beer": false, "draft": false, "score": 8.76, "note": "Banh mi, hidden gem", "rank": 77, "score_src": "Top-99 curated rank #77"}, {"name": "Nate's Korner", "area": "tustin", "cuisine": "american", "price": 18, "entrees": ["Hot Dogs", "Chili Cheese Fries", "Polish Sausage"], "beer": false, "draft": false, "score": 8.75, "note": "Hot dogs, chili cheese fries", "rank": 78, "score_src": "Top-99 curated rank #78"}, {"name": "Driftwood Kitchen", "area": "laguna-beach", "cuisine": "american", "price": 18, "entrees": ["Miso Glazed Black Cod", "Cioppino", "Oysters"], "beer": false, "draft": false, "score": 8.74, "note": "Oceanfront dining", "rank": 79, "score_src": "Top-99 curated rank #79"}, {"name": "Las Brisas", "area": "laguna-beach", "cuisine": "mexican", "price": 18, "entrees": ["Carne Asada", "Camarones al Mojo de Ajo", "Chile Relleno"], "beer": false, "draft": false, "score": 8.73, "note": "Mexican, sunset views", "rank": 80, "score_src": "Top-99 curated rank #80"}, {"name": "Broadway", "area": "laguna-beach", "cuisine": "american", "price": 18, "entrees": ["Seasonal Tasting", "Lamb Chops", "Seared Scallops"], "beer": false, "draft": false, "score": 8.72, "note": "New American", "rank": 81, "score_src": "Top-99 curated rank #81"}, {"name": "Starfish Laguna", "area": "laguna-beach", "cuisine": "seafood", "price": 18, "entrees": ["Seafood Tower", "Lobster Roll", "Ceviche"], "beer": false, "draft": false, "score": 8.71, "note": "Rooftop, seafood", "rank": 82, "score_src": "Top-99 curated rank #82"}, {"name": "The Deck", "area": "laguna-beach", "cuisine": "american", "price": 18, "entrees": ["Fish Tacos", "Lobster BLT", "Clam Chowder"], "beer": false, "draft": false, "score": 8.7, "note": "Waterfront, casual", "rank": 83, "score_src": "Top-99 curated rank #83"}, {"name": "Zinc Cafe", "area": "laguna-beach", "cuisine": "american", "price": 18, "entrees": ["Quiche", "Heirloom Salad", "Flatbread"], "beer": false, "draft": false, "score": 8.69, "note": "Market-driven cafe", "rank": 84, "score_src": "Top-99 curated rank #84"}, {"name": "Sapphire at Crystal Cove", "area": "newport-beach", "cuisine": "american", "price": 18, "entrees": ["Miso Cod", "Crab Cakes", "Pan-Seared Scallops"], "beer": false, "draft": false, "score": 8.68, "note": "Waterfront American", "rank": 85, "score_src": "Top-99 curated rank #85"}, {"name": "Sugar Fish", "area": "irvine", "cuisine": "japanese", "price": 18, "entrees": ["Toro Hand Roll", "Salmon Hand Roll", "Yellowtail Hand Roll"], "beer": false, "draft": false, "score": 8.6, "note": "Sushi hand rolls", "rank": 92, "score_src": "Top-99 curated rank #92"}, {"name": "The Blind Rabbit", "area": "anaheim", "cuisine": "bar", "price": 18, "entrees": ["Craft Cocktails", "Charcuterie", "Small Plates"], "beer": false, "draft": false, "score": 8.59, "note": "Speakeasy, 1920s vibe", "rank": 93, "score_src": "Top-99 curated rank #93"}, {"name": "Strong Water", "area": "anaheim", "cuisine": "bar", "price": 18, "entrees": ["Tiki Cocktails", "Rum Flight", "Tostones"], "beer": false, "draft": false, "score": 8.58, "note": "Rum bar, tiki", "rank": 94, "score_src": "Top-99 curated rank #94"}, {"name": "Continental Club", "area": "santa-ana", "cuisine": "bar", "price": 18, "entrees": ["Old Fashioned", "Classic Cocktails", "Bar Snacks"], "beer": false, "draft": false, "score": 8.57, "note": "Classic cocktail bar", "rank": 95, "score_src": "Top-99 curated rank #95"}, {"name": "Stowaway", "area": "tustin", "cuisine": "pizza", "price": 18, "entrees": ["Speakeasy Cocktails", "Pizza (from next door)", "Negroni"], "beer": false, "draft": false, "score": 8.55, "note": "Speakeasy inside a pizza shop", "rank": 96, "score_src": "Top-99 curated rank #96"}, {"name": "Oak & Coal", "area": "costa-mesa", "cuisine": "bar", "price": 18, "entrees": ["Craft Cocktails", "Wagyu Bites", "Cheese Board"], "beer": false, "draft": false, "score": 8.54, "note": "Craft cocktails + food", "rank": 97, "score_src": "Top-99 curated rank #97"}, {"name": "The Cannery", "area": "newport-beach", "cuisine": "american", "price": 18, "entrees": ["Waterfront Cocktails", "Seafood Platter", "Burger"], "beer": false, "draft": false, "score": 8.53, "note": "Waterfront drinks", "rank": 98, "score_src": "Top-99 curated rank #98"}, {"name": "Dory Deli", "area": "newport-beach", "cuisine": "american", "price": 18, "entrees": ["Late Night Sandwiches", "Pastrami", "Breakfast Burrito"], "beer": false, "draft": false, "score": 8.52, "note": "Late night after-bar food", "rank": 99, "score_src": "Top-99 curated rank #99"}, {"name": "Habana", "area": "costa-mesa", "cuisine": "cuban", "price": 18, "entrees": ["Paella a la Habana", "Ropa Vieja", "Lechon Asado"], "beer": true, "draft": true, "score": 9.0, "note": "Romantic garden patio at The Lab. Famous mojitos; draft + bottled beer.", "score_src": "OpenTable 4.8 (3,136 reviews)"}, {"name": "Hangar 24 Craft Brewing", "area": "irvine", "cuisine": "american", "addr": "17877 Von Karman Ave, Unit 110, Irvine", "entrees": ["Fangs Out Wings (Cajun/Korean BBQ/Mango Habanero)", "Hangar 24 Pizza", "Soft Pretzels & Beer Cheese"], "beer": true, "draft": true, "note": "Brewery — Fangs Out Wings, house beers", "price": 16, "score": 8.0}, {"name": "Tustin Brewing Company", "area": "tustin", "cuisine": "american", "addr": "13011 Newport Ave, Ste 100, Tustin", "entrees": ["Carne Asada Pizza (Yelp #1)", "Award Winning Chili (Yelp #2)", "Buffalo Chicken Sandwich $16"], "beer": true, "draft": true, "note": "Brew own beer — 6 house + guest taps, GABF gold", "price": 16, "score": 8.0}, {"name": "Brü Grill & Market", "area": "lake-forest", "cuisine": "american", "addr": "23730 El Toro Rd, Lake Forest", "entrees": ["Bru Hot Wings (3 heat levels)", "Grilled Steak Entrées", "Wood-Fired Pizzas"], "beer": true, "draft": true, "note": "Scratch kitchen, scores of taps, Bru Hot Wings", "price": 16, "score": 8.0}, {"name": "Riip Beer & Pizzeria", "area": "hb", "cuisine": "pizza", "addr": "17216 Pacific Coast Hwy, HB", "entrees": ["Nashville Hot Wings", "Dry-Rubbed Wings", "Detroit-Style Pizza"], "beer": true, "draft": true, "note": "Award-winning brewery, Nashville hot wings", "price": 16, "score": 8.0}, {"name": "Brewery X", "area": "anaheim", "cuisine": "american", "addr": "3191 E La Palma Ave, Anaheim", "entrees": ["Crispy Wings", "Wood-Fired Pizza", "Brewery Burgers"], "beer": true, "draft": true, "note": "Massive brewery, wings/pizza/burgers, big patio", "price": 16, "score": 8.0}, {"name": "Left Coast Brewing", "area": "irvine", "cuisine": "american", "addr": "Irvine", "entrees": ["Buttermilk Fried Chicken Sandwich $16", "Smoked Chicken Club $12", "House BBQ Platters"], "beer": true, "draft": true, "note": "6652 Irvine Center Dr. Family-owned brewery + distillery, BBQ kitchen.", "price": 16, "score": 7.8, "score_src": "Yelp 3.5 (707 reviews)"}];
+const EMOJI = {"korean": "🇰🇷", "japanese": "🍣", "ramen": "🍜", "chinese": "🥟", "thai": "🍛", "vietnamese": "🍲", "indian": "🍛", "mexican": "🌮", "italian": "🍝", "pizza": "🍕", "burger": "🍔", "burgers": "🍔", "american": "🍺", "seafood": "🦞", "steakhouse": "🥩", "bbq": "🔥", "breakfast": "🥞", "sandwich": "🥪", "mediterranean": "🥙", "healthy": "🥗", "asian-fusion": "🥢", "german": "🥨", "chicken": "🍗", "california-coastal": "🌊", "pasta": "🍝", "dessert": "🍰"};
+const TIER = p => p <= 13 ? "$" : p <= 20 ? "$$" : p <= 35 ? "$$$" : "$$$$";
+
+function render() {
+  const el = id => document.getElementById(id);
+  let f = {
+    q: el("q").value.trim().toLowerCase(),
+    c: el("cuisine").value,
+    p: el("price").value,
+    a: el("area").value,
+    d: el("draft").checked,
+    s: el("sort").value
+  };
+  const match = r => {
+    if (f.c && r.cuisine !== f.c) return false;
+    if (f.p && TIER(r.price) !== f.p) return false;
+    if (f.a && r.area !== f.a) return false;
+    if (f.d && !r.draft) return false;
+    if (f.q) {
+      const hay = (r.name + " " + r.cuisine + " " + (r.addr||"") + " " + (r.area||"")).toLowerCase();
+      if (!hay.includes(f.q)) return false;
+    }
+    return true;
+  };
+  const list = R.filter(match);
+  if (f.s === "price_asc") list.sort((a,b) => a.price - b.price);
+  else if (f.s === "price_desc") list.sort((a,b) => b.price - a.price);
+  else if (f.s === "name") list.sort((a,b) => a.name.localeCompare(b.name));
+  else list.sort((a,b) => b.score - a.score);
+
+  el("count").textContent = list.length;
+  const grid = document.getElementById("grid");
+  const empty = document.getElementById("empty");
+  grid.innerHTML = list.map(r => {
+    const emoji = EMOJI[r.cuisine] || "🍽️";
+    const tier = TIER(r.price);
+    const badges = [
+      '<span class="badge cuisine">' + emoji + " " + (r.cuisine||"").replace(/-/g," ").replace(/^./, c => c.toUpperCase()) + '</span>',
+      '<span class="badge price">' + tier + '</span>',
+      r.draft ? '<span class="badge draft">🍺 Draft</span>' : "",
+      r.bp ? '<span class="badge bp">🫀 BP</span>' : "",
+      r.area ? '<span class="badge area">📍 ' + r.area.replace(/-/g," ") + '</span>' : ""
+    ].join("");
+    const entrees = (r.entrees || []).slice(0,3);
+    const entreesHtml = entrees.length
+      ? '<div class="entrees"><b>Top 3</b><ol>' + entrees.map(e => "<li>" + e + "</li>").join("") + '</ol></div>'
+      : "";
+    const note = r.note ? '<div class="card-note">' + r.note + '</div>' : "";
+    const yelp = r.yelp ? '<a class="card-link" href="' + r.yelp + '" target="_blank" rel="noopener">View on Yelp →</a>' : "";
+    return '<div class="card">'
+      + '<div class="card-head"><div><div class="card-title"><span class="emoji">' + emoji + '</span>' + r.name + '</div>'
+      + '<div class="card-meta"><span>📍 ' + (r.addr || r.area || "") + '</span></div></div>'
+      + '<div class="score"><b>' + r.score.toFixed(1) + '</b><small>/10</small></div></div>'
+      + '<div class="badges">' + badges + '</div>'
+      + entreesHtml
+      + note
+      + (yelp || '')
+      + '</div>';
+  }).join("");
+  empty.style.display = list.length ? "none" : "block";
+}
+
+["q","cuisine","price","area","draft","sort"].forEach(id => {
+  document.getElementById(id).addEventListener("input", render);
+  document.getElementById(id).addEventListener("change", render);
+});
+render();
+</script>
+
+<script>
+(function(){
+  function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(menu.children.length===0&&links){
+      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){menu.appendChild(a.cloneNode(true));});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+</script>
+
+</body>
+</html>
