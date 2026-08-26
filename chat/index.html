@@ -58,6 +58,12 @@ body{
   display:flex;align-items:center;gap:6px;transition:color var(--transition);
 }
 .nav-back:hover{color:var(--accent);}
+.nav-tab{
+  font-size:13px;font-weight:600;color:var(--text-secondary);text-decoration:none;
+  padding:7px 14px;border-radius:8px;transition:all 0.2s;display:flex;align-items:center;gap:6px;
+}
+.nav-tab:hover{color:var(--text);background:var(--accent-bg);}
+.nav-right{display:flex;align-items:center;gap:8px;}
 
 /* Lead capture form */
 .lead-overlay{
@@ -173,7 +179,10 @@ body{
 <div class="chat-app" id="chatApp">
   <div class="nav">
     <div class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:32px;height:32px;border-radius:9px;vertical-align:middle;margin-right:6px" alt="R"> Royce<span>AI</span></div>
-    <a href="https://royceai.com" class="nav-back">← Back to site</a>
+    <div class="nav-right">
+      <a href="/tutor" class="nav-tab">✨ Tutor</a>
+      <a href="https://royceai.com" class="nav-back">← Back to site</a>
+    </div>
   </div>
   <div class="chat-wrap">
     <div class="messages" id="messages">
