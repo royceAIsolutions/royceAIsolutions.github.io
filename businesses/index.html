@@ -169,6 +169,15 @@ body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right
 .dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
 .dc-dot.active{background:var(--accent);height:26px}
 @media(min-width:1100px){.deck-progress,.deck-progress-bar,.deck-controls,.dc-dots{display:none!important}.slide{position:static;height:auto;opacity:1;visibility:visible;transform:none;display:block;padding:calc(var(--nav-h) + 32px) 24px 72px;overflow:visible}.slide.active{transform:none;z-index:auto}.slide-inner{width:100%;max-width:920px;margin:0 auto}}
+/* businesses page fix (Aug 25 2026): the deals grid lives OUTSIDE the slides, so the fixed
+   mobile deck takeover (transparent .slide over the viewport) painted the hero on top of
+   deal cards. Mobile now matches desktop: all slides static, normal scroll, deck controls hidden. */
+@media(max-width:1099px){
+  .slide{position:static;height:auto;opacity:1;visibility:visible;transform:none;display:block;padding:calc(var(--nav-h) + 24px) 24px 3rem;overflow:visible;z-index:auto}
+  .slide.active{transform:none;z-index:auto}
+  .slide-inner{width:100%;max-width:920px;margin:0 auto}
+  .deck-progress,.deck-progress-bar,.deck-controls,.dc-dots{display:none!important}
+}
 @media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
 @media(max-width:1099px){footer{display:none!important}}
 
