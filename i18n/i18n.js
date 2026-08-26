@@ -47,7 +47,13 @@
     if (isNoise(t)) return;
     if (!n.dataset) n.dataset = {};
     if (!n.dataset.i18nOriginal) n.dataset.i18nOriginal = raw;
-    var out = (cur === 'en') ? n.dataset.i18nOriginal : (dict[cur] && dict[cur][t]);
+    var orig = n.dataset.i18nOriginal;
+    var out;
+    if (cur === 'en') out = orig || raw;
+    else {
+      var hit = dict[cur] && dict[cur][orig.replace(/\s+/g, ' ').trim()];
+      out = hit || orig || raw;  // fall back to English source when untranslatable
+    }
     if (out && out !== raw) n.nodeValue = out;
   }
 
@@ -95,14 +101,15 @@
         if (!e.hasAttribute(attr)) return;
         var v = e.getAttribute(attr).trim();
         if (isNoise(v)) return;
+        var srcVal = (store[attr] !== undefined) ? store[attr].trim() : v;
         if (cur === 'en') {
           if (store[attr] !== undefined) e.setAttribute(attr, store[attr]);
-        } else if (dict[cur] && dict[cur][v]) {
+        } else if (dict[cur] && dict[cur][srcVal]) {
           if (store[attr] === undefined) {
             store[attr] = e.getAttribute(attr);
             attrStore.set(e, store);
           }
-          e.setAttribute(attr, dict[cur][v]);
+          e.setAttribute(attr, dict[cur][srcVal]);
         }
       });
     }
@@ -134,18 +141,24 @@
       if (titleEl && titleEl.textContent) {
         var tt = titleEl.textContent.replace(/\s+/g, ' ').trim();
         if (cur === 'en') { if (titleEl.dataset.i18nOriginal) titleEl.textContent = titleEl.dataset.i18nOriginal; }
-        else if (dict[cur] && dict[cur][tt]) {
-          if (!titleEl.dataset.i18nOriginal) titleEl.dataset.i18nOriginal = titleEl.textContent;
-          titleEl.textContent = dict[cur][tt];
+        else if (dict[cur]) {
+          var tsrc = (titleEl.dataset.i18nOriginal || titleEl.textContent).replace(/\s+/g, ' ').trim();
+          if (dict[cur][tsrc]) {
+            if (!titleEl.dataset.i18nOriginal) titleEl.dataset.i18nOriginal = titleEl.textContent;
+            titleEl.textContent = dict[cur][tsrc];
+          }
         }
       }
       var md = document.querySelector('meta[name="description"]');
       if (md && md.content) {
         var dc = md.content.replace(/\s+/g, ' ').trim();
         if (cur === 'en') { if (md.dataset.i18nOriginal) md.content = md.dataset.i18nOriginal; }
-        else if (dict[cur] && dict[cur][dc]) {
-          if (!md.dataset.i18nOriginal) md.dataset.i18nOriginal = md.content;
-          md.content = dict[cur][dc];
+        else if (dict[cur]) {
+          var dsrc = (md.dataset.i18nOriginal || md.content).replace(/\s+/g, ' ').trim();
+          if (dict[cur][dsrc]) {
+            if (!md.dataset.i18nOriginal) md.dataset.i18nOriginal = md.content;
+            md.content = dict[cur][dsrc];
+          }
         }
       }
       var btn = el('royceaiLangBtn');
