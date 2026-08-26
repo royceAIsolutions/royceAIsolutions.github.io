@@ -393,7 +393,7 @@ body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right
     var backdrop=document.getElementById('mobileMenuBackdrop');
     var links=document.querySelector('.nav-links');
     if(menu.children.length===0&&links){
-      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){if(a.closest('#navLoginBtn'))return;menu.appendChild(a.cloneNode(true));});
+      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){if(a.closest('#navLoginBtn'))return;if((a.getAttribute('href')||'')==='/tutor'&&!a.classList.contains('nav-drawer-only'))return;menu.appendChild(a.cloneNode(true));});
     }
     var p=location.pathname;
     if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
