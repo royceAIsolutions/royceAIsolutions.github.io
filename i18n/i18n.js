@@ -43,6 +43,8 @@
   function translateTextNode(n) {
     var raw = n.nodeValue;
     if (!raw) return;
+    var lead = raw.match(/^\s*/)[0];
+    var trail = raw.match(/\s*$/)[0];
     var t = raw.replace(/\s+/g, ' ').trim();
     if (isNoise(t)) return;
     if (!n.dataset) n.dataset = {};
@@ -54,7 +56,7 @@
       var hit = dict[cur] && dict[cur][orig.replace(/\s+/g, ' ').trim()];
       out = hit || orig || raw;  // fall back to English source when untranslatable
     }
-    if (out && out !== raw) n.nodeValue = out;
+    if (out && out !== raw) n.nodeValue = lead + out + trail;
   }
 
   // data-i18n="Template {n} of {m}" — translate with param substitution
