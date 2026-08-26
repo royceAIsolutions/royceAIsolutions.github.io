@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS ARENA</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { overflow: hidden; background: #000; font-family: 'Courier New', monospace; -webkit-tap-highlight-color: transparent; }
+    canvas { display: block; }
+    #start-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 10; cursor: pointer; transition: opacity 0.3s, pointer-events 0.3s;
+    }
+    #start-overlay.hidden { opacity: 0; pointer-events: none; }
+    #start-overlay h1 { font-size: 4rem; color: #fff; text-shadow: 0 0 20px #ffaa00; letter-spacing: 0.3em; margin-bottom: 0.5rem; }
+    #start-overlay p { font-size: 1.5rem; color: #aaa; text-transform: uppercase; letter-spacing: 0.2em; }
+    #hud { position: fixed; inset: 20px; pointer-events: none; display: none; }
+    #hud.visible { display: block; }
+    .hud-panel { position: absolute; color: #fff; text-shadow: 0 0 5px #000; font-size: 1.2rem; }
+    #health { bottom: 20px; left: 20px; }
+    #armor { bottom: 55px; left: 20px; color: #00aaff; }
+    #money { bottom: 90px; left: 20px; color: #00ff88; font-size: 1.3rem; }
+    #weapon-name { bottom: 125px; left: 20px; color: #ffaa00; font-size: 1.1rem; }
+    #ammo { bottom: 20px; right: 20px; text-align: right; }
+    #scoreboard { top: 20px; left: 50%; transform: translateX(-50%); text-align: center; font-size: 1.5rem; color: #ffaa00; }
+    #round-display { top: 20px; left: 20px; font-size: 1.3rem; color: #ffaa00; }
+    #timer { top: 20px; right: 20px; font-size: 1.3rem; color: #ff4444; display: none; }
+    #freezetime { top: 60px; left: 50%; transform: translateX(-50%); font-size: 2rem; color: #00ff88; text-shadow: 0 0 10px #00ff88; display: none; }
+    #crosshair {
+      position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 24px; height: 24px; pointer-events: none; display: none; z-index: 5;
+    }
+    #crosshair.visible { display: block; }
+    #crosshair::before, #crosshair::after {
+      content: ''; position: absolute; background: #fff; box-shadow: 0 0 2px #000;
+    }
+    #crosshair::before { width: 2px; height: 12px; left: 11px; top: 0; }
+    #crosshair::after { width: 12px; height: 2px; top: 11px; left: 0; }
+    #fps { position: fixed; top: 20px; right: 20px; color: #0f0; font-family: monospace; font-size: 0.9rem; z-index: 5; }
+    #round-won, #round-lost {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+      display: flex; align-items: center; justify-content: center; z-index: 20;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    #round-won.visible, #round-lost.visible { opacity: 1; }
+    #round-won h2 { font-size: 5rem; color: #00ff88; text-shadow: 0 0 30px #00ff88; letter-spacing: 0.2em; }
+    #round-lost h2 { font-size: 5rem; color: #ff3333; text-shadow: 0 0 30px #ff3333; letter-spacing: 0.2em; }
+    #victory-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 30; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    #victory-overlay.visible { opacity: 1; pointer-events: auto; }
+    #victory-overlay h1 { font-size: 5rem; color: #ffaa00; text-shadow: 0 0 30px #ffaa00; letter-spacing: 0.2em; margin-bottom: 1rem; }
+    #victory-overlay p { font-size: 2rem; color: #fff; margin-bottom: 2rem; }
+    #victory-overlay button {
+      padding: 1rem 3rem; font-size: 1.5rem; font-family: inherit;
+      background: #ffaa00; color: #000; border: none; cursor: pointer;
+      text-transform: uppercase; letter-spacing: 0.1em; transition: background 0.2s;
+    }
+    #victory-overlay button:hover { background: #ffcc00; }
+    #buy-menu {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.9);
+      display: flex; align-items: center; justify-content: center; z-index: 25;
+      opacity: 0; pointer-events: none; transition: opacity 0.2s;
+    }
+    #buy-menu.visible { opacity: 1; pointer-events: auto; }
+    .buy-panel {
+      background: rgba(20,20,30,0.98); border: 2px solid #333; border-radius: 8px;
+      padding: 2rem; min-width: 320px; max-width: 90vw;
+      box-shadow: 0 0 30px rgba(255,170,0,0.2);
+    }
+    .buy-panel h2 { color: #ffaa00; text-align: center; margin-bottom: 1.5rem; letter-spacing: 0.1em; }
+    .buy-row { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1rem; margin: 0.5rem 0; background: rgba(255,255,255,0.05); border-radius: 4px; transition: background 0.1s; }
+    .buy-row:hover { background: rgba(255,170,0,0.15); }
+    .buy-row:has(button:disabled) { opacity: 0.5; }
+    .buy-info { display: flex; flex-direction: column; gap: 0.2rem; }
+    .buy-name { font-size: 1.2rem; font-weight: bold; color: #fff; }
+    .buy-desc { font-size: 0.85rem; color: #888; }
+    .buy-price { color: #00ff88; font-size: 1.2rem; font-weight: bold; }
+    .buy-row button {
+      padding: 0.4rem 1.2rem; font-size: 1rem; font-family: inherit;
+      background: #ffaa00; color: #000; border: none; border-radius: 3px; cursor: pointer;
+      text-transform: uppercase; letter-spacing: 0.05em; transition: background 0.1s;
+    }
+    .buy-row button:hover:not(:disabled) { background: #ffcc00; }
+    .buy-row button:disabled { background: #555; color: #888; cursor: not-allowed; }
+    .buy-close { text-align: center; margin-top: 1rem; color: #888; font-size: 0.9rem; }
+    #damage-flash {
+      position: fixed; inset: 0; background: radial-gradient(ellipse at center, rgba(255,0,0,0.4) 0%, transparent 70%);
+      pointer-events: none; opacity: 0; z-index: 15; transition: opacity 0.1s;
+    }
+    #damage-flash.active { opacity: 1; transition: opacity 0.3s; }
+    #game-over {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 30; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    #game-over.visible { opacity: 1; pointer-events: auto; }
+    #game-over h1 { font-size: 5rem; color: #ff3333; text-shadow: 0 0 30px #ff3333; letter-spacing: 0.2em; margin-bottom: 1rem; }
+    #game-over p { font-size: 2rem; color: #fff; margin-bottom: 2rem; }
+    #game-over button {
+      padding: 1rem 3rem; font-size: 1.5rem; font-family: inherit;
+      background: #ff3333; color: #fff; border: none; cursor: pointer;
+      text-transform: uppercase; letter-spacing: 0.1em; transition: background 0.2s;
+    }
+    #game-over button:hover { background: #ff5555; }
+    /* ===== TOUCH CONTROLS (iPad / mobile) ===== */
+    #touch-ui { position: fixed; inset: 0; z-index: 12; display: none; pointer-events: none; }
+    body.touch-mode #touch-ui { display: block; }
+    body.touch-mode { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+    body.touch-mode canvas { touch-action: none; }
+    #joystick-zone { position: absolute; left: 0; bottom: 0; width: 45%; height: 70%; pointer-events: auto; touch-action: none; }
+    #joystick-base { position: absolute; left: 90px; bottom: 90px; width: 140px; height: 140px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.25); }
+    #joystick-knob { position: absolute; left: 50%; top: 50%; width: 60px; height: 60px; margin: -30px 0 0 -30px; border-radius: 50%; background: rgba(124,92,252,0.55); border: 2px solid rgba(255,255,255,0.5); }
+    #look-zone { position: absolute; right: 0; top: 0; width: 55%; height: 100%; pointer-events: auto; touch-action: none; }
+    .t-btn {
+      position: absolute; border-radius: 50%; color: #fff; font-family: inherit;
+      pointer-events: auto; touch-action: none; display: flex; align-items: center; justify-content: center;
+      letter-spacing: 0.05em; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.5);
+    }
+    /* COD Mobile-style layout: fire near right-thumb rest, jump above it,
+       reload/swap in the same arc, sprint above the joystick, buy out of combat cluster */
+    #fire-btn { right: 30px; bottom: 40px; width: 90px; height: 90px; background: rgba(255,60,60,0.55); font-size: 1.1rem; border-width: 3px; }
+    #jump-btn { right: 30px; bottom: 150px; width: 72px; height: 72px; background: rgba(124,92,252,0.5); font-size: 0.8rem; }
+    #reload-btn { right: 132px; bottom: 50px; width: 60px; height: 60px; background: rgba(255,255,255,0.25); font-size: 0.8rem; }
+    #swap-btn { right: 132px; bottom: 132px; width: 60px; height: 60px; background: rgba(0,170,255,0.35); font-size: 0.7rem; }
+    #buy-btn { right: 20px; top: 110px; width: 64px; height: 64px; background: rgba(255,170,0,0.4); font-size: 0.8rem; }
+    #sprint-btn { left: 90px; bottom: 250px; width: 64px; height: 64px; background: rgba(255,255,255,0.2); font-size: 0.7rem; }
+  </style>
+</head>
+<body>
+  <div id="start-overlay" onclick="startGame()">
+    <h1 id="start-title">CS ARENA</h1>
+    <p id="start-desc">First to 4 rounds — win 4 to take the match</p>
+  </div>
+  <div id="damage-flash"></div>
+  <div id="game-over">
+    <h1>MATCH LOST</h1>
+    <p>Final Score: <span id="game-over-score">0</span></p>
+    <button id="retry-btn">Play Again</button>
+  </div>
+  <div id="hud">
+    <div id="health" class="hud-panel">HEALTH: <span id="health-val">100</span></div>
+    <div id="armor" class="hud-panel">ARMOR: <span id="armor-val">0</span></div>
+    <div id="money" class="hud-panel">$<span id="money-val">800</span></div>
+    <div id="weapon-name" class="hud-panel">WEAPON: PISTOL</div>
+    <div id="ammo" class="hud-panel">AMMO: <span id="ammo-val">12</span> / <span id="ammo-reserve">48</span></div>
+    <div id="scoreboard" class="hud-panel">CT <span id="ct-wins">0</span> : <span id="t-wins">0</span> T</div>
+    <div id="round-display" class="hud-panel">ROUND 1/7</div>
+    <div id="timer" class="hud-panel">TIME: 60s</div>
+    <div id="freezetime">FREEZETIME: 8</div>
+  </div>
+  <div id="crosshair"></div>
+  <div id="fps">FPS: 0</div>
+  <div id="round-won"><h2>ROUND WON</h2></div>
+  <div id="round-lost"><h2>ROUND LOST</h2></div>
+  <div id="victory-overlay">
+    <h1 id="victory-title">MATCH WON</h1>
+    <p>Final Score: CT <span id="victory-ct">0</span> : <span id="victory-t">0</span> T</p>
+    <button id="play-again">Play Again</button>
+  </div>
+  <div id="buy-menu">
+    <div class="buy-panel">
+      <h2>BUY MENU (B to close)</h2>
+      <div class="buy-row" id="buy-pistol">
+        <div class="buy-info">
+          <span class="buy-name">PISTOL (Sidearm)</span>
+          <span class="buy-desc">Damage 25 | 12/48 | Semi-auto</span>
+        </div>
+        <span class="buy-price">FREE</span>
+        <button disabled>OWNED</button>
+      </div>
+      <div class="buy-row" id="buy-smg">
+        <div class="buy-info">
+          <span class="buy-name">MP5 (SMG)</span>
+          <span class="buy-desc">Damage 22 | 30/120 | Full-auto | High spread</span>
+        </div>
+        <span class="buy-price">$1500</span>
+        <button>BUY</button>
+      </div>
+      <div class="buy-row" id="buy-rifle">
+        <div class="buy-info">
+          <span class="buy-name">M4 (Rifle)</span>
+          <span class="buy-desc">Damage 34 | 30/90 | Full-auto | Tight spread</span>
+        </div>
+        <span class="buy-price">$3100</span>
+        <button>BUY</button>
+      </div>
+      <div class="buy-row" id="buy-armor">
+        <div class="buy-info">
+          <span class="buy-name">ARMOR + HELMET</span>
+          <span class="buy-desc">Armor 100 | Absorbs 50% damage</span>
+        </div>
+        <span class="buy-price">$650</span>
+        <button>BUY</button>
+      </div>
+      <div class="buy-close">Press B or ESC to close | Click outside to close</div>
+    </div>
+  </div>
+  <div id="touch-ui">
+    <div id="look-zone"></div>
+    <div id="joystick-zone"><div id="joystick-base"><div id="joystick-knob"></div></div></div>
+    <div id="sprint-btn" class="t-btn">SPRINT</div>
+    <div id="fire-btn" class="t-btn">FIRE</div>
+    <div id="jump-btn" class="t-btn">JUMP</div>
+    <div id="reload-btn" class="t-btn">R</div>
+    <div id="buy-btn" class="t-btn">BUY</div>
+    <div id="swap-btn" class="t-btn">SWAP</div>
+  </div>
+  <canvas id="game-canvas"></canvas>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
