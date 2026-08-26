@@ -148,8 +148,20 @@
       document.querySelectorAll('.royceai-lang-menu button[data-lang]').forEach(function (b) {
         b.classList.toggle('active', b.getAttribute('data-lang') === cur);
       });
+    } catch (err) {
+      try { window.__i18nLastError = String((err && err.stack) || err); } catch (e) {}
     } finally { busy = false; }
   }
+
+  // debug hook: window.__i18nDebug() → {cur, ko: n keys, zh: n keys}
+  window.__i18nDebug = function () {
+    return {
+      cur: cur,
+      ko: dict.ko ? Object.keys(dict.ko).length : null,
+      zh: dict.zh ? Object.keys(dict.zh).length : null,
+      lastError: window.__i18nLastError || null
+    };
+  };
 
   function buildSwitcher() {
     var wrap = document.createElement('div');
@@ -238,20 +250,35 @@
     buildSwitcher();
 
     var remaining = 2;
+    var appliedOnce = false;
     function maybeApply() {
       remaining--;
       if (remaining <= 0) {
-        if (cur !== 'en' && !(dict.ko && dict.zh)) {
-          // partial failure — keep going with what loaded
-        }
+        appliedOnce = true;
         apply();
       }
     }
-    function load(lang) {
+    function load(lang, attempt) {
+      attempt = attempt || 0;
       fetch('/i18n/' + lang + '.json', { cache: 'no-cache' })
-        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(function (j) { dict[lang] = j || {}; maybeApply(); })
-        .catch(function () { dict[lang] = {}; maybeApply(); });
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(function (j) {
+          var wasApplied = appliedOnce;
+          dict[lang] = j || {};
+          maybeApply();
+          // self-heal: if an earlier apply ran with an empty dict, re-apply now
+          if (wasApplied) apply();
+        })
+        .catch(function () {
+          // GitHub Pages CDN edge lag — retry with backoff before giving up
+          dict[lang] = dict[lang] || {};
+          if (attempt < 4) {
+            setTimeout(function () { load(lang, attempt + 1); }, 1500 * Math.pow(2, attempt));
+          } else {
+            try { console.warn('[i18n] failed to load /i18n/' + lang + '.json after retries'); } catch (e) {}
+            maybeApply();
+          }
+        });
     }
     load('ko');
     load('zh');
