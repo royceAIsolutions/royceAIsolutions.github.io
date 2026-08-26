@@ -25,7 +25,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px
 .nav-links a:hover{color:#eeeef0;background:rgba(124,92,252,0.08)}
 .nav-links a.active{color:#fff;background:rgba(124,92,252,0.15);border:1px solid rgba(124,92,252,0.3)}
 .nav-links .nav-cta{background:#7c5cfc;color:#fff!important;font-weight:600;padding:8px 22px;border-radius:8px}
-.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:#15151b;border:1px solid rgba(255,255,255,0.06);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
 .nav-burger span{display:block;width:18px;height:2px;background:#eeeef0;border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
 .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-burger.open span:nth-child(2){opacity:0}
@@ -88,9 +88,7 @@ footer .links{display:flex;gap:20px;justify-content:center;margin-bottom:12px;fl
 footer .links a{color:#88889a;text-decoration:none;font-size:0.875rem}
 footer .links a:hover{color:#a78bfa}
 footer .copy{color:#5c5c6e;font-size:0.8rem}
-.nav-drawer-only{display:none!important}
 @media(max-width:640px){nav{padding:0 16px}.hero-sub{padding:calc(60px + var(--nav-h)) 16px 30px}.section{padding:0 16px 40px}.nav-burger{display:inline-flex}.nav-links a:not(.nav-cta){display:none}table{min-width:0}.table-wrap{overflow-x:visible}th:nth-child(4),td:nth-child(4),th:nth-child(6),td:nth-child(6){display:none}th,td{padding:10px 6px;font-size:0.8rem}}
-@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
 </style>
 </head>
 <body>
@@ -101,17 +99,15 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
   <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:36px;height:36px;border-radius:9px" alt="R"> Royce<span>AI</span></a>
   <div class="nav-links">
     <a href="/products">Products</a>
-    
+    <a href="/tutor">✨ Tutor</a>
     <a href="/subscribe">Subscribe</a>
     <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
     <a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
     <a href="/billionaires" class="nav-drawer-only">💰 Billionaires</a>
     <a href="/real-estate" class="nav-drawer-only">🏠 Real Estate</a>
-    <a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a>
     <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
     <a href="/etf-pulse" class="nav-drawer-only active">📈 ETF Pulse</a>
-    
-    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/blog" class="nav-drawer-only">Blog</a>
     <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -121,10 +117,10 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
 
 <section class="hero-sub">
   <h1>ETF <span class="gradient">Pulse</span></h1>
-  <p>12 leveraged ETFs · momentum + volatility + volume · updated 2026-08-25 07:01</p>
+  <p>12 leveraged ETFs · momentum + volatility + volume · updated 2026-08-26 07:02</p>
   <div class="chips">
     <span class="chip">📊 <b>12/12</b> tickers fetched</span>
-    <span class="chip">🟢 <b>5</b> positive on the day</span>
+    <span class="chip">🟢 <b>9</b> positive on the day</span>
     <span class="chip">🔎 Mean-reversion watch (|5D| ≥ 15%): <b>none</b></span>
   </div>
 </section>
@@ -156,14 +152,14 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
     <a href="/products">Products</a><a href="/tutor">Tutor</a>
     <a href="/land-rover">Land Rover</a><a href="/exotics">Exotics</a>
     <a href="/real-estate">Real Estate</a><a href="/businesses">SBA Deals</a>
-    <a href="/etf-pulse">ETF Pulse</a>
+    <a href="/etf-pulse">ETF Pulse</a><a href="/blog">Blog</a>
   </div>
   <div class="copy">RoyceAI Solutions · Irvine, CA · ETF Pulse updates daily 7:00 AM PT</div>
 </footer>
 
 <script>
-const PULSE=[{"t": "FNGU", "c": 30.69, "d1": -2.32, "d5": -0.65, "d20": 24.76, "v": 77.1, "av": "4.0M", "trend": "RISING"}, {"t": "TECL", "c": 184.21, "d1": -5.44, "d5": -8.85, "d20": 12.99, "v": 100.0, "av": "692K", "trend": "RISING"}, {"t": "TQQQ", "c": 69.01, "d1": -3.03, "d5": -4.85, "d20": 12.1, "v": 67.7, "av": "59.0M", "trend": "RISING"}, {"t": "SPXL", "c": 284.07, "d1": -0.9, "d5": -1.66, "d20": 8.25, "v": 39.9, "av": "1.8M", "trend": "RISING"}, {"t": "UPRO", "c": 148.58, "d1": -0.87, "d5": -1.73, "d20": 8.22, "v": 39.6, "av": "2.1M", "trend": "RISING"}, {"t": "TNA", "c": 71.67, "d1": -1.98, "d5": -2.49, "d20": 3.46, "v": 46.8, "av": "3.8M", "trend": "RISING"}, {"t": "UDOW", "c": 73.43, "d1": 0.77, "d5": 0.41, "d20": 2.92, "v": 43.6, "av": "1.7M", "trend": "RISING"}, {"t": "FAS", "c": 184.23, "d1": 3.78, "d5": 1.69, "d20": 2.32, "v": 36.0, "av": "316K", "trend": "RISING"}, {"t": "SOXL", "c": 111.16, "d1": -7.83, "d5": -13.9, "d20": 1.48, "v": 162.9, "av": "72.6M", "trend": "RISING"}, {"t": "SPXU", "c": 35.02, "d1": 0.86, "d5": 1.71, "d20": -8.4, "v": 39.5, "av": "8.0M", "trend": "FALLING"}, {"t": "SQQQ", "c": 40.19, "d1": 3.0, "d5": 4.99, "d20": -13.59, "v": 68.2, "av": "53.9M", "trend": "FALLING"}, {"t": "SOXS", "c": 50.75, "d1": 7.91, "d5": 14.84, "d20": -19.28, "v": 168.5, "av": "62.6M", "trend": "FALLING"}];
-const TS="August 25, 2026 at 07:01:40 PDT";
+const PULSE=[{"t": "FNGU", "c": 31.21, "d1": 1.69, "d5": -0.54, "d20": 33.15, "v": 76.0, "av": "4.0M", "trend": "RISING"}, {"t": "TECL", "c": 189.43, "d1": 2.83, "d5": -3.05, "d20": 26.19, "v": 97.6, "av": "647K", "trend": "RISING"}, {"t": "SOXL", "c": 115.67, "d1": 4.06, "d5": -4.2, "d20": 25.74, "v": 154.3, "av": "68.7M", "trend": "RISING"}, {"t": "TQQQ", "c": 70.27, "d1": 1.83, "d5": -2.48, "d20": 21.68, "v": 66.7, "av": "57.5M", "trend": "RISING"}, {"t": "SPXL", "c": 286.61, "d1": 0.89, "d5": -1.46, "d20": 14.55, "v": 39.9, "av": "1.8M", "trend": "RISING"}, {"t": "UPRO", "c": 149.94, "d1": 0.92, "d5": -1.46, "d20": 14.45, "v": 39.6, "av": "2.1M", "trend": "RISING"}, {"t": "UDOW", "c": 74.06, "d1": 0.86, "d5": 0.53, "d20": 11.02, "v": 42.3, "av": "1.7M", "trend": "RISING"}, {"t": "TNA", "c": 72.55, "d1": 1.23, "d5": -2.67, "d20": 10.12, "v": 46.9, "av": "3.7M", "trend": "RISING"}, {"t": "FAS", "c": 184.98, "d1": 0.41, "d5": 3.92, "d20": 7.7, "v": 33.9, "av": "295K", "trend": "RISING"}, {"t": "SPXU", "c": 34.71, "d1": -0.89, "d5": 1.46, "d20": -13.18, "v": 39.6, "av": "7.8M", "trend": "FALLING"}, {"t": "SQQQ", "c": 39.46, "d1": -1.82, "d5": 2.41, "d20": -20.19, "v": 67.2, "av": "52.7M", "trend": "FALLING"}, {"t": "SOXS", "c": 48.42, "d1": -4.59, "d5": 2.91, "d20": -33.81, "v": 160.4, "av": "60.8M", "trend": "FALLING"}];
+const TS="August 26, 2026 at 07:02:23 PDT";
 const pct=v=>v>0?"+"+v.toFixed(2)+"%":v.toFixed(2)+"%";
 const cls=v=>v>0?"up":(v<0?"down":"flat");
 const fmtV=v=>v>=1000000?(v/1000000).toFixed(1)+"M":v>=1000?(v/1000).toFixed(0)+"K":String(Math.round(v));
