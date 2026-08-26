@@ -280,6 +280,7 @@ const ARMOR_ABSORPTION = 0.5;
 let health = 100;
 let isGameOver = false;
 let lastTime = performance.now();
+let lastFpsTime = performance.now();
 let frames = 0;
 let fps = 0;
 
@@ -1190,7 +1191,7 @@ function animate(time) {
   lastTime = time;
 
   frames++;
-  if (time - (lastTime - dt * 1000) > 1000) { fps = frames; frames = 0; }
+  if (time - lastFpsTime > 1000) { fps = frames; frames = 0; lastFpsTime = time; }
   fpsEl.textContent = `FPS: ${fps}`;
 
   const canControl = (pointerLocked || touchMode) && !isFreezetime && !isRoundEnding && !isMatchOver && !buyMenuOpen;
