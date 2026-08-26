@@ -517,7 +517,7 @@ body{overflow-x:clip}
     if(!burger||menu.dataset.mnInit)return;
     menu.dataset.mnInit='1';
     var links=document.querySelectorAll('.nav-links a:not(.nav-cta)');
-    links.forEach(function(a){menu.appendChild(a.cloneNode(true));});
+    links.forEach(function(a){if(a.closest('#navLoginBtn'))return;if((a.getAttribute('href')||'')==='/tutor'&&!a.classList.contains('nav-drawer-only'))return;menu.appendChild(a.cloneNode(true));});
     function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');}
     function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');}
     burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
