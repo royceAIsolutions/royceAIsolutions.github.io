@@ -38,7 +38,7 @@
     }
     #crosshair::before { width: 2px; height: 12px; left: 11px; top: 0; }
     #crosshair::after { width: 12px; height: 2px; top: 11px; left: 0; }
-    #fps { position: fixed; top: 20px; right: 20px; color: #0f0; font-family: monospace; font-size: 0.9rem; z-index: 5; }
+    #fps { position: fixed; top: 64px; right: 20px; color: #0f0; font-family: monospace; font-size: 0.9rem; z-index: 5; }
     #round-won, #round-lost {
       position: fixed; inset: 0; background: rgba(0,0,0,0.85);
       display: flex; align-items: center; justify-content: center; z-index: 20;
@@ -107,6 +107,34 @@
       text-transform: uppercase; letter-spacing: 0.1em; transition: background 0.2s;
     }
     #game-over button:hover { background: #ff5555; }
+    /* ===== KILL FEED / STREAK / STATS / AUDIO UI ===== */
+    #kill-feed { position: fixed; top: 64px; left: 20px; z-index: 14; pointer-events: none; font-size: 0.95rem; text-shadow: 0 0 4px #000; max-width: 340px; }
+    .kf-entry { background: rgba(0,0,0,0.55); border-left: 3px solid #ffaa00; padding: 4px 10px; margin-bottom: 4px; border-radius: 3px; color: #fff; opacity: 1; transition: opacity 0.4s; }
+    .kf-entry.kf-you { color: #00ff88; }
+    .kf-entry.kf-death { color: #ff5555; border-left-color: #ff3333; }
+    .kf-entry .kf-hs { color: #ffaa00; font-weight: bold; }
+    #mute-btn {
+      position: fixed; top: 20px; left: 190px; z-index: 15; width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.4); color: #fff; font-size: 1.1rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; font-family: inherit;
+    }
+    #mute-btn.muted { background: rgba(255,60,60,0.35); }
+    #streak-text {
+      position: fixed; top: 32%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; color: #ffaa00;
+      text-shadow: 0 0 20px #ffaa00, 0 0 40px #ff6600; letter-spacing: 0.15em; z-index: 16; pointer-events: none; opacity: 0;
+    }
+    #streak-text.pop { animation: streakpop 1.6s ease-out; }
+    @keyframes streakpop {
+      0% { transform: translate(-50%,-50%) scale(0.4); opacity: 1; }
+      60% { transform: translate(-50%,-50%) scale(1.15); opacity: 1; }
+      100% { transform: translate(-50%,-50%) scale(1); opacity: 0; }
+    }
+    #stats-grid { display: grid; grid-template-columns: repeat(5, auto); gap: 1.2rem; margin: 1.5rem 0 2rem; }
+    .stat-cell { text-align: center; }
+    .stat-cell .stat-val { font-size: 2.2rem; color: #ffaa00; font-weight: bold; text-shadow: 0 0 15px rgba(255,170,0,0.5); }
+    .stat-cell .stat-lbl { font-size: 0.8rem; color: #aaa; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.3rem; }
+    .dmg-num { position: fixed; font-weight: bold; color: #ffdd55; text-shadow: 0 0 6px #000; font-size: 1.2rem; z-index: 17; pointer-events: none; }
+    .dmg-num.crit { color: #ff5533; font-size: 1.6rem; }
     /* ===== TOUCH CONTROLS (iPad / mobile) ===== */
     #touch-ui { position: fixed; inset: 0; z-index: 12; display: none; pointer-events: none; }
     body.touch-mode #touch-ui { display: block; }
@@ -155,11 +183,21 @@
   </div>
   <div id="crosshair"></div>
   <div id="fps">FPS: 0</div>
+  <div id="kill-feed"></div>
+  <button id="mute-btn">🔊</button>
+  <div id="streak-text"></div>
   <div id="round-won"><h2>ROUND WON</h2></div>
   <div id="round-lost"><h2>ROUND LOST</h2></div>
   <div id="victory-overlay">
     <h1 id="victory-title">MATCH WON</h1>
     <p>Final Score: CT <span id="victory-ct">0</span> : <span id="victory-t">0</span> T</p>
+    <div id="stats-grid">
+      <div class="stat-cell"><div class="stat-val" id="stat-kills">0</div><div class="stat-lbl">KILLS</div></div>
+      <div class="stat-cell"><div class="stat-val" id="stat-hs">0</div><div class="stat-lbl">HEADSHOTS</div></div>
+      <div class="stat-cell"><div class="stat-val" id="stat-acc">0%</div><div class="stat-lbl">ACCURACY</div></div>
+      <div class="stat-cell"><div class="stat-val" id="stat-dmg">0</div><div class="stat-lbl">DAMAGE</div></div>
+      <div class="stat-cell"><div class="stat-val" id="stat-best">0</div><div class="stat-lbl">BEST KILLS</div></div>
+    </div>
     <button id="play-again">Play Again</button>
   </div>
   <div id="buy-menu">

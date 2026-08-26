@@ -44,6 +44,116 @@ let joyPointerId = null;
 let lookPointerId = null, lookLastX = 0, lookLastY = 0;
 if (touchMode) document.body.classList.add('touch-mode');
 
+// ==== AUDIO (WebAudio-synthesized SFX — zero asset files, works on iPad) ====
+const AudioSys = {
+  ctx: null,
+  master: null,
+  noiseBuf: null,
+  muted: false,
+  enabled: false,
+  init() {
+    if (this.ctx) {
+      if (this.ctx.state === 'suspended') this.ctx.resume();
+      return;
+    }
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      this.ctx = new AC();
+      this.master = this.ctx.createGain();
+      this.master.gain.value = this.muted ? 0 : 0.7;
+      this.master.connect(this.ctx.destination);
+      const len = this.ctx.sampleRate;
+      this.noiseBuf = this.ctx.createBuffer(1, len, this.ctx.sampleRate);
+      const d = this.noiseBuf.getChannelData(0);
+      for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+      this.enabled = true;
+    } catch (e) { this.enabled = false; }
+  },
+  toggle() {
+    this.muted = !this.muted;
+    if (this.master) this.master.gain.value = this.muted ? 0 : 0.7;
+    const btn = document.getElementById('mute-btn');
+    if (btn) { btn.textContent = this.muted ? '🔇' : '🔊'; btn.classList.toggle('muted', this.muted); }
+    return this.muted;
+  },
+  _noise(dur, opts = {}) {
+    if (!this.enabled) return;
+    const t = this.ctx.currentTime + (opts.at || 0);
+    const src = this.ctx.createBufferSource();
+    src.buffer = this.noiseBuf;
+    src.loop = true;
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = opts.type || 'bandpass';
+    filter.frequency.value = opts.freq || 1000;
+    if (opts.q) filter.Q.value = opts.q;
+    const g = this.ctx.createGain();
+    const peak = opts.gain || 0.3;
+    g.gain.setValueAtTime(peak, t);
+    g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+    src.connect(filter); filter.connect(g); g.connect(this.master);
+    src.start(t); src.stop(t + dur + 0.02);
+  },
+  _tone(freq, dur, opts = {}) {
+    if (!this.enabled) return;
+    const t = this.ctx.currentTime + (opts.at || 0);
+    const o = this.ctx.createOscillator();
+    o.type = opts.type || 'sine';
+    o.frequency.setValueAtTime(freq, t);
+    if (opts.slideTo) o.frequency.exponentialRampToValueAtTime(opts.slideTo, t + dur);
+    const g = this.ctx.createGain();
+    const peak = opts.gain || 0.25;
+    g.gain.setValueAtTime(peak, t);
+    g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+    o.connect(g); g.connect(this.master);
+    o.start(t); o.stop(t + dur + 0.02);
+  },
+  _seq(notes, gap) {
+    notes.forEach((n, i) => {
+      this._tone(n.f, n.d, { type: n.type || 'square', gain: n.gain || 0.18, at: i * gap });
+    });
+  },
+  // ---- gameplay SFX ----
+  shoot(w) {
+    if (w.name === 'M4') {
+      this._noise(0.14, { freq: 750, q: 0.8, gain: 0.5 });
+      this._tone(150, 0.1, { type: 'square', slideTo: 60, gain: 0.35 });
+      this._noise(0.05, { freq: 2600, q: 1, gain: 0.12 });
+    } else if (w.name === 'MP5') {
+      this._noise(0.09, { freq: 1100, q: 0.9, gain: 0.4 });
+      this._tone(170, 0.07, { type: 'square', slideTo: 80, gain: 0.3 });
+    } else {
+      this._noise(0.1, { freq: 1700, q: 1.2, gain: 0.45 });
+      this._tone(240, 0.09, { type: 'square', slideTo: 90, gain: 0.32 });
+    }
+  },
+  botShot() { this._noise(0.08, { freq: 900, q: 0.8, gain: 0.16 }); },
+  empty() { this._tone(1800, 0.025, { type: 'square', gain: 0.08 }); },
+  hit() { this._tone(950, 0.045, { type: 'square', gain: 0.16 }); },
+  headshot() { this._tone(1150, 0.06, { type: 'square', gain: 0.2 }); this._tone(1750, 0.09, { type: 'square', gain: 0.16 }); },
+  hurt() { this._noise(0.12, { freq: 300, q: 0.7, gain: 0.3 }); this._tone(110, 0.14, { type: 'sine', slideTo: 60, gain: 0.35 }); },
+  kill() { this._tone(660, 0.08, { type: 'square', gain: 0.18 }); this._tone(440, 0.1, { type: 'square', gain: 0.14 }); },
+  buy() { this._seq([{ f: 523, d: 0.07 }, { f: 784, d: 0.1 }], 0.06); },
+  swap() { this._noise(0.025, { freq: 2200, q: 2, gain: 0.12 }); },
+  tick() { this._tone(1050, 0.03, { type: 'square', gain: 0.1 }); },
+  go() { this._tone(1560, 0.16, { type: 'square', gain: 0.2 }); },
+  reload() {
+    this._noise(0.03, { freq: 2500, q: 2, gain: 0.18 });
+    this._noise(0.03, { freq: 1900, q: 2, gain: 0.15, at: 0.16 });
+  },
+  footstep() { this._noise(0.05, { freq: 420, type: 'lowpass', gain: 0.1 }); },
+  death() { this._noise(0.35, { freq: 250, q: 0.6, gain: 0.45 }); this._tone(180, 0.4, { type: 'sawtooth', slideTo: 40, gain: 0.3 }); },
+  streak() { this._seq([{ f: 784, d: 0.08 }, { f: 988, d: 0.08 }, { f: 1319, d: 0.16 }], 0.05); },
+  roundWin() { this._seq([{ f: 523, d: 0.12 }, { f: 659, d: 0.12 }, { f: 784, d: 0.22 }], 0.11); },
+  roundLoss() { this._seq([{ f: 392, d: 0.14 }, { f: 330, d: 0.14 }, { f: 262, d: 0.28 }], 0.12); },
+  matchWin() { this._seq([{ f: 523, d: 0.14 }, { f: 659, d: 0.14 }, { f: 784, d: 0.14 }, { f: 1047, d: 0.34 }], 0.12); },
+  matchLoss() { this._seq([{ f: 330, d: 0.18 }, { f: 262, d: 0.18 }, { f: 196, d: 0.42 }], 0.15); }
+};
+// Audio must start from a user gesture (iOS). Init on first pointer/key interaction.
+window.addEventListener('pointerdown', () => AudioSys.init(), { capture: true });
+window.addEventListener('keydown', () => AudioSys.init(), { capture: true });
+document.getElementById('mute-btn').addEventListener('click', () => AudioSys.toggle());
+
 // ==== THREE.JS SETUP ====
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -99,6 +209,9 @@ walls[2].position.set(-arena, wallH / 2, 0);
 walls[3].position.set(arena, wallH / 2, 0);
 walls.forEach(w => { w.castShadow = true; w.receiveShadow = true; scene.add(w); });
 const wallBoxes = walls.map(w => new THREE.Box3().setFromObject(w));
+const blockers = [...walls]; // walls + props — used for bullet/LOS raycasts
+let propBoxes = [];
+let propMeshes = [];
 
 // Lights
 const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444466, 1.2);
@@ -114,6 +227,49 @@ dirLight.shadow.camera.right = 60;
 dirLight.shadow.camera.top = 60;
 dirLight.shadow.camera.bottom = -60;
 scene.add(dirLight);
+
+// ==== ARENA PROPS (cover — fixed layout, mirrored for fairness) ====
+function createProps() {
+  const crateMat = new THREE.MeshStandardMaterial({ color: 0x6b4a2a, roughness: 0.85, metalness: 0.1 });
+  const barrelMat = new THREE.MeshStandardMaterial({ color: 0x3d5a3d, roughness: 0.5, metalness: 0.6 });
+  const crateGeo = new THREE.BoxGeometry(1.8, 1.8, 1.8);
+  const crateWideGeo = new THREE.BoxGeometry(3.2, 1.2, 1.2);
+  const barrelGeo = new THREE.CylinderGeometry(0.55, 0.55, 1.4, 14);
+
+  const props = [];
+  // 4 single crates (mid-field, mirrored)
+  [[14, 10], [-14, -10], [14, -10], [-14, 10]].forEach(([x, z]) => {
+    const c = new THREE.Mesh(crateGeo, crateMat);
+    c.position.set(x, 0.9, z);
+    c.castShadow = true; c.receiveShadow = true;
+    props.push(c);
+  });
+  // Center bunker: stacked crates (2 tall)
+  const c1 = new THREE.Mesh(crateGeo, crateMat); c1.position.set(0, 0.9, 0);
+  const c2 = new THREE.Mesh(crateGeo, crateMat); c2.position.set(0, 2.7, 0);
+  c1.castShadow = c2.castShadow = true; c1.receiveShadow = c2.receiveShadow = true;
+  props.push(c1, c2);
+  // 4 low wide crates (near corners, mirrored)
+  [[10, 20], [-10, -20], [10, -20], [-10, 20]].forEach(([x, z]) => {
+    const c = new THREE.Mesh(crateWideGeo, crateMat);
+    c.position.set(x, 0.6, z);
+    c.castShadow = true; c.receiveShadow = true;
+    props.push(c);
+  });
+  // 6 barrels (open lanes, mirrored)
+  [[18, 0], [-18, 0], [0, 18], [0, -18], [8, -15], [-8, 15]].forEach(([x, z]) => {
+    const b = new THREE.Mesh(barrelGeo, barrelMat);
+    b.position.set(x, 0.7, z);
+    b.castShadow = true; b.receiveShadow = true;
+    props.push(b);
+  });
+
+  props.forEach(p => scene.add(p));
+  propBoxes = props.map(p => new THREE.Box3().setFromObject(p));
+  propMeshes = props;
+  blockers.push(...props);
+}
+createProps();
 
 // ==== PLAYER GUN (CT blue-dark) ====
 const gunGroup = new THREE.Group();
@@ -213,6 +369,60 @@ let freezetimeTimer = 8;
 let isRoundEnding = false;
 let isMatchOver = false;
 
+// ==== STATS / KILL FEED / STREAK / DAMAGE NUMBERS ====
+const stats = { kills: 0, deaths: 0, headshots: 0, damageDealt: 0, shotsFired: 0, shotsHit: 0 };
+let killsInRound = 0;
+const dmgNums = [];
+const STREAK_NAMES = ['', '', '', 'TRIPLE KILL', 'QUAD KILL', 'RAMPAGE', 'UNSTOPPABLE'];
+function addKillFeed(killer, victim, weaponName, headshot, playerKill) {
+  const feed = document.getElementById('kill-feed');
+  const div = document.createElement('div');
+  div.className = 'kf-entry' + (playerKill ? ' kf-you' : ' kf-death');
+  div.innerHTML = `<span>${killer}</span> ▸ <span>${victim}</span>` +
+    (weaponName ? ` <span style="color:#999">[${weaponName}]</span>` : '') +
+    (headshot ? ' <span class="kf-hs">HEADSHOT</span>' : '');
+  feed.prepend(div);
+  while (feed.children.length > 5) feed.lastChild.remove();
+  setTimeout(() => { div.style.opacity = '0'; setTimeout(() => div.remove(), 450); }, 4500);
+}
+function showStreak() {
+  const name = STREAK_NAMES[Math.min(killsInRound, STREAK_NAMES.length - 1)];
+  if (!name) return;
+  const el = document.getElementById('streak-text');
+  el.textContent = name;
+  el.classList.remove('pop');
+  void el.offsetWidth; // restart animation
+  el.classList.add('pop');
+  AudioSys.streak();
+}
+function addDamageNum(bot, amount, crit) {
+  if (dmgNums.length > 24) dmgNums.shift().el?.remove();
+  const p = new THREE.Vector3();
+  bot.getWorldPosition(p);
+  dmgNums.push({
+    pos: p.add(new THREE.Vector3((Math.random() - 0.5) * 0.7, 1.95, 0)),
+    val: amount, crit, t: 0, el: null
+  });
+}
+function fillStats() {
+  const acc = stats.shotsFired > 0 ? Math.round((stats.shotsHit / stats.shotsFired) * 100) : 0;
+  document.getElementById('stat-kills').textContent = stats.kills;
+  document.getElementById('stat-hs').textContent = stats.headshots;
+  document.getElementById('stat-acc').textContent = acc + '%';
+  document.getElementById('stat-dmg').textContent = stats.damageDealt;
+  let best = parseInt(localStorage.getItem('csarena-best-kills') || '0', 10);
+  if (stats.kills > best) { best = stats.kills; localStorage.setItem('csarena-best-kills', String(best)); }
+  document.getElementById('stat-best').textContent = best;
+}
+
+// ==== PLAYER DEATH CAM ====
+let isPlayerDead = false;
+let playerDeathTimer = 0;
+let bobPhase = 0;
+let footstepTimer = 0;
+let lastFreezeTick = 8;
+let lastDryFire = 0;
+
 // ==== ECONOMY ====
 let money = 800;
 const KILL_REWARD = 300;
@@ -291,6 +501,7 @@ const losRaycaster = new THREE.Raycaster();
 const tempVec3 = new THREE.Vector3();
 const tempVec3b = new THREE.Vector3();
 const tempBox3 = new THREE.Box3();
+const tempBox3b = new THREE.Box3();
 
 // Bot materials (T palette)
 const botBodyMat = new THREE.MeshStandardMaterial({ color: 0x8a7355, roughness: 0.7, metalness: 0.2 }); // khaki/tan
@@ -329,8 +540,8 @@ function updateHUD() {
   }
   
   // Buy button states
-  buySmgBtn.disabled = money < WEAPONS.smg.price || primaryWeapon === WEAPONS.smg;
-  buyRifleBtn.disabled = money < WEAPONS.rifle.price || primaryWeapon === WEAPONS.rifle;
+  buySmgBtn.disabled = money < WEAPONS.smg.price || primaryWeapon.name === WEAPONS.smg.name;
+  buyRifleBtn.disabled = money < WEAPONS.rifle.price || primaryWeapon.name === WEAPONS.rifle.name;
   buyArmorBtn.disabled = money < ARMOR_PRICE || armor >= MAX_ARMOR;
   buyPistolBtn.disabled = true; // always owned
 }
@@ -362,8 +573,9 @@ function createBot(x, z, isPatrol = false, patrolRange = 0, isRifleBot = false) 
   botGroup.add(gun);
 
   botGroup.position.set(x, 0, z);
+  const hpBonus = Math.max(0, currentRound - 3) * 10 + (isRifleBot ? 10 : 0);
   botGroup.userData = {
-    health: 100,
+    health: 100 + hpBonus,
     alive: true,
     state: isPatrol ? 'patrol' : 'idle',
     homePos: new THREE.Vector3(x, 0, z),
@@ -446,6 +658,10 @@ function startMatch() {
   health = 100;
   isMatchOver = false;
   isGameOver = false;
+  stats.kills = 0; stats.deaths = 0; stats.headshots = 0; stats.damageDealt = 0; stats.shotsFired = 0; stats.shotsHit = 0;
+  killsInRound = 0;
+  isPlayerDead = false;
+  AudioSys.init();
   camera.position.set(0, 1.7, 10);
   velocity.set(0, 0, 0);
   mouse.x = 0;
@@ -467,14 +683,17 @@ function startMatch() {
 function startRound() {
   isRoundEnding = false;
   health = 100;
+  isPlayerDead = false;
+  killsInRound = 0;
+  lastFreezeTick = 8;
   currentAmmo = currentWeapon.magSize;
   reserveAmmo = currentWeapon.reserve;
   isReloading = false;
   reloadTimer = 0;
   
   camera.position.set(0, 1.7, 10);
-  camera.rotation.y = Math.PI;
-  mouse.x = Math.PI;
+  camera.rotation.y = 0; // face the arena, not the back wall
+  mouse.x = 0;
   mouse.y = 0;
   velocity.set(0, 0, 0);
   
@@ -505,6 +724,7 @@ function endFreezetime() {
   crosshair.classList.add('visible');
   if (!touchMode) canvas.requestPointerLock();
   if (touchMode) document.body.classList.add('playing');
+  AudioSys.go();
 }
 
 function roundWon() {
@@ -513,6 +733,8 @@ function roundWon() {
   roundTimerActive = false;
   ctWins++;
   money += ROUND_WIN_REWARD;
+  AudioSys.roundWin();
+  stats.roundsWon = (stats.roundsWon || 0) + 1;
   
   roundWonEl.classList.add('visible');
   hud.classList.remove('visible');
@@ -530,6 +752,8 @@ function roundLost() {
   roundTimerActive = false;
   tWins++;
   money += ROUND_LOSS_REWARD;
+  AudioSys.roundLoss();
+  stats.roundsLost = (stats.roundsLost || 0) + 1;
   
   roundLostEl.classList.add('visible');
   hud.classList.remove('visible');
@@ -554,6 +778,8 @@ function checkMatchEnd() {
 
 function matchWon() {
   isMatchOver = true;
+  AudioSys.matchWin();
+  fillStats();
   victoryTitle.textContent = 'MATCH WON';
   victoryTitle.style.color = '#00ff88';
   victoryTitle.style.textShadow = '0 0 30px #00ff88';
@@ -567,6 +793,8 @@ function matchWon() {
 function matchLost() {
   isMatchOver = true;
   isGameOver = true;
+  AudioSys.matchLoss();
+  fillStats();
   victoryTitle.textContent = 'MATCH LOST';
   victoryTitle.style.color = '#ff3333';
   victoryTitle.style.textShadow = '0 0 30px #ff3333';
@@ -586,6 +814,7 @@ let buyMenuOpen = false;
 
 function toggleBuyMenu() {
   if (isRoundEnding || isMatchOver) return;
+  if (!isFreezetime) return; // CS-style: buy time only
   buyMenuOpen = !buyMenuOpen;
   if (buyMenuOpen) {
     buyMenu.classList.add('visible');
@@ -597,15 +826,14 @@ function toggleBuyMenu() {
 
 function buyWeapon(type) {
   const weapon = WEAPONS[type];
-  if (money >= weapon.price && primaryWeapon !== weapon) {
+  if (money >= weapon.price && primaryWeapon.name !== weapon.name) {
     money -= weapon.price;
     primaryWeapon = { ...weapon };
-    // If currently holding primary, switch to it
-    if (currentWeapon !== WEAPONS.pistol) {
-      currentWeapon = { ...primaryWeapon };
-      currentAmmo = primaryWeapon.magSize;
-      reserveAmmo = primaryWeapon.reserve;
-    }
+    // Equip the new weapon (CS behavior — buying = holding)
+    currentWeapon = { ...primaryWeapon };
+    currentAmmo = primaryWeapon.magSize;
+    reserveAmmo = primaryWeapon.reserve;
+    AudioSys.buy();
     updateHUD();
   }
 }
@@ -614,6 +842,7 @@ function buyArmor() {
   if (money >= ARMOR_PRICE && armor < MAX_ARMOR) {
     money -= ARMOR_PRICE;
     armor = MAX_ARMOR;
+    AudioSys.buy();
     updateHUD();
   }
 }
@@ -629,9 +858,9 @@ buyMenu.addEventListener('click', (e) => {
 
 // ==== WEAPON SWITCHING ====
 function switchWeapon(slot) {
-  if (isReloading || isRoundEnding) return;
+  if (isRoundEnding) return;
   if (slot === 1) { // Primary
-    if (primaryWeapon !== WEAPONS.pistol) {
+    if (primaryWeapon.name !== 'PISTOL') {
       currentWeapon = { ...primaryWeapon };
       currentAmmo = primaryWeapon.magSize;
       reserveAmmo = primaryWeapon.reserve;
@@ -643,12 +872,18 @@ function switchWeapon(slot) {
   }
   isReloading = false;
   reloadTimer = 0;
+  AudioSys.swap();
   updateHUD();
 }
 
 // ==== SHOOTING ====
 function shoot() {
-  if (currentAmmo <= 0 || isReloading || isFreezetime || isRoundEnding || isMatchOver) return;
+  if (currentAmmo <= 0) {
+    const now = performance.now();
+    if (now - lastDryFire > 250) { AudioSys.empty(); lastDryFire = now; }
+    return;
+  }
+  if (isReloading || isFreezetime || isRoundEnding || isMatchOver || isPlayerDead) return;
   
   const now = performance.now() / 1000;
   const timeSinceLastShot = now - lastShotTime;
@@ -659,6 +894,8 @@ function shoot() {
   
   lastShotTime = now;
   currentAmmo--;
+  stats.shotsFired++;
+  AudioSys.shoot(currentWeapon);
   updateHUD();
 
   recoil = 0.03;
@@ -677,31 +914,38 @@ function shoot() {
   dir.y += (Math.random() - 0.5) * currentWeapon.spread;
   dir.z += (Math.random() - 0.5) * currentWeapon.spread;
   dir.normalize();
-  
-  dir.applyEuler(new THREE.Euler(-recoil * 2, 0, 0));
+
+  // Recoil is a visual camera kick (applied in the main loop) — bullets follow
+  // the camera, not an extra pitch, so shots land where the crosshair points.
 
   raycastShoot(origin, dir, true);
 }
 
-function raycastShoot(origin, dir, isPlayer) {
+function raycastShoot(origin, dir, isPlayer, dmg) {
   const ray = new THREE.Raycaster(origin, dir, 0, 100);
 
-  const wallIntersects = ray.intersectObjects(walls, true);
+  const wallIntersects = ray.intersectObjects(blockers, true);
   let botIntersect = null;
   let minBotDist = Infinity;
 
   for (const bot of bots) {
     if (!bot.userData.alive) continue;
-    const botBox = tempBox3.setFromCenterAndSize(
+    const bodyBox = tempBox3.setFromCenterAndSize(
       bot.position.clone().add(new THREE.Vector3(0, 0.9, 0)),
-      new THREE.Vector3(1.0, 1.8, 1.0)
+      new THREE.Vector3(1.0, 1.35, 1.0)
     );
-    ray.ray.intersectBox(botBox, tempVec3);
-    if (tempVec3) {
-      const dist = origin.distanceTo(tempVec3);
+    const headBox = tempBox3b.setFromCenterAndSize(
+      bot.position.clone().add(new THREE.Vector3(0, 1.63, 0)),
+      new THREE.Vector3(0.5, 0.5, 0.5)
+    );
+    const headHit = ray.ray.intersectBox(headBox, tempVec3b);
+    const bodyHit = ray.ray.intersectBox(bodyBox, tempVec3);
+    if (headHit || bodyHit) {
+      const point = headHit ? tempVec3b.clone() : tempVec3.clone();
+      const dist = origin.distanceTo(point);
       if (dist < minBotDist) {
         minBotDist = dist;
-        botIntersect = { point: tempVec3.clone(), object: bot, distance: dist };
+        botIntersect = { point, object: bot, distance: dist, head: !!headHit };
       }
     }
   }
@@ -734,7 +978,7 @@ function raycastShoot(origin, dir, isPlayer) {
       if (!blocked) {
         hitPoint = playerChest.clone();
         hitObject = camera;
-        applyPlayerDamage(hitObject.userData?.botDamage || 10);
+        applyPlayerDamage(dmg || 10);
       }
     }
   }
@@ -771,18 +1015,31 @@ function raycastShoot(origin, dir, isPlayer) {
       botSparkTime = 0.4;
     }
 
-    if (hitIsBot) {
+    if (hitIsBot && isPlayer) {
       const bot = hitObject;
       const ud = bot.userData;
-      ud.health -= currentWeapon.damage;
+      const isHead = botIntersect.head;
+      const dealt = isHead ? currentWeapon.damage * 3 : currentWeapon.damage;
+      ud.health -= dealt;
+      stats.damageDealt += dealt;
+      stats.shotsHit++;
+      if (isHead) {
+        stats.headshots++;
+        addDamageNum(bot, dealt, true);
+        AudioSys.headshot();
+      } else {
+        addDamageNum(bot, dealt, false);
+        AudioSys.hit();
+      }
       ud.hitFlashTimer = 0.15;
       ud.bodyMesh.material.color.setHex(0xff6666);
       ud.headMesh.material.color.setHex(0xff6666);
 
       if (ud.health <= 0) {
-        killBot(bot);
+        killBot(bot, isHead);
       }
     }
+    // Bot shots clipping other bots: sparks only, no friendly damage
   }
 }
 
@@ -790,6 +1047,7 @@ function reload() {
   if (isReloading || currentAmmo >= currentWeapon.magSize || reserveAmmo <= 0 || isFreezetime || isRoundEnding) return;
   isReloading = true;
   reloadTimer = currentWeapon.reloadTime;
+  AudioSys.reload();
   updateHUD();
 }
 
@@ -811,7 +1069,8 @@ function botShoot(bot) {
   dir.z += (Math.random() - 0.5) * spread;
   dir.normalize();
 
-  raycastShoot(gunWorldPos, dir, false);
+  raycastShoot(gunWorldPos, dir, false, ud.botDamage);
+  AudioSys.botShot();
 
   const flash = new THREE.PointLight(0xff0000, 30, 5);
   flash.position.copy(gunWorldPos);
@@ -821,13 +1080,18 @@ function botShoot(bot) {
   ud.shotTimer = ud.shotCooldown;
 }
 
-function killBot(bot) {
+function killBot(bot, wasHeadshot) {
   const ud = bot.userData;
   if (ud.isDying) return;
   ud.isDying = true;
   ud.alive = false;
   ud.deathTimer = 1.4;
   money += KILL_REWARD;
+  stats.kills++;
+  killsInRound++;
+  AudioSys.kill();
+  addKillFeed('YOU', 'BOT', currentWeapon.name, !!wasHeadshot, true);
+  if (killsInRound >= 3) showStreak();
   updateHUD();
 
   // Check round win
@@ -839,7 +1103,7 @@ function killBot(bot) {
 
 // ==== PLAYER DAMAGE WITH ARMOR ====
 function applyPlayerDamage(amount) {
-  if (isGameOver || isRoundEnding) return;
+  if (isGameOver || isRoundEnding || isPlayerDead) return;
   
   if (armor > 0) {
     const armorDamage = Math.ceil(amount * ARMOR_ABSORPTION);
@@ -851,11 +1115,18 @@ function applyPlayerDamage(amount) {
   }
   health = Math.max(0, health);
   updateHUD();
+  AudioSys.hurt();
   damageFlash.classList.add('active');
-  setTimeout(() => damageFlash.classList.remove('active'), 300);
+  setTimeout(() => { if (!isPlayerDead) damageFlash.classList.remove('active'); }, 300);
 
   if (health <= 0) {
-    roundLost();
+    health = 0;
+    isPlayerDead = true;
+    playerDeathTimer = 1.5;
+    stats.deaths++;
+    addKillFeed('BOT', 'YOU', null, false, false);
+    AudioSys.death();
+    // damageFlash stays active → red death screen while the camera falls
   }
 }
 
@@ -878,7 +1149,7 @@ function checkLOS(bot) {
   losRaycaster.set(headWorldPos, dir);
   losRaycaster.far = dist;
 
-  const wallIntersects = losRaycaster.intersectObjects(walls, true);
+  const wallIntersects = losRaycaster.intersectObjects(blockers, true);
   if (wallIntersects.length > 0) {
     ud.hasLOS = false;
     return false;
@@ -1001,9 +1272,8 @@ function updateBots(dt) {
           new THREE.Vector3(1.0, 1.8, 1.0)
         );
         let hitWall = false;
-        for (const wallBox of wallBoxes) {
-          if (botBox.intersectsBox(wallBox)) { hitWall = true; break; }
-        }
+        for (const wb of wallBoxes) { if (botBox.intersectsBox(wb)) { hitWall = true; break; } }
+        if (!hitWall) for (const pb of propBoxes) { if (botBox.intersectsBox(pb)) { hitWall = true; break; } }
         if (!hitWall) bot.position.x += moveX;
 
         const botBoxZ = tempBox3.setFromCenterAndSize(
@@ -1011,9 +1281,8 @@ function updateBots(dt) {
           new THREE.Vector3(1.0, 1.8, 1.0)
         );
         hitWall = false;
-        for (const wallBox of wallBoxes) {
-          if (botBoxZ.intersectsBox(wallBox)) { hitWall = true; break; }
-        }
+        for (const wb of wallBoxes) { if (botBoxZ.intersectsBox(wb)) { hitWall = true; break; } }
+        if (!hitWall) for (const pb of propBoxes) { if (botBoxZ.intersectsBox(pb)) { hitWall = true; break; } }
         if (!hitWall) bot.position.z += moveZ;
 
         bot.position.x = THREE.MathUtils.clamp(bot.position.x, -38, 38);
@@ -1078,6 +1347,7 @@ function onKeyDown(e) {
   
   if (k === 'keyr') reload();
   if (k === 'keyb') toggleBuyMenu();
+  if (k === 'keym') AudioSys.toggle();
   if (k === 'escape') { if (buyMenuOpen) toggleBuyMenu(); }
   if (k === 'digit1') switchWeapon(1);
   if (k === 'digit2') switchWeapon(2);
@@ -1194,7 +1464,7 @@ function animate(time) {
   if (time - lastFpsTime > 1000) { fps = frames; frames = 0; lastFpsTime = time; }
   fpsEl.textContent = `FPS: ${fps}`;
 
-  const canControl = (pointerLocked || touchMode) && !isFreezetime && !isRoundEnding && !isMatchOver && !buyMenuOpen;
+  const canControl = (pointerLocked || touchMode) && !isFreezetime && !isRoundEnding && !isMatchOver && !buyMenuOpen && !isPlayerDead;
   if (canControl) {
     direction.z = Number(keys.w) - Number(keys.s);
     direction.x = Number(keys.d) - Number(keys.a);
@@ -1223,6 +1493,10 @@ function animate(time) {
       if (testBoxX.intersectsBox(wallBox)) { moveX = 0; velocity.x = 0; hitWall = true; }
       if (testBoxZ.intersectsBox(wallBox)) { moveZ = 0; velocity.z = 0; hitWall = true; }
     }
+    for (const pb of propBoxes) {
+      if (testBoxX.intersectsBox(pb)) { moveX = 0; velocity.x = 0; }
+      if (testBoxZ.intersectsBox(pb)) { moveZ = 0; velocity.z = 0; }
+    }
     for (const bot of bots) {
       if (!bot.userData.alive) continue;
       const botBox = tempBox3.setFromCenterAndSize(
@@ -1242,6 +1516,22 @@ function animate(time) {
       canJump = true;
     } else {
       camera.position.y += velocity.y * dt;
+    }
+
+    // Camera bob + footsteps + sprint FOV kick
+    const moving = camera.position.y <= 1.71 && (Math.abs(velocity.x) > 0.5 || Math.abs(velocity.z) > 0.5);
+    if (moving) {
+      bobPhase += dt * (keys.shift ? 11 : 7);
+      camera.position.y = 1.7 + Math.sin(bobPhase) * 0.05 * (keys.shift ? 1.35 : 0.85);
+      footstepTimer -= dt;
+      if (footstepTimer <= 0) { AudioSys.footstep(); footstepTimer = keys.shift ? 0.26 : 0.38; }
+    } else {
+      footstepTimer = 0;
+    }
+    const targetFov = (keys.shift && moving) ? 82 : 75;
+    if (Math.abs(camera.fov - targetFov) > 0.01) {
+      camera.fov += (targetFov - camera.fov) * dt * 8;
+      camera.updateProjectionMatrix();
     }
 
     velocity.x *= 0.9;
@@ -1274,10 +1564,28 @@ function animate(time) {
   // Freezetime countdown
   if (isFreezetime) {
     freezetimeTimer -= dt;
+    const ftCeil = Math.ceil(freezetimeTimer);
+    if (ftCeil !== lastFreezeTick) {
+      lastFreezeTick = ftCeil;
+      if (ftCeil > 0 && ftCeil <= 3) AudioSys.tick();
+    }
     updateHUD();
     if (freezetimeTimer <= 0) {
       freezetimeTimer = 0;
       endFreezetime();
+    }
+  }
+
+  // Death cam: camera falls + tilts down, then the round is lost
+  if (isPlayerDead) {
+    playerDeathTimer -= dt;
+    camera.position.y = Math.max(camera.position.y - 3.4 * dt, 0.35);
+    camera.rotation.x = THREE.MathUtils.lerp(camera.rotation.x, -1.45, dt * 6);
+    camera.rotation.z = THREE.MathUtils.lerp(camera.rotation.z, 0.14, dt * 5);
+    if (playerDeathTimer <= 0) {
+      isPlayerDead = false;
+      damageFlash.classList.remove('active');
+      roundLost();
     }
   }
 
@@ -1338,6 +1646,23 @@ function animate(time) {
     if (botSparkTime <= 0) botSparkMat.opacity = 0;
   }
 
+  // Damage numbers (project 3D hit → screen)
+  for (let i = dmgNums.length - 1; i >= 0; i--) {
+    const dn = dmgNums[i];
+    dn.t += dt;
+    if (dn.t > 0.75) { dn.el?.remove(); dmgNums.splice(i, 1); continue; }
+    const v = new THREE.Vector3(dn.pos.x, dn.pos.y + dn.t * 1.6, dn.pos.z).project(camera);
+    if (v.z > 1) continue; // behind camera
+    if (!dn.el) {
+      dn.el = document.createElement('div');
+      dn.el.className = 'dmg-num' + (dn.crit ? ' crit' : '');
+      dn.el.textContent = dn.val;
+      document.body.appendChild(dn.el);
+    }
+    dn.el.style.left = (((v.x + 1) / 2) * window.innerWidth) + 'px';
+    dn.el.style.top = (((-v.y + 1) / 2) * window.innerHeight) + 'px';
+  }
+
   renderer.render(scene, camera);
 }
 
@@ -1368,6 +1693,118 @@ startOverlay.addEventListener('click', () => {
 });
 
 window.startGame = startMatch;
+
+// ==== DEBUG HOOK (only with ?debug — used for headless playtest verification) ====
+if (new URLSearchParams(location.search).has('debug')) {
+  window.__csDebug = {
+    killAllBots: () => { [...bots].forEach(b => { if (b.userData.alive) killBot(b, false); }); },
+    giveMoney: (n) => { money += n; updateHUD(); },
+    giveWeapon: (t) => {
+      const w = WEAPONS[t];
+      if (!w) return false;
+      primaryWeapon = { ...w };
+      currentWeapon = { ...w };
+      currentAmmo = w.magSize; reserveAmmo = w.reserve;
+      updateHUD(); return true;
+    },
+    endFreeze: () => endFreezetime(),
+    restartMatch: () => resetMatch(),
+    setHealth: (n) => { health = Math.max(0, n); updateHUD(); },
+    aimBot: (i, part) => {
+      const b = bots[i];
+      if (!b || !b.userData.alive) return false;
+      const target = b.position.clone().add(new THREE.Vector3(0, part === 'head' ? 1.63 : 0.9, 0));
+      const camPos = new THREE.Vector3();
+      camera.getWorldPosition(camPos);
+      const dir = new THREE.Vector3().subVectors(target, camPos).normalize();
+      mouse.y = Math.asin(Math.max(-1, Math.min(1, dir.y)));
+      mouse.x = Math.atan2(-dir.x, -dir.z);
+      // apply rotation immediately so aim+fire in the same tick is accurate
+      camera.rotation.y = mouse.x;
+      camera.rotation.x = mouse.y;
+      return true;
+    },
+    getState: () => ({
+      round: currentRound, ct: ctWins, t: tWins, health, money, armor,
+      weapon: currentWeapon.name, primary: primaryWeapon.name,
+      ammo: currentAmmo, reserve: reserveAmmo, freezetime: isFreezetime,
+      roundTimer: Math.round(roundTimer), botsAlive: bots.filter(b => b.userData.alive).length,
+      playerDead: isPlayerDead, roundEnding: isRoundEnding, matchOver: isMatchOver,
+      audio: { enabled: AudioSys.enabled, muted: AudioSys.muted, ctxState: AudioSys.ctx ? AudioSys.ctx.state : 'none' },
+      stats: { ...stats }, killsInRound, props: propBoxes.length, damageNums: dmgNums.length
+    }),
+    probe: (i) => {
+      const b = bots[i];
+      if (!b) return null;
+      window.__csDebug.aimBot(i, 'head');
+      const camPos = new THREE.Vector3();
+      camera.getWorldPosition(camPos);
+      const fwd = new THREE.Vector3();
+      camera.getWorldDirection(fwd);
+      const headBox = new THREE.Box3().setFromCenterAndSize(
+        b.position.clone().add(new THREE.Vector3(0, 1.63, 0)),
+        new THREE.Vector3(0.5, 0.5, 0.5)
+      );
+      const tmp = new THREE.Vector3();
+      const hit = new THREE.Ray(camPos, fwd).intersectBox(headBox, tmp);
+      return JSON.stringify({
+        pointerLocked: document.pointerLockElement === canvas,
+        touchMode,
+        fps: document.getElementById('fps').textContent,
+        camPos: camPos.toArray().map(v => +v.toFixed(2)),
+        fwd: fwd.toArray().map(v => +v.toFixed(3)),
+        botPos: [b.position.x.toFixed(1), b.position.z.toFixed(1)],
+        headRayIntersect: hit ? tmp.toArray().map(v => +v.toFixed(2)) : null,
+        botDist: b.position.distanceTo(camPos).toFixed(1)
+      });
+    },
+    // Deterministic shot through the REAL raycast pipeline (no spread, no click plumbing)
+    fireAt: (i, part) => {
+      const b = bots[i];
+      if (!b || !b.userData.alive) return false;
+      const target = b.position.clone().add(new THREE.Vector3(0, part === 'head' ? 1.63 : 0.9, 0));
+      const camPos = new THREE.Vector3();
+      camera.getWorldPosition(camPos);
+      const dir = new THREE.Vector3().subVectors(target, camPos).normalize();
+      raycastShoot(camPos, dir, true);
+      return true;
+    },
+    // What does a shot ray actually hit first? (cover-occlusion diagnostic)
+    trace: (i, part) => {
+      const b = bots[i];
+      if (!b) return null;
+      const target = b.position.clone().add(new THREE.Vector3(0, part === 'head' ? 1.63 : 0.9, 0));
+      const camPos = new THREE.Vector3();
+      camera.getWorldPosition(camPos);
+      const dir = new THREE.Vector3().subVectors(target, camPos).normalize();
+      const ray = new THREE.Raycaster(camPos, dir, 0, 100);
+      const blocker = ray.intersectObjects(blockers, true)[0] || null;
+      let botHit = null;
+      for (const bot of bots) {
+        if (!bot.userData.alive) continue;
+        const bodyBox = tempBox3.setFromCenterAndSize(bot.position.clone().add(new THREE.Vector3(0, 0.9, 0)), new THREE.Vector3(1.0, 1.35, 1.0));
+        const headBox = tempBox3b.setFromCenterAndSize(bot.position.clone().add(new THREE.Vector3(0, 1.63, 0)), new THREE.Vector3(0.5, 0.5, 0.5));
+        const h = ray.ray.intersectBox(headBox, tempVec3b);
+        const bo = ray.ray.intersectBox(bodyBox, tempVec3);
+        if (h || bo) {
+          const d = camPos.distanceTo(h ? tempVec3b : tempVec3);
+          if (!botHit || d < botHit.d) botHit = { d: +d.toFixed(1), head: !!h, bot: bots.indexOf(bot) };
+        }
+      }
+      return JSON.stringify({
+        blocker: blocker ? {
+          dist: +blocker.distance.toFixed(1),
+          isProp: propMeshes.includes(blocker.object),
+          isWall: walls.includes(blocker.object)
+        } : null,
+        botHit,
+        botTarget: i,
+        distToTarget: camPos.distanceTo(target).toFixed(1)
+      });
+    },
+    shootPlayer: (dmg) => applyPlayerDamage(dmg)
+  };
+}
 
 // ==== INIT ====
 startMatch();
