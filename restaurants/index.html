@@ -87,6 +87,7 @@ nav{z-index:1001;background:var(--bg)}
   .mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
 }
 @keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent,#7c5cfc),0 4px 20px rgba(124,92,252,0.2)}50%{box-shadow:0 0 0 1px var(--accent,#7c5cfc),0 4px 40px rgba(124,92,252,0.2),0 0 60px rgba(124,92,252,0.2)}}
+@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
 </style>
 </head>
 <body>
@@ -97,10 +98,11 @@ nav{z-index:1001;background:var(--bg)}
   <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:36px;height:36px;border-radius:9px" alt="R"> Royce<span>AI</span></a>
   <div class="nav-links">
     <a href="/products">Products</a>
-    <a href="/tutor">✨ Tutor</a>
+    
     <a href="/subscribe">Subscribe</a>
     <a href="/restaurants" class="nav-drawer-only active">🍽️ Restaurants</a>
     <a href="/blog" class="nav-drawer-only">Blog</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
     <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>

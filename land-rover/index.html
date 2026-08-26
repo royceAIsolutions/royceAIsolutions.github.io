@@ -102,6 +102,7 @@ nav{z-index:1001;background:var(--bg)}
   .grid{grid-template-columns:1fr}
   .hero{padding:50px 20px 24px}
 }
+@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
 </style>
 </head>
 <body>
@@ -110,7 +111,7 @@ nav{z-index:1001;background:var(--bg)}
   <a href="/" class="nav-logo"><span>Royce</span>AI</a>
   <div class="nav-links">
     <a href="/products">Products</a>
-    <a href="/tutor">✨ Tutor</a>
+    
     <a href="/subscribe">Subscribe</a>
     <a href="/land-rover" class="nav-drawer-only" style="color:var(--accent-light);font-weight:600">🚙 Land Rover</a>
     <a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a>
@@ -120,6 +121,7 @@ nav{z-index:1001;background:var(--bg)}
     <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
     <a href="/livaway" class="nav-drawer-only">🏨 LivAway</a>
     <a href="/blog" class="nav-drawer-only">Blog</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
     <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
