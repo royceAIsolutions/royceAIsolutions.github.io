@@ -67,9 +67,10 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
 footer .links{display:flex;gap:20px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
 footer .links a{color:#88889a;text-decoration:none;font-size:0.875rem}
 footer .links a:hover{color:#a78bfa}
+nav{z-index:1001;background:var(--bg)}
 @media(max-width:640px){.hero h1{font-size:1.7rem}.filters{padding:0 16px}.grid{grid-template-columns:1fr;padding:0 16px}nav{padding:0 16px;flex-direction:column;height:auto;gap:6px;padding:8px 16px}.nav-logo{width:100%;justify-content:center}.nav-links{width:100%;justify-content:center}}
 /* ===== MOBILE NAV (hamburger + drawer) ===== */
-.nav-burger{display:none}
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
 @media(max-width:640px){
   nav{z-index:1001;background:var(--bg,#07070a)}
   .nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated,#15151b);border:1px solid var(--border,rgba(255,255,255,0.06));border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}

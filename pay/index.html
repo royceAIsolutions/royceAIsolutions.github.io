@@ -241,6 +241,7 @@ footer .links a { color: var(--text-secondary); text-decoration: none; font-size
 footer .links a:hover { color: var(--accent); }
 footer .copy { color: var(--text-secondary); font-size: 0.8rem; width: 100%; text-align: center; }
 
+nav{z-index:1001;background:var(--bg)}
 @media (max-width: 640px) {
   .nav-links a:not(.nav-cta):not(.nav-show-mobile) { display: none; }
   .hero-sub { padding: 100px 20px 40px; }
@@ -310,7 +311,7 @@ body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right
   <div class="nav-links">
     <a href="/products">Products</a>
     <a href="/tutor">✨ Tutor</a>
-    <a href="/my">Log In →</a>
+    <a href="/my" class="nav-drawer-only">Log In →</a>
     <a href="/subscribe">Subscribe</a>
     <a href="/blog" class="nav-drawer-only">Blog</a>
     <a href="/chat" class="nav-cta">💬 Chat</a>

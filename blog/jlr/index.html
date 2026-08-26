@@ -37,10 +37,12 @@ footer .copy{color:#5c5c6e;font-size:0.8rem;width:100%;text-align:center}
 footer .links{display:flex;gap:20px;flex-wrap:wrap}
 footer .links a{color:#88889a;text-decoration:none;font-size:0.875rem}
 footer .links a:hover{color:#a78bfa}
+nav{z-index:1001;background:var(--bg)}
+.nav-drawer-only{display:none!important}
 @media(max-width:640px){.topics{padding:0 16px 3rem;grid-template-columns:1fr}.topic-card{padding:1.5rem}nav{padding:0 16px;height:auto;flex-direction:column;gap:6px;padding:8px 16px}.nav-logo{width:100%;justify-content:center;font-size:1rem}.nav-links{width:100%;justify-content:center;flex-wrap:wrap}.nav-links a{font-size:.75rem;padding:5px 10px}}
 
 /* ===== MOBILE NAV (hamburger + drawer) ===== */
-.nav-burger{display:none}
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
 @media(max-width:640px){
   nav{z-index:1001;background:var(--bg)}
   .nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
@@ -67,8 +69,8 @@ footer .links a:hover{color:#a78bfa}
 <div class="nav-links">
 <a href="/products">Products</a>
 <a href="/tutor">Tutor</a>
-<a href="/blog">Blog</a>
-<a href="/blog/jlr" style="color:#a78bfa;font-weight:600">Land Rover</a>
+<a href="/blog" class="nav-drawer-only">Blog</a>
+<a href="/blog/jlr" style="color:#a78bfa;font-weight:600" class="nav-drawer-only">Land Rover</a>
 <a href="/chat" class="nav-cta">Chat</a>
 </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
