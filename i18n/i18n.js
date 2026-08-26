@@ -81,6 +81,7 @@
     }
   }
 
+  var attrStore = new WeakMap();
   function translateAttrs(scope) {
     if (!scope.querySelectorAll) return;
     var sel = '[placeholder],[aria-label],[title],[alt]';
@@ -89,14 +90,18 @@
     for (var i = 0; i < list.length; i++) {
       var e = list[i];
       if (e.closest && e.closest('[data-i18n-skip], #royceaiLang, #royceaiLangMobile')) continue;
+      var store = attrStore.get(e) || {};
       ['placeholder', 'aria-label', 'title', 'alt', 'value'].forEach(function (attr) {
         if (!e.hasAttribute(attr)) return;
         var v = e.getAttribute(attr).trim();
-        if (isNoise(v) || !e.dataset || e.dataset['i18nAttr' + attr] !== undefined) return;
+        if (isNoise(v)) return;
         if (cur === 'en') {
-          if (e.dataset['i18nAttr' + attr]) e.setAttribute(attr, e.dataset['i18nAttr' + attr]);
+          if (store[attr] !== undefined) e.setAttribute(attr, store[attr]);
         } else if (dict[cur] && dict[cur][v]) {
-          e.dataset['i18nAttr' + attr] = e.getAttribute(attr);
+          if (store[attr] === undefined) {
+            store[attr] = e.getAttribute(attr);
+            attrStore.set(e, store);
+          }
           e.setAttribute(attr, dict[cur][v]);
         }
       });
