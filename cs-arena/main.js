@@ -1659,7 +1659,7 @@ function animate(time) {
 
     const speed = keys.shift ? 12 : 6;
     if (keys.w || keys.s) velocity.z -= direction.z * speed * dt;
-    if (keys.a || keys.d) velocity.x -= direction.x * speed * dt;
+    if (keys.a || keys.d) velocity.x += direction.x * speed * dt; // FIXED: strafe sign (+X = right); was -= = inverted left/right
 
     velocity.y -= 20 * dt;
 
