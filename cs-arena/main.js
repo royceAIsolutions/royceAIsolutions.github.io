@@ -1560,6 +1560,11 @@ if (touchMode) {
   const buyBtn = document.getElementById('buy-btn');
   const swapBtn = document.getElementById('swap-btn');
   const JOY_RADIUS = 50;
+  // iOS Safari: preventDefault on touchstart stops the browser from hijacking the
+  // gesture — without it, a second finger (e.g. SPRINT while joystick held) triggers
+  // pointercancel storms that kill the active pointer (sprint/jump/fire feel dead).
+  [joystickZone, lookZone, fireBtn, reloadBtn, buyBtn, swapBtn].forEach(el =>
+    el.addEventListener('touchstart', (e) => e.preventDefault(), { passive: false }));
 
   function updateJoystick(e) {
     const rect = joystickBase.getBoundingClientRect();
@@ -1577,7 +1582,6 @@ if (touchMode) {
   joystickZone.addEventListener('pointerdown', (e) => {
     if (joyPointerId !== null) return;
     joyPointerId = e.pointerId;
-    joystickZone.setPointerCapture(e.pointerId);
     updateJoystick(e);
   });
   joystickZone.addEventListener('pointermove', (e) => {
@@ -1596,7 +1600,6 @@ if (touchMode) {
   lookZone.addEventListener('pointerdown', (e) => {
     if (lookPointerId !== null) return;
     lookPointerId = e.pointerId;
-    lookZone.setPointerCapture(e.pointerId);
     lookLastX = e.clientX;
     lookLastY = e.clientY;
   });
@@ -1625,15 +1628,28 @@ if (touchMode) {
   });
   // COD Mobile-style: JUMP button (tap to jump, like Space on desktop)
   const jumpBtn = document.getElementById('jump-btn');
-  jumpBtn.addEventListener('pointerdown', (e) => {
-    e.preventDefault();
+  const jump = (e) => {
+    if (e.cancelable) e.preventDefault();
     if (canJump) { velocity.y = 7; canJump = false; }
-  });
+  };
+  jumpBtn.addEventListener('touchstart', jump, { passive: false });
+  jumpBtn.addEventListener('pointerdown', jump);
   // COD Mobile-style: SPRINT button (hold to sprint, like Shift on desktop)
+  // iOS Safari hardening: touchstart preventDefault stops gesture hijack (pointercancel
+  // on the second finger kills keys.shift otherwise); touchstart/touchend act as a
+  // redundant path so sprint survives even if the pointer stream misbehaves.
   const sprintBtn = document.getElementById('sprint-btn');
-  sprintBtn.addEventListener('pointerdown', (e) => { e.preventDefault(); keys.shift = true; });
-  sprintBtn.addEventListener('pointerup', () => { keys.shift = false; });
-  sprintBtn.addEventListener('pointercancel', () => { keys.shift = false; });
+  let sprintTouches = 0;
+  const sprintDown = (e) => { if (e.cancelable) e.preventDefault(); keys.shift = true; };
+  const sprintTouchDown = (e) => { e.preventDefault(); sprintTouches++; keys.shift = true; };
+  const sprintTouchUp = () => { sprintTouches = Math.max(0, sprintTouches - 1); if (!sprintTouches) keys.shift = false; };
+  const sprintUp = () => { if (!sprintTouches) keys.shift = false; };
+  sprintBtn.addEventListener('touchstart', sprintTouchDown, { passive: false });
+  sprintBtn.addEventListener('touchend', sprintTouchUp);
+  sprintBtn.addEventListener('touchcancel', sprintTouchUp);
+  sprintBtn.addEventListener('pointerdown', sprintDown);
+  sprintBtn.addEventListener('pointerup', sprintUp);
+  sprintBtn.addEventListener('pointercancel', sprintUp);
 }
 
 // ==== MAIN LOOP ====
@@ -1914,6 +1930,7 @@ if (new URLSearchParams(location.search).has('debug')) {
       ammo: currentAmmo, reserve: reserveAmmo, freezetime: isFreezetime,
       roundTimer: Math.round(roundTimer), botsAlive: bots.filter(b => b.userData.alive).length,
       playerDead: isPlayerDead, roundEnding: isRoundEnding, matchOver: isMatchOver,
+      keys: { ...keys }, joy: { dx: +joyDX.toFixed(2), dy: +joyDY.toFixed(2), pid: joyPointerId }, pos: (() => { const p = new THREE.Vector3(); camera.getWorldPosition(p); return { x: +p.x.toFixed(3), y: +p.y.toFixed(3), z: +p.z.toFixed(3) }; })(),
       audio: { enabled: AudioSys.enabled, muted: AudioSys.muted, ctxState: AudioSys.ctx ? AudioSys.ctx.state : 'none' },
       stats: { ...stats }, killsInRound, props: propBoxes.length, damageNums: dmgNums.length
     }),
