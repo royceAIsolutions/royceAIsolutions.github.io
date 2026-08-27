@@ -1584,7 +1584,10 @@ if (touchMode) {
     joyPointerId = e.pointerId;
     updateJoystick(e);
   });
-  joystickZone.addEventListener('pointermove', (e) => {
+  // Track move/up/cancel at window level so the joystick follows the thumb even when
+  // it drifts outside the zone element (no setPointerCapture — that triggers iOS
+  // pointercancel storms on multi-touch). pointerId filter keeps multi-touch safe.
+  window.addEventListener('pointermove', (e) => {
     if (e.pointerId !== joyPointerId) return;
     updateJoystick(e);
   });
@@ -1594,8 +1597,8 @@ if (touchMode) {
     joyDX = 0; joyDY = 0;
     joystickKnob.style.transform = 'translate(0px, 0px)';
   };
-  joystickZone.addEventListener('pointerup', endJoy);
-  joystickZone.addEventListener('pointercancel', endJoy);
+  window.addEventListener('pointerup', endJoy);
+  window.addEventListener('pointercancel', endJoy);
 
   lookZone.addEventListener('pointerdown', (e) => {
     if (lookPointerId !== null) return;
@@ -1603,7 +1606,7 @@ if (touchMode) {
     lookLastX = e.clientX;
     lookLastY = e.clientY;
   });
-  lookZone.addEventListener('pointermove', (e) => {
+  window.addEventListener('pointermove', (e) => {
     if (e.pointerId !== lookPointerId) return;
     const dx = e.clientX - lookLastX;
     const dy = e.clientY - lookLastY;
@@ -1614,8 +1617,8 @@ if (touchMode) {
     mouse.y = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, mouse.y));
   });
   const endLook = (e) => { if (e.pointerId === lookPointerId) lookPointerId = null; };
-  lookZone.addEventListener('pointerup', endLook);
-  lookZone.addEventListener('pointercancel', endLook);
+  window.addEventListener('pointerup', endLook);
+  window.addEventListener('pointercancel', endLook);
 
   fireBtn.addEventListener('pointerdown', (e) => { e.preventDefault(); touchFiring = true; shoot(); });
   fireBtn.addEventListener('pointerup', () => { touchFiring = false; });
@@ -1673,7 +1676,7 @@ function animate(time) {
       keys.a = joyDX < -0.25; keys.d = joyDX > 0.25;
     }
 
-    const speed = keys.shift ? 12 : 6;
+    const speed = keys.shift ? 15 : 8;  // walk 8 / sprint 15 (was 6/12 — felt slow on touch; ~3.4 -> ~4.6 m/s walk)
     if (keys.w || keys.s) velocity.z -= direction.z * speed * dt;
     if (keys.a || keys.d) velocity.x += direction.x * speed * dt; // FIXED: strafe sign (+X = right); was -= = inverted left/right
 
