@@ -450,6 +450,7 @@ gunGroup.position.set(0.3, -0.3, -0.45);
 gunGroup.rotation.y = -0.15;
 gunGroup.scale.set(2.2, 2.2, 2.2); // CS-style viewmodel presence (covers ~1/5 screen height)
 camera.add(gunGroup);
+scene.add(camera); // camera in scene so viewmodel children (gun, muzzle) render
 
 const muzzleLight = new THREE.PointLight(0xffaa00, 0, 5);
 muzzleLight.position.set(0.15, -0.08, -0.75);
