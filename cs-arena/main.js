@@ -167,6 +167,7 @@ scene.background = new THREE.Color(0x87ceeb);
 scene.fog = new THREE.Fog(0x87ceeb, 10, 80);
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200);
+camera.rotation.order = 'YXZ'; // FPS yaw-pitch order — default 'XYZ' rolls the view sideways when yaw+pitch combine (up vector tilts ~17° at 45° yaw + 20° pitch); 'YXZ' keeps up vertical (verified Aug 26 2026)
 camera.position.set(0, 1.7, 10);
 
 const listener = new THREE.AudioListener();
@@ -1934,7 +1935,7 @@ if (new URLSearchParams(location.search).has('debug')) {
       roundTimer: Math.round(roundTimer), botsAlive: bots.filter(b => b.userData.alive).length,
       playerDead: isPlayerDead, roundEnding: isRoundEnding, matchOver: isMatchOver,
       keys: { ...keys }, joy: { dx: +joyDX.toFixed(2), dy: +joyDY.toFixed(2), pid: joyPointerId }, pos: (() => { const p = new THREE.Vector3(); camera.getWorldPosition(p); return { x: +p.x.toFixed(3), y: +p.y.toFixed(3), z: +p.z.toFixed(3) }; })(),
-      rot: (() => { const d = new THREE.Vector3(); camera.getWorldDirection(d); return { rx: +camera.rotation.x.toFixed(3), ry: +camera.rotation.y.toFixed(3), dx: +d.x.toFixed(3), dy: +d.y.toFixed(3), dz: +d.z.toFixed(3) }; })(),
+      rot: (() => { const d = new THREE.Vector3(); camera.getWorldDirection(d); const m = camera.matrixWorld.elements; return { rx: +camera.rotation.x.toFixed(3), ry: +camera.rotation.y.toFixed(3), order: camera.rotation.order, dx: +d.x.toFixed(3), dy: +d.y.toFixed(3), dz: +d.z.toFixed(3), upX: +m[1].toFixed(3), upY: +m[5].toFixed(3), upZ: +m[9].toFixed(3) }; })(),
       audio: { enabled: AudioSys.enabled, muted: AudioSys.muted, ctxState: AudioSys.ctx ? AudioSys.ctx.state : 'none' },
       stats: { ...stats }, killsInRound, props: propBoxes.length, damageNums: dmgNums.length
     }),
