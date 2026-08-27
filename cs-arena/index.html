@@ -16,28 +16,37 @@
     #start-overlay.hidden { opacity: 0; pointer-events: none; }
     #start-overlay h1 { font-size: 4rem; color: #fff; text-shadow: 0 0 20px #ffaa00; letter-spacing: 0.3em; margin-bottom: 0.5rem; }
     #start-overlay p { font-size: 1.5rem; color: #aaa; text-transform: uppercase; letter-spacing: 0.2em; }
-    #hud { position: fixed; inset: 20px; pointer-events: none; display: none; }
+    #hud { position: fixed; inset: 0; pointer-events: none; display: none; font-family: 'Helvetica Neue', Arial, sans-serif; }
     #hud.visible { display: block; }
-    .hud-panel { position: absolute; color: #fff; text-shadow: 0 0 5px #000; font-size: 1.2rem; }
-    #health { bottom: 20px; left: 20px; }
-    #armor { bottom: 55px; left: 20px; color: #00aaff; }
-    #money { bottom: 90px; left: 20px; color: #00ff88; font-size: 1.3rem; }
-    #weapon-name { bottom: 125px; left: 20px; color: #ffaa00; font-size: 1.1rem; }
-    #ammo { bottom: 20px; right: 20px; text-align: right; }
-    #scoreboard { top: 20px; left: 50%; transform: translateX(-50%); text-align: center; font-size: 1.5rem; color: #ffaa00; }
-    #round-display { top: 20px; left: 20px; font-size: 1.3rem; color: #ffaa00; }
-    #timer { top: 20px; right: 20px; font-size: 1.3rem; color: #ff4444; display: none; }
-    #freezetime { top: 60px; left: 50%; transform: translateX(-50%); font-size: 2rem; color: #00ff88; text-shadow: 0 0 10px #00ff88; display: none; }
+    .hud-panel { position: absolute; color: #fff; }
+    /* CS:GO layout — health bottom-left giant number */
+    #health { bottom: 24px; left: 28px; font-size: 3.2rem; font-weight: 800; color: #55ff88; text-shadow: 0 2px 4px #000; line-height: 1; }
+    #health::before { content: 'HEALTH'; display: block; font-size: 0.7rem; font-weight: 600; color: #fff; letter-spacing: 0.25em; opacity: 0.85; margin-bottom: 2px; }
+    #armor { bottom: 100px; left: 30px; font-size: 1.1rem; font-weight: 700; color: #9ad0ff; text-shadow: 0 1px 3px #000; }
+    #armor::before { content: 'ARMOR'; display: block; font-size: 0.6rem; letter-spacing: 0.2em; opacity: 0.75; }
+    #money { top: 18px; right: 26px; font-size: 1.15rem; font-weight: 600; color: #e8e8e8; text-shadow: 0 1px 3px #000; }
+    /* ammo bottom-right big, weapon name above it */
+    #ammo { bottom: 20px; right: 26px; text-align: right; font-size: 2.6rem; font-weight: 800; text-shadow: 0 2px 4px #000; line-height: 1; }
+    #ammo #ammo-reserve { font-size: 1.4rem; font-weight: 600; color: #ccc; }
+    #weapon-name { bottom: 112px; right: 28px; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.12em; color: #fff; text-shadow: 0 1px 3px #000; text-transform: uppercase; }
+    /* round score + timer top-center (CS style) */
+    #scoreboard { top: 16px; left: 50%; transform: translateX(-50%); font-size: 1.25rem; font-weight: 800; letter-spacing: 0.18em; color: #fff; text-shadow: 0 1px 3px #000; }
+    #round-display { top: 44px; left: 50%; transform: translateX(-50%); font-size: 0.8rem; letter-spacing: 0.22em; color: #ccc; text-shadow: 0 1px 2px #000; }
+    #timer { top: 68px; left: 50%; transform: translateX(-50%); font-size: 1.7rem; font-weight: 800; color: #fff; text-shadow: 0 2px 4px #000; display: none; }
+    #freezetime { top: 110px; left: 50%; transform: translateX(-50%); font-size: 2rem; color: #00ff88; text-shadow: 0 0 10px #00ff88; display: none; }
+    /* CS:GO crosshair — thin cross with center gap */
     #crosshair {
       position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 24px; height: 24px; pointer-events: none; display: none; z-index: 5;
+      width: 26px; height: 26px; pointer-events: none; display: none; z-index: 5;
     }
     #crosshair.visible { display: block; }
-    #crosshair::before, #crosshair::after {
+    #crosshair::before, #crosshair::after, #crosshair .x2 {
       content: ''; position: absolute; background: #fff; box-shadow: 0 0 2px #000;
     }
-    #crosshair::before { width: 2px; height: 12px; left: 11px; top: 0; }
-    #crosshair::after { width: 12px; height: 2px; top: 11px; left: 0; }
+    #crosshair::before { width: 2px; height: 8px; left: 12px; top: 3px; }    /* top bar */
+    #crosshair::after { width: 2px; height: 8px; left: 12px; bottom: 3px; } /* bottom bar */
+    #crosshair .x2 { width: 8px; height: 2px; top: 12px; left: 3px; }       /* left bar */
+    #crosshair .x3 { width: 8px; height: 2px; top: 12px; right: 3px; }      /* right bar */
     #fps { position: fixed; top: 64px; right: 20px; color: #0f0; font-family: monospace; font-size: 0.9rem; z-index: 5; }
     #round-won, #round-lost {
       position: fixed; inset: 0; background: rgba(0,0,0,0.85);
@@ -130,7 +139,7 @@
     .ls-desc { font-size: 0.85rem; color: #aaa; line-height: 1.5; }
     .ls-diff { font-size: 0.75rem; color: #7c5cfc; letter-spacing: 0.1em; margin-top: 0.3rem; }
     /* ===== KILL FEED / STREAK / STATS / AUDIO UI ===== */
-    #kill-feed { position: fixed; top: 64px; left: 20px; z-index: 14; pointer-events: none; font-size: 0.95rem; text-shadow: 0 0 4px #000; max-width: 340px; }
+    #kill-feed { position: fixed; top: 96px; right: 26px; z-index: 14; pointer-events: none; font-size: 0.95rem; text-shadow: 0 0 4px #000; max-width: 340px; text-align: right; }
     .kf-entry { background: rgba(0,0,0,0.55); border-left: 3px solid #ffaa00; padding: 4px 10px; margin-bottom: 4px; border-radius: 3px; color: #fff; opacity: 1; transition: opacity 0.4s; }
     .kf-entry.kf-you { color: #00ff88; }
     .kf-entry.kf-death { color: #ff5555; border-left-color: #ff3333; }
@@ -160,6 +169,8 @@
     /* ===== TOUCH CONTROLS (iPad / mobile) ===== */
     #touch-ui { position: fixed; inset: 0; z-index: 12; display: none; pointer-events: none; }
     body.touch-mode #touch-ui { display: block; }
+    html, body { margin: 0; overscroll-behavior: none; }
+    canvas { touch-action: none; display: block; }
     body.touch-mode { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
     body.touch-mode canvas { touch-action: none; }
     #joystick-zone { position: absolute; left: 0; bottom: 0; width: 45%; height: 70%; pointer-events: auto; touch-action: none; }
@@ -224,7 +235,7 @@
     <div id="timer" class="hud-panel">TIME: 60s</div>
     <div id="freezetime">FREEZETIME: 8</div>
   </div>
-  <div id="crosshair"></div>
+  <div id="crosshair"><span class="x2"></span><span class="x3"></span></div>
   <div id="fps">FPS: 0</div>
   <div id="kill-feed"></div>
   <button id="mute-btn">🔊</button>

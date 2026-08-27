@@ -240,7 +240,7 @@ const propBarrelGeo = new THREE.CylinderGeometry(0.55, 0.55, 1.4, 14);
 const LEVELS = [
   {
     name: 'DUST ARENA', difficulty: 'CADET',
-    theme: { bg: 0x87ceeb, fog: 0x87ceeb, wall: 0x3a3a4a, crate: 0x6b4a2a, barrel: 0x3d5a3d },
+    theme: { bg: 0x87ceeb, fog: 0x87ceeb, wall: 0x3a3a4a, crate: 0x6b4a2a, barrel: 0x3d5a3d, floor: 0xb8a888 },
     innerWalls: [], // (x, z, w, d) dividing walls — create lanes
     props: [
       ...[[14, 10], [-14, -10], [14, -10], [-14, 10]].map(([x, z]) => ({ t: 'crate', x, z })),
@@ -252,7 +252,7 @@ const LEVELS = [
   },
   {
     name: 'WAREHOUSE', difficulty: 'OPERATOR',
-    theme: { bg: 0x191410, fog: 0x191410, wall: 0x4a4038, crate: 0x8a6a3a, barrel: 0x556066 },
+    theme: { bg: 0x191410, fog: 0x191410, wall: 0x4a4038, crate: 0x8a6a3a, barrel: 0x556066, floor: 0x3a3528 },
     innerWalls: [
       { x: -14.5, z: -16, w: 23, d: 1.4 }, { x: 14.5, z: -16, w: 23, d: 1.4 },   // lane walls (center gap)
       { x: -14.5, z: 16, w: 23, d: 1.4 }, { x: 14.5, z: 16, w: 23, d: 1.4 },
@@ -269,7 +269,7 @@ const LEVELS = [
   },
   {
     name: 'ROOFTOP FORT', difficulty: 'VETERAN',
-    theme: { bg: 0x0e1a2a, fog: 0x0e1a2a, wall: 0x3a4a5a, crate: 0x4a4a5a, barrel: 0x2a3a4a },
+    theme: { bg: 0x0e1a2a, fog: 0x0e1a2a, wall: 0x3a4a5a, crate: 0x4a4a5a, barrel: 0x2a3a4a, floor: 0x2a3040 },
     innerWalls: [
       { x: 0, z: -15, w: 22, d: 1.4 }, { x: 0, z: 15, w: 22, d: 1.4 },          // vertical wall (center gap)
       { x: -15, z: 0, w: 1.4, d: 22 }, { x: 15, z: 0, w: 1.4, d: 22 },           // horizontal wall (center gap)
@@ -291,17 +291,101 @@ let currentLevel = 0;
 let levelWalls = []; // inner dividing walls (collision + LOS)
 let levelProps = []; // cover meshes
 
+// ==== PROCEDURAL TEXTURES (CS-style surfaces, zero external assets) ====
+function hexToCss(hex) { return '#' + hex.toString(16).padStart(6, '0'); }
+function shade(hex, amt) {
+  const r = Math.max(0, Math.min(255, ((hex >> 16) & 0xff) + amt));
+  const g = Math.max(0, Math.min(255, ((hex >> 8) & 0xff) + amt));
+  const b = Math.max(0, Math.min(255, (hex & 0xff) + amt));
+  return '#' + ((r << 16) | (g << 8) | b).toString(16).padStart(6, '0');
+}
+function makeTex(size, painter) {
+  const c = document.createElement('canvas'); c.width = c.height = size;
+  painter(c.getContext('2d'), size);
+  const t = new THREE.CanvasTexture(c);
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.colorSpace = THREE.SRGBColorSpace;
+  return t;
+}
+function speckle(g, s, hex, alpha, step) {
+  g.fillStyle = hex;
+  for (let i = 0; i < 500; i++) {
+    g.globalAlpha = alpha * Math.random();
+    g.fillRect(Math.random() * s, Math.random() * s, step, step);
+  }
+  g.globalAlpha = 1;
+}
+const floorPainter = (hex) => (g, s) => {
+  g.fillStyle = hexToCss(hex); g.fillRect(0, 0, s, s);
+  speckle(g, s, '#ffffff', 0.05, 2); speckle(g, s, '#000000', 0.06, 2);
+  g.strokeStyle = 'rgba(0,0,0,0.14)'; g.lineWidth = 2;
+  for (let i = 0; i <= s; i += 128) {
+    g.beginPath(); g.moveTo(i, 0); g.lineTo(i, s); g.stroke();
+    g.beginPath(); g.moveTo(0, i); g.lineTo(s, i); g.stroke();
+  }
+};
+const wallPainter = (hex) => (g, s) => {
+  g.fillStyle = hexToCss(hex); g.fillRect(0, 0, s, s);
+  speckle(g, s, '#ffffff', 0.04, 2); speckle(g, s, '#000000', 0.05, 3);
+  g.strokeStyle = 'rgba(0,0,0,0.28)'; g.lineWidth = 3;
+  g.beginPath(); g.moveTo(0, s * 0.5); g.lineTo(s, s * 0.5); g.stroke();
+  g.lineWidth = 1; g.beginPath(); g.moveTo(0, s * 0.25); g.lineTo(s, s * 0.25); g.stroke();
+  g.beginPath(); g.moveTo(0, s * 0.75); g.lineTo(s, s * 0.75); g.stroke();
+};
+const cratePainter = (hex) => (g, s) => {
+  const plankH = s / 6;
+  for (let i = 0; i < 6; i++) {
+    g.fillStyle = i % 2 ? shade(hex, 10) : hexToCss(hex);
+    g.fillRect(0, i * plankH, s, plankH);
+    g.fillStyle = 'rgba(0,0,0,0.35)';
+    g.fillRect(0, i * plankH + plankH - 3, s, 3);
+  }
+  g.strokeStyle = 'rgba(0,0,0,0.14)'; g.lineWidth = 1;
+  for (let i = 0; i < 20; i++) {
+    const y = Math.random() * s, x = Math.random() * s;
+    g.beginPath(); g.moveTo(x, y); g.lineTo(x + 46, y + 5); g.stroke();
+  }
+  g.fillStyle = 'rgba(0,0,0,0.4)';
+  for (let i = 0; i < 6; i++) {
+    g.beginPath(); g.arc(10, i * plankH + 8, 3, 0, 7); g.fill();
+    g.beginPath(); g.arc(s - 10, i * plankH + 8, 3, 0, 7); g.fill();
+  }
+};
+const barrelPainter = (hex) => (g, s) => {
+  g.fillStyle = hexToCss(hex); g.fillRect(0, 0, s, s);
+  const grad = g.createLinearGradient(0, 0, s, 0);
+  grad.addColorStop(0, 'rgba(0,0,0,0.35)');
+  grad.addColorStop(0.25, 'rgba(255,255,255,0.12)');
+  grad.addColorStop(0.5, 'rgba(0,0,0,0.2)');
+  grad.addColorStop(0.75, 'rgba(255,255,255,0.08)');
+  grad.addColorStop(1, 'rgba(0,0,0,0.35)');
+  g.fillStyle = grad; g.fillRect(0, 0, s, s);
+  speckle(g, s, '#000000', 0.08, 3);
+  g.strokeStyle = 'rgba(0,0,0,0.3)'; g.lineWidth = 4;
+  for (let i = 0; i < 3; i++) {
+    g.beginPath(); g.moveTo(0, (i + 0.5) * s / 3); g.lineTo(s, (i + 0.5) * s / 3); g.stroke();
+  }
+};
+// sun tint per level: warm day / industrial orange / cool night
+const SUNS = [0xfff2dd, 0xffd9a8, 0xa8c4ff];
+
 function buildLevel(idx) {
   const L = LEVELS[idx];
   // clear previous level geometry
   [...levelWalls, ...levelProps].forEach(m => { scene.remove(m); m.geometry && m.geometry.dispose(); });
   levelWalls = []; levelProps = [];
-  // theme
+  // theme — CS-style textured surfaces + per-level sun tint
   scene.background.setHex(L.theme.bg);
   scene.fog = new THREE.Fog(L.theme.fog, 10, 80);
-  wallMat.color.setHex(L.theme.wall);
-  crateMat.color.setHex(L.theme.crate);
-  propBarrelMat.color.setHex(L.theme.barrel);
+  const ft = makeTex(256, floorPainter(L.theme.floor)); ft.repeat.set(16, 16);
+  floorMat.map = ft; floorMat.color.setHex(0xffffff); floorMat.needsUpdate = true;
+  const wt = makeTex(256, wallPainter(L.theme.wall)); wt.repeat.set(4, 2);
+  wallMat.map = wt; wallMat.color.setHex(0xffffff); wallMat.needsUpdate = true;
+  const ct = makeTex(256, cratePainter(L.theme.crate)); ct.repeat.set(2, 2);
+  crateMat.map = ct; crateMat.color.setHex(0xffffff); crateMat.needsUpdate = true;
+  const bt = makeTex(128, barrelPainter(L.theme.barrel)); bt.repeat.set(2, 1);
+  propBarrelMat.map = bt; propBarrelMat.color.setHex(0xffffff); propBarrelMat.needsUpdate = true;
+  dirLight.color.setHex(SUNS[idx] || 0xfff2dd);
   // base perimeter boxes
   wallBoxes.length = 0;
   walls.forEach(w => wallBoxes.push(new THREE.Box3().setFromObject(w)));
@@ -364,6 +448,7 @@ mag.position.set(0.15, -0.25, -0.15);
 gunGroup.add(mag);
 gunGroup.position.set(0.35, -0.35, -0.5);
 gunGroup.rotation.y = -0.15;
+gunGroup.scale.set(1.35, 1.35, 1.35); // visible viewmodel presence at FOV 75
 camera.add(gunGroup);
 
 const muzzleLight = new THREE.PointLight(0xffaa00, 0, 5);
@@ -599,7 +684,7 @@ function updateHUD() {
     timerEl.textContent = `TIME: ${Math.ceil(roundTimer)}s`;
     timerEl.style.display = 'block';
     if (roundTimer < 10) timerEl.style.color = '#ff3333';
-    else timerEl.style.color = '#ff4444';
+    else timerEl.style.color = '#ffffff';
   } else {
     timerEl.style.display = 'none';
   }
@@ -1450,6 +1535,14 @@ function onKeyUp(e) {
   if (k === 'shiftleft' || k === 'shiftright') keys.shift = false;
   if (k === 'space') keys.space = false;
 }
+
+// Lock page scrolling while playing — the game never needs the page to scroll
+// (wheel/trackpad/keys must not move the document under the FPS).
+window.addEventListener('wheel', (e) => { if (document.pointerLockElement) e.preventDefault(); }, { passive: false });
+window.addEventListener('keydown', (e) => {
+  const k = e.code;
+  if (['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(k) && document.pointerLockElement) e.preventDefault();
+});
 
 function onClick() {
   if (!touchMode && pointerLocked && !buyMenuOpen) shoot();
