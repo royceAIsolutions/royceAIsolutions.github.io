@@ -1670,18 +1670,38 @@ function animate(time) {
 
   const canControl = (pointerLocked || touchMode) && !isFreezetime && !isRoundEnding && !isMatchOver && !buyMenuOpen && !isPlayerDead;
   if (canControl) {
-    direction.z = Number(keys.w) - Number(keys.s);
-    direction.x = Number(keys.d) - Number(keys.a);
-    direction.normalize();
-
+    // Movement: camera-relative + analog throttle (fixed Aug 26 2026).
+    // Was: world-axis (turn 90° and the stick/WASD directions no longer matched
+    // the view — "side to side is terrible") and digital 8-way (stick magnitude
+    // discarded; tiny push = full speed, no fine control). Now the wish direction
+    // rotates with camera yaw and stick deflection = throttle (0..1).
+    const yaw = camera.rotation.y;
+    const fwdX = -Math.sin(yaw), fwdZ = -Math.cos(yaw);  // horizontal forward
+    const rgtX = Math.cos(yaw), rgtZ = -Math.sin(yaw);   // horizontal right
+    let wishX = 0, wishZ = 0, throttle = 0;
     if (touchMode) {
+      // intent flags kept for HUD/debug; movement uses analog joyDX/joyDY below
       keys.w = joyDY < -0.25; keys.s = joyDY > 0.25;
       keys.a = joyDX < -0.25; keys.d = joyDX > 0.25;
+      const jx = joyDX, jz = -joyDY, jl = Math.hypot(jx, jz);
+      if (jl > 0.1) {  // deadzone; then direction + proportional speed
+        wishX = (fwdX * jz + rgtX * jx) / jl;
+        wishZ = (fwdZ * jz + rgtZ * jx) / jl;
+        throttle = Math.min((jl - 0.1) / 0.9, 1.0);
+      }
+    } else {
+      const dx = Number(keys.d) - Number(keys.a);
+      const dz = Number(keys.w) - Number(keys.s);
+      const dl = Math.hypot(dx, dz);
+      if (dl > 0) {
+        wishX = (fwdX * dz + rgtX * dx) / dl;
+        wishZ = (fwdZ * dz + rgtZ * dx) / dl;
+        throttle = 1;
+      }
     }
-
     const speed = keys.shift ? 15 : 8;  // walk 8 / sprint 15 (was 6/12 — felt slow on touch; ~3.4 -> ~4.6 m/s walk)
-    if (keys.w || keys.s) velocity.z -= direction.z * speed * dt;
-    if (keys.a || keys.d) velocity.x += direction.x * speed * dt; // FIXED: strafe sign (+X = right); was -= = inverted left/right
+    velocity.x += wishX * speed * throttle * dt;
+    velocity.z += wishZ * speed * throttle * dt;
 
     velocity.y -= 20 * dt;
 
@@ -1937,7 +1957,7 @@ if (new URLSearchParams(location.search).has('debug')) {
       ammo: currentAmmo, reserve: reserveAmmo, freezetime: isFreezetime,
       roundTimer: Math.round(roundTimer), botsAlive: bots.filter(b => b.userData.alive).length,
       playerDead: isPlayerDead, roundEnding: isRoundEnding, matchOver: isMatchOver,
-      keys: { ...keys }, joy: { dx: +joyDX.toFixed(2), dy: +joyDY.toFixed(2), pid: joyPointerId }, pos: (() => { const p = new THREE.Vector3(); camera.getWorldPosition(p); return { x: +p.x.toFixed(3), y: +p.y.toFixed(3), z: +p.z.toFixed(3) }; })(),
+      keys: { ...keys }, joy: { dx: +joyDX.toFixed(2), dy: +joyDY.toFixed(2), pid: joyPointerId }, pos: (() => { const p = new THREE.Vector3(); camera.getWorldPosition(p); return { x: +p.x.toFixed(3), y: +p.y.toFixed(3), z: +p.z.toFixed(3) }; })(), vel: { x: +velocity.x.toFixed(2), z: +velocity.z.toFixed(2) },
       rot: (() => { const d = new THREE.Vector3(); camera.getWorldDirection(d); const m = camera.matrixWorld.elements; return { rx: +camera.rotation.x.toFixed(3), ry: +camera.rotation.y.toFixed(3), order: camera.rotation.order, dx: +d.x.toFixed(3), dy: +d.y.toFixed(3), dz: +d.z.toFixed(3), upX: +m[1].toFixed(3), upY: +m[5].toFixed(3), upZ: +m[9].toFixed(3) }; })(),
       audio: { enabled: AudioSys.enabled, muted: AudioSys.muted, ctxState: AudioSys.ctx ? AudioSys.ctx.state : 'none' },
       stats: { ...stats }, killsInRound, props: propBoxes.length, damageNums: dmgNums.length
