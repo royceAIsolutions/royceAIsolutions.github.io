@@ -89,7 +89,6 @@ footer .links a{color:#88889a;text-decoration:none;font-size:0.875rem}
 footer .links a:hover{color:#a78bfa}
 footer .copy{color:#5c5c6e;font-size:0.8rem}
 @media(max-width:640px){nav{padding:0 16px}.hero-sub{padding:calc(60px + var(--nav-h)) 16px 30px}.section{padding:0 16px 40px}.nav-burger{display:inline-flex}.nav-links a:not(.nav-cta){display:none}table{min-width:0}.table-wrap{overflow-x:visible}th:nth-child(4),td:nth-child(4),th:nth-child(6),td:nth-child(6){display:none}th,td{padding:10px 6px;font-size:0.8rem}}
-@media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
 </style>
 </head>
 <body>
@@ -109,13 +108,6 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
     <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
     <a href="/etf-pulse" class="nav-drawer-only active">📈 ETF Pulse</a>
     <a href="/blog" class="nav-drawer-only">Blog</a>
-    <a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a>
-    <a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a>
-    <a href="/livaway" class="nav-drawer-only">🏨 LivAway</a>
-    <a href="/cody" class="nav-drawer-only">🔦 Blacklight CX</a>
-    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
-    <a href="/cs-arena" class="nav-drawer-only">🎮 CS Arena</a>
-    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
     <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -125,10 +117,10 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
 
 <section class="hero-sub">
   <h1>ETF <span class="gradient">Pulse</span></h1>
-  <p>12 leveraged ETFs · momentum + volatility + volume · updated 2026-08-26 07:02</p>
+  <p>12 leveraged ETFs · momentum + volatility + volume · updated 2026-08-27 07:02</p>
   <div class="chips">
     <span class="chip">📊 <b>12/12</b> tickers fetched</span>
-    <span class="chip">🟢 <b>9</b> positive on the day</span>
+    <span class="chip">🟢 <b>6</b> positive on the day</span>
     <span class="chip">🔎 Mean-reversion watch (|5D| ≥ 15%): <b>none</b></span>
   </div>
 </section>
@@ -166,8 +158,8 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
 </footer>
 
 <script>
-const PULSE=[{"t": "FNGU", "c": 31.21, "d1": 1.69, "d5": -0.54, "d20": 33.15, "v": 76.0, "av": "4.0M", "trend": "RISING"}, {"t": "TECL", "c": 189.43, "d1": 2.83, "d5": -3.05, "d20": 26.19, "v": 97.6, "av": "647K", "trend": "RISING"}, {"t": "SOXL", "c": 115.67, "d1": 4.06, "d5": -4.2, "d20": 25.74, "v": 154.3, "av": "68.7M", "trend": "RISING"}, {"t": "TQQQ", "c": 70.27, "d1": 1.83, "d5": -2.48, "d20": 21.68, "v": 66.7, "av": "57.5M", "trend": "RISING"}, {"t": "SPXL", "c": 286.61, "d1": 0.89, "d5": -1.46, "d20": 14.55, "v": 39.9, "av": "1.8M", "trend": "RISING"}, {"t": "UPRO", "c": 149.94, "d1": 0.92, "d5": -1.46, "d20": 14.45, "v": 39.6, "av": "2.1M", "trend": "RISING"}, {"t": "UDOW", "c": 74.06, "d1": 0.86, "d5": 0.53, "d20": 11.02, "v": 42.3, "av": "1.7M", "trend": "RISING"}, {"t": "TNA", "c": 72.55, "d1": 1.23, "d5": -2.67, "d20": 10.12, "v": 46.9, "av": "3.7M", "trend": "RISING"}, {"t": "FAS", "c": 184.98, "d1": 0.41, "d5": 3.92, "d20": 7.7, "v": 33.9, "av": "295K", "trend": "RISING"}, {"t": "SPXU", "c": 34.71, "d1": -0.89, "d5": 1.46, "d20": -13.18, "v": 39.6, "av": "7.8M", "trend": "FALLING"}, {"t": "SQQQ", "c": 39.46, "d1": -1.82, "d5": 2.41, "d20": -20.19, "v": 67.2, "av": "52.7M", "trend": "FALLING"}, {"t": "SOXS", "c": 48.42, "d1": -4.59, "d5": 2.91, "d20": -33.81, "v": 160.4, "av": "60.8M", "trend": "FALLING"}];
-const TS="August 26, 2026 at 07:02:23 PDT";
+const PULSE=[{"t": "FNGU", "c": 31.46, "d1": 0.8, "d5": 1.22, "d20": 24.05, "v": 72.7, "av": "3.8M", "trend": "RISING"}, {"t": "TQQQ", "c": 70.47, "d1": 0.28, "d5": -0.01, "d20": 11.33, "v": 61.5, "av": "54.3M", "trend": "RISING"}, {"t": "TECL", "c": 192.7, "d1": 1.73, "d5": -0.74, "d20": 10.46, "v": 91.9, "av": "590K", "trend": "RISING"}, {"t": "SPXL", "c": 286.65, "d1": 0.01, "d5": 1.14, "d20": 9.03, "v": 35.1, "av": "1.7M", "trend": "RISING"}, {"t": "UPRO", "c": 149.97, "d1": 0.02, "d5": 1.14, "d20": 9.01, "v": 34.9, "av": "2.0M", "trend": "RISING"}, {"t": "UDOW", "c": 73.66, "d1": -0.54, "d5": 3.95, "d20": 6.65, "v": 34.3, "av": "1.5M", "trend": "RISING"}, {"t": "FAS", "c": 184.48, "d1": -0.27, "d5": 6.7, "d20": 5.74, "v": 28.9, "av": "282K", "trend": "RISING"}, {"t": "TNA", "c": 72.33, "d1": -0.3, "d5": 1.03, "d20": 5.53, "v": 42.9, "av": "3.5M", "trend": "RISING"}, {"t": "SOXL", "c": 116.6, "d1": 0.8, "d5": -4.59, "d20": 1.64, "v": 141.2, "av": "63.2M", "trend": "RISING"}, {"t": "SPXU", "c": 34.71, "d1": 0.0, "d5": -1.08, "d20": -8.68, "v": 34.9, "av": "7.4M", "trend": "FALLING"}, {"t": "SOXS", "c": 48.09, "d1": -0.68, "d5": 3.98, "d20": -10.81, "v": 147.1, "av": "58.6M", "trend": "FALLING"}, {"t": "SQQQ", "c": 39.38, "d1": -0.2, "d5": 0.03, "d20": -11.74, "v": 61.9, "av": "50.9M", "trend": "FALLING"}];
+const TS="August 27, 2026 at 07:02:37 PDT";
 const pct=v=>v>0?"+"+v.toFixed(2)+"%":v.toFixed(2)+"%";
 const cls=v=>v>0?"up":(v<0?"down":"flat");
 const fmtV=v=>v>=1000000?(v/1000000).toFixed(1)+"M":v>=1000?(v/1000).toFixed(0)+"K":String(Math.round(v));
@@ -225,7 +217,7 @@ render();
     var backdrop=document.getElementById('mobileMenuBackdrop');
     var links=document.querySelector('.nav-links');
     if(menu.children.length===0&&links){
-      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){if(a.closest('#navLoginBtn'))return;if((a.getAttribute('href')||'')==='/tutor'&&!a.classList.contains('nav-drawer-only'))return;menu.appendChild(a.cloneNode(true));});
+      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){menu.appendChild(a.cloneNode(true));});
     }
     var p=location.pathname;
     if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
