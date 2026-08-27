@@ -446,9 +446,9 @@ const magMat = new THREE.MeshStandardMaterial({ color: 0x1a2a4a, roughness: 0.4,
 const mag = new THREE.Mesh(magGeo, magMat);
 mag.position.set(0.15, -0.25, -0.15);
 gunGroup.add(mag);
-gunGroup.position.set(0.35, -0.35, -0.5);
+gunGroup.position.set(0.3, -0.3, -0.45);
 gunGroup.rotation.y = -0.15;
-gunGroup.scale.set(1.35, 1.35, 1.35); // visible viewmodel presence at FOV 75
+gunGroup.scale.set(2.2, 2.2, 2.2); // CS-style viewmodel presence (covers ~1/5 screen height)
 camera.add(gunGroup);
 
 const muzzleLight = new THREE.PointLight(0xffaa00, 0, 5);
