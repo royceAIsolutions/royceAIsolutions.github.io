@@ -446,9 +446,9 @@ const magMat = new THREE.MeshStandardMaterial({ color: 0x1a2a4a, roughness: 0.4,
 const mag = new THREE.Mesh(magGeo, magMat);
 mag.position.set(0.15, -0.25, -0.15);
 gunGroup.add(mag);
-gunGroup.position.set(0.3, -0.3, -0.45);
-gunGroup.rotation.y = -0.15;
-gunGroup.scale.set(2.2, 2.2, 2.2); // CS-style viewmodel presence (covers ~1/5 screen height)
+gunGroup.position.set(0.14, -0.27, -0.55); // bottom-center-right, clear of FIRE/SWAP cluster (was 0.3,-0.3,-0.45 -> overlapped buttons)
+gunGroup.rotation.y = 0.0; // barrel straight ahead toward crosshair (was -0.15 = yawed LEFT, off crosshair)
+gunGroup.scale.set(1.1, 1.1, 1.1); // CS-style viewmodel presence — 2.2 was huge on touch, covered FIRE/JUMP cluster + blocked view
 camera.add(gunGroup);
 scene.add(camera); // camera in scene so viewmodel children (gun, muzzle) render
 
@@ -1934,6 +1934,7 @@ if (new URLSearchParams(location.search).has('debug')) {
       roundTimer: Math.round(roundTimer), botsAlive: bots.filter(b => b.userData.alive).length,
       playerDead: isPlayerDead, roundEnding: isRoundEnding, matchOver: isMatchOver,
       keys: { ...keys }, joy: { dx: +joyDX.toFixed(2), dy: +joyDY.toFixed(2), pid: joyPointerId }, pos: (() => { const p = new THREE.Vector3(); camera.getWorldPosition(p); return { x: +p.x.toFixed(3), y: +p.y.toFixed(3), z: +p.z.toFixed(3) }; })(),
+      rot: (() => { const d = new THREE.Vector3(); camera.getWorldDirection(d); return { rx: +camera.rotation.x.toFixed(3), ry: +camera.rotation.y.toFixed(3), dx: +d.x.toFixed(3), dy: +d.y.toFixed(3), dz: +d.z.toFixed(3) }; })(),
       audio: { enabled: AudioSys.enabled, muted: AudioSys.muted, ctxState: AudioSys.ctx ? AudioSys.ctx.state : 'none' },
       stats: { ...stats }, killsInRound, props: propBoxes.length, damageNums: dmgNums.length
     }),
