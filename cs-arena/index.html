@@ -107,6 +107,28 @@
       text-transform: uppercase; letter-spacing: 0.1em; transition: background 0.2s;
     }
     #game-over button:hover { background: #ff5555; }
+    /* ===== LEVEL SELECT ===== */
+    #level-select {
+      position: fixed; inset: 0; z-index: 30; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 2rem; text-align: center;
+      background: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a12 70%);
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    #level-select.visible { opacity: 1; pointer-events: auto; }
+    #level-select h1 { font-size: 3.5rem; letter-spacing: 0.25em; color: #fff; text-shadow: 0 0 30px rgba(124,92,252,0.6); }
+    #level-select .ls-sub { color: #888; letter-spacing: 0.3em; font-size: 0.9rem; margin-top: -1rem; }
+    #ls-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; padding: 0 2rem; }
+    .ls-card {
+      width: 240px; padding: 1.6rem 1.4rem; border-radius: 16px; cursor: pointer; font-family: inherit;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); color: #fff;
+      display: flex; flex-direction: column; gap: 0.5rem; text-align: left;
+      transition: transform 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .ls-card:hover { transform: translateY(-6px); border-color: rgba(124,92,252,0.7); background: rgba(124,92,252,0.12); }
+    .ls-num { font-size: 0.8rem; color: #ffaa00; letter-spacing: 0.2em; }
+    .ls-name { font-size: 1.4rem; font-weight: bold; letter-spacing: 0.05em; }
+    .ls-desc { font-size: 0.85rem; color: #aaa; line-height: 1.5; }
+    .ls-diff { font-size: 0.75rem; color: #7c5cfc; letter-spacing: 0.1em; margin-top: 0.3rem; }
     /* ===== KILL FEED / STREAK / STATS / AUDIO UI ===== */
     #kill-feed { position: fixed; top: 64px; left: 20px; z-index: 14; pointer-events: none; font-size: 0.95rem; text-shadow: 0 0 4px #000; max-width: 340px; }
     .kf-entry { background: rgba(0,0,0,0.55); border-left: 3px solid #ffaa00; padding: 4px 10px; margin-bottom: 4px; border-radius: 3px; color: #fff; opacity: 1; transition: opacity 0.4s; }
@@ -160,6 +182,27 @@
   </style>
 </head>
 <body>
+  <div id="level-select">
+    <h1>CS ARENA</h1>
+    <p class="ls-sub">CHOOSE YOUR LEVEL</p>
+    <div id="ls-grid">
+      <button class="ls-card" onclick="startGame(0)">
+        <span class="ls-num">LEVEL 1</span><span class="ls-name">DUST ARENA</span>
+        <span class="ls-desc">Classic courtyard. Learn the ropes — open lanes, center bunker.</span>
+        <span class="ls-diff">CADET · 3–5 bots · 60s rounds</span>
+      </button>
+      <button class="ls-card" onclick="startGame(1)">
+        <span class="ls-num">LEVEL 2</span><span class="ls-name">WAREHOUSE</span>
+        <span class="ls-desc">Corridor lanes and side halls. Cover everywhere, angles everywhere.</span>
+        <span class="ls-diff">OPERATOR · 4–6 bots · 75s rounds</span>
+      </button>
+      <button class="ls-card" onclick="startGame(2)">
+        <span class="ls-num">LEVEL 3</span><span class="ls-name">ROOFTOP FORT</span>
+        <span class="ls-desc">Fortified quadrants, corner towers, long sightlines. Good luck.</span>
+        <span class="ls-diff">VETERAN · 5–7 bots · 90s rounds</span>
+      </button>
+    </div>
+  </div>
   <div id="start-overlay" onclick="startGame()">
     <h1 id="start-title">CS ARENA</h1>
     <p id="start-desc">First to 4 rounds — win 4 to take the match</p>
@@ -199,6 +242,7 @@
       <div class="stat-cell"><div class="stat-val" id="stat-best">0</div><div class="stat-lbl">BEST KILLS</div></div>
     </div>
     <button id="play-again">Play Again</button>
+    <button id="next-level" style="display:none">Next Level →</button>
   </div>
   <div id="buy-menu">
     <div class="buy-panel">

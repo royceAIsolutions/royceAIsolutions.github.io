@@ -209,7 +209,7 @@ walls[2].position.set(-arena, wallH / 2, 0);
 walls[3].position.set(arena, wallH / 2, 0);
 walls.forEach(w => { w.castShadow = true; w.receiveShadow = true; scene.add(w); });
 const wallBoxes = walls.map(w => new THREE.Box3().setFromObject(w));
-const blockers = [...walls]; // walls + props — used for bullet/LOS raycasts
+let blockers = [...walls]; // walls + props — used for bullet/LOS raycasts
 let propBoxes = [];
 let propMeshes = [];
 
@@ -228,48 +228,119 @@ dirLight.shadow.camera.top = 60;
 dirLight.shadow.camera.bottom = -60;
 scene.add(dirLight);
 
-// ==== ARENA PROPS (cover — fixed layout, mirrored for fairness) ====
-function createProps() {
-  const crateMat = new THREE.MeshStandardMaterial({ color: 0x6b4a2a, roughness: 0.85, metalness: 0.1 });
-  const barrelMat = new THREE.MeshStandardMaterial({ color: 0x3d5a3d, roughness: 0.5, metalness: 0.6 });
-  const crateGeo = new THREE.BoxGeometry(1.8, 1.8, 1.8);
-  const crateWideGeo = new THREE.BoxGeometry(3.2, 1.2, 1.2);
-  const barrelGeo = new THREE.CylinderGeometry(0.55, 0.55, 1.4, 14);
+// ==== LEVELS (3 maps — layout, theme, difficulty) ====
+const crateMat = new THREE.MeshStandardMaterial({ color: 0x6b4a2a, roughness: 0.85, metalness: 0.1 });
+const propBarrelMat = new THREE.MeshStandardMaterial({ color: 0x3d5a3d, roughness: 0.5, metalness: 0.6 });
+const crateGeo = new THREE.BoxGeometry(1.8, 1.8, 1.8);
+const crateWideGeo = new THREE.BoxGeometry(3.2, 1.2, 1.2);
+const propBarrelGeo = new THREE.CylinderGeometry(0.55, 0.55, 1.4, 14);
 
-  const props = [];
-  // 4 single crates (mid-field, mirrored)
-  [[14, 10], [-14, -10], [14, -10], [-14, 10]].forEach(([x, z]) => {
-    const c = new THREE.Mesh(crateGeo, crateMat);
-    c.position.set(x, 0.9, z);
-    c.castShadow = true; c.receiveShadow = true;
-    props.push(c);
-  });
-  // Center bunker: stacked crates (2 tall)
-  const c1 = new THREE.Mesh(crateGeo, crateMat); c1.position.set(0, 0.9, 0);
-  const c2 = new THREE.Mesh(crateGeo, crateMat); c2.position.set(0, 2.7, 0);
-  c1.castShadow = c2.castShadow = true; c1.receiveShadow = c2.receiveShadow = true;
-  props.push(c1, c2);
-  // 4 low wide crates (near corners, mirrored)
-  [[10, 20], [-10, -20], [10, -20], [-10, 20]].forEach(([x, z]) => {
-    const c = new THREE.Mesh(crateWideGeo, crateMat);
-    c.position.set(x, 0.6, z);
-    c.castShadow = true; c.receiveShadow = true;
-    props.push(c);
-  });
-  // 6 barrels (open lanes, mirrored)
-  [[18, 0], [-18, 0], [0, 18], [0, -18], [8, -15], [-8, 15]].forEach(([x, z]) => {
-    const b = new THREE.Mesh(barrelGeo, barrelMat);
-    b.position.set(x, 0.7, z);
-    b.castShadow = true; b.receiveShadow = true;
-    props.push(b);
-  });
+const LEVELS = [
+  {
+    name: 'DUST ARENA', difficulty: 'CADET',
+    theme: { bg: 0x87ceeb, fog: 0x87ceeb, wall: 0x3a3a4a, crate: 0x6b4a2a, barrel: 0x3d5a3d },
+    innerWalls: [], // (x, z, w, d) dividing walls — create lanes
+    props: [
+      ...[[14, 10], [-14, -10], [14, -10], [-14, 10]].map(([x, z]) => ({ t: 'crate', x, z })),
+      { t: 'bunker', x: 0, z: 0 },
+      ...[[10, 20], [-10, -20], [10, -20], [-10, 20]].map(([x, z]) => ({ t: 'wide', x, z })),
+      ...[[18, 0], [-18, 0], [0, 18], [0, -18], [8, -15], [-8, 15]].map(([x, z]) => ({ t: 'barrel', x, z })),
+    ],
+    botRounds: [3, 4, 5], timer: 60,
+  },
+  {
+    name: 'WAREHOUSE', difficulty: 'OPERATOR',
+    theme: { bg: 0x191410, fog: 0x191410, wall: 0x4a4038, crate: 0x8a6a3a, barrel: 0x556066 },
+    innerWalls: [
+      { x: -14.5, z: -16, w: 23, d: 1.4 }, { x: 14.5, z: -16, w: 23, d: 1.4 },   // lane walls (center gap)
+      { x: -14.5, z: 16, w: 23, d: 1.4 }, { x: 14.5, z: 16, w: 23, d: 1.4 },
+      { x: -20, z: 0, w: 1.4, d: 26 }, { x: 20, z: 0, w: 1.4, d: 26 },           // side walls with gaps
+    ],
+    props: [
+      { t: 'crate', x: 0, z: -8 }, { t: 'crate', x: 0, z: 8 },                   // center-lane cover
+      { t: 'wide', x: -6, z: 0 }, { t: 'wide', x: 6, z: 0 },
+      { t: 'crate', x: -14.5, z: 26 }, { t: 'crate', x: 14.5, z: 26 }, { t: 'crate', x: -14.5, z: -26 }, { t: 'crate', x: 14.5, z: -26 },
+      { t: 'barrel', x: -26, z: -10 }, { t: 'barrel', x: -26, z: 10 }, { t: 'barrel', x: 26, z: -10 }, { t: 'barrel', x: 26, z: 10 },
+      { t: 'barrel', x: -9, z: -16 }, { t: 'barrel', x: 9, z: 16 },
+    ],
+    botRounds: [4, 5, 6], timer: 75,
+  },
+  {
+    name: 'ROOFTOP FORT', difficulty: 'VETERAN',
+    theme: { bg: 0x0e1a2a, fog: 0x0e1a2a, wall: 0x3a4a5a, crate: 0x4a4a5a, barrel: 0x2a3a4a },
+    innerWalls: [
+      { x: 0, z: -15, w: 22, d: 1.4 }, { x: 0, z: 15, w: 22, d: 1.4 },          // vertical wall (center gap)
+      { x: -15, z: 0, w: 1.4, d: 22 }, { x: 15, z: 0, w: 1.4, d: 22 },           // horizontal wall (center gap)
+      { x: -30, z: -22, w: 1.4, d: 12 }, { x: 30, z: -22, w: 1.4, d: 12 },       // corner walls
+      { x: -30, z: 22, w: 1.4, d: 12 }, { x: 30, z: 22, w: 1.4, d: 12 },
+    ],
+    props: [
+      { t: 'tower', x: -10, z: -10 }, { t: 'tower', x: 10, z: 10 },              // corner towers
+      { t: 'bunker', x: 0, z: 0 },
+      { t: 'wide', x: -10, z: 10 }, { t: 'wide', x: 10, z: -10 },
+      { t: 'crate', x: -22, z: 0 }, { t: 'crate', x: 22, z: 0 }, { t: 'crate', x: 0, z: -22 }, { t: 'crate', x: 0, z: 22 },
+      { t: 'barrel', x: -26, z: -26 }, { t: 'barrel', x: 26, z: 26 }, { t: 'barrel', x: -26, z: 26 }, { t: 'barrel', x: 26, z: -26 },
+    ],
+    botRounds: [5, 6, 7], timer: 90,
+  },
+];
 
-  props.forEach(p => scene.add(p));
-  propBoxes = props.map(p => new THREE.Box3().setFromObject(p));
-  propMeshes = props;
-  blockers.push(...props);
+let currentLevel = 0;
+let levelWalls = []; // inner dividing walls (collision + LOS)
+let levelProps = []; // cover meshes
+
+function buildLevel(idx) {
+  const L = LEVELS[idx];
+  // clear previous level geometry
+  [...levelWalls, ...levelProps].forEach(m => { scene.remove(m); m.geometry && m.geometry.dispose(); });
+  levelWalls = []; levelProps = [];
+  // theme
+  scene.background.setHex(L.theme.bg);
+  scene.fog = new THREE.Fog(L.theme.fog, 10, 80);
+  wallMat.color.setHex(L.theme.wall);
+  crateMat.color.setHex(L.theme.crate);
+  propBarrelMat.color.setHex(L.theme.barrel);
+  // base perimeter boxes
+  wallBoxes.length = 0;
+  walls.forEach(w => wallBoxes.push(new THREE.Box3().setFromObject(w)));
+  // inner dividing walls
+  L.innerWalls.forEach(spec => {
+    const m = new THREE.Mesh(new THREE.BoxGeometry(spec.w, wallH, spec.d), wallMat);
+    m.position.set(spec.x, wallH / 2, spec.z);
+    m.castShadow = true; m.receiveShadow = true;
+    scene.add(m);
+    levelWalls.push(m);
+    wallBoxes.push(new THREE.Box3().setFromObject(m));
+  });
+  // cover props
+  L.props.forEach(spec => {
+    let mesh;
+    if (spec.t === 'crate') {
+      mesh = new THREE.Mesh(crateGeo, crateMat); mesh.position.set(spec.x, 0.9, spec.z);
+    } else if (spec.t === 'wide') {
+      mesh = new THREE.Mesh(crateWideGeo, crateMat); mesh.position.set(spec.x, 0.6, spec.z);
+    } else if (spec.t === 'barrel') {
+      mesh = new THREE.Mesh(propBarrelGeo, propBarrelMat); mesh.position.set(spec.x, 0.7, spec.z);
+    } else if (spec.t === 'tower') {
+      [0.9, 2.7, 4.5].forEach(h => {
+        const c = new THREE.Mesh(crateGeo, crateMat);
+        c.position.set(spec.x, h, spec.z);
+        c.castShadow = true; c.receiveShadow = true;
+        scene.add(c); levelProps.push(c);
+      });
+      return;
+    } else if (spec.t === 'bunker') {
+      const c1 = new THREE.Mesh(crateGeo, crateMat); c1.position.set(spec.x, 0.9, spec.z);
+      const c2 = new THREE.Mesh(crateGeo, crateMat); c2.position.set(spec.x, 2.7, spec.z);
+      [c1, c2].forEach(c => { c.castShadow = true; c.receiveShadow = true; scene.add(c); levelProps.push(c); });
+      return;
+    }
+    if (mesh) { mesh.castShadow = true; mesh.receiveShadow = true; scene.add(mesh); levelProps.push(mesh); }
+  });
+  propBoxes = levelProps.map(p => new THREE.Box3().setFromObject(p));
+  blockers = [...walls, ...levelWalls, ...levelProps];
 }
-createProps();
+buildLevel(0);
 
 // ==== PLAYER GUN (CT blue-dark) ====
 const gunGroup = new THREE.Group();
@@ -613,9 +684,7 @@ function spawnBotsForRound(round) {
   });
   bots = [];
 
-  let botCount = 3;
-  if (round === 2) botCount = 4;
-  else if (round >= 3) botCount = 5;
+  let botCount = LEVELS[currentLevel].botRounds[Math.min(round - 1, 2)] || 3;
 
   const positions = [];
   const halfArena = arena - 5;
@@ -645,7 +714,11 @@ function spawnBotsForRound(round) {
 }
 
 // ==== ROUND FLOW ====
-function startMatch() {
+function startMatch(levelIdx) {
+  if (typeof levelIdx === 'number') currentLevel = Math.max(0, Math.min(LEVELS.length - 1, levelIdx));
+  const ls = document.getElementById('level-select');
+  if (ls) ls.classList.remove('visible');
+  buildLevel(currentLevel);
   currentRound = 1;
   ctWins = 0;
   tWins = 0;
@@ -698,7 +771,7 @@ function startRound() {
   velocity.set(0, 0, 0);
   
   spawnBotsForRound(currentRound);
-  roundTimer = 60;
+  roundTimer = LEVELS[currentLevel].timer;
   roundTimerActive = true;
   
   isFreezetime = true;
@@ -709,8 +782,8 @@ function startRound() {
 }
 
 function showStartOverlay() {
-  startTitle.textContent = `ROUND ${currentRound}`;
-  startDesc.textContent = `Eliminate ${bots.length} terrorists | FREEZETIME: 8s`;
+  startTitle.textContent = `ROUND ${currentRound} — ${LEVELS[currentLevel].name}`;
+  startDesc.textContent = `Eliminate ${bots.length} terrorists | ${LEVELS[currentLevel].difficulty} | FREEZETIME: 8s`;
   startOverlay.classList.remove('hidden');
   hud.classList.remove('visible');
   crosshair.classList.remove('visible');
@@ -785,9 +858,15 @@ function matchWon() {
   victoryTitle.style.textShadow = '0 0 30px #00ff88';
   victoryCt.textContent = ctWins;
   victoryT.textContent = tWins;
+  const nextBtn = document.getElementById('next-level');
+  if (nextBtn) nextBtn.style.display = (currentLevel < LEVELS.length - 1) ? 'inline-block' : 'none';
   victoryOverlay.classList.add('visible');
   hud.classList.remove('visible');
   crosshair.classList.remove('visible');
+}
+
+function nextLevel() {
+  if (currentLevel < LEVELS.length - 1) startMatch(currentLevel + 1);
 }
 
 function matchLost() {
@@ -1681,6 +1760,8 @@ canvas.addEventListener('click', onClick);
 
 playAgainBtn.addEventListener('click', resetMatch);
 retryBtn.addEventListener('click', resetMatch);
+const nextLevelBtn = document.getElementById('next-level');
+if (nextLevelBtn) nextLevelBtn.addEventListener('click', nextLevel);
 
 // Touch: tap start overlay to dismiss immediately (buy early, freezetime keeps running)
 startOverlay.addEventListener('click', () => {
@@ -1807,6 +1888,6 @@ if (new URLSearchParams(location.search).has('debug')) {
 }
 
 // ==== INIT ====
-startMatch();
+document.getElementById('level-select').classList.add('visible');
 animate(performance.now());
 updateHUD();
