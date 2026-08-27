@@ -7,7 +7,7 @@
   var HIST_KEY = 'jlr_chat_history';
   var AUTH_TTL = 30 * 24 * 3600 * 1000; // 30 days
   var POLL_MS = 2500;
-  var POLL_MAX = 96; // ~4 min
+  var POLL_MAX = 240; // ~10 min — agent runs can take a few minutes; the timeout manager recovers replies
 
   var S = document.createElement('style');
   S.textContent = [
