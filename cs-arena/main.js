@@ -53,7 +53,9 @@ const AudioSys = {
   enabled: false,
   init() {
     if (this.ctx) {
-      if (this.ctx.state === 'suspended') this.ctx.resume();
+      // Chrome/Safari keep the context suspended until a user gesture; resume
+      // whenever init runs inside one (pointerdown/keydown/click handlers).
+      if (this.ctx.state === 'suspended') this.ctx.resume().catch(() => {});
       return;
     }
     try {
@@ -509,7 +511,7 @@ const WEAPONS = {
     magSize: 12,
     reserve: 48,
     reloadTime: 1.5,
-    spread: 0.02,
+    spread: 0.015, // FIXED: tighter pistol (was 0.02)
     fullAuto: false,
     price: 0
   },
@@ -520,7 +522,7 @@ const WEAPONS = {
     magSize: 30,
     reserve: 120,
     reloadTime: 2.0,
-    spread: 0.08,
+    spread: 0.035, // FIXED: usable SMG bloom (was 0.08)
     fullAuto: true,
     price: 1500
   },
@@ -531,7 +533,7 @@ const WEAPONS = {
     magSize: 30,
     reserve: 90,
     reloadTime: 2.5,
-    spread: 0.03,
+    spread: 0.018, // FIXED: rifle taps accurate (was 0.03)
     fullAuto: true,
     price: 3100
   }
@@ -986,16 +988,23 @@ function shoot() {
   const origin = new THREE.Vector3();
   camera.getWorldPosition(origin);
   const dir = new THREE.Vector3();
+  // FIXED: zero the visual recoil kick so the bullet goes exactly where the
+  // crosshair is (recoil re-applies for the visual after the shot).
+  camera.rotation.x = mouse.y;
+  camera.rotation.y = mouse.x;
   camera.getWorldDirection(dir);
-  
-  // Apply spread
-  dir.x += (Math.random() - 0.5) * currentWeapon.spread;
-  dir.y += (Math.random() - 0.5) * currentWeapon.spread;
-  dir.z += (Math.random() - 0.5) * currentWeapon.spread;
-  dir.normalize();
+
+  // FIXED: CS-style spread — uniform cone (tangent offsets, no z-bias) + movement penalty
+  const movingPenalty = (keys.shift || !(velocity.x || velocity.z)) ? 1.0 : 1.6;
+  const baseSpread = currentWeapon.spread * movingPenalty;
+  const right = new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 0);
+  const up = new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 1);
+  dir.addScaledVector(right, (Math.random() - 0.5) * baseSpread)
+     .addScaledVector(up, (Math.random() - 0.5) * baseSpread)
+     .normalize();
 
   // Recoil is a visual camera kick (applied in the main loop) — bullets follow
-  // the camera, not an extra pitch, so shots land where the crosshair points.
+  // the crosshair, not an extra pitch.
 
   raycastShoot(origin, dir, true);
 }
@@ -1411,7 +1420,7 @@ function onPointerLockChange() {
 function onMouseMove(e) {
   if (!pointerLocked) return;
   mouse.x -= e.movementX * 0.002;
-  mouse.y -= e.movementY * 0.002;
+  mouse.y += e.movementY * 0.002;  // FIXED: mouse up = look up (was -=, inverting aim)
   mouse.y = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, mouse.y));
 }
 
