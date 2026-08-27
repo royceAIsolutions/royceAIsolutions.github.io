@@ -173,15 +173,17 @@
     canvas { touch-action: none; display: block; }
     body.touch-mode { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
     body.touch-mode canvas { touch-action: none; }
-    #joystick-zone { position: absolute; left: 0; bottom: 0; width: 45%; height: 70%; pointer-events: auto; touch-action: none; }
+    #joystick-zone { position: absolute; left: 0; bottom: 0; width: 45%; height: 70%; pointer-events: auto; touch-action: none; z-index: 1; }
     #joystick-base { position: absolute; left: 90px; bottom: 90px; width: 140px; height: 140px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.25); }
     #joystick-knob { position: absolute; left: 50%; top: 50%; width: 60px; height: 60px; margin: -30px 0 0 -30px; border-radius: 50%; background: rgba(124,92,252,0.55); border: 2px solid rgba(255,255,255,0.5); }
-    #look-zone { position: absolute; right: 0; top: 0; width: 55%; height: 100%; pointer-events: auto; touch-action: none; }
+    #look-zone { position: absolute; right: 0; top: 0; width: 55%; height: 100%; pointer-events: auto; touch-action: none; z-index: 1; }
     .t-btn {
       position: absolute; border-radius: 50%; color: #fff; font-family: inherit;
       pointer-events: auto; touch-action: none; display: flex; align-items: center; justify-content: center;
       letter-spacing: 0.05em; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.5);
+      z-index: 3; -webkit-user-select: none; user-select: none;
     }
+    .t-btn:active { background: rgba(255,255,255,0.45) !important; transform: scale(0.92); }
     /* COD Mobile-style layout: fire near right-thumb rest, jump above it,
        reload/swap in the same arc, sprint above the joystick, buy out of combat cluster */
     #fire-btn { right: 30px; bottom: 40px; width: 90px; height: 90px; background: rgba(255,60,60,0.55); font-size: 1.1rem; border-width: 3px; }
