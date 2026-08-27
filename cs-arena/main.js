@@ -826,6 +826,7 @@ function startMatch(levelIdx) {
   AudioSys.init();
   camera.position.set(0, 1.7, 10);
   velocity.set(0, 0, 0);
+  camera.rotation.z = 0; // death cam rolls rotation.z to 0.14 — reset or the whole view stays tilted sideways for the session (Aug 26 2026)
   mouse.x = 0;
   mouse.y = 0;
   touchFiring = false;
@@ -855,6 +856,7 @@ function startRound() {
   
   camera.position.set(0, 1.7, 10);
   camera.rotation.y = 0; // face the arena, not the back wall
+  camera.rotation.z = 0; // death cam rolls rotation.z to 0.14 — reset here too or the tilt persists all round (Aug 26 2026)
   mouse.x = 0;
   mouse.y = 0;
   velocity.set(0, 0, 0);
@@ -1914,6 +1916,7 @@ if (new URLSearchParams(location.search).has('debug')) {
     endFreeze: () => endFreezetime(),
     restartMatch: () => resetMatch(),
     setHealth: (n) => { health = Math.max(0, n); updateHUD(); },
+    killPlayer: () => applyPlayerDamage(999), // real death cam path — rolls rotation.z to 0.14, must reset on round restart
     aimBot: (i, part) => {
       const b = bots[i];
       if (!b || !b.userData.alive) return false;
