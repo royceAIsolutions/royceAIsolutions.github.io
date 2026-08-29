@@ -89,6 +89,8 @@ footer .links a{color:#88889a;text-decoration:none;font-size:0.875rem}
 footer .links a:hover{color:#a78bfa}
 footer .copy{color:#5c5c6e;font-size:0.8rem}
 @media(max-width:640px){nav{padding:0 16px}.hero-sub{padding:calc(60px + var(--nav-h)) 16px 30px}.section{padding:0 16px 40px}.nav-burger{display:inline-flex}.nav-links a:not(.nav-cta){display:none}table{min-width:0}.table-wrap{overflow-x:visible}th:nth-child(4),td:nth-child(4),th:nth-child(6),td:nth-child(6){display:none}th,td{padding:10px 6px;font-size:0.8rem}}
+@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
+@media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
 </style>
 </head>
 <body>
@@ -99,23 +101,23 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
   <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:36px;height:36px;border-radius:9px" alt="R"> Royce<span>AI</span></a>
   <div class="nav-links">
     <a href="/products">Products</a>
-    <a href="/tutor">✨ Tutor</a>
+    <span id="navLoginBtn"></span>
     <a href="/subscribe">Subscribe</a>
     <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a>
     <a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
     <a href="/billionaires" class="nav-drawer-only">💰 Billionaires</a>
     <a href="/real-estate" class="nav-drawer-only">🏠 Real Estate</a>
-    <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
-    <a href="/etf-pulse" class="nav-drawer-only active">📈 ETF Pulse</a>
-    <a href="/blog" class="nav-drawer-only">Blog</a>
-    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
-    <a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a>
     <a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a>
+    <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
     <a href="/livaway" class="nav-drawer-only">🏨 LivAway</a>
+    
     <a href="/cody" class="nav-drawer-only">🔦 Blacklight CX</a>
     <a href="/about" class="nav-drawer-only">👤 About Royce</a>
     <a href="/cs-arena" class="nav-drawer-only">🎮 CS Arena</a>
+    
     <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
     <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
     <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>

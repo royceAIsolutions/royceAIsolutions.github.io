@@ -76,6 +76,7 @@ footer .links a:hover{color:#a78bfa}
 .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
 .mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
 
+@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
 </style>
 </head>
 <body>
@@ -86,23 +87,23 @@ footer .links a:hover{color:#a78bfa}
   <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:36px;height:36px;border-radius:9px" alt="R"> Royce<span>AI</span></a>
   <div class="nav-links">
     <a href="/products">Products</a>
-    <a href="/tutor">✨ Tutor</a>
-    <a href="/land-rover">🚙 Land Rover</a>
-    <a href="/exotics" class="active">🏎️ Exotics</a>
-    <a href="/blog">Blog</a>
-    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
+    <span id="navLoginBtn"></span>
+    <a href="/subscribe">Subscribe</a>
     <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
     <a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a>
-    <a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
+    <a href="/exotics" class="nav-drawer-only active">🏎️ Exotics</a>
     <a href="/billionaires" class="nav-drawer-only">💰 Billionaires</a>
     <a href="/real-estate" class="nav-drawer-only">🏠 Real Estate</a>
     <a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a>
     <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
     <a href="/livaway" class="nav-drawer-only">🏨 LivAway</a>
+    
     <a href="/cody" class="nav-drawer-only">🔦 Blacklight CX</a>
     <a href="/about" class="nav-drawer-only">👤 About Royce</a>
     <a href="/cs-arena" class="nav-drawer-only">🎮 CS Arena</a>
+    
     <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
     <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
     <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
