@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JLR Newport Beach Inventory — RoyceAI</title>
+<meta name="description" content="Live JLR Newport Beach vehicle inventory — new Range Rover, Defender, Velar, and Jaguar F-PACE. Prices, mileage, VIN, and stock numbers. Updated daily.">
+<link rel="canonical" href="https://royceai.com/jlr/">
+<style>
+:root{
+  --bg:#07070a;  --bg-card:#0e0e12;  --bg-elevated:#15151b;
+  --text:#f5f5f8;  --text-secondary:#c9c9e0;  --text-muted:#aeaec8;
+  --border:rgba(255,255,255,0.08);  --border-hover:rgba(255,255,255,0.14);
+  --accent:#00a651;  --accent-light:#6fe3a5;  --accent-dark:#00703a;
+  --accent-glow:rgba(0,166,81,0.25);  --accent-bg:rgba(0,166,81,0.10);
+  --accent-gradient:linear-gradient(135deg,#00a651 0%,#8fe8b8 50%,#00a651 100%);
+  --green:#34d399;  --red:#ef4444;  --radius:16px;  --radius-sm:10px;
+  --max-w:1200px;  --nav-h:64px;
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+  --transition:0.35s cubic-bezier(0.16,1,0.3,1);
+  --shadow-card:0 2px 20px rgba(0,0,0,0.3);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100vh;line-height:1.55}
+a{color:var(--accent-light);text-decoration:none}
+a:hover{color:var(--accent)}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(0,166,81,0.10);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(0,166,81,0.06);bottom:-250px;left:-150px}
+nav{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;max-width:var(--max-w);margin:0 auto;padding:0 24px;position:relative;z-index:2}
+.nav-logo{font-size:1.15rem;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px!important;border-radius:8px}
+.hero{max-width:var(--max-w);margin:0 auto;padding:60px 24px 30px;text-align:center}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;letter-spacing:-0.02em}
+.gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero p{color:var(--text-secondary);margin-top:12px;font-size:1.05rem}
+.controls{max-width:var(--max-w);margin:0 auto;padding:0 24px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.controls select,.controls input{background-color:var(--bg-elevated);border:1.5px solid var(--accent);color:var(--text);padding:9px 14px;border-radius:var(--radius-sm);font-size:0.9rem;outline:none;transition:border-color .15s,box-shadow .15s}
+.controls select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2300a651'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+.controls select:hover,.controls input:hover{border-color:var(--accent-light);box-shadow:0 0 0 3px var(--accent-bg)}
+.btn-reset{margin-left:auto;background:transparent;border:1px solid var(--accent);color:var(--accent-light);padding:9px 16px;border-radius:var(--radius-sm);font-size:0.9rem;cursor:pointer;transition:all .15s}
+.btn-reset:hover{background:var(--accent);color:#fff}
+.stat{background:var(--accent-bg);color:var(--accent-light);padding:4px 12px;border-radius:99px;font-size:0.85rem;font-weight:600}
+.grid{max-width:var(--max-w);margin:0 auto;padding:0 24px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all 0.3s;display:flex;flex-direction:column;gap:8px}
+.card:hover{border-color:var(--border-hover);transform:translateY(-3px);box-shadow:var(--shadow-card)}
+.card-top{display:flex;gap:8px;flex-wrap:wrap}
+.card h3{font-size:1rem;font-weight:600;color:var(--text)}
+.card .meta{color:var(--text-muted);font-size:0.88rem;line-height:1.6}
+.card .meta .paint{color:var(--text-secondary);font-size:0.8rem}
+.card .price{font-size:1.3rem;font-weight:700;color:var(--accent-light)}
+.badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:0.72rem;font-weight:600}
+.badge-model{background:var(--accent-bg);color:var(--accent-light)}
+.badge-qty{background:rgba(251,191,36,0.12);color:#fbbf24}
+.card .opts{margin-top:auto;font-size:0.82rem;color:var(--text-muted);border-top:1px dashed var(--border);padding-top:10px}
+.card .opts summary{cursor:pointer;color:var(--accent-light);font-weight:600;user-select:none;list-style:none;font-size:0.85rem}
+.card .opts summary::before{content:'▸ '}
+.card .opts[open] summary::before{content:'▾ '}
+.card .opts ul{display:grid;grid-template-columns:1fr 1fr;gap:3px 12px;margin:8px 0 0;padding:0 0 0 2px;list-style:none}
+.card .opts li{color:var(--text-secondary);line-height:1.45}
+.cta{display:block;text-align:center;background:var(--accent);color:#fff!important;font-weight:600;padding:10px 16px;border-radius:10px;margin-top:6px;transition:background .15s}
+.cta:hover{background:var(--accent-dark)}
+.empty{max-width:var(--max-w);margin:0 auto;padding:60px 24px;text-align:center;color:var(--text-muted)}
+footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--text-muted);font-size:0.85rem}
+footer .links a{margin:0 10px}
+/* ===== MOBILE NAV (hamburger + drawer) — site standard ===== */
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{color:var(--text-secondary);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--text);background:var(--accent-bg)}
+.mobile-menu .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;margin-top:10px;text-align:center}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+.mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+@media(max-width:1099px){
+  nav{z-index:1001;flex-direction:row;flex-wrap:nowrap;height:var(--nav-h);background:var(--bg)}
+  .nav-links{width:auto;margin-left:auto;justify-content:flex-end}
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}
+  .nav-logo{width:auto;justify-content:flex-start}
+}
+@media(min-width:1100px){
+  .nav-links a.nav-drawer-only{display:none!important}
+}
+@media(max-width:640px){
+  .grid{grid-template-columns:1fr}
+  .hero{padding:50px 20px 24px}
+}
+</style>
+</head>
+<body>
+<div class="orb orb-1"></div><div class="orb orb-2"></div>
+<nav>
+  <a href="/" class="nav-logo"><span>Royce</span>AI</a>
+  <div class="nav-links">
+    <a href="/products">Products</a>
+    <span id="navLoginBtn"></span>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/jlr" class="nav-drawer-only" style="color:var(--accent-light);font-weight:600">🚗 JLR</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a>
+    <a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
+    <a href="/billionaires" class="nav-drawer-only">💰 Billionaires</a>
+    <a href="/real-estate" class="nav-drawer-only">🏠 Real Estate</a>
+    <a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a>
+    <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
+    <a href="/livaway" class="nav-drawer-only">🏨 LivAway</a>
+    <a href="/cody" class="nav-drawer-only">🔦 Blacklight CX</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    <a href="/cs-arena" class="nav-drawer-only">🎮 CS Arena</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<div class="mobile-menu" id="mobileMenu"></div>
+
+<section class="hero">
+  <h1>JLR Newport Beach <span class="gradient">Inventory</span></h1>
+  <p>New arrivals · updated 2026-08-29 07:00 PT · 5 vehicles in stock</p>
+</section>
+
+<div class="controls">
+  <span class="stat" id="count">5 vehicles</span>
+  <label>Brand
+    <select id="fBrand"><option value="">All</option><option value="defender">Defender</option><option value="jaguar">Jaguar</option><option value="range rover">Range Rover</option></select>
+  </label>
+  <label>Sort
+    <select id="fSort">
+      <option value="price">Price ↑</option>
+      <option value="price-desc">Price ↓</option>
+      <option value="year">Year (newest)</option>
+      <option value="model">Model A→Z</option>
+    </select>
+  </label>
+  <button id="fReset" class="btn-reset" type="button">✕ Reset</button>
+</div>
+
+<div class="grid" id="grid">
+
+  <div class="card" data-brand="range rover" data-price="124500">
+    <div class="card-top">
+      <span class="badge badge-model">🚙 Range Rover</span>
+      <span class="badge badge-qty">Stock #123456</span>
+    </div>
+    <h3>2026 Range Rover Sport Autobiography</h3>
+    <div class="meta">
+      <div>Santorini Black</div>
+      <div class="paint">12 miles · VIN SALWR2RU3RA123456</div>
+    </div>
+    <div class="price">$124,500</div>
+    <details class="opts"><summary>Features</summary><ul><li>Leather seating surfaces</li><li>Heated and ventilated front seats</li><li>Panoramic roof</li><li>Navigation system</li><li>Blind spot monitoring</li><li>Apple CarPlay / Android Auto</li><li>Wireless charging</li><li>Premium audio system</li><li>Adaptive cruise control</li><li>360-degree camera</li></ul></details>
+    <a class="cta" href="tel:+19495550123">📞 Call (949) 555-0123</a>
+  </div>
+
+  <div class="card" data-brand="range rover" data-price="78900">
+    <div class="card-top">
+      <span class="badge badge-model">🚙 Range Rover</span>
+      <span class="badge badge-qty">Stock #654321</span>
+    </div>
+    <h3>2026 Range Rover Velar HSE R-Dynamic</h3>
+    <div class="meta">
+      <div>Fuji White</div>
+      <div class="paint">850 miles · VIN SALZA2BU3RA654321</div>
+    </div>
+    <div class="price">$78,900</div>
+    <details class="opts"><summary>Features</summary><ul><li>Leather seating surfaces</li><li>Heated and ventilated front seats</li><li>Panoramic roof</li><li>Navigation system</li><li>Blind spot monitoring</li><li>Apple CarPlay / Android Auto</li><li>Wireless charging</li><li>Premium audio system</li><li>Adaptive cruise control</li><li>360-degree camera</li></ul></details>
+    <a class="cta" href="tel:+19495550123">📞 Call (949) 555-0123</a>
+  </div>
+
+  <div class="card" data-brand="defender" data-price="89500">
+    <div class="card-top">
+      <span class="badge badge-model">🛡️ Defender</span>
+      <span class="badge badge-qty">Stock #789012</span>
+    </div>
+    <h3>2026 Land Rover Defender 110 X-Dynamic HSE</h3>
+    <div class="meta">
+      <div>Tasman Blue</div>
+      <div class="paint">320 miles · VIN SALEA7EU3RA789012</div>
+    </div>
+    <div class="price">$89,500</div>
+    <details class="opts"><summary>Features</summary><ul><li>Leather seating surfaces</li><li>Heated and ventilated front seats</li><li>Panoramic roof</li><li>Navigation system</li><li>Blind spot monitoring</li><li>Apple CarPlay / Android Auto</li><li>Wireless charging</li><li>Premium audio system</li><li>Adaptive cruise control</li><li>360-degree camera</li></ul></details>
+    <a class="cta" href="tel:+19495550123">📞 Call (949) 555-0123</a>
+  </div>
+
+  <div class="card" data-brand="jaguar" data-price="68900">
+    <div class="card-top">
+      <span class="badge badge-model">🐆 Jaguar</span>
+      <span class="badge badge-qty">Stock #345678</span>
+    </div>
+    <h3>2026 Jaguar F-PACE SVR</h3>
+    <div class="meta">
+      <div>Eiger Grey</div>
+      <div class="paint">1500 miles · VIN SADCP2EX3RA345678</div>
+    </div>
+    <div class="price">$68,900</div>
+    <details class="opts"><summary>Features</summary><ul><li>Leather seating surfaces</li><li>Heated and ventilated front seats</li><li>Panoramic roof</li><li>Navigation system</li><li>Blind spot monitoring</li><li>Apple CarPlay / Android Auto</li><li>Wireless charging</li><li>Premium audio system</li><li>Adaptive cruise control</li><li>360-degree camera</li></ul></details>
+    <a class="cta" href="tel:+19495550123">📞 Call (949) 555-0123</a>
+  </div>
+
+  <div class="card" data-brand="range rover" data-price="154000">
+    <div class="card-top">
+      <span class="badge badge-model">🚙 Range Rover</span>
+      <span class="badge badge-qty">Stock #901234</span>
+    </div>
+    <h3>2025 Range Rover Westminster Edition</h3>
+    <div class="meta">
+      <div>Ebury Green</div>
+      <div class="paint">5200 miles · VIN SALGS3EU3RA901234</div>
+    </div>
+    <div class="price">$154,000</div>
+    <details class="opts"><summary>Features</summary><ul><li>Leather seating surfaces</li><li>Heated and ventilated front seats</li><li>Panoramic roof</li><li>Navigation system</li><li>Blind spot monitoring</li><li>Apple CarPlay / Android Auto</li><li>Wireless charging</li><li>Premium audio system</li><li>Adaptive cruise control</li><li>360-degree camera</li></ul></details>
+    <a class="cta" href="tel:+19495550123">📞 Call (949) 555-0123</a>
+  </div>
+</div>
+
+<footer>
+  <div class="links">
+    <a href="/products">Products</a><a href="/tutor">Tutor</a>
+    <a href="/blog">Blog</a><a href="/chat">Chat</a>
+  </div>
+  <div class="copy">RoyceAI Solutions · Irvine, CA</div>
+</footer>
+<script>
+(function(){
+  var grid=document.getElementById('grid');
+  var cards=[].slice.call(grid.querySelectorAll('.card'));
+  var fBrand=document.getElementById('fBrand');
+  var fSort=document.getElementById('fSort');
+  var count=document.getElementById('count');
+  function apply(){
+    var brand=fBrand.value;
+    var sort=fSort.value;
+    var rows=cards.filter(function(c){
+      return !brand||c.getAttribute('data-brand')===brand;
+    });
+    var key=function(c){
+      if(sort==='price')return parseInt(c.getAttribute('data-price')||'0',10)||1e12;
+      if(sort==='price-desc')return -(parseInt(c.getAttribute('data-price')||'0',10)||-1e12);
+      if(sort==='year')return -parseInt(c.querySelector('h3').textContent,10);
+      return c.querySelector('h3').textContent.toLowerCase();
+    };
+    rows.sort(function(a,b){var ka=key(a),kb=key(b);return ka<kb?-1:ka>kb?1:0;});
+    rows.forEach(function(c){grid.appendChild(c);c.style.display='';});
+    cards.forEach(function(c){if(rows.indexOf(c)<0)c.style.display='none';});
+    count.textContent=rows.length+' vehicle'+(rows.length===1?'':'s');
+  }
+  fBrand.addEventListener('change',apply);
+  fSort.addEventListener('change',apply);
+  document.getElementById('fReset').addEventListener('click',function(){
+    fBrand.value='';fSort.value='price';apply();
+  });
+  apply();
+})();
+</script>
+<script>
+(function(){
+  function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(menu.children.length===0&&links){
+      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){menu.appendChild(a.cloneNode(true));});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+</script>
+</body>
+</html>
