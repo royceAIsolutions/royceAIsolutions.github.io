@@ -1758,8 +1758,11 @@ function animate(time) {
       camera.updateProjectionMatrix();
     }
 
-    velocity.x *= 0.9;
-    velocity.z *= 0.9;
+    // Framerate-independent damping: per-frame *=0.9 made terminal velocity
+    // 80*throttle/fps — 0.67 m/s walk on 120Hz vs 1.33 on 60Hz. Fixed Aug 31 2026.
+    const damp = Math.pow(0.9, dt * 60);
+    velocity.x *= damp;
+    velocity.z *= damp;
 
     camera.rotation.y = mouse.x;
     camera.rotation.x = mouse.y;
