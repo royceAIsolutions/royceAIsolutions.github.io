@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Land Rover Blog — Range Rover, Defender, Jaguar & More</title>
-<meta name="description" content="Daily Jaguar Land Rover news and analysis — Range Rover, Defender, Discovery, Jaguar, electric and hybrid technology. For Land Rover fans worldwide.">
+<title>🔧 Technology — Land Rover Blog</title>
+<meta name="description" content="Pivi Pro, Terrain Response, driver assistance, and the engineering inside every JLR. — all articles.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -20,24 +20,27 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px
 .nav-links a{color:#88889a;text-decoration:none;font-size:0.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all 0.2s}
 .nav-links a:hover{color:#eeeef0;background:rgba(124,92,252,0.08)}
 .nav-links .nav-cta{background:#7c5cfc;color:#fff!important;font-weight:600;padding:8px 22px;border-radius:8px}
-.hero-sub{min-height:50vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 60px;max-width:1200px;margin:0 auto;text-align:center}
-.hero-sub h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:12px}
+.hero-sub{min-height:40vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 60px;max-width:var(--max-w,1200px);margin:0 auto;text-align:center}
+.hero-sub h1{font-size:clamp(2rem,6vw,4rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:12px}
 .hero-sub h1 .gradient{background:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
-.hero-sub p{color:#88889a;font-size:1.05rem;max-width:640px;margin:0 auto}
+.hero-sub p{color:#88889a;font-size:1rem;max-width:600px;margin:0 auto}
 @keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.topics{max-width:1100px;margin:0 auto;padding:0 24px 5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.topic-card{background:#0e0e12;border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:2rem;text-decoration:none;display:block;transition:all 0.35s cubic-bezier(0.16,1,0.3,1);box-shadow:0 2px 20px rgba(0,0,0,0.3)}
-.topic-card:hover{transform:translateY(-4px);border-color:rgba(124,92,252,0.3);box-shadow:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(124,92,252,0.15)}
-.topic-icon{font-size:2rem;display:block;margin-bottom:12px}
-.topic-card h3{color:#fff;font-size:1.2rem;font-weight:700;margin-bottom:8px}
-.topic-card p{color:#88889a;font-size:0.9rem;line-height:1.7;margin-bottom:1rem}
-.topic-card .count{color:#a78bfa;font-size:0.85rem;font-weight:600}
+.blog-list{max-width:720px;margin:0 auto;padding:0 24px 4rem;display:flex;flex-direction:column;gap:16px}
+.blog-card{background:#0e0e12;border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:1.75rem;text-decoration:none;display:block;transition:all 0.35s cubic-bezier(0.16,1,0.3,1);box-shadow:0 2px 20px rgba(0,0,0,0.3)}
+.blog-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.1);box-shadow:0 8px 40px rgba(0,0,0,0.4)}
+.blog-card .tag{display:inline-block;padding:3px 12px;border-radius:6px;background:rgba(124,92,252,0.08);color:#a78bfa;font-size:0.75rem;font-weight:600;margin-bottom:0.75rem}
+.blog-card h3{color:#fff;font-size:1.1rem;font-weight:600;margin:0.5rem 0 0.4rem;line-height:1.4}
+.blog-card p{color:#88889a;font-size:0.9rem;line-height:1.7}
+.blog-card .date{display:block;color:#5c5c6e;font-size:0.8rem;margin-top:0.75rem}
+.back{max-width:720px;margin:0 auto;padding:2rem 24px 0;text-align:center}
+.back a{color:#a78bfa;text-decoration:none;font-size:0.9rem;font-weight:500}
+.back a:hover{color:#fff}
 footer{border-top:1px solid rgba(255,255,255,0.06);padding:48px 24px;max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
 footer .copy{color:#5c5c6e;font-size:0.8rem;width:100%;text-align:center}
 footer .links{display:flex;gap:20px;flex-wrap:wrap}
 footer .links a{color:#88889a;text-decoration:none;font-size:0.875rem}
 footer .links a:hover{color:#a78bfa}
-@media(max-width:640px){.topics{padding:0 16px 3rem;grid-template-columns:1fr}.topic-card{padding:1.5rem}nav{padding:0 16px;height:auto;flex-direction:column;gap:6px;padding:8px 16px}.nav-logo{width:100%;justify-content:center;font-size:1rem}.nav-links{width:100%;justify-content:center;flex-wrap:wrap}.nav-links a{font-size:.75rem;padding:5px 10px}}
+@media(max-width:640px){.blog-list{padding:0 16px 3rem}.blog-card{padding:1.25rem}nav{padding:0 16px;height:auto;flex-direction:column;gap:6px;padding:8px 16px}.nav-logo{width:100%;justify-content:center;font-size:1rem}.nav-links{width:100%;justify-content:center;flex-wrap:wrap}.nav-links a{font-size:.75rem;padding:5px 10px}}
 </style>
 </head>
 <body>
@@ -70,45 +73,40 @@ footer .links a:hover{color:#a78bfa}
 </div>
 </nav>
 <div class="hero-sub">
-<h1>Land Rover <span class="gradient">Blog</span></h1>
-<p>Daily coverage of Range Rover, Defender, Discovery, Jaguar and JLR's electric future — for fans worldwide. Pick a topic to browse its catalog.</p>
-</div>
-<div class="topics">
-<a class="topic-card" href="/blog/jlr/range-rover.html">
-<span class="topic-icon">👑</span>
-<h3>Range Rover</h3>
-<p>Flagship luxury SUVs — Range Rover, Sport, Velar, Evoque and the new all-electric GT.</p>
-<span class="count">4 articles →</span>
-</a><a class="topic-card" href="/blog/jlr/defender.html">
-<span class="topic-icon">🛡️</span>
-<h3>Defender</h3>
-<p>The off-road icon — 90, 110, 130 and the hardcore OCTA. Built to go anywhere.</p>
-<span class="count">4 articles →</span>
-</a><a class="topic-card" href="/blog/jlr/discovery.html">
-<span class="topic-icon">🧭</span>
-<h3>Discovery</h3>
-<p>Family-first capability — Discovery and Discovery Sport, seven seats and go-anywhere manners.</p>
-<span class="count">4 articles →</span>
-</a><a class="topic-card" href="/blog/jlr/jaguar.html">
-<span class="topic-icon">🐆</span>
-<h3>Jaguar</h3>
-<p>Jaguar&#x27;s reinvention — the all-electric Type 00, the new brand era and the road to 2027.</p>
-<span class="count">4 articles →</span>
-</a><a class="topic-card" href="/blog/jlr/electric-hybrid.html">
-<span class="topic-icon">⚡</span>
-<h3>Electric &amp; Hybrid</h3>
-<p>JLR&#x27;s electrification roadmap — Range Rover Electric, the EMA platform, PHEVs and charging.</p>
-<span class="count">4 articles →</span>
-</a><a class="topic-card" href="/blog/jlr/technology.html">
-<span class="topic-icon">🔧</span>
-<h3>Technology</h3>
+<h1>🔧 <span class="gradient">Technology</span></h1>
 <p>Pivi Pro, Terrain Response, driver assistance, and the engineering inside every JLR.</p>
-<span class="count">5 articles →</span>
-</a><a class="topic-card" href="/blog/jlr/heritage-design.html">
-<span class="topic-icon">🏛️</span>
-<h3>Heritage &amp; Design</h3>
-<p>Classics, special editions, and the design language that made Land Rover legendary.</p>
-<span class="count">4 articles →</span>
+</div>
+<div class="back"><a href="/blog/jlr">← All Land Rover topics</a></div>
+<div class="blog-list">
+<a class="blog-card" href="/blog/jlr/articles/technology/technology-2026-08-31.html">
+<span class="tag">🔧 Technology</span>
+<h3>Technology Today — August 31, 2026</h3>
+<p>Pivi Pro, Terrain Response, driver assistance, and the engineering inside every JLR.</p>
+<span class="date">2026-08-31</span>
+</a>
+<a class="blog-card" href="/blog/jlr/articles/technology/technology-2026-08-24.html">
+<span class="tag">🔧 Technology</span>
+<h3>Technology Today — August 24, 2026</h3>
+<p>Pivi Pro, Terrain Response, driver assistance, and the engineering inside every JLR.</p>
+<span class="date">2026-08-24</span>
+</a>
+<a class="blog-card" href="/blog/jlr/articles/technology/technology-2026-08-17.html">
+<span class="tag">🔧 Technology</span>
+<h3>Technology Today — August 17, 2026</h3>
+<p>Pivi Pro, Terrain Response, driver assistance, and the engineering inside every JLR.</p>
+<span class="date">2026-08-17</span>
+</a>
+<a class="blog-card" href="/blog/jlr/articles/technology/technology-2026-08-10.html">
+<span class="tag">🔧 Technology</span>
+<h3>Technology Update — August 10, 2026</h3>
+<p>Pivi Pro, Terrain Response, driver assistance, and the engineering inside every JLR.</p>
+<span class="date">2026-08-10</span>
+</a>
+<a class="blog-card" href="/blog/jlr/articles/technology/technology-2026-08-09.html">
+<span class="tag">🔧 Technology</span>
+<h3>Technology Update — August 09, 2026</h3>
+<p>Pivi Pro, Terrain Response, driver assistance, and the engineering inside every JLR.</p>
+<span class="date">2026-08-09</span>
 </a>
 </div>
 <footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/blog/jlr">Land Rover Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions · Irvine, CA</div></footer>

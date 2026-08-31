@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technology Today — August 31, 2026 — RoyceAI Land Rover Blog</title>
+<meta name="description" content="Technology news and analysis — Technology Today — August 31, 2026">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#07070a;color:#eeeef0;line-height:1.8;overflow-x:hidden;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:64px;max-width:1200px;margin:0 auto;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);position:sticky;top:0;z-index:100}
+.nav-logo{font-weight:700;font-size:1.1rem;color:#eeeef0;text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-logo .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff}
+.nav-logo span{color:#a78bfa}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{color:#88889a;text-decoration:none;font-size:0.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:#eeeef0;background:rgba(124,92,252,0.08)}
+.nav-links .nav-cta{background:#7c5cfc;color:#fff!important;font-weight:600;padding:8px 22px;border-radius:8px}
+.post-wrap{max-width:720px;margin:0 auto;padding:3rem 1.5rem 5rem}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:#a78bfa;text-decoration:none;font-size:0.9rem;font-weight:500;margin-bottom:2rem;transition:all 0.2s}
+.back-link:hover{color:#fff;gap:10px}
+.post-wrap h1{font-size:2.2rem;font-weight:800;color:#fff;line-height:1.3;margin-bottom:0.75rem;letter-spacing:-0.03em}
+.post-wrap .meta{color:#5c5c6e;font-size:0.85rem;display:flex;gap:16px;align-items:center;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);flex-wrap:wrap}
+.post-wrap .meta .tag{background:rgba(124,92,252,0.08);color:#a78bfa;padding:3px 10px;border-radius:6px;font-weight:600;font-size:0.75rem}
+.post-wrap h2{font-size:1.5rem;font-weight:700;color:#fff;margin:2.5rem 0 1rem;letter-spacing:-0.02em}
+.post-wrap h3{font-size:1.15rem;font-weight:600;color:#a78bfa;margin:1.5rem 0 0.75rem}
+.post-wrap p{color:#d4d4d8;margin:1rem 0;font-size:1.05rem;line-height:1.8}
+.post-wrap ul,.post-wrap ol{padding-left:1.5rem;margin:1rem 0;color:#d4d4d8;line-height:1.8}
+.post-wrap li{margin:0.5rem 0}
+.post-wrap strong{color:#fff;font-weight:600}
+.cta-box{background:#0e0e12;border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:2rem;text-align:center;margin:3rem 0 1rem}
+.cta-box h3{color:#fff;font-size:1.2rem;margin-bottom:0.75rem}
+.cta-box p{color:#88889a;font-size:0.9rem;margin-bottom:1.25rem}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#7c5cfc;color:#fff!important;text-decoration:none;padding:12px 28px;border-radius:10px;font-weight:600;font-size:0.95rem;transition:all 0.2s}
+.cta-btn:hover{background:#a78bfa;transform:translateY(-1px)}
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:48px 24px;max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+footer .copy{color:#5c5c6e;font-size:0.8rem;width:100%;text-align:center}
+footer .links{display:flex;gap:20px;flex-wrap:wrap}
+footer .links a{color:#88889a;text-decoration:none;font-size:0.875rem;transition:color 0.2s}
+footer .links a:hover{color:#a78bfa}
+@media(max-width:640px){.post-wrap{padding:1.5rem 1rem 3rem}.post-wrap h1{font-size:1.6rem}.post-wrap h2{font-size:1.25rem}.post-wrap p{font-size:0.95rem}nav{padding:0 16px;height:auto;flex-direction:column;gap:6px;padding:8px 16px}.nav-logo{width:100%;justify-content:center;font-size:1rem}.nav-links{width:100%;justify-content:center;flex-wrap:wrap}.nav-links a{font-size:.75rem;padding:5px 10px}.nav-links .nav-cta{padding:5px 14px}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Technology Today — August 31, 2026", "datePublished": "2026-08-31", "description": "Technology news and analysis — Technology Today — August 31, 2026", "author": {"@type": "Person", "name": "RoyceAI"}, "publisher": {"@type": "Organization", "name": "Royce AI Solutions"}, "about": "Technology"}</script>
+</head>
+<body>
+<div class="orb orb-1"></div><div class="orb orb-2"></div>
+
+<nav>
+<a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
+<div class="nav-links">
+<a href="/products">Products</a>
+<span id="navLoginBtn"></span>
+<a href="/subscribe">Subscribe</a>
+<a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+<a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a>
+<a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
+<a href="/billionaires" class="nav-drawer-only">💰 Billionaires</a>
+<a href="/real-estate" class="nav-drawer-only">🏠 Real Estate</a>
+<a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a>
+<a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
+<a href="/livaway" class="nav-drawer-only">🏨 LivAway</a>
+<a href="/cody" class="nav-drawer-only">🔦 Blacklight CX</a>
+<a href="/about" class="nav-drawer-only">👤 About Royce</a>
+<a href="/cs-arena" class="nav-drawer-only">🎮 CS Arena</a>
+<a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+<a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
+<a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+<a href="/blog" class="nav-drawer-only">📰 Blog</a>
+<a href="/blog/jlr" class="nav-drawer-only">🚙 Land Rover Blog</a>
+<a href="/about" class="nav-drawer-only">👤 About Royce</a>
+<a href="/chat" class="nav-cta">💬 Chat</a>
+</div>
+</nav>
+<div class="post-wrap">
+<a href="/blog/jlr/technology.html" class="back-link">← Back to 🔧 Technology</a>
+<span class="meta"><span class="tag">🔧 Technology</span><span>2026-08-31</span><span>~4 min read</span></span>
+<h1>Technology Today — August 31, 2026</h1>
+<p>The tech inside modern Land Rovers is as important as the badge. Here's what to know.</p>
+<h2>The current state of play</h2>
+<p>Under the skin of every modern Land Rover sits a stack of serious technology: Pivi Pro infotainment with over-the-air updates, Terrain Response 2 that reads the ground and sets up the car automatically, and a suite of driver assistance that makes a big vehicle feel effortless. This is also where owners find the quirks — door handle sensors, battery drain warnings, infotainment gremlins — most of which have known factory fixes. Knowing the tech is knowing the car.</p>
+<h2>What you need to know</h2>
+<ul>
+<li>Pivi Pro is JLR&#x27;s infotainment system — fast, wireless Apple CarPlay/Android Auto, over-the-air updates, and deep vehicle integration.</li>
+<li>Known service issues and their TSBs: door handle proximity sensors (TSB LTB00989v2, 2022-2024 L460/L461), battery discharge warnings on new lot vehicles (TSB LTB00958 — TCU telematics staying awake), RFA module staying awake (LTB00989).</li>
+<li>Quick fix for approach-unlock issues: Settings → Vehicle → Safety &amp; Security → toggle Approach Unlock OFF, reboot Pivi Pro (hold volume 10s), toggle back ON.</li>
+<li>Terrain Response 2 automatically optimizes throttle, suspension, and driveline for the surface underneath — driver can also select modes manually.</li>
+<li>Batteries must be registered to the BMS after replacement (Gap IID or dealer tool).</li>
+</ul>
+<h2>Tech quick reference</h2>
+<table style="width:100%;border-collapse:collapse;margin:1rem 0 2rem;font-size:0.9rem"><tbody><tr><td>System</td><td>What it does</td><td>Known issue</td></tr><tr><td>Pivi Pro</td><td>Infotainment + OTA updates</td><td>Reboot fixes most</td></tr><tr><td>Terrain Response 2</td><td>Auto off-road setup</td><td>None common</td></tr><tr><td>Approach unlock</td><td>Handles deploy on approach</td><td>TSB LTB00989v2</td></tr><tr><td>Battery drain warning</td><td>Telematics staying awake</td><td>TSB LTB00958</td></tr></tbody></table>
+<style>table tr:first-child td{background:rgba(124,92,252,0.1);color:#a78bfa;font-weight:600}table td{border-bottom:1px solid rgba(255,255,255,0.06);padding:10px 12px;color:#d4d4d8}</style>
+<h2>The engineering view</h2>
+<p>Batteries must be registered to the BMS after replacement (Gap IID or dealer tool).</p>
+<p>For fans, the detail is the point — Land Rover builds vehicles where the specification sheet tells a real story about capability, luxury, and intent. Every generation refines the formula rather than replacing it, which is exactly why the brand's enthusiasts are among the most loyal in the industry.</p>
+<h2>Pivi Pro: the nerve center</h2>
+<p>Pivi Pro is the software that runs the modern JLR experience. It's built for speed — the interface responds instantly, wireless Apple CarPlay and Android Auto pair in seconds, and over-the-air updates mean the car improves after you buy it. The layout is clean and customizable, with the climate and vehicle controls always one tap away. Like any complex system, it has its moments — occasional reboots, odd behaviors after updates — but the platform has matured significantly and most issues clear with a simple infotainment reboot (hold the volume knob for 10 seconds).</p>
+<h2>Terrain Response: the brain of the off-road system</h2>
+<p>Terrain Response 2 is what makes a Land Rover feel effortless off the pavement. The system reads the surface — snow, mud, sand, rocks — and automatically configures the throttle response, suspension height, and driveline settings to match. The driver can override manually with the rotary controller, but the magic is that the car handles 90 percent of the decision-making. It's technology that disappears when you need it, which is exactly how the best engineering should feel.</p>
+<h2>Ownership tech: what actually goes wrong</h2>
+<p>The most common JLR tech complaints all have known fixes. Door handles that don't deploy on approach: usually a proximity sensor issue covered by warranty, with a TSB (LTB00989v2) for 2022-2024 models; a software flash and RFA recalibration handles it. Battery discharge warnings on new vehicles: often the telematics module staying awake (TSB LTB00958) — a long highway drive or a dealer parasitic-drain test sorts it. The pattern: JLR's tech is brilliant when it works, and most issues are software, not hardware. That means most are fixable without a trip to the parts bin.</p>
+<h2>The takeaway</h2>
+<p>Keep following this blog for daily updates on Range Rover, Defender, Discovery, Jaguar, and everything JLR is doing in electric and hybrid technology. Something new launches almost every month — we'll be here to cover it.</p>
+<div class="cta-box">
+<h3>Love Land Rover? So do we.</h3>
+<p>Daily updates on Range Rover, Defender, Discovery, Jaguar and JLR's electric future.</p>
+<a class="cta-btn" href="/blog/jlr">Explore the Land Rover Blog →</a>
+</div>
+</div>
+<footer><div class="links"><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/blog">Blog</a><a href="/blog/jlr">Land Rover Blog</a><a href="/chat">Chat</a></div><div class="copy">RoyceAI Solutions · Irvine, CA</div></footer>
+</body>
+</html>
