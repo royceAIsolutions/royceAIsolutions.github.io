@@ -51,6 +51,7 @@ nav{height:var(--nav-h);display:flex;align-items:center;justify-content:space-be
 .tab-active{background:var(--accent);border-color:var(--accent);color:#fff}
 .controls select:focus,.controls input:focus{border-color:var(--accent)}
 .controls label{color:var(--text);font-size:0.85rem;font-weight:600;display:flex;align-items:center;gap:6px;letter-spacing:.02em}
+.controls input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent);cursor:pointer;background:transparent;border:none;padding:0;border-radius:4px}
 .stat{background:var(--accent-bg);color:var(--accent-light);padding:4px 12px;border-radius:99px;font-size:0.85rem;font-weight:600}
 .grid{max-width:var(--max-w);margin:0 auto;padding:0 24px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
 .card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all 0.3s;display:flex;flex-direction:column;gap:8px}
@@ -129,7 +130,7 @@ footer .links a{margin:0 10px}
 
 <section class="hero">
   <h1>Land Rover <span class="gradient">Inventory</span></h1>
-  <p>New vehicles across California Land Rover retailers · Pre-Owned — all makes, JLR Newport Beach network (Land Rover Beverly Hills · Land Rover Santa Monica · Land Rover Pasadena · Land Rover San Jose · Land Rover Newport Beach) · data refreshed 2026-08-31 07:37 PT</p>
+  <p>New vehicles across California Land Rover retailers · Pre-Owned — all makes, JLR Newport Beach network (Land Rover Beverly Hills · Land Rover Santa Monica · Land Rover Pasadena · Land Rover San Jose · Land Rover Newport Beach) · 57 Certified · data refreshed 2026-08-31 16:26 PT</p>
   <p style="font-size:0.9rem;color:var(--text-muted);margin-top:6px">Engine badges: P250 = 2.0L 4-cyl (245 hp) · P400 = 3.0L 6-cyl (395 hp) · P530 = 4.4L 8-cyl (523 hp) · OCTA = 4.4L 8-cyl (626 hp)</p>
   <div class="tabs">
     <button id="tabNew" class="tab tab-active" type="button">🆕 New · 2409</button>
@@ -166,6 +167,9 @@ footer .links a{margin:0 10px}
   <label>Options
     <select id="fOpt"><option value="">All</option></select>
     <input type="checkbox" id="fOptNot" title="Exclude the selected option"><span style="font-size:0.8rem;color:var(--text-muted)">not</span>
+  </label>
+  <label>✅ Certified only
+    <input type="checkbox" id="fCpo" title="Show only Land Rover Approved Certified — 165-point inspected units">
   </label>
   <label>Search
     <input id="fText" type="text" placeholder="defender 110 / trim" style="width:150px">
@@ -211,6 +215,7 @@ function render() {
   const int = document.getElementById('fInt').value;
   const opt = document.getElementById('fOpt').value;
   const optNot = document.getElementById('fOptNot').checked;
+  const cpo = document.getElementById('fCpo').checked;
   const t = document.getElementById('fText').value.toLowerCase().trim();
   const s = document.getElementById('fSort').value;
   let rows = data.filter(v => {
@@ -231,6 +236,7 @@ function render() {
       const has = (O.n || []).includes(opt) || (O.p || []).some(p => p.name === opt);
       if (has !== !optNot) return false;
     }
+    if (cpo && !v.certified) return false;
     if (t) {
       const blob = (v.title + ' ' + v.make + ' ' + v.model + ' ' + (v.color||'') + ' ' + (v.colorFamily||'') + ' ' + (v.trim||'')).toLowerCase();
       if (!blob.includes(t)) return false;
@@ -345,6 +351,7 @@ function refreshOptions() {
 }
 FILTER_IDS.forEach(id => document.getElementById(id).addEventListener('change', () => { refreshOptions(); render(); }));
 document.getElementById('fOptNot').addEventListener('change', () => { refreshOptions(); render(); });
+document.getElementById('fCpo').addEventListener('change', render);
 // New / Pre-Owned toggle (Aug 24 2026 — NB pre-owned inventory added)
 function setTab(usedMode) {
   data = usedMode ? dataUsed : dataNew;
@@ -353,6 +360,7 @@ function setTab(usedMode) {
   document.getElementById('fText').value = '';
   document.getElementById('fSort').value = 'price';
   document.getElementById('fOptNot').checked = false;
+  document.getElementById('fCpo').checked = false;
   FILTER_IDS.forEach(id => document.getElementById(id).value = '');
   refreshOptions(); render();
 }
@@ -363,6 +371,7 @@ render();
 document.getElementById('fReset').addEventListener('click', () => {
   FILTER_IDS.concat(['fText','fSort']).forEach(id => document.getElementById(id).value = '');
   document.getElementById('fOptNot').checked = false;
+  document.getElementById('fCpo').checked = false;
   refreshOptions(); render();
 });
 </script>
