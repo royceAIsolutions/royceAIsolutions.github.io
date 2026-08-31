@@ -75,26 +75,6 @@ body.tutor-page .login-screen{padding:100px 24px;min-height:100vh;min-height:100
 .logout-btn:hover{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.25);color:#ef4444}
 @media(max-width:640px){.dashboard{padding:0 16px;margin-top:7rem}.dash-header h1{font-size:1.3rem}.dash-grid{grid-template-columns:1fr;gap:14px}.scoreboard{padding:16px}.score-stat{padding:10px 14px}.score-stat .score{font-size:1.1rem}.dash-card{padding:18px 20px}.quiz-table th,.quiz-table td{padding:8px 10px;font-size:.8rem}nav{flex-direction:column;padding:8px 16px;height:auto;gap:6px;background:rgba(7,7,10,0.95);border-bottom:1px solid rgba(255,255,255,0.08)}.nav-logo{font-size:1rem;width:100%;justify-content:center}.nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:4px}.nav-links a{font-size:.75rem;padding:5px 10px}.nav-links .nav-cta{padding:5px 14px}.login-screen{padding:60px 16px}.login-box{padding:var(--space-lg) 20px}.login-box h2{font-size:1.3rem}}
 @media(max-width:400px){.dashboard{padding:0 12px;margin-top:2rem}.dash-header h1{font-size:1.1rem}.scoreboard{padding:12px}.score-stat{padding:8px 10px}.score-stat .score{font-size:1rem}.login-screen{padding:40px 12px}.login-box{padding:var(--space-md) 16px}.login-box h2{font-size:1.15rem}.login-box .sub{font-size:.8rem;margin-bottom:var(--space-lg)}.login-box .input-group input{padding:var(--space-sm) var(--space-md)}.dash-card{padding:14px 16px}nav{padding:0 12px}.nav-links a{font-size:.7rem;padding:4px 8px}.nav-links .nav-cta{padding:6px 14px;font-size:.75rem}.quiz-panel{padding:0 12px}}
-
-/* ===== MOBILE NAV (hamburger + drawer) — ALL-WIDTHS (global drawer, never leaks at tablet) ===== */
-.nav-burger{display:none}
-@media(max-width:1099px){
-  nav{z-index:1001;background:var(--bg)}
-  .nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
-  .nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
-  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .nav-burger.open span:nth-child(2){opacity:0}
-  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}
-}
-.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h,64px) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
-.mobile-menu.open{transform:translateX(0)}
-.mobile-menu a{color:var(--text-secondary);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
-.mobile-menu a:hover,.mobile-menu a.active{color:var(--text);background:var(--accent-bg)}
-.mobile-menu .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;margin-top:10px;text-align:center;animation:pulse-glow 2.5s ease-in-out infinite}
-.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
-.mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
-
 </style>
 </head><body class="tutor-page">
 <nav>
@@ -102,10 +82,7 @@ body.tutor-page .login-screen{padding:100px 24px;min-height:100vh;min-height:100
 <div class="nav-links">
 <a href="/products">Products</a><button class="logout-btn nav-logout-btn" id="navLogoutBtn" onclick="logout()" style="display:none">🔓 Logout</button><a href="/products/tutor" id="navTutorLink" style="background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);padding:6px 16px;font-weight:700">✨ Tutor</a><a href="/blog">Blog</a>
 </div>
-<button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
-<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
 <div class="login-screen" id="loginScreen">
 <div class="login-box">
 <div class="nav-logo" style="margin:0 auto 16px;justify-content:center"><span class="logo-icon">R</span></div>
@@ -185,7 +162,7 @@ try{
 // ─── Config ─────────────────────────────────────────────────────
 var API='https://chat-api-tawny-zeta.vercel.app/api';
 var HIST=API+'/quiz-history';
-var UDATA=[{"first": "Jiho", "last": "Pak", "subjects": "Math, 9th Grade Prep, Bible Study", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,grade9", "kpis": [{"label": "Math", "val": "96/100"}, {"label": "Streak", "val": "7 days"}, {"label": "Focus Time", "val": "45 min/day"}]},{"first": "Carter", "last": "Koh", "subjects": "UCI Prep, AP Biology, 11th Grade", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "sat,math,grade11", "kpis": [{"label": "A-G GPA", "val": "In repair"}, {"label": "AP Bio", "val": "Junior"}, {"label": "Streak", "val": "5 days"}]},{"first": "Angel", "last": "Koh", "subjects": "RN Training, NCLEX, Health", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "rn", "kpis": [{"label": "NCLEX", "val": "72%"}, {"label": "Modules", "val": "8/12"}, {"label": "Study Time", "val": "30 min/day"}]},{"first": "Paxton", "last": "Koh", "subjects": "Reading Games, ABCs, Colors", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "reading", "kpis": []},{"first": "Josh", "last": "Lucero", "subjects": "Series 66, Series 7, Finance", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "series66,series7", "kpis": [{"label": "Series 66", "val": "74%"}, {"label": "Progress", "val": "60%"}, {"label": "Study Time", "val": "25 min/day"}]},{"first": "Mason", "last": "Min", "subjects": "Baby Play, ABCs, Colors", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "baby", "kpis": [{"label": "Age", "val": "Toddler"}, {"label": "Learning", "val": "ABCs"}, {"label": "Milestones", "val": "On track"}]},{"first": "Pearl", "last": "Johnson", "subjects": "Preschool Play, Letters, Numbers", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "baby,preschool", "kpis": [{"label": "Colors", "val": "6/6"}, {"label": "Games", "val": "3 played"}, {"label": "Stars", "val": "15"}]},{"first": "Ruby", "last": "Johnson", "subjects": "Reading, Math, Grade 2", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "reading,math,grade2", "kpis": [{"label": "Math", "val": "4/5"}, {"label": "Games", "val": "2 played"}, {"label": "Stars", "val": "8"}]},{"first": "Carter", "last": "Touch", "subjects": "Grade 9, Liberty HS, Math", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,grade9", "kpis": [{"label": "GPA", "val": "3.5"}, {"label": "Liberty HS", "val": "Freshman"}, {"label": "Sessions", "val": "0"}]},{"first": "Chase", "last": "Touch", "subjects": "Grade 7, Nelson MS, Pre-Algebra", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,reading,grade7", "kpis": [{"label": "Pre-Alg", "val": "B+"}, {"label": "Nelson MS", "val": "7th Grade"}, {"label": "Sessions", "val": "0"}]},{"first": "Tommy", "last": "Touch", "subjects": "Therapy Bot, Social Skills, Emotional Growth", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "therapy", "kpis": [{"label": "Therapy", "val": "Active"}, {"label": "Sessions", "val": "0"}, {"label": "Streak", "val": "New"}]},{"first": "Test", "last": "User", "subjects": "Math, SAT Prep, Science", "today": "8/10 (80%)", "mtd": "15/20 (75%)", "ytd": "15/20 (75%)", "plan": "free_trial", "cards": "math,sat,grade9", "kpis": [{"label": "Math", "val": "8/10"}, {"label": "SAT", "val": "70/80"}, {"label": "Streak", "val": "1 day"}]},{"first": "Test", "last": "User", "subjects": "Math, SAT Prep, Science", "today": "8/10 (80%)", "mtd": "15/20 (75%)", "ytd": "15/20 (75%)", "plan": "free_trial", "cards": "math,sat,grade9", "kpis": [{"label": "Math", "val": "8/10"}, {"label": "SAT", "val": "70/80"}, {"label": "Streak", "val": "1 day"}]},{"first": "MacKenzie", "last": "Koh", "subjects": "Math, Reading, Science", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "grade4,math", "kpis": []},{"first": "Charles", "last": "Koh", "subjects": "WA Real Estate, RCW/WAC, Contracts", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "realestate", "kpis": [{"label": "Practice", "val": "—"}, {"label": "Pass Rate", "val": "—"}, {"label": "Streak", "val": "0 days"}]}];
+var UDATA=[{"first": "Jiho", "last": "Pak", "subjects": "Math, 9th Grade Prep, Bible Study", "today": "—", "mtd": "27/33 (82%)", "ytd": "27/33 (82%)", "plan": "free_trial", "cards": "math,grade9", "kpis": [{"label": "Math", "val": "96/100"}, {"label": "Streak", "val": "7 days"}, {"label": "Focus Time", "val": "45 min/day"}]},{"first": "Carter", "last": "Koh", "subjects": "UCI Prep, AP Biology, 11th Grade", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "sat,math,grade11", "kpis": [{"label": "A-G GPA", "val": "In repair"}, {"label": "AP Bio", "val": "Junior"}, {"label": "Streak", "val": "5 days"}]},{"first": "Angel", "last": "Koh", "subjects": "RN Training, NCLEX, Health", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "rn", "kpis": [{"label": "NCLEX", "val": "72%"}, {"label": "Modules", "val": "8/12"}, {"label": "Study Time", "val": "30 min/day"}]},{"first": "Paxton", "last": "Koh", "subjects": "Reading Games, ABCs, Colors", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "reading", "kpis": []},{"first": "Josh", "last": "Lucero", "subjects": "Series 66, Series 7, Finance", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "series66,series7", "kpis": [{"label": "Series 66", "val": "74%"}, {"label": "Progress", "val": "60%"}, {"label": "Study Time", "val": "25 min/day"}]},{"first": "Mason", "last": "Min", "subjects": "Baby Play, ABCs, Colors", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "baby", "kpis": [{"label": "Age", "val": "Toddler"}, {"label": "Learning", "val": "ABCs"}, {"label": "Milestones", "val": "On track"}]},{"first": "Pearl", "last": "Johnson", "subjects": "Preschool Play, Letters, Numbers", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "baby,preschool", "kpis": [{"label": "Colors", "val": "6/6"}, {"label": "Games", "val": "3 played"}, {"label": "Stars", "val": "15"}]},{"first": "Ruby", "last": "Johnson", "subjects": "Reading, Math, Grade 2", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "reading,math,grade2", "kpis": [{"label": "Math", "val": "4/5"}, {"label": "Games", "val": "2 played"}, {"label": "Stars", "val": "8"}]},{"first": "Carter", "last": "Touch", "subjects": "Grade 9, Liberty HS, Math", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,grade9", "kpis": [{"label": "GPA", "val": "3.5"}, {"label": "Liberty HS", "val": "Freshman"}, {"label": "Sessions", "val": "0"}]},{"first": "Chase", "last": "Touch", "subjects": "Grade 7, Nelson MS, Pre-Algebra", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,reading,grade7", "kpis": [{"label": "Pre-Alg", "val": "B+"}, {"label": "Nelson MS", "val": "7th Grade"}, {"label": "Sessions", "val": "0"}]},{"first": "Tommy", "last": "Touch", "subjects": "Therapy Bot, Social Skills, Emotional Growth", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "therapy", "kpis": [{"label": "Therapy", "val": "Active"}, {"label": "Sessions", "val": "0"}, {"label": "Streak", "val": "New"}]},{"first": "Test", "last": "User", "subjects": "Math, SAT Prep, Science", "today": "8/10 (80%)", "mtd": "15/20 (75%)", "ytd": "15/20 (75%)", "plan": "free_trial", "cards": "math,sat,grade9", "kpis": [{"label": "Math", "val": "8/10"}, {"label": "SAT", "val": "70/80"}, {"label": "Streak", "val": "1 day"}]},{"first": "Test", "last": "User", "subjects": "Math, SAT Prep, Science", "today": "8/10 (80%)", "mtd": "15/20 (75%)", "ytd": "15/20 (75%)", "plan": "free_trial", "cards": "math,sat,grade9", "kpis": [{"label": "Math", "val": "8/10"}, {"label": "SAT", "val": "70/80"}, {"label": "Streak", "val": "1 day"}]},{"first": "MacKenzie", "last": "Koh", "subjects": "Math, Reading, Science", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "grade4,math", "kpis": []},{"first": "Charles", "last": "Koh", "subjects": "WA Real Estate, RCW/WAC, Contracts", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "realestate", "kpis": [{"label": "Practice", "val": "—"}, {"label": "Pass Rate", "val": "—"}, {"label": "Streak", "val": "0 days"}]}];
 var CU=null;
 
 function login(){
@@ -468,37 +445,5 @@ setInterval(function(){
   }).catch(function(){});
 },30000);
 </script>
-
-<script>
-(function(){
-  function initMobileMenu(){
-    var burger=document.getElementById('navBurger');
-    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
-    var menu=document.getElementById('mobileMenu');
-    var backdrop=document.getElementById('mobileMenuBackdrop');
-    var links=document.querySelector('.nav-links');
-    if(menu.children.length===0&&links){
-      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){if(a.closest('#navLoginBtn'))return;if((a.getAttribute('href')||'')==='/tutor'&&!a.classList.contains('nav-drawer-only'))return;menu.appendChild(a.cloneNode(true));});
-    }
-    var p=location.pathname;
-    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
-    menu.querySelectorAll('a').forEach(function(a){
-      var h=a.getAttribute('href')||'';
-      h=h.split('?')[0].split('#')[0];
-      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
-      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
-    });
-    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
-    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
-    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
-    backdrop.addEventListener('click',close);
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
-    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
-    menu.dataset.mnInit='1';
-  }
-  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
-})();
-</script>
-
 </body>
 </html>
