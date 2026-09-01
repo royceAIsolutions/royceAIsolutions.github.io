@@ -28,7 +28,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;backgrou
 .dash-header p{color:var(--text-secondary);font-size:0.95rem}
 .scoreboard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:var(--space-xl);margin:0 auto var(--space-xl);max-width:var(--max-w)}
 .scoreboard-title{font-size:1rem;font-weight:700;color:#fff;margin-bottom:var(--space-lg);text-align:center}
-.scoreboard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+.scoreboard-grid{grid-template-columns:repeat(3,1fr);display:grid;gap:var(--space-md)}
 .score-stat{display:flex;flex-direction:column;align-items:center;gap:var(--space-sm);padding:var(--space-lg) var(--space-md);background:var(--bg-elevated);border-radius:10px;font-size:0.9rem;color:var(--text-secondary)}
 .score-stat span:first-child{font-size:0.85rem;font-weight:500}.score-stat .score{font-weight:800;font-size:1.25rem;letter-spacing:-0.02em}
 .score-stat .score.accent{color:var(--accent-light)}
@@ -54,8 +54,8 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;backgrou
 .app-container{display:none}
 .app-container.show{display:block}
 .app-container.show .dashboard{padding-top:calc(var(--nav-h) + .5rem)}
-.login-screen{min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:100px 24px}
-.login-box{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 32px;max-width:420px;width:100%;text-align:center}
+.login-screen{padding:80px 24px;min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center}
+.login-box{padding:var(--space-xl) 32px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);max-width:420px;width:100%;text-align:center}
 .login-box h2{font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:var(--space-sm)}
 .login-box .sub{color:var(--text-secondary);font-size:0.85rem;margin-bottom:var(--space-xl)}
 .login-box .input-group{margin-bottom:var(--space-lg);text-align:left}
@@ -68,7 +68,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;backgrou
 footer{padding:var(--space-2xl) var(--space-xl);max-width:var(--max-w);margin:0 auto;text-align:center;color:var(--text-muted);font-size:.8rem;border-top:1px solid var(--border);margin-top:var(--space-2xl)}
 body.tutor-page{padding-top:0}
 body.tutor-page nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100}
-body.tutor-page .login-screen{padding:100px 24px;min-height:100vh;min-height:100dvh}
+body.tutor-page .login-screen{padding:80px 24px;min-height:100vh;min-height:100dvh}
 .btn-dynamic{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:12px;font-family:Inter,sans-serif;font-size:.85rem;font-weight:700;text-decoration:none;border:none;cursor:pointer}
 .btn-primary.btn-dynamic{background:linear-gradient(135deg,#667eea,#764ba2);color:white}
 .logout-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:10px;font-family:var(--font);font-size:.8rem;font-weight:600;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text-secondary);cursor:pointer}
