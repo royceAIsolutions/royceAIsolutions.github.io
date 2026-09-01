@@ -7,7 +7,7 @@
 <meta name="description" content="Technology news and analysis — Technology Today — August 31, 2026">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
+<style>:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--green:#34d399;--red:#ef4444;--radius:16px;--radius-sm:10px;--max-w:1200px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3);--shadow-elevated:0 8px 40px rgba(0,0,0,0.4)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#07070a;color:#eeeef0;line-height:1.8;overflow-x:hidden;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
 .orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
@@ -46,7 +46,7 @@ footer .links a:hover{color:#a78bfa}
 @media(max-width:640px){.post-wrap{padding:1.5rem 1rem 3rem}.post-wrap h1{font-size:1.6rem}.post-wrap h2{font-size:1.25rem}.post-wrap p{font-size:0.95rem}nav{padding:0 16px;height:auto;flex-direction:column;gap:6px;padding:8px 16px}.nav-logo{width:100%;justify-content:center;font-size:1rem}.nav-links{width:100%;justify-content:center;flex-wrap:wrap}.nav-links a{font-size:.75rem;padding:5px 10px}.nav-links .nav-cta{padding:5px 14px}}
 
 /* ===== MOBILE NAV (hamburger + drawer) — ALL-WIDTHS (global drawer, never leaks at tablet) ===== */
-.nav-burger{display:none}
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated,#15151b);border:1px solid var(--border,rgba(255,255,255,0.06));border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
 @media(max-width:1099px){
   nav{z-index:1001;background:var(--bg)}
   .nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
