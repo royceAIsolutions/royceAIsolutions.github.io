@@ -33,19 +33,19 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 24px
 .nav-links a:hover{color:var(--txt);background:#181826}
 .nav-links a.active{color:var(--txt)}
 .nav-links a.nav-cta{background:var(--accent);color:#fff;font-weight:700}
-.nav-drawer-only{display:none}
-.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
-.nav-burger span{display:block;width:22px;height:2.5px;background:var(--txt);border-radius:2px}
+.nav-drawer-only{display:none!important}
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:#15151b;border:1px solid rgba(255,255,255,0.06);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--txt);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
 #mobileMenu{display:none;position:fixed;top:0;right:0;height:100vh;width:300px;background:#12121d;z-index:2000;padding:70px 28px;box-shadow:-8px 0 30px rgba(0,0,0,.5);overflow-y:auto}
 #mobileMenu.open{display:block}
 #mobileMenu a{display:block;color:var(--mut);text-decoration:none;font-size:16px;font-weight:600;padding:11px 0;border-bottom:1px solid #1e1e30}
 #mobileMenu a.active{color:var(--txt)}
 #mobileMenuBackdrop{display:none;position:fixed;inset:0;background:rgba(4,4,10,.6);z-index:1999}
 #mobileMenuBackdrop.open{display:block}
-.nav-burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-burger.open span:nth-child(2){opacity:0}
-.nav-burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-@media(max-width:900px){.nav-links a:not(.nav-drawer-only):not(.nav-cta){display:none}.nav-drawer-only{display:block}.nav-burger{display:flex}.nav-links a.nav-cta{display:inline-block}}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
 .hero{text-align:center;padding:64px 20px 20px}
 .hero .kicker{display:inline-block;color:var(--accent);font-weight:800;letter-spacing:.12em;font-size:12px;text-transform:uppercase;margin-bottom:14px;border:1px solid #3a2f7a;padding:5px 14px;border-radius:999px}
 .hero h1{font-size:clamp(32px,5.5vw,56px);font-weight:900;line-height:1.08;letter-spacing:-.02em}
