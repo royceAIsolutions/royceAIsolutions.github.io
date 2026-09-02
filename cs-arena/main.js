@@ -651,6 +651,10 @@ const WEAPONS = {
     reloadTime: 1.5,
     spread: 0.015, // FIXED: tighter pistol (was 0.02)
     fullAuto: false,
+    // Phase 1 gunplay truth (Sep 2 2026): kickPitch/kickSide = deterministic recoil pattern; bloom = per-shot inaccuracy
+    kickPitch: 0.0012, kickSide: 0.0004, kickDelay: 99, // semi-auto — no climb, tiny kick
+    bloom: 0.0007, bloomCap: 0.0025,
+    recoilReset: 0.45,
     price: 0
   },
   smg: {
@@ -662,6 +666,9 @@ const WEAPONS = {
     reloadTime: 2.0,
     spread: 0.035, // FIXED: usable SMG bloom (was 0.08)
     fullAuto: true,
+    kickPitch: 0.0011, kickSide: 0.0014, kickDelay: 3, // gentle climb after 3 shots
+    bloom: 0.0016, bloomCap: 0.040,
+    recoilReset: 0.65,
     price: 1500
   },
   rifle: {
@@ -673,6 +680,9 @@ const WEAPONS = {
     reloadTime: 2.5,
     spread: 0.018, // FIXED: rifle taps accurate (was 0.03)
     fullAuto: true,
+    kickPitch: 0.0028, kickSide: 0.0018, kickDelay: 4, // accurate taps, then climb + zigzag — spray control matters
+    bloom: 0.0022, bloomCap: 0.050,
+    recoilReset: 0.8,
     price: 3100
   }
 };
@@ -684,7 +694,23 @@ let reserveAmmo = WEAPONS.pistol.reserve;
 let isReloading = false;
 let reloadTimer = 0;
 let lastShotTime = 0;
-let recoil = 0;
+// Phase 1 gunplay truth state: sustained spray offset on the aim + shot accumulator
+let recoilPitch = 0, recoilYaw = 0;
+let burstCount = 0, lastRecoilTime = 0;
+let crosshairT = '';
+function resetSpray() {
+  recoilPitch = 0; recoilYaw = 0; burstCount = 0; lastRecoilTime = 0;
+  crosshairT = ''; crosshair.style.transform = '';
+}
+// Phase 1 dynamic crosshair: scales with current inaccuracy (bloom + movement).
+function updateCrosshairBloom() {
+  const sp = Math.hypot(velocity.x, velocity.z);
+  const mp = sp < 0.9 ? 1 : 1 + 0.65 * Math.min((sp - 0.9) / 1.0, 1);
+  const bl = Math.min(currentWeapon.bloom * Math.max(burstCount - 1, 0), currentWeapon.bloomCap);
+  const tot = (currentWeapon.spread + bl) * mp;
+  const t = `translate(-50%, -50%) scale(${(1 + tot * 30).toFixed(2)})`;
+  if (t !== crosshairT) { crosshairT = t; crosshair.style.transform = t; }
+}
 let muzzleTime = 0;
 let tracerTime = 0;
 let botTracerTime = 0;
@@ -878,6 +904,7 @@ function startMatch(levelIdx) {
   AudioSys.ambientOn(['dust', 'warehouse', 'rooftop'][currentLevel] || 'dust');
   camera.position.set(0, 1.7, 10);
   velocity.set(0, 0, 0);
+  resetSpray();
   camera.rotation.z = 0; // death cam rolls rotation.z to 0.14 — reset or the whole view stays tilted sideways for the session (Aug 26 2026)
   mouse.x = 0;
   mouse.y = 0;
@@ -1057,6 +1084,7 @@ function buyWeapon(type) {
     currentWeapon = { ...primaryWeapon };
     currentAmmo = primaryWeapon.magSize;
     reserveAmmo = primaryWeapon.reserve;
+    resetSpray();
     AudioSys.buy();
     updateHUD();
   }
@@ -1094,6 +1122,7 @@ function switchWeapon(slot) {
     currentAmmo = WEAPONS.pistol.magSize;
     reserveAmmo = WEAPONS.pistol.reserve;
   }
+  resetSpray();
   isReloading = false;
   reloadTimer = 0;
   AudioSys.swap();
@@ -1122,32 +1151,46 @@ function shoot() {
   AudioSys.shoot(currentWeapon);
   updateHUD();
 
-  recoil = 0.03;
   muzzleTime = 0.1;
   muzzleLight.intensity = 50;
   muzzleLight.distance = 10;
   spriteMat.opacity = 1;
 
+  // ---- Phase 1 gunplay truth (Sep 2 2026): deterministic recoil pattern + bloom ----
+  const wpn = currentWeapon;
+  const tNow = performance.now() / 1000;
+  // Long pause past the reset window = new spray; recoil drops back to zero (CS-style).
+  if (tNow - lastRecoilTime > wpn.recoilReset) { recoilPitch = 0; recoilYaw = 0; burstCount = 0; }
+  burstCount++;
+  lastRecoilTime = tNow;
+  // Deterministic climb: near-zero for the first `kickDelay` shots (accurate taps),
+  // then steady rise + fixed zigzag — identical every spray, so pull-down compensation works.
+  const climb = burstCount > wpn.kickDelay ? 1 : 0.18;
+  recoilPitch += wpn.kickPitch * climb;
+  recoilYaw += wpn.kickSide * Math.sin(burstCount * 1.15);
+  recoilPitch = Math.min(recoilPitch, 0.18);
+  recoilYaw = Math.max(-0.1, Math.min(0.1, recoilYaw));
+
   const origin = new THREE.Vector3();
   camera.getWorldPosition(origin);
   const dir = new THREE.Vector3();
-  // FIXED: zero the visual recoil kick so the bullet goes exactly where the
-  // crosshair is (recoil re-applies for the visual after the shot).
-  camera.rotation.x = mouse.y;
-  camera.rotation.y = mouse.x;
+  // Bullets follow the RECOILED aim (camera = mouse + spray offset) — spray control
+  // means pulling against the pattern, exactly like CS. No more zero-to-crosshair.
+  camera.rotation.x = mouse.y + recoilPitch;
+  camera.rotation.y = mouse.x + recoilYaw;
   camera.getWorldDirection(dir);
 
-  // FIXED: CS-style spread — uniform cone (tangent offsets, no z-bias) + movement penalty
-  const movingPenalty = (keys.shift || !(velocity.x || velocity.z)) ? 1.0 : 1.6;
-  const baseSpread = currentWeapon.spread * movingPenalty;
+  // CS-style spread: uniform cone + velocity/counter-strafe penalty + bloom growth.
+  // Counter-strafe: |v| < 0.9 u/s (stopped) = full accuracy; penalty grows to ~1.65 at sprint.
+  const speed = Math.hypot(velocity.x, velocity.z);
+  const movingPenalty = speed < 0.9 ? 1.0 : 1 + 0.65 * Math.min((speed - 0.9) / 1.0, 1);
+  const bloomAdd = Math.min(wpn.bloom * Math.max(burstCount - 1, 0), wpn.bloomCap);
+  const baseSpread = (wpn.spread + bloomAdd) * movingPenalty;
   const right = new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 0);
   const up = new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 1);
   dir.addScaledVector(right, (Math.random() - 0.5) * baseSpread)
      .addScaledVector(up, (Math.random() - 0.5) * baseSpread)
      .normalize();
-
-  // Recoil is a visual camera kick (applied in the main loop) — bullets follow
-  // the crosshair, not an extra pitch.
 
   raycastShoot(origin, dir, true);
 }
@@ -1818,13 +1861,19 @@ function animate(time) {
     velocity.x *= damp;
     velocity.z *= damp;
 
-    camera.rotation.y = mouse.x;
-    camera.rotation.x = mouse.y;
-
-    if (recoil > 0) {
-      camera.rotation.x -= recoil;
-      recoil *= 0.9;
+    // Phase 1: view = mouse aim + sustained spray offset. Recoil relaxes back to
+    // zero ~0.15s after the last shot (fps-independent exponential); spray ends.
+    camera.rotation.y = mouse.x + recoilYaw;
+    camera.rotation.x = mouse.y + recoilPitch;
+    const sinceShot = performance.now() / 1000 - lastRecoilTime;
+    if (sinceShot > 0.12 && (recoilPitch !== 0 || recoilYaw !== 0)) {
+      const rec = Math.pow(0.0005, dt);
+      recoilPitch *= rec; recoilYaw *= rec;
+      if (Math.abs(recoilPitch) < 0.0005 && Math.abs(recoilYaw) < 0.0005) {
+        recoilPitch = 0; recoilYaw = 0; burstCount = 0;
+      }
     }
+    updateCrosshairBloom();
 
     updateBots(dt);
 
