@@ -28,7 +28,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;backgrou
 .dash-header p{color:var(--text-secondary);font-size:0.95rem}
 .scoreboard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:var(--space-xl);margin:0 auto var(--space-xl);max-width:var(--max-w)}
 .scoreboard-title{font-size:1rem;font-weight:700;color:#fff;margin-bottom:var(--space-lg);text-align:center}
-.scoreboard-grid{grid-template-columns:repeat(3,1fr);display:grid;gap:var(--space-md)}
+.scoreboard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
 .score-stat{display:flex;flex-direction:column;align-items:center;gap:var(--space-sm);padding:var(--space-lg) var(--space-md);background:var(--bg-elevated);border-radius:10px;font-size:0.9rem;color:var(--text-secondary)}
 .score-stat span:first-child{font-size:0.85rem;font-weight:500}.score-stat .score{font-weight:800;font-size:1.25rem;letter-spacing:-0.02em}
 .score-stat .score.accent{color:var(--accent-light)}
@@ -54,8 +54,8 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;backgrou
 .app-container{display:none}
 .app-container.show{display:block}
 .app-container.show .dashboard{padding-top:calc(var(--nav-h) + .5rem)}
-.login-screen{padding:80px 24px;min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center}
-.login-box{padding:var(--space-xl) 32px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);max-width:420px;width:100%;text-align:center}
+.login-screen{min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:100px 24px}
+.login-box{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 32px;max-width:420px;width:100%;text-align:center}
 .login-box h2{font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:var(--space-sm)}
 .login-box .sub{color:var(--text-secondary);font-size:0.85rem;margin-bottom:var(--space-xl)}
 .login-box .input-group{margin-bottom:var(--space-lg);text-align:left}
@@ -68,43 +68,21 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;backgrou
 footer{padding:var(--space-2xl) var(--space-xl);max-width:var(--max-w);margin:0 auto;text-align:center;color:var(--text-muted);font-size:.8rem;border-top:1px solid var(--border);margin-top:var(--space-2xl)}
 body.tutor-page{padding-top:0}
 body.tutor-page nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100}
-body.tutor-page .login-screen{padding:80px 24px;min-height:100vh;min-height:100dvh}
+body.tutor-page .login-screen{padding:100px 24px;min-height:100vh;min-height:100dvh}
 .btn-dynamic{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:12px;font-family:Inter,sans-serif;font-size:.85rem;font-weight:700;text-decoration:none;border:none;cursor:pointer}
 .btn-primary.btn-dynamic{background:linear-gradient(135deg,#667eea,#764ba2);color:white}
 .logout-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:10px;font-family:var(--font);font-size:.8rem;font-weight:600;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text-secondary);cursor:pointer}
 .logout-btn:hover{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.25);color:#ef4444}
 @media(max-width:640px){.dashboard{padding:0 16px;margin-top:7rem}.dash-header h1{font-size:1.3rem}.dash-grid{grid-template-columns:1fr;gap:14px}.scoreboard{padding:16px}.score-stat{padding:10px 14px}.score-stat .score{font-size:1.1rem}.dash-card{padding:18px 20px}.quiz-table th,.quiz-table td{padding:8px 10px;font-size:.8rem}nav{flex-direction:column;padding:8px 16px;height:auto;gap:6px;background:rgba(7,7,10,0.95);border-bottom:1px solid rgba(255,255,255,0.08)}.nav-logo{font-size:1rem;width:100%;justify-content:center}.nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:4px}.nav-links a{font-size:.75rem;padding:5px 10px}.nav-links .nav-cta{padding:5px 14px}.login-screen{padding:60px 16px}.login-box{padding:var(--space-lg) 20px}.login-box h2{font-size:1.3rem}}
 @media(max-width:400px){.dashboard{padding:0 12px;margin-top:2rem}.dash-header h1{font-size:1.1rem}.scoreboard{padding:12px}.score-stat{padding:8px 10px}.score-stat .score{font-size:1rem}.login-screen{padding:40px 12px}.login-box{padding:var(--space-md) 16px}.login-box h2{font-size:1.15rem}.login-box .sub{font-size:.8rem;margin-bottom:var(--space-lg)}.login-box .input-group input{padding:var(--space-sm) var(--space-md)}.dash-card{padding:14px 16px}nav{padding:0 12px}.nav-links a{font-size:.7rem;padding:4px 8px}.nav-links .nav-cta{padding:6px 14px;font-size:.75rem}.quiz-panel{padding:0 12px}}
-
-/* ===== MOBILE NAV (hamburger + drawer) — ALL-WIDTHS (global drawer, never leaks at tablet) ===== */
-.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated,#15151b);border:1px solid var(--border,rgba(255,255,255,0.06));border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
-@media(max-width:1099px){
-  nav{z-index:1001;background:var(--bg)}
-  .nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
-  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .nav-burger.open span:nth-child(2){opacity:0}
-  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}
-}
-.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h,64px) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1001;overflow-y:auto}
-.mobile-menu.open{transform:translateX(0)}
-.mobile-menu a{color:var(--text-secondary);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
-.mobile-menu a:hover,.mobile-menu a.active{color:var(--text);background:var(--accent-bg)}
-.mobile-menu .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;margin-top:10px;text-align:center;animation:pulse-glow 2.5s ease-in-out infinite}
-.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
-.mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
-
 </style>
 </head><body class="tutor-page">
 <nav>
 <a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
 <div class="nav-links">
 <a href="/products">Products</a><button class="logout-btn nav-logout-btn" id="navLogoutBtn" onclick="logout()" style="display:none">🔓 Logout</button><a href="/products/tutor" id="navTutorLink" style="background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);padding:6px 16px;font-weight:700">✨ Tutor</a><a href="/blog">Blog</a>
-<a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a><a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a><a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a><a href="/billionaires" class="nav-drawer-only">💰 Billionaires</a><a href="/real-estate" class="nav-drawer-only">🏠 Real Estate</a><a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a><a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a><a href="/livaway" class="nav-drawer-only">🏨 LivAway</a><a href="/cody" class="nav-drawer-only">🔦 Blacklight CX</a><a href="/cs-arena" class="nav-drawer-only">🎮 CS Arena</a><a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a><a href="/different" class="nav-drawer-only">⚡ Why We're Different</a><a href="/federal" class="nav-drawer-only">🛰️ Federal</a><a href="/bellevue" class="nav-drawer-only">🏙️ Bellevue Condos</a><a href="/tutor" class="nav-drawer-only active">✨ Tutor</a><a href="/about" class="nav-drawer-only">👤 About Royce</a></div>
-<button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
 </nav>
-<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-<div class="mobile-menu" id="mobileMenu"></div>
 <div class="login-screen" id="loginScreen">
 <div class="login-box">
 <div class="nav-logo" style="margin:0 auto 16px;justify-content:center"><span class="logo-icon">R</span></div>
@@ -467,37 +445,5 @@ setInterval(function(){
   }).catch(function(){});
 },30000);
 </script>
-
-<script>
-(function(){
-  function initMobileMenu(){
-    var burger=document.getElementById('navBurger');
-    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
-    var menu=document.getElementById('mobileMenu');
-    var backdrop=document.getElementById('mobileMenuBackdrop');
-    var links=document.querySelector('.nav-links');
-    if(menu.children.length===0&&links){
-      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){if(a.closest('#navLoginBtn'))return;if((a.getAttribute('href')||'')==='/tutor'&&!a.classList.contains('nav-drawer-only'))return;menu.appendChild(a.cloneNode(true));});
-    }
-    var p=location.pathname;
-    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
-    menu.querySelectorAll('a').forEach(function(a){
-      var h=a.getAttribute('href')||'';
-      h=h.split('?')[0].split('#')[0];
-      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
-      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
-    });
-    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
-    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
-    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
-    backdrop.addEventListener('click',close);
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
-    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
-    menu.dataset.mnInit='1';
-  }
-  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
-})();
-</script>
-
 </body>
 </html>
