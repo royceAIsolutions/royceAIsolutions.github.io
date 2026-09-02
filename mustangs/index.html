@@ -42,7 +42,7 @@ nav{height:var(--nav-h);display:flex;align-items:center;justify-content:space-be
 .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-burger.open span:nth-child(2){opacity:0}
 .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1001;overflow-y:auto}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
 .mobile-menu.open{transform:translateX(0)}
 .mobile-menu a{color:var(--text-secondary);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
 .mobile-menu a:hover,.mobile-menu a.active{color:var(--text);background:var(--accent-bg)}
@@ -131,7 +131,7 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
     <a href="/billionaires" class="nav-drawer-only">💰 Billionaires</a>
     <a href="/real-estate" class="nav-drawer-only">🏠 Real Estate</a>
     <a href="/blog" class="nav-drawer-only">Blog</a>
-    <a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a><a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a><a href="/livaway" class="nav-drawer-only">🏨 LivAway</a><a href="/cody" class="nav-drawer-only">🔦 Blacklight CX</a><a href="/cs-arena" class="nav-drawer-only">🎮 CS Arena</a><a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a><a href="/different" class="nav-drawer-only">⚡ Why We're Different</a><a href="/federal" class="nav-drawer-only">🛰️ Federal</a><a href="/bellevue" class="nav-drawer-only">🏙️ Bellevue Condos</a><a href="/about" class="nav-drawer-only">👤 About Royce</a><a href="/chat" class="nav-cta">💬 Chat</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -140,7 +140,7 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
 <section class="hero">
   <h1>Classic <span class="gradient">Mustang</span> Flip Scanner</h1>
   <p>1964–66 Mustangs, 6-cyl &amp; V8 only — live Craigslist scan, scored by flip potential. Built, drivable cars rank first; seller descriptions are read &amp; scored.</p>
-  <p style="margin-top:14px"><span class="stat">11 listings · scanned 2026-09-01 08:00am PT · orangecounty, losangeles, inlandempire, sandiego, ventura, santabarbara, palmsprings</span></p>
+  <p style="margin-top:14px"><span class="stat">11 listings · scanned 2026-09-02 08:00am PT · orangecounty, losangeles, inlandempire, sandiego, ventura, santabarbara, palmsprings</span></p>
 </section>
 <section class="rubric">
   <details>
@@ -186,46 +186,6 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
   <button class="btn-reset" onclick="resetFilters()">Reset</button>
 </section>
 <section class="grid" id="grid">
-    <div class="card" data-gen="Gen1 (64.5-73)" data-price="16500" data-score="81.0" data-year="1966" data-region="eastvale ca">
-      <div class="card-head">
-        <div class="score g-a" title="Quality flip score 0-100 — see 'How the Flip Score works'">81<span class="grade">A</span></div>
-        <div class="year">1966</div>
-        <span class="chip chip-eng">V8</span>
-      </div>
-      <h3>1966 FORD MUSTANG___REAL GT___GREAT CRUISER</h3>
-      <div class="meta">
-        <span class="price">$16500</span>
-        <span class="loc">Eastvale ca</span>
-      </div>
-      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-plus">+18 built &amp; drivable</span> <span class="bd-plus">+8 gt</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+6 under 20k</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span> <span class="bd-plus">+6 solid (body)</span> <span class="bd-plus">+6 original (body)</span> <span class="bd-minus">-24 age/restore</span></div>
-      <div class="chips"><span class="chip chip-good">👍 gt</span><span class="chip chip-good">✅ runs and drives</span></div>
-      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">PRICED TO SALE!
-1966 FORD MUSTANG REAL GT
-V-8 289 ENGINE
-A-CODE AUTOMATIC TRANSMISSION
-RUNS AND DRIVES GOOD
-VINYL TOP, GT SIDE STRIPE
-VINTAGE AIR CONDITIONING
-DUAL TRUMPET EXHAUST
-TBI FUEL SYSTEM
-DISC BRAKES - NO POWER STEERING !!!
-FLOORS ARE ORIGINAL NO RUST !!!
-SOLID INSIDE THE TRUNK ORIGINAL
-FRAME HAS NO RUST !!!
-BLACK PONY DELUXE INTERIOR
-THIS CAR IS A CRUISER NOT PERFECT!
-NOT A SHOW CAR - IT HAS RUST BUBBLES ON THE PASSENGER DOOR BOTTOM CORNER
-OUT OF STATE CLEAN TITLE !
-YES IT IS A REAL GT [ NOT FAKE ]
-IF YOU WANT TO BUY IT, DONT WASTE MY TIME NO LOW BALL OFFERS
-NO I WILL NOT TAKE YOU FOR A RIDE IF YOU DONT HAVE CASH READY TO BUY SIMPLE
-I AM ASKING $16,500
-NO TRADES !!!
-Located in EASTVALE CA
-show contact info</p></details>
-      <a class="btn" href="https://www.craigslist.org/view/d/corona-1966-ford-mustangreal-gtgreat/aC1NcD6zvt38GyY78UzNkx" target="_blank" rel="noopener">View Listing →</a>
-    </div>
-
     <div class="card" data-gen="Gen1 (64.5-73)" data-price="18995" data-score="70.0" data-year="1966" data-region="los angeles">
       <div class="card-head">
         <div class="score g-a" title="Quality flip score 0-100 — see 'How the Flip Score works'">70<span class="grade">A</span></div>
@@ -285,6 +245,40 @@ Lots of New parts , too much to name.
 Must see to appreciate
 Call or Text if Interested</p></details>
       <a class="btn" href="https://www.craigslist.org/view/d/riverside-1965-ford-mustang-302-engine/veXkhm54MzQMwczebaeFyi" target="_blank" rel="noopener">View Listing →</a>
+    </div>
+
+    <div class="card" data-gen="Gen1 (64.5-73)" data-price="16300" data-score="61.0" data-year="1966" data-region="long beach">
+      <div class="card-head">
+        <div class="score g-a" title="Quality flip score 0-100 — see 'How the Flip Score works'">61<span class="grade">A</span></div>
+        <div class="year">1966</div>
+        <span class="chip chip-eng">6-cyl</span>
+      </div>
+      <h3>1966 Ford Mustang Coupe - Like New</h3>
+      <div class="meta">
+        <span class="price">$16300</span>
+        <span class="loc">Long Beach</span>
+      </div>
+      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-plus">+18 built &amp; drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+6 under 20k</span> <span class="bd-plus">+4 low miles</span> <span class="bd-plus">+4 clean title</span> <span class="bd-minus">-24 age/restore</span></div>
+      <div class="chips"><span class="chip chip-good">✅ runs perfect</span></div>
+      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">Must sell my 1966 Mustang
+Very desirable white color with perfect red interior
+Perfect body and paint
+Strong 200 cin 6 cylinder Engine
+Runs perfectly, transmission shifts smoothly
+Electronic ignition and high voltage coil upgrade, new spark plugs and wires
+New carburetor
+New shocks
+Recent complete brake job
+Recent suspension work and wheel alignment
+Excellent condition
+All windows work
+All gauges work
+Odometer reads 15,500
+New white wall tires all around
+Clean title - Registration good till March 2027 - Pink slip on hand in my name
+Call or text for quick response.
+Cal, text or email</p></details>
+      <a class="btn" href="https://www.craigslist.org/view/d/long-beach-1966-ford-mustang-coupe-like/hsLEMc4jEAB2gEMbpDBLrZ" target="_blank" rel="noopener">View Listing →</a>
     </div>
 
     <div class="card" data-gen="Gen1 (64.5-73)" data-price="13900" data-score="61.0" data-year="1966" data-region="san diego">
@@ -416,6 +410,27 @@ WE ARE VERY SLOW in returning emails and messages and we don’t need PEN PALS. 
       <a class="btn" href="https://www.craigslist.org/view/d/los-angeles-1965-ford-mustang/1M74pXkED1cnXMoqFVv8Bs" target="_blank" rel="noopener">View Listing →</a>
     </div>
 
+    <div class="card" data-gen="Gen1 (64.5-73)" data-price="14333" data-score="44.6" data-year="1965" data-region="santa monica">
+      <div class="card-head">
+        <div class="score g-c" title="Quality flip score 0-100 — see 'How the Flip Score works'">45<span class="grade">C</span></div>
+        <div class="year">1965</div>
+        <span class="chip chip-eng">6/8-cyl</span>
+      </div>
+      <h3>1965 Ford Mustang 3 speed manual</h3>
+      <div class="meta">
+        <span class="price">$14333</span>
+        <span class="loc">Santa Monica</span>
+      </div>
+      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+12 under flip budget</span> <span class="bd-plus">+4 clean title</span> <span class="bd-plus">+6 original (body)</span> <span class="bd-minus">-24 age/restore</span></div>
+      <div class="chips"></div>
+      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">Original 1965 Ford Mustang
+3 speed manual transmission
+About 89k miles
+Looks beautiful and drives awesome when taking it down a stroll through LA!
+$14,333 or best offer!</p></details>
+      <a class="btn" href="https://www.craigslist.org/view/d/beverly-hills-1965-ford-mustang-speed/7deDaqyVrjKfUTd3ro8rbz" target="_blank" rel="noopener">View Listing →</a>
+    </div>
+
     <div class="card" data-gen="Gen1 (64.5-73)" data-price="12000" data-score="38.6" data-year="1965" data-region="rialto">
       <div class="card-head">
         <div class="score g-d" title="Quality flip score 0-100 — see 'How the Flip Score works'">39<span class="grade">D</span></div>
@@ -431,27 +446,6 @@ WE ARE VERY SLOW in returning emails and messages and we don’t need PEN PALS. 
       <div class="chips"></div>
       <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">All in good shape only need paint</p></details>
       <a class="btn" href="https://www.craigslist.org/view/d/rialto-ford-mustang-1965/pbfHWNYkSpR7KZd93fyFTJ" target="_blank" rel="noopener">View Listing →</a>
-    </div>
-
-    <div class="card" data-gen="Gen1 (64.5-73)" data-price="15333" data-score="38.6" data-year="1965" data-region="santa monica">
-      <div class="card-head">
-        <div class="score g-d" title="Quality flip score 0-100 — see 'How the Flip Score works'">39<span class="grade">D</span></div>
-        <div class="year">1965</div>
-        <span class="chip chip-eng">6/8-cyl</span>
-      </div>
-      <h3>1965 Ford Mustang 3 speed manual</h3>
-      <div class="meta">
-        <span class="price">$15333</span>
-        <span class="loc">Santa Monica</span>
-      </div>
-      <div class="breakdown"><span class="bd-plus">+20 first-gen resale</span> <span class="bd-minus">-6 not confirmed drivable</span> <span class="bd-plus">+3 sweet-spot year</span> <span class="bd-plus">+6 under 20k</span> <span class="bd-plus">+4 clean title</span> <span class="bd-plus">+6 original (body)</span> <span class="bd-minus">-24 age/restore</span></div>
-      <div class="chips"></div>
-      <details class="desc"><summary>📝 What the seller says</summary><p class="desc-body">Original 1965 Ford Mustang
-3 speed manual transmission
-About 89k miles
-Looks beautiful and drives awesome when taking it down a stroll through LA!
-$15,333 or best offer!</p></details>
-      <a class="btn" href="https://www.craigslist.org/view/d/beverly-hills-1965-ford-mustang-speed/7deDaqyVrjKfUTd3ro8rbz" target="_blank" rel="noopener">View Listing →</a>
     </div></section>
 <footer>
   <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
