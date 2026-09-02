@@ -149,7 +149,58 @@ const AudioSys = {
   roundWin() { this._seq([{ f: 523, d: 0.12 }, { f: 659, d: 0.12 }, { f: 784, d: 0.22 }], 0.11); },
   roundLoss() { this._seq([{ f: 392, d: 0.14 }, { f: 330, d: 0.14 }, { f: 262, d: 0.28 }], 0.12); },
   matchWin() { this._seq([{ f: 523, d: 0.14 }, { f: 659, d: 0.14 }, { f: 784, d: 0.14 }, { f: 1047, d: 0.34 }], 0.12); },
-  matchLoss() { this._seq([{ f: 330, d: 0.18 }, { f: 262, d: 0.18 }, { f: 196, d: 0.42 }], 0.15); }
+  // ---- ambient music (synthesized pad loop — zero assets, additive) ----
+  AMBIENT: {
+    dust:      { base: 110.0,  type: 'sine',     notes: [0, 3, 7, 12], filter: 900 }, // warm day — A major
+    warehouse: { base: 82.41,  type: 'sawtooth', notes: [0, 3, 7],      filter: 550 }, // industrial — E minor
+    rooftop:   { base: 98.0,   type: 'sine',     notes: [0, 7, 10],     filter: 700 }  // cool night — Gm7 frag
+  },
+  ambientNodes: [],
+  _ambientGain: null,
+  ambientOn(theme = 'dust') {
+    if (!this.enabled) return;
+    this.ambientOff();
+    const cfg = this.AMBIENT[theme] || this.AMBIENT.dust;
+    const t = this.ctx.currentTime;
+    const gain = this.ctx.createGain();
+    gain.gain.value = 0;
+    gain.gain.linearRampToValueAtTime(0.09, t + 3.5); // slow fade-in
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.value = cfg.filter;
+    gain.connect(filter); filter.connect(this.master); // mute routes through master
+    const nodes = [];
+    cfg.notes.forEach((semi, i) => {
+      const o = this.ctx.createOscillator();
+      o.type = cfg.type;
+      o.frequency.value = cfg.base * Math.pow(2, semi / 12);
+      const g = this.ctx.createGain();
+      g.gain.value = 0.9 / cfg.notes.length;
+      const lfo = this.ctx.createOscillator();
+      lfo.frequency.value = 0.05 + i * 0.017; // slow breathing per voice
+      const lg = this.ctx.createGain();
+      lg.gain.value = 0.4 / cfg.notes.length; // never pulls voice gain below 0
+      lfo.connect(lg); lg.connect(g.gain);
+      o.connect(g); g.connect(gain);
+      o.start(t); lfo.start(t);
+      nodes.push(o, lfo, g, lg);
+    });
+    nodes.push(gain, filter);
+    this.ambientNodes = nodes;
+    this._ambientGain = gain;
+  },
+  ambientOff() {
+    const g = this._ambientGain;
+    if (!g) return;
+    const t = this.ctx.currentTime;
+    try { g.gain.linearRampToValueAtTime(0.001, t + 0.6); } catch (e) {}
+    const stopAt = t + 0.9;
+    this.ambientNodes.forEach(n => {
+      try { if (typeof n.stop === 'function') n.stop(stopAt); else n.disconnect(); } catch (e) {}
+    });
+    this.ambientNodes = [];
+    this._ambientGain = null;
+  },
 };
 // Audio must start from a user gesture (iOS). Init on first pointer/key interaction.
 window.addEventListener('pointerdown', () => AudioSys.init(), { capture: true });
@@ -824,6 +875,7 @@ function startMatch(levelIdx) {
   killsInRound = 0;
   isPlayerDead = false;
   AudioSys.init();
+  AudioSys.ambientOn(['dust', 'warehouse', 'rooftop'][currentLevel] || 'dust');
   camera.position.set(0, 1.7, 10);
   velocity.set(0, 0, 0);
   camera.rotation.z = 0; // death cam rolls rotation.z to 0.14 — reset or the whole view stays tilted sideways for the session (Aug 26 2026)
@@ -942,6 +994,7 @@ function checkMatchEnd() {
 
 function matchWon() {
   isMatchOver = true;
+  AudioSys.ambientOff();
   AudioSys.matchWin();
   fillStats();
   victoryTitle.textContent = 'MATCH WON';
@@ -963,6 +1016,7 @@ function nextLevel() {
 function matchLost() {
   isMatchOver = true;
   isGameOver = true;
+  AudioSys.ambientOff();
   AudioSys.matchLoss();
   fillStats();
   victoryTitle.textContent = 'MATCH LOST';
