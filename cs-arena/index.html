@@ -102,6 +102,13 @@
       pointer-events: none; opacity: 0; z-index: 15; transition: opacity 0.1s;
     }
     #damage-flash.active { opacity: 1; transition: opacity 0.3s; }
+    #damage-flash.dmg-r { background: radial-gradient(ellipse at 88% 50%, rgba(255,0,0,0.55) 0%, transparent 62%); }
+    #damage-flash.dmg-l { background: radial-gradient(ellipse at 12% 50%, rgba(255,0,0,0.55) 0%, transparent 62%); }
+    #death-report { position: fixed; left: 50%; bottom: 16%; transform: translateX(-50%); color: #fff;
+      background: rgba(0,0,0,0.65); border: 1px solid rgba(255,60,60,0.6); padding: 10px 22px; border-radius: 8px;
+      font-size: 1.15rem; letter-spacing: 0.04em; z-index: 16; pointer-events: none;
+      opacity: 0; transition: opacity 0.25s; text-align: center; }
+    #death-report.visible { opacity: 1; }
     #game-over {
       position: fixed; inset: 0; background: rgba(0,0,0,0.95);
       display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -221,6 +228,7 @@
     <p id="start-desc">First to 4 rounds — win 4 to take the match</p>
   </div>
   <div id="damage-flash"></div>
+  <div id="death-report"></div>
   <div id="game-over">
     <h1>MATCH LOST</h1>
     <p>Final Score: <span id="game-over-score">0</span></p>

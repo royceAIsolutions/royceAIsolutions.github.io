@@ -927,6 +927,9 @@ function startRound() {
   health = 100;
   isPlayerDead = false;
   killsInRound = 0;
+  lifeDamage.length = 0;
+  const drEl = document.getElementById('death-report');
+  if (drEl) drEl.classList.remove('visible');
   lastFreezeTick = 8;
   currentAmmo = currentWeapon.magSize;
   reserveAmmo = currentWeapon.reserve;
@@ -1195,7 +1198,7 @@ function shoot() {
   raycastShoot(origin, dir, true);
 }
 
-function raycastShoot(origin, dir, isPlayer, dmg) {
+function raycastShoot(origin, dir, isPlayer, dmg, attWeapon) {
   const ray = new THREE.Raycaster(origin, dir, 0, 100);
 
   const wallIntersects = ray.intersectObjects(blockers, true);
@@ -1252,7 +1255,8 @@ function raycastShoot(origin, dir, isPlayer, dmg) {
       if (!blocked) {
         hitPoint = playerChest.clone();
         hitObject = camera;
-        applyPlayerDamage(dmg || 10);
+        const fromDir = new THREE.Vector3().subVectors(playerChest, origin).normalize();
+        applyPlayerDamage(dmg || 10, fromDir, attWeapon);
       }
     }
   }
@@ -1343,7 +1347,7 @@ function botShoot(bot) {
   dir.z += (Math.random() - 0.5) * spread;
   dir.normalize();
 
-  raycastShoot(gunWorldPos, dir, false, ud.botDamage);
+  raycastShoot(gunWorldPos, dir, false, ud.botDamage, ud.isRifleBot ? 'RIFLE' : 'PISTOL');
   AudioSys.botShot();
 
   const flash = new THREE.PointLight(0xff0000, 30, 5);
@@ -1376,7 +1380,7 @@ function killBot(bot, wasHeadshot) {
 }
 
 // ==== PLAYER DAMAGE WITH ARMOR ====
-function applyPlayerDamage(amount) {
+function applyPlayerDamage(amount, fromDir, weaponLabel) {
   if (isGameOver || isRoundEnding || isPlayerDead) return;
   
   if (armor > 0) {
@@ -1390,18 +1394,46 @@ function applyPlayerDamage(amount) {
   health = Math.max(0, health);
   updateHUD();
   AudioSys.hurt();
-  damageFlash.classList.add('active');
-  setTimeout(() => { if (!isPlayerDead) damageFlash.classList.remove('active'); }, 300);
+  lifeDamage.push({ amount, weapon: weaponLabel || '' });
+  flashDamageDir(fromDir || null, amount);
 
   if (health <= 0) {
     health = 0;
     isPlayerDead = true;
     playerDeathTimer = 1.5;
     stats.deaths++;
+    const lifeTotal = lifeDamage.reduce((s, h) => s + h.amount, 0);
+    const lifeLast = lifeDamage[lifeDamage.length - 1];
+    showDeathReport(lifeLast && lifeLast.weapon ? lifeLast.weapon : '', lifeTotal, lifeDamage.length);
     addKillFeed('BOT', 'YOU', null, false, false);
     AudioSys.death();
     // damageFlash stays active → red death screen while the camera falls
   }
+}
+
+// ==== INCOMING DAMAGE INDICATORS (cshud Sep 3 2026) ====
+const lifeDamage = [];
+function flashDamageDir(fromDir, amount) {
+  damageFlash.classList.remove('dmg-l', 'dmg-r');
+  if (fromDir) {
+    // attacker direction into camera space: camera looks down -Z
+    const local = fromDir.clone().applyQuaternion(camera.quaternion.clone().invert());
+    if (local.z <= 0.05) { // in front or level — pick the side
+      const fwd = Math.max(-local.z, 1e-4);
+      const side = local.x / fwd;
+      if (side > 0.25) damageFlash.classList.add('dmg-r');
+      else if (side < -0.25) damageFlash.classList.add('dmg-l');
+    }
+  }
+  damageFlash.classList.add('active');
+  setTimeout(() => { if (!isPlayerDead) damageFlash.classList.remove('active', 'dmg-l', 'dmg-r'); }, 300);
+}
+function showDeathReport(weapon, total, hits) {
+  const el = document.getElementById('death-report');
+  if (!el) return;
+  const w = weapon ? ' \u2014 ' + weapon : '';
+  el.innerHTML = 'KILLED BY BOT' + w + ' \u00b7 <b>' + total + ' dmg</b> / ' + hits + ' hit' + (hits === 1 ? '' : 's');
+  el.classList.add('visible');
 }
 
 // ==== BOT AI (KEEP EXISTING LOGIC) ====
