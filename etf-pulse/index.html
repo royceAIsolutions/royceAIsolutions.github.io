@@ -117,10 +117,10 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
 
 <section class="hero-sub">
   <h1>ETF <span class="gradient">Pulse</span></h1>
-  <p>12 leveraged ETFs · momentum + volatility + volume · updated 2026-09-03 07:01</p>
+  <p>12 leveraged ETFs · momentum + volatility + volume · updated 2026-09-04 07:02</p>
   <div class="chips">
     <span class="chip">📊 <b>12/12</b> tickers fetched</span>
-    <span class="chip">🟢 <b>8</b> positive on the day</span>
+    <span class="chip">🟢 <b>9</b> positive on the day</span>
     <span class="chip">🔎 Mean-reversion watch (|5D| ≥ 15%): <b>none</b></span>
   </div>
 </section>
@@ -158,8 +158,8 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
 </footer>
 
 <script>
-const PULSE=[{"t": "SOXS", "c": 51.83, "d1": -0.75, "d5": 14.29, "d20": 15.8, "v": 96.1, "av": "49.5M", "trend": "RISING"}, {"t": "SQQQ", "c": 39.71, "d1": -0.65, "d5": 5.12, "d20": 2.61, "v": 38.3, "av": "41.0M", "trend": "RISING"}, {"t": "SPXU", "c": 34.88, "d1": -1.33, "d5": 2.47, "d20": 2.11, "v": 21.9, "av": "6.6M", "trend": "RISING"}, {"t": "FNGU", "c": 32.3, "d1": 0.22, "d5": -1.82, "d20": 0.81, "v": 43.6, "av": "3.6M", "trend": "RISING"}, {"t": "FAS", "c": 178.35, "d1": 2.3, "d5": -1.54, "d20": -1.7, "v": 30.8, "av": "257K", "trend": "FALLING"}, {"t": "SPXL", "c": 285.07, "d1": 1.32, "d5": -2.46, "d20": -2.11, "v": 22.1, "av": "1.4M", "trend": "FALLING"}, {"t": "UPRO", "c": 149.14, "d1": 1.35, "d5": -2.47, "d20": -2.16, "v": 22.1, "av": "1.7M", "trend": "FALLING"}, {"t": "TQQQ", "c": 69.6, "d1": 0.65, "d5": -5.05, "d20": -3.37, "v": 38.2, "av": "48.1M", "trend": "FALLING"}, {"t": "TECL", "c": 193.83, "d1": -0.11, "d5": -7.99, "d20": -4.71, "v": 62.8, "av": "488K", "trend": "FALLING"}, {"t": "UDOW", "c": 71.96, "d1": 1.61, "d5": -2.78, "d20": -4.83, "v": 24.5, "av": "1.3M", "trend": "FALLING"}, {"t": "TNA", "c": 68.59, "d1": 3.49, "d5": -5.95, "d20": -5.17, "v": 37.8, "av": "3.2M", "trend": "FALLING"}, {"t": "SOXL", "c": 106.35, "d1": 0.42, "d5": -13.57, "d20": -19.63, "v": 93.2, "av": "54.4M", "trend": "FALLING"}];
-const TS="September 03, 2026 at 07:01:47 PDT";
+const PULSE=[{"t": "SOXS", "c": 51.6, "d1": -0.44, "d5": 3.57, "d20": 22.62, "v": 96.1, "av": "48.1M", "trend": "RISING"}, {"t": "FAS", "c": 186.51, "d1": 4.58, "d5": 2.07, "d20": 3.86, "v": 34.7, "av": "271K", "trend": "RISING"}, {"t": "SQQQ", "c": 38.34, "d1": -3.45, "d5": -0.52, "d20": 2.51, "v": 40.2, "av": "40.5M", "trend": "RISING"}, {"t": "FNGU", "c": 34.08, "d1": 5.51, "d5": 1.4, "d20": 1.64, "v": 47.7, "av": "3.7M", "trend": "RISING"}, {"t": "SPXU", "c": 33.82, "d1": -3.04, "d5": -1.37, "d20": 0.71, "v": 24.6, "av": "6.6M", "trend": "RISING"}, {"t": "SPXL", "c": 293.85, "d1": 3.08, "d5": 1.28, "d20": -0.84, "v": 24.8, "av": "1.4M", "trend": "FALLING"}, {"t": "UPRO", "c": 153.73, "d1": 3.08, "d5": 1.28, "d20": -0.86, "v": 24.7, "av": "1.8M", "trend": "FALLING"}, {"t": "UDOW", "c": 74.49, "d1": 3.52, "d5": 0.84, "d20": -2.17, "v": 26.7, "av": "1.3M", "trend": "FALLING"}, {"t": "TQQQ", "c": 72.03, "d1": 3.49, "d5": 0.25, "d20": -3.28, "v": 40.2, "av": "47.4M", "trend": "FALLING"}, {"t": "TECL", "c": 201.29, "d1": 3.85, "d5": 0.23, "d20": -4.89, "v": 64.4, "av": "483K", "trend": "FALLING"}, {"t": "TNA", "c": 69.39, "d1": 1.17, "d5": -0.8, "d20": -7.08, "v": 37.9, "av": "3.2M", "trend": "FALLING"}, {"t": "SOXL", "c": 106.74, "d1": 0.37, "d5": -4.13, "d20": -23.89, "v": 93.2, "av": "54.3M", "trend": "FALLING"}];
+const TS="September 04, 2026 at 07:02:18 PDT";
 const pct=v=>v>0?"+"+v.toFixed(2)+"%":v.toFixed(2)+"%";
 const cls=v=>v>0?"up":(v<0?"down":"flat");
 const fmtV=v=>v>=1000000?(v/1000000).toFixed(1)+"M":v>=1000?(v/1000).toFixed(0)+"K":String(Math.round(v));
