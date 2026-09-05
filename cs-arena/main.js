@@ -70,6 +70,13 @@ const AudioSys = {
       const d = this.noiseBuf.getChannelData(0);
       for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
       this.enabled = true;
+      // iOS Safari: the context is created 'suspended' even inside a gesture and can
+      // miss the first scheduled sounds — kick resume immediately AND on delays so
+      // whatever gesture actually unlocked it (pointerdown/touchstart) gets heard.
+      const kick = () => { try { if (this.ctx.state === 'suspended') this.ctx.resume().catch(() => {}); } catch (e) {} };
+      kick();
+      setTimeout(kick, 300);
+      setTimeout(kick, 1200);
     } catch (e) { this.enabled = false; }
   },
   toggle() {
@@ -205,6 +212,12 @@ const AudioSys = {
 // Audio must start from a user gesture (iOS). Init on first pointer/key interaction.
 window.addEventListener('pointerdown', () => AudioSys.init(), { capture: true });
 window.addEventListener('keydown', () => AudioSys.init(), { capture: true });
+// iOS Safari belt-and-braces: touchstart unlock (older iOS + odd gesture cases) and
+// resume when the tab returns to foreground after an audio-session interruption.
+window.addEventListener('touchstart', () => AudioSys.init(), { capture: true, passive: true });
+document.addEventListener('visibilitychange', () => {
+  try { if (AudioSys.ctx && AudioSys.ctx.state === 'suspended') AudioSys.ctx.resume().catch(() => {}); } catch (e) {}
+});
 document.getElementById('mute-btn').addEventListener('click', () => AudioSys.toggle());
 
 // ==== THREE.JS SETUP ====

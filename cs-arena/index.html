@@ -33,7 +33,7 @@
     #scoreboard { top: 16px; left: 50%; transform: translateX(-50%); font-size: 1.25rem; font-weight: 800; letter-spacing: 0.18em; color: #fff; text-shadow: 0 1px 3px #000; }
     #round-display { top: 44px; left: 50%; transform: translateX(-50%); font-size: 0.8rem; letter-spacing: 0.22em; color: #ccc; text-shadow: 0 1px 2px #000; }
     #timer { top: 68px; left: 50%; transform: translateX(-50%); font-size: 1.7rem; font-weight: 800; color: #fff; text-shadow: 0 2px 4px #000; display: none; }
-    #freezetime { top: 110px; left: 50%; transform: translateX(-50%); font-size: 2rem; color: #00ff88; text-shadow: 0 0 10px #00ff88; display: none; }
+    #freezetime { position: absolute; top: 110px; left: 50%; transform: translateX(-50%); font-size: 2rem; color: #00ff88; text-shadow: 0 0 10px #00ff88; display: none; }
     /* CS:GO crosshair — thin cross with center gap */
     #crosshair {
       position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -199,6 +199,40 @@
     #swap-btn { right: 132px; bottom: 132px; width: 60px; height: 60px; background: rgba(0,170,255,0.35); font-size: 0.7rem; }
     #buy-btn { right: 20px; top: 110px; width: 64px; height: 64px; background: rgba(255,170,0,0.4); font-size: 0.8rem; }
     #sprint-btn { left: 90px; bottom: 250px; width: 64px; height: 64px; background: rgba(255,255,255,0.2); font-size: 0.7rem; }
+    /* ===== TOUCH-MODE HUD REPOSITION (Sep 5 2026): bottom corners belong to the
+       control cluster — giant health/ammo bottom-left/right sat UNDER the joystick /
+       FIRE circle on touch devices. Touch mode moves health+armor to top-left and
+       ammo+weapon-name to bottom-center (mobile-FPS arrangement). Desktop (no touch)
+       keeps the CS:GO bottom HUD exactly as before. ===== */
+    body.touch-mode #health { top: auto; left: 28px; bottom: 24px; font-size: 2.4rem; }
+    body.touch-mode #armor { top: auto; left: 152px; bottom: 24px; font-size: 1rem; }
+    /* mute toggle: desktop left:190 centers it on the scoreboard at phone widths — touch goes top-left (also the pointer dead-zone, so taps never fight the look/joystick zones) */
+    body.touch-mode #mute-btn { top: 16px; left: 16px; width: 40px; height: 40px; }
+    body.touch-mode #ammo { bottom: 20px; left: 50%; transform: translateX(-50%); right: auto; text-align: center; font-size: 2rem; }
+    body.touch-mode #weapon-name { bottom: 76px; left: 50%; transform: translateX(-50%); right: auto; text-align: center; }
+    /* Narrow portrait phones (<480px): shrink joystick + hug the left edge so its
+       circle clears the SWAP/RELOAD arc (collision started below ~422px width). */
+    @media (max-width: 480px) {
+      #joystick-base { left: 16px; bottom: 90px; width: 120px; height: 120px; }
+      #joystick-knob { width: 52px; height: 52px; margin: -26px 0 0 -26px; }
+      #sprint-btn { left: 44px; } /* centered above the 120px joystick (center x=76) */
+    }
+    @media (max-width: 350px) {
+      #joystick-base { left: 8px; width: 104px; height: 104px; }
+      #sprint-btn { left: 28px; }
+    }
+    /* Narrow portrait (<600px): bottom-center corridor is only ~60px wide between the
+       joystick and the SWAP/RELOAD arc — ammo/weapon move to a right rail ABOVE the
+       jump/fire column (classic mobile-FPS ammo placement). */
+    @media (max-width: 600px) {
+      body.touch-mode #ammo { right: 30px; bottom: 260px; left: auto; transform: none; text-align: right; font-size: 1.9rem; }
+      body.touch-mode #weapon-name { right: 30px; bottom: 332px; left: auto; transform: none; text-align: right; }
+    }
+    /* Short landscape phones (<500px tall): BUY (top:110) collided with JUMP —
+       move it up out of the combat cluster. */
+    @media (orientation: landscape) and (max-height: 500px) {
+      #buy-btn { top: 64px; }
+    }
   </style>
 </head>
 <body>
@@ -235,8 +269,8 @@
     <button id="retry-btn">Play Again</button>
   </div>
   <div id="hud">
-    <div id="health" class="hud-panel">HEALTH: <span id="health-val">100</span></div>
-    <div id="armor" class="hud-panel">ARMOR: <span id="armor-val">0</span></div>
+    <div id="health" class="hud-panel"><span id="health-val">100</span></div>
+    <div id="armor" class="hud-panel"><span id="armor-val">0</span></div>
     <div id="money" class="hud-panel">$<span id="money-val">800</span></div>
     <div id="weapon-name" class="hud-panel">WEAPON: PISTOL</div>
     <div id="ammo" class="hud-panel">AMMO: <span id="ammo-val">12</span> / <span id="ammo-reserve">48</span></div>
