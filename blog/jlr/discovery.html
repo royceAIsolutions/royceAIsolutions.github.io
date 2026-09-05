@@ -143,7 +143,7 @@ footer .links a:hover{color:#a78bfa}
     var backdrop=document.getElementById('mobileMenuBackdrop');
     var links=document.querySelector('.nav-links');
     if(menu.children.length===0&&links){
-      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){if(a.closest('#navLoginBtn'))return;if((a.getAttribute('href')||'')==='/tutor'&&!a.classList.contains('nav-drawer-only'))return;menu.appendChild(a.cloneNode(true));});
+      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;if(a.classList.contains('nav-cta'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;menu.appendChild(a.cloneNode(true));});
     }
     var p=location.pathname;
     if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
