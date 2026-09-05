@@ -104,6 +104,7 @@ footer .links a{margin:0 10px}
     <a href="/products">Products</a>
     <span id="navLoginBtn"></span>
     <a href="/subscribe">Subscribe</a>
+    <a href="/jlr" class="nav-drawer-only" style="color:var(--accent-light);font-weight:600">🚗 JLR</a>
     <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
     <a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a>
     <a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
@@ -113,16 +114,9 @@ footer .links a{margin:0 10px}
     <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
     <a href="/livaway" class="nav-drawer-only">🏨 LivAway</a>
     <a href="/cody" class="nav-drawer-only">🔦 Blacklight CX</a>
-    <a href="/cs-arena" class="nav-drawer-only">🎮 CS Arena</a>
-    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
-    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
-    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
-    <a href="/bellevue" class="nav-drawer-only">🏙️ Bellevue Condos</a>
-    <a href="/empower" class="nav-drawer-only">📸 Empower</a>
-    <a href="/wetrustrealty" class="nav-drawer-only">🏢 WeTrust Realty</a>
-    <a href="/sunny-hills" class="nav-drawer-only">🏥 Sunny Hills</a>
-    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
     <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    <a href="/cs-arena" class="nav-drawer-only">🎮 CS Arena</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
     <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -132,7 +126,7 @@ footer .links a{margin:0 10px}
 
 <section class="hero">
   <h1>JLR Newport Beach <span class="gradient">Inventory</span></h1>
-  <p>New arrivals · updated 2026-09-04 07:00 PT · 5 vehicles in stock</p>
+  <p>New arrivals · updated 2026-09-05 07:00 PT · 5 vehicles in stock</p>
 </section>
 
 <div class="controls">
@@ -277,7 +271,7 @@ footer .links a{margin:0 10px}
     var backdrop=document.getElementById('mobileMenuBackdrop');
     var links=document.querySelector('.nav-links');
     if(menu.children.length===0&&links){
-      links.querySelectorAll('a').forEach(function(a){if(a.classList.contains('nav-cta'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;menu.appendChild(a.cloneNode(true));});
+      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){menu.appendChild(a.cloneNode(true));});
     }
     var p=location.pathname;
     if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
