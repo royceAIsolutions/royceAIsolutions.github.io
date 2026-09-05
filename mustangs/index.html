@@ -126,24 +126,11 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
     <a href="/tutor">✨ Tutor</a>
     <a href="/subscribe">Subscribe</a>
     <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
-    <a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a>
+    <a href="/mustangs" class="nav-drawer-only active">🐎 Mustangs</a>
     <a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
     <a href="/billionaires" class="nav-drawer-only">💰 Billionaires</a>
     <a href="/real-estate" class="nav-drawer-only">🏠 Real Estate</a>
-    <a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a>
-    <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
-    <a href="/livaway" class="nav-drawer-only">🏨 LivAway</a>
-    <a href="/cody" class="nav-drawer-only">🔦 Blacklight CX</a>
-    <a href="/cs-arena" class="nav-drawer-only">🎮 CS Arena</a>
-    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
-    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
-    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
-    <a href="/bellevue" class="nav-drawer-only">🏙️ Bellevue Condos</a>
-    <a href="/empower" class="nav-drawer-only">📸 Empower</a>
-    <a href="/wetrustrealty" class="nav-drawer-only">🏢 WeTrust Realty</a>
-    <a href="/sunny-hills" class="nav-drawer-only">🏥 Sunny Hills</a>
-    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
-    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    <a href="/blog" class="nav-drawer-only">Blog</a>
     <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -153,7 +140,7 @@ footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;co
 <section class="hero">
   <h1>Classic <span class="gradient">Mustang</span> Flip Scanner</h1>
   <p>1964–66 Mustangs, 6-cyl &amp; V8 only — live Craigslist scan, scored by flip potential. Built, drivable cars rank first; seller descriptions are read &amp; scored.</p>
-  <p style="margin-top:14px"><span class="stat">12 listings · scanned 2026-09-04 08:02am PT · orangecounty, losangeles, inlandempire, sandiego, ventura, santabarbara, palmsprings</span></p>
+  <p style="margin-top:14px"><span class="stat">12 listings · scanned 2026-09-05 08:00am PT · orangecounty, losangeles, inlandempire, sandiego, ventura, santabarbara, palmsprings</span></p>
 </section>
 <section class="rubric">
   <details>
@@ -509,7 +496,7 @@ apply();
     var backdrop=document.getElementById('mobileMenuBackdrop');
     var links=document.querySelector('.nav-links');
     if(menu.children.length===0&&links){
-      links.querySelectorAll('a').forEach(function(a){if(a.classList.contains('nav-cta'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;menu.appendChild(a.cloneNode(true));});
+      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){menu.appendChild(a.cloneNode(true));});
     }
     var p=location.pathname;
     if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
