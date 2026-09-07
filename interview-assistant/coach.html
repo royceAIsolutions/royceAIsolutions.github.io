@@ -248,7 +248,7 @@ footer .links a:hover{color:var(--accent)}
       </div>
       <div class="anslab">
         <span>Your answer</span>
-        <button class="micbtn" id="micBtn">🎙️ Hold to talk</button>
+        <button class="micbtn" id="micBtn">🎙️ Tap to talk</button>
       </div>
       <textarea id="ansText" placeholder="Speak your answer, or type it here…"></textarea>
       <div class="liveint" id="liveInt"></div>
@@ -441,7 +441,7 @@ footer .links a:hover{color:var(--accent)}
   function stopListen(){
     listening=false; autoMic=false;
     $('micBtn').classList.remove('live');
-    $('micBtn').textContent='🎙️ Hold to talk';
+    $('micBtn').textContent='🎙️ Tap to talk';
     if(rec){ try{ rec.onend=null; rec.stop(); }catch(e){} rec=null; }
   }
   $('micBtn').addEventListener('click',function(){
