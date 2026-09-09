@@ -69,7 +69,7 @@ footer .copy{color:var(--text-secondary);font-size:0.8rem}
 footer .links{display:flex;gap:18px}
 footer .links a{color:var(--text-secondary);text-decoration:none;font-size:0.83rem;transition:color .2s}
 footer .links a:hover{color:var(--accent)}
-.note{margin-top:26px;color:var(--text-muted);font-size:0.78rem;text-align:center;line-height:1.7}
+.wrap{margin-top:26px}.note{margin-top:26px;color:var(--text-muted);font-size:0.78rem;text-align:center;line-height:1.7}
 
 .fav{max-width:1200px;margin:26px auto 0;padding:0 20px}
 .favcard{background:linear-gradient(135deg,rgba(124,92,252,0.14),rgba(167,139,250,0.05) 55%,rgba(7,7,10,0));border:1px solid rgba(124,92,252,0.35);border-radius:20px;padding:26px 28px;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
@@ -82,8 +82,8 @@ footer .links a:hover{color:var(--accent)}
 .favjumps{display:flex;gap:8px;flex-wrap:wrap}
 .jump{padding:7px 13px;border-radius:100px;background:var(--bg-elevated);border:1px solid var(--border);color:var(--text-secondary);font-size:0.8rem;font-weight:600;text-decoration:none;transition:all .2s}
 .jump:hover{border-color:var(--accent);color:#c4b5fd}
-.favbtn{display:inline-flex;align-items:center;gap:8px;background:var(--accent-gradient);color:#fff;font-weight:700;font-size:0.9rem;padding:12px 22px;border-radius:12px;text-decoration:none;box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}
-.favbtn:hover{transform:translateY(-1px)}
+.favbtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;box-sizing:border-box;width:100%;background:var(--accent-gradient);color:#fff;font-weight:700;font-size:0.9rem;padding:13px 22px;border-radius:12px;text-decoration:none;box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}
+.favbtn{margin-top:6px}.favbtn:hover{transform:translateY(-1px)}
 
 @media(max-width:1099px){
   .nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:10px;padding:0;flex:none;position:relative;z-index:1002}
@@ -114,7 +114,7 @@ footer .links a:hover{color:var(--accent)}
     <a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a>
     <a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
     <a href="/billionaires" class="nav-drawer-only">💰 Billionaires</a>
-    <a href="/real-estate" class="nav-drawer-only">🏠 Real Estate</a>
+    
     <a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a>
     <a href="/playlist" class="nav-drawer-only">🎵 Playlist</a>
     <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
@@ -128,7 +128,7 @@ footer .links a:hover{color:var(--accent)}
     <a href="/wetrustrealty" class="nav-drawer-only">🏢 WeTrust Realty</a>
     <a href="/sunny-hills" class="nav-drawer-only">🏥 Sunny Hills</a>
     <a href="/neil" class="nav-drawer-only">🔌 Neil Okun</a>
-    <a href="/interview-assistant" class="nav-drawer-only">🎤 Interview Assistant</a>
+    
     <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
     <a href="/about" class="nav-drawer-only">👤 About Royce</a>
     <a href="/chat" class="nav-cta">💬 Chat</a>
@@ -158,8 +158,8 @@ footer .links a:hover{color:var(--accent)}
         <a class="jump" href="https://www.youtube.com/watch?v=Sp_vUllwM-w&t=1689" target="_blank" rel="noopener">28:09 · Faded-style drop</a>
         <a class="jump" href="https://www.youtube.com/watch?v=Sp_vUllwM-w&t=0" target="_blank" rel="noopener">0:00 · Full mix</a>
       </div>
+      <a class="favbtn" href="https://www.youtube.com/watch?v=Sp_vUllwM-w" target="_blank" rel="noopener">▶ Play on YouTube</a>
     </div>
-    <a class="favbtn" href="https://www.youtube.com/watch?v=Sp_vUllwM-w" target="_blank" rel="noopener">▶ Play on YouTube</a>
   </div>
 </div>
 
