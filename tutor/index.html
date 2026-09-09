@@ -1,106 +1,144 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="version" content="v7-jul22-2026">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<title>RoyceAI Tutor - Your AI Learning Dashboard</title>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>High School Tutor — RoyceAI</title>
+<meta name="description" content="Unlimited AI tutoring for high school. Math, Science, English, Korean, and more. $100/mo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--radius:16px;--radius-sm:10px;--max-w:960px;--nav-h:64px;--font:Inter,system-ui,-apple-system,sans-serif;--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--space-xs:4px;--space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:32px;--space-2xl:48px}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--radius:16px;--radius-sm:10px;--max-w:960px;--nav-h:64px;--font:Inter,system-ui,-apple-system,sans-serif;--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--transition:0.2s ease;--shadow-elevated:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.04)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
-nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;background:rgba(7,7,10,0.8);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 32px;max-width:var(--max-w);margin:0 auto}
-.nav-logo{font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:10px}
-.nav-logo .logo-icon{width:32px;height:32px;background:var(--accent-gradient);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff}
+body::before{content:'';position:fixed;inset:0;opacity:0.012;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;background:var(--bg);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .logo-icon{width:32px;height:32px;border-radius:9px;display:block;object-fit:cover}
 .nav-logo span{color:var(--accent-light)}
-.nav-links{display:flex;align-items:center;gap:6px}
-.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all 0.2s}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
 .nav-links a:hover{color:var(--text);background:var(--accent-bg)}
-.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 22px;border-radius:8px}
-.nav-links .nav-cta:hover{background:var(--accent-light)}
-.dashboard{max-width:var(--max-w);margin:5rem auto 3rem;padding:0 32px;text-align:center}
-.dash-header{margin-bottom:var(--space-xl)}
-.dash-header h1{font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:var(--space-sm)}
-.dash-header p{color:var(--text-secondary);font-size:0.95rem}
-.scoreboard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:var(--space-xl);margin:0 auto var(--space-xl);max-width:var(--max-w)}
-.scoreboard-title{font-size:1rem;font-weight:700;color:#fff;margin-bottom:var(--space-lg);text-align:center}
-.scoreboard-grid{grid-template-columns:repeat(3,1fr);display:grid;gap:var(--space-md)}
-.score-stat{display:flex;flex-direction:column;align-items:center;gap:var(--space-sm);padding:var(--space-lg) var(--space-md);background:var(--bg-elevated);border-radius:10px;font-size:0.9rem;color:var(--text-secondary)}
-.score-stat span:first-child{font-size:0.85rem;font-weight:500}.score-stat .score{font-weight:800;font-size:1.25rem;letter-spacing:-0.02em}
-.score-stat .score.accent{color:var(--accent-light)}
-.score-stat .score.gold{color:#f59e0b}
-.score-stat .score.green{color:#22c55e}
-.score-stat .score.purple{color:#a855f7}
-.score-stat .score.pink{color:#ec4899}
-.scoreboard.hidden{display:none}
-#greetingRow{font-size:0.85rem;color:var(--text-secondary);margin-bottom:var(--space-sm)}
-.topics-row{display:flex;flex-wrap:wrap;gap:var(--space-sm) var(--space-md);align-items:center;justify-content:center;margin-top:var(--space-lg);font-size:0.85rem;color:var(--text-secondary)}
-.topics-row span{padding:var(--space-xs) var(--space-sm);background:var(--accent-bg);border-radius:6px}
-.quiz-history{max-width:var(--max-w);margin:0 auto 2rem;text-align:center}
-.quiz-history h3{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:var(--space-lg)}
-.quiz-table{width:100%;border-collapse:separate;border-spacing:0;text-align:center}
-.quiz-table th{font-size:0.8rem;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.04em;padding:var(--space-md) var(--space-lg);border-bottom:1px solid var(--border)}
-.quiz-table td{font-size:0.9rem;padding:var(--space-md) var(--space-lg);border-bottom:1px solid rgba(255,255,255,0.03)}.quiz-table tbody tr:hover{background:var(--accent-bg)}
-.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-lg);margin:0 auto var(--space-2xl);max-width:var(--max-w)}
-.dash-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:var(--space-xl);text-align:left}
-.dash-card:hover{border-color:rgba(255,255,255,0.1);transform:translateY(-2px);transition:all 0.2s}
-.dash-card .icon{font-size:1.8rem;margin-bottom:var(--space-md);display:block}
-.dash-card h3{font-size:0.95rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-secondary);font-weight:600;margin-bottom:var(--space-sm)}
-.dash-card p{color:var(--text-muted);font-size:0.85rem;line-height:1.6;margin-bottom:var(--space-lg)}
-.app-container{display:none}
-.app-container.show{display:block}
-.app-container.show .dashboard{padding-top:calc(var(--nav-h) + .5rem)}
-.login-screen{padding:80px 24px;min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center}
-.login-box{padding:var(--space-xl) 32px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);max-width:420px;width:100%;text-align:center}
-.login-box h2{font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:var(--space-sm)}
-.login-box .sub{color:var(--text-secondary);font-size:0.85rem;margin-bottom:var(--space-xl)}
-.login-box .input-group{margin-bottom:var(--space-lg);text-align:left}
-.login-box .input-group label{display:block;font-size:.75rem;color:var(--text-muted);margin-bottom:var(--space-sm);font-weight:500;text-transform:uppercase;letter-spacing:.04em}
-.login-box .input-group input{width:100%;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:var(--space-md);color:#fff;font-size:.9rem;font-family:var(--font);outline:none}
-.login-box .input-group input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
-.login-box button{width:100%;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:var(--space-md);font-weight:600;font-size:.95rem;cursor:pointer;font-family:var(--font);margin-top:var(--space-sm)}
-.login-box button:hover{background:var(--accent-light)}
-.login-box .error{color:#ef4444;font-size:.82rem;margin-top:var(--space-md);display:none;padding:10px 14px;background:rgba(239,68,68,.08);border-radius:8px}
-footer{padding:var(--space-2xl) var(--space-xl);max-width:var(--max-w);margin:0 auto;text-align:center;color:var(--text-muted);font-size:.8rem;border-top:1px solid var(--border);margin-top:var(--space-2xl)}
-body.tutor-page{padding-top:0}
-body.tutor-page nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100}
-body.tutor-page .login-screen{padding:80px 24px;min-height:100vh;min-height:100dvh}
-.btn-dynamic{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:12px;font-family:Inter,sans-serif;font-size:.85rem;font-weight:700;text-decoration:none;border:none;cursor:pointer}
-.btn-primary.btn-dynamic{background:linear-gradient(135deg,#667eea,#764ba2);color:white}
-.logout-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:10px;font-family:var(--font);font-size:.8rem;font-weight:600;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text-secondary);cursor:pointer}
-.logout-btn:hover{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.25);color:#ef4444}
-@media(max-width:640px){.dashboard{padding:0 16px;margin-top:7rem}.dash-header h1{font-size:1.3rem}.dash-grid{grid-template-columns:1fr;gap:14px}.scoreboard{padding:16px}.score-stat{padding:10px 14px}.score-stat .score{font-size:1.1rem}.dash-card{padding:18px 20px}.quiz-table th,.quiz-table td{padding:8px 10px;font-size:.8rem}nav{flex-direction:column;padding:8px 16px;height:auto;gap:6px;background:rgba(7,7,10,0.95);border-bottom:1px solid rgba(255,255,255,0.08)}.nav-logo{font-size:1rem;width:100%;justify-content:center}.nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:4px}.nav-links a{font-size:.75rem;padding:5px 10px}.nav-links .nav-cta{padding:5px 14px}.login-screen{padding:60px 16px}.login-box{padding:var(--space-lg) 20px}.login-box h2{font-size:1.3rem}}
-@media(max-width:400px){.dashboard{padding:0 12px;margin-top:2rem}.dash-header h1{font-size:1.1rem}.scoreboard{padding:12px}.score-stat{padding:8px 10px}.score-stat .score{font-size:1rem}.login-screen{padding:40px 12px}.login-box{padding:var(--space-md) 16px}.login-box h2{font-size:1.15rem}.login-box .sub{font-size:.8rem;margin-bottom:var(--space-lg)}.login-box .input-group input{padding:var(--space-sm) var(--space-md)}.dash-card{padding:14px 16px}nav{padding:0 12px}.nav-links a{font-size:.7rem;padding:4px 8px}.nav-links .nav-cta{padding:6px 14px;font-size:.75rem}.quiz-panel{padding:0 12px}}
+.nav-links .btn-nav{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;transition:all 0.2s}
+.nav-links .btn-nav:hover{background:var(--accent-light);transform:scale(1.05)}
+.hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 60px;max-width:var(--max-w);margin:0 auto;position:relative;animation:fade-up 0.6s ease-out;text-align:center}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:20px}
+.hero h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero p{font-size:clamp(1rem,2vw,1.2rem);color:var(--text-secondary);max-width:600px;line-height:1.75;margin:0 auto 32px}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:var(--radius-sm);font-family:var(--font);font-size:1rem;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}
+.btn-primary:hover{background:var(--accent-light);box-shadow:0 0 0 1px var(--accent-light),0 6px 30px var(--accent-glow)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);padding:13px 31px}
+.btn-outline:hover{background:var(--accent-bg);border-color:var(--accent)}
+.features{padding:80px 24px;max-width:var(--max-w);margin:0 auto}
+.features h2{text-align:center;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;margin-bottom:48px;letter-spacing:-0.02em}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all var(--transition);text-align:center}
+.feature-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.feature-card .icon{font-size:2.2rem;margin-bottom:12px;display:block}
+.feature-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}
+.feature-card p{color:var(--text-secondary);font-size:0.85rem;line-height:1.6}
+.subjects{padding:60px 24px 80px;max-width:var(--max-w);margin:0 auto;text-align:center}
+.subjects h2{font-size:clamp(1.5rem,4vw,2rem);font-weight:700;margin-bottom:12px}
+.subjects p{color:var(--text-secondary);margin-bottom:32px}
+.subject-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.subject-tag{padding:8px 18px;border-radius:100px;background:var(--accent-bg);border:1px solid rgba(124,92,252,0.15);color:var(--accent-light);font-size:.85rem;font-weight:500}
+.pricing{text-align:center;padding:60px 24px 80px;max-width:var(--max-w);margin:0 auto}
+.pricing-card{display:inline-block;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px 48px;max-width:400px;box-shadow:var(--shadow-card)}
+.pricing-card .amount{font-size:2.5rem;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.pricing-card .amount span{font-size:1rem;color:var(--text-muted);font-weight:400}
+.pricing-card ul{list-style:none;margin:24px 0;text-align:left}
+.pricing-card ul li{padding:8px 0;color:var(--text-secondary);font-size:.9rem}
+.pricing-card ul li::before{content:"✅ ";color:var(--accent-light)}
+.pricing-card .btn{width:100%;justify-content:center}
+.faq{padding:60px 24px 80px;max-width:720px;margin:0 auto}
+.faq h2{text-align:center;font-size:1.8rem;font-weight:700;margin-bottom:32px}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-item .q{font-weight:600;color:#fff;margin-bottom:6px}
+.faq-item .a{color:var(--text-secondary);font-size:.9rem;line-height:1.6}
+.cta-section{text-align:center;padding:80px 24px 100px;max-width:var(--max-w);margin:0 auto}
+.cta-section h2{font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;margin-bottom:16px}
+.cta-section p{color:var(--text-secondary);margin-bottom:32px}
+footer{border-top:1px solid var(--border);padding:48px 24px;max-width:var(--max-w);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+footer .links{display:flex;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:.875rem;transition:color 0.2s}
+footer .links a:hover{color:var(--accent-light)}
+footer .copy{color:var(--text-muted);font-size:.8rem;width:100%;text-align:center}
+section[id]{scroll-margin-top:80px}
+*:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+@media(max-width:640px){.hero{padding:100px 20px 40px}.features{padding:60px 20px}.pricing-card{padding:28px 24px}.faq{padding:40px 20px}.cta-section{padding:60px 20px}.nav-links a:not(.btn-nav):not(.nav-show){display:none}}
+@media print{body{background:#fff!important;color:#000!important}nav,.orb,.orb-1,.orb-2,.cta-section,footer{display:none!important}.hero{min-height:auto;padding:20px}}
 
-/* ===== MOBILE NAV (hamburger + drawer) — ALL-WIDTHS (global drawer, never leaks at tablet) ===== */
-.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated,#15151b);border:1px solid var(--border,rgba(255,255,255,0.06));border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
-@media(max-width:1099px){
-  nav{z-index:1001;background:var(--bg)}
-  .nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
-  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .nav-burger.open span:nth-child(2){opacity:0}
-  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}
-}
-.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h,64px) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1001;overflow-y:auto}
+
+
+
+/* ===== HAMBURGER NAV (neat all-widths) ===== */
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
 .mobile-menu.open{transform:translateX(0)}
 .mobile-menu a{color:var(--text-secondary);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
 .mobile-menu a:hover,.mobile-menu a.active{color:var(--text);background:var(--accent-bg)}
 .mobile-menu .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;margin-top:10px;text-align:center;animation:pulse-glow 2.5s ease-in-out infinite}
 .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
 .mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+@media(max-width:1099px){
+  nav{z-index:1001;flex-direction:row;flex-wrap:nowrap;height:var(--nav-h);background:var(--bg)}
+  .nav-links{width:auto;margin-left:auto;justify-content:flex-end}
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}
+  .nav-logo{width:auto;justify-content:flex-start}
+}
+@media(min-width:1100px){
+  .nav-links a.nav-drawer-only{display:none!important}
+  #navLoginBtn{display:none!important}
+}
 
-</style>
-</head><body class="tutor-page">
+/* desktop: full row, no burger; hide duplicate LogIn button (Tutor covers /tutor) */
+@media(min-width:1100px){
+  #navLoginBtn{display:none!important}
+}
+
+
+
+
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+html{overflow-x:clip}
+body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+@media(max-width:1099px){footer{display:none!important}}
+
+@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
+@media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
+</style></head><body>
+<div class="orb orb-1"></div><div class="orb orb-2"></div>
 <nav>
-<a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
-<div class="nav-links">
-<a href="/products">Products</a><a href="/subscribe">Subscribe</a><button class="logout-btn nav-logout-btn" id="navLogoutBtn" onclick="logout()" style="display:none">🔓 Logout</button><a href="/products/tutor" id="navTutorLink" style="background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));border:1px solid rgba(102,126,234,0.3);padding:6px 16px;font-weight:700">✨ Tutor</a><a href="/blog">Blog</a>
-<a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/products">Products</a>
+    <span id="navLoginBtn"></span>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
     <a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a>
     <a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
     <a href="/billionaires" class="nav-drawer-only">💰 Billionaires</a>
@@ -118,373 +156,201 @@ body.tutor-page .login-screen{padding:80px 24px;min-height:100vh;min-height:100d
     <a href="/sunny-hills" class="nav-drawer-only">🏥 Sunny Hills</a>
     <a href="/neil" class="nav-drawer-only">🔌 Neil Okun</a>
     <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
-    <a href="/about" class="nav-drawer-only">👤 About Royce</a><a href="/playlist" class="nav-drawer-only">🎵 Playlist</a></div>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    <a href="/playlist" class="nav-drawer-only">🎵 Playlist</a><a href="/chat" class="nav-cta">💬 Chat</a>
+  </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
 <div class="mobile-menu" id="mobileMenu"></div>
-<div class="login-screen" id="loginScreen">
-<div class="login-box">
-<div class="nav-logo" style="margin:0 auto 16px;justify-content:center"><span class="logo-icon">R</span></div>
-<h2>Log in to study</h2>
-<p class="sub">Enter your first and last name exactly as registered.</p>
-<div class="input-group"><label for="studentFirstName">First Name</label><input type="text" id="studentFirstName" placeholder="Enter your first name" autocomplete="off"></div>
-<div class="input-group"><label for="studentLastName">Last Name</label><input type="text" id="studentLastName" placeholder="Enter your last name" autocomplete="off"></div>
-<button onclick="login()">Log in &rarr;</button>
-<div class="error" id="loginError"></div>
-</div>
-</div>
-<div class="app-container" id="appContainer">
-<div class="dashboard">
-<div class="dash-header">
-<div id="greetingRow">&#x2600;&#xfe0f; Good Morning</div>
-<h1><span id="studentName">Student</span></h1>
-<p id="studentInfo">Your personalized learning dashboard</p>
-</div>
-<div class="scoreboard hidden">
-<div class="scoreboard-title">&#x1f3ae; Scoreboard</div>
-<div class="scoreboard-grid">
-  <div class="score-stat"><span>&#x1f4c5; Today</span><span class="score accent" id="scoreToday">&mdash;</span></div>
-  <div class="score-stat"><span>&#x1f4ca; Month</span><span class="score gold" id="scoreMtd">&mdash;</span></div>
-  <div class="score-stat"><span>&#x1f3c6; All Time</span><span class="score green" id="scoreYtd">&mdash;</span></div>
-  <div class="score-stat kpi-stat" id="kpi1"><span id="kpi1Label">KPI 1</span><span class="score purple" id="kpi1Val">&mdash;</span></div>
-  <div class="score-stat kpi-stat" id="kpi2"><span id="kpi2Label">KPI 2</span><span class="score green" id="kpi2Val">&mdash;</span></div>
-  <div class="score-stat kpi-stat" id="kpi3"><span id="kpi3Label">KPI 3</span><span class="score pink" id="kpi3Val">&mdash;</span></div>
-</div>
-<div class="topics-row">
-<span id="difficultyBadge" style="display:none"></span>
-<span>&#x1f3af; Topics:</span><span id="topicsList">&mdash;</span>
-</div>
-</div>
-</div>
-<div class="dash-grid" id="dashGrid">
-<div class="dash-card" data-subject="math"><span class="icon">&#x1f4d0;</span><h3>Math</h3><p>Algebra, Geometry, Precalculus.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('math');return false">&#x26a1; Start Quiz</a></div>
-<div class="dash-card" data-subject="sat"><span class="icon">&#x1f3af;</span><h3>SAT Prep</h3><p>Math, Reading, Writing.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('sat');return false">&#x26a1; Start Quiz</a></div>
-<div class="dash-card" data-subject="series66"><span class="icon">&#x1f4cb;</span><h3>Series 66</h3><p>Uniform Combined State Law.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('series66');return false">&#x26a1; Start Quiz</a></div>
-<div class="dash-card" data-subject="series7"><span class="icon">&#x1f4cb;</span><h3>Series 7</h3><p>General Securities Exam.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('series7');return false">&#x26a1; Start Quiz</a></div>
-<div class="dash-card" data-subject="realestate"><span class="icon">&#x1f3e2;</span><h3>WA Real Estate</h3><p>Washington State Exam, RCW/WAC, Contracts.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('realestate');return false">&#x26a1; Start Quiz</a></div>
-<div class="dash-card" data-subject="rn"><span class="icon">&#x1fa9a;</span><h3>RN Training</h3><p>NCLEX-RN, Pharmacology, Anatomy.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('rn');return false">&#x26a1; Start Quiz</a></div>
-<div class="dash-card" data-subject="reading"><span class="icon">&#x1f4da;</span><h3>Reading Games</h3><p>Letter Recognition, Phonics, Sight Words.</p><a href="/tutor/game/" class="btn-dynamic btn-primary">&#x1f3ae; Play Games</a></div>
-<div class="dash-card" data-subject="preschool"><span class="icon">&#x1f476;</span><h3>Preschool Play</h3><p>ABCs, Colors, Numbers, Shapes.</p><a href="/tutor/game/" class="btn-dynamic btn-primary">&#x1f3ae; Play Games</a></div>
-<div class="dash-card" data-subject="baby"><span class="icon">&#x1f476;</span><h3>Baby Play</h3><p>Sensory, Colors, Sounds.</p><a href="/tutor/game/baby/" class="btn-dynamic btn-primary">&#x1f3ae; Play Game</a></div>
-<div class="dash-card" data-subject="grade9"><span class="icon">&#x1f4da;</span><h3>9th Grade Prep</h3><p>Math 1, Biology, English 9.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('grade9');return false">&#x26a1; Start Quiz</a></div>
-<div class="dash-card" data-subject="grade4"><span class="icon">&#x1f4da;</span><h3>4th Grade Prep</h3><p>Math, Reading, Science, Social Studies.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('grade4');return false">&#x26a1; Start Quiz</a></div>
-<div class="dash-card" data-subject="grade11"><span class="icon">&#x1f4d6;</span><h3>11th Grade Prep</h3><p>Precalculus, Chemistry, English 11.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('grade11');return false">&#x26a1; Start Quiz</a></div>
-</div>
-<div class="quiz-history" id="quizHistory" style="display:none">
-<h3>&#x1f4cb; Quiz History &mdash; Last 10</h3>
-<table class="quiz-table"><thead><tr><th>Date</th><th>Mode</th><th>Score</th><th>Result</th></tr></thead><tbody id="quizHistoryBody"></tbody></table>
-</div>
-</div>
-<div id="quizPanel" style="display:none;max-width:var(--max-w);margin:0 auto;padding:0 32px">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding:12px 0;border-bottom:1px solid var(--border)">
-<span style="display:flex;align-items:center;gap:8px"><button id="quizBackBtn" onclick="closeIQ()" style="background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:8px;font-size:.8rem;cursor:pointer;font-family:var(--font)">&larr; Back</button><span id="quizSubj" style="color:var(--accent-light);font-weight:600">Quiz</span><span style="color:var(--text-secondary);font-size:.75rem">80% to pass</span></span>
-<span style="display:flex;align-items:center;gap:16px">
-<span id="quizProg" style="color:var(--text-secondary);font-size:.85rem;font-weight:600">0% (0/0)</span>
-<span id="quizScr" style="color:var(--accent-light);font-size:.85rem;font-weight:600">0/0</span>
-</span>
-</div>
-<div id="quizQ" style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:28px;margin-bottom:16px;font-size:.95rem;line-height:1.7;color:var(--text);min-height:100px">Starting quiz...</div>
-<div id="quizA" style="display:flex;flex-direction:column;gap:8px"></div>
-</div>
-</div>
-<footer>RoyceAI Solutions. Irvine, CA</footer>
-<script>
-// Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v7-jul22-2026';
-try{
-  var cv=localStorage.getItem('tutor_page_ver');
-  if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/?v='+PAGE_VER}
-  // Also check if URL has the version param — if not, redirect once
-  if(location.search.indexOf('v='+PAGE_VER)<0){location.href='https://royceai.com/tutor/?v='+PAGE_VER}
-  else localStorage.setItem('tutor_page_ver',PAGE_VER);
-}catch(e){}
-// ─── Config ─────────────────────────────────────────────────────
-var API='https://chat-api-tawny-zeta.vercel.app/api';
-var HIST=API+'/quiz-history';
-var UDATA=[{"first": "Jiho", "last": "Pak", "subjects": "Math, 9th Grade Prep, Bible Study", "today": "—", "mtd": "—", "ytd": "27/33 (82%)", "plan": "free_trial", "cards": "math,grade9", "kpis": [{"label": "Math", "val": "96/100"}, {"label": "Streak", "val": "7 days"}, {"label": "Focus Time", "val": "45 min/day"}]},{"first": "Carter", "last": "Koh", "subjects": "UCI Prep, AP Biology, 11th Grade", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,grade11", "kpis": [{"label": "A-G GPA", "val": "In repair"}, {"label": "AP Bio", "val": "Junior"}, {"label": "Streak", "val": "5 days"}]},{"first": "Angel", "last": "Koh", "subjects": "RN Training, NCLEX, Health", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "rn", "kpis": [{"label": "NCLEX", "val": "72%"}, {"label": "Modules", "val": "8/12"}, {"label": "Study Time", "val": "30 min/day"}]},{"first": "Paxton", "last": "Koh", "subjects": "Reading Games, ABCs, Colors", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "reading", "kpis": []},{"first": "Josh", "last": "Lucero", "subjects": "Series 66, Series 7, Finance", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "series66,series7", "kpis": [{"label": "Series 66", "val": "74%"}, {"label": "Progress", "val": "60%"}, {"label": "Study Time", "val": "25 min/day"}]},{"first": "Mason", "last": "Min", "subjects": "Baby Play, ABCs, Colors", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "baby", "kpis": [{"label": "Age", "val": "Toddler"}, {"label": "Learning", "val": "ABCs"}, {"label": "Milestones", "val": "On track"}]},{"first": "Pearl", "last": "Johnson", "subjects": "Preschool Play, Letters, Numbers", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "baby,preschool", "kpis": [{"label": "Colors", "val": "6/6"}, {"label": "Games", "val": "3 played"}, {"label": "Stars", "val": "15"}]},{"first": "Ruby", "last": "Johnson", "subjects": "Reading, Math, Grade 2", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "reading,math,grade2", "kpis": [{"label": "Math", "val": "4/5"}, {"label": "Games", "val": "2 played"}, {"label": "Stars", "val": "8"}]},{"first": "Carter", "last": "Touch", "subjects": "Grade 9, Liberty HS, Math", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,grade9", "kpis": [{"label": "GPA", "val": "3.5"}, {"label": "Liberty HS", "val": "Freshman"}, {"label": "Sessions", "val": "0"}]},{"first": "Chase", "last": "Touch", "subjects": "Grade 7, Nelson MS, Pre-Algebra", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "math,reading,grade7", "kpis": [{"label": "Pre-Alg", "val": "B+"}, {"label": "Nelson MS", "val": "7th Grade"}, {"label": "Sessions", "val": "0"}]},{"first": "Tommy", "last": "Touch", "subjects": "Therapy Bot, Social Skills, Emotional Growth", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "therapy", "kpis": [{"label": "Therapy", "val": "Active"}, {"label": "Sessions", "val": "0"}, {"label": "Streak", "val": "New"}]},{"first": "Test", "last": "User", "subjects": "Math, SAT Prep, Science", "today": "8/10 (80%)", "mtd": "15/20 (75%)", "ytd": "15/20 (75%)", "plan": "free_trial", "cards": "math,sat,grade9", "kpis": [{"label": "Math", "val": "8/10"}, {"label": "SAT", "val": "70/80"}, {"label": "Streak", "val": "1 day"}]},{"first": "Test", "last": "User", "subjects": "Math, SAT Prep, Science", "today": "8/10 (80%)", "mtd": "15/20 (75%)", "ytd": "15/20 (75%)", "plan": "free_trial", "cards": "math,sat,grade9", "kpis": [{"label": "Math", "val": "8/10"}, {"label": "SAT", "val": "70/80"}, {"label": "Streak", "val": "1 day"}]},{"first": "MacKenzie", "last": "Koh", "subjects": "Math, Reading, Science", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "grade4,math", "kpis": []},{"first": "Charles", "last": "Koh", "subjects": "WA Real Estate, RCW/WAC, Contracts", "today": "—", "mtd": "—", "ytd": "—", "plan": "free_trial", "cards": "realestate", "kpis": [{"label": "Practice", "val": "—"}, {"label": "Pass Rate", "val": "—"}, {"label": "Streak", "val": "0 days"}]}];
-var CU=null;
 
-function login(){
-  var fi=document.getElementById("studentFirstName"),li=document.getElementById("studentLastName"),er=document.getElementById("loginError");
-  if(!fi||!li||!er)return;
-  var fn=fi.value.trim(),ln=li.value.trim();
-  if(!fn||!ln){er.textContent="Enter both first and last name.";er.style.display="block";return;}
-  var u=UDATA.find(function(x){return x.first.toLowerCase()===fn.toLowerCase()&&x.last.toLowerCase()===ln.toLowerCase();});
-  // Fetch live data from Vercel API (hits GitHub API directly — always fresh, no CDN cache)
-  fetch(API+"/student-stats",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:fn+" "+ln})})
-  .then(function(r){return r.json()})
-  .then(function(d){
-    if(d.found&&d.data) u=d.data;
-    if(!u){er.textContent="Name not found: "+fn+" "+ln;er.style.display="block";return;}
-    CU=u;localStorage.setItem("tutor_user",JSON.stringify(u));showDash(u);
-  })
-  .catch(function(){
-    if(!u){er.textContent="Name not found: "+fn+" "+ln;er.style.display="block";return;}
-    CU=u;localStorage.setItem("tutor_user",JSON.stringify(u));showDash(u);
-  });
-}
-function showDash(u){
-  document.getElementById("appContainer").classList.add("show");
-  document.getElementById("loginScreen").style.display="none";
-  document.querySelector(".scoreboard").classList.remove("hidden");
-  document.getElementById("navLogoutBtn").style.display="inline-flex";
-  var h=new Date().getHours();
-  document.getElementById("greetingRow").textContent=(h<12?"Good Morning":h<17?"Good Afternoon":"Good Evening")+", "+u.first;
-  document.getElementById("studentName").textContent=u.first+" "+u.last;
-  document.getElementById("studentInfo").textContent=(u.subjects||"")+" - "+(u.plan||"");
-  var k=u.cards?u.cards.split(","):["math"];
-  document.querySelectorAll(".dash-card").forEach(function(c){c.style.display=k.indexOf(c.dataset.subject)>=0?"block":"none";});
-  renderSB(u);loadHist(u.first);
-}
-function renderSB(u){
-  if(!u)return;
-  ["today","mtd","ytd"].forEach(function(k){
-    var v=u[k],el=document.getElementById("score"+k.charAt(0).toUpperCase()+k.slice(1));
-    if(!el)return;el.textContent=v&&v!=="-"?v:"-";
-  });
-  (u.kpis||[]).forEach(function(k,i){
-    var j=i+1,lab=document.getElementById("kpi"+j+"Label"),val=document.getElementById("kpi"+j+"Val");
-    if(lab)lab.textContent=k.label||"";
-    if(val)val.textContent=k.val||"-";
-  });
-  document.getElementById("topicsList").textContent=u.subjects||"-";
-}
-async function loadHist(n){
-  var el=document.getElementById("quizHistory"),tb=document.getElementById("quizHistoryBody");
-  if(!el||!tb)return;
-  el.style.display="block";
-  tb.innerHTML='<tr><td colspan="4" style="text-align:center;color:var(--text-secondary)">Loading...</td></tr>';
-  try{
-    var r=await fetch(HIST,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:n})});
-    var d=await r.json(),ss=d.sessions||[];
-    if(!ss.length){tb.innerHTML='<tr><td colspan="4" style="text-align:center;color:var(--text-secondary)">No sessions yet</td></tr>';return;}
-    tb.innerHTML=ss.slice(-10).reverse().map(function(s){
-      var p=Math.round(s.correct/s.total*100);
-      var t='';
-      if(s.time){var d=new Date(s.time);t=d.toLocaleDateString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}).replace(',','')}
-      else{t=s.date||'-'}
-      return '<tr><td>'+t+'</td><td>'+(s.mode||"quiz")+'</td><td><strong>'+s.correct+"/"+s.total+"</strong> ("+p+"%)</td><td>"+(p>=80?"✅ Pass":"📖 Review")+"</td></tr>";
-    }).join("");
-  }catch(e){tb.innerHTML='<tr><td colspan="4" style="text-align:center;color:var(--text-secondary)">Error</td></tr>';}
-}
-function logout(){
-  localStorage.removeItem("tutor_user");
-  document.getElementById("loginScreen").style.display="";
-  document.getElementById("appContainer").classList.remove("show");
-  document.getElementById("studentFirstName").value="";
-  document.getElementById("studentLastName").value="";
-  CU=null;
-  document.getElementById("navLogoutBtn").style.display="none";
-}
+<section class="slide active hero" id="s1" >
+  <div class="slide-inner">
 
-var iqHist=[],iqSubj="",iqCorr=0,iqTot=0,iqTotal=33,iqBusy=false,iqRetry=0;
-function startInlineQuiz(s){
-  iqSubj=s;iqCorr=0;iqTot=0;iqHist=[];iqBusy=false;iqRetry=0;
-  document.getElementById("dashGrid").style.display="none";
-  document.getElementById("quizHistory").style.display="none";
-  document.getElementById("quizPanel").style.display="block";
-  document.getElementById("quizQ").textContent="Loading...";
-  document.getElementById("quizA").innerHTML="";
-  document.getElementById("quizProg").textContent="Q0/"+iqTotal;
-  document.getElementById("quizScr").textContent="—";
-  // Load stored topics from previous sessions to avoid repeats
-  var prevKey="tutor_seen_"+s;
-  var prevTopics=[];
-  try{var stored=localStorage.getItem(prevKey);if(stored)prevTopics=JSON.parse(stored);}catch(e){}
-  var seed=Date.now().toString(36)+Math.random().toString(36).slice(2,6);
-  var contextMsg="Start "+s+" quiz. Seed: "+seed;
-  if(prevTopics.length>0){
-    contextMsg+=" Already asked: "+prevTopics.slice(-20).join(", ")+". Ask completely different questions.";
-  }
-  askQ(contextMsg);
-}
-function closeIQ(){
-  document.getElementById("quizPanel").style.display="none";
-  document.getElementById("dashGrid").style.display="";
-  document.getElementById("quizHistory").style.display="";
-}
-function askQ(msg){
-  iqBusy=true;
-  document.getElementById("quizA").innerHTML="<div style='color:var(--text-muted);padding:20px'>Loading...</div>";
-  fetch(API+"/quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:msg,history:iqHist.slice(-30),subject:iqSubj})})
-  .then(function(r){return r.json()})
-  .then(function(d){
-    var reply=d.reply||"No response";
-    iqHist.push({role:"user",content:msg},{role:"assistant",content:reply});
-    iqBusy=false;
-    if(reply.match(/Quiz complete|completed|done|final|finished/gi)){finishQ(reply);return;}
-    // Parse total question count from format like "Q1/33:" or "Q1/33 "
-    if(!iqTot){var tm=reply.match(/Q\d+\/(\d+)/);if(tm)iqTotal=parseInt(tm[1]);}
-    showQ(reply);
-  })
-  .catch(function(e){
-    iqBusy=false;
-    document.getElementById("quizQ").textContent="Error: "+e.message;
-    document.getElementById("quizA").innerHTML="<button onclick=askQ('Repeat') style='padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer'>Retry</button>";
-  });
-}
-function showQ(reply){
-  var qText=reply.replace(/^[A-D][)]\s*[^\n]*\n?/gm,"").trim();
-  document.getElementById("quizQ").innerHTML=qText.replace(/\n/g,"<br>");
-  var opts=reply.match(/(?:^|[\n])([A-D][)]\s*[^\n*]+)/g);
-  if(opts)opts=opts.map(function(o){return o.replace(/^[\n]/,"").trim();});
-  if(!opts||opts.length<2){
-    iqRetry++;
-    if(iqRetry<5){
-      document.getElementById("quizQ").innerHTML="<div style='color:var(--text-muted);padding:10px'>Loading next question...</div>";
-      document.getElementById("quizA").innerHTML="";
-      setTimeout(function(){askQ("Next question");},800);
-    }else{
-      document.getElementById("quizA").innerHTML="<button onclick=askQ('Next question') style='padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer'>Retry</button>";
-    }
-    return;
-  }
-  iqRetry=0;
-  document.getElementById("quizA").innerHTML=opts.map(function(o){
-    return "<button data-letter='"+o.charAt(0).toLowerCase()+"' class='iq-btn' onclick='ansQ(this)'><span class='iq-letter'>"+o.charAt(0)+"</span><span>"+o.substring(2).trim()+"</span></button>";
-  }).join("");
-  // Update score display
-  var pct=Math.round(iqCorr/Math.max(iqTot,1)*100);
-  document.getElementById("quizScr").textContent=pct+"%";
-}
-function ansQ(btn){
-  if(iqBusy)return;
-  var letter=btn.getAttribute("data-letter");
-  if(!letter)return;
-  iqTot++;iqBusy=true;
-  document.querySelectorAll(".iq-btn").forEach(function(b){b.style.opacity="0.5"});
-  btn.style.borderColor="var(--accent)";btn.style.background="rgba(124,92,252,0.15)";
-  document.getElementById("quizA").innerHTML="";
-  document.getElementById("quizQ").innerHTML="<div style='color:var(--text-muted);padding:10px'>Checking answer...</div>";
-  fetch(API+"/quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:letter,history:iqHist.slice(-30),subject:iqSubj})})
-  .then(function(r){return r.json()})
-  .then(function(d){
-    var reply=d.reply||"No response";
-    iqHist.push({role:"user",content:letter},{role:"assistant",content:reply});
-    iqBusy=false;
-    if(reply.match(/^Correct/i))iqCorr++;
-    // Check 80% mastery: minimum 33 questions, need 80%+ accuracy, max 50
-    var pct=Math.round(iqCorr/Math.max(iqTot,1)*100);
-    document.getElementById("quizProg").textContent="Q"+iqTot+"/"+iqTotal;
-    document.getElementById("quizScr").textContent=pct+"%";
-    if(iqTot>=33&&pct>=80){finishQ(reply);return;}
-    if(iqTot>=50){finishQ("Quiz complete — 50 questions max. Score: "+iqCorr+"/"+iqTot);return;}
-    showQ(reply);
-  })
-  .catch(function(e){
-    iqBusy=false;
-    document.getElementById("quizQ").textContent="Error: "+e.message;
-    document.getElementById("quizA").innerHTML="<button onclick=askQ('Repeat') style='padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer'>Retry</button>";
-  });
-}
-function finishQ(reply){
-  var corr=iqCorr,tot=iqTot,m=reply.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i);
-  if(!m)m=reply.match(/(\d+)\s*\/\s*(\d+)\s*(?:correct|questions)/i);
-  if(m){corr=parseInt(m[1]);tot=parseInt(m[2])}
-  if(!m&&!corr&&tot>0){var all=reply.match(/(\d+)\s*\/\s*(\d+)/g);if(all&&all.length){var last=all[all.length-1].split("/");corr=parseInt(last[0]);tot=parseInt(last[1])}}
-  // Save seen questions to localStorage so next quiz avoids repeats
-  try{
-    var prevKey="tutor_seen_"+iqSubj;
-    var seen=[];
-    var stored=localStorage.getItem(prevKey);
-    if(stored)seen=JSON.parse(stored);
-    // Extract question topics from assistant responses
-    for(var i=0;i<iqHist.length;i++){
-      if(iqHist[i].role==="assistant"){
-        var q=iqHist[i].content;
-        // Grab first sentence or up to 60 chars as topic fingerprint
-        var topic=q.replace(/^(Correct|Incorrect)[^.]*\.\s*/,"").split("Q"+iqTot+"/")[0].split("Q"+(iqTot+1)+"/")[0].split("Score:")[0].trim().slice(0,60);
-        if(topic.length>10)seen.push(topic);
-      }
-    }
-    // Keep last 50 seen topics
-    if(seen.length>50)seen=seen.slice(-50);
-    localStorage.setItem(prevKey,JSON.stringify(seen));
-  }catch(e){}
-  document.getElementById("quizQ").innerHTML=reply.replace(/\n/g,"<br>");
-  document.getElementById("quizA").innerHTML="<div style='color:var(--text-muted);padding:10px'>Saving score...</div>";
-  var name=CU?CU.first+" "+CU.last:"Student";
-  fetch(API+"/save-score",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:name,correct:corr,total:tot,subject:iqSubj})})
-  .then(function(r){return r.json()})
-  .then(function(){
-    document.getElementById("quizA").innerHTML="<div style='color:var(--text-muted);padding:10px'>Updating stats...</div>";
-    return fetch(API+"/student-stats",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:name})});
-  })
-  .then(function(r){return r.json()})
-  .then(function(d){
-    if(d.found&&d.data){
-      var u=d.data;
-      if(CU){CU.today=u.today||"-";CU.mtd=u.mtd||"-";CU.ytd=u.ytd||"-";CU.kpis=u.kpis||CU.kpis}
-      renderSB(CU);
-      document.getElementById("topicsList").textContent=CU.subjects||iqSubj||"-";
-    }
-    document.getElementById("quizA").innerHTML="<button onclick=closeIQ() style='margin-top:16px;padding:12px 28px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer'>&larr; Back to Dashboard</button>";
-    document.getElementById("quizProg").textContent="✓ Done!";
-    var fpct=Math.round(corr/Math.max(tot,1)*100);
-    document.getElementById("quizScr").textContent=fpct+"%";
-  })
-  .catch(function(){
-    document.getElementById("quizA").innerHTML="<button onclick=closeIQ() style='margin-top:16px;padding:12px 28px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer'>&larr; Back to Dashboard</button>";
-  });
-}
+  <h1>AI Tutor That Actually <span class="gradient">Teaches</span></h1>
+  <p>Unlimited, personalized one-on-one tutoring in every high school subject. Powered by advanced AI — available 24/7, patient as a librarian, smart as a valedictorian.</p>
+  <div class="hero-actions">
+    <a href="/pay" class="btn btn-primary">Subscribe — $100/mo →</a>
+    <a href="#subjects" class="btn btn-outline">See Subjects</a>
+  </div>
 
-var s=document.createElement("style");
-s.textContent=".iq-btn{display:flex;align-items:center;gap:10px;width:100%;padding:14px 18px;border-radius:10px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);font-size:0.9rem;text-align:left;cursor:pointer;font-family:var(--font);transition:all 0.15s}.iq-btn:hover{border-color:var(--accent);background:var(--accent-bg)}.iq-letter{background:var(--accent);color:#fff;width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;flex-shrink:0}";
-document.head.appendChild(s);
+  </div>
+</section>
 
-var saved=localStorage.getItem("tutor_user");
-if(saved){
-  try{
-    var u=JSON.parse(saved),match=UDATA.find(function(x){return x.first===u.first&&x.last===u.last;});
-    if(match){
-      CU=match;
-      // Fetch live data from API (UDATA has stale today: "—")
-      fetch(API+"/student-stats",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:match.first+" "+match.last})})
-      .then(function(r){return r.json()})
-      .then(function(d){
-        if(d.found&&d.data){CU=d.data;showDash(CU)}else showDash(match);
-      })
-      .catch(function(){showDash(match);});
-    }else localStorage.removeItem("tutor_user");
-  }catch(e){localStorage.removeItem("tutor_user");}
-}
-</script>
-<!-- Lead Comet Widget -->
-<style>
-.lc-btn{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:#c084fc;color:#0f0f1a;border:none;font-size:24px;cursor:pointer;z-index:9999;box-shadow:0 4px 20px rgba(192,132,252,.4);transition:all .3s}
-.lc-btn:hover{transform:scale(1.1);background:#a855f7}
-.lc-panel{position:fixed;bottom:90px;right:24px;width:360px;max-height:520px;background:#1a1a2e;border:1px solid #2a2a4e;border-radius:16px;z-index:9999;display:none;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.5)}
-.lc-panel.open{display:flex;flex-direction:column}
-.lc-header{padding:16px 20px;background:#2a1a4e;border-bottom:1px solid #2a2a4e;font-weight:600;font-size:.95rem;color:#c084fc;display:flex;justify-content:space-between;align-items:center}
-.lc-close{background:none;border:none;color:#a0a0c0;font-size:20px;cursor:pointer}
-.lc-body{padding:16px 20px;overflow-y:auto;flex:1}
-.lc-body label{display:block;color:#a0a0c0;font-size:.8rem;margin:8px 0 4px}
-.lc-body input,.lc-body select,.lc-body textarea{width:100%;padding:10px 12px;background:#0f0f1a;border:1px solid #2a2a4e;border-radius:8px;color:#e0e0f0;font-size:.85rem;box-sizing:border-box;font-family:inherit}
-.lc-body textarea{resize:vertical;min-height:60px}
-.lc-submit{width:100%;padding:12px;background:#c084fc;color:#0f0f1a;border:none;border-radius:8px;font-weight:600;font-size:.9rem;cursor:pointer;margin-top:12px;transition:all .2s}
-.lc-submit:hover{background:#a855f7}
-.lc-thanks{display:none;text-align:center;padding:30px 20px}
-.lc-thanks.show{display:block}
-.lc-thanks h3{color:#c084fc;margin:0 0 8px}
-.lc-thanks p{color:#a0a0c0;font-size:.85rem;margin:0}
-.lc-error{color:#ef4444;font-size:.8rem;margin-top:4px;display:none}
-</style>
-<script>
-// Auto-refresh scoreboard every 30s (silent, no button)
-setInterval(function(){
-  if(!CU)return;
-  fetch(API+"/student-stats",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:CU.first+" "+CU.last})})
-  .then(function(r){return r.json()})
-  .then(function(d){
-    if(d.found&&d.data){
-      var u=d.data;
-      CU.today=u.today||"-";CU.mtd=u.mtd||"-";CU.ytd=u.ytd||"-";CU.kpis=u.kpis||CU.kpis;
-      renderSB(CU);
-    }
-  }).catch(function(){});
-},30000);
-</script>
+<section class="slide features" id="s2" >
+  <div class="slide-inner">
+
+  <h2>Why Students &amp; Parents Love It</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <span class="icon">🧠</span>
+      <h3>All Subjects</h3>
+      <p>Math (Algebra → Calculus), Biology, Chemistry, Physics, English, History, Korean, SAT prep, and more.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">📝</span>
+      <h3>33-Question Quizzes</h3>
+      <p>Adaptive difficulty across every subject. Each quiz cycles through topics automatically — never get stuck on one thing.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">📊</span>
+      <h3>Live Dashboard</h3>
+      <p>Track today's score, monthly progress, streaks, and focus time. See your improvement in real time.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">💬</span>
+      <h3>Answers with Explanations</h3>
+      <p>Every answer includes a detailed breakdown of why it's right and why the others are wrong — not just a score.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🎯</span>
+      <h3>Grade-Specific Tracks</h3>
+      <p>Standard high school tracks (Algebra → Precalculus) plus custom grade-level prep like 9th Grade Core (Math 1, Biology, World History, English).</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🔁</span>
+      <h3>Auto-Subject Rotation</h3>
+      <p>The AI cycles through subjects every question so you get a balanced review session — not 33 questions of the same topic.</p>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<section class="slide subjects" id="s3"  id="subjects">
+  <div class="slide-inner">
+
+  <h2>Subjects Covered</h2>
+  <p>From preschool to AP exams, Series 66, and NCLEX. Every subject, every grade level.</p>
+  <div class="subject-tags">
+    <span class="subject-tag">📐 Elementary Math</span>
+    <span class="subject-tag">📐 Pre-Algebra</span>
+    <span class="subject-tag">📐 Algebra I &amp; II</span>
+    <span class="subject-tag">📐 Geometry</span>
+    <span class="subject-tag">📐 Trigonometry</span>
+    <span class="subject-tag">📐 Precalculus</span>
+    <span class="subject-tag">📐 Calculus</span>
+    <span class="subject-tag">📐 Statistics</span>
+    <span class="subject-tag">🧬 Biology</span>
+    <span class="subject-tag">🧪 Chemistry</span>
+    <span class="subject-tag">⚡ Physics</span>
+    <span class="subject-tag">🌍 Earth Science</span>
+    <span class="subject-tag">📖 English K-5</span>
+    <span class="subject-tag">📖 English 6-8</span>
+    <span class="subject-tag">📖 English 9-12</span>
+    <span class="subject-tag">📖 Writing &amp; Grammar</span>
+    <span class="subject-tag">📖 Literary Analysis</span>
+    <span class="subject-tag">🌍 World History</span>
+    <span class="subject-tag">🇺🇸 US History</span>
+    <span class="subject-tag">🏛️ Government</span>
+    <span class="subject-tag">🌎 Geography</span>
+    <span class="subject-tag">🇰🇷 Korean</span>
+    <span class="subject-tag">🇪🇸 Spanish</span>
+    <span class="subject-tag">📝 SAT Prep</span>
+    <span class="subject-tag">📝 ACT Prep</span>
+    <span class="subject-tag">📝 PSAT Prep</span>
+    <span class="subject-tag">📚 Preschool (ABCs, 123s)</span>
+    <span class="subject-tag">📚 Kindergarten</span>
+    <span class="subject-tag">📚 1st-5th Grade Core</span>
+    <span class="subject-tag">📚 6th-8th Grade Core</span>
+    <span class="subject-tag">📚 9th Grade Core</span>
+    <span class="subject-tag">📚 10th Grade Core</span>
+    <span class="subject-tag">📚 11th Grade Core</span>
+    <span class="subject-tag">📚 12th Grade Core</span>
+    <span class="subject-tag">📋 Reading &amp; Phonics</span>
+    <span class="subject-tag">🎯 AP Biology</span>
+    <span class="subject-tag">🎯 AP Chemistry</span>
+    <span class="subject-tag">🎯 AP Physics</span>
+    <span class="subject-tag">🎯 AP Calculus</span>
+    <span class="subject-tag">🎯 AP US History</span>
+    <span class="subject-tag">🎯 AP English</span>
+    <span class="subject-tag">💼 Series 7</span>
+    <span class="subject-tag">💼 Series 66</span>
+    <span class="subject-tag">💼 RN / NCLEX</span>
+  </div>
+
+  </div>
+</section>
+
+<section class="slide pricing" id="s4" >
+  <div class="slide-inner">
+
+  <div class="pricing-card">
+    <div class="amount">$100 <span>/ month</span></div>
+    <ul>
+      <li>Unlimited quizzes — every subject</li>
+      <li>Live scoreboard &amp; progress tracking</li>
+      <li>Adaptive difficulty (adjusts to your level)</li>
+      <li>Auto-subject rotation for balanced learning</li>
+      <li>Detailed answer explanations</li>
+      <li>New: grade-specific prep tracks</li>
+    </ul>
+    <a href="/pay" class="btn btn-primary">Subscribe Now →</a>
+  </div>
+
+  </div>
+</section>
+
+<section class="slide faq" id="s5" >
+  <div class="slide-inner">
+
+  <h2>FAQs</h2>
+  <div class="faq-item">
+    <div class="q">Does it replace a human tutor?</div>
+    <div class="a">Think of it as a tireless practice partner. Great for daily drills, homework help, and test prep. Best combined with human instruction for concepts that need hands-on guidance.</div>
+  </div>
+  <div class="faq-item">
+    <div class="q">How do quizzes work?</div>
+    <div class="a">33 questions per session, auto-selected from all your subjects. The AI mixes topics each question so you don't get bored or tunnel-vision on one area. Difficulty adapts based on your last 3 answers.</div>
+  </div>
+  <div class="faq-item">
+    <div class="q">How do I track progress?</div>
+    <div class="a">The dashboard shows today's score, monthly totals, streaks, and focus time. Each student gets their own login — great for multiple kids in the same family.</div>
+  </div>
+  <div class="faq-item">
+    <div class="q">Can I cancel anytime?</div>
+    <div class="a">Yes. $100/month, no contract, cancel anytime via chat.</div>
+  </div>
+  <div class="faq-item">
+    <div class="q">What grades is this for?</div>
+    <div class="a">9th–12th grade core subjects. We also have SAT prep and specific grade-level tracks (9th and 11th currently).</div>
+  </div>
+
+  </div>
+</section>
+
+<section class="slide cta-section" id="s6" >
+  <div class="slide-inner">
+
+  <h2>Ready to Try It?</h2>
+  <p>First session is free — no credit card needed. Log in and start a quiz right now.</p>
+  <div class="hero-actions">
+    <a href="/tutor" class="btn btn-primary">Log In &amp; Start →</a>
+    <a href="/products" class="btn btn-outline">← Back to Products</a>
+  </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="copy">RoyceAI Solutions. Irvine, CA</div>
+  <div class="links">
+    <a href="/products">Products</a>
+    <a href="/tutor">Tutor</a>
+    <a href="/my">Dashboard</a>
+    
+    
+  </div>
+</footer>
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
 
 <script>
 (function(){
@@ -517,5 +383,80 @@ setInterval(function(){
 })();
 </script>
 
-</body>
-</html>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  if(slides.length<2)return;
+  var counter=document.getElementById('dcCounter');
+  var bar=document.getElementById('deckProgressBar');
+  var dotsWrap=document.getElementById('dcDots');
+  var current=0;
+
+  slides.forEach(function(s,i){
+    var d=document.createElement('button');
+    d.className='dc-dot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    d.addEventListener('click',function(){go(i);});
+    dotsWrap.appendChild(d);
+  });
+  var dots=[].slice.call(dotsWrap.children);
+
+  function go(i){
+    if(i<0||i>=slides.length)return;
+    current=i;
+    slides.forEach(function(s,j){s.classList.toggle('active',j===i);});
+    counter.textContent=(i+1)+' / '+slides.length;
+    dots.forEach(function(d,j){d.classList.toggle('active',j===i);});
+    bar.style.width=((i+1)/slides.length*100)+'%';
+    var active=slides[i];
+    if(active.scrollTop)active.scrollTop=0;
+    active.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el){
+      el.classList.add('visible');
+    });
+  }
+  document.getElementById('dcNext').addEventListener('click',function(){go(current+1);});
+  document.getElementById('dcPrev').addEventListener('click',function(){go(current-1);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(current+1);}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(current-1);}
+    if(e.key==='Home'){e.preventDefault();go(0);}
+    if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    if(e.key===' '&&e.target===document.body){e.preventDefault();go(current+1);}
+  });
+  var lastWheel=0;
+  window.addEventListener('wheel',function(e){
+    var now=Date.now();
+    if(now-lastWheel<800)return;
+    if(Math.abs(e.deltaY)<8)return;
+    var active=slides[current];
+    var canScroll=active.scrollHeight>active.clientHeight+4;
+    var atTop=active.scrollTop<=2;
+    var atBottom=active.scrollTop+active.clientHeight>=active.scrollHeight-2;
+    if(canScroll){
+      if(e.deltaY>0&&!atBottom)return;
+      if(e.deltaY<0&&!atTop)return;
+    }
+    if(e.deltaY>0){go(current+1);}else{go(current-1);}
+    lastWheel=now;
+  },{passive:true});
+  var tsx=null,tsy=null;
+  document.addEventListener('touchstart',function(e){tsx=e.touches[0].clientX;tsy=e.touches[0].clientY;},{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(tsx===null)return;
+    var dx=e.changedTouches[0].clientX-tsx;
+    var dy=e.changedTouches[0].clientY-tsy;
+    tsx=null;tsy=null;
+    if(Math.abs(dx)<50&&Math.abs(dy)<50)return;
+    var active=slides[current];
+    var canScroll=active.scrollHeight>active.clientHeight+4;
+    var atTop=active.scrollTop<=2;
+    var atBottom=active.scrollTop+active.clientHeight>=active.scrollHeight-2;
+    if(dy<0||dx<0){if(!canScroll||atBottom)go(current+1);}
+    else{if(!canScroll||atTop)go(current-1);}
+  },{passive:true});
+  go(0);
+})();
+</script>
+
+</body></html>
