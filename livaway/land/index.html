@@ -98,6 +98,9 @@ body.deck-single .slide.active{transform:none;z-index:auto}
 body.deck-single .slide.hero{padding:3.5rem 1.5rem 1.5rem}
 body.deck-single .slide-inner{width:100%;max-width:920px;margin:0 auto}
 body.deck-single .deck-controls,body.deck-single .dc-dots,body.deck-single .deck-progress{display:none!important}
+
+/* deck-fmt guard: inactive slides must never paint over the active one */
+.slide:not(.active){display:none!important}
 </style>
 </head>
 <body class="deck-single">
