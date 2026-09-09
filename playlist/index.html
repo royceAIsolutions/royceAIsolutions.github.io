@@ -152,7 +152,6 @@ footer .links a:hover{color:var(--accent)}
 
 <div class="wrap">
   <div class="toolbar">
-    <div class="meta" id="listMeta"></div>
     <div class="sorts" id="catRow">
       <button class="sortbtn on" data-cat="all">All <span class="cnt"></span></button>
       <button class="sortbtn" data-cat="ibiza">🏝️ Ibiza House <span class="cnt"></span></button>
@@ -245,7 +244,7 @@ footer .links a:hover{color:var(--accent)}
         '<div class="cbody"><a class="ctitle" href="https://www.youtube.com/watch?v='+v.id+'" target="_blank" rel="noopener">'+esc(v.title)+'</a>'+
         '<div class="cmeta"><span>'+esc(v.channel)+' · '+v.year+'</span><span class="cviews">'+fmtViews(v.views)+'</span></div></div></div>';
     }).join('');
-    document.getElementById('listMeta').textContent=DATA.length+' mixes · total watch time '+fmtDur(DATA.reduce(function(s,v){return s+v.dur;},0))+' · YouTube only';
+    },0))+' · YouTube only';
   }
   document.querySelectorAll('#catRow .sortbtn').forEach(function(b){
     b.addEventListener('click',function(){
