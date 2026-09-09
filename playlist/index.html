@@ -269,7 +269,7 @@ footer .links a:hover{color:var(--accent)}
     });
   });
   ['all','ibiza','rnb','hiphop'].forEach(function(c){
-    var n=DATA.filter(function(v){return v.cat===c;}).length;
+    var n=(c==='all')?DATA.length:DATA.filter(function(v){return v.cat===c;}).length;
     var el=document.querySelector('#catRow [data-cat='+c+'] .cnt');
     if(el)el.textContent='('+n+')';
   });
