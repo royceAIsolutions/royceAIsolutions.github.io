@@ -3,6 +3,16 @@
 (function () {
   'use strict';
   var API = 'https://advisory-strong-planes-display.trycloudflare.com';
+  // Self-locating API: read the published endpoint file (rewritten whenever the tunnel
+  // rotates). The hardcoded URL above is only a fallback - a stale value can no longer
+  // silently kill chat because this always wins once it loads.
+  try {
+    fetch('/jlr-chat-endpoint.json?ts=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { if (j && j.api) { API = String(j.api).replace(/\/$/, ''); } })
+      .catch(function () {});
+  } catch (e) {}
+
   var AUTH_KEY = 'jlr_chat_pin_hash';
   var HIST_KEY = 'jlr_chat_history';
   var AUTH_TTL = 30 * 24 * 3600 * 1000; // 30 days
