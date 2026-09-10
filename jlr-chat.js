@@ -59,7 +59,7 @@
     '#jlr-input input:focus{border-color:#00a651}',
     '#jlr-send{width:40px;height:40px;border-radius:10px;border:none;background:#00a651;color:#fff;font-size:16px;cursor:pointer;flex-shrink:0}',
     '#jlr-send:disabled{opacity:.4}',
-    '@media(max-width:480px){#jlr-panel{width:calc(100vw - 12px);right:6px;bottom:86px;max-height:calc(100vh - 96px)}#jlr-btn{width:52px;height:52px;font-size:22px;right:16px;bottom:16px}}'
+    '@media(max-width:480px){#jlr-panel{width:calc(100vw - 12px);right:6px;bottom:calc(104px + env(safe-area-inset-bottom));max-height:calc(100vh - 124px)}#jlr-btn{width:56px;height:56px;font-size:24px;right:14px;bottom:calc(34px + env(safe-area-inset-bottom))}}'
   ].join('');
   document.head.appendChild(S);
 
