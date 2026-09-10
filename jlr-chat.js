@@ -3,15 +3,29 @@
 (function () {
   'use strict';
   var API = 'https://advisory-strong-planes-display.trycloudflare.com';
-  // Self-locating API: read the published endpoint file (rewritten whenever the tunnel
-  // rotates). The hardcoded URL above is only a fallback - a stale value can no longer
-  // silently kill chat because this always wins once it loads.
-  try {
-    fetch('/jlr-chat-endpoint.json?ts=' + Date.now(), { cache: 'no-store' })
+  // Self-locating + self-healing API: the endpoint file is rewritten whenever the
+  // tunnel rotates, and every send re-verifies the bridge before posting - so a stale
+  // URL self-corrects instead of silently showing "offline".
+  var API_FALLBACK = API;
+  function resolveApi() {
+    var cands = [];
+    return fetch('/jlr-chat-endpoint.json?ts=' + Date.now(), { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (j) { if (j && j.api) { API = String(j.api).replace(/\/$/, ''); } })
-      .catch(function () {});
-  } catch (e) {}
+      .then(function (j) { if (j && j.api) { cands.push(String(j.api).replace(/\/$/, '')); } })
+      .catch(function () {})
+      .then(function () {
+        if (cands.indexOf(API_FALLBACK) < 0) { cands.push(API_FALLBACK); }
+        return cands.reduce(function (chain, c) {
+          return chain.then(function (ok) {
+            if (ok) { return true; }
+            return fetch(c + '/health', { cache: 'no-store' })
+              .then(function (h) { if (h.ok) { API = c; return true; } return false; })
+              .catch(function () { return false; });
+          });
+        }, Promise.resolve(false));
+      });
+  }
+  resolveApi();
 
   var AUTH_KEY = 'jlr_chat_pin_hash';
   var HIST_KEY = 'jlr_chat_history';
@@ -166,6 +180,19 @@
     inEl.disabled = on;
   }
 
+  function postChat(pin, msg, h) {
+    var opts = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ pin_hash: pin, message: msg, history: h })
+    };
+    return fetch(API + '/chat', opts).then(function (r) {
+      if (r.ok || r.status === 401 || r.status === 429) { return r; }
+      // tunnel likely rotated - re-resolve and retry once before giving up
+      return resolveApi().then(function (ok) { return ok ? fetch(API + '/chat', opts) : r; });
+    });
+  }
+
   function send() {
     var msg = inEl.value.trim();
     if (!msg || sendBtn.disabled) return;
@@ -178,11 +205,7 @@
     saveHist(hist);
     inEl.value = '';
     busy(true);
-    fetch(API + '/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ pin_hash: pin, message: msg, history: h })
-    }).then(function (r) {
+    resolveApi().then(function () { return postChat(pin, msg, h); }).then(function (r) {
       if (r.status === 401) {
         localStorage.removeItem(AUTH_KEY);
         busy(false);
@@ -215,7 +238,12 @@
             if (tries < POLL_MAX) { setTimeout(poll, POLL_MS); } else { busy(false); addMsg('sys', 'Timed out — try again.'); }
           });
       })();
-    }).catch(function () { busy(false); });
+    }).catch(function (e) {
+      busy(false);
+      if (e && /fetch|network|load failed/i.test(String(e.message || ''))) {
+        addMsg('sys', 'Chat is offline right now — try again in a bit.');
+      }
+    });
   }
 
   B.addEventListener('click', function () { P.classList.contains('open') ? P.classList.remove('open') : openPanel(); });
@@ -225,7 +253,9 @@
     if (!v) return;
     sha256(v).then(function (h) {
       // Verify against the bridge before trusting it (no agent run fired)
-      return fetch(API + '/auth?pin=' + encodeURIComponent(h), { method: 'GET' }).then(function (r) {
+      return resolveApi().then(function (ok) {
+       if (!ok) { pinErr.textContent = 'Chat is offline — try again in a bit.'; pinErr.style.display = 'block'; throw new Error('offline'); }
+       return fetch(API + '/auth?pin=' + encodeURIComponent(h), { method: 'GET' }).then(function (r) {
         if (r.status === 401) { pinErr.style.display = 'block'; pinIn.value = ''; throw new Error('badpin'); }
         if (!r.ok) { pinErr.textContent = 'Chat is offline — try again in a bit.'; pinErr.style.display = 'block'; throw new Error('offline'); }
         savePin(h);
@@ -234,6 +264,7 @@
         pinIn.value = '';
         showChat();
       }).catch(function (e) { if (e.message !== 'badpin') { pinErr.textContent = 'Chat is offline — try again in a bit.'; pinErr.style.display = 'block'; } });
+      });
     });
   });
   pinIn.addEventListener('keydown', function (e) { if (e.key === 'Enter') document.getElementById('jlr-pin-go').click(); });
