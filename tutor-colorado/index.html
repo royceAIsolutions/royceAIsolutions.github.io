@@ -133,6 +133,16 @@ body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right
 
 /* deck-fmt guard: inactive slides must never paint over the active one */
 .slide:not(.active){display:none!important}
+
+/* Tag-row + CTA spacing fix (Sep 9 2026): .rrow was scoped .co .rrow — hero row had no flex/gap/margin */
+.rrow{display:flex;flex-wrap:wrap;gap:10px;row-gap:12px;margin-top:28px;align-items:center}
+.subject-tag{white-space:nowrap}
+.hero-actions{gap:14px;row-gap:14px;margin-bottom:4px}
+@media(max-width:560px){
+  .hero-actions{flex-direction:column;width:100%;max-width:360px;margin-left:auto;margin-right:auto}
+  .hero-actions .btn{width:100%;justify-content:center}
+  .rrow{gap:8px;row-gap:10px;margin-top:22px;justify-content:center}
+}
 </style></head><body>
 <div class="orb orb-1"></div><div class="orb orb-2"></div>
 <nav>
@@ -187,6 +197,7 @@ body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right
 .co .kind.priv{color:#ffd166;background:rgba(255,209,102,0.08)}
 .co .note{color:var(--text-muted);font-size:0.78rem;text-align:left;margin-top:10px}
 .co .rrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;justify-content:flex-start}
+
 </style>
 <section class="slide active hero">
   <div class="slide-inner">
