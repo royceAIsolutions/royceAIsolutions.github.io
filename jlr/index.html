@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JLR Newport Beach Inventory — RoyceAI</title>
-<meta name="description" content="Live JLR Newport Beach vehicle inventory — new Range Rover, Defender, Velar, and Jaguar F-PACE. Prices, mileage, VIN, and stock numbers. Updated daily.">
+<meta name="description" content="Live JLR Newport Beach vehicle inventory — new Range Rover, Defender, Velar, Discovery, and Jaguar plus certified pre-owned. Real stock, VIN, price, and mileage. Updated daily.">
 <link rel="canonical" href="https://royceai.com/jlr/">
 <style>
 :root{
@@ -28,10 +28,10 @@ a:hover{color:var(--accent)}
 .orb-1{width:600px;height:600px;background:rgba(0,166,81,0.10);top:-300px;right:-200px}
 .orb-2{width:500px;height:500px;background:rgba(0,166,81,0.06);bottom:-250px;left:-150px}
 nav{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;max-width:var(--max-w);margin:0 auto;padding:0 24px;position:relative;z-index:2}
-.nav-logo{font-size:1.15rem;font-weight:700;color:var(--text)}
+.nav-logo{display:flex;align-items:center;font-size:1.15rem;font-weight:700;color:var(--text)}
 .nav-logo span{color:var(--accent-light)}
 .nav-links{display:flex;align-items:center;gap:4px}
-.nav-links a{color:var(--text-secondary);font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a{color:var(--text-secondary);font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s;text-decoration:none}
 .nav-links a:hover{color:var(--text);background:var(--accent-bg)}
 .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px!important;border-radius:8px}
 .hero{max-width:var(--max-w);margin:0 auto;padding:60px 24px 30px;text-align:center}
@@ -39,6 +39,7 @@ nav{height:var(--nav-h);display:flex;align-items:center;justify-content:space-be
 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
 @keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .hero p{color:var(--text-secondary);margin-top:12px;font-size:1.05rem}
+.hero .sub{color:var(--text-muted);margin-top:6px;font-size:0.9rem}
 .controls{max-width:var(--max-w);margin:0 auto;padding:0 24px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .controls select,.controls input{background-color:var(--bg-elevated);border:1.5px solid var(--accent);color:var(--text);padding:9px 14px;border-radius:var(--radius-sm);font-size:0.9rem;outline:none;transition:border-color .15s,box-shadow .15s}
 .controls select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2300a651'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
@@ -49,22 +50,24 @@ nav{height:var(--nav-h);display:flex;align-items:center;justify-content:space-be
 .grid{max-width:var(--max-w);margin:0 auto;padding:0 24px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
 .card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all 0.3s;display:flex;flex-direction:column;gap:8px}
 .card:hover{border-color:var(--border-hover);transform:translateY(-3px);box-shadow:var(--shadow-card)}
-.card-top{display:flex;gap:8px;flex-wrap:wrap}
+.card-top{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .card h3{font-size:1rem;font-weight:600;color:var(--text)}
 .card .meta{color:var(--text-muted);font-size:0.88rem;line-height:1.6}
 .card .meta .paint{color:var(--text-secondary);font-size:0.8rem}
 .card .price{font-size:1.3rem;font-weight:700;color:var(--accent-light)}
+.msrp{font-size:0.82rem;color:var(--text-muted)}
+.msrp{background:rgba(251,191,36,0.08);border:1px dashed rgba(251,191,36,0.25);border-radius:8px;padding:6px 10px}
 .badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:0.72rem;font-weight:600}
 .badge-model{background:var(--accent-bg);color:var(--accent-light)}
 .badge-qty{background:rgba(251,191,36,0.12);color:#fbbf24}
-.card .opts{margin-top:auto;font-size:0.82rem;color:var(--text-muted);border-top:1px dashed var(--border);padding-top:10px}
-.card .opts summary{cursor:pointer;color:var(--accent-light);font-weight:600;user-select:none;list-style:none;font-size:0.85rem}
-.card .opts summary::before{content:'▸ '}
-.card .opts[open] summary::before{content:'▾ '}
-.card .opts ul{display:grid;grid-template-columns:1fr 1fr;gap:3px 12px;margin:8px 0 0;padding:0 0 0 2px;list-style:none}
-.card .opts li{color:var(--text-secondary);line-height:1.45}
+.badge-new{background:rgba(0,166,81,0.18);color:#6fe3a5}
+.badge-cpo{background:rgba(59,130,246,0.18);color:#93c5fd}
+.badge-used{background:rgba(148,163,184,0.16);color:#cbd5e1}
+.badge-transit{background:rgba(251,191,36,0.14);color:#fcd34d}
+.badge-stock{background:rgba(0,166,81,0.14);color:#6fe3a5}
 .cta{display:block;text-align:center;background:var(--accent);color:#fff!important;font-weight:600;padding:10px 16px;border-radius:10px;margin-top:6px;transition:background .15s}
 .cta:hover{background:var(--accent-dark)}
+.cta2{display:block;text-align:center;color:var(--text-secondary);font-size:0.85rem;padding:4px 16px}
 .empty{max-width:var(--max-w);margin:0 auto;padding:60px 24px;text-align:center;color:var(--text-muted)}
 footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--text-muted);font-size:0.85rem}
 footer .links a{margin:0 10px}
@@ -82,7 +85,7 @@ footer .links a{margin:0 10px}
 .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
 .mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
 @media(max-width:1099px){
-  nav{z-index:1001;flex-direction:row;flex-wrap:nowrap;height:var(--nav-h);background:var(--bg)}
+  nav{z-index:1001;background:var(--bg)}
   .nav-links{width:auto;margin-left:auto;justify-content:flex-end}
   .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}
   .nav-logo{width:auto;justify-content:flex-start}
@@ -99,12 +102,11 @@ footer .links a{margin:0 10px}
 <body>
 <div class="orb orb-1"></div><div class="orb orb-2"></div>
 <nav>
-  <a href="/" class="nav-logo"><span>Royce</span>AI</a>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px" alt="R"> Royce<span>AI</span></a>
   <div class="nav-links">
     <a href="/products">Products</a>
     <span id="navLoginBtn"></span>
     <a href="/subscribe">Subscribe</a>
-    <a href="/jlr" class="nav-drawer-only" style="color:var(--accent-light);font-weight:600">🚗 JLR</a>
     <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
     <a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a>
     <a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
@@ -114,8 +116,16 @@ footer .links a{margin:0 10px}
     <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
     <a href="/livaway" class="nav-drawer-only">🏨 LivAway</a>
     <a href="/cody" class="nav-drawer-only">🔦 Blacklight CX</a>
-    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
+    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
+    <a href="/bellevue" class="nav-drawer-only">🏙️ Bellevue Condos</a>
+    <a href="/empower" class="nav-drawer-only">📸 Empower</a>
+    <a href="/wetrustrealty" class="nav-drawer-only">🏢 WeTrust Realty</a>
+    <a href="/sunny-hills" class="nav-drawer-only">🏥 Sunny Hills</a>
+    <a href="/neil" class="nav-drawer-only">🔌 Neil Okun</a>
     <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
     <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -125,100 +135,72 @@ footer .links a{margin:0 10px}
 
 <section class="hero">
   <h1>JLR Newport Beach <span class="gradient">Inventory</span></h1>
-  <p>New arrivals · updated 2026-09-11 07:00 PT · 5 vehicles in stock</p>
+  <p>New, pre-owned &amp; certified at Land Rover Newport Beach · 1540 Jamboree Rd, Newport Beach, CA</p>
+  <p class="sub">Updated 2026-09-11 07:55 PT · feed Sep 11, 2026 · 6 vehicles live (6 new · 0 pre-owned · 0 certified)</p>
 </section>
 
 <div class="controls">
-  <span class="stat" id="count">5 vehicles</span>
-  <label>Brand
-    <select id="fBrand"><option value="">All</option><option value="defender">Defender</option><option value="jaguar">Jaguar</option><option value="range rover">Range Rover</option></select>
-  </label>
-  <label>Sort
-    <select id="fSort">
-      <option value="price">Price ↑</option>
-      <option value="price-desc">Price ↓</option>
-      <option value="year">Year (newest)</option>
-      <option value="model">Model A→Z</option>
-    </select>
-  </label>
+  <span class="stat" id="count">6 vehicles</span>
+  <label>Brand <select id="fBrand"><option value="">All</option><option value="Land Rover">Land Rover</option></select></label>
+  <label>Condition <select id="fCond">
+    <option value="">All</option><option value="new">New</option>
+    <option value="used">Used</option><option value="certified">Certified</option>
+  </select></label>
+  <label>Sort <select id="fSort">
+    <option value="price">Price ↑</option><option value="price-desc">Price ↓</option>
+    <option value="year">Year (newest)</option><option value="model">Model A→Z</option>
+  </select></label>
   <button id="fReset" class="btn-reset" type="button">✕ Reset</button>
 </div>
 
 <div class="grid" id="grid">
-
-  <div class="card" data-brand="range rover" data-price="124500">
-    <div class="card-top">
-      <span class="badge badge-model">🚙 Range Rover</span>
-      <span class="badge badge-qty">Stock #123456</span>
-    </div>
-    <h3>2026 Range Rover Sport Autobiography</h3>
-    <div class="meta">
-      <div>Santorini Black</div>
-      <div class="paint">12 miles · VIN SALWR2RU3RA123456</div>
-    </div>
-    <div class="price">$124,500</div>
-    <details class="opts"><summary>Features</summary><ul><li>Leather seating surfaces</li><li>Heated and ventilated front seats</li><li>Panoramic roof</li><li>Navigation system</li><li>Blind spot monitoring</li><li>Apple CarPlay / Android Auto</li><li>Wireless charging</li><li>Premium audio system</li><li>Adaptive cruise control</li><li>360-degree camera</li></ul></details>
-    <a class="cta" href="tel:+19495550123">📞 Call (949) 555-0123</a>
+<div class="card" data-brand="Land Rover" data-cond="new" data-price="87561.0" data-year="2026">
+    <div class="card-top"><span class="badge badge-model">🚗 Land Rover</span><span class="badge-new">🆕 NEW</span><span class="badge badge-stock">✓ In stock</span><span class="badge badge-qty">Stock #T2641277</span></div>
+    <h3>2026 Defender 110 X-Dynamic SE</h3>
+    <div class="meta"><div>Fuji White · Caraway Perf Wdsr Wdsr w Caraw interior</div><div class="paint">NEW · VIN 641277</div></div>
+    <div class="price">$87,561</div>
+    
+    <a class="cta" href="https://www.landrovernewportbeach.com/new/Land-Rover/2026-Land-Rover-Defender-110-96b1b353ac18411335dfc600cb9bdb9c.htm" target="_blank" rel="noopener">View listing ↗</a><a class="cta2" href="tel:+19492748282">📞 (949) 274-8282</a>
   </div>
-
-  <div class="card" data-brand="range rover" data-price="78900">
-    <div class="card-top">
-      <span class="badge badge-model">🚙 Range Rover</span>
-      <span class="badge badge-qty">Stock #654321</span>
-    </div>
-    <h3>2026 Range Rover Velar HSE R-Dynamic</h3>
-    <div class="meta">
-      <div>Fuji White</div>
-      <div class="paint">850 miles · VIN SALZA2BU3RA654321</div>
-    </div>
-    <div class="price">$78,900</div>
-    <details class="opts"><summary>Features</summary><ul><li>Leather seating surfaces</li><li>Heated and ventilated front seats</li><li>Panoramic roof</li><li>Navigation system</li><li>Blind spot monitoring</li><li>Apple CarPlay / Android Auto</li><li>Wireless charging</li><li>Premium audio system</li><li>Adaptive cruise control</li><li>360-degree camera</li></ul></details>
-    <a class="cta" href="tel:+19495550123">📞 Call (949) 555-0123</a>
+<div class="card" data-brand="Land Rover" data-cond="new" data-price="88311.0" data-year="2026">
+    <div class="card-top"><span class="badge badge-model">🚗 Land Rover</span><span class="badge-new">🆕 NEW</span><span class="badge badge-stock">✓ In stock</span><span class="badge badge-qty">Stock #T2640044</span></div>
+    <h3>2026 Defender 110 X-Dynamic SE</h3>
+    <div class="meta"><div>Woolstone Green · Ebony Windsor Leather interior</div><div class="paint">NEW · VIN 640044</div></div>
+    <div class="price">$88,311</div>
+    
+    <a class="cta" href="https://www.landrovernewportbeach.com/new/Land-Rover/2026-Land-Rover-Defender-110-96b1d46cac1831fce06a2ee8bfa70518.htm" target="_blank" rel="noopener">View listing ↗</a><a class="cta2" href="tel:+19492748282">📞 (949) 274-8282</a>
   </div>
-
-  <div class="card" data-brand="defender" data-price="89500">
-    <div class="card-top">
-      <span class="badge badge-model">🛡️ Defender</span>
-      <span class="badge badge-qty">Stock #789012</span>
-    </div>
-    <h3>2026 Land Rover Defender 110 X-Dynamic HSE</h3>
-    <div class="meta">
-      <div>Tasman Blue</div>
-      <div class="paint">320 miles · VIN SALEA7EU3RA789012</div>
-    </div>
-    <div class="price">$89,500</div>
-    <details class="opts"><summary>Features</summary><ul><li>Leather seating surfaces</li><li>Heated and ventilated front seats</li><li>Panoramic roof</li><li>Navigation system</li><li>Blind spot monitoring</li><li>Apple CarPlay / Android Auto</li><li>Wireless charging</li><li>Premium audio system</li><li>Adaptive cruise control</li><li>360-degree camera</li></ul></details>
-    <a class="cta" href="tel:+19495550123">📞 Call (949) 555-0123</a>
+<div class="card" data-brand="Land Rover" data-cond="new" data-price="88311.0" data-year="2026">
+    <div class="card-top"><span class="badge badge-model">🚗 Land Rover</span><span class="badge-new">🆕 NEW</span><span class="badge badge-stock">✓ In stock</span><span class="badge badge-qty">Stock #T2643737</span></div>
+    <h3>2026 Defender 110 X-Dynamic SE</h3>
+    <div class="meta"><div>Borasco Grey · Ebony Windsor Leather interior</div><div class="paint">NEW · VIN 643737</div></div>
+    <div class="price">$88,311</div>
+    
+    <a class="cta" href="https://www.landrovernewportbeach.com/new/Land-Rover/2026-Land-Rover-Defender-110-96b1e07cac1822397e42545ed82072c0.htm" target="_blank" rel="noopener">View listing ↗</a><a class="cta2" href="tel:+19492748282">📞 (949) 274-8282</a>
   </div>
-
-  <div class="card" data-brand="jaguar" data-price="68900">
-    <div class="card-top">
-      <span class="badge badge-model">🐆 Jaguar</span>
-      <span class="badge badge-qty">Stock #345678</span>
-    </div>
-    <h3>2026 Jaguar F-PACE SVR</h3>
-    <div class="meta">
-      <div>Eiger Grey</div>
-      <div class="paint">1500 miles · VIN SADCP2EX3RA345678</div>
-    </div>
-    <div class="price">$68,900</div>
-    <details class="opts"><summary>Features</summary><ul><li>Leather seating surfaces</li><li>Heated and ventilated front seats</li><li>Panoramic roof</li><li>Navigation system</li><li>Blind spot monitoring</li><li>Apple CarPlay / Android Auto</li><li>Wireless charging</li><li>Premium audio system</li><li>Adaptive cruise control</li><li>360-degree camera</li></ul></details>
-    <a class="cta" href="tel:+19495550123">📞 Call (949) 555-0123</a>
+<div class="card" data-brand="Land Rover" data-cond="new" data-price="87561.0" data-year="2026">
+    <div class="card-top"><span class="badge badge-model">🚗 Land Rover</span><span class="badge-new">🆕 NEW</span><span class="badge badge-stock">✓ In stock</span><span class="badge badge-qty">Stock #T2643338</span></div>
+    <h3>2026 Defender 110 X-Dynamic SE</h3>
+    <div class="meta"><div>Fuji White · Caraway Perf Wdsr Wdsr w Caraw interior</div><div class="paint">NEW · VIN 643338</div></div>
+    <div class="price">$87,561</div>
+    
+    <a class="cta" href="https://www.landrovernewportbeach.com/new/Land-Rover/2026-Land-Rover-Defender-110-bc0dbac3ac180302593716fc8c477d09.htm" target="_blank" rel="noopener">View listing ↗</a><a class="cta2" href="tel:+19492748282">📞 (949) 274-8282</a>
   </div>
-
-  <div class="card" data-brand="range rover" data-price="154000">
-    <div class="card-top">
-      <span class="badge badge-model">🚙 Range Rover</span>
-      <span class="badge badge-qty">Stock #901234</span>
-    </div>
-    <h3>2025 Range Rover Westminster Edition</h3>
-    <div class="meta">
-      <div>Ebury Green</div>
-      <div class="paint">5200 miles · VIN SALGS3EU3RA901234</div>
-    </div>
-    <div class="price">$154,000</div>
-    <details class="opts"><summary>Features</summary><ul><li>Leather seating surfaces</li><li>Heated and ventilated front seats</li><li>Panoramic roof</li><li>Navigation system</li><li>Blind spot monitoring</li><li>Apple CarPlay / Android Auto</li><li>Wireless charging</li><li>Premium audio system</li><li>Adaptive cruise control</li><li>360-degree camera</li></ul></details>
-    <a class="cta" href="tel:+19495550123">📞 Call (949) 555-0123</a>
+<div class="card" data-brand="Land Rover" data-cond="new" data-price="86526.0" data-year="2026">
+    <div class="card-top"><span class="badge badge-model">🚗 Land Rover</span><span class="badge-new">🆕 NEW</span><span class="badge badge-stock">✓ In stock</span><span class="badge badge-qty">Stock #T2656607</span></div>
+    <h3>2026 Defender 110 X-Dynamic SE</h3>
+    <div class="meta"><div>Fuji White · Caraway Perf Wdsr Wdsr w Caraw interior</div><div class="paint">NEW · VIN 656607</div></div>
+    <div class="price">$86,526</div>
+    
+    <a class="cta" href="https://www.landrovernewportbeach.com/new/Land-Rover/2026-Land-Rover-Defender-110-d9a2f416ac181d6fce3c741c1fe2061f.htm" target="_blank" rel="noopener">View listing ↗</a><a class="cta2" href="tel:+19492748282">📞 (949) 274-8282</a>
+  </div>
+<div class="card" data-brand="Land Rover" data-cond="new" data-price="70651.0" data-year="2026">
+    <div class="card-top"><span class="badge badge-model">🚗 Land Rover</span><span class="badge-new">🆕 NEW</span><span class="badge badge-stock">✓ In stock</span><span class="badge badge-qty">Stock #T2638453</span></div>
+    <h3>2026 Defender 110 S</h3>
+    <div class="meta"><div>Santorini Black · Ebony Resist Ebony interior</div><div class="paint">NEW · VIN 638453</div></div>
+    <div class="price">$70,651</div>
+    
+    <a class="cta" href="https://www.landrovernewportbeach.com/new/Land-Rover/2026-Land-Rover-Defender-110-50095de6ac18494f4214ccecaf0039cb.htm" target="_blank" rel="noopener">View listing ↗</a><a class="cta2" href="tel:+19492748282">📞 (949) 274-8282</a>
   </div>
 </div>
 
@@ -234,18 +216,20 @@ footer .links a{margin:0 10px}
   var grid=document.getElementById('grid');
   var cards=[].slice.call(grid.querySelectorAll('.card'));
   var fBrand=document.getElementById('fBrand');
+  var fCond=document.getElementById('fCond');
   var fSort=document.getElementById('fSort');
   var count=document.getElementById('count');
   function apply(){
-    var brand=fBrand.value;
-    var sort=fSort.value;
+    var brand=fBrand.value, cond=fCond.value, sort=fSort.value;
     var rows=cards.filter(function(c){
-      return !brand||c.getAttribute('data-brand')===brand;
+      if(brand&&c.getAttribute('data-brand')!==brand)return false;
+      if(cond&&c.getAttribute('data-cond')!==cond)return false;
+      return true;
     });
     var key=function(c){
       if(sort==='price')return parseInt(c.getAttribute('data-price')||'0',10)||1e12;
       if(sort==='price-desc')return -(parseInt(c.getAttribute('data-price')||'0',10)||-1e12);
-      if(sort==='year')return -parseInt(c.querySelector('h3').textContent,10);
+      if(sort==='year')return -parseInt(c.getAttribute('data-year')||'0',10);
       return c.querySelector('h3').textContent.toLowerCase();
     };
     rows.sort(function(a,b){var ka=key(a),kb=key(b);return ka<kb?-1:ka>kb?1:0;});
@@ -254,9 +238,10 @@ footer .links a{margin:0 10px}
     count.textContent=rows.length+' vehicle'+(rows.length===1?'':'s');
   }
   fBrand.addEventListener('change',apply);
+  fCond.addEventListener('change',apply);
   fSort.addEventListener('change',apply);
   document.getElementById('fReset').addEventListener('click',function(){
-    fBrand.value='';fSort.value='price';apply();
+    fBrand.value='';fCond.value='';fSort.value='price';apply();
   });
   apply();
 })();
@@ -270,7 +255,7 @@ footer .links a{margin:0 10px}
     var backdrop=document.getElementById('mobileMenuBackdrop');
     var links=document.querySelector('.nav-links');
     if(menu.children.length===0&&links){
-      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){menu.appendChild(a.cloneNode(true));});
+      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;if(a.classList.contains('nav-cta'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;menu.appendChild(a.cloneNode(true));});
     }
     var p=location.pathname;
     if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
