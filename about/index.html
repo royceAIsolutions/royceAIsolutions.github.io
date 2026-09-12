@@ -125,46 +125,6 @@ footer .links{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center}
 footer .links a{color:var(--text-secondary);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
 footer .links a:hover{color:var(--text)}
 footer .copy{color:var(--text-muted);font-size:0.8rem}
-/* ===== Bot Widget ===== */
-.bot-fab{position:fixed;bottom:24px;right:24px;z-index:2000;width:60px;height:60px;border-radius:50%;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 3s ease-in-out infinite,pulse-glow 2.5s ease-in-out infinite;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 8px 30px rgba(124,92,252,0.4);transition:transform 0.3s}
-.bot-fab:hover{transform:scale(1.1)}
-.bot-panel{position:fixed;bottom:96px;right:24px;z-index:2001;width:370px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 120px);background:var(--bg-elevated);border:1px solid var(--border-hover);border-radius:20px;box-shadow:var(--shadow-elevated);display:none;flex-direction:column;overflow:hidden;animation:pop-in 0.3s cubic-bezier(0.16,1,0.3,1)}
-.bot-panel.open{display:flex}
-.bot-head{background:linear-gradient(135deg,rgba(124,92,252,0.18),rgba(168,85,247,0.1));border-bottom:1px solid var(--border);padding:16px 18px;display:flex;align-items:center;gap:12px}
-.bot-avatar{width:40px;height:40px;border-radius:12px;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 4s ease-in-out infinite;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:0.9rem}
-.bot-head h3{font-size:0.95rem;font-weight:700}
-.bot-head p{font-size:0.75rem;color:var(--text-secondary)}
-.bot-close{margin-left:auto;background:none;border:none;color:var(--text-secondary);font-size:1.3rem;cursor:pointer;padding:4px 8px;border-radius:8px;transition:all 0.2s}
-.bot-close:hover{color:var(--text);background:var(--accent-bg)}
-.bot-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
-.bot-msgs::-webkit-scrollbar{width:5px}
-.bot-msgs::-webkit-scrollbar-thumb{background:rgba(124,92,252,0.3);border-radius:3px}
-.msg{max-width:82%;padding:10px 14px;border-radius:14px;font-size:0.85rem;line-height:1.55;animation:pop-in 0.25s ease-out}
-.msg.bot{background:var(--bg-card);border:1px solid var(--border);color:var(--text);border-bottom-left-radius:4px;align-self:flex-start}
-.msg.user{background:var(--accent);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
-.msg .qb{display:block;margin-top:10px}
-.bot-quick{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 10px}
-.bot-quick button{background:var(--accent-bg);border:1px solid rgba(124,92,252,0.3);color:var(--accent-light);font-size:0.78rem;font-weight:600;padding:7px 12px;border-radius:100px;cursor:pointer;transition:all 0.2s}
-.bot-quick button:hover{background:rgba(124,92,252,0.2);color:var(--text)}
-.bot-in{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--border)}
-.bot-in input{flex:1;background:var(--bg-card);border:1px solid var(--border-hover);border-radius:10px;padding:11px 14px;color:var(--text);font-size:0.85rem;outline:none;font-family:var(--font)}
-.bot-in input:focus{border-color:var(--accent)}
-.bot-in button{background:var(--accent);border:none;border-radius:10px;padding:0 16px;color:#fff;font-weight:700;cursor:pointer;transition:all 0.2s}
-.bot-in button:hover{background:var(--accent-light)}
-.bot-form{padding:16px;display:flex;flex-direction:column;gap:12px;overflow-y:auto}
-.bot-form label{font-size:0.8rem;font-weight:600;color:var(--text-secondary)}
-.bot-form input{background:var(--bg-card);border:1px solid var(--border-hover);border-radius:10px;padding:11px 14px;color:var(--text);font-size:0.85rem;outline:none;font-family:var(--font);width:100%}
-.bot-form input:focus{border-color:var(--accent)}
-.bot-form .err{color:#f87171;font-size:0.75rem;display:none}
-.bot-form .group.invalid input{border-color:#ef4444}
-.bot-form .group.invalid .err{display:block}
-.bot-form button{background:var(--accent);border:none;border-radius:12px;padding:13px;color:#fff;font-weight:700;font-size:0.9rem;cursor:pointer;transition:all 0.2s}
-.bot-form button:hover{background:var(--accent-light)}
-.bot-note{font-size:0.72rem;color:var(--text-muted);text-align:center}
-.bot-typing{display:inline-flex;gap:4px;padding:4px 2px}
-.bot-typing i{width:6px;height:6px;border-radius:50%;background:var(--text-muted);animation:breathe 1s ease-in-out infinite}
-.bot-typing i:nth-child(2){animation-delay:0.2s}
-.bot-typing i:nth-child(3){animation-delay:0.4s}
 @media(max-width:640px){
   .hero-sub{padding:calc(60px + var(--nav-h)) 20px 40px}
   .section{padding:50px 20px}
@@ -209,7 +169,6 @@ nav{z-index:1001;background:var(--bg)}
     <a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a>
     <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
     <a href="/livaway" class="nav-drawer-only">🏨 LivAway</a>
-    <a href="/cody" class="nav-drawer-only">🔦 Blacklight CX</a>
     <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
     <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
     <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
@@ -288,126 +247,6 @@ nav{z-index:1001;background:var(--bg)}
   <div class="copy">RoyceAI Solutions. Irvine, CA</div>
 </footer>
 
-<!-- ===== Blacklight CX Consulting Bot ===== -->
-<button class="bot-fab" id="botFab" aria-label="Chat with Cody's bot">🔦</button>
-<div class="bot-panel" id="botPanel">
-  <div class="bot-head">
-    <div class="bot-avatar">🔦</div>
-    <div>
-      <h3>Blacklight CX Bot</h3>
-      <p>Free CX diagnostic · replies instantly</p>
-    </div>
-    <button class="bot-close" id="botClose" aria-label="Close">×</button>
-  </div>
-  <div class="bot-msgs" id="botMsgs"></div>
-  <div class="bot-quick" id="botQuick">
-    <button data-q="what">🔦 What is Blacklight CX?</button>
-    <button data-q="diagnostic">🎯 Free diagnostic</button>
-    <button data-q="services">🧰 Services</button>
-    <button data-q="book">📅 Book a call</button>
-  </div>
-  <div class="bot-in" id="botIn">
-    <input type="text" id="botInput" placeholder="Ask about Blacklight CX..." autocomplete="off">
-    <button id="botSend">➤</button>
-  </div>
-</div>
-
-<script>
-(function(){
-  'use strict';
-  var panel=document.getElementById('botPanel'),fab=document.getElementById('botFab'),
-      msgs=document.getElementById('botMsgs'),quick=document.getElementById('botQuick'),
-      input=document.getElementById('botInput'),send=document.getElementById('botSend'),
-      inBar=document.getElementById('botIn'),form=null,lead=null;
-
-  function openPanel(){panel.classList.add('open');if(!lead&&!form){showLeadGate();}else if(lead&&!msgs.dataset.welcomed){welcome();}}
-  function closePanel(){panel.classList.remove('open');}
-  fab.addEventListener('click',openPanel);
-  document.getElementById('botClose').addEventListener('click',closePanel);
-  document.querySelectorAll('.open-bot').forEach(function(b){b.addEventListener('click',openPanel);});
-
-  function addMsg(text,who){
-    var d=document.createElement('div');d.className='msg '+(who||'bot');d.innerHTML=text;msgs.appendChild(d);
-    msgs.scrollTop=msgs.scrollHeight;return d;
-  }
-  function typing(){
-    var d=document.createElement('div');d.className='msg bot';d.innerHTML='<span class="bot-typing"><i></i><i></i><i></i></span>';
-    msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return function(){d.remove();};
-  }
-
-  function showLeadGate(){
-    form=document.createElement('div');form.className='bot-form';form.id='leadForm';
-    form.innerHTML='<div style="font-size:0.9rem;font-weight:700;color:var(--text)">🔦 Get your free CX diagnostic</div>'+
-      '<div style="font-size:0.78rem;color:var(--text-secondary)">Every qualified submission receives an initial diagnostic review. Cody\'s team follows up personally — your info stays private.</div>'+
-      '<div class="group" id="gName"><label>Your Name</label><input type="text" id="fName" placeholder="John Smith" autocomplete="name"><div class="err">Please enter your name</div></div>'+
-      '<div class="group" id="gEmail"><label>Work Email</label><input type="email" id="fEmail" placeholder="john@company.com" autocomplete="email"><div class="err">Please enter a valid email</div></div>'+
-      '<div class="group" id="gPhone"><label>Phone</label><input type="tel" id="fPhone" placeholder="+1 (555) 123-4567" autocomplete="tel"><div class="err">Please enter a valid phone</div></div>'+
-      '<div class="group" id="gBudget"><label>Monthly Budget Range <span style="color:var(--text-muted);font-weight:400">(optional)</span></label><input type="text" id="fBudget" placeholder="e.g. $20K–$50K/mo" autocomplete="off"></div>'+
-      '<button id="leadSubmit">Request My Free Diagnostic →</button>'+
-      '<div class="bot-note">No pressure. No sales pitch.</div>';
-    panel.insertBefore(form,quick);
-    inBar.style.display='none';
-    document.getElementById('leadSubmit').addEventListener('click',function(){
-      var n=document.getElementById('fName').value.trim(),e=document.getElementById('fEmail').value.trim(),p=document.getElementById('fPhone').value.trim(),ok=true;
-      function v(id,cond){var g=document.getElementById(id);if(!cond){g.classList.add('invalid');ok=false;}else{g.classList.remove('invalid');}return cond;}
-      v('gName',n.length>=2);v('gEmail',/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e));v('gPhone',/^\+?[0-9 ()-]{10,15}$/.test(p));
-      if(!ok)return;
-      lead={name:n,email:e,phone:p,budget:document.getElementById('fBudget').value.trim(),timestamp:new Date().toISOString(),source:'cody-consulting-bot'};
-      localStorage.setItem('cody_lead',JSON.stringify(lead));
-      (function save(ld,r){fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(ld)}).catch(function(){if(r>0){setTimeout(function(){save(ld,r-1);},2000);}});})(lead,2);
-      form.remove();form=null;inBar.style.display='flex';welcome();
-    });
-  }
-
-  function welcome(){
-    if(msgs.dataset.welcomed)return;msgs.dataset.welcomed='1';
-    addMsg('Thanks'+(lead&&lead.name?' <b>'+escapeHtml(lead.name.split(' ')[0])+'</b>':'')+'! I\'m the Blacklight CX bot. Quick answers about what Blacklight does, the free diagnostic, and how to get started — or pick a topic below.');
-    addMsg('🔦 <b>What is Blacklight CX?</b><br>🎯 <b>The free diagnostic</b><br>🧰 <b>Services & engagements</b><br>📅 <b>Book a call</b>');
-    quick.style.display='flex';
-  }
-
-  function escapeHtml(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
-
-  var KB=[
-    {k:['what is blacklight','blacklight','about blacklight','who is blacklight','cx','friction','shine'],a:'<b>Blacklight CX</b> helps brands see the hidden inner workings of the customer experience function — connecting CX data to business visibility and identifying what is breaking across product, packaging, fulfillment, subscription, retention, marketing, and service. <b>From black box to clear visibility.</b> Founded by <b>Cody Johnson</b>.'},
-    {k:['107','107.4','proof','story','accomplish','built','ebay','million','founder','cody','how did'],a:'Cody Johnson is a founder and executive operator with <b>15+ years across operations, CX, AI-enabled systems, and customer brands</b>. He started with <b>one eBay store</b> and built it into <b>$107.4M over 12 years</b> — CEO, Head of Brand, and COO — then led CX as Director / Head of CX at Oats Overnight. Today he runs <b>Blacklight CX</b> with operator partner Matt Gracey and a vetted specialist network.'},
-    {k:['diagnostic','free','audit','assessment','review'],a:'Every qualified submission gets a <b>free initial CX diagnostic review</b> and recommendations for next steps — no pressure, no sales pitch. Tap <b>Request My Free Diagnostic</b> in the chat, drop your details, and Cody\'s team follows up personally with actionable insights. 🎯'},
-    {k:['service','engagement','help','offer','governance','qa','workforce','training','roadmap','economics','bpo','takeover','price','cost','retainer','fractional','budget','pricing','month'],a:'Blacklight delivers: <b>AI Governance + Oversight</b>, <b>Custom Team Training</b>, <b>Workforce Management</b>, <b>30/60/90 Roadmaps</b>, <b>AI-Connected VOC Dashboards</b>, <b>AI QA + Human QA</b>, <b>CX Economics + Investor Audits</b>, and <b>BPO Build or Full CX Takeover</b>. Engagement models: <b>Advisory</b>, <b>Fractional Leadership</b>, <b>Embedded Partner</b>, or <b>Full CX Takeover / BPO</b> — minimal terms, scaled to your size. Typical engagements run <b>$20K–$80K/month</b> depending on scope and brand size.'},
-    {k:['method','process','how it works','audit assess','governance','workflow','steps'],a:'The method: <b>1) Audit + Assess</b> — full diagnostic of CX operations, tooling, workflows, AI usage, team structure, QA, signals, and economics. <b>2) AI Governance</b> — guardrails and quality standards. <b>3) Workflow Design</b> — queues, macros, escalation, knowledge systems rebuilt around root causes. <b>4) Fractional to Full Takeover</b> — engagement scales with your stage.'},
-    {k:['visible','surface','upstream','sentiment','survey','report card','root'],a:'Blacklight makes visible: <b>upstream report cards</b> on root issues, <b>recurring issue detection</b> before escalation, <b>sentiment across channels</b>, <b>rotating NPS/CES surveys</b> without fatigue, <b>AI-connected KPI + VOC dashboards</b>, and <b>accountability across people, tools, and teams</b>. We surface upstream what\'s actually killing growth — product, packaging, fulfillment, supply chain, subscription, and promise-gap issues.'},
-    {k:['kpi','scorecard','nps','csat','ces','frt','ttr','repeat','resolution','sentiment','churn'],a:'We optimize <b>NPS, CSAT, CES</b> trends, <b>FRT and TTR</b> (lower is better), <b>repeat contact rate</b> (lower is better), <b>resolution rate</b> (higher is better), <b>weighted QA scorecards</b>, connected performance, sentiment trend, <b>retention risk</b>, and <b>subscription churn</b>.'},
-    {k:['platform','integrate','gorgias','kustomer','nice','decagon','claude','shopify','loop','recharge','slack','asana','api'],a:'Blacklight connects data from tools like <b>Asana, Recharge, Shopify, Loop, refunds, chargebacks, fraud systems, and helpdesk data</b> via <b>Claude and APIs</b> — plus native integrations with <b>Gorgias, Kustomer, NICE, Decagon, DigitalGenius, Slack</b>, and custom apps — to create autonomous input/output workflows and shared visibility.'},
-    {k:['matt','gracey','team','specialist','partner','network','who'],a:'<b>Cody Johnson (Founder)</b> — 15+ years in operations, CX, AI-enabled systems, and customer brands. <b>Matt Gracey (Operator)</b> — decades of CX and operations leadership in team performance, escalation design, workforce management, quality, and service optimization. Plus a <b>vetted specialist network</b> across CX, AI, QA, analytics, training, and BPO execution.'},
-    {k:['oats','overnight','illtech','auto','car','automotive','technician','ase','current','job'],a:'Cody was <b>Director Customer Experience / Head of CX at Oats Overnight</b> (high-growth CPG) and before that spent 12 years as <b>CEO, Head of Brand, and COO of Illtech Auto Salon</b> — the $0 to $107.4M build. He holds <b>ASE Certified Master Technician</b> certification. He now runs <b>Blacklight CX</b> full-time.'},
-    {k:['book','call','contact','meet','schedule','reach','consultation','discovery'],a:'Easy — tap the quick link below or head to <a href="/chat" style="color:var(--accent-light);text-decoration:none;font-weight:600">royceai.com/chat</a> to book a <b>free discovery call</b> — or request the <b>free CX diagnostic</b> right here. Cody\'s team reviews your goals and shows you what\'s possible. 📅'},
-    {k:['location','gilbert','arizona','remote','where'],a:'Blacklight CX is founded in <b>Gilbert, Arizona</b> and works with brands across the US — on-site, hybrid, or remote. The specialist bench deploys wherever the work is.'},
-    {k:['lead','sales','how to','start','next','help'],a:'Just tap <b>💬 Chat</b> on the site or leave your details in this bot — Cody\'s team reaches out personally with an initial CX diagnostic review. No bots, no form farms. 🤝'},
-    {k:['thanks','thank','cool','great','nice'],a:'Anytime! The fastest next step is the <b>free CX diagnostic</b> — every qualified brand gets an initial review and actionable next steps. 🚀'}
-  ];
-  function answer(q){
-    q=q.toLowerCase();
-    for(var i=0;i<KB.length;i++){for(var j=0;j<KB[i].k.length;j++){if(q.indexOf(KB[i].k[j])>-1)return KB[i].a;}}
-    return 'Great question — I want to make sure you get the full picture. Two fastest options: tap <b>💬 Chat</b> at top of the page, or <b>request the free CX diagnostic</b> here. Which sounds right?';
-  }
-
-  function userSay(text){
-    addMsg(escapeHtml(text),'user');
-    var t=typing();
-    setTimeout(function(){t();addMsg(answer(text));},600);
-  }
-  send.addEventListener('click',function(){var v=input.value.trim();if(!v)return;input.value='';userSay(v);});
-  input.addEventListener('keydown',function(e){if(e.key==='Enter'){var v=input.value.trim();if(!v)return;input.value='';userSay(v);}});
-  quick.addEventListener('click',function(e){
-    var b=e.target.closest('button');if(!b)return;
-    var q=b.getAttribute('data-q'),map={what:'What is Blacklight CX?',diagnostic:'How do I get the free diagnostic?',services:'What services and engagement models do you offer?',book:'I want to book a call'};
-    userSay(map[q]||q);
-  });
-  document.addEventListener('DOMContentLoaded',function(){
-    var burger=document.getElementById('navBurger');
-    if(burger){burger.addEventListener('click',function(){var l=document.querySelector('.nav-links');l.classList.toggle('open');burger.setAttribute('aria-expanded',l.classList.contains('open')?'true':'false');});}
-  });
-})();
-</script>
 <div class="mobile-menu" id="mobileMenu"></div>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
 <script>
