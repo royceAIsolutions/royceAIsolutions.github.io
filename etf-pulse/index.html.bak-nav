@@ -103,6 +103,7 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
     <a href="/subscribe">Subscribe</a>
     <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
     <a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
+    <a href="/real-estate" class="nav-drawer-only">🏠 Real Estate</a>
     <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
     <a href="/etf-pulse" class="nav-drawer-only active">📈 ETF Pulse</a>
     <a href="/blog" class="nav-drawer-only">Blog</a>
@@ -149,7 +150,7 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
   <div class="links">
     <a href="/products">Products</a><a href="/tutor">Tutor</a>
     <a href="/land-rover">Land Rover</a><a href="/exotics">Exotics</a>
-    <a href="/businesses">SBA Deals</a>
+    <a href="/real-estate">Real Estate</a><a href="/businesses">SBA Deals</a>
     <a href="/etf-pulse">ETF Pulse</a><a href="/blog">Blog</a>
   </div>
   <div class="copy">RoyceAI Solutions · Irvine, CA · ETF Pulse updates daily 7:00 AM PT</div>
