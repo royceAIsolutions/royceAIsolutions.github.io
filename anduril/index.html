@@ -119,7 +119,9 @@ footer a{color:var(--acc2);text-decoration:none}
     <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a><a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a><a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</nav><div class="mobile-menu" id="mobileMenu"></div><div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div><script>function initMobileMenu(){
+</nav><div class="mobile-menu" id="mobileMenu"></div><div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div><script>
+(function(){
+  function initMobileMenu(){
     var burger=document.getElementById('navBurger');
     if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
     var menu=document.getElementById('mobileMenu');
@@ -145,8 +147,8 @@ footer a{color:var(--acc2);text-decoration:none}
     menu.dataset.mnInit='1';
   }
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
-}
-if(typeof initMobileMenu==='function')initMobileMenu();</script>
+})();
+</script>
 
 <header><div class="wrap"><div class="brand">ROYCE<span>AI</span> SOLUTIONS</div>
 <div class="nav"><a href="/">Home</a><a href="/about/">About</a><a href="https://www.linkedin.com/in/roycekoh">LinkedIn</a></div></div></header>

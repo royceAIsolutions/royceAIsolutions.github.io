@@ -61,34 +61,95 @@ ul.clean li b{color:var(--tx)}
 .talk{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:14px;padding:20px}
 footer{padding:34px 0 60px;color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
 footer a{color:var(--acc2);text-decoration:none}
-https://hyundaiautoeveramerica.applytojob.com/apply
-</style>
 
 .tier{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin:0 0 12px}
 .tier.a{background:rgba(95,224,138,.14);color:#5fe08a;border:1px solid rgba(95,224,138,.35)}
 .tier.b{background:rgba(77,163,255,.12);color:#4da3ff;border:1px solid rgba(77,163,255,.3)}
 .tier.c{background:rgba(150,163,180,.1);color:#96a3b4;border:1px solid var(--line)}
-.rl a{color:inherit;text-decoration:none}
-#jobsearch{width:100%;max-width:460px;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--tx);font-size:15px;font-family:inherit;margin:0 0 18px}
+#jobsearch{width:100%;max-width:480px;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--tx);font-size:15px;font-family:inherit;margin:0 0 18px}
 #jobsearch::placeholder{color:#6b7686}
 .mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:8px;margin:0}
 .mini a{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 13px;color:var(--mut);text-decoration:none;font-size:13px}
 .mini a:hover{border-color:var(--acc2);color:var(--tx)}
 .mini a b{color:var(--tx);font-weight:600}
+.req{color:var(--acc);font-weight:700}
 
-</head>
-<body>
+</style>
 <style>
-:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--radius:16px;--radius-sm:10px;--max-w:1200px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--shadow-elevated:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.04)}
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--radius:16px;--radius-sm:10px;--max-w:960px;--nav-h:64px;--font:Inter,system-ui,-apple-system,sans-serif;--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--transition:0.2s ease;--shadow-elevated:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
+body::before{content:'';position:fixed;inset:0;opacity:0.012;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;background:var(--bg);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
 .nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
 .nav-logo .logo-icon{width:32px;height:32px;border-radius:9px;display:block;object-fit:cover}
 .nav-logo span{color:var(--accent-light)}
 .nav-links{display:flex;align-items:center;gap:4px}
 .nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
 .nav-links a:hover{color:var(--text);background:var(--accent-bg)}
-.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;animation:pulse-glow 2.5s ease-in-out infinite}
-.nav-links .nav-cta:hover{background:var(--accent-light);transform:scale(1.05)}
-  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none}
+.nav-links .btn-nav{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;transition:all 0.2s}
+.nav-links .btn-nav:hover{background:var(--accent-light);transform:scale(1.05)}
+.hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 60px;max-width:var(--max-w);margin:0 auto;position:relative;animation:fade-up 0.6s ease-out;text-align:center}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:20px}
+.hero h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero p{font-size:clamp(1rem,2vw,1.2rem);color:var(--text-secondary);max-width:600px;line-height:1.75;margin:0 auto 32px}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:var(--radius-sm);font-family:var(--font);font-size:1rem;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}
+.btn-primary:hover{background:var(--accent-light);box-shadow:0 0 0 1px var(--accent-light),0 6px 30px var(--accent-glow)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);padding:13px 31px}
+.btn-outline:hover{background:var(--accent-bg);border-color:var(--accent)}
+.features{padding:80px 24px;max-width:var(--max-w);margin:0 auto}
+.features h2{text-align:center;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;margin-bottom:48px;letter-spacing:-0.02em}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all var(--transition);text-align:center}
+.feature-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.feature-card .icon{font-size:2.2rem;margin-bottom:12px;display:block}
+.feature-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}
+.feature-card p{color:var(--text-secondary);font-size:0.85rem;line-height:1.6}
+.subjects{padding:60px 24px 80px;max-width:var(--max-w);margin:0 auto;text-align:center}
+.subjects h2{font-size:clamp(1.5rem,4vw,2rem);font-weight:700;margin-bottom:12px}
+.subjects p{color:var(--text-secondary);margin-bottom:32px}
+.subject-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.subject-tag{padding:8px 18px;border-radius:100px;background:var(--accent-bg);border:1px solid rgba(124,92,252,0.15);color:var(--accent-light);font-size:.85rem;font-weight:500}
+.pricing{text-align:center;padding:60px 24px 80px;max-width:var(--max-w);margin:0 auto}
+.pricing-card{display:inline-block;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px 48px;max-width:400px;box-shadow:var(--shadow-card)}
+.pricing-card .amount{font-size:2.5rem;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.pricing-card .amount span{font-size:1rem;color:var(--text-muted);font-weight:400}
+.pricing-card ul{list-style:none;margin:24px 0;text-align:left}
+.pricing-card ul li{padding:8px 0;color:var(--text-secondary);font-size:.9rem}
+.pricing-card ul li::before{content:"✅ ";color:var(--accent-light)}
+.pricing-card .btn{width:100%;justify-content:center}
+.faq{padding:60px 24px 80px;max-width:720px;margin:0 auto}
+.faq h2{text-align:center;font-size:1.8rem;font-weight:700;margin-bottom:32px}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-item .q{font-weight:600;color:#fff;margin-bottom:6px}
+.faq-item .a{color:var(--text-secondary);font-size:.9rem;line-height:1.6}
+.cta-section{text-align:center;padding:80px 24px 100px;max-width:var(--max-w);margin:0 auto}
+.cta-section h2{font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;margin-bottom:16px}
+.cta-section p{color:var(--text-secondary);margin-bottom:32px}
+footer{border-top:1px solid var(--border);padding:48px 24px;max-width:var(--max-w);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+footer .links{display:flex;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:.875rem;transition:color 0.2s}
+footer .links a:hover{color:var(--accent-light)}
+footer .copy{color:var(--text-muted);font-size:.8rem;width:100%;text-align:center}
+section[id]{scroll-margin-top:80px}
+*:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+@media(max-width:640px){.hero{padding:100px 20px 40px}.features{padding:60px 20px}.pricing-card{padding:28px 24px}.faq{padding:40px 20px}.cta-section{padding:60px 20px}.nav-links a:not(.btn-nav):not(.nav-show){display:none}}
+@media print{body{background:#fff!important;color:#000!important}nav,.orb,.orb-1,.orb-2,.cta-section,footer{display:none!important}.hero{min-height:auto;padding:20px}}
+
+
+
+
+/* ===== HAMBURGER NAV (neat all-widths) ===== */
 .nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
 .nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
 .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -101,21 +162,52 @@ https://hyundaiautoeveramerica.applytojob.com/apply
 .mobile-menu .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;margin-top:10px;text-align:center;animation:pulse-glow 2.5s ease-in-out infinite}
 .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
 .mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+@media(max-width:1099px){
+  nav{z-index:1001;flex-direction:row;flex-wrap:nowrap;height:var(--nav-h);background:var(--bg)}
   .nav-links{width:auto;margin-left:auto;justify-content:flex-end}
   .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}
   .nav-logo{width:auto;justify-content:flex-start}
+}
+@media(min-width:1100px){
   .nav-links a.nav-drawer-only{display:none!important}
+  #navLoginBtn{display:none!important}
+}
+
+/* desktop: full row, no burger; hide duplicate LogIn button (Tutor covers /tutor) */
+@media(min-width:1100px){
+  #navLoginBtn{display:none!important}
+}
+
+
+
+
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+html{overflow-x:clip}
+body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+@media(max-width:1099px){footer{display:none!important}}
+
+@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
+@media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
+
+/* deck-fmt guard: inactive slides must never paint over the active one */
+.slide:not(.active){display:none!important}
 </style>
-
-
-<header><div class="wrap"><div class="brand">ROYCE<span>AI</span> SOLUTIONS</div>
-<div class="nav"><a href="/">Home</a><a href="/about/">About</a><a href="/anduril/">Anduril</a><a href="https://www.linkedin.com/in/roycekoh">LinkedIn</a></div></div></header>
-
-<div class="wrap hero">
-<h1>I run the requirements, the process and the reporting.<br><em>Hyundai AutoEver America &mdash; Irvine &amp; Costa Mesa.</em></h1>
-<p class="sub">Royce Koh &mdash; Irvine, CA. Fifteen years of professional experience in premium automotive operations from Seattle to Orange County, and since January 2026 the builder and operator of a production AI platform: conversational agents, RAG pipelines, multi-agent workflows and integrations to 20+ third-party services. I take requirements from the business, write them down, hand them off, and keep the reporting honest afterwards.</p>
-<div class="pills"><span class="pill">Orange County local &mdash; Irvine</span><span class="pill">15 years experience</span><span class="pill"><b>Korean</b> &mdash; speaks, reads, writes</span><span class="pill">Business process &amp; requirements</span><span class="pill">Program &amp; service delivery</span><span class="pill">Automation &amp; systems</span><span class="pill">English / Korean</span></div>
-<div class="cta"><a class="btn p" href="<nav>
+</head>
+<body>
+<nav>
   <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px" alt="R"> Royce<span>AI</span></a>
   <div class="nav-links">
     <a href="/products">Products</a>
@@ -125,10 +217,8 @@ https://hyundaiautoeveramerica.applytojob.com/apply
     <a href="/exotics" class="nav-drawer-only">🏎️ Exotics</a>
     
     <a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a>
-    <a href="/playlist" class="nav-drawer-only">🎵 Playlist</a>
     <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
     <a href="/livaway" class="nav-drawer-only">🏨 LivAway</a>
-    
     <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
     <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
     <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
@@ -139,10 +229,224 @@ https://hyundaiautoeveramerica.applytojob.com/apply
     <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
     <a href="/tutor-colorado" class="nav-drawer-only">🎓 Tutor Colorado</a>
     <a href="/about" class="nav-drawer-only">👤 About Royce</a>
-    <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a><a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a><a href="/chat" class="nav-cta">💬 Chat</a>
+    <a href="/playlist" class="nav-drawer-only">🎵 Playlist</a><a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a><a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a><a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
-  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</nav><div class="mobile-menu" id="mobileMenu"></div><div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div><script>function initMobileMenu(){
+<button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<div class="mobile-menu" id="mobileMenu"></div>
+
+<header><div class="wrap"><div class="brand">ROYCE<span>AI</span> SOLUTIONS</div>
+<div class="nav"><a href="/">Home</a><a href="/about/">About</a><a href="/anduril/">Anduril</a><a href="https://www.linkedin.com/in/roycekoh">LinkedIn</a></div></div></header>
+
+<div class="wrap hero">
+<h1>I run the requirements, the process and the reporting.<br><em>Hyundai AutoEver America &mdash; Irvine &amp; Costa Mesa.</em></h1>
+<p class="sub">Royce Koh &mdash; Irvine, CA. Fifteen years of professional experience in premium automotive operations from Seattle to Orange County, and since January 2026 the builder and operator of a production AI platform: conversational agents, RAG pipelines, multi-agent workflows and integrations to 20+ third-party services. I take requirements from the business, write them down, hand them off, and keep the reporting honest afterwards.</p>
+<div class="pills"><span class="pill">Orange County local &mdash; Irvine</span><span class="pill">15 years experience</span><span class="pill"><b>Korean</b> &mdash; speaks, reads, writes</span><span class="pill">Business process &amp; requirements</span><span class="pill">Program &amp; service delivery</span><span class="pill">Automation &amp; systems</span></div>
+<div class="cta"><a class="btn p" href="https://hyundaiautoeveramerica.applytojob.com/apply" target="_blank" rel="noopener">See every live HAEA opening</a><a class="btn s" href="mailto:royceaisolutions@gmail.com">Email me</a></div>
+</div>
+
+<section><div class="wrap">
+<h2>Brands I have worked with</h2>
+<p class="lead">Fifteen years representing premium, luxury and exotic automotive brands &mdash; the same customer and dealer world HAEA's applications serve.</p>
+<div class="pills">
+<span class="pill"><b>Ferrari</b></span>
+<span class="pill"><b>Jaguar Land Rover</b></span>
+<span class="pill"><b>Maserati</b></span>
+<span class="pill"><b>BMW</b></span>
+<span class="pill"><b>Toyota</b></span>
+<span class="pill"><b>Lexus</b></span>
+<span class="pill"><b>VinFast</b></span>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<h2>Why Hyundai AutoEver, specifically</h2>
+<p class="lead">HAEA is the IT arm of Hyundai Motor Group and, in its own words, <b>the crucial information link between Hyundai's Global Headquarters and North American operations</b> &mdash; serving Kia, Genesis, Hyundai Translead, Hyundai Mobis, Hyundai Capital and Glovis. That description is the job I have been doing in two languages for fifteen years: the business on one side, the builders on the other, and me keeping the requirement, the timeline and the reporting true in the middle.</p>
+<p class="lead">The programs that run through Irvine are planned and built with teams in Korea. <b>I speak Korean</b> &mdash; not as a bonus line on a resume, but as the difference between a requirement that arrives correctly and one that gets reinterpreted. I have been the English-to-Korean and Korean-to-English seam in operations for years, and I am comfortable being the person who refuses to guess.</p>
+<p class="lead">I also build and run production systems myself, on my own platform, with 180+ automations and self-healing monitoring. So when an analyst writes a requirement or a program manager needs a status that is actually true, I know where the data lives and why it went missing.</p>
+</div></section>
+
+<section><div class="wrap">
+<h2>Inside the systems &mdash; CRM, process, inventory</h2>
+<p class="lead">At Jaguar Land Rover Newport Beach I am wired into the systems the store runs on, and everything the client hears from me comes out of them:</p>
+<div class="sys">
+<ul>
+<li><b>CRM and pipeline discipline.</b> Every relationship lives in <b>eLead CRM</b> &mdash; first contact, follow-up cadence, task queues, notes, outcomes. I work the queue daily, so nothing goes cold and no follow-up is dropped. That is records management in practice.</li>
+<li><b>Process and record ownership.</b> I own the record as a transaction moves: order and allocation updates, scheduling, status changes and the internal handoffs between departments. The system stays current because I keep it current.</li>
+<li><b>Inventory and location.</b> I track units through <b>Dealergard / Stargard GPS</b> and inventory status &mdash; in transit, on the lot, at the shop &mdash; so a customer gets an answer, not a guess. Same discipline as tracking one work stream across thirty of them.</li>
+<li><b>Reporting that gets used.</b> Regional KPIs, acquisition and inventory metrics, and the weekly numbers management actually made decisions with. I have built that reporting from scratch more than once.</li>
+<li><b>Why it matters here.</b> A business process analyst is asked to understand the system of record, keep it true, and prove the change worked. That is the job I already do, in a dealership and on my own platform.</li>
+</ul>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<h2>What I bring to HAEA</h2>
+<div class="grid">
+<div class="role"><div class="rt">Business process analysis</div><p>As-is and to-be mapping, gap analysis, SOPs and process flows &mdash; written so the next person can run the process without asking me. I document and automate processes daily on my own platform.</p></div>
+<div class="role"><div class="rt">Requirements into delivery</div><p>Take the requirement from the business, get it agreed in writing, hand it to the builders, and verify what came back. I do this on my own systems and I did it across 15 retail locations.</p></div>
+<div class="role"><div class="rt">Korean-language bridge</div><p>The development side of these programs is in Korea. I speak, read and write Korean &mdash; so requirements cross that seam intact instead of being translated twice and guessed at once.</p></div>
+<div class="role"><div class="rt">KPI, SLA and reporting</div><p>AutoNation: 200&percnt; growth in vehicle acquisitions, 50&percnt; inventory improvement, 4,000 leads a month closing at 8-9&percnt;. VinFast: up to 15 locations and 100 people, contributing to a 10x regional sales increase in 100 days.</p></div>
+<div class="role"><div class="rt">Automation and tooling</div><p>180+ scheduled automations, integrations to 20+ third-party services, self-healing watchdogs. If a report has to be produced every week, I would rather build the thing that produces it.</p></div>
+<div class="role"><div class="rt">Executive-ready communication</div><p>I brief the customer, the field team and the program office from the same record in the same hour &mdash; and I say plainly what is working and what is not.</p></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<h2>Where I fit &mdash; every live HAEA opening</h2>
+<p class="lead">69 live requisitions on HAEA's board today, 42 of them in Orange County. Every card and link below is a live posting, verified open today, with the location and the posted band where HAEA publishes one. The top group is where my background maps directly; the middle group is adjacent work I could carry; the bottom lists the rest of the board so you see the whole picture rather than a filtered one. Search filters all of them &mdash; try a req number, a title or a city.</p>
+<input id="jobsearch" type="search" placeholder="Filter openings &mdash; title, req number or city (try 10755, analyst, Irvine)">
+<div class="tier a">Best fit &mdash; process, requirements, program</div>
+<div class="grid">
+<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/aH8NPqQaQK/10755-Sr-Business-Process-Analyst-Corporate-Planning" target="_blank" rel="noopener" data-k="10755 Sr. Business Process Analyst (Corporate Planning) Irvine, CA"><div class="rt">Sr. Business Process Analyst (Corporate Planning)</div><div class="rl"><span class="req">REQ 10755</span> &middot; Irvine, CA &middot; $103,170&ndash;$158,873</div><p>The corporate-planning seat: portfolio cataloging and methodology, ROI and business cases, KPI/SLA/OKR monitoring, OpEx and CapEx oversight, white papers and SOPs. Documenting a process and proving it with numbers is what I do every day, and at AutoNation and VinFast I built the reporting management ran the business on.</p></a>
+<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/vSaEfGS0f9/10512-Program-Manager-Applications-Development-Management" target="_blank" rel="noopener" data-k="10512 Program Manager, Applications Development &amp;amp; Management Irvine, CA"><div class="rt">Program Manager, Applications Development &amp;amp; Management</div><div class="rl"><span class="req">REQ 10512</span> &middot; Irvine, CA</div><p>Program manager for applications development and management, five days on-site at the Irvine headquarters. Running an applications portfolio means requirements, vendors, schedules, adoption and the reporting that goes up the line. I run that cycle on my own platform today and I ran it across 15 retail locations before this.</p></a>
+<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/5OWqt9OAyL/10629-Business-Process-Analyst-III" target="_blank" rel="noopener" data-k="10629 Business Process Analyst III Irvine, CA"><div class="rt">Business Process Analyst III</div><div class="rl"><span class="req">REQ 10629</span> &middot; Irvine, CA</div><p>The senior individual-contributor process seat at the Irvine HQ: as-is and to-be mapping, gap analysis, process documentation, and the metrics that show whether the change actually landed.</p></a>
+<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/PXBMOrFVV0/10315-Business-Process-Analyst-II" target="_blank" rel="noopener" data-k="10315 Business Process Analyst II Irvine, CA"><div class="rt">Business Process Analyst II</div><div class="rl"><span class="req">REQ 10315</span> &middot; Irvine, CA &middot; $83,940&ndash;$120,032</div><p>Business Process Analyst II, Irvine, posted at $83,940-$120,032. The requirements and process layer underneath HAEA's internal applications &mdash; write it down, get it agreed, watch it work.</p></a>
+<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/6plHEjEurT/10841-Business-Process-Analyst-II" target="_blank" rel="noopener" data-k="10841 Business Process Analyst II Costa Mesa, CA"><div class="rt">Business Process Analyst II</div><div class="rl"><span class="req">REQ 10841</span> &middot; Costa Mesa, CA</div><p>Business Process Analyst II in Costa Mesa &mdash; the same analyst work sitting closer to the operations and manufacturing side of the group.</p></a>
+</div>
+<div class="tier b" style="margin-top:26px">Adjacent &mdash; I could carry these</div>
+<div class="grid">
+<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/AWGiAdMyTn/10037-Sr-Manager-IT-Service-Management" target="_blank" rel="noopener" data-k="10037 Sr. Manager, IT Service Management Irvine, CA"><div class="rt">Sr. Manager, IT Service Management</div><div class="rl"><span class="req">REQ 10037</span> &middot; Irvine, CA</div><p>IT service management at the Irvine HQ: service levels, process ownership, reporting to the business. I own the service side of my own platform &mdash; SLAs, incident follow-through, monthly reporting &mdash; and I have run service delivery across 15 sites.</p></a>
+<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/5i3IxFcQpN/10684-Client-Services-Manager-Microsoft-Intune-Windows-Autopilot" target="_blank" rel="noopener" data-k="10684 Client Services Manager (Microsoft Intune, Windows Autopilot) Irvine, CA"><div class="rt">Client Services Manager (Microsoft Intune, Windows Autopilot)</div><div class="rl"><span class="req">REQ 10684</span> &middot; Irvine, CA</div><p>Client services for the endpoint fleet &mdash; Intune, Autopilot, device lifecycle. I manage device and systems rollouts as an operator rather than an endpoint engineer, and I would come in for the client-facing and process half of this seat.</p></a>
+<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/dTG8rkdrPy/10078-Buyer-III" target="_blank" rel="noopener" data-k="10078 Buyer III Irvine, CA"><div class="rt">Buyer III</div><div class="rl"><span class="req">REQ 10078</span> &middot; Irvine, CA</div><p>Buyer III at the Irvine HQ. Procurement is process work with a signature on it: requirements, vendor comparison, cost cases, keeping the record straight. That is the discipline I ran in dealership purchasing and inventory.</p></a>
+<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/rR2WgqFmNC/10156-Sr-Buyer" target="_blank" rel="noopener" data-k="10156 Sr. Buyer Irvine, CA"><div class="rt">Sr. Buyer</div><div class="rl"><span class="req">REQ 10156</span> &middot; Irvine, CA</div><p>Senior buyer, Irvine. The same work at a higher level &mdash; supplier conversations, spend analysis and reporting against budget.</p></a>
+<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/1wu1fqDvgb/10112-Sr-Risk-Operation-Analyst-Integrated-Risk-Management-IRM" target="_blank" rel="noopener" data-k="10112 Sr. Risk Operation Analyst - Integrated Risk Management &amp;quot;IRM&amp;quot; Irvine, CA"><div class="rt">Sr. Risk Operation Analyst - Integrated Risk Management &amp;quot;IRM&amp;quot;</div><div class="rl"><span class="req">REQ 10112</span> &middot; Irvine, CA</div><p>Risk operations analysis &mdash; the controls, evidence and reporting side of integrated risk management. I have built the documentation and audit trail for my own production systems, and I am comfortable owning evidence instead of hand-waving it.</p></a>
+<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/yXGLFSK77Y/10639-Technical-Operations-Engineer" target="_blank" rel="noopener" data-k="10639 Technical Operations Engineer Irvine, CA"><div class="rt">Technical Operations Engineer</div><div class="rl"><span class="req">REQ 10639</span> &middot; Irvine, CA</div><p>Technical operations in Irvine: monitoring, hands-on follow-through, and keeping systems running after they ship. That is the half of my current job nobody sees &mdash; watchdogs, alerting, fixing things before a user notices.</p></a>
+<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/5oIqm9CwJw/10288-Financial-Analyst-II-Financial-Planning-Analysis" target="_blank" rel="noopener" data-k="10288 Financial Analyst II (Financial Planning &amp;amp; Analysis) Irvine, CA"><div class="rt">Financial Analyst II (Financial Planning &amp;amp; Analysis)</div><div class="rl"><span class="req">REQ 10288</span> &middot; Irvine, CA</div><p>Financial analyst II in FP&amp;A. I am not a career finance analyst, but I build the business cases, cost models and KPI reporting this desk consumes, and I have owned P&amp;L-adjacent decisions in the field.</p></a>
+<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/jV9gTeo3eF/20018-MES-System-Analyst-III" target="_blank" rel="noopener" data-k="20018 MES System Analyst III Irvine, CA"><div class="rt">MES System Analyst III</div><div class="rl"><span class="req">REQ 20018</span> &middot; Irvine, CA</div><p>MES systems analyst in Irvine &mdash; requirements, systems support and process documentation on the manufacturing side.</p></a>
+<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/ohdGZx7Y0a/20161-Manufacturing-Execution-Systems-MES-System-Analyst-III" target="_blank" rel="noopener" data-k="20161 Manufacturing Execution Systems (MES) System Analyst III Irvine, CA"><div class="rt">Manufacturing Execution Systems (MES) System Analyst III</div><div class="rl"><span class="req">REQ 20161</span> &middot; Irvine, CA</div><p>Manufacturing execution systems analyst in Irvine &mdash; the same work from the plant-facing direction.</p></a>
+</div>
+<div class="tier c" style="margin-top:26px">The rest of the Orange County board</div>
+<div class="mini">
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/keWJQG8D8n/10041-Engineering-Systems-Administrator-Identity-Access-Management-IAM" target="_blank" rel="noopener" data-k="10041 Engineering Systems Administrator - Identity Access Management (IAM) Irvine, CA"><b>Engineering Systems Administrator - Identity Access Management (IAM)</b> &middot; Irvine, CA &middot; REQ 10041</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/0di9M9Gu7b/10054-Infrastructure-Architect" target="_blank" rel="noopener" data-k="10054 Infrastructure Architect Irvine, CA"><b>Infrastructure Architect</b> &middot; Irvine, CA &middot; REQ 10054</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/9fkYNNBhHc/10062-Java-Software-Engineer-III" target="_blank" rel="noopener" data-k="10062 Java Software Engineer III Irvine, CA"><b>Java Software Engineer III</b> &middot; Irvine, CA &middot; REQ 10062</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/zxWAQ1u43P/10132-Sr-Software-Engineer-Salesforce" target="_blank" rel="noopener" data-k="10132 Sr. Software Engineer (Salesforce) Irvine, CA"><b>Sr. Software Engineer (Salesforce)</b> &middot; Irvine, CA &middot; REQ 10132</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/cLwl5HAjco/10207-Software-Engineer-III-Siebel-To-Salesforce-Migration" target="_blank" rel="noopener" data-k="10207 Software Engineer III (Siebel to Salesforce Migration) Irvine, CA"><b>Software Engineer III (Siebel to Salesforce Migration)</b> &middot; Irvine, CA &middot; REQ 10207</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/uxBtGUY3RA/10215-Manager-Software" target="_blank" rel="noopener" data-k="10215 Manager, Software Irvine, CA"><b>Manager, Software</b> &middot; Irvine, CA &middot; REQ 10215</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/yOyBdn4aG6/10244-Cloud-Security-Engineer-SAE" target="_blank" rel="noopener" data-k="10244 Cloud Security Engineer SAE Irvine, CA"><b>Cloud Security Engineer SAE</b> &middot; Irvine, CA &middot; REQ 10244</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/FFdfdxD7BH/10279-Security-Incident-Response-Manager-SSRM" target="_blank" rel="noopener" data-k="10279 Security Incident Response Manager (SSRM) Irvine, CA"><b>Security Incident Response Manager (SSRM)</b> &middot; Irvine, CA &middot; REQ 10279</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/xnmCJmc0AQ/10318-Cyber-Defense-Head-Of-Department-HOD" target="_blank" rel="noopener" data-k="10318 Cyber Defense Head of Department (HOD) Irvine, CA"><b>Cyber Defense Head of Department (HOD)</b> &middot; Irvine, CA &middot; REQ 10318</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/fGBZfSnFcM/10331-Sr-Engineering-Systems-Administrator-Microsoft-365" target="_blank" rel="noopener" data-k="10331 10331: Sr. Engineering Systems Administrator - Microsoft 365 Irvine, CA"><b>10331: Sr. Engineering Systems Administrator - Microsoft 365</b> &middot; Irvine, CA &middot; REQ 10331</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/MYEv1JyrQy/10351-Core-Network-Engineer-Cisco-Routersswitches-Palo-Alto" target="_blank" rel="noopener" data-k="10351 Core Network Engineer (Cisco routers/switches, Palo Alto) Irvine, CA"><b>Core Network Engineer (Cisco routers/switches, Palo Alto)</b> &middot; Irvine, CA &middot; REQ 10351</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/yXqKndSttp/10390-Auditor-Integrated-Risk-Management-SSRM" target="_blank" rel="noopener" data-k="10390 Auditor, Integrated Risk Management (SSRM) Irvine, CA"><b>Auditor, Integrated Risk Management (SSRM)</b> &middot; Irvine, CA &middot; REQ 10390</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/GHv5wcW5Ev/10418-Client-Device-Engineer" target="_blank" rel="noopener" data-k="10418 Client Device Engineer Irvine, CA"><b>Client Device Engineer</b> &middot; Irvine, CA &middot; REQ 10418</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/mPfWDy9knN/10451-Director-Engineering-Sales-Applications" target="_blank" rel="noopener" data-k="10451 Director, Engineering – Sales Applications Irvine, CA"><b>Director, Engineering – Sales Applications</b> &middot; Irvine, CA &middot; REQ 10451</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/h4gpts7syZ/10594-Finance-Advisor" target="_blank" rel="noopener" data-k="10594 Finance Advisor Irvine, CA"><b>Finance Advisor</b> &middot; Irvine, CA &middot; REQ 10594</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/hXVCsz32if/10607-Senior-Data-Engineer-Python" target="_blank" rel="noopener" data-k="10607 Senior Data Engineer (Python) Irvine, CA"><b>Senior Data Engineer (Python)</b> &middot; Irvine, CA &middot; REQ 10607</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/Je4ZHfu6mh/10632-Sr-Treasury-Accountant" target="_blank" rel="noopener" data-k="10632 Sr. Treasury Accountant Irvine, CA"><b>Sr. Treasury Accountant</b> &middot; Irvine, CA &middot; REQ 10632</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/RdKavpY7qz/10701-Executive-Principal-Infrastructure-Operations" target="_blank" rel="noopener" data-k="10701 Executive Principal, Infrastructure Operations Irvine, CA"><b>Executive Principal, Infrastructure Operations</b> &middot; Irvine, CA &middot; REQ 10701</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/4WVWKdHl6f/10734-Executive-Principal-Finance" target="_blank" rel="noopener" data-k="10734 Executive Principal, Finance Irvine, CA"><b>Executive Principal, Finance</b> &middot; Irvine, CA &middot; REQ 10734</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/u3Rjvl6I54/10760-Senior-Accountant-II" target="_blank" rel="noopener" data-k="10760 Senior Accountant II Irvine, CA"><b>Senior Accountant II</b> &middot; Irvine, CA &middot; REQ 10760</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/dQgbPHwPPW/10778-Sr-Network-Engineer" target="_blank" rel="noopener" data-k="10778 Sr. Network Engineer Irvine, CA"><b>Sr. Network Engineer</b> &middot; Irvine, CA &middot; REQ 10778</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/MNBf4QtyvV/10845-Mgr-Cloud-Platform-Engineering" target="_blank" rel="noopener" data-k="10845 Mgr, Cloud Platform Engineering Irvine, CA"><b>Mgr, Cloud Platform Engineering</b> &middot; Irvine, CA &middot; REQ 10845</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/nMevRcxnrH/10850-Sr-Software-Engineer-Applied-AI" target="_blank" rel="noopener" data-k="10850 Sr. Software Engineer - Applied AI Irvine, CA"><b>Sr. Software Engineer - Applied AI</b> &middot; Irvine, CA &middot; REQ 10850</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/HyeW6vXEf7/10872-Cloud-Security-Engineer-SAE" target="_blank" rel="noopener" data-k="10872 Cloud Security Engineer SAE Irvine, CA"><b>Cloud Security Engineer SAE</b> &middot; Irvine, CA &middot; REQ 10872</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/j4uDqsqI5A/10873-Senior-Applications-Security-Engineer-Cyber-Defense" target="_blank" rel="noopener" data-k="10873 Senior Applications Security Engineer - Cyber Defense Irvine, CA"><b>Senior Applications Security Engineer - Cyber Defense</b> &middot; Irvine, CA &middot; REQ 10873</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/ksUCHIyjrF/10883-Enterprise-SAP-Systems-AI-Solutions-Engineer" target="_blank" rel="noopener" data-k="10883 Enterprise SAP Systems &amp;amp; AI Solutions Engineer Irvine, CA"><b>Enterprise SAP Systems &amp;amp; AI Solutions Engineer</b> &middot; Irvine, CA &middot; REQ 10883</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/PScc8wW9Iy/20117-System-Administrator-III" target="_blank" rel="noopener" data-k="20117 System Administrator III Irvine, CA"><b>System Administrator III</b> &middot; Irvine, CA &middot; REQ 20117</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/lb8T6S0MA4/20178-Security-Engineer-II" target="_blank" rel="noopener" data-k="20178 Security Engineer II Irvine, CA"><b>Security Engineer II</b> &middot; Irvine, CA &middot; REQ 20178</a>
+</div>
+<div class="tier c" style="margin-top:26px">Outside Orange County (27) &mdash; listed for completeness</div>
+<div class="mini">
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/9dmDcGp2Fa/20040-SAP-HCM-Sr-Business-Systems-Analyst" target="_blank" rel="noopener" data-k="20040 SAP HCM Sr. Business Systems Analyst Georgia"><b>SAP HCM Sr. Business Systems Analyst</b> &middot; Georgia &middot; REQ 20040</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/rRlXooJDzW/20171-Sr-Business-Systems-Analyst-FCM" target="_blank" rel="noopener" data-k="20171 Sr Business Systems Analyst (FCM) Georgia"><b>Sr Business Systems Analyst (FCM)</b> &middot; Georgia &middot; REQ 20171</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/DLkozXPqSK/20177-Software-Engineer-II-Korean-Bilingual" target="_blank" rel="noopener" data-k="20177 Software Engineer II (Korean bilingual) Georgia"><b>Software Engineer II (Korean bilingual)</b> &middot; Georgia &middot; REQ 20177</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/P9BBlbrxfx/20191-System-Administrator-III" target="_blank" rel="noopener" data-k="20191 System Administrator III Georgia"><b>System Administrator III</b> &middot; Georgia &middot; REQ 20191</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/HkXdQkSE9F/20218-System-Administrator-II-bilingual-Korean-Preferred" target="_blank" rel="noopener" data-k="20218 System Administrator II (bilingual Korean preferred) Georgia"><b>System Administrator II (bilingual Korean preferred)</b> &middot; Georgia &middot; REQ 20218</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/hnjbhppVG7/20240-Business-System-Analyst-II-Software-Engineer-APS-Web" target="_blank" rel="noopener" data-k="20240 Business System Analyst II (Software Engineer - APS Web) Georgia"><b>Business System Analyst II (Software Engineer - APS Web)</b> &middot; Georgia &middot; REQ 20240</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/n1cplTuEQa/20258-Business-Systems-Analyst-II-HCMPayroll" target="_blank" rel="noopener" data-k="20258 Business Systems Analyst II - HCM-Payroll Georgia"><b>Business Systems Analyst II - HCM-Payroll</b> &middot; Georgia &middot; REQ 20258</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/WGqDxpnCIT/20027-Network-Engineer-I" target="_blank" rel="noopener" data-k="20027 Network Engineer I Montgomery, AL"><b>Network Engineer I</b> &middot; Montgomery, AL &middot; REQ 20027</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/HffpLBb5XG/20146-Window-System-Administrator-III" target="_blank" rel="noopener" data-k="20146 Window System Administrator III Montgomery, AL"><b>Window System Administrator III</b> &middot; Montgomery, AL &middot; REQ 20146</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/XFspaXD4ef/20150-Sr-System-Administrator" target="_blank" rel="noopener" data-k="20150 Sr. System Administrator Montgomery, AL"><b>Sr. System Administrator</b> &middot; Montgomery, AL &middot; REQ 20150</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/mkwGKacFfR/20165-Sys-Admin-III-Bilingual-Korean" target="_blank" rel="noopener" data-k="20165 Sys Admin III (Bilingual Korean) Savannah, GA"><b>Sys Admin III (Bilingual Korean)</b> &middot; Savannah, GA &middot; REQ 20165</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/jdfqtrKhuw/20167-Security-Engineer-III" target="_blank" rel="noopener" data-k="20167 Security Engineer III Savannah, GA"><b>Security Engineer III</b> &middot; Savannah, GA &middot; REQ 20167</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/N6cqPpoMxH/20181-Systems-Analyst-II-MES" target="_blank" rel="noopener" data-k="20181 Systems Analyst II (MES) Savannah, GA"><b>Systems Analyst II (MES)</b> &middot; Savannah, GA &middot; REQ 20181</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/9yu2y6401d/20208-Oracle-DBA-III" target="_blank" rel="noopener" data-k="20208 Oracle DBA III Savannah, GA"><b>Oracle DBA III</b> &middot; Savannah, GA &middot; REQ 20208</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/o2cXEWx0Q5/20217-Manager-Operations" target="_blank" rel="noopener" data-k="20217 Manager, Operations Savannah, GA"><b>Manager, Operations</b> &middot; Savannah, GA &middot; REQ 20217</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/pYj8k4Nloe/20222-Network-Engineer-III" target="_blank" rel="noopener" data-k="20222 Network Engineer III Savannah, GA"><b>Network Engineer III</b> &middot; Savannah, GA &middot; REQ 20222</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/brFUvHVkol/20224-Network-Engineer-II" target="_blank" rel="noopener" data-k="20224 Network Engineer II Savannah, GA"><b>Network Engineer II</b> &middot; Savannah, GA &middot; REQ 20224</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/DOsjOAx7ld/20225-Technician-II" target="_blank" rel="noopener" data-k="20225 Technician II Savannah, GA"><b>Technician II</b> &middot; Savannah, GA &middot; REQ 20225</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/7cTAf4WD58/20226-Service-Desk-Representative-II" target="_blank" rel="noopener" data-k="20226 Service Desk Representative II Savannah, GA"><b>Service Desk Representative II</b> &middot; Savannah, GA &middot; REQ 20226</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/bFF37FYNbH/20229-MES-System-Analyst-III" target="_blank" rel="noopener" data-k="20229 MES System Analyst III Savannah, GA"><b>MES System Analyst III</b> &middot; Savannah, GA &middot; REQ 20229</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/EHeWN9MWae/20236-MES-Analyst-III" target="_blank" rel="noopener" data-k="20236 MES Analyst III Savannah, GA"><b>MES Analyst III</b> &middot; Savannah, GA &middot; REQ 20236</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/NoJH3bfOAt/20257-Business-Systems-Analyst-II-SAP-FCM" target="_blank" rel="noopener" data-k="20257 Business Systems Analyst II (SAP FCM) Savannah, GA"><b>Business Systems Analyst II (SAP FCM)</b> &middot; Savannah, GA &middot; REQ 20257</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/qECgaSIkUh/10445-Systems-Administrator" target="_blank" rel="noopener" data-k="10445 Systems Administrator "><b>Systems Administrator</b> &middot; site varies &middot; REQ 10445</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/RVpHDrqRUR/10447-Desktop-Support-Specialist-II" target="_blank" rel="noopener" data-k="10447 Desktop Support Specialist II "><b>Desktop Support Specialist II</b> &middot; site varies &middot; REQ 10447</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/JOFCKsUbQX/10732-Engineering-Systems-Administrator-II" target="_blank" rel="noopener" data-k="10732 Engineering Systems Administrator II "><b>Engineering Systems Administrator II</b> &middot; site varies &middot; REQ 10732</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/u8ZIWtX7kv/20021-Manager-HRBP" target="_blank" rel="noopener" data-k="20021 Manager, HRBP "><b>Manager, HRBP</b> &middot; site varies &middot; REQ 20021</a>
+<a href="https://hyundaiautoeveramerica.applytojob.com/apply/3RZz0MnPYf/20174-Service-Desk-Representative-II" target="_blank" rel="noopener" data-k="20174 Service Desk Representative II "><b>Service Desk Representative II</b> &middot; site varies &middot; REQ 20174</a>
+</div>
+<p id="nohits" style="display:none;color:#96a3b4;margin:14px 0 0">No HAEA requisition matches that search today.</p>
+</div></section>
+
+<section><div class="wrap">
+<h2>Numbers</h2>
+<div class="ev" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+<div class="stat"><b>200&percnt;</b><span>growth in vehicle acquisitions (AutoNation)</span></div>
+<div class="stat"><b>50&percnt;</b><span>inventory improvement (AutoNation)</span></div>
+<div class="stat"><b>4,000</b><span>leads per month at 8-9&percnt; close rate</span></div>
+<div class="stat"><b>15</b><span>retail locations across NorCal + SoCal (VinFast)</span></div>
+<div class="stat"><b>100</b><span>salespeople under my regional remit</span></div>
+<div class="stat"><b>180+</b><span>automations running in production</span></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<h2>How I work</h2>
+<ul class="clean">
+<li><b>Ship, then verify.</b> I read the live system back before I call anything done.</li>
+<li><b>Write it down.</b> Every process I touch leaves a document, so the next person is not dependent on me.</li>
+<li><b>Handle the unglamorous work.</b> The gap analysis, the follow-up list, the escalation at 5pm &mdash; that is the job.</li>
+<li><b>Ask before assuming.</b> If a requirement is vague, I get it in writing and confirm it back before anyone builds it.</li>
+</ul>
+</div></section>
+
+<section><div class="wrap">
+<h2>Straight talk</h2>
+<div class="talk">
+<p style="margin:0 0 10px"><b>Local, and on-site is not a problem.</b> I live in Irvine &mdash; minutes from the Bunsen Avenue headquarters, and an easy drive to Costa Mesa. HAEA's postings ask for five days on-site; that suits me.</p>
+<p style="margin:0 0 10px"><b>Korean.</b> Fluent. HAEA is the link between Hyundai's Global Headquarters and North American operations, and the build teams on these programs sit in Korea. I would rather be the person who resolves the ambiguity than the one who forwards it.</p>
+<p style="margin:0 0 10px"><b>The honest gap.</b> I do not carry a Business Process Analyst title on paper. What I have is fifteen years of doing the work &mdash; process documentation, requirements, gap analysis, KPI and SLA reporting, business cases &mdash; plus building and operating the systems myself. HAEA's own postings accept equivalent professional experience, and I would rather be judged on the work than the label.</p>
+<p style="margin:0"><b>Eligibility and availability.</b> U.S. citizen, no sponsorship needed, no relocation needed. Interview availability is open now, including same-week, and I can start on short notice.</p>
+</div>
+</div></section>
+
+<footer><div class="wrap">Royce Koh &middot; Irvine, CA &middot; <a href="mailto:royceaisolutions@gmail.com">royceaisolutions@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/roycekoh">linkedin.com/in/roycekoh</a><br>RoyceAI Solutions &mdash; <a href="/">royceai.com</a> &middot; <a href="/anduril/">Anduril page</a></div></footer>
+
+<script>
+(function(){
+  var box=document.getElementById('jobsearch');
+  if(!box) return;
+  var items=[].slice.call(document.querySelectorAll('.role,.mini a'));
+  items.forEach(function(el){
+    var txt=(el.textContent||'')+' '+(el.getAttribute('data-k')||'');
+    el.setAttribute('data-s',txt.toLowerCase());
+  });
+  box.addEventListener('input',function(){
+    var q=box.value.trim().toLowerCase();
+    items.forEach(function(el){
+      el.style.display=(!q||(el.getAttribute('data-s')||'').indexOf(q)>-1)?'':'none';
+    });
+    document.querySelectorAll('.tier').forEach(function(t){
+      var sec=t.nextElementSibling;
+      if(!sec) return;
+      var any=false;
+      sec.querySelectorAll('[data-s]').forEach(function(e){ if(e.style.display!=='none') any=true; });
+      t.style.display=any?'':'none';
+      sec.style.display=any?'':'none';
+    });
+    var none=document.getElementById('nohits');
+    var total=0;
+    items.forEach(function(e){ if(e.style.display!=='none') total++; });
+    if(none) none.style.display=(q&&total===0)?'':'none';
+  });
+})();
+</script>
+<script>
+(function(){
+  function initMobileMenu(){
     var burger=document.getElementById('navBurger');
     if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
     var menu=document.getElementById('mobileMenu');
@@ -168,193 +472,6 @@ https://hyundaiautoeveramerica.applytojob.com/apply
     menu.dataset.mnInit='1';
   }
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
-}
-if(typeof initMobileMenu==='function')initMobileMenu();</script>" target="_blank" rel="noopener">See every live HAEA opening</a><a class="btn s" href="mailto:royceaisolutions@gmail.com">Email me</a></div>
-</div>
-
-<section><div class="wrap">
-<h2>Brands I have worked with</h2>
-<p class="lead">Fifteen years representing premium, luxury and exotic automotive brands &mdash; the same customer and dealer world HAEA's applications serve.</p>
-<div class="pills">
-<span class="pill"><b>Ferrari</b></span>
-<span class="pill"><b>Jaguar Land Rover</b></span>
-<span class="pill"><b>Maserati</b></span>
-<span class="pill"><b>BMW</b></span>
-<span class="pill"><b>Toyota</b></span>
-<span class="pill"><b>Lexus</b></span>
-<span class="pill"><b>VinFast</b></span>
-</div>
-</div></section>
-
-<section><div class="wrap">
-<h2>Why Hyundai AutoEver, specifically</h2>
-<p class="lead">HAEA is the IT arm of Hyundai Motor Group and, in its own words, <b>the crucial information link between Hyundai's Global Headquarters and North American operations</b> &mdash; serving Kia, Genesis, Hyundai Translead, Hyundai Mobis, Hyundai Capital and Glovis. That description is the job I have been doing in two languages for fifteen years: the business on one side, the builders on the other, and me keeping the requirement, the timeline and the reporting true in the middle.</p>
-<p class="lead">The programs that run through Irvine are planned and built with teams in Korea. <b>I speak Korean</b> &mdash; not as a bonus line on a resume, but as the difference between a requirement that arrives correctly and one that gets reinterpreted. I have been the English-to-Korean and Korean-to-English seam in operations for years, and I am comfortable being the person who refuses to guess.</p>
-<p class="lead">I also build and run production systems myself, on my own platform, with 180+ automations and self-healing monitoring. That means when an analyst writes a requirement or a program manager needs a status that is actually true, I know where the data lives and why it went missing.</p>
-</div></section>
-
-<section><div class="wrap">
-<h2>Inside the systems &mdash; CRM, process, inventory</h2>
-<p class="lead">At Jaguar Land Rover Newport Beach I am wired into the systems the store runs on, and everything the client hears from me comes out of them:</p>
-<div class="sys">
-<ul>
-<li><b>CRM and pipeline discipline.</b> Every relationship lives in <b>eLead CRM</b> &mdash; first contact, follow-up cadence, task queues, notes, outcomes. I work the queue daily, so nothing goes cold and no follow-up is dropped. That is records management in practice.</li>
-<li><b>Process and record ownership.</b> I own the record as a transaction moves: order and allocation updates, scheduling, status changes and the internal handoffs between departments. The system stays current because I keep it current.</li>
-<li><b>Inventory and location.</b> I track units through <b>Dealergard / Stargard GPS</b> and inventory status &mdash; in transit, on the lot, at the shop &mdash; so a customer gets an answer, not a guess. Same discipline as tracking a work stream across 30 of them.</li>
-<li><b>Reporting that gets used.</b> Regional KPIs, acquisition and inventory metrics, and the weekly numbers management actually made decisions with. I have built that reporting from scratch more than once.</li>
-<li><b>Why it matters here.</b> A business process analyst is asked to understand the system of record, keep it true, and prove the change worked. That is the job I already do, in a dealership and on my own platform.</li>
-</ul>
-</div>
-</div></section>
-
-<section><div class="wrap">
-<h2>What I bring to HAEA</h2>
-<div class="grid">
-<div class="role"><div class="rt">Business process analysis</div><p>As-is and to-be mapping, gap analysis, SOPs and process flows &mdash; written so the next person can run the process without asking me. I document and automate processes daily on my own platform.</p></div>
-<div class="role"><div class="rt">Requirements into delivery</div><p>Take the requirement from the business, get it agreed in writing, hand it to the builders, and verify what came back. I do this with my own systems and I did it across 15 retail locations.</p></div>
-<div class="role"><div class="rt">Korean-language bridge</div><p>The development side of these programs is in Korea. I speak, read and write Korean &mdash; so requirements cross that seam intact instead of being translated twice and guessed at once.</p></div>
-<div class="role"><div class="rt">KPI, SLA and reporting</div><p>AutoNation: 200% growth in vehicle acquisitions, 50% inventory improvement, 4,000 leads a month closing at 8-9%. VinFast: up to 15 locations and 100 people, contributing to a 10x regional sales increase in 100 days.</p></div>
-<div class="role"><div class="rt">Automation and tooling</div><p>180+ scheduled automations, integrations to 20+ third-party services, self-healing watchdogs. If a report has to be produced every week, I would rather build the thing that produces it.</p></div>
-<div class="role"><div class="rt">Executive-ready communication</div><p>I brief the customer, the field team and the program office from the same record in the same hour &mdash; and I say plainly what is working and what is not.</p></div>
-</div>
-</div></section>
-
-<section><div class="wrap">
-<h2>Where I fit &mdash; every live HAEA opening</h2>
-<p class="lead">69 live requisitions on HAEA's board today, 42 of them in Orange County. Every card and link below is a live posting, verified open today, with the location and the posted band where HAEA publishes one. The top group is where my background maps directly; the middle group is adjacent work I could do well; the bottom lists the rest of the board so you can see the full picture rather than a filtered one.</p>
-<input id="jobsearch" type="search" placeholder="Filter these openings &mdash; title or req number (e.g. analyst, 10755, program)">
-<div class="tier a">Best fit &mdash; process, requirements, program</div>
-<div class="grid">
-<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/aH8NPqQaQK/10755-Sr-Business-Process-Analyst-Corporate-Planning" target="_blank" rel="noopener"><div class="rt">Sr. Business Process Analyst (Corporate Planning)</div><div class="rl">Irvine, CA &middot; $103,170&ndash;$158,873</div><p>The corporate-planning seat: portfolio cataloging and methodology, ROI and business cases, KPI/SLA/OKR monitoring, OpEx and CapEx oversight, white papers and SOPs. Documenting a process and proving it with numbers is what I do every day, and at AutoNation and VinFast I built the reporting management ran the business on.</p></a>
-<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/vSaEfGS0f9/10512-Program-Manager-Applications-Development-Management" target="_blank" rel="noopener"><div class="rt">Program Manager, Applications Development &amp;amp; Management</div><div class="rl">Irvine, CA</div><p>Program manager for applications development and management, five days on-site at the Irvine headquarters. Running an applications portfolio means requirements, vendors, schedules, adoption and the reporting that goes up the line. I run that cycle on my own platform today and I ran it across 15 retail locations before this.</p></a>
-<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/5OWqt9OAyL/10629-Business-Process-Analyst-III" target="_blank" rel="noopener"><div class="rt">Business Process Analyst III</div><div class="rl">Irvine, CA</div><p>The senior individual-contributor process seat at the Irvine HQ: as-is and to-be mapping, gap analysis, process documentation, and the metrics that show whether the change actually landed.</p></a>
-<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/PXBMOrFVV0/10315-Business-Process-Analyst-II" target="_blank" rel="noopener"><div class="rt">Business Process Analyst II</div><div class="rl">Irvine, CA &middot; $83,940&ndash;$120,032</div><p>Business Process Analyst II, Irvine, posted at $83,940-$120,032. The requirements and process layer underneath HAEA's internal applications - write it down, get it agreed, watch it work.</p></a>
-<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/6plHEjEurT/10841-Business-Process-Analyst-II" target="_blank" rel="noopener"><div class="rt">Business Process Analyst II</div><div class="rl">Costa Mesa, CA</div><p>Business Process Analyst II in Costa Mesa - the same analyst work sitting closer to the operations and manufacturing side of the group.</p></a>
-</div>
-<div class="tier b" style="margin-top:26px">Adjacent &mdash; I could carry these</div>
-<div class="grid">
-<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/AWGiAdMyTn/10037-Sr-Manager-IT-Service-Management" target="_blank" rel="noopener"><div class="rt">Sr. Manager, IT Service Management</div><div class="rl">Irvine, CA</div><p>IT service management at the Irvine HQ: service levels, process ownership, reporting to the business. I own the service side of my own platform - SLAs, incident follow-through, monthly reporting - and I have run service delivery across 15 sites.</p></a>
-<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/5i3IxFcQpN/10684-Client-Services-Manager-Microsoft-Intune-Windows-Autopilot" target="_blank" rel="noopener"><div class="rt">Client Services Manager (Microsoft Intune, Windows Autopilot)</div><div class="rl">Irvine, CA</div><p>Client services for the endpoint fleet - Intune, Autopilot, device lifecycle. I manage device and systems rollouts as an operator rather than an endpoint engineer, and I would come in to the client-facing and process half of this seat.</p></a>
-<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/dTG8rkdrPy/10078-Buyer-III" target="_blank" rel="noopener"><div class="rt">Buyer III</div><div class="rl">Irvine, CA</div><p>Buyer III at the Irvine HQ. Procurement is process work with a signature on it: requirements, vendor comparison, cost cases, and keeping the record straight. That is the discipline I ran in dealership purchasing and inventory.</p></a>
-<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/rR2WgqFmNC/10156-Sr-Buyer" target="_blank" rel="noopener"><div class="rt">Sr. Buyer</div><div class="rl">Irvine, CA</div><p>Senior buyer, Irvine. Same work at a higher level - supplier negotiations, spend analysis and reporting against budget.</p></a>
-<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/1wu1fqDvgb/10112-Sr-Risk-Operation-Analyst-Integrated-Risk-Management-IRM" target="_blank" rel="noopener"><div class="rt">Sr. Risk Operation Analyst - Integrated Risk Management &amp;quot;IRM&amp;quot;</div><div class="rl">Irvine, CA</div><p>Risk operations analysis - the controls, evidence and reporting side of integrated risk management. I have built the documentation and audit trail for my own production systems, and I am comfortable owning evidence instead of hand-waving it.</p></a>
-<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/yXGLFSK77Y/10639-Technical-Operations-Engineer" target="_blank" rel="noopener"><div class="rt">Technical Operations Engineer</div><div class="rl">Irvine, CA</div><p>Technical operations in Irvine: monitoring, hands-on follow-through, and keeping systems running after they ship. That is the half of my current job nobody sees - watchdogs, alerting, and fixing things before a user notices.</p></a>
-<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/5oIqm9CwJw/10288-Financial-Analyst-II-Financial-Planning-Analysis" target="_blank" rel="noopener"><div class="rt">Financial Analyst II (Financial Planning &amp;amp; Analysis)</div><div class="rl">Irvine, CA</div><p>Financial analyst II in FP&A. I am not a career finance analyst, but I build the business cases, cost models and KPI reporting that this desk consumes, and I have owned P&L-adjacent decisions in the field.</p></a>
-<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/jV9gTeo3eF/20018-MES-System-Analyst-III" target="_blank" rel="noopener"><div class="rt">MES System Analyst III</div><div class="rl">Irvine, CA</div><p>MES systems analyst in Irvine - requirements, systems support and process documentation on the manufacturing side.</p></a>
-<a class="role" href="https://hyundaiautoeveramerica.applytojob.com/apply/ohdGZx7Y0a/20161-Manufacturing-Execution-Systems-MES-System-Analyst-III" target="_blank" rel="noopener"><div class="rt">Manufacturing Execution Systems (MES) System Analyst III</div><div class="rl">Irvine, CA</div><p>Manufacturing execution systems analyst in Irvine - the same work from the plant-facing direction.</p></a>
-</div>
-<div class="tier c" style="margin-top:26px">The rest of the Orange County board</div>
-<div class="mini" id="minilist">
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/keWJQG8D8n/10041-Engineering-Systems-Administrator-Identity-Access-Management-IAM" target="_blank" rel="noopener"><b>Engineering Systems Administrator - Identity Access Management (IAM)</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/0di9M9Gu7b/10054-Infrastructure-Architect" target="_blank" rel="noopener"><b>Infrastructure Architect</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/9fkYNNBhHc/10062-Java-Software-Engineer-III" target="_blank" rel="noopener"><b>Java Software Engineer III</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/zxWAQ1u43P/10132-Sr-Software-Engineer-Salesforce" target="_blank" rel="noopener"><b>Sr. Software Engineer (Salesforce)</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/cLwl5HAjco/10207-Software-Engineer-III-Siebel-To-Salesforce-Migration" target="_blank" rel="noopener"><b>Software Engineer III (Siebel to Salesforce Migration)</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/uxBtGUY3RA/10215-Manager-Software" target="_blank" rel="noopener"><b>Manager, Software</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/yOyBdn4aG6/10244-Cloud-Security-Engineer-SAE" target="_blank" rel="noopener"><b>Cloud Security Engineer SAE</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/FFdfdxD7BH/10279-Security-Incident-Response-Manager-SSRM" target="_blank" rel="noopener"><b>Security Incident Response Manager (SSRM)</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/xnmCJmc0AQ/10318-Cyber-Defense-Head-Of-Department-HOD" target="_blank" rel="noopener"><b>Cyber Defense Head of Department (HOD)</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/fGBZfSnFcM/10331-Sr-Engineering-Systems-Administrator-Microsoft-365" target="_blank" rel="noopener"><b>10331: Sr. Engineering Systems Administrator - Microsoft 365</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/MYEv1JyrQy/10351-Core-Network-Engineer-Cisco-Routersswitches-Palo-Alto" target="_blank" rel="noopener"><b>Core Network Engineer (Cisco routers/switches, Palo Alto)</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/yXqKndSttp/10390-Auditor-Integrated-Risk-Management-SSRM" target="_blank" rel="noopener"><b>Auditor, Integrated Risk Management (SSRM)</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/GHv5wcW5Ev/10418-Client-Device-Engineer" target="_blank" rel="noopener"><b>Client Device Engineer</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/mPfWDy9knN/10451-Director-Engineering-Sales-Applications" target="_blank" rel="noopener"><b>Director, Engineering – Sales Applications</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/h4gpts7syZ/10594-Finance-Advisor" target="_blank" rel="noopener"><b>Finance Advisor</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/hXVCsz32if/10607-Senior-Data-Engineer-Python" target="_blank" rel="noopener"><b>Senior Data Engineer (Python)</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/Je4ZHfu6mh/10632-Sr-Treasury-Accountant" target="_blank" rel="noopener"><b>Sr. Treasury Accountant</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/RdKavpY7qz/10701-Executive-Principal-Infrastructure-Operations" target="_blank" rel="noopener"><b>Executive Principal, Infrastructure Operations</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/4WVWKdHl6f/10734-Executive-Principal-Finance" target="_blank" rel="noopener"><b>Executive Principal, Finance</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/u3Rjvl6I54/10760-Senior-Accountant-II" target="_blank" rel="noopener"><b>Senior Accountant II</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/dQgbPHwPPW/10778-Sr-Network-Engineer" target="_blank" rel="noopener"><b>Sr. Network Engineer</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/MNBf4QtyvV/10845-Mgr-Cloud-Platform-Engineering" target="_blank" rel="noopener"><b>Mgr, Cloud Platform Engineering</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/nMevRcxnrH/10850-Sr-Software-Engineer-Applied-AI" target="_blank" rel="noopener"><b>Sr. Software Engineer - Applied AI</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/HyeW6vXEf7/10872-Cloud-Security-Engineer-SAE" target="_blank" rel="noopener"><b>Cloud Security Engineer SAE</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/j4uDqsqI5A/10873-Senior-Applications-Security-Engineer-Cyber-Defense" target="_blank" rel="noopener"><b>Senior Applications Security Engineer - Cyber Defense</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/ksUCHIyjrF/10883-Enterprise-SAP-Systems-AI-Solutions-Engineer" target="_blank" rel="noopener"><b>Enterprise SAP Systems &amp;amp; AI Solutions Engineer</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/PScc8wW9Iy/20117-System-Administrator-III" target="_blank" rel="noopener"><b>System Administrator III</b> &middot; Irvine, CA</a>
-<a href="https://hyundaiautoeveramerica.applytojob.com/apply/lb8T6S0MA4/20178-Security-Engineer-II" target="_blank" rel="noopener"><b>Security Engineer II</b> &middot; Irvine, CA</a>
-</div>
-<div class="tier c" style="margin-top:26px">Outside Orange County (27) &mdash; listed for completeness</div>
-<div class="mini" id="minilist2">
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/9dmDcGp2Fa/20040-SAP-HCM-Sr-Business-Systems-Analyst" target="_blank" rel="noopener"><b>SAP HCM Sr. Business Systems Analyst</b> &middot; Georgia</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/rRlXooJDzW/20171-Sr-Business-Systems-Analyst-FCM" target="_blank" rel="noopener"><b>Sr Business Systems Analyst (FCM)</b> &middot; Georgia</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/DLkozXPqSK/20177-Software-Engineer-II-Korean-Bilingual" target="_blank" rel="noopener"><b>Software Engineer II (Korean bilingual)</b> &middot; Georgia</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/P9BBlbrxfx/20191-System-Administrator-III" target="_blank" rel="noopener"><b>System Administrator III</b> &middot; Georgia</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/HkXdQkSE9F/20218-System-Administrator-II-bilingual-Korean-Preferred" target="_blank" rel="noopener"><b>System Administrator II (bilingual Korean preferred)</b> &middot; Georgia</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/hnjbhppVG7/20240-Business-System-Analyst-II-Software-Engineer-APS-Web" target="_blank" rel="noopener"><b>Business System Analyst II (Software Engineer - APS Web)</b> &middot; Georgia</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/n1cplTuEQa/20258-Business-Systems-Analyst-II-HCMPayroll" target="_blank" rel="noopener"><b>Business Systems Analyst II - HCM-Payroll</b> &middot; Georgia</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/WGqDxpnCIT/20027-Network-Engineer-I" target="_blank" rel="noopener"><b>Network Engineer I</b> &middot; Montgomery, AL</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/HffpLBb5XG/20146-Window-System-Administrator-III" target="_blank" rel="noopener"><b>Window System Administrator III</b> &middot; Montgomery, AL</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/XFspaXD4ef/20150-Sr-System-Administrator" target="_blank" rel="noopener"><b>Sr. System Administrator</b> &middot; Montgomery, AL</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/mkwGKacFfR/20165-Sys-Admin-III-Bilingual-Korean" target="_blank" rel="noopener"><b>Sys Admin III (Bilingual Korean)</b> &middot; Savannah, GA</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/jdfqtrKhuw/20167-Security-Engineer-III" target="_blank" rel="noopener"><b>Security Engineer III</b> &middot; Savannah, GA</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/N6cqPpoMxH/20181-Systems-Analyst-II-MES" target="_blank" rel="noopener"><b>Systems Analyst II (MES)</b> &middot; Savannah, GA</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/9yu2y6401d/20208-Oracle-DBA-III" target="_blank" rel="noopener"><b>Oracle DBA III</b> &middot; Savannah, GA</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/o2cXEWx0Q5/20217-Manager-Operations" target="_blank" rel="noopener"><b>Manager, Operations</b> &middot; Savannah, GA</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/pYj8k4Nloe/20222-Network-Engineer-III" target="_blank" rel="noopener"><b>Network Engineer III</b> &middot; Savannah, GA</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/brFUvHVkol/20224-Network-Engineer-II" target="_blank" rel="noopener"><b>Network Engineer II</b> &middot; Savannah, GA</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/DOsjOAx7ld/20225-Technician-II" target="_blank" rel="noopener"><b>Technician II</b> &middot; Savannah, GA</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/7cTAf4WD58/20226-Service-Desk-Representative-II" target="_blank" rel="noopener"><b>Service Desk Representative II</b> &middot; Savannah, GA</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/bFF37FYNbH/20229-MES-System-Analyst-III" target="_blank" rel="noopener"><b>MES System Analyst III</b> &middot; Savannah, GA</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/EHeWN9MWae/20236-MES-Analyst-III" target="_blank" rel="noopener"><b>MES Analyst III</b> &middot; Savannah, GA</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/NoJH3bfOAt/20257-Business-Systems-Analyst-II-SAP-FCM" target="_blank" rel="noopener"><b>Business Systems Analyst II (SAP FCM)</b> &middot; Savannah, GA</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/qECgaSIkUh/10445-Systems-Administrator" target="_blank" rel="noopener"><b>Systems Administrator</b> &middot; site varies</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/RVpHDrqRUR/10447-Desktop-Support-Specialist-II" target="_blank" rel="noopener"><b>Desktop Support Specialist II</b> &middot; site varies</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/JOFCKsUbQX/10732-Engineering-Systems-Administrator-II" target="_blank" rel="noopener"><b>Engineering Systems Administrator II</b> &middot; site varies</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/u8ZIWtX7kv/20021-Manager-HRBP" target="_blank" rel="noopener"><b>Manager, HRBP</b> &middot; site varies</a>
-  <a href="https://hyundaiautoeveramerica.applytojob.com/apply/3RZz0MnPYf/20174-Service-Desk-Representative-II" target="_blank" rel="noopener"><b>Service Desk Representative II</b> &middot; site varies</a>
-</div>
-</div></section>
-
-<section><div class="wrap">
-<h2>Numbers</h2>
-<div class="ev" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
-<div class="stat"><b>200%</b><span>growth in vehicle acquisitions (AutoNation)</span></div>
-<div class="stat"><b>50%</b><span>inventory improvement (AutoNation)</span></div>
-<div class="stat"><b>4,000</b><span>leads per month at 8-9% close rate</span></div>
-<div class="stat"><b>15</b><span>retail locations across NorCal + SoCal (VinFast)</span></div>
-<div class="stat"><b>100</b><span>salespeople under my regional remit</span></div>
-<div class="stat"><b>180+</b><span>automations running in production</span></div>
-</div>
-</div></section>
-
-<section><div class="wrap">
-<h2>How I work</h2>
-<ul class="clean">
-<li><b>Ship, then verify.</b> I read the live system back before I call anything done.</li>
-<li><b>Write it down.</b> Every process I touch leaves a document, so the next person is not dependent on me.</li>
-<li><b>Handle the unglamorous work.</b> The gap analysis, the follow-up list, the escalation at 5pm &mdash; that is the job.</li>
-<li><b>Ask before assuming.</b> If a requirement is vague, I get it in writing and confirm it back before anyone builds it.</li>
-</ul>
-</div></section>
-
-<section><div class="wrap">
-<h2>Straight talk</h2>
-<div class="talk">
-<p style="margin:0 0 10px"><b>Local, and on-site is not a problem.</b> I live in Irvine &mdash; minutes from the Bunsen Avenue headquarters, and an easy drive to Costa Mesa. HAEA's postings ask for five days on-site; that suits me.</p>
-<p style="margin:0 0 10px"><b>Korean.</b> Fluent. HAEA is the link between Hyundai's Global Headquarters and North American operations, and the build teams on these programs sit in Korea. I would rather be the person who resolves the ambiguity than the one who forwards it.</p>
-<p style="margin:0 0 10px"><b>The honest gap.</b> I do not carry a &ldquo;Business Process Analyst&rdquo; title on paper. What I have is fifteen years of doing the work &mdash; process documentation, requirements, gap analysis, KPI and SLA reporting, business cases &mdash; plus building and operating the systems myself. HAEA's own postings accept equivalent professional experience, and I would rather be judged on the work than the label.</p>
-<p style="margin:0"><b>Eligibility and availability.</b> U.S. citizen, no sponsorship needed, no relocation needed. Interview availability is open now, including same-week, and I can start on short notice.</p>
-</div>
-</div></section>
-
-<footer><div class="wrap">Royce Koh &middot; Irvine, CA &middot; <a href="mailto:royceaisolutions@gmail.com">royceaisolutions@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/roycekoh">linkedin.com/in/roycekoh</a><br>RoyceAI Solutions &mdash; <a href="/">royceai.com</a> &middot; <a href="/anduril/">Anduril page</a></div></footer>
-
-<script>
-var JOBS=[{"r": "10037", "t": "Sr. Manager, IT Service Management", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/AWGiAdMyTn/10037-Sr-Manager-IT-Service-Management"}, {"r": "10041", "t": "Engineering Systems Administrator - Identity Access Management (IAM)", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/keWJQG8D8n/10041-Engineering-Systems-Administrator-Identity-Access-Management-IAM"}, {"r": "10054", "t": "Infrastructure Architect", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/0di9M9Gu7b/10054-Infrastructure-Architect"}, {"r": "10062", "t": "Java Software Engineer III", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/9fkYNNBhHc/10062-Java-Software-Engineer-III"}, {"r": "10078", "t": "Buyer III", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/dTG8rkdrPy/10078-Buyer-III"}, {"r": "10112", "t": "Sr. Risk Operation Analyst - Integrated Risk Management &quot;IRM&quot;", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/1wu1fqDvgb/10112-Sr-Risk-Operation-Analyst-Integrated-Risk-Management-IRM"}, {"r": "10132", "t": "Sr. Software Engineer (Salesforce)", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/zxWAQ1u43P/10132-Sr-Software-Engineer-Salesforce"}, {"r": "10156", "t": "Sr. Buyer", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/rR2WgqFmNC/10156-Sr-Buyer"}, {"r": "10207", "t": "Software Engineer III (Siebel to Salesforce Migration)", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/cLwl5HAjco/10207-Software-Engineer-III-Siebel-To-Salesforce-Migration"}, {"r": "10215", "t": "Manager, Software", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/uxBtGUY3RA/10215-Manager-Software"}, {"r": "10244", "t": "Cloud Security Engineer SAE", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/yOyBdn4aG6/10244-Cloud-Security-Engineer-SAE"}, {"r": "10279", "t": "Security Incident Response Manager (SSRM)", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/FFdfdxD7BH/10279-Security-Incident-Response-Manager-SSRM"}, {"r": "10288", "t": "Financial Analyst II (Financial Planning &amp; Analysis)", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/5oIqm9CwJw/10288-Financial-Analyst-II-Financial-Planning-Analysis"}, {"r": "10315", "t": "Business Process Analyst II", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/PXBMOrFVV0/10315-Business-Process-Analyst-II"}, {"r": "10318", "t": "Cyber Defense Head of Department (HOD)", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/xnmCJmc0AQ/10318-Cyber-Defense-Head-Of-Department-HOD"}, {"r": "10331", "t": "10331: Sr. Engineering Systems Administrator - Microsoft 365", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/fGBZfSnFcM/10331-Sr-Engineering-Systems-Administrator-Microsoft-365"}, {"r": "10351", "t": "Core Network Engineer (Cisco routers/switches, Palo Alto)", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/MYEv1JyrQy/10351-Core-Network-Engineer-Cisco-Routersswitches-Palo-Alto"}, {"r": "10390", "t": "Auditor, Integrated Risk Management (SSRM)", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/yXqKndSttp/10390-Auditor-Integrated-Risk-Management-SSRM"}, {"r": "10418", "t": "Client Device Engineer", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/GHv5wcW5Ev/10418-Client-Device-Engineer"}, {"r": "10445", "t": "Systems Administrator", "l": "", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/qECgaSIkUh/10445-Systems-Administrator"}, {"r": "10447", "t": "Desktop Support Specialist II", "l": "", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/RVpHDrqRUR/10447-Desktop-Support-Specialist-II"}, {"r": "10451", "t": "Director, Engineering \u2013 Sales Applications", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/mPfWDy9knN/10451-Director-Engineering-Sales-Applications"}, {"r": "10512", "t": "Program Manager, Applications Development &amp; Management", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/vSaEfGS0f9/10512-Program-Manager-Applications-Development-Management"}, {"r": "10594", "t": "Finance Advisor", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/h4gpts7syZ/10594-Finance-Advisor"}, {"r": "10607", "t": "Senior Data Engineer (Python)", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/hXVCsz32if/10607-Senior-Data-Engineer-Python"}, {"r": "10629", "t": "Business Process Analyst III", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/5OWqt9OAyL/10629-Business-Process-Analyst-III"}, {"r": "10632", "t": "Sr. Treasury Accountant", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/Je4ZHfu6mh/10632-Sr-Treasury-Accountant"}, {"r": "10639", "t": "Technical Operations Engineer", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/yXGLFSK77Y/10639-Technical-Operations-Engineer"}, {"r": "10684", "t": "Client Services Manager (Microsoft Intune, Windows Autopilot)", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/5i3IxFcQpN/10684-Client-Services-Manager-Microsoft-Intune-Windows-Autopilot"}, {"r": "10701", "t": "Executive Principal, Infrastructure Operations", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/RdKavpY7qz/10701-Executive-Principal-Infrastructure-Operations"}, {"r": "10732", "t": "Engineering Systems Administrator II", "l": "", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/JOFCKsUbQX/10732-Engineering-Systems-Administrator-II"}, {"r": "10734", "t": "Executive Principal, Finance", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/4WVWKdHl6f/10734-Executive-Principal-Finance"}, {"r": "10755", "t": "Sr. Business Process Analyst (Corporate Planning)", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/aH8NPqQaQK/10755-Sr-Business-Process-Analyst-Corporate-Planning"}, {"r": "10760", "t": "Senior Accountant II", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/u3Rjvl6I54/10760-Senior-Accountant-II"}, {"r": "10778", "t": "Sr. Network Engineer", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/dQgbPHwPPW/10778-Sr-Network-Engineer"}, {"r": "10841", "t": "Business Process Analyst II", "l": "Costa Mesa, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/6plHEjEurT/10841-Business-Process-Analyst-II"}, {"r": "10845", "t": "Mgr, Cloud Platform Engineering", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/MNBf4QtyvV/10845-Mgr-Cloud-Platform-Engineering"}, {"r": "10850", "t": "Sr. Software Engineer - Applied AI", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/nMevRcxnrH/10850-Sr-Software-Engineer-Applied-AI"}, {"r": "10872", "t": "Cloud Security Engineer SAE", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/HyeW6vXEf7/10872-Cloud-Security-Engineer-SAE"}, {"r": "10873", "t": "Senior Applications Security Engineer - Cyber Defense", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/j4uDqsqI5A/10873-Senior-Applications-Security-Engineer-Cyber-Defense"}, {"r": "10883", "t": "Enterprise SAP Systems &amp; AI Solutions Engineer", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/ksUCHIyjrF/10883-Enterprise-SAP-Systems-AI-Solutions-Engineer"}, {"r": "20018", "t": "MES System Analyst III", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/jV9gTeo3eF/20018-MES-System-Analyst-III"}, {"r": "20021", "t": "Manager, HRBP", "l": "", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/u8ZIWtX7kv/20021-Manager-HRBP"}, {"r": "20027", "t": "Network Engineer I", "l": "Montgomery, AL", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/WGqDxpnCIT/20027-Network-Engineer-I"}, {"r": "20040", "t": "SAP HCM Sr. Business Systems Analyst", "l": "Georgia", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/9dmDcGp2Fa/20040-SAP-HCM-Sr-Business-Systems-Analyst"}, {"r": "20117", "t": "System Administrator III", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/PScc8wW9Iy/20117-System-Administrator-III"}, {"r": "20146", "t": "Window System Administrator III", "l": "Montgomery, AL", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/HffpLBb5XG/20146-Window-System-Administrator-III"}, {"r": "20150", "t": "Sr. System Administrator", "l": "Montgomery, AL", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/XFspaXD4ef/20150-Sr-System-Administrator"}, {"r": "20161", "t": "Manufacturing Execution Systems (MES) System Analyst III", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/ohdGZx7Y0a/20161-Manufacturing-Execution-Systems-MES-System-Analyst-III"}, {"r": "20165", "t": "Sys Admin III (Bilingual Korean)", "l": "Savannah, GA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/mkwGKacFfR/20165-Sys-Admin-III-Bilingual-Korean"}, {"r": "20167", "t": "Security Engineer III", "l": "Savannah, GA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/jdfqtrKhuw/20167-Security-Engineer-III"}, {"r": "20171", "t": "Sr Business Systems Analyst (FCM)", "l": "Georgia", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/rRlXooJDzW/20171-Sr-Business-Systems-Analyst-FCM"}, {"r": "20174", "t": "Service Desk Representative II", "l": "", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/3RZz0MnPYf/20174-Service-Desk-Representative-II"}, {"r": "20177", "t": "Software Engineer II (Korean bilingual)", "l": "Georgia", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/DLkozXPqSK/20177-Software-Engineer-II-Korean-Bilingual"}, {"r": "20178", "t": "Security Engineer II", "l": "Irvine, CA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/lb8T6S0MA4/20178-Security-Engineer-II"}, {"r": "20181", "t": "Systems Analyst II (MES)", "l": "Savannah, GA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/N6cqPpoMxH/20181-Systems-Analyst-II-MES"}, {"r": "20191", "t": "System Administrator III", "l": "Georgia", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/P9BBlbrxfx/20191-System-Administrator-III"}, {"r": "20208", "t": "Oracle DBA III", "l": "Savannah, GA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/9yu2y6401d/20208-Oracle-DBA-III"}, {"r": "20217", "t": "Manager, Operations", "l": "Savannah, GA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/o2cXEWx0Q5/20217-Manager-Operations"}, {"r": "20218", "t": "System Administrator II (bilingual Korean preferred)", "l": "Georgia", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/HkXdQkSE9F/20218-System-Administrator-II-bilingual-Korean-Preferred"}, {"r": "20222", "t": "Network Engineer III", "l": "Savannah, GA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/pYj8k4Nloe/20222-Network-Engineer-III"}, {"r": "20224", "t": "Network Engineer II", "l": "Savannah, GA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/brFUvHVkol/20224-Network-Engineer-II"}, {"r": "20225", "t": "Technician II", "l": "Savannah, GA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/DOsjOAx7ld/20225-Technician-II"}, {"r": "20226", "t": "Service Desk Representative II", "l": "Savannah, GA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/7cTAf4WD58/20226-Service-Desk-Representative-II"}, {"r": "20229", "t": "MES System Analyst III", "l": "Savannah, GA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/bFF37FYNbH/20229-MES-System-Analyst-III"}, {"r": "20236", "t": "MES Analyst III", "l": "Savannah, GA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/EHeWN9MWae/20236-MES-Analyst-III"}, {"r": "20240", "t": "Business System Analyst II (Software Engineer - APS Web)", "l": "Georgia", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/hnjbhppVG7/20240-Business-System-Analyst-II-Software-Engineer-APS-Web"}, {"r": "20257", "t": "Business Systems Analyst II (SAP FCM)", "l": "Savannah, GA", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/NoJH3bfOAt/20257-Business-Systems-Analyst-II-SAP-FCM"}, {"r": "20258", "t": "Business Systems Analyst II - HCM-Payroll", "l": "Georgia", "u": "https://hyundaiautoeveramerica.applytojob.com/apply/n1cplTuEQa/20258-Business-Systems-Analyst-II-HCMPayroll"}];
-(function(){
-  var box=document.getElementById('jobsearch');
-  if(!box) return;
-  box.addEventListener('input',function(){
-    var q=box.value.trim().toLowerCase();
-    var n=0;
-    document.querySelectorAll('.role,.mini a').forEach(function(el){
-      var t=el.innerText.toLowerCase();
-      var hit=!q||t.indexOf(q)>-1;
-      el.style.display=hit?'':'none';
-      if(hit)n++;
-    });
-  });
 })();
 </script>
 </body>
