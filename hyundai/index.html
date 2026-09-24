@@ -25,11 +25,10 @@ gtag('config', 'G-EF23H9423B');
 :root{--bg:#07090c;--card:#11151b;--line:#1f2733;--tx:#e8edf4;--mut:#96a3b4;--acc:#5fe08a;--acc2:#4da3ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.6}
 .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
-header{padding:26px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(7,9,12,.92);backdrop-filter:blur(10px);z-index:9}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.brand{font-weight:800;letter-spacing:-.02em}.brand span{color:var(--acc)}
-.nav a{color:var(--mut);text-decoration:none;margin-left:16px;font-size:14px}.nav a:hover{color:var(--tx)}
-.hero{padding:64px 0 30px}
+/* The site shell <nav> is position:fixed at 64px tall, so the page clears it here.
+   Do NOT add a second sticky/fixed bar at top:0 - that is what overlapped the logo and tabs. */
+body{padding-top:64px}
+.hero{padding:56px 0 30px}
 h1{font-size:clamp(30px,5vw,52px);line-height:1.08;margin:0 0 14px;letter-spacing:-.03em}
 h1 em{font-style:normal;color:var(--acc)}
 .sub{font-size:clamp(16px,2.2vw,20px);color:var(--mut);max-width:720px}
@@ -236,9 +235,6 @@ body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right
 </nav>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
 <div class="mobile-menu" id="mobileMenu"></div>
-
-<header><div class="wrap"><div class="brand">ROYCE<span>AI</span> SOLUTIONS</div>
-<div class="nav"><a href="/">Home</a><a href="/about/">About</a><a href="/anduril/">Anduril</a><a href="https://www.linkedin.com/in/roycekoh">LinkedIn</a></div></div></header>
 
 <div class="wrap hero">
 <h1>I run the requirements, the process and the reporting.<br><em>Hyundai AutoEver America &mdash; Irvine &amp; Costa Mesa.</em></h1>
