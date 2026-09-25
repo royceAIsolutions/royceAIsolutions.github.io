@@ -2,7 +2,7 @@
    PIN-gated (SHA-256 client-side), talks to the bridge + Hermes webhook. */
 (function () {
   'use strict';
-  var API = 'https://later-writing-adipex-librarian.trycloudflare.com';
+  var API = 'https://threshold-corporate-leslie-pharmacies.trycloudflare.com';
   // Self-locating + self-healing API: the endpoint file is rewritten whenever the
   // tunnel rotates, and every send re-verifies the bridge before posting - so a stale
   // URL self-corrects instead of silently showing "offline".
