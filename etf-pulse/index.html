@@ -25,7 +25,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px
 .nav-links a:hover{color:#eeeef0;background:rgba(124,92,252,0.08)}
 .nav-links a.active{color:#fff;background:rgba(124,92,252,0.15);border:1px solid rgba(124,92,252,0.3)}
 .nav-links .nav-cta{background:#7c5cfc;color:#fff!important;font-weight:600;padding:8px 22px;border-radius:8px}
-.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated,#15151b);border:1px solid var(--border,rgba(255,255,255,0.06));border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:#15151b;border:1px solid rgba(255,255,255,0.06);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
 .nav-burger span{display:block;width:18px;height:2px;background:#eeeef0;border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
 .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-burger.open span:nth-child(2){opacity:0}
@@ -108,7 +108,7 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
     <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
     <a href="/etf-pulse" class="nav-drawer-only active">📈 ETF Pulse</a>
     <a href="/blog" class="nav-drawer-only">Blog</a>
-    <a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a><a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a><a href="/playlist" class="nav-drawer-only">🎵 Playlist</a><a href="/livaway" class="nav-drawer-only">🏨 LivAway</a><a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a><a href="/different" class="nav-drawer-only">⚡ Why We're Different</a><a href="/federal" class="nav-drawer-only">🛰️ Federal</a><a href="/bellevue" class="nav-drawer-only">🏙️ Bellevue Condos</a><a href="/empower" class="nav-drawer-only">📸 Empower</a><a href="/wetrustrealty" class="nav-drawer-only">🏢 WeTrust Realty</a><a href="/sunny-hills" class="nav-drawer-only">🏥 Sunny Hills</a><a href="/tutor-colorado" class="nav-drawer-only">🎓 Tutor Colorado</a><a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a><a href="/about" class="nav-drawer-only">👤 About Royce</a><a href="/chat" class="nav-cta">💬 Chat</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -117,11 +117,11 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
 
 <section class="hero-sub">
   <h1>ETF <span class="gradient">Pulse</span></h1>
-  <p>12 leveraged ETFs · momentum + volatility + volume · updated 2026-09-25 07:01</p>
+  <p>12 leveraged ETFs · momentum + volatility + volume · updated 2026-09-26 07:01</p>
   <div class="chips">
     <span class="chip">📊 <b>12/12</b> tickers fetched</span>
-    <span class="chip">🟢 <b>4</b> positive on the day</span>
-    <span class="chip">🔎 Mean-reversion watch (|5D| ≥ 15%): <b>SOXL +18.3% (5D), SOXS -18.9% (5D)</b></span>
+    <span class="chip">🟢 <b>9</b> positive on the day</span>
+    <span class="chip">🔎 Mean-reversion watch (|5D| ≥ 15%): <b>none</b></span>
   </div>
 </section>
 
@@ -158,8 +158,8 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
 </footer>
 
 <script>
-const PULSE=[{"t": "SOXL", "c": 146.33, "d1": 0.05, "d5": 18.32, "d20": 18.92, "v": 119.8, "av": "58.7M", "trend": "RISING"}, {"t": "TECL", "c": 229.23, "d1": -0.77, "d5": 8.43, "d20": 8.82, "v": 66.6, "av": "473K", "trend": "RISING"}, {"t": "FNGU", "c": 35.68, "d1": 1.36, "d5": 8.19, "d20": 8.45, "v": 51.8, "av": "3.3M", "trend": "RISING"}, {"t": "TQQQ", "c": 78.58, "d1": -0.1, "d5": 8.18, "d20": 7.2, "v": 49.5, "av": "48.7M", "trend": "RISING"}, {"t": "SPXU", "c": 34.1, "d1": 0.29, "d5": -3.37, "d20": 0.18, "v": 31.8, "av": "7.3M", "trend": "RISING"}, {"t": "SPXL", "c": 287.0, "d1": -0.19, "d5": 2.02, "d20": -1.8, "v": 32.7, "av": "1.5M", "trend": "FALLING"}, {"t": "UPRO", "c": 149.99, "d1": -0.21, "d5": 1.9, "d20": -1.91, "v": 32.8, "av": "1.8M", "trend": "FALLING"}, {"t": "SQQQ", "c": 34.18, "d1": 0.12, "d5": -9.74, "d20": -9.52, "v": 48.6, "av": "44.1M", "trend": "FALLING"}, {"t": "UDOW", "c": 64.64, "d1": -0.97, "d5": -2.25, "d20": -12.67, "v": 32.6, "av": "1.7M", "trend": "FALLING"}, {"t": "FAS", "c": 150.06, "d1": -0.21, "d5": -7.03, "d20": -17.16, "v": 40.1, "av": "391K", "trend": "FALLING"}, {"t": "TNA", "c": 60.19, "d1": -0.4, "d5": -2.79, "d20": -17.47, "v": 37.4, "av": "3.7M", "trend": "FALLING"}, {"t": "SOXS", "c": 33.63, "d1": -0.09, "d5": -18.94, "d20": -25.84, "v": 122.3, "av": "57.6M", "trend": "FALLING"}];
-const TS="September 25, 2026 at 07:01:45 PDT";
+const PULSE=[{"t": "SOXL", "c": 151.45, "d1": 3.5, "d5": 6.71, "d20": 36.02, "v": 119.1, "av": "58.7M", "trend": "RISING"}, {"t": "TECL", "c": 234.5, "d1": 2.3, "d5": 2.03, "d20": 16.77, "v": 59.2, "av": "453K", "trend": "RISING"}, {"t": "TQQQ", "c": 79.6, "d1": 1.3, "d5": 0.87, "d20": 10.79, "v": 48.0, "av": "49.2M", "trend": "RISING"}, {"t": "FNGU", "c": 35.72, "d1": 0.11, "d5": -0.39, "d20": 6.28, "v": 49.8, "av": "3.1M", "trend": "RISING"}, {"t": "SPXL", "c": 291.28, "d1": 1.49, "d5": -1.11, "d20": 0.39, "v": 32.4, "av": "1.5M", "trend": "RISING"}, {"t": "UPRO", "c": 152.2, "d1": 1.47, "d5": -1.21, "d20": 0.28, "v": 32.5, "av": "1.8M", "trend": "RISING"}, {"t": "SPXU", "c": 33.59, "d1": -1.5, "d5": -0.06, "d20": -2.04, "v": 31.5, "av": "7.4M", "trend": "FALLING"}, {"t": "UDOW", "c": 66.36, "d1": 2.66, "d5": -1.82, "d20": -10.17, "v": 34.4, "av": "1.7M", "trend": "FALLING"}, {"t": "SQQQ", "c": 33.75, "d1": -1.26, "d5": -2.46, "d20": -12.43, "v": 46.9, "av": "44.5M", "trend": "FALLING"}, {"t": "TNA", "c": 60.36, "d1": 0.28, "d5": -4.01, "d20": -13.71, "v": 37.1, "av": "3.8M", "trend": "FALLING"}, {"t": "FAS", "c": 152.29, "d1": 1.49, "d5": -6.63, "d20": -16.66, "v": 40.9, "av": "403K", "trend": "FALLING"}, {"t": "SOXS", "c": 32.43, "d1": -3.57, "d5": -8.21, "d20": -34.91, "v": 121.5, "av": "58.9M", "trend": "FALLING"}];
+const TS="September 26, 2026 at 07:01:04 PDT";
 const pct=v=>v>0?"+"+v.toFixed(2)+"%":v.toFixed(2)+"%";
 const cls=v=>v>0?"up":(v<0?"down":"flat");
 const fmtV=v=>v>=1000000?(v/1000000).toFixed(1)+"M":v>=1000?(v/1000).toFixed(0)+"K":String(Math.round(v));
