@@ -3841,5 +3841,14 @@
     "subject": "test",
     "date": "2026-09-27",
     "ts": 1790518289541
+  },
+  {
+    "student": "SpeedCheck Probe",
+    "correct": 1,
+    "total": 1,
+    "percent": 100,
+    "subject": "test",
+    "date": "2026-09-27",
+    "ts": 1790520156552
   }
 ]
