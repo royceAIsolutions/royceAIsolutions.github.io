@@ -3,50 +3,29 @@
 (function () {
   'use strict';
   var API = 'https://liquid-only-aging-flows.trycloudflare.com';
-  // Self-locating + self-healing API (hardened Sep 27 2026). The published endpoint
-  // (user-site/jlr-chat-endpoint.json) can list more than one host, and a host that is
-  // dead AT THE EDGE answers a Cloudflare 530 with no body - it does not fail fast - so
-  // every probe is time-bounded and every send re-verifies. A rotation mid-session is
-  // followed instead of costing the visitor the answer.
+  // Self-locating + self-healing API: the endpoint file is rewritten whenever the
+  // tunnel rotates, and every send re-verifies the bridge before posting - so a stale
+  // URL self-corrects instead of silently showing "offline".
   var API_FALLBACK = API;
-  var API_AT = 0;
-  var API_TTL_MS = 60000;
-  function fetchT(url, opts, ms) {
-    var ctl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
-    var o = {}; for (var k in (opts || {})) { o[k] = opts[k]; }
-    o.cache = 'no-store';
-    if (ctl) { o.signal = ctl.signal; }
-    var t = setTimeout(function () { if (ctl) { try { ctl.abort(); } catch (e) {} } }, ms || 8000);
-    return fetch(url, o).then(function (r) { clearTimeout(t); return r; },
-                              function (e) { clearTimeout(t); throw e; });
-  }
-  function apiCandidates() {
+  function resolveApi() {
     var cands = [];
-    function put(u) { u = String(u || '').replace(/\/$/, ''); if (u && cands.indexOf(u) < 0) { cands.push(u); } }
-    return fetchT('/jlr-chat-endpoint.json?ts=' + Date.now(), {}, 6000)
+    return fetch('/jlr-chat-endpoint.json?ts=' + Date.now(), { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (j) { if (j) { put(j.api); put(j.alt); put(j.stable); } })
+      .then(function (j) { if (j && j.api) { cands.push(String(j.api).replace(/\/$/, '')); } })
       .catch(function () {})
-      .then(function () { put(API_FALLBACK); return cands; });
+      .then(function () {
+        if (cands.indexOf(API_FALLBACK) < 0) { cands.push(API_FALLBACK); }
+        return cands.reduce(function (chain, c) {
+          return chain.then(function (ok) {
+            if (ok) { return true; }
+            return fetch(c + '/health', { cache: 'no-store' })
+              .then(function (h) { if (h.ok) { API = c; return true; } return false; })
+              .catch(function () { return false; });
+          });
+        }, Promise.resolve(false));
+      });
   }
-  function resolveApi(force) {
-    if (!force && API_AT && (Date.now() - API_AT) < API_TTL_MS) { return Promise.resolve(true); }
-    return apiCandidates().then(function (cands) {
-      return cands.reduce(function (chain, c) {
-        return chain.then(function (ok) {
-          if (ok) { return true; }
-          return fetchT(c + '/health', {}, 5000)
-            .then(function (h) { if (h.ok) { API = c; API_AT = Date.now(); return true; } return false; })
-            .catch(function () { return false; });
-        });
-      }, Promise.resolve(false));
-    });
-  }
-  resolveApi(true);
-  // Diagnostics hook for the ops lane (no secret: the PIN never leaves the device).
-  window.__jlrChat = { resolve: resolveApi, candidates: apiCandidates,
-                       api: function () { return API; },
-                       setApi: function (u) { API = u; API_AT = 0; } };
+  resolveApi();
 
   var AUTH_KEY = 'jlr_chat_pin_hash';
   var HIST_KEY = 'jlr_chat_history';
@@ -210,7 +189,7 @@
     return fetch(API + '/chat', opts).then(function (r) {
       if (r.ok || r.status === 401 || r.status === 429) { return r; }
       // tunnel likely rotated - re-resolve and retry once before giving up
-      return resolveApi(true).then(function (ok) { return ok ? fetch(API + '/chat', opts) : r; });
+      return resolveApi().then(function (ok) { return ok ? fetch(API + '/chat', opts) : r; });
     });
   }
 
@@ -240,8 +219,8 @@
       var tries = 0;
       (function poll() {
         tries++;
-        fetchT(API + '/reply?id=' + encodeURIComponent(j.id), { method: 'GET' }, 8000)
-          .then(function (r) { if (!r.ok) { throw new Error('reply ' + r.status); } return r.json(); })
+        fetch(API + '/reply?id=' + encodeURIComponent(j.id), { method: 'GET' })
+          .then(function (r) { return r.json(); })
           .then(function (d) {
             if (d.reply) {
               busy(false);
@@ -256,14 +235,7 @@
             }
           })
           .catch(function () {
-            // A rotation mid-poll must not cost the visitor the answer: the reply file lives on
-            // the BRIDGE, so every third failure re-resolves the endpoint and the poll continues
-            // on the live host instead of burning all 240 tries against a dead one.
-            var again = function () {
-              if (tries < POLL_MAX) { setTimeout(poll, POLL_MS); }
-              else { busy(false); addMsg('sys', 'Timed out \u2014 try again.'); }
-            };
-            if (tries % 3 === 0) { resolveApi(true).then(again, again); } else { again(); }
+            if (tries < POLL_MAX) { setTimeout(poll, POLL_MS); } else { busy(false); addMsg('sys', 'Timed out — try again.'); }
           });
       })();
     }).catch(function (e) {
@@ -281,9 +253,9 @@
     if (!v) return;
     sha256(v).then(function (h) {
       // Verify against the bridge before trusting it (no agent run fired)
-      return resolveApi(true).then(function (ok) {
+      return resolveApi().then(function (ok) {
        if (!ok) { pinErr.textContent = 'Chat is offline — try again in a bit.'; pinErr.style.display = 'block'; throw new Error('offline'); }
-       return fetchT(API + '/auth?pin=' + encodeURIComponent(h), { method: 'GET' }).then(function (r) {
+       return fetch(API + '/auth?pin=' + encodeURIComponent(h), { method: 'GET' }).then(function (r) {
         if (r.status === 401) { pinErr.style.display = 'block'; pinIn.value = ''; throw new Error('badpin'); }
         if (!r.ok) { pinErr.textContent = 'Chat is offline — try again in a bit.'; pinErr.style.display = 'block'; throw new Error('offline'); }
         savePin(h);
