@@ -1,14 +1,5 @@
 [
   {
-    "student": "Jiho Pak",
-    "correct": 27,
-    "total": 33,
-    "percent": 82,
-    "subject": "grade9",
-    "date": "2026-09-12",
-    "ts": 1789228686043
-  },
-  {
     "student": "SpeedCheck Probe",
     "correct": 1,
     "total": 1,
@@ -4498,5 +4489,14 @@
     "subject": "test",
     "date": "2026-09-29",
     "ts": 1790646602962
+  },
+  {
+    "student": "SpeedCheck Probe",
+    "correct": 1,
+    "total": 1,
+    "percent": 100,
+    "subject": "test",
+    "date": "2026-09-29",
+    "ts": 1790648463709
   }
 ]
