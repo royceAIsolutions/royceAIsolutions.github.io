@@ -6,15 +6,6 @@
     "percent": 100,
     "subject": "test",
     "date": "2026-09-20",
-    "ts": 1789877561914
-  },
-  {
-    "student": "SpeedCheck Probe",
-    "correct": 1,
-    "total": 1,
-    "percent": 100,
-    "subject": "test",
-    "date": "2026-09-20",
     "ts": 1789879413931
   },
   {
@@ -4498,5 +4489,14 @@
     "subject": "test",
     "date": "2026-09-30",
     "ts": 1790750520978
+  },
+  {
+    "student": "SpeedCheck Probe",
+    "correct": 1,
+    "total": 1,
+    "percent": 100,
+    "subject": "test",
+    "date": "2026-09-30",
+    "ts": 1790752368556
   }
 ]
