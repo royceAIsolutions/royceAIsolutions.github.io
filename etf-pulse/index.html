@@ -25,7 +25,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px
 .nav-links a:hover{color:#eeeef0;background:rgba(124,92,252,0.08)}
 .nav-links a.active{color:#fff;background:rgba(124,92,252,0.15);border:1px solid rgba(124,92,252,0.3)}
 .nav-links .nav-cta{background:#7c5cfc;color:#fff!important;font-weight:600;padding:8px 22px;border-radius:8px}
-.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated,#15151b);border:1px solid var(--border,rgba(255,255,255,0.06));border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:#15151b;border:1px solid rgba(255,255,255,0.06);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
 .nav-burger span{display:block;width:18px;height:2px;background:#eeeef0;border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
 .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-burger.open span:nth-child(2){opacity:0}
@@ -108,7 +108,7 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
     <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
     <a href="/etf-pulse" class="nav-drawer-only active">📈 ETF Pulse</a>
     <a href="/blog" class="nav-drawer-only">Blog</a>
-    <a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a><a href="/playlist" class="nav-drawer-only">🎵 Playlist</a><a href="/livaway" class="nav-drawer-only">🏨 LivAway</a><a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a><a href="/different" class="nav-drawer-only">⚡ Why We're Different</a><a href="/federal" class="nav-drawer-only">🛰️ Federal</a><a href="/bellevue" class="nav-drawer-only">🏙️ Bellevue Condos</a><a href="/empower" class="nav-drawer-only">📸 Empower</a><a href="/wetrustrealty" class="nav-drawer-only">🏢 WeTrust Realty</a><a href="/sunny-hills" class="nav-drawer-only">🏥 Sunny Hills</a><a href="/tutor-colorado" class="nav-drawer-only">🎓 Tutor Colorado</a><a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a><a href="/about" class="nav-drawer-only">👤 About Royce</a><a href="/chat" class="nav-cta">💬 Chat</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -117,10 +117,10 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
 
 <section class="hero-sub">
   <h1>ETF <span class="gradient">Pulse</span></h1>
-  <p>12 leveraged ETFs · momentum + volatility + volume · updated 2026-09-29 11:04</p>
+  <p>12 leveraged ETFs · momentum + volatility + volume · updated 2026-09-30 07:01</p>
   <div class="chips">
     <span class="chip">📊 <b>12/12</b> tickers fetched</span>
-    <span class="chip">🟢 <b>3</b> positive on the day</span>
+    <span class="chip">🟢 <b>4</b> positive on the day</span>
     <span class="chip">🔎 Mean-reversion watch (|5D| ≥ 15%): <b>none</b></span>
   </div>
 </section>
@@ -158,8 +158,8 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
 </footer>
 
 <script>
-const PULSE=[{"t": "SOXL", "c": 142.29, "d1": -6.05, "d5": -6.36, "d20": 26.15, "v": 115.5, "av": "59.2M", "trend": "RISING"}, {"t": "TECL", "c": 228.22, "d1": -2.68, "d5": -2.8, "d20": 12.19, "v": 57.2, "av": "446K", "trend": "RISING"}, {"t": "TQQQ", "c": 77.04, "d1": -3.22, "d5": -4.69, "d20": 7.12, "v": 49.0, "av": "49.2M", "trend": "RISING"}, {"t": "FNGU", "c": 34.19, "d1": -4.28, "d5": -5.4, "d20": 3.04, "v": 52.0, "av": "2.9M", "trend": "RISING"}, {"t": "SPXU", "c": 34.37, "d1": 2.32, "d5": 2.11, "d20": -0.78, "v": 32.5, "av": "7.6M", "trend": "FALLING"}, {"t": "SPXL", "c": 284.66, "d1": -2.27, "d5": -3.23, "d20": -0.93, "v": 33.3, "av": "1.5M", "trend": "FALLING"}, {"t": "UPRO", "c": 148.75, "d1": -2.27, "d5": -3.42, "d20": -1.01, "v": 33.4, "av": "1.8M", "trend": "FALLING"}, {"t": "SQQQ", "c": 34.83, "d1": 3.2, "d5": 3.14, "d20": -9.56, "v": 47.9, "av": "44.8M", "trend": "FALLING"}, {"t": "UDOW", "c": 65.08, "d1": -1.93, "d5": -2.69, "d20": -10.12, "v": 34.8, "av": "1.7M", "trend": "FALLING"}, {"t": "TNA", "c": 59.1, "d1": -2.09, "d5": -7.5, "d20": -13.86, "v": 35.5, "av": "3.8M", "trend": "FALLING"}, {"t": "FAS", "c": 147.2, "d1": -3.34, "d5": -3.48, "d20": -17.79, "v": 41.3, "av": "408K", "trend": "FALLING"}, {"t": "SOXS", "c": 34.43, "d1": 6.17, "d5": 6.2, "d20": -29.76, "v": 117.7, "av": "60.2M", "trend": "FALLING"}];
-const TS="September 29, 2026 at 11:04:50 PDT";
+const PULSE=[{"t": "SOXL", "c": 147.0, "d1": 3.31, "d5": 0.51, "d20": 38.8, "v": 115.7, "av": "60.2M", "trend": "RISING"}, {"t": "TECL", "c": 227.76, "d1": -0.2, "d5": -1.4, "d20": 17.37, "v": 57.3, "av": "453K", "trend": "RISING"}, {"t": "TQQQ", "c": 77.46, "d1": 0.55, "d5": -1.53, "d20": 12.02, "v": 49.0, "av": "49.4M", "trend": "RISING"}, {"t": "FNGU", "c": 34.49, "d1": 0.88, "d5": -2.02, "d20": 7.01, "v": 51.8, "av": "2.7M", "trend": "RISING"}, {"t": "SPXL", "c": 283.2, "d1": -0.51, "d5": -1.51, "d20": 0.66, "v": 33.2, "av": "1.5M", "trend": "RISING"}, {"t": "UPRO", "c": 147.96, "d1": -0.53, "d5": -1.56, "d20": 0.55, "v": 33.2, "av": "1.8M", "trend": "RISING"}, {"t": "SPXU", "c": 34.54, "d1": 0.49, "d5": 1.59, "d20": -2.29, "v": 32.3, "av": "7.7M", "trend": "FALLING"}, {"t": "UDOW", "c": 64.56, "d1": -0.8, "d5": -1.09, "d20": -8.84, "v": 34.4, "av": "1.8M", "trend": "FALLING"}, {"t": "TNA", "c": 58.44, "d1": -1.12, "d5": -3.29, "d20": -11.83, "v": 35.3, "av": "3.9M", "trend": "FALLING"}, {"t": "SQQQ", "c": 34.66, "d1": -0.49, "d5": 1.52, "d20": -13.28, "v": 47.9, "av": "45.1M", "trend": "FALLING"}, {"t": "FAS", "c": 145.73, "d1": -1.0, "d5": -3.09, "d20": -16.41, "v": 41.1, "av": "420K", "trend": "FALLING"}, {"t": "SOXS", "c": 33.26, "d1": -3.4, "d5": -1.19, "d20": -36.31, "v": 117.8, "av": "62.2M", "trend": "FALLING"}];
+const TS="September 30, 2026 at 07:01:46 PDT";
 const pct=v=>v>0?"+"+v.toFixed(2)+"%":v.toFixed(2)+"%";
 const cls=v=>v>0?"up":(v<0?"down":"flat");
 const fmtV=v=>v>=1000000?(v/1000000).toFixed(1)+"M":v>=1000?(v/1000).toFixed(0)+"K":String(Math.round(v));
