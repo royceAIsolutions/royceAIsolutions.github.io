@@ -388,15 +388,6 @@
   },
   {
     "student": "Carter Koh",
-    "correct": 1,
-    "total": 2,
-    "percent": 50,
-    "subject": "grade11",
-    "date": "2026-07-20",
-    "ts": 1784571206372
-  },
-  {
-    "student": "Carter Koh",
     "correct": 8,
     "total": 9,
     "percent": 89,
@@ -745,14 +736,5 @@
     "subject": "grade9",
     "date": "2026-09-12",
     "ts": 1789228686043
-  },
-  {
-    "student": "Jiho Pak",
-    "correct": 0,
-    "total": 1,
-    "percent": 0,
-    "subject": "test",
-    "date": "2026-10-01",
-    "ts": 1790830860331
   }
 ]
