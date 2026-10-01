@@ -736,5 +736,14 @@
     "subject": "grade9",
     "date": "2026-09-12",
     "ts": 1789228686043
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 1,
+    "total": 1,
+    "percent": 100,
+    "subject": "quiz",
+    "date": "2026-10-01",
+    "ts": 1790830901637
   }
 ]
