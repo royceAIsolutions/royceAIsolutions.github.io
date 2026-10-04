@@ -1,5 +1,5 @@
 {
-  "updated": "October 03, 2026",
+  "updated": "October 04, 2026",
   "count": 2,
   "deals": [
     {
@@ -77,7 +77,7 @@
       "thesis": "3.0x cash flow. DSCR 2.64x — clears the 1.25 lender bar. ~$97,436/yr left after debt service. owner retiring.",
       "notes": "Full financials known: 3.0x SDE, DSCR 2.78x. Ad# 2227624, broker 973-255-7402. Verify location is CA first!",
       "source": "laundromat",
-      "last_reviewed": "2026-10-03"
+      "last_reviewed": "2026-10-04"
     },
     {
       "kind": "laundromat",
@@ -98,7 +98,28 @@
       "thesis": "$83,447 cash flow on ~$499,113 revenue — price undisclosed (NDA), call the broker. absentee-run (passive).",
       "notes": "Best passive profile found in scan; CF 83.4K meets min. Price undisclosed (NDA).",
       "source": "laundromat",
-      "last_reviewed": "2026-10-03"
+      "last_reviewed": "2026-10-04"
+    },
+    {
+      "kind": "laundromat",
+      "title": "Coin Laundromat — Compton (commercial laundry category)",
+      "url": "https://www.bizbuysell.com/california/commercial-laundry-businesses-for-sale/",
+      "price": 372500,
+      "cashflow": null,
+      "revenue": null,
+      "location": "Compton, CA",
+      "description": "Coin Laundromat in Compton — $372.5K, listed under commercial laundry businesses on BizBuySell.",
+      "multiple": null,
+      "dscr": null,
+      "down": null,
+      "monthly": null,
+      "score": 11,
+      "grade": "C",
+      "consider": true,
+      "thesis": "Financials behind NDA — request the CIM to score it properly.",
+      "notes": "Lower price point. Compton market — verify area/security.",
+      "source": "laundromat",
+      "last_reviewed": "2026-10-04"
     },
     {
       "kind": "laundromat",
@@ -119,7 +140,7 @@
       "thesis": "Financials behind NDA — request the CIM to score it properly. established.",
       "notes": "Category page — need to identify the specific listing behind it.",
       "source": "laundromat",
-      "last_reviewed": "2026-10-03"
+      "last_reviewed": "2026-10-04"
     },
     {
       "kind": "laundromat",
@@ -140,49 +161,7 @@
       "thesis": "Financials behind NDA — request the CIM to score it properly. upside noted.",
       "notes": "Passive keyword + SD market. Financials NDA.",
       "source": "laundromat",
-      "last_reviewed": "2026-10-03"
-    },
-    {
-      "kind": "laundromat",
-      "title": "Coin Laundromat — Compton (commercial laundry category)",
-      "url": "https://www.bizbuysell.com/california/commercial-laundry-businesses-for-sale/",
-      "price": 372500,
-      "cashflow": null,
-      "revenue": null,
-      "location": "Compton, CA",
-      "description": "Coin Laundromat in Compton — $372.5K, listed under commercial laundry businesses on BizBuySell.",
-      "multiple": null,
-      "dscr": null,
-      "down": null,
-      "monthly": null,
-      "score": 10,
-      "grade": "C",
-      "consider": true,
-      "thesis": "Financials behind NDA — request the CIM to score it properly.",
-      "notes": "Lower price point. Compton market — verify area/security.",
-      "source": "laundromat",
-      "last_reviewed": "2026-10-03"
-    },
-    {
-      "kind": "laundromat",
-      "title": "Laundromat Next to UC Riverside — Profitable, Strong Upside",
-      "url": "https://www.bizbuysell.com/business-opportunity/laundromat-for-sale-next-to-uc-riverside-profitable-strong-upside/2459719/",
-      "price": null,
-      "cashflow": null,
-      "revenue": null,
-      "location": "Riverside, CA",
-      "description": "Well-established (20+ years in current location) neighborhood laundromat directly across the street from UC Riverside. Profitable with strong upside.",
-      "multiple": null,
-      "dscr": null,
-      "down": null,
-      "monthly": null,
-      "score": 7,
-      "grade": "D",
-      "consider": true,
-      "thesis": "Financials behind NDA — request the CIM to score it properly. established.",
-      "notes": "20+ yr track record + captive student market. Financials NDA.",
-      "source": "laundromat",
-      "last_reviewed": "2026-10-03"
+      "last_reviewed": "2026-10-04"
     },
     {
       "kind": "laundromat",
@@ -203,7 +182,7 @@
       "thesis": "Financials behind NDA — request the CIM to score it properly. established.",
       "notes": "41 washers = real capacity. USC-adjacent = student traffic. Financials NDA.",
       "source": "laundromat",
-      "last_reviewed": "2026-10-03"
+      "last_reviewed": "2026-10-04"
     },
     {
       "kind": "laundromat",
@@ -224,7 +203,28 @@
       "thesis": "Financials behind NDA — request the CIM to score it properly.",
       "notes": "OC. $1.1M price — CF must be ~$220K+ to clear 5x / DSCR 1.25.",
       "source": "laundromat",
-      "last_reviewed": "2026-10-03"
+      "last_reviewed": "2026-10-04"
+    },
+    {
+      "kind": "laundromat",
+      "title": "Laundromat Next to UC Riverside — Profitable, Strong Upside",
+      "url": "https://www.bizbuysell.com/business-opportunity/laundromat-for-sale-next-to-uc-riverside-profitable-strong-upside/2459719/",
+      "price": null,
+      "cashflow": null,
+      "revenue": null,
+      "location": "Riverside, CA",
+      "description": "Well-established (20+ years in current location) neighborhood laundromat directly across the street from UC Riverside. Profitable with strong upside.",
+      "multiple": null,
+      "dscr": null,
+      "down": null,
+      "monthly": null,
+      "score": 4,
+      "grade": "F",
+      "consider": true,
+      "thesis": "Financials behind NDA — request the CIM to score it properly. established.",
+      "notes": "20+ yr track record + captive student market. Financials NDA.",
+      "source": "laundromat",
+      "last_reviewed": "2026-10-04"
     },
     {
       "kind": "laundromat",
@@ -239,13 +239,13 @@
       "dscr": null,
       "down": null,
       "monthly": null,
-      "score": 5,
-      "grade": "D",
+      "score": 0,
+      "grade": "F",
       "consider": true,
       "thesis": "Financials behind NDA — request the CIM to score it properly. absentee-run (passive).",
       "notes": "OC local = easiest to manage. NDA required.",
       "source": "laundromat",
-      "last_reviewed": "2026-10-03"
+      "last_reviewed": "2026-10-04"
     }
   ]
 }
