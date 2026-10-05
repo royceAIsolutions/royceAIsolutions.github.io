@@ -98,11 +98,6 @@ body.deck-single .slide.active{transform:none;z-index:auto}
 body.deck-single .slide.hero{padding:3.5rem 1.5rem 1.5rem}
 body.deck-single .slide-inner{width:100%;max-width:920px;margin:0 auto}
 body.deck-single .deck-controls,body.deck-single .dc-dots,body.deck-single .deck-progress{display:none!important}
-/* deck-fmt guard: inactive slides must never paint over the active one */
-.slide:not(.active){display:none!important}
-/* this page's deck-single mode lays every slide out statically (a long scroll), so the
-   guard above must not hide them there */
-body.deck-single .slide:not(.active){display:block!important}
 </style>
 </head>
 <body class="deck-single">
@@ -120,7 +115,7 @@ body.deck-single .slide:not(.active){display:block!important}
     <a href="/livaway" class="nav-drawer-only">🏨 LivAway</a>
     <a href="/livaway/land" class="nav-drawer-only active">🏞️ LivAway Land</a>
     <a href="/blog" class="nav-drawer-only">Blog</a>
-    <a href="/mustangs" class="nav-drawer-only">🐎 Mustangs</a><a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a><a href="/playlist" class="nav-drawer-only">🎵 Playlist</a><a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a><a href="/different" class="nav-drawer-only">⚡ Why We're Different</a><a href="/federal" class="nav-drawer-only">🛰️ Federal</a><a href="/bellevue" class="nav-drawer-only">🏙️ Bellevue Condos</a><a href="/empower" class="nav-drawer-only">📸 Empower</a><a href="/wetrustrealty" class="nav-drawer-only">🏢 WeTrust Realty</a><a href="/sunny-hills" class="nav-drawer-only">🏥 Sunny Hills</a><a href="/tutor-colorado" class="nav-drawer-only">🎓 Tutor Colorado</a><a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a><a href="/about" class="nav-drawer-only">👤 About Royce</a><a href="/chat" class="nav-cta">💬 Chat</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -132,7 +127,7 @@ body.deck-single .slide:not(.active){display:block!important}
 <div class="slide hero">
   <div class="slide-inner">
     <h1>🏞️ LivAway <span class="gradient">Land Scanner</span></h1>
-    <p>2–2.5 acre parcels near freeways in <span class="count">250k+ MSAs</span> — scored against Mike Nielson's site-selection criteria (freeway adjacency, ≤60 mi from downtown core, field-verify: slope · height limits · wetlands · zoning · AADT). <span class="count">0 parcels</span> live · <span class="count">0 scored ≥70</span> · scanned 2026-09-28.</p>
+    <p>2–2.5 acre parcels near freeways in <span class="count">250k+ MSAs</span> — scored against Mike Nielson's site-selection criteria (freeway adjacency, ≤60 mi from downtown core, field-verify: slope · height limits · wetlands · zoning · AADT). <span class="count">0 parcels</span> live · <span class="count">0 scored ≥70</span> · scanned 2026-10-05.</p>
     <p style="font-size:0.8rem;color:#5c5c6e;margin-top:6px">Data: Zillow land listings + OpenStreetMap freeway proximity. Verify every parcel on the ground before offers — zoning, utilities, wetlands, and AADT are due-diligence items.</p>
   </div>
 </div>
