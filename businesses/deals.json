@@ -1,5 +1,5 @@
 {
-  "updated": "October 06, 2026",
+  "updated": "October 07, 2026",
   "count": 2,
   "deals": [
     {
@@ -77,49 +77,28 @@
       "thesis": "3.0x cash flow. DSCR 2.64x — clears the 1.25 lender bar. ~$97,436/yr left after debt service. owner retiring.",
       "notes": "Full financials known: 3.0x SDE, DSCR 2.78x. Ad# 2227624, broker 973-255-7402. Verify location is CA first!",
       "source": "laundromat",
-      "last_reviewed": "2026-10-04"
+      "last_reviewed": "2026-10-07"
     },
     {
       "kind": "laundromat",
       "title": "Simple Coin Laundry — Absentee Owner Run (Oakland)",
       "url": "https://www.bizbuysell.com/business-opportunity/simple-coin-laundry-as-absentee-owner-s-run-for-sale-in-oakland/2488231/",
-      "price": null,
+      "price": 449900,
       "cashflow": 83447,
       "revenue": 499113,
       "location": "Oakland, CA",
       "description": "Simple Coin Laundry for Sale in Oakland – Absentee Owner Run. Estimated Gross Income: $499113/year, Estimated Cash Flow: $83447/year. Absentee owner run = passive.",
-      "multiple": null,
-      "dscr": null,
-      "down": null,
-      "monthly": null,
-      "score": 19,
-      "grade": "C",
-      "consider": true,
-      "thesis": "$83,447 cash flow on ~$499,113 revenue — price undisclosed (NDA), call the broker. absentee-run (passive).",
+      "multiple": 5.4,
+      "dscr": 1.48,
+      "down": 44990,
+      "monthly": 4701,
+      "score": 23,
+      "grade": "B",
+      "consider": false,
+      "thesis": "5.4x cash flow. DSCR 1.48x — clears the 1.25 lender bar. ~$27,031/yr left after debt service. absentee-run (passive).",
       "notes": "Best passive profile found in scan; CF 83.4K meets min. Price undisclosed (NDA).",
       "source": "laundromat",
-      "last_reviewed": "2026-10-04"
-    },
-    {
-      "kind": "laundromat",
-      "title": "Coin Laundromat — Compton (commercial laundry category)",
-      "url": "https://www.bizbuysell.com/california/commercial-laundry-businesses-for-sale/",
-      "price": 372500,
-      "cashflow": null,
-      "revenue": null,
-      "location": "Compton, CA",
-      "description": "Coin Laundromat in Compton — $372.5K, listed under commercial laundry businesses on BizBuySell.",
-      "multiple": null,
-      "dscr": null,
-      "down": null,
-      "monthly": null,
-      "score": 11,
-      "grade": "C",
-      "consider": true,
-      "thesis": "Financials behind NDA — request the CIM to score it properly.",
-      "notes": "Lower price point. Compton market — verify area/security.",
-      "source": "laundromat",
-      "last_reviewed": "2026-10-04"
+      "last_reviewed": "2026-10-07"
     },
     {
       "kind": "laundromat",
@@ -140,7 +119,7 @@
       "thesis": "Financials behind NDA — request the CIM to score it properly. established.",
       "notes": "Category page — need to identify the specific listing behind it.",
       "source": "laundromat",
-      "last_reviewed": "2026-10-04"
+      "last_reviewed": "2026-10-07"
     },
     {
       "kind": "laundromat",
@@ -161,7 +140,28 @@
       "thesis": "Financials behind NDA — request the CIM to score it properly. upside noted.",
       "notes": "Passive keyword + SD market. Financials NDA.",
       "source": "laundromat",
-      "last_reviewed": "2026-10-04"
+      "last_reviewed": "2026-10-07"
+    },
+    {
+      "kind": "laundromat",
+      "title": "Coin Laundromat — Compton (commercial laundry category)",
+      "url": "https://www.bizbuysell.com/california/commercial-laundry-businesses-for-sale/",
+      "price": 372500,
+      "cashflow": null,
+      "revenue": null,
+      "location": "Compton, CA",
+      "description": "Coin Laundromat in Compton — $372.5K, listed under commercial laundry businesses on BizBuySell.",
+      "multiple": null,
+      "dscr": null,
+      "down": null,
+      "monthly": null,
+      "score": 10,
+      "grade": "C",
+      "consider": true,
+      "thesis": "Financials behind NDA — request the CIM to score it properly.",
+      "notes": "Lower price point. Compton market — verify area/security.",
+      "source": "laundromat",
+      "last_reviewed": "2026-10-07"
     },
     {
       "kind": "laundromat",
@@ -176,13 +176,13 @@
       "dscr": null,
       "down": null,
       "monthly": null,
-      "score": 6,
+      "score": 9,
       "grade": "D",
       "consider": true,
       "thesis": "Financials behind NDA — request the CIM to score it properly. established.",
       "notes": "41 washers = real capacity. USC-adjacent = student traffic. Financials NDA.",
       "source": "laundromat",
-      "last_reviewed": "2026-10-04"
+      "last_reviewed": "2026-10-07"
     },
     {
       "kind": "laundromat",
@@ -197,13 +197,13 @@
       "dscr": null,
       "down": null,
       "monthly": null,
-      "score": 5,
+      "score": 8,
       "grade": "D",
       "consider": true,
       "thesis": "Financials behind NDA — request the CIM to score it properly.",
       "notes": "OC. $1.1M price — CF must be ~$220K+ to clear 5x / DSCR 1.25.",
       "source": "laundromat",
-      "last_reviewed": "2026-10-04"
+      "last_reviewed": "2026-10-07"
     },
     {
       "kind": "laundromat",
@@ -218,13 +218,13 @@
       "dscr": null,
       "down": null,
       "monthly": null,
-      "score": 4,
-      "grade": "F",
+      "score": 7,
+      "grade": "D",
       "consider": true,
       "thesis": "Financials behind NDA — request the CIM to score it properly. established.",
       "notes": "20+ yr track record + captive student market. Financials NDA.",
       "source": "laundromat",
-      "last_reviewed": "2026-10-04"
+      "last_reviewed": "2026-10-07"
     },
     {
       "kind": "laundromat",
@@ -239,13 +239,13 @@
       "dscr": null,
       "down": null,
       "monthly": null,
-      "score": 0,
-      "grade": "F",
+      "score": 7,
+      "grade": "D",
       "consider": true,
       "thesis": "Financials behind NDA — request the CIM to score it properly. absentee-run (passive).",
       "notes": "OC local = easiest to manage. NDA required.",
       "source": "laundromat",
-      "last_reviewed": "2026-10-04"
+      "last_reviewed": "2026-10-07"
     }
   ]
 }
