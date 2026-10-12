@@ -143,8 +143,8 @@ footer .links a:hover{color:#a78bfa}
     var menu=document.getElementById('mobileMenu');
     var backdrop=document.getElementById('mobileMenuBackdrop');
     var links=document.querySelector('.nav-links');
-    if(menu.children.length===0&&links){
-      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){if(a.closest('#navLoginBtn'))return;if((a.getAttribute('href')||'')==='/tutor'&&!a.classList.contains('nav-drawer-only'))return;menu.appendChild(a.cloneNode(true));});
+    if(links&&!menu.querySelector('a[data-mn]')){
+      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){if(a.closest('#navLoginBtn'))return;if((a.getAttribute('href')||'')==='/tutor'&&!a.classList.contains('nav-drawer-only'))return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
     }
     var p=location.pathname;
     if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);

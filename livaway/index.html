@@ -524,7 +524,7 @@ body{overflow-x:clip}
     if(!burger||menu.dataset.mnInit)return;
     menu.dataset.mnInit='1';
     var links=document.querySelectorAll('.nav-links a');
-    links.forEach(function(a){if(a.closest('#navLoginBtn'))return;if(a.classList.contains('nav-cta'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;menu.appendChild(a.cloneNode(true));});
+    links.forEach(function(a){if(a.closest('#navLoginBtn'))return;if(a.classList.contains('nav-cta'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
     function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');}
     function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');}
     burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
