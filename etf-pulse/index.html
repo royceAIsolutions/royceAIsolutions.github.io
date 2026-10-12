@@ -89,10 +89,14 @@ footer .links a{color:#88889a;text-decoration:none;font-size:0.875rem}
 footer .links a:hover{color:#a78bfa}
 footer .copy{color:#5c5c6e;font-size:0.8rem}
 @media(max-width:640px){nav{padding:0 16px}.hero-sub{padding:calc(60px + var(--nav-h)) 16px 30px}.section{padding:0 16px 40px}.nav-burger{display:inline-flex}.nav-links a:not(.nav-cta){display:none}table{min-width:0}.table-wrap{overflow-x:visible}th:nth-child(4),td:nth-child(4),th:nth-child(6),td:nth-child(6){display:none}th,td{padding:10px 6px;font-size:0.8rem}}
-/* right-cluster alignment: keep burger+lang pinned to the right edge */
+/* burger+lang cluster pinned right (overrides space-between spread) */
+nav{justify-content:flex-start!important}
 nav > .nav-links{margin-left:auto!important}
-nav > .royceai-lang{margin-left:8px!important}
-nav > .nav-burger{margin-left:8px!important;flex:none}
+nav > .royceai-lang{margin-left:8px!important;order:0}
+nav > .nav-burger{margin-left:8px!important;margin-right:0!important;flex:none;order:0}
+nav > .royceai-lang{order:1}
+nav > .nav-burger{order:2}
+nav > .nav-logo{margin-right:0!important;order:-1}
 </style>
 <meta property="og:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png">
 <meta name="twitter:card" content="summary_large_image">
