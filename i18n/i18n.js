@@ -237,14 +237,10 @@
       });
       var cbtnEl = el('royceaiLangBtnM');
       if (cbtnEl) cbtnEl.addEventListener('click', function (e) { e.stopPropagation(); cwrap.classList.toggle('open'); });
-      menu.insertBefore(copy, menu.firstChild);
-      // if drawer never got its anchor clones (clone guard saw our node), clone them now
-      setTimeout(function () {
-        var links = document.querySelector('.nav-links');
-        if (menu.children.length === 1 && links) {
-          links.querySelectorAll('a:not(.nav-cta)').forEach(function (a) { menu.appendChild(a.cloneNode(true)); });
-        }
-      }, 400);
+      // Append (never prepend): a first-child <div> makes any page's
+      // `menu.children.length===0` clone guard skip cloning the nav tabs, which
+      // leaves the drawer holding only the language button.
+      menu.appendChild(copy);
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addMobile);
     else addMobile();
