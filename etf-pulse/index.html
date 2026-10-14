@@ -25,7 +25,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px
 .nav-links a:hover{color:#eeeef0;background:rgba(124,92,252,0.08)}
 .nav-links a.active{color:#fff;background:rgba(124,92,252,0.15);border:1px solid rgba(124,92,252,0.3)}
 .nav-links .nav-cta{background:#7c5cfc;color:#fff!important;font-weight:600;padding:8px 22px;border-radius:8px}
-.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated,#15151b);border:1px solid var(--border,rgba(255,255,255,0.06));border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:#15151b;border:1px solid rgba(255,255,255,0.06);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
 .nav-burger span{display:block;width:18px;height:2px;background:#eeeef0;border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
 .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-burger.open span:nth-child(2){opacity:0}
@@ -108,7 +108,7 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
     <a href="/businesses" class="nav-drawer-only">💼 SBA Deals</a>
     <a href="/etf-pulse" class="nav-drawer-only active">📈 ETF Pulse</a>
     <a href="/blog" class="nav-drawer-only">Blog</a>
-    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only">🎵 RoyceAI Music</a><a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a><a href="/different" class="nav-drawer-only">⚡ Why We're Different</a><a href="/federal" class="nav-drawer-only">🛰️ Federal</a><a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a><a href="/about" class="nav-drawer-only">👤 About Royce</a><a href="/chat" class="nav-cta">💬 Chat</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -117,11 +117,11 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
 
 <section class="hero-sub">
   <h1>ETF <span class="gradient">Pulse</span></h1>
-  <p>12 leveraged ETFs · momentum + volatility + volume · updated 2026-10-13 07:02</p>
+  <p>12 leveraged ETFs · momentum + volatility + volume · updated 2026-10-14 07:02</p>
   <div class="chips">
     <span class="chip">📊 <b>12/12</b> tickers fetched</span>
     <span class="chip">🟢 <b>5</b> positive on the day</span>
-    <span class="chip">🔎 Mean-reversion watch (|5D| ≥ 15%): <b>SOXL -21.8% (5D), SOXS +25.5% (5D)</b></span>
+    <span class="chip">🔎 Mean-reversion watch (|5D| ≥ 15%): <b>SOXL -19.7% (5D), SOXS +22.1% (5D)</b></span>
   </div>
 </section>
 
@@ -158,8 +158,8 @@ footer .copy{color:#5c5c6e;font-size:0.8rem}
 </footer>
 
 <script>
-const PULSE=[{"t": "SOXL", "c": 128.4, "d1": -8.13, "d5": -21.83, "d20": 25.49, "v": 97.8, "av": "60.5M", "trend": "RISING"}, {"t": "TECL", "c": 233.13, "d1": -3.8, "d5": -8.36, "d20": 20.74, "v": 51.7, "av": "445K", "trend": "RISING"}, {"t": "TQQQ", "c": 79.61, "d1": -2.05, "d5": -5.51, "d20": 17.25, "v": 46.5, "av": "49.1M", "trend": "RISING"}, {"t": "FNGU", "c": 36.61, "d1": -0.57, "d5": 0.3, "d20": 15.74, "v": 46.2, "av": "2.5M", "trend": "RISING"}, {"t": "SPXL", "c": 297.37, "d1": -0.2, "d5": -0.61, "d20": 8.03, "v": 29.4, "av": "1.5M", "trend": "RISING"}, {"t": "UPRO", "c": 155.46, "d1": -0.17, "d5": -0.61, "d20": 7.98, "v": 29.4, "av": "1.9M", "trend": "RISING"}, {"t": "UDOW", "c": 66.2, "d1": 1.1, "d5": 1.74, "d20": -2.43, "v": 29.4, "av": "2.0M", "trend": "FALLING"}, {"t": "TNA", "c": 57.44, "d1": -1.15, "d5": -3.83, "d20": -8.51, "v": 32.7, "av": "5.0M", "trend": "FALLING"}, {"t": "SPXU", "c": 32.9, "d1": 0.21, "d5": 0.64, "d20": -8.81, "v": 28.2, "av": "8.1M", "trend": "FALLING"}, {"t": "FAS", "c": 153.24, "d1": 1.72, "d5": 5.65, "d20": -9.95, "v": 39.5, "av": "503K", "trend": "FALLING"}, {"t": "SQQQ", "c": 33.63, "d1": 2.06, "d5": 5.66, "d20": -17.21, "v": 45.3, "av": "45.8M", "trend": "FALLING"}, {"t": "SOXS", "c": 37.19, "d1": 8.14, "d5": 25.51, "d20": -27.22, "v": 98.9, "av": "71.5M", "trend": "FALLING"}];
-const TS="October 13, 2026 at 07:02:27 PDT";
+const PULSE=[{"t": "SOXL", "c": 127.57, "d1": -0.65, "d5": -19.72, "d20": 22.7, "v": 98.1, "av": "61.6M", "trend": "RISING"}, {"t": "TECL", "c": 232.72, "d1": -0.18, "d5": -7.82, "d20": 20.06, "v": 51.6, "av": "450K", "trend": "RISING"}, {"t": "FNGU", "c": 36.69, "d1": 0.22, "d5": -1.37, "d20": 16.88, "v": 44.7, "av": "2.5M", "trend": "RISING"}, {"t": "TQQQ", "c": 78.81, "d1": -1.0, "d5": -5.75, "d20": 16.02, "v": 45.9, "av": "49.1M", "trend": "RISING"}, {"t": "SPXL", "c": 297.42, "d1": 0.02, "d5": 0.17, "d20": 9.52, "v": 28.7, "av": "1.5M", "trend": "RISING"}, {"t": "UPRO", "c": 155.4, "d1": -0.04, "d5": 0.15, "d20": 9.36, "v": 28.7, "av": "1.9M", "trend": "RISING"}, {"t": "UDOW", "c": 65.52, "d1": -1.03, "d5": 2.82, "d20": 0.08, "v": 28.8, "av": "2.1M", "trend": "RISING"}, {"t": "FAS", "c": 151.29, "d1": -1.27, "d5": 5.92, "d20": -6.52, "v": 39.5, "av": "524K", "trend": "FALLING"}, {"t": "TNA", "c": 56.71, "d1": -1.27, "d5": -1.25, "d20": -8.49, "v": 32.4, "av": "5.1M", "trend": "FALLING"}, {"t": "SPXU", "c": 32.91, "d1": 0.03, "d5": -0.12, "d20": -9.96, "v": 27.5, "av": "8.3M", "trend": "FALLING"}, {"t": "SQQQ", "c": 33.98, "d1": 1.06, "d5": 5.97, "d20": -16.31, "v": 44.7, "av": "46.1M", "trend": "FALLING"}, {"t": "SOXS", "c": 37.42, "d1": 0.62, "d5": 22.09, "d20": -25.32, "v": 99.2, "av": "73.9M", "trend": "FALLING"}];
+const TS="October 14, 2026 at 07:02:28 PDT";
 const pct=v=>v>0?"+"+v.toFixed(2)+"%":v.toFixed(2)+"%";
 const cls=v=>v>0?"up":(v<0?"down":"flat");
 const fmtV=v=>v>=1000000?(v/1000000).toFixed(1)+"M":v>=1000?(v/1000).toFixed(0)+"K":String(Math.round(v));
@@ -216,8 +216,8 @@ render();
     var menu=document.getElementById('mobileMenu');
     var backdrop=document.getElementById('mobileMenuBackdrop');
     var links=document.querySelector('.nav-links');
-    if(links&&!menu.querySelector('a[data-mn]')){
-      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
+    if(menu.children.length===0&&links){
+      links.querySelectorAll('a:not(.nav-cta)').forEach(function(a){menu.appendChild(a.cloneNode(true));});
     }
     var p=location.pathname;
     if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
