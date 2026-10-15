@@ -190,12 +190,17 @@ h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;letter-spacing:-.03em;line-h
 .subtitle{color:var(--text-secondary);font-size:1.04rem;max-width:720px;margin-bottom:22px}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
 .stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:15px 14px;box-shadow:var(--shadow-card)}
-.stat b{display:block;font-size:1.42rem;font-weight:800;letter-spacing:-.02em;color:var(--text)}
-.stat span{font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.stat b{display:block;font-size:1.42rem;font-weight:800;letter-spacing:-.02em;color:var(--text);margin-bottom:5px;line-height:1.1}
+.stat span{display:block;font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600;line-height:1.35;min-height:1.9em}
 main{max-width:var(--max-w);margin:0 auto;padding:0 24px 20px}
 section{margin:34px 0}
 .section-header h2{font-size:clamp(1.3rem,2.7vw,1.75rem);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
 .section-header p{color:var(--text-secondary);font-size:.92rem;max-width:760px;margin-bottom:20px}
+.section-header h2,.section-header p{text-align:left}
+/* the canonical sheet sets margin:0 auto on this selector -- with a max-width that
+   centres the block even when text-align is left, which reads as a broken axis */
+.section-header p{margin-left:0!important;margin-right:auto!important;text-align:left!important}
+.section-header h2{text-align:left!important}
 .role{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px;box-shadow:var(--shadow-card);transition:border-color .25s,transform .25s}
 .role:hover{border-color:var(--border-hover);transform:translateY(-2px)}
 .role.best{border-color:rgba(124,92,252,.42);background:linear-gradient(180deg,rgba(124,92,252,.07),rgba(14,14,18,1))}
@@ -203,8 +208,14 @@ section{margin:34px 0}
 .score{flex:none;width:76px;height:76px;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg-elevated);border:1px solid var(--border);line-height:1}
 .score b{font-size:1.6rem;font-weight:800;letter-spacing:-.03em}
 .score span{font-size:.65rem;color:var(--text-muted);font-weight:700;margin-top:3px}
-.role.best .score{background:rgba(124,92,252,.14);border-color:rgba(124,92,252,.38)}
-.role.best .score b{color:var(--accent-light)}
+.score.hi{background:rgba(52,211,153,.13);border-color:rgba(52,211,153,.34)}
+.score.hi b{color:#34d399}
+.score.mid{background:rgba(96,165,250,.13);border-color:rgba(96,165,250,.34)}
+.score.mid b{color:#60a5fa}
+.score.low{background:rgba(251,191,36,.13);border-color:rgba(251,191,36,.34)}
+.score.low b{color:#fbbf24}
+.score.bad{background:rgba(248,113,113,.13);border-color:rgba(248,113,113,.34)}
+.score.bad b{color:#f87171}
 .rtitle{min-width:0}
 .rtitle h3{font-size:1.12rem;font-weight:700;letter-spacing:-.01em;overflow-wrap:anywhere}
 .win{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:var(--accent);color:#fff;padding:3px 9px;border-radius:100px;vertical-align:middle;margin-left:7px}
@@ -214,7 +225,8 @@ section{margin:34px 0}
 .rwhy li{position:relative;padding-left:20px;font-size:.86rem;color:var(--text-secondary)}
 .rwhy li::before{content:'\2022';position:absolute;left:4px;color:var(--accent-light);font-weight:700}
 .rnote{font-size:.83rem;color:var(--text-secondary);background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px 12px;margin-top:7px}
-.rnote.gap{border-color:rgba(251,191,36,.22);background:rgba(251,191,36,.05)}
+.rnote.gap{border-color:var(--border);background:var(--bg-elevated)}
+.rnote.gap.isgap{border-color:rgba(251,191,36,.22);background:rgba(251,191,36,.05)}
 .rnote strong{color:var(--text);font-weight:600}
 .ev{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
 .evcard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-card)}
@@ -232,6 +244,8 @@ footer{border-top:1px solid var(--border);margin-top:44px;padding:34px 24px;text
 footer .links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:12px 0}
 footer a{color:var(--text-secondary);text-decoration:none}
 footer a:hover{color:var(--accent-light)}
+/* keep the burger a real 42px button beside the Chat pill (never a bare icon) */
+nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
 @media(max-width:640px){.rhead{gap:12px}.score{width:64px;height:64px}.score b{font-size:1.32rem}h1{font-size:1.8rem}header.hero{padding-top:calc(var(--nav-h) + 34px)}}
 </style>
 </head>
@@ -271,13 +285,12 @@ footer a:hover{color:var(--accent-light)}
 
 <header class="hero">
   <span class="badge">🎯 Sonic Automotive &middot; Training Team</span>
-  <h1>Royce Koh<br><span class="gradient">Sonic Sales Trainer</span></h1>
+  <h1>Royce Koh<br><span class="gradient">for Sonic Sales Trainer</span></h1>
   <p class="subtitle">Fourteen years of franchise sales leadership across Ferrari, Maserati, BMW,
   Audi, Lexus, Jaguar Land Rover and VinFast &mdash; plus a production AI platform. I have taught
   the desk, and I build the systems behind it.</p>
   <div class="stats">
-    <div class="stat"><b>14 yrs</b><span>Franchise retail</span></div>
-    <div class="stat"><b>15</b><span>Locations led (VinFast)</span></div>
+    <div class="stat"><b>15</b><span>Locations led</span></div>
     <div class="stat"><b>100</b><span>Salespeople led</span></div>
     <div class="stat"><b>4,000</b><span>Leads / month</span></div>
     <div class="stat"><b>8-9%</b><span>Close rate</span></div>
@@ -289,13 +302,13 @@ footer a:hover{color:var(--accent-light)}
   <section>
     <div class="section-header">
       <h2>The four open roles, <span class="gradient">scored on fit</span></h2>
-      <p>Jen Mullin has four trainer slots open across Sonic, EchoPark and Powersports. These are
+      <p>Jen Mullin has four trainer slots open across Sonic, EchoPark and Powersports. Each is
       scored against what I have actually done &mdash; not what sounds close.</p>
     </div>
     
 <article class="role best">
   <div class="rhead">
-    <div class="score"><b>92</b><span>/100</span></div>
+    <div class="score hi"><b>92</b><span>/100</span></div>
     <div class="rtitle">
       <h3>Sonic Sales Trainer <span class="win">Best fit</span></h3>
       <div class="rsub">Franchise automotive &middot; 1 slot open</div>
@@ -308,7 +321,7 @@ footer a:hover{color:var(--accent-light)}
 </article>
 <article class="role">
   <div class="rhead">
-    <div class="score"><b>84</b><span>/100</span></div>
+    <div class="score mid"><b>84</b><span>/100</span></div>
     <div class="rtitle">
       <h3>EchoPark Trainer </h3>
       <div class="rsub">Used-car, one-price, high volume &middot; 2 slots open</div>
@@ -317,11 +330,11 @@ footer a:hover{color:var(--accent-light)}
   <p class="rfit">Closest match to the high-volume used model.</p>
   <ul class="rwhy"><li>AutoNation Irvine acquisition director: 200% acquisition growth.</li><li>Ferrari of Newport Beach sales and consignment — used-car and trade appraisal.</li><li>Jaguar Land Rover Newport Beach: current franchise desk.</li></ul>
   <div class="rnote"><strong>Edge:</strong> Two open slots — the best odds of any track.</div>
-  <div class="rnote gap"><strong>Gap:</strong> Have not run a no-haggle, one-price model by title. Speakable, but real.</div>
+  <div class="rnote gap isgap"><strong>Gap:</strong> Have not run a no-haggle, one-price model by title. Speakable, but real.</div>
 </article>
 <article class="role">
   <div class="rhead">
-    <div class="score"><b>78</b><span>/100</span></div>
+    <div class="score low"><b>78</b><span>/100</span></div>
     <div class="rtitle">
       <h3>Sales Operations Trainer </h3>
       <div class="rsub">Systems, CRM, reporting, dashboards &middot; 1 slot open</div>
@@ -330,11 +343,11 @@ footer a:hover{color:var(--accent-light)}
   <p class="rfit">The process and reporting half of the job, without the customer-facing half.</p>
   <ul class="rwhy"><li>200% acquisition growth and a 50% inventory improvement.</li><li>The 15-location operating playbook at VinFast.</li><li>Builds reporting and automation: the dashboards this role teaches.</li></ul>
   <div class="rnote"><strong>Edge:</strong> The automation work is a genuine differentiator for an ops seat.</div>
-  <div class="rnote gap"><strong>Gap:</strong> Usually wants someone who has owned the ops function by title — the work is here, the label is not.</div>
+  <div class="rnote gap isgap"><strong>Gap:</strong> Usually wants someone who has owned the ops function by title — the work is here, the label is not.</div>
 </article>
 <article class="role">
   <div class="rhead">
-    <div class="score"><b>58</b><span>/100</span></div>
+    <div class="score bad"><b>58</b><span>/100</span></div>
     <div class="rtitle">
       <h3>Sonic Fixed Operations Trainer </h3>
       <div class="rsub">Service and parts — the shop &middot; 1 slot open</div>
@@ -343,7 +356,7 @@ footer a:hover{color:var(--accent-light)}
   <p class="rfit">Weakest fit. Service drive and parts are not in the verified history.</p>
   <ul class="rwhy"><li>Background is the showroom floor and the sales desk.</li><li>Competing against service managers who have run a drive for a decade.</li></ul>
   <div class="rnote"><strong>Edge:</strong> None that outranks the other three.</div>
-  <div class="rnote gap"><strong>Gap:</strong> Coaching this interview means arguing a pivot, not demonstrating fit.</div>
+  <div class="rnote gap isgap"><strong>Gap:</strong> Coaching this interview means arguing a pivot, not demonstrating fit.</div>
 </article>
   </section>
 
