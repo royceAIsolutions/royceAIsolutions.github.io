@@ -134,16 +134,13 @@ table{table-layout:fixed}
 th:first-child,td.t{width:22%}
 th:nth-child(2),td:nth-child(2){width:15%}
 th:nth-child(3),td.age0,td.age1,td.age2,td.age3{width:7%}
-th:nth-child(4),td.need{width:23%;padding-right:20px}
 th:nth-child(5),td.n:not(.vin){width:11%;text-align:right}
 th:nth-child(6),td.vin{width:18%}
 td{overflow-wrap:anywhere}
 td.t{overflow-wrap:normal}
 @media(max-width:760px){table{min-width:0}td.vin{font-size:.68rem;max-width:150px}}
 
-td.need{font-size:.775rem;line-height:1.4;color:var(--text);vertical-align:middle;
-  padding:12px 22px 12px 12px;letter-spacing:.005em;overflow-wrap:normal;hyphens:none;
-  white-space:normal;text-wrap:pretty}
+
 td.need b{display:inline-block;font-weight:700;font-size:.74rem;padding:2px 7px;border-radius:5px;
   background:rgba(0,166,81,.16);border:1px solid rgba(0,166,81,.4);color:#9ff0c4}
 tr:has(td.age3) td.need b{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.28);color:#fff}
@@ -168,6 +165,10 @@ td.n.noval .na{font-style:italic}
 th:nth-child(5){width:11%}
 @media(max-width:760px){td.n.money{font-size:.78rem}}
 
+td.need{width:23%;font-size:.775rem;line-height:1.4;color:var(--text);
+  vertical-align:middle;padding:12px 24px 12px 14px;letter-spacing:.005em;
+  overflow-wrap:normal;hyphens:none;white-space:normal;text-wrap:pretty}
+th:nth-child(4),td.need{width:24%;text-align:left}
 </style>
 </head>
 <body id="top">
