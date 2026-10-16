@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laura &mdash; Handmade Teddy Bears For Sale</title>
+<meta name="description" content="Handmade artist teddy bears for sale right now, each with its price and a direct link. Collected for Laura from the artist-bear marketplaces.">
+<meta property="og:title" content="Laura &mdash; Handmade Teddy Bears For Sale">
+<meta property="og:description" content="One-of-a-kind handmade artist bears, priced and linked. 70 bears for sale right now.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --bg:#0b0705; --bg-card:#141009; --bg-elevated:#1c1710;
+  --text:#f7f2ea; --text-secondary:#c2b6a6; --text-muted:#8a7f70;
+  --border:#2a2318; --border-hover:#3a3123;
+  --honey:#E0A458; --honey-light:#F2C078; --honey-deep:#B8802F;
+  --honey-bg:rgba(224,164,88,.12);
+  --accent-gradient:linear-gradient(135deg,#F2C078 0%,#E0A458 55%,#B8802F 100%);
+  --moss:#6B7F59; --rose:#C97B84; --ok:#7FB069;
+  --radius:18px; --radius-sm:12px; --nav-h:64px; --max-w:1180px;
+  --shadow-card:0 1px 3px rgba(0,0,0,.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:50px}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;
+  justify-content:space-between;padding:0 24px;background:rgba(11,7,5,.9);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);z-index:1001}
+.nav-logo{font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+.nav-logo span{color:var(--honey)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{font-size:.85rem;color:var(--text-secondary);padding:8px 12px;border-radius:9px;transition:all .2s}
+.nav-links a:hover{color:var(--text);background:var(--bg-elevated)}
+header.hero{padding:calc(var(--nav-h) + 56px) 24px 26px;max-width:var(--max-w);margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;
+  background:var(--honey-bg);border:1px solid rgba(224,164,88,.34);color:var(--honey-light);
+  font-size:.78rem;font-weight:600;margin-bottom:18px}
+h1{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-bottom:14px}
+.gradient{background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent}
+.subtitle{color:var(--text-secondary);font-size:1.05rem;max-width:720px}
+.subtitle strong{color:var(--text);font-weight:600}
+.paw{font-size:1.1rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 8px}
+@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);
+  padding:15px 17px;box-shadow:var(--shadow-card)}
+.stat b{display:block;font-size:1.5rem;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.stat span{display:block;font-size:.72rem;color:var(--text-muted);text-transform:uppercase;
+  letter-spacing:.08em;font-weight:700;margin-top:4px;min-height:2.1em;line-height:1.1}
+main{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin:30px 0 16px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.fbtn{background:var(--bg-card);border:1px solid var(--border);color:var(--text-secondary);
+  font-size:.82rem;font-weight:600;padding:9px 16px;border-radius:100px;cursor:pointer;transition:all .2s;
+  font-family:inherit}
+.fbtn:hover{border-color:var(--honey);color:var(--text)}
+.fbtn.on{background:var(--honey);border-color:var(--honey);color:#1a1206}
+.srch{background:var(--bg-card);border:1px solid var(--border);color:var(--text);font-family:inherit;
+  font-size:.85rem;padding:10px 16px;border-radius:100px;min-width:210px;outline:none}
+.srch:focus{border-color:var(--honey)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:16px;margin-bottom:10px}
+.bear{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px;display:flex;flex-direction:column;gap:11px;transition:all .22s;box-shadow:var(--shadow-card)}
+.bear:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.bear-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.bname{font-size:1.06rem;font-weight:700;letter-spacing:-.015em;line-height:1.25;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.bname a:hover{color:var(--honey-light)}
+.bmark{font-size:1.5rem;line-height:1;flex-shrink:0;opacity:.9}
+.bmaker{font-size:.82rem;color:var(--honey);font-weight:600}
+.bmeta{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:6px;background:var(--bg-elevated);
+  border:1px solid var(--border);color:var(--text-secondary);white-space:nowrap}
+.chip.src{color:var(--text-muted)}
+.bfoot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;
+  gap:10px;padding-top:11px;border-top:1px solid var(--border)}
+.price{font-size:1.16rem;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.price.under-100{color:var(--ok)}
+.price.mid{color:var(--honey-light)}
+.price.high{color:var(--honey)}
+.price.top{color:var(--rose)}
+.adopt{font-size:.78rem;font-weight:700;padding:7px 13px;border-radius:8px;background:var(--honey-bg);
+  border:1px solid rgba(224,164,88,.34);color:var(--honey-light);white-space:nowrap;transition:all .2s}
+.adopt:hover{background:var(--honey);color:#1a1206}
+.empty{grid-column:1/-1;text-align:center;color:var(--text-muted);padding:44px 0;font-size:.9rem}
+footer{border-top:1px solid var(--border);margin-top:52px;padding:34px 24px;text-align:center;
+  color:var(--text-muted);font-size:.82rem}
+footer .fmark{font-weight:800;color:var(--text);font-size:1.05rem;margin-bottom:7px}
+footer .fmark span{color:var(--honey)}
+footer a{color:var(--honey);border-bottom:1px solid transparent}
+footer a:hover{border-bottom-color:var(--honey)}
+.note{color:var(--text-muted);font-size:.78rem;margin:14px 0 30px;line-height:1.6}
+
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><span>Royce</span>AI</a>
+  <div class="nav-links">
+    <a href="/laura">&#129528; Laura</a>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/chat">&#128172; Chat</a>
+  <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/preowned" class="nav-drawer-only">🔁 Pre-Owned Desk</a>
+    <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
+    <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
+    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
+    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/prius-prime" class="nav-drawer-only">🔌 Prius Prime Finder</a>
+    <a href="/brandon" class="nav-drawer-only">👤 Brandon Muzik</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <span class="badge">&#129528; Handmade &middot; Artist-made &middot; One of a kind</span>
+  <h1>Handmade teddy bears,<br><span class="gradient">for sale right now</span></h1>
+  <p class="subtitle">Every bear here is <strong>made by hand by a working artist</strong> &mdash;
+  mohair, glass eyes, jointed limbs, one of a kind. Each one carries its real asking price and a
+  direct link to adopt it.</p>
+  <div class="stats">
+<div class="stat"><b>70</b><span>Bears for sale</span></div>
+<div class="stat"><b>60</b><span>Artists</span></div>
+<div class="stat"><b>$45</b><span>Lowest</span></div>
+<div class="stat"><b>$950</b><span>Highest</span></div>
+  </div>
+</header>
+
+<main>
+  <div class="bar">
+    <div class="filters">
+      <button class="fbtn on" data-band="all">All bears</button>
+      <button class="fbtn" data-band="under-100">Under $100</button>
+      <button class="fbtn" data-band="mid">$100&ndash;$299</button>
+      <button class="fbtn" data-band="high">$300&ndash;$599</button>
+      <button class="fbtn" data-band="top">$600 and up</button>
+    </div>
+    <input class="srch" id="srch" type="search" placeholder="Search a bear or a maker&hellip;" autocomplete="off">
+  </div>
+
+  <div class="grid" id="grid">
+<article class="bear" data-band="top" data-hay="kiko helenbatij ukraine"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425685/1" target="_blank" rel="noopener">Kiko</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Helenbatij</div><div class="bmeta"><span class="chip">23.6 in (60 cm)</span> <span class="chip">Ukraine</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price top">$950.00</span><a class="adopt" href="https://www.bearpile.com/item/425685/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="top" data-hay="killian plush animals by nika morevich "><div class="bear-top"><div class="bname"><a href="https://nikamorevich.tedsby.com/172435/killian" target="_blank" rel="noopener">Killian</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Plush Animals by Nika Morevich</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price top">$786.04</span><a class="adopt" href="https://nikamorevich.tedsby.com/172435/killian" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="top" data-hay="starry night yanina teddy lady master "><div class="bear-top"><div class="bname"><a href="https://yaninakovgan.tedsby.com/273357/starry-night" target="_blank" rel="noopener">Starry Night</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Yanina Teddy Lady Master</div><div class="bmeta"><span class="chip">18 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price top">$750.00</span><a class="adopt" href="https://yaninakovgan.tedsby.com/273357/starry-night" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="high" data-hay="lamb independent artist russia"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425639/1" target="_blank" rel="noopener">Lamb</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Independent artist</div><div class="bmeta"><span class="chip">7.8 in (20 cm)</span> <span class="chip">Russia</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price high">$550.00</span><a class="adopt" href="https://www.bearpile.com/item/425639/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="high" data-hay="old bear alenteddy "><div class="bear-top"><div class="bname"><a href="https://alenteddy.tedsby.com/280910/old-bear" target="_blank" rel="noopener">Old bear</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">alenteddy</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price high">$495.00</span><a class="adopt" href="https://alenteddy.tedsby.com/280910/old-bear" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="high" data-hay="sir percival thistlewick – one of a kind handmade mohair teddy bear valeevateddyart "><div class="bear-top"><div class="bname"><a href="https://valeevateddyart.tedsby.com/280888/sir-percival-thistlewick-one-of-a-kind-handmade-mohair-teddy-bear" target="_blank" rel="noopener">Sir Percival Thistlewick – One of a Kind Handmade Mohair Teddy Bear</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">ValeevaTeddyArt</div><div class="bmeta"><span class="chip">12 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price high">$449.00</span><a class="adopt" href="https://valeevateddyart.tedsby.com/280888/sir-percival-thistlewick-one-of-a-kind-handmade-mohair-teddy-bear" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="high" data-hay="yogurt teddy the babys "><div class="bear-top"><div class="bname"><a href="https://teddythebabys.tedsby.com/280954/yogurt" target="_blank" rel="noopener">Yogurt</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Teddy the babys</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price high">$420.00</span><a class="adopt" href="https://teddythebabys.tedsby.com/280954/yogurt" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="high" data-hay="joe extra ordinary bear "><div class="bear-top"><div class="bname"><a href="https://averagebear.tedsby.com/277337/joe" target="_blank" rel="noopener">Joe</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Extra Ordinary Bear</div><div class="bmeta"><span class="chip">14 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price high">$395.00</span><a class="adopt" href="https://averagebear.tedsby.com/277337/joe" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="high" data-hay="leander van russia"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425649/1" target="_blank" rel="noopener">Leander</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Van</div><div class="bmeta"><span class="chip">15.7 in (40 cm)</span> <span class="chip">Russia</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price high">$395.00</span><a class="adopt" href="https://www.bearpile.com/item/425649/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="high" data-hay="wolfgang nikitinanata ukraine"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425619/1" target="_blank" rel="noopener">Wolfgang</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Nikitinanata</div><div class="bmeta"><span class="chip">14.1 in (36 cm)</span> <span class="chip">Ukraine</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price high">$360.00</span><a class="adopt" href="https://www.bearpile.com/item/425619/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="high" data-hay="pomeranian puppy independent artist russia"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/424002/1" target="_blank" rel="noopener">Pomeranian puppy</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Independent artist</div><div class="bmeta"><span class="chip">10.6 in (27 cm)</span> <span class="chip">Russia</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price high">$350.00</span><a class="adopt" href="https://www.bearpile.com/item/424002/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="high" data-hay="pair of teddy barn owls inspired by rembrandt — handcrafted collectibl julikru "><div class="bear-top"><div class="bname"><a href="https://julikru.tedsby.com/280858/pair-of-teddy-barn-owls-inspired-by-rembrandt-handcrafted-collectible-characte" target="_blank" rel="noopener">Pair of Teddy Barn Owls Inspired by Rembrandt — Handcrafted Collectibl</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">JuliKru</div><div class="bmeta"><span class="chip">8 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price high">$300.00</span><a class="adopt" href="https://julikru.tedsby.com/280858/pair-of-teddy-barn-owls-inspired-by-rembrandt-handcrafted-collectible-characte" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="cornelius - fantasy grimbleberry goldelocs creations "><div class="bear-top"><div class="bname"><a href="https://goldelocscreations.tedsby.com/280975/cornelius-fantasy-grimbleberry" target="_blank" rel="noopener">Cornelius - Fantasy Grimbleberry</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Goldelocs Creations</div><div class="bmeta"><span class="chip">13 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$295.23</span><a class="adopt" href="https://goldelocscreations.tedsby.com/280975/cornelius-fantasy-grimbleberry" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="teddy bear teddy by tatiana fedorova "><div class="bear-top"><div class="bname"><a href="https://tatianafedorova.tedsby.com/264701/teddy-bear" target="_blank" rel="noopener">Teddy bear</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Teddy by Tatiana Fedorova</div><div class="bmeta"><span class="chip">9 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$295.00</span><a class="adopt" href="https://tatianafedorova.tedsby.com/264701/teddy-bear" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="roxy art teddys by ml "><div class="bear-top"><div class="bname"><a href="https://artteddysbyml.tedsby.com/280577/roxy" target="_blank" rel="noopener">Roxy</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Art Teddys by ML</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$280.73</span><a class="adopt" href="https://artteddysbyml.tedsby.com/280577/roxy" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="micro rabbit clover irina plakhotina "><div class="bear-top"><div class="bname"><a href="https://irinaplakhotina.tedsby.com/280787/micro-rabbit-clover" target="_blank" rel="noopener">Micro rabbit Clover</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Irina Plakhotina</div><div class="bmeta"><span class="chip">0.7 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$280.00</span><a class="adopt" href="https://irinaplakhotina.tedsby.com/280787/micro-rabbit-clover" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="matilda valentinacherny poland"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425613/1" target="_blank" rel="noopener">Matilda</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Valentinacherny</div><div class="bmeta"><span class="chip">12.5 in (32 cm)</span> <span class="chip">Poland</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price mid">$275.00</span><a class="adopt" href="https://www.bearpile.com/item/425613/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="paul mabel russia"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425601/1" target="_blank" rel="noopener">Paul</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Mabel</div><div class="bmeta"><span class="chip">9.8 in (25 cm)</span> <span class="chip">Russia</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price mid">$270.00</span><a class="adopt" href="https://www.bearpile.com/item/425601/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="tweedledee independent artist russia"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425608/1" target="_blank" rel="noopener">Tweedledee</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Independent artist</div><div class="bmeta"><span class="chip">7 in (18 cm)</span> <span class="chip">Russia</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price mid">$265.00</span><a class="adopt" href="https://www.bearpile.com/item/425608/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="sunbeam bearberry "><div class="bear-top"><div class="bname"><a href="https://bearberry.tedsby.com/280948/sunbeam" target="_blank" rel="noopener">Sunbeam</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Bearberry</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$260.00</span><a class="adopt" href="https://bearberry.tedsby.com/280948/sunbeam" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="ivone art olha "><div class="bear-top"><div class="bname"><a href="https://artolha.tedsby.com/238785/ivone" target="_blank" rel="noopener">Ivone</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Art Olha</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$235.00</span><a class="adopt" href="https://artolha.tedsby.com/238785/ivone" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="nox bear on the lotus "><div class="bear-top"><div class="bname"><a href="https://bearlotus.tedsby.com/280889/nox" target="_blank" rel="noopener">Nox</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Bear on the Lotus</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$230.00</span><a class="adopt" href="https://bearlotus.tedsby.com/280889/nox" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="dog plato zoteeva tatyana "><div class="bear-top"><div class="bname"><a href="https://zoteevatatyana.tedsby.com/280675/dog-plato" target="_blank" rel="noopener">Dog Plato</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">ZOTEEVA TATYANA</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$229.00</span><a class="adopt" href="https://zoteevatatyana.tedsby.com/280675/dog-plato" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="elizabeth olis teddy "><div class="bear-top"><div class="bname"><a href="https://olgalis.tedsby.com/280887/elizabeth" target="_blank" rel="noopener">Elizabeth</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">OLIS Teddy</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$225.00</span><a class="adopt" href="https://olgalis.tedsby.com/280887/elizabeth" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="mason marina pokryvalova "><div class="bear-top"><div class="bname"><a href="https://beargo.tedsby.com/280496/mason" target="_blank" rel="noopener">Mason</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Marina Pokryvalova</div><div class="bmeta"><span class="chip">8 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$220.00</span><a class="adopt" href="https://beargo.tedsby.com/280496/mason" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="nicole lavka schastya "><div class="bear-top"><div class="bname"><a href="https://lavkaschastya.tedsby.com/280940/nicole" target="_blank" rel="noopener">Nicole</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Lavka Schastya</div><div class="bmeta"><span class="chip">9 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$213.35</span><a class="adopt" href="https://lavkaschastya.tedsby.com/280940/nicole" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="veronica oltoy 💛💙 "><div class="bear-top"><div class="bname"><a href="https://eltoys.tedsby.com/220838/veronica" target="_blank" rel="noopener">Veronica</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">OLtoy 💛💙</div><div class="bmeta"><span class="chip">12 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$210.00</span><a class="adopt" href="https://eltoys.tedsby.com/220838/veronica" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="old teddy bear cutegoodteddy russia"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425592/1" target="_blank" rel="noopener">Old Teddy Bear</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Cutegoodteddy</div><div class="bmeta"><span class="chip">10.6 in (27 cm)</span> <span class="chip">Russia</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price mid">$200.00</span><a class="adopt" href="https://www.bearpile.com/item/425592/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="teddy snowman oksana antonenko "><div class="bear-top"><div class="bname"><a href="https://sanateddybears.tedsby.com/280907/teddy-snowman" target="_blank" rel="noopener">Teddy snowman</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Oksana Antonenko</div><div class="bmeta"><span class="chip">6 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$193.00</span><a class="adopt" href="https://sanateddybears.tedsby.com/280907/teddy-snowman" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="ushi duimelotje belgium"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425578/1" target="_blank" rel="noopener">USHI</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Duimelotje</div><div class="bmeta"><span class="chip">14.1 in (36 cm)</span> <span class="chip">Belgium</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price mid">$184.10</span><a class="adopt" href="https://www.bearpile.com/item/425578/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="emili edlenua "><div class="bear-top"><div class="bname"><a href="https://edlenua.tedsby.com/257384/emili" target="_blank" rel="noopener">Emili</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">EdLenUa</div><div class="bmeta"><span class="chip">8 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$180.00</span><a class="adopt" href="https://edlenua.tedsby.com/257384/emili" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="roni olga nechaeva "><div class="bear-top"><div class="bname"><a href="https://olganechaeva.tedsby.com/280897/roni" target="_blank" rel="noopener">Roni</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Olga Nechaeva</div><div class="bmeta"><span class="chip">4 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$180.00</span><a class="adopt" href="https://olganechaeva.tedsby.com/280897/roni" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="nataly independent artist russia"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425659/1" target="_blank" rel="noopener">Nataly</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Independent artist</div><div class="bmeta"><span class="chip">7 in (18 cm)</span> <span class="chip">Russia</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price mid">$180.00</span><a class="adopt" href="https://www.bearpile.com/item/425659/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="pippa – the little keeper of magic apples fluffy paw "><div class="bear-top"><div class="bname"><a href="https://fluffypaw.tedsby.com/280718/pippa-the-little-keeper-of-magic-apples" target="_blank" rel="noopener">Pippa – The Little Keeper of Magic Apples</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Fluffy paw</div><div class="bmeta"><span class="chip">9 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$179.67</span><a class="adopt" href="https://fluffypaw.tedsby.com/280718/pippa-the-little-keeper-of-magic-apples" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="sadie ann the kids and teddy too "><div class="bear-top"><div class="bname"><a href="https://kidsandteddy.tedsby.com/273547/sadie-ann" target="_blank" rel="noopener">Sadie Ann</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">The kids and teddy too</div><div class="bmeta"><span class="chip">16 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$175.00</span><a class="adopt" href="https://kidsandteddy.tedsby.com/273547/sadie-ann" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="teddy bear irina&#x27;s teddies "><div class="bear-top"><div class="bname"><a href="https://irinateddys.tedsby.com/280924/teddy-bear" target="_blank" rel="noopener">Teddy bear</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Irina&#x27;s Teddies</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$170.00</span><a class="adopt" href="https://irinateddys.tedsby.com/280924/teddy-bear" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="teddy bear irina&#x27;s teddies "><div class="bear-top"><div class="bname"><a href="https://irinateddys.tedsby.com/280841/teddy-bear" target="_blank" rel="noopener">Teddy bear</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Irina&#x27;s Teddies</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$170.00</span><a class="adopt" href="https://irinateddys.tedsby.com/280841/teddy-bear" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="harry / tulibear independent artist czech republic"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425673/1" target="_blank" rel="noopener">Harry / Tulibear</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Independent artist</div><div class="bmeta"><span class="chip">4.3 in (11 cm)</span> <span class="chip">Czech Republic</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price mid">$170.00</span><a class="adopt" href="https://www.bearpile.com/item/425673/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="tommy 💛 dancing teddy 💛 "><div class="bear-top"><div class="bname"><a href="https://dancingteddy.tedsby.com/163132/tommy" target="_blank" rel="noopener">Tommy</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">💛 Dancing Teddy 💛</div><div class="bmeta"><span class="chip">8 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$168.44</span><a class="adopt" href="https://dancingteddy.tedsby.com/163132/tommy" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="charlie lenamorozova latvia"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425544/1" target="_blank" rel="noopener">Charlie</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Lenamorozova</div><div class="bmeta"><span class="chip">6.2 in (16 cm)</span> <span class="chip">Latvia</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price mid">$156.20</span><a class="adopt" href="https://www.bearpile.com/item/425544/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="chocolate bear teddy bears from marishka "><div class="bear-top"><div class="bname"><a href="https://rovenskaymarina.tedsby.com/280916/chocolate-bear" target="_blank" rel="noopener">Chocolate bear</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Teddy bears from Marishka</div><div class="bmeta"><span class="chip">7 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$148.00</span><a class="adopt" href="https://rovenskaymarina.tedsby.com/280916/chocolate-bear" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="🧸 name: teddy milo mein bär | olga etz handmade "><div class="bear-top"><div class="bname"><a href="https://proteddy.tedsby.com/277128/name-teddy-milo" target="_blank" rel="noopener">🧸 Name: Teddy Milo</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Mein Bär | Olga Etz handmade</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$140.36</span><a class="adopt" href="https://proteddy.tedsby.com/277128/name-teddy-milo" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="caramel vera toys "><div class="bear-top"><div class="bname"><a href="https://veravolkova.tedsby.com/280619/teddy" target="_blank" rel="noopener">Caramel</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Vera Toys</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$140.00</span><a class="adopt" href="https://veravolkova.tedsby.com/280619/teddy" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="odalie valeroe b-art teddy "><div class="bear-top"><div class="bname"><a href="https://bartteddy.tedsby.com/280921/odalie-valeroe" target="_blank" rel="noopener">Odalie Valeroe</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">B-Art Teddy</div><div class="bmeta"><span class="chip">11 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$140.00</span><a class="adopt" href="https://bartteddy.tedsby.com/280921/odalie-valeroe" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="asher valentina pustovit "><div class="bear-top"><div class="bname"><a href="https://valentinapustovit.tedsby.com/280936/asher" target="_blank" rel="noopener">Asher</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Valentina Pustovit</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$135.00</span><a class="adopt" href="https://valentinapustovit.tedsby.com/280936/asher" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="bärino rat mr. pumpernick baerino germany"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425660/1" target="_blank" rel="noopener">Bärino Rat Mr. Pumpernick</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Baerino</div><div class="bmeta"><span class="chip">5.9 in (15 cm)</span> <span class="chip">Germany</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price mid">$132.77</span><a class="adopt" href="https://www.bearpile.com/item/425660/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="teddy bear in the box teddies by natalia ivanova "><div class="bear-top"><div class="bname"><a href="https://nataliaivanova.tedsby.com/280919/teddy-bear-in-the-box" target="_blank" rel="noopener">Teddy Bear in the box</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Teddies by Natalia Ivanova</div><div class="bmeta"><span class="chip">1 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$130.00</span><a class="adopt" href="https://nataliaivanova.tedsby.com/280919/teddy-bear-in-the-box" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="daniel funny teddy toys "><div class="bear-top"><div class="bname"><a href="https://annad.tedsby.com/280902/daniel" target="_blank" rel="noopener">Daniel</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Funny Teddy Toys</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$130.00</span><a class="adopt" href="https://annad.tedsby.com/280902/daniel" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="ronn nata tovt "><div class="bear-top"><div class="bname"><a href="https://natatovt.tedsby.com/280935/ronn" target="_blank" rel="noopener">Ronn</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Nata Tovt</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$125.00</span><a class="adopt" href="https://natatovt.tedsby.com/280935/ronn" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="paddi naumenko tatiana bears "><div class="bear-top"><div class="bname"><a href="https://naumenkotatiana.tedsby.com/279688/paddi" target="_blank" rel="noopener">Paddi</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Naumenko Tatiana bears</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$120.00</span><a class="adopt" href="https://naumenkotatiana.tedsby.com/279688/paddi" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="little rat 🐭 mimi pets "><div class="bear-top"><div class="bname"><a href="https://mimipets.tedsby.com/280978/little-rat" target="_blank" rel="noopener">Little Rat 🐭</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Mimi pets</div><div class="bmeta"><span class="chip">2.2 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$115.00</span><a class="adopt" href="https://mimipets.tedsby.com/280978/little-rat" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="sweetheart aebears "><div class="bear-top"><div class="bname"><a href="https://annaevgeneva.tedsby.com/280950/sweetheart" target="_blank" rel="noopener">Sweetheart</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">AEbears</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$112.29</span><a class="adopt" href="https://annaevgeneva.tedsby.com/280950/sweetheart" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="hippopotamus mari omaslove67 russia"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425339/1" target="_blank" rel="noopener">Hippopotamus Mari</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Omaslove67</div><div class="bmeta"><span class="chip">Russia</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price mid">$110.00</span><a class="adopt" href="https://www.bearpile.com/item/425339/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="alice the fox lenaspuppenwelt "><div class="bear-top"><div class="bname"><a href="https://lenaspuppenwelt.tedsby.com/258001/alice-the-fox" target="_blank" rel="noopener">Alice the Fox</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Lenaspuppenwelt</div><div class="bmeta"><span class="chip">8 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$108.92</span><a class="adopt" href="https://lenaspuppenwelt.tedsby.com/258001/alice-the-fox" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="imogen sachi stitches "><div class="bear-top"><div class="bname"><a href="https://sachikisses.tedsby.com/272579/imogen" target="_blank" rel="noopener">Imogen</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Sachi Stitches</div><div class="bmeta"><span class="chip">4 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$106.68</span><a class="adopt" href="https://sachikisses.tedsby.com/272579/imogen" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="teddy russell bears by kim russell "><div class="bear-top"><div class="bname"><a href="https://russellbears.tedsby.com/235012/teddy" target="_blank" rel="noopener">Teddy</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Russell Bears by Kim Russell</div><div class="bmeta"><span class="chip">4 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price mid">$105.00</span><a class="adopt" href="https://russellbears.tedsby.com/235012/teddy" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="mid" data-hay="bunny girl independent artist united states"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/421301/1" target="_blank" rel="noopener">Bunny Girl</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Independent artist</div><div class="bmeta"><span class="chip">4.7 in (11.9 cm)</span> <span class="chip">United States</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price mid">$105.00</span><a class="adopt" href="https://www.bearpile.com/item/421301/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="under-100" data-hay="wink brindabellabearsbylindacarter australia"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/425698/1" target="_blank" rel="noopener">Wink</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Brindabellabearsbylindacarter</div><div class="bmeta"><span class="chip">4 in (10.1 cm)</span> <span class="chip">Australia</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price under-100">$96.58</span><a class="adopt" href="https://www.bearpile.com/item/425698/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="under-100" data-hay="wink bear in mind bruins "><div class="bear-top"><div class="bname"><a href="https://brindabellabears.tedsby.com/280981/wink" target="_blank" rel="noopener">Wink</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Bear in Mind Bruins</div><div class="bmeta"><span class="chip">4 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price under-100">$96.42</span><a class="adopt" href="https://brindabellabears.tedsby.com/280981/wink" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="under-100" data-hay="archi mishkindom "><div class="bear-top"><div class="bname"><a href="https://mishkindom.tedsby.com/267249/archi" target="_blank" rel="noopener">Archi</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">MishkinDom</div><div class="bmeta"><span class="chip">3 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price under-100">$95.00</span><a class="adopt" href="https://mishkindom.tedsby.com/267249/archi" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="under-100" data-hay="jimmy from hands to heart 💙💛 "><div class="bear-top"><div class="bname"><a href="https://teddymade.tedsby.com/280912/jimmy" target="_blank" rel="noopener">Jimmy</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">From Hands To Heart 💙💛</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price under-100">$90.00</span><a class="adopt" href="https://teddymade.tedsby.com/280912/jimmy" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="under-100" data-hay="marmaduke (mohair) flowersinwinter "><div class="bear-top"><div class="bname"><a href="https://flowersinwinter.tedsby.com/280932/marmaduke-mohair" target="_blank" rel="noopener">Marmaduke (Mohair)</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Flowersinwinter</div><div class="bmeta"><span class="chip">11 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price under-100">$86.47</span><a class="adopt" href="https://flowersinwinter.tedsby.com/280932/marmaduke-mohair" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="under-100" data-hay="little bear lenamorozova latvia"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/422256/1" target="_blank" rel="noopener">Little Bear</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Lenamorozova</div><div class="bmeta"><span class="chip">5.9 in (15 cm)</span> <span class="chip">Latvia</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price under-100">$83.68</span><a class="adopt" href="https://www.bearpile.com/item/422256/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="under-100" data-hay="neko sachikisses germany"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/424654/1" target="_blank" rel="noopener">Neko</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Sachikisses</div><div class="bmeta"><span class="chip">4.3 in (11 cm)</span> <span class="chip">Germany</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price under-100">$83.68</span><a class="adopt" href="https://www.bearpile.com/item/424654/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="under-100" data-hay="lacey lanctots loveables teddy bears "><div class="bear-top"><div class="bname"><a href="https://lanctotsloveables.tedsby.com/280951/lacey" target="_blank" rel="noopener">Lacey</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Lanctots Loveables Teddy Bears</div><div class="bmeta"><span class="chip">3.25 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price under-100">$81.12</span><a class="adopt" href="https://lanctotsloveables.tedsby.com/280951/lacey" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="under-100" data-hay="lacey brillbears "><div class="bear-top"><div class="bname"><a href="https://brillbears.tedsby.com/203140/lacey" target="_blank" rel="noopener">Lacey</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Brillbears</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price under-100">$69.18</span><a class="adopt" href="https://brillbears.tedsby.com/203140/lacey" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="under-100" data-hay="gingerbread plushie created bearmore bears "><div class="bear-top"><div class="bname"><a href="https://bearmorebears.tedsby.com/280809/gingerbread-plushie-created" target="_blank" rel="noopener">Gingerbread plushie created</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Bearmore Bears</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price under-100">$66.52</span><a class="adopt" href="https://bearmorebears.tedsby.com/280809/gingerbread-plushie-created" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="under-100" data-hay="honey bear biscuit bearmore bears "><div class="bear-top"><div class="bname"><a href="https://bearmorebears.tedsby.com/280811/honey-bear-biscuit" target="_blank" rel="noopener">Honey Bear Biscuit</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Bearmore Bears</div><div class="bmeta"><span class="chip">9 in</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price under-100">$65.19</span><a class="adopt" href="https://bearmorebears.tedsby.com/280811/honey-bear-biscuit" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="under-100" data-hay="blue independent artist united states"><div class="bear-top"><div class="bname"><a href="https://www.bearpile.com/item/421241/1" target="_blank" rel="noopener">Blue</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Independent artist</div><div class="bmeta"><span class="chip">4 in (10.1 cm)</span> <span class="chip">United States</span> <span class="chip src">Bear Pile</span></div><div class="bfoot"><span class="price under-100">$65.00</span><a class="adopt" href="https://www.bearpile.com/item/421241/1" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="under-100" data-hay="plush ghost 👻 olena lisovska "><div class="bear-top"><div class="bname"><a href="https://olenagolovinska.tedsby.com/247784/plush-ghost" target="_blank" rel="noopener">Plush ghost 👻</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Olena Lisovska</div><div class="bmeta"><span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price under-100">$45.00</span><a class="adopt" href="https://olenagolovinska.tedsby.com/247784/plush-ghost" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+  </div>
+
+  <p class="note">Prices and availability are the marketplaces' own, captured October 15, 2026, and are
+  shown exactly as listed. Each link goes to that bear's own page on
+  <strong>Bear Pile</strong> or <strong>Tedsby</strong>, where the sale happens.</p>
+</main>
+
+<footer>
+  <div class="fmark"><span>Laura</span> &middot; handmade teddy bears</div>
+  <div>Collected October 15, 2026 &middot; 70 bears from Bear Pile and Tedsby</div>
+</footer>
+
+<script>
+(function(){
+  var grid=document.getElementById('grid');
+  var cards=[].slice.call(grid.querySelectorAll('.bear'));
+  var srch=document.getElementById('srch');
+  var band='all';
+  function apply(){
+    var q=(srch.value||'').toLowerCase().trim();
+    var shown=0;
+    cards.forEach(function(c){
+      var okB = band==='all' || c.getAttribute('data-band')===band;
+      var hay=(c.getAttribute('data-hay')||'');
+      var okQ = !q || hay.indexOf(q)>=0;
+      var vis = okB && okQ;
+      c.style.display = vis ? '' : 'none';
+      if(vis) shown++;
+    });
+    var e=grid.querySelector('.empty');
+    if(shown===0 && !e){
+      e=document.createElement('div'); e.className='empty';
+      e.textContent='No bears match that. Try another filter or search.';
+      grid.appendChild(e);
+    } else if(shown>0 && e){ e.remove(); }
+  }
+  [].slice.call(document.querySelectorAll('.fbtn')).forEach(function(b){
+    b.addEventListener('click',function(){
+      [].slice.call(document.querySelectorAll('.fbtn')).forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on'); band=b.getAttribute('data-band'); apply();
+    });
+  });
+  srch.addEventListener('input',apply);
+})();
+</script>
+</body>
+</html>
