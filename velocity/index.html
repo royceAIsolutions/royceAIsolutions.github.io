@@ -13,7 +13,7 @@
 
 :root{
   --bg:#07070a; --bg-card:#0e0e12; --bg-elevated:#15151b;
-  --text:#f5f5f8; --text-secondary:#a8a8b4; --text-muted:#6e6e7c;
+  --text:#f5f5f8; --text-secondary:#a8a8b4; --text-muted:#a3a3b0;
   --border:#232329; --border-hover:#33333d;
   --accent:#00a651; --accent-light:#6fe3a5;
   --accent-bg:rgba(0,166,81,.10);
@@ -74,14 +74,15 @@ td.t .sub{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;o
   font-weight:400;color:var(--text-muted);font-size:.76rem;margin-top:2px}
 td.n{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
 td.vin{color:var(--text-muted);font-size:.74rem;letter-spacing:.01em}
-td.age0{color:#3ddc97;font-weight:800;white-space:nowrap}
-td.age1{color:#ffd24a;font-weight:900;white-space:nowrap;background:rgba(255,210,74,.10);border-left:3px solid #ffd24a;padding-left:7px}
-td.age2{color:#1a0d00;font-weight:900;white-space:nowrap;background:#ff9a4d;border-left:3px solid #ff6a00;padding:3px 9px;border-radius:4px}
-td.age2 span,td.age2::after{color:#111}
-td.age3{color:#fff;font-weight:900;white-space:nowrap;background:#d61f1f;border-left:4px solid #ff3b30;padding:3px 9px;letter-spacing:.2px;text-shadow:0 1px 1px rgba(0,0,0,.35)}
-tr:has(td.age3) td{background:rgba(214,31,31,.13)}
+tr:has(td.age2) td:not(.age2){background:rgba(226,98,10,.10)}
+tr:has(td.age3) td:not(.age3){background:rgba(200,22,22,.16)}
+td.age0{color:#042b17;font-weight:900;white-space:nowrap;background:#3ddc97;border-radius:4px;padding:3px 9px}
+td.age1{color:#2a1c00;font-weight:900;white-space:nowrap;background:#ffd24a;border-radius:4px;padding:3px 9px}
+td.age2{color:#fff;font-weight:900;white-space:nowrap;background:#e2620a;border-radius:4px;padding:3px 9px}
+td.age3{color:#fff;font-weight:900;white-space:nowrap;background:#c81616;border-radius:4px;padding:3px 10px;letter-spacing:.2px;text-shadow:0 1px 1px rgba(0,0,0,.4)}
+
 tr:has(td.age3) td:first-child{border-left:3px solid #ff3b30}
-tr:has(td.age2) td{background:rgba(255,106,0,.07)}
+
 .late{white-space:nowrap;display:inline-block;font-size:.64rem;font-weight:800;letter-spacing:.05em;padding:2px 6px;
   border-radius:5px;margin-left:5px;background:var(--accent-bg);color:var(--accent-light);
   border:1px solid rgba(234,61,47,.34);vertical-align:middle}
@@ -90,7 +91,7 @@ tr:has(td.age2) td{background:rgba(255,106,0,.07)}
 .clear{color:var(--text-muted);font-size:.85rem;padding:6px 0}
 .legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:14px;font-size:.76rem;color:var(--text-muted)}
 .legend i{font-style:normal;font-weight:700}
-.legend .a0{color:#3ddc97} .legend .a1{color:#ffd24a} .legend .a2{color:#ff8a3d} .legend .a3{color:#ff3b30;font-weight:900}
+.legend .a0{color:#3ddc97} .legend .a1{color:#ffd24a} .legend .a2{color:#f5720f} .legend .a3{color:#e5252a;font-weight:900}
 .legend .lg-sep{color:var(--text-muted);opacity:.85}
 footer{border-top:1px solid var(--border);margin-top:48px;padding:34px 24px;text-align:center;color:var(--text-muted);font-size:.82rem}
 footer .fmark{font-weight:700;color:var(--text);font-size:.94rem}
@@ -138,7 +139,7 @@ td.step .sep{opacity:.7}
   <h1>What needs you <span class="gradient">right now</span></h1>
   <p class="subtitle">Velocity recon, ranked by age. Overdue and unsold first, then what is
   stuck on an outside party, then spend still burning on a delivered deal.</p>
-  <p class="stamp">Snapshot 2026-10-15 18:38 &middot; 1.6 h old</p>
+  <p class="stamp">Snapshot 2026-10-15 18:38 &middot; 1.7 h old</p>
   <div class="legend">
     <span>Age colour <i class="a0">&lt; 14 days</i></span>
     <span><i class="a1">14&ndash;30 days</i></span>
