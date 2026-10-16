@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>What RoyceAI Puts Into AmaTone &mdash; Contribution for Brandon Muzik</title>
-<meta name="description" content="RoyceAI powers AmaTone. No subscription - RoyceAI contributes the engineering, AI systems and automation that turn a voice-reading app into a fundable company.">
+<meta name="description" content="RoyceAI powers AmaTone. No subscription &mdash; RoyceAI contributes the engineering, AI systems and automation that turn a voice-reading app into a fundable company.">
 <meta property="og:title" content="What RoyceAI Puts Into AmaTone">
 <meta property="og:description" content="Voice science is yours. We build the company around it.">
 <meta property="og:type" content="website">
@@ -15,15 +15,15 @@
 <style>
 
 :root{
-  --bg:#08090c; --bg-card:#12141a; --bg-elevated:#1a1d25;
-  --text:#f5f6f8; --text-secondary:#b9bdc7; --text-muted:#7d8291;
-  --border:#232733; --border-hover:#333a4a;
-  --accent:#5B8DEF; --accent-light:#8FB4F7; --accent-deep:#3A6BD0;
-  --accent-bg:rgba(91,141,239,.12);
-  --accent-gradient:linear-gradient(135deg,#8FB4F7 0%,#5B8DEF 55%,#3A6BD0 100%);
+  --bg:#07070a; --bg-card:#0e0e12; --bg-elevated:#15151b;
+  --text:#eeeef0; --text-secondary:#b9bdc7; --text-muted:#7d8291;
+  --border:rgba(255,255,255,0.06); --border-hover:rgba(255,255,255,0.1);
+  --accent:#7c5cfc; --accent-light:#a78bfa; --accent-deep:#5b3cd4;
+  --accent-bg:rgba(124,92,252,0.08);
+  --accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);
   --ok:#5FBF7F; --warm:#E0A458;
-  --radius:18px; --radius-sm:12px; --nav-h:64px; --max-w:1080px;
-  --shadow-card:0 1px 3px rgba(0,0,0,.5);
+  --radius:16px; --radius-sm:10px; --nav-h:64px; --max-w:1080px;
+  --shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--text);
@@ -40,7 +40,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-i
 .nav-links a:hover{color:var(--text);background:var(--bg-elevated)}
 header.hero{padding:calc(var(--nav-h) + 58px) 24px 26px;max-width:var(--max-w);margin:0 auto}
 .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;
-  background:var(--accent-bg);border:1px solid rgba(91,141,239,.34);color:var(--accent-light);
+  background:var(--accent-bg);border:1px solid rgba(124,92,252,.34);color:var(--accent-light);
   font-size:.78rem;font-weight:600;margin-bottom:18px}
 h1{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-bottom:14px}
 .gradient{background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;
@@ -65,7 +65,7 @@ h2 .accent{color:var(--accent)}
 .offer .row{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:13px;
   padding-top:13px;border-top:1px solid var(--border)}
 .oTag{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;
-  color:var(--accent-light);background:var(--accent-bg);border:1px solid rgba(91,141,239,.3);
+  color:var(--accent-light);background:var(--accent-bg);border:1px solid rgba(124,92,252,.3);
   border-radius:6px;padding:3px 9px}
 .oKV{font-size:.83rem;color:var(--text-secondary)}
 .oKV b{color:var(--accent-light);font-weight:700;margin-right:4px}
@@ -77,20 +77,20 @@ h2 .accent{color:var(--accent)}
 .fitlist .v{color:var(--text);font-weight:600;text-align:right}
 .blist{list-style:none;display:flex;flex-direction:column;gap:12px}
 .blist li{position:relative;padding-left:22px;font-size:.94rem;color:var(--text-secondary)}
-.blist li::before{content:'4';position:absolute;left:0;color:var(--accent);font-weight:700}
+.blist li::before{content:'\2192';position:absolute;left:0;color:var(--accent);font-weight:700}
 .blist li strong{color:var(--text);font-weight:650}
 .contact{display:flex;flex-wrap:wrap;gap:12px}
 .cbtn{font-size:.86rem;font-weight:700;padding:11px 18px;border-radius:10px;background:var(--accent-bg);
-  border:1px solid rgba(91,141,239,.34);color:var(--accent-light);transition:all .2s;display:inline-flex;
+  border:1px solid rgba(124,92,252,.34);color:var(--accent-light);transition:all .2s;display:inline-flex;
   align-items:center;gap:8px}
-.cbtn:hover{background:var(--accent);color:#080d18}
-.cbtn.solid{background:var(--accent);color:#080d18;border-color:var(--accent)}
+.cbtn:hover{background:var(--accent);color:#0b0714}
+.cbtn.solid{background:var(--accent);color:#0b0714;border-color:var(--accent)}
 .cbtn.solid:hover{background:var(--accent-light)}
 .srcs{list-style:none;display:flex;flex-direction:column;gap:9px}
 .srcs li{font-size:.82rem;color:var(--text-muted);display:flex;gap:9px;align-items:baseline;line-height:1.5}
 .srcs li .n{color:var(--accent);font-weight:700;flex-shrink:0;font-variant-numeric:tabular-nums}
-.srcs li a{color:var(--text-secondary);border-bottom:1px solid var(--border-hover);word-break:break-all}
-.srcs li a:hover{color:var(--accent-light);border-bottom-color:var(--accent)}
+.srcs li a{color:var(--accent-light);word-break:break-all}
+.srcs li a:hover{color:var(--text)}
 .note{color:var(--text-muted);font-size:.79rem;margin-top:16px;line-height:1.6;
   border-left:2px solid var(--border);padding-left:14px}
 footer{border-top:1px solid var(--border);margin-top:56px;padding:34px 24px;text-align:center;
@@ -113,6 +113,8 @@ footer .fmark span{color:var(--accent)}
 .mobile-menu .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;margin-top:10px;text-align:center}
 .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
 .mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
+@media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
 
 </style>
 </head>
@@ -146,20 +148,20 @@ footer .fmark span{color:var(--accent)}
 <header class="hero">
   <span class="badge">&#129309; Partnership proposal &middot; prepared for Brandon Muzik, Founder &amp; President, AmaTone</span>
   <h1>What RoyceAI puts<br><span class="gradient">into AmaTone</span></h1>
-  <p class="subtitle">RoyceAI powers AmaTone. Not a vendor line item and not a subscription - we bring the engineering capacity, the AI systems and the automation that turns AmaTone from a voice-reading app into a company that can be funded, sold to employers, and defended. Your voice science stays yours. We build everything around it.</p>
+  <p class="subtitle">RoyceAI powers AmaTone. We are not a vendor line item and not a subscription &mdash; we bring the engineering capacity, the AI systems and the automation that turn a voice-reading app into a company that can be funded, sold to employers and defended. Your voice science stays yours. We build everything around it.</p>
 </header>
 
 <main>
 
 <section>
-  <h2>Six contributions <span class="accent">we make</span></h2>
-  <p class="sec-note">No subscription. Each line is a capability we bring and the value it returns to AmaTone.</p>
-<article class="offer"><div class="num">01</div><div><h3>We turn readings into a product people open daily</h3><p>Right now AmaTone returns five indicators. That is data. What a user keeps paying for is the instruction: what changed in my voice, what it means, and the one thing to do today. We build the reasoning layer that turns each reading into plain-language guidance - so the app stops being a dashboard checked once and becomes the daily habit it was designed to be.</p><div class="row"><span class="oTag">Turns data into a habit</span><span class="oKV"><b>We contribute</b> Engineering + AI systems</span><span class="oKV"><b>You get</b> Retention and daily engagement</span></div></div></article>
-<article class="offer"><div class="num">02</div><div><h3>We build the accredited layer your buyers require</h3><p>A corporate wellness buyer, a clinic, or an insurer cannot adopt a black box. They need to see what the number means, how it was produced, and whether it holds up over time. We build the validation, reporting and audit trail around your existing readings - the layer that lets a sceptical buyer say yes. This is the missing asset between your science and your revenue.</p><div class="row"><span class="oTag">Unlocks B2B revenue</span><span class="oKV"><b>We contribute</b> Systems + evidence infrastructure</span><span class="oKV"><b>You get</b> Enterprise credibility</span></div></div></article>
-<article class="offer"><div class="num">03</div><div><h3>We give the company a front door</h3><p>You sell to employers, programs and gyms - and those decisions start with a call. Today every inbound is handled by a founder who is also running product, IP and partnerships. We put an always-answering front desk on it: every inquiry captured, qualified, and booked, with you only ever seeing the ones ready to talk.</p><div class="row"><span class="oTag">Founder time back</span><span class="oKV"><b>We contribute</b> Automation</span><span class="oKV"><b>You get</b> Zero lost inbound</span></div></div></article>
-<article class="offer"><div class="num">04</div><div><h3>We hold the IP clocks so nothing lapses</h3><p>An international portfolio is a set of expiring clocks. A missed response or an unfiled foreign priority does not just cost a filing fee - it narrows the estate a funder or acquirer is underwriting. We run the deadline desk: every jurisdiction, every basis, every response owed, tracked and escalated before it goes late.</p><div class="row"><span class="oTag">Defends the valuation</span><span class="oKV"><b>We contribute</b> Automated monitoring</span><span class="oKV"><b>You get</b> Protects the asset base</span></div></div></article>
-<article class="offer"><div class="num">05</div><div><h3>We keep the engineering moving without your capital</h3><p>A window where the founder is writing product, answering calls, managing counsel and chasing partners is a window where the product does not ship. We take the build work - features, integrations, automation, internal tooling - so your attention goes to the decisions only you can make.</p><div class="row"><span class="oTag">Speed without burn</span><span class="oKV"><b>We contribute</b> Build capacity</span><span class="oKV"><b>You get</b> Compresses the timeline</span></div></div></article>
-<article class="offer"><div class="num">06</div><div><h3>We prepare the company to be funded</h3><p>Funders and acquirers do not buy a product - they buy a defensible asset. Structure, documentation, IP standing, reporting, and the ability to answer diligence without scrambling. We assemble the operational spine that makes a raise or an exit a conversation about your numbers instead of your paperwork.</p><div class="row"><span class="oTag">Diligence-ready</span><span class="oKV"><b>We contribute</b> Operational build</span><span class="oKV"><b>You get</b> Raise and exit readiness</span></div></div></article>
+  <h2>What RoyceAI <span class="accent">contributes</span></h2>
+  <p class="sec-note">No subscription. Every line is a capability we bring and the value it returns to AmaTone.</p>
+<article class="offer"><div class="num">01</div><div><h3>We turn readings into a product people open daily</h3><p>AmaTone returns five indicators. That is data. What a user keeps paying for is the instruction: what changed in my voice, what it means, and the one thing to do today. We build the reasoning layer that turns each reading into plain-language guidance &mdash; so the app stops being a dashboard checked once and becomes the daily habit it was designed to be.</p><div class="row"><span class="oTag">Turns data into a habit</span><span class="oKV"><b>We contribute</b> Engineering + AI systems</span><span class="oKV"><b>You get</b> Retention and daily engagement</span></div></div></article>
+<article class="offer"><div class="num">02</div><div><h3>We build the accredited layer your buyers require</h3><p>A corporate wellness buyer, a clinic or an insurer cannot adopt a black box. They need to see what the number means, how it was produced and whether it holds up over time. We build the validation, reporting and audit trail around your existing readings &mdash; the layer that lets a skeptical buyer say yes. That layer is the missing asset between your science and your revenue.</p><div class="row"><span class="oTag">Unlocks B2B revenue</span><span class="oKV"><b>We contribute</b> Systems + evidence infrastructure</span><span class="oKV"><b>You get</b> Enterprise credibility</span></div></div></article>
+<article class="offer"><div class="num">03</div><div><h3>We give the company a front door</h3><p>You sell to employers, programs and gyms &mdash; and those decisions start with a call. Today every inbound is handled by a founder who is also running product, IP and partnerships. We put an always-answering front desk on it: every inquiry captured, qualified and booked, with you seeing only the ones ready to talk.</p><div class="row"><span class="oTag">Founder time back</span><span class="oKV"><b>We contribute</b> Automation</span><span class="oKV"><b>You get</b> Zero lost inbound</span></div></div></article>
+<article class="offer"><div class="num">04</div><div><h3>We hold the IP clocks so nothing lapses</h3><p>An international portfolio is a set of expiring clocks. A missed response or an unfiled foreign priority does not just cost a filing fee &mdash; it narrows the estate a funder or acquirer is underwriting. We run the deadline desk: every jurisdiction, every basis, every response owed, tracked and escalated before it goes late.</p><div class="row"><span class="oTag">Defends the valuation</span><span class="oKV"><b>We contribute</b> Automated monitoring</span><span class="oKV"><b>You get</b> Protects the asset base</span></div></div></article>
+<article class="offer"><div class="num">05</div><div><h3>We keep the engineering moving without your capital</h3><p>A window where the founder is writing product, answering calls, managing counsel and chasing partners is a window where the product does not ship. We take the build work &mdash; features, integrations, automation, internal tooling &mdash; so your attention goes to the decisions only you can make.</p><div class="row"><span class="oTag">Speed without burn</span><span class="oKV"><b>We contribute</b> Build capacity</span><span class="oKV"><b>You get</b> Compresses the timeline</span></div></div></article>
+<article class="offer"><div class="num">06</div><div><h3>We prepare the company to be funded</h3><p>Funders and acquirers do not buy a product &mdash; they buy a defensible asset: structure, documentation, IP standing, reporting, and the ability to answer diligence without scrambling. We assemble the operational spine that makes a raise or an exit a conversation about your numbers instead of your paperwork.</p><div class="row"><span class="oTag">Diligence-ready</span><span class="oKV"><b>We contribute</b> Operational build</span><span class="oKV"><b>You get</b> Raise and exit readiness</span></div></div></article>
 </section>
 
 <section>
@@ -175,7 +177,7 @@ footer .fmark span{color:var(--accent)}
   <h2>How we <span class="accent">work</span></h2>
   <div class="card">
     <ul class="blist">
-<li>We are not selling AmaTone a subscription. We contribute capability and share in the outcome.</li><li>We do not touch the voice science. That is your asset and your authorship - we build everything around it.</li><li>We speak your language: validation, evidence, defensibility. Not growth hacks.</li><li>We work as a co-builder you can put in front of a funder, not a vendor you have to manage.</li>
+<li>We are not selling AmaTone a subscription. We contribute capability and share in the outcome.</li><li>We do not touch the voice science. That is your asset and your authorship &mdash; we build everything around it.</li><li>We speak your language: validation, evidence, defensibility. Not growth hacks.</li><li>We work as a co-builder you can put in front of a funder, not a vendor you have to manage.</li>
     </ul>
   </div>
 </section>
@@ -184,9 +186,9 @@ footer .fmark span{color:var(--accent)}
   <div class="card">
     <h2>What this is <span class="accent">not</span></h2>
     <ul class="blist">
-<li>Not a monthly licence or subscription - this is not a cost line against AmaTone.</li><li>Not a rebuild or a replacement of the AmaTone product.</li><li>Not a services retainer billed by the hour.</li><li>Not a claim on your IP or your science.</li>
+<li>Not a monthly license or subscription &mdash; this is not a cost line against AmaTone.</li><li>Not a rebuild or a replacement of the AmaTone product or its science.</li><li>Not a services retainer billed by the hour.</li>
     </ul>
-    <p class="note">RoyceAI contributes to AmaTone as a partner in the outcome, not as a vendor invoicing AmaTone. Contribution structure is set in writing between us - there is no subscription and no monthly charge on this page by design.</p>
+    <p class="note">RoyceAI contributes to AmaTone as a partner in the outcome, not as a vendor invoicing AmaTone. Contribution structure is set in writing between us &mdash; there is no subscription and no monthly charge on this page by design.</p>
   </div>
 </section>
 
@@ -201,7 +203,7 @@ footer .fmark span{color:var(--accent)}
     </div>
     <p class="note">Prepared for Brandon Muzik, Founder &amp; President, AmaTone by Royce AI Solutions, Irvine, CA. AmaTone facts on this page
     come from amatone.fit and public company profiles; RoyceAI pricing and capability claims come from
-    royceai.com. This is an unsolicited proposal and is not affiliated with AmaTone.</p>
+    royceai.com. This is an unsolicited proposal and is not affiliated with AmaTone, which has not reviewed or endorsed it.</p>
   </div>
 </section>
 
@@ -220,7 +222,6 @@ footer .fmark span{color:var(--accent)}
   <div class="fmark">What <span>RoyceAI</span> puts into AmaTone</div>
   <div>Royce AI Solutions &middot; Irvine, CA &middot; prepared October 16, 2026</div>
 </footer>
-MENU_IIFE = """
 <script>
 (function(){
   function initMobileMenu(){
@@ -251,6 +252,5 @@ MENU_IIFE = """
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
 })();
 </script>
-"""
 </body>
 </html>
