@@ -286,6 +286,30 @@ footer .links a{color:var(--text-secondary);text-decoration:none;padding:8px 16p
 footer .links a:hover{color:var(--text);border-color:var(--border-hover);background:var(--bg-elevated)}
 footer .copy{max-width:620px;margin:0 auto;line-height:1.6}
 footer .prep{margin-top:14px;font-size:.78rem;color:var(--text-muted)}
+/* ---- detailed career record ---- */
+.rec-h{font-size:1.1rem;font-weight:700;color:var(--text);margin:26px 0 14px;letter-spacing:-.01em}
+.rec{display:flex;flex-direction:column;gap:12px}
+.job{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow-card)}
+.jhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;justify-content:space-between}
+.jhead h4{font-size:1rem;font-weight:700;color:var(--text);margin:0}
+.jwhen{font-size:.76rem;color:var(--text-muted);font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.jrole{font-size:.82rem;color:var(--accent-light);font-weight:600;margin:5px 0 9px}
+.job p{font-size:.86rem;color:var(--text-secondary);line-height:1.62;margin-bottom:10px}
+.job ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin:0;padding:0}
+.job li{position:relative;padding-left:16px;font-size:.83rem;color:var(--text-secondary);line-height:1.58;display:block}
+.job li::before{content:'';position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.85}
+.job li strong{color:var(--text);font-weight:600}
+/* ---- what I would teach ---- */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.skillgrp{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:17px 18px;box-shadow:var(--shadow-card)}
+.skillgrp h4{font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-light);font-weight:700;margin-bottom:11px}
+.skillgrp ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin:0;padding:0}
+.skillgrp li{position:relative;padding-left:15px;font-size:.83rem;color:var(--text-secondary);line-height:1.5;display:block}
+.skillgrp li::before{content:'';position:absolute;left:0;top:.5em;width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.75}
+@media(max-width:640px){
+  .job{padding:16px 15px}
+  .jwhen{width:100%}
+}
 /* keep the burger a real 42px button beside the Chat pill (never a bare icon) */
 nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
 @media(max-width:640px){.rhead{gap:12px}.score{width:64px;height:64px}.score b{font-size:1.32rem}h1{font-size:1.8rem}header.hero{padding-top:calc(var(--nav-h) + 34px)}}
@@ -406,33 +430,165 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
   <section>
     <div class="section-header">
       <h2>Why <span class="gradient">I</span> am the right trainer</h2>
-      <p>The job teaches salespeople who sit where I have sat. My evidence is the work itself.</p>
+      <p>The job teaches salespeople who sit where I have sat. This is the record I would be
+      teaching from &mdash; every entry a seat I actually held.</p>
     </div>
+
     <div class="ev">
       <div class="evcard">
         <h4>Brand range</h4>
-        <div class="big">7 brands</div>
-        <p>I have sold and managed at Ferrari of Seattle and Newport Beach, Maserati of Seattle
-        (General Sales Manager), BMW, Audi Mission Viejo, South County Lexus, Jaguar Land Rover
-        Newport Beach and VinFast US.</p>
+        <div class="big">9 brands</div>
+        <p>Ferrari, Maserati, Jaguar Land Rover, Audi, Lexus, BMW, Toyota, VinFast, plus
+        performance tuning at IllTech Auto Salon. Premium, franchise, EV and exotic.</p>
       </div>
       <div class="evcard">
         <h4>Multi-site leadership</h4>
-        <div class="big">Up to 15 locations</div>
-        <p>As VinFast US Regional Sales Director I ran Northern and Southern California,
-        directing up to 100 salespeople &mdash; a rollout and coaching job, by definition.</p>
+        <div class="big">15 locations</div>
+        <p>VinFast US Regional Sales Director, Southern California: up to 15 retail locations
+        and 100+ salespeople &mdash; recruiting, training and scaling a region in a hyper-growth
+        startup.</p>
       </div>
       <div class="evcard">
         <h4>Volume and conversion</h4>
         <div class="big">4,000 leads / mo</div>
-        <p>At AutoNation Irvine I was Sales Manager, Internet Director and Acquisition Director:
-        4,000 leads a month at an 8-9% close rate, with 200% acquisition growth.</p>
+        <p>AutoNation Irvine as Sales Manager, Internet Director and Acquisition Director:
+        4,000+ monthly internet leads at an 8-9% close rate.</p>
       </div>
       <div class="evcard">
         <h4>The differentiator</h4>
         <div class="big">Luxury to volume</div>
         <p>Ferrari and Maserati taught me the high-touch close; AutoNation and VinFast taught me
         the volume process. I can coach whichever desk a store runs, because I have run both.</p>
+      </div>
+    </div>
+
+    <h3 class="rec-h">The record I would <span class="gradient">teach from</span></h3>
+    <div class="rec">
+      <article class="job">
+        <div class="jhead"><h4>VinFast US</h4><span class="jwhen">2023 &ndash; 2024</span></div>
+        <div class="jrole">Regional Sales Director &middot; Southern California</div>
+        <p>Oversaw revenue growth and led 100+ salespeople across up to 15 retail locations for one
+        of the fastest-growing EV startups in the world. This is the closest thing to the trainer
+        seat I am applying for &mdash; a region, a curriculum and a floor that had to be built and
+        taught at the same time.</p>
+        <ul>
+          <li>Recruited, trained and managed 100+ sales professionals across 15 locations, building the customer-first culture from scratch</li>
+          <li>Surpassed regional sales targets by directing cross-functional teams and installing data-driven performance routines</li>
+          <li>Built deep expertise in EV technology, charging infrastructure and customer education across the full lineup</li>
+          <li>Ran competitive market analysis against Tesla and Rivian to sharpen regional sales strategy</li>
+          <li>Owned KPI tracking, performance optimization and operations scaling in a hyper-growth environment</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="jhead"><h4>AutoNation &mdash; Irvine</h4><span class="jwhen">2020 &ndash; 2023</span></div>
+        <div class="jrole">Sales Manager | Internet Director | Acquisition Director</div>
+        <p>Three seats in one store over three years at one of AutoNation's highest-volume Toyota
+        dealerships in Southern California. If a trainer has to teach the desk, this is the desk.</p>
+        <ul>
+          <li>Achieved 200% growth in vehicle acquisitions through strategic sourcing, market analysis and process improvement</li>
+          <li>Delivered 50% improvement in inventory levels by overhauling acquisition and sourcing workflows</li>
+          <li>Managed 4,000+ monthly internet leads with an industry-leading 8-9% closing rate</li>
+          <li>Built, trained and led high-performing sales teams with a culture of accountability</li>
+          <li>Implemented data-driven CRM processes to lift conversion and long-term retention</li>
+          <li>Partnered across F&amp;I, service and operations for a seamless end-to-end customer experience</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="jhead"><h4>Maserati of Seattle</h4><span class="jwhen">2016 &ndash; 2019</span></div>
+        <div class="jrole">General Sales Manager</div>
+        <p>Ran the department. Directed sales operations for pre-owned exotic and new retail
+        vehicles, with full accountability for the team and the number.</p>
+        <ul>
+          <li>Led a high-performing team to consistently exceed sales targets, materially growing revenue</li>
+          <li>Drove performance through data-driven strategy rather than floor pressure</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="jhead"><h4>AutoNation &mdash; Bellevue</h4><span class="jwhen">2012 &ndash; 2016</span></div>
+        <div class="jrole">Sales Executive &middot; Finance Manager</div>
+        <p>Four years on the BMW floor, then the finance office. I have taught product on the floor
+        and I have structured the deal in the box &mdash; a trainer who has done both can coach the
+        full transaction.</p>
+        <ul>
+          <li>BMW electric vehicle specialist, portfolio manager and internet sales manager</li>
+          <li>Earned BMW i Certification and consistent top-performer recognition across the Northwest Region and West Coast</li>
+          <li>As Finance Manager: secured bank financing, negotiated terms, processed funding, oversaw warranty sales and ran compliance file audits</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="jhead"><h4>Ferrari of Newport Beach</h4><span class="jwhen">2025</span></div>
+        <div class="jrole">Sales &amp; Consignment</div>
+        <p>Ultra-high-net-worth clientele, rare and collectible cars. The other end of the market
+        from volume &mdash; and the half most trainers cannot teach.</p>
+        <ul>
+          <li>Managed the full consignment process for rare and collectible Ferrari models</li>
+          <li>Built relationships requiring exceptional discretion and white-glove service</li>
+          <li>Developed deep product knowledge across Ferrari's lineage, classic through current production</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="jhead"><h4>Additional experience</h4><span class="jwhen">2009 &ndash; 2025</span></div>
+        <div class="jrole">Audi Mission Viejo &middot; Jaguar Land Rover Newport Beach &middot; South County Lexus &middot; IllTech Auto Salon</div>
+        <ul>
+          <li><strong>Audi Mission Viejo</strong> &mdash; Sales Consultant, 2024&ndash;2025: top performer on customer satisfaction; built EV fluency across the e-tron lineup</li>
+          <li><strong>Jaguar Land Rover Newport Beach</strong> &mdash; Sales Consultant, 2026: Range Rover, Defender, Discovery and Jaguar EV; high CSI through disciplined follow-up</li>
+          <li><strong>South County Lexus</strong> &mdash; Internet Sales Manager, 2020: improved response times, lead conversion and follow-up strategy</li>
+          <li><strong>IllTech Auto Salon</strong> &mdash; General Manager, 2011&ndash;2012: ran high-end performance tuning; increased revenue, cut service times, built repeat business</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <h2>What I would <span class="gradient">teach</span></h2>
+      <p>The curriculum a sales trainer owns, mapped to where I learned it.</p>
+    </div>
+    <div class="skills">
+      <div class="skillgrp">
+        <h4>The desk</h4>
+        <ul>
+          <li>Desking and deal structuring</li>
+          <li>Negotiation and closing</li>
+          <li>Trade appraisal and acquisition</li>
+          <li>Finance and aftermarket (F&amp;I)</li>
+          <li>Compliance and file audits</li>
+        </ul>
+      </div>
+      <div class="skillgrp">
+        <h4>The pipeline</h4>
+        <ul>
+          <li>Internet lead management at 4,000/month</li>
+          <li>CRM discipline and process design</li>
+          <li>Follow-up cadence and appointment setting</li>
+          <li>Conversion analysis and KPI tracking</li>
+          <li>Response-time and CSI improvement</li>
+        </ul>
+      </div>
+      <div class="skillgrp">
+        <h4>Product</h4>
+        <ul>
+          <li>Luxury and exotic product knowledge</li>
+          <li>EV technology and charging literacy</li>
+          <li>BMW i certified, full EV lineup fluency</li>
+          <li>Competitive market analysis (Tesla, Rivian)</li>
+          <li>Customer education across ICE to EV</li>
+        </ul>
+      </div>
+      <div class="skillgrp">
+        <h4>People</h4>
+        <ul>
+          <li>Recruiting and onboarding salespeople</li>
+          <li>Coaching and performance management</li>
+          <li>Multi-site rollout and consistency</li>
+          <li>Building a customer-first culture</li>
+          <li>Team development at 100+ people</li>
+        </ul>
       </div>
     </div>
   </section>
