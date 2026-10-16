@@ -73,7 +73,7 @@ td.t .u1{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;ov
 td.t .sub{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;
   font-weight:400;color:var(--text-muted);font-size:.76rem;margin-top:2px}
 td.n{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
-td.vin{color:var(--text-muted);font-size:.74rem;letter-spacing:.01em}
+td.vin{color:var(--text-muted);font-size:.735rem;letter-spacing:.02em;text-align:left;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:230px}
 tr:has(td.age2) td:not(.age2){background:rgba(226,98,10,.10)}
 tr:has(td.age3) td:not(.age3){background:rgba(200,22,22,.16)}
 td.age0{color:#042b17;font-weight:900;white-space:nowrap;background:#3ddc97;border-radius:4px;padding:3px 9px}
@@ -128,6 +128,20 @@ section[id]{scroll-margin-top:118px}
 .late{color:var(--warn);font-weight:600;white-space:nowrap}
 td.step .sep{opacity:.7}
 
+/* column alignment: header and cell agree, VIN never right-hugs the edge */
+th.h-vin,th.vin-h{text-align:left}
+th:last-child,th.h-age{text-align:left}
+td.vin{text-align:left}
+table{table-layout:fixed}
+th:first-child,td.t{width:34%}
+th:nth-child(2),td:nth-child(2){width:24%}
+th:nth-child(3),td.age0,td.age1,td.age2,td.age3{width:9%}
+th:nth-child(4),td.n:not(.vin){width:14%;text-align:right}
+th:nth-child(5),td.vin{width:19%}
+td{overflow-wrap:anywhere}
+td.t{overflow-wrap:normal}
+@media(max-width:760px){table{min-width:0}td.vin{font-size:.68rem;max-width:150px}}
+
 </style>
 </head>
 <body id="top">
@@ -139,7 +153,7 @@ td.step .sep{opacity:.7}
   <h1>What needs you <span class="gradient">right now</span></h1>
   <p class="subtitle">Velocity recon, ranked by age. Overdue and unsold first, then what is
   stuck on an outside party, then spend still burning on a delivered deal.</p>
-  <p class="stamp">Snapshot 2026-10-15 18:38 &middot; 1.7 h old</p>
+  <p class="stamp">Snapshot 2026-10-15 18:38 &middot; 1.8 h old</p>
   <div class="legend">
     <span>Age colour <i class="a0">&lt; 14 days</i></span>
     <span><i class="a1">14&ndash;30 days</i></span>
