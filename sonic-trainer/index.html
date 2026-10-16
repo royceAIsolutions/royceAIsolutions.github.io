@@ -182,9 +182,23 @@ nav > .royceai-lang{order:1}
 nav > .nav-burger{order:2}
 nav > .nav-logo{margin-right:0!important;order:-1}
 
+/* ---- Sonic Automotive brand palette (read from sonicautomotive.com live CSS) ----
+   Sonic red  #EA3D2F  (their primary, 77 uses on their own site)
+   Deep red   #C7301F  (pressed / strong)
+   Slate      #4F5E6D  (their secondary, the most-used brand tone)
+   Navy       #2E3644  (their dark brand tone)
+   Scoped to this page only: overrides the site's purple accent vars. */
+:root{
+  --accent:#EA3D2F;
+  --accent-light:#FF6B5B;
+  --accent-bg:rgba(234,61,47,.13);
+  --accent-gradient:linear-gradient(135deg,#EA3D2F 0%,#C7301F 55%,#8F2416 100%);
+  --sonic-slate:#4F5E6D;
+  --sonic-navy:#2E3644;
+}
 .wrap{max-width:var(--max-w);margin:0 auto;padding:0 24px}
 header.hero{padding:calc(var(--nav-h) + 62px) 24px 34px;max-width:var(--max-w);margin:0 auto;animation:fade-up .6s ease-out}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:100px;background:linear-gradient(135deg,rgba(124,92,252,.18),rgba(168,85,247,.12));border:1px solid rgba(124,92,252,.3);color:var(--accent-light);font-size:.8rem;font-weight:600;letter-spacing:.02em;margin-bottom:20px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:100px;background:linear-gradient(135deg,rgba(234,61,47,.18),rgba(199,48,31,.12));border:1px solid rgba(234,61,47,.34);color:var(--accent-light);font-size:.8rem;font-weight:600;letter-spacing:.02em;margin-bottom:20px}
 h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-bottom:14px}
 .gradient{background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .subtitle{color:var(--text-secondary);font-size:1.04rem;max-width:720px;margin-bottom:22px}
@@ -203,7 +217,7 @@ section{margin:34px 0}
 .section-header h2{text-align:left!important}
 .role{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px;box-shadow:var(--shadow-card);transition:border-color .25s,transform .25s}
 .role:hover{border-color:var(--border-hover);transform:translateY(-2px)}
-.role.best{border-color:rgba(124,92,252,.42);background:linear-gradient(180deg,rgba(124,92,252,.07),rgba(14,14,18,1));padding:24px}
+.role.best{border-color:rgba(234,61,47,.42);background:linear-gradient(180deg,rgba(234,61,47,.07),rgba(14,14,18,1));padding:24px}
 .role.best .rtitle h3{font-size:1.3rem}
 .role.best .rfit{font-size:.98rem;color:var(--text)}
 .others{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;align-items:start}
@@ -219,14 +233,16 @@ section{margin:34px 0}
 .score{flex:none;width:76px;height:76px;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg-elevated);border:1px solid var(--border);line-height:1}
 .score b{font-size:1.6rem;font-weight:800;letter-spacing:-.03em}
 .score span{font-size:.65rem;color:var(--text-muted);font-weight:700;margin-top:3px}
-.score.hi{background:rgba(52,211,153,.13);border-color:rgba(52,211,153,.34)}
-.score.hi b{color:#34d399}
-.score.mid{background:rgba(96,165,250,.13);border-color:rgba(96,165,250,.34)}
-.score.mid b{color:#60a5fa}
-.score.low{background:rgba(251,191,36,.13);border-color:rgba(251,191,36,.34)}
-.score.low b{color:#fbbf24}
-.score.bad{background:rgba(248,113,113,.13);border-color:rgba(248,113,113,.34)}
-.score.bad b{color:#f87171}
+.score{background:var(--accent-bg);border-color:rgba(234,61,47,.30)}
+.score b{color:var(--accent-light)}
+.score.hi{background:rgba(234,61,47,.15);border-color:rgba(234,61,47,.42)}
+.score.hi b{color:#FF6B5B}
+.score.mid{background:rgba(79,94,109,.20);border-color:rgba(79,94,109,.50)}
+.score.mid b{color:#9FB0BE}
+.score.low{background:rgba(79,94,109,.13);border-color:rgba(79,94,109,.34)}
+.score.low b{color:#8A99A6}
+.score.bad{background:rgba(79,94,109,.09);border-color:rgba(79,94,109,.24)}
+.score.bad b{color:#6E7C88}
 .rtitle{min-width:0}
 .rtitle h3{font-size:1.12rem;font-weight:700;letter-spacing:-.01em;overflow-wrap:anywhere}
 .win{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:var(--accent);color:#fff;padding:3px 9px;border-radius:100px;vertical-align:middle;margin-left:7px}
@@ -241,7 +257,7 @@ section{margin:34px 0}
 .ev{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
 .evcard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-card)}
 .evcard h4{font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-light);font-weight:700;margin-bottom:10px}
-.evcard .big{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:var(--green);margin-bottom:4px}
+.evcard .big{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:var(--accent-light);margin-bottom:4px}
 .evcard p{font-size:.84rem;color:var(--text-secondary)}
 .timeline{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:6px 22px;box-shadow:var(--shadow-card)}
 .tl{display:flex;flex-direction:column}
@@ -257,7 +273,7 @@ section{margin:34px 0}
    negative value equal to the row's bottom padding plus the next dot's top offset.
    Measured values: dot top 7px, radius 4px, item padding-bottom 17px. */
 .tl-item:not(:last-child) .tl-rail::before{content:'';position:absolute;left:50%;
-  width:2px;margin-left:-1px;background:rgba(124,92,252,.38);top:11px;bottom:-44px}
+  width:2px;margin-left:-1px;background:rgba(234,61,47,.42);top:11px;bottom:-44px}
 .tl-dot{position:absolute;top:7px;left:50%;margin-left:-4px;width:8px;height:8px;
   border-radius:50%;background:var(--accent)}
 .tl-item strong{color:var(--text);font-weight:600;display:block;font-size:.92rem;margin-bottom:3px;line-height:1.35}
