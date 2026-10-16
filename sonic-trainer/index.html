@@ -203,7 +203,18 @@ section{margin:34px 0}
 .section-header h2{text-align:left!important}
 .role{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px;box-shadow:var(--shadow-card);transition:border-color .25s,transform .25s}
 .role:hover{border-color:var(--border-hover);transform:translateY(-2px)}
-.role.best{border-color:rgba(124,92,252,.42);background:linear-gradient(180deg,rgba(124,92,252,.07),rgba(14,14,18,1))}
+.role.best{border-color:rgba(124,92,252,.42);background:linear-gradient(180deg,rgba(124,92,252,.07),rgba(14,14,18,1));padding:24px}
+.role.best .rtitle h3{font-size:1.3rem}
+.role.best .rfit{font-size:.98rem;color:var(--text)}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;align-items:start}
+.others .role{margin-bottom:0}
+.others .rwhy{display:none}
+.others .rnote{display:none}
+.others .rhead{gap:12px}
+.others .score{width:58px;height:58px;border-radius:13px}
+.others .score b{font-size:1.25rem}
+.others .rtitle h3{font-size:.98rem}
+.others .rfit{font-size:.85rem}
 .rhead{display:flex;gap:16px;align-items:center;margin-bottom:12px}
 .score{flex:none;width:76px;height:76px;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg-elevated);border:1px solid var(--border);line-height:1}
 .score b{font-size:1.6rem;font-weight:800;letter-spacing:-.03em}
@@ -225,25 +236,40 @@ section{margin:34px 0}
 .rwhy li{position:relative;padding-left:20px;font-size:.86rem;color:var(--text-secondary)}
 .rwhy li::before{content:'\2022';position:absolute;left:4px;color:var(--accent-light);font-weight:700}
 .rnote{font-size:.83rem;color:var(--text-secondary);background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px 12px;margin-top:7px}
-.rnote.gap{border-color:var(--border);background:var(--bg-elevated)}
-.rnote.gap.isgap{border-color:rgba(251,191,36,.22);background:rgba(251,191,36,.05)}
+
 .rnote strong{color:var(--text);font-weight:600}
 .ev{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
 .evcard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-card)}
 .evcard h4{font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-light);font-weight:700;margin-bottom:10px}
 .evcard .big{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:var(--green);margin-bottom:4px}
 .evcard p{font-size:.84rem;color:var(--text-secondary)}
-.timeline{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-card)}
-.tl{display:flex;flex-direction:column;gap:0}
-.tl-item{display:flex;gap:15px;padding:13px 0;border-bottom:1px solid var(--border)}
+.timeline{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:6px 22px;box-shadow:var(--shadow-card)}
+.tl{display:flex;flex-direction:column}
+.tl-item{display:grid;grid-template-columns:18px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--border)}
 .tl-item:last-child{border-bottom:none}
-.tl-dot{flex:none;width:9px;height:9px;border-radius:50%;background:var(--accent);margin-top:7px;box-shadow:0 0 0 3px var(--accent-bg)}
-.tl-item strong{color:var(--text);font-weight:600;display:block;font-size:.9rem;margin-bottom:2px}
-.tl-item span{font-size:.85rem;color:var(--text-secondary)}
-footer{border-top:1px solid var(--border);margin-top:44px;padding:34px 24px;text-align:center;color:var(--text-muted);font-size:.84rem}
-footer .links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:12px 0}
-footer a{color:var(--text-secondary);text-decoration:none}
-footer a:hover{color:var(--accent-light)}
+.tl{display:flex;flex-direction:column}
+.tl-item{display:grid;grid-template-columns:14px 1fr;gap:18px;padding:15px 0 17px;border-bottom:1px solid var(--border)}
+.tl-item:last-child{border-bottom:none;padding-bottom:6px}
+.tl-rail{position:relative}
+/* Rail = an exact dot-to-dot segment. Each row's rail is stretched to the row box; the
+   line spans from this dot's centre (top:11px = dot top 7px + 4px radius) to the NEXT
+   dot's centre, which lands at (row height + this row's padding) - so bottom must be a
+   negative value equal to the row's bottom padding plus the next dot's top offset.
+   Measured values: dot top 7px, radius 4px, item padding-bottom 17px. */
+.tl-item:not(:last-child) .tl-rail::before{content:'';position:absolute;left:50%;
+  width:2px;margin-left:-1px;background:rgba(124,92,252,.38);top:11px;bottom:-44px}
+.tl-dot{position:absolute;top:7px;left:50%;margin-left:-4px;width:8px;height:8px;
+  border-radius:50%;background:var(--accent)}
+.tl-item strong{color:var(--text);font-weight:600;display:block;font-size:.92rem;margin-bottom:3px;line-height:1.35}
+.tl-item span{font-size:.86rem;color:var(--text-secondary);display:block;line-height:1.5}
+footer{border-top:1px solid var(--border);margin-top:56px;padding:40px 24px;text-align:center;color:var(--text-muted);font-size:.82rem}
+footer .fmark{font-weight:700;color:var(--text);font-size:.95rem;letter-spacing:-.01em}
+footer .fmark span{color:var(--accent-light)}
+footer .links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:16px 0 18px}
+footer .links a{color:var(--text-secondary);text-decoration:none;padding:8px 16px;border:1px solid var(--border);border-radius:100px;font-size:.82rem;font-weight:500;transition:all .2s}
+footer .links a:hover{color:var(--text);border-color:var(--border-hover);background:var(--bg-elevated)}
+footer .copy{max-width:620px;margin:0 auto;line-height:1.6}
+footer .prep{margin-top:14px;font-size:.78rem;color:var(--text-muted)}
 /* keep the burger a real 42px button beside the Chat pill (never a bare icon) */
 nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
 @media(max-width:640px){.rhead{gap:12px}.score{width:64px;height:64px}.score b{font-size:1.32rem}h1{font-size:1.8rem}header.hero{padding-top:calc(var(--nav-h) + 34px)}}
@@ -271,7 +297,6 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
     
     <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
     <a href="/prius-prime" class="nav-drawer-only">🔌 Prius Prime Finder</a>
-    <a href="/sonic-trainer" class="nav-drawer-only active">🎯 Sonic Trainer</a>
     <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
     <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
     <a href="/about" class="nav-drawer-only">👤 About Royce</a>
@@ -301,9 +326,10 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
 <main>
   <section>
     <div class="section-header">
-      <h2>The four open roles, <span class="gradient">scored on fit</span></h2>
-      <p>Jen Mullin has four trainer slots open across Sonic, EchoPark and Powersports. Each is
-      scored against what I have actually done &mdash; not what sounds close.</p>
+      <h2>The role I want: <span class="gradient">Sonic Sales Trainer</span></h2>
+      <p>Jen Mullin has four trainer slots open across Sonic, EchoPark and Powersports. I am
+      going after the franchise sales trainer seat &mdash; the one that matches what I have
+      actually done for fourteen years.</p>
     </div>
     
 <article class="role best">
@@ -317,8 +343,12 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
   <p class="rfit">The seat you have sat in at every brand — now taught.</p>
   <ul class="rwhy"><li>Ferrari, Maserati, BMW, Audi, Lexus, Jaguar Land Rover, VinFast — premium and franchise, new and used, fourteen years on the floor.</li><li>AutoNation Irvine: Internet Director running 4,000 leads a month at an 8-9% close rate.</li><li>VinFast US: Regional Sales Director, up to 15 locations across NorCal and SoCal, up to 100 salespeople.</li></ul>
   <div class="rnote"><strong>Edge:</strong> Runs AI systems in production. Can teach a CRM, desking and follow-up curriculum — then automate the follow-up behind it.</div>
-  <div class="rnote gap"><strong>Gap:</strong> None material.</div>
 </article>
+    <div class="section-header" style="margin-top:40px">
+      <h2>How the other three <span class="gradient">compare</span></h2>
+      <p>Same scoring, shown for context only. The Sales Trainer scores highest by a wide margin.</p>
+    </div>
+    <div class="others">
 <article class="role">
   <div class="rhead">
     <div class="score mid"><b>84</b><span>/100</span></div>
@@ -330,7 +360,6 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
   <p class="rfit">Closest match to the high-volume used model.</p>
   <ul class="rwhy"><li>AutoNation Irvine acquisition director: 200% acquisition growth.</li><li>Ferrari of Newport Beach sales and consignment — used-car and trade appraisal.</li><li>Jaguar Land Rover Newport Beach: current franchise desk.</li></ul>
   <div class="rnote"><strong>Edge:</strong> Two open slots — the best odds of any track.</div>
-  <div class="rnote gap isgap"><strong>Gap:</strong> Have not run a no-haggle, one-price model by title. Speakable, but real.</div>
 </article>
 <article class="role">
   <div class="rhead">
@@ -343,7 +372,6 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
   <p class="rfit">The process and reporting half of the job, without the customer-facing half.</p>
   <ul class="rwhy"><li>200% acquisition growth and a 50% inventory improvement.</li><li>The 15-location operating playbook at VinFast.</li><li>Builds reporting and automation: the dashboards this role teaches.</li></ul>
   <div class="rnote"><strong>Edge:</strong> The automation work is a genuine differentiator for an ops seat.</div>
-  <div class="rnote gap isgap"><strong>Gap:</strong> Usually wants someone who has owned the ops function by title — the work is here, the label is not.</div>
 </article>
 <article class="role">
   <div class="rhead">
@@ -356,8 +384,7 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
   <p class="rfit">Weakest fit. Service drive and parts are not in the verified history.</p>
   <ul class="rwhy"><li>Background is the showroom floor and the sales desk.</li><li>Competing against service managers who have run a drive for a decade.</li></ul>
   <div class="rnote"><strong>Edge:</strong> None that outranks the other three.</div>
-  <div class="rnote gap isgap"><strong>Gap:</strong> Coaching this interview means arguing a pivot, not demonstrating fit.</div>
-</article>
+</article></div>
   </section>
 
   <section>
@@ -397,17 +424,17 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
   <section>
     <div class="section-header">
       <h2>The <span class="gradient">process</span></h2>
-      <p>Published by Sonic Communications on October 15, 2026.</p>
+      <p>Announced by Sonic Communications &middot; October 15, 2026</p>
     </div>
     <div class="timeline">
       <div class="tl">
-        <div class="tl-item"><div class="tl-dot"></div><div><strong>Interviews begin October 26, 2026</strong>
+        <div class="tl-item"><div class="tl-rail"><div class="tl-dot"></div></div><div><strong>Interviews begin October 26, 2026</strong>
           <span>Three-part process, including a 10-minute training presentation developed and delivered by each applicant.</span></div></div>
-        <div class="tl-item"><div class="tl-dot"></div><div><strong>Offers in November</strong>
+        <div class="tl-item"><div class="tl-rail"><div class="tl-dot"></div></div><div><strong>Offers in November</strong>
           <span>Presented to successful candidates.</span></div></div>
-        <div class="tl-item"><div class="tl-dot"></div><div><strong>Roles begin January 1, 2027</strong>
+        <div class="tl-item"><div class="tl-rail"><div class="tl-dot"></div></div><div><strong>Roles begin January 1, 2027</strong>
           <span>New training team stands up.</span></div></div>
-        <div class="tl-item"><div class="tl-dot"></div><div><strong>Up to 75% travel</strong>
+        <div class="tl-item"><div class="tl-rail"><div class="tl-dot"></div></div><div><strong>Up to 75% travel</strong>
           <span>Stated on the posting for all training positions.</span></div></div>
       </div>
     </div>
@@ -415,12 +442,13 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
 </main>
 
 <footer>
-  <div class="logo">Royce<span style="color:var(--accent-light)">AI</span> Solutions. Irvine, CA</div>
+  <div class="fmark">Royce<span>AI</span> Solutions &middot; Irvine, CA</div>
   <div class="links">
     <a href="/about">About Royce</a>
-    <a href="/hyundai">Fit pages</a>
+    <a href="/sonic-trainer">Sales Trainer Fit</a>
   </div>
-  <div class="copy">Prepared for Jen Mullin &middot; Vice President of Traffic Management &amp; Organizational Development &middot; Sonic Automotive, EchoPark &amp; Powersports</div>
+  <div class="copy">Prepared for Jen Mullin &mdash; Vice President of Traffic Management &amp; Organizational Development, Sonic Automotive, EchoPark &amp; Powersports.</div>
+  <div class="prep">royceaisolutions@gmail.com &middot; (949) 501-8072</div>
 </footer>
 
 <script>
