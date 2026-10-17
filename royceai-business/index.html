@@ -224,26 +224,6 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 
 <script>
 (function(){
-  var burger=document.getElementById('navBurger'), menu=document.getElementById('mobileMenu'),
-      back=document.getElementById('mobileMenuBackdrop'), links=document.querySelector('.nav-links');
-  if(!burger||!menu||!links) return;
-  menu.innerHTML=links.innerHTML;
-  var path=location.pathname.replace(/index\.html$/,'');
-  menu.querySelectorAll('a').forEach(function(a){
-    var h=a.getAttribute('href')||'';
-    if(h===path||(h!=='/'&&path.indexOf(h)===0)) a.classList.add('active');
-  });
-  function close(){menu.classList.remove('open');back.classList.remove('open');burger.setAttribute('aria-expanded','false');}
-  burger.addEventListener('click',function(){
-    var open=menu.classList.toggle('open'); back.classList.toggle('open',open);
-    burger.setAttribute('aria-expanded',open?'true':'false');
-  });
-  back.addEventListener('click',close);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
-})();
-</script>
-<script>
-(function(){
   function initMobileMenu(){
     var burger=document.getElementById('navBurger');
     if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
