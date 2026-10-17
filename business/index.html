@@ -191,7 +191,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
   <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px" alt="R"> Royce<span>AI</span></a>
   <div class="nav-links">
     <span id="navLoginBtn"></span>
-    <a href="/subscribe">Subscribe</a>
+    <a class="nav-drawer-only" href="/subscribe">Subscribe</a>
     <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
     <a href="/preowned" class="nav-drawer-only">🔁 Pre-Owned Desk</a>
     <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
@@ -208,7 +208,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
     <a href="/about" class="nav-drawer-only">👤 About Royce</a>
     
     
-    <a href="/chat" class="nav-cta">💬 Chat</a>
+    <a href="/chat" class="nav-drawer-only">💬 Chat</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -317,7 +317,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
     var backdrop=document.getElementById('mobileMenuBackdrop');
     var links=document.querySelector('.nav-links');
     if(links&&!menu.querySelector('a[data-mn]')){
-      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;if(a.classList.contains('nav-cta'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
+      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
     }
     var p=location.pathname;
     if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
