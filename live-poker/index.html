@@ -117,7 +117,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
   <div class="nav-links">
     <a href="/products">Products</a>
     <span id="navLoginBtn"></span>
-    <a href="/subscribe">Subscribe</a>
+    <a class="nav-drawer-only" href="/subscribe">Subscribe</a>
     <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
     <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
     
@@ -129,7 +129,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
     <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
     <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
     <a href="/about" class="nav-drawer-only">👤 About Royce</a>
-    <a href="/chat" class="nav-cta">💬 Chat</a>
+    <a href="/chat" class="nav-drawer-only">💬 Chat</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -399,7 +399,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
     if(links&&!menu.querySelector('a[data-mn]')){
       links.querySelectorAll('a').forEach(function(a){
         if(a.closest('#navLoginBtn'))return;
-        if(a.classList.contains('nav-cta'))return;
+        
         var h=a.getAttribute('href')||'';
         if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;
         var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);
