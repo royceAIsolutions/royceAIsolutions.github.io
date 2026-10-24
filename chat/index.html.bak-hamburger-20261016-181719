@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF23H9423B"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EF23H9423B');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat — Royce AI Solutions</title>
+<meta name="description" content="Chat with RoyceAI. Get started by sharing your contact info.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a;
+  --bg-card: #111;
+  --bg-elevated: #1a1a1a;
+  --text: #f5f5f5;
+  --text-secondary: #a1a1aa;
+  --border: rgba(255,255,255,0.06);
+  --accent: #667eea;
+  --accent-hover: #7c93f5;
+  --accent-glow: rgba(102,126,234,0.15);
+  --accent-bg: rgba(102,126,234,0.1);
+  --red: #ef4444;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{height:100%;}
+body{
+  font-family:var(--font);background:var(--bg);color:var(--text);
+  height:100%;display:flex;flex-direction:column;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Nav */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 24px;height:56px;border-bottom:1px solid var(--border);flex-shrink:0;
+}
+.nav-logo{
+  font-size:17px;font-weight:700;letter-spacing:-0.3px;
+  display:flex;align-items:center;gap:8px;
+}
+.nav-logo span{color:var(--accent);}
+.nav-back{
+  font-size:13px;color:var(--text-secondary);text-decoration:none;
+  display:flex;align-items:center;gap:6px;transition:color var(--transition);
+}
+.nav-back:hover{color:var(--accent);}
+.nav-tab{
+  font-size:13px;font-weight:600;color:var(--text-secondary);text-decoration:none;
+  padding:7px 14px;border-radius:8px;transition:all 0.2s;display:flex;align-items:center;gap:6px;
+}
+.nav-tab:hover{color:var(--text);background:var(--accent-bg);}
+.nav-right{display:flex;align-items:center;gap:8px;}
+
+/* Lead capture form */
+.lead-overlay{
+  position:fixed;inset:0;background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  z-index:100;padding:20px;
+}
+.lead-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:40px 36px;max-width:420px;width:100%;
+}
+.lead-card h2{font-size:22px;font-weight:700;margin-bottom:6px;}
+.lead-card p{color:var(--text-secondary);font-size:14px;margin-bottom:28px;line-height:1.5;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:12px;font-weight:600;color:var(--text-secondary);margin-bottom:5px;text-transform:uppercase;letter-spacing:0.5px;}
+.form-group input{
+  width:100%;padding:11px 14px;background:var(--bg);border:1px solid var(--border);
+  border-radius:var(--radius-sm);color:var(--text);font-size:14px;font-family:var(--font);
+  outline:none;transition:border-color var(--transition);
+}
+.form-group input:focus{border-color:var(--accent);}
+.form-group input::placeholder{color:var(--text-secondary);}
+.form-group .error{color:var(--red);font-size:11px;margin-top:4px;display:none;}
+.form-group.invalid input{border-color:var(--red);}
+.form-group.invalid .error{display:block;}
+.btn-submit{
+  width:100%;padding:12px;background:var(--accent);color:#fff;border:none;
+  border-radius:var(--radius-sm);font-size:14px;font-weight:600;cursor:pointer;
+  font-family:var(--font);transition:all var(--transition);margin-top:4px;
+}
+.btn-submit:hover{background:var(--accent-hover);}
+.btn-submit:disabled{opacity:0.4;cursor:not-allowed;}
+.lead-footer{text-align:center;margin-top:16px;font-size:11px;color:var(--text-secondary);}
+
+/* Hidden until form submitted */
+.chat-app{display:none;flex-direction:column;height:100%;}
+.chat-app.active{display:flex;}
+
+/* Chat messages */
+.chat-wrap{flex:1;display:flex;flex-direction:column;max-width:720px;width:100%;margin:0 auto;padding:0 16px 16px;overflow:hidden;}
+.messages{flex:1;overflow-y:auto;padding:20px 4px 12px;display:flex;flex-direction:column;gap:8px;scroll-behavior:smooth;}
+.messages::-webkit-scrollbar{width:4px;}
+.messages::-webkit-scrollbar-track{background:transparent;}
+.messages::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+.msg{max-width:88%;padding:10px 16px;border-radius:var(--radius-sm);line-height:1.6;font-size:14px;animation:msgIn 0.25s ease;}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px) scale(0.97);}to{opacity:1;transform:translateY(0) scale(1);}}
+.msg.user{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:4px;}
+.msg.bot{align-self:flex-start;background:var(--bg-card);color:var(--text);border-bottom-left-radius:4px;border:1px solid var(--border);}
+.msg.system{align-self:center;background:transparent;color:var(--text-secondary);font-size:12px;text-align:center;padding:6px 12px;}
+.msg.bot a,.msg.bot strong{color:var(--accent);}
+.msg.bot a{text-decoration:underline;}
+.typing{align-self:flex-start;background:var(--bg-card);padding:12px 18px;border-radius:var(--radius-sm);border-bottom-left-radius:4px;border:1px solid var(--border);display:flex;gap:5px;align-items:center;}
+.typing-dot{width:7px;height:7px;background:var(--text-secondary);border-radius:50%;animation:typingBounce 1.4s infinite ease-in-out;}
+.typing-dot:nth-child(2){animation-delay:0.2s;}
+.typing-dot:nth-child(3){animation-delay:0.4s;}
+@keyframes typingBounce{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-6px);}}
+.input-area{display:flex;gap:8px;padding:10px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);margin-top:8px;transition:border-color var(--transition);}
+.input-area:focus-within{border-color:var(--accent);}
+.input-area input{flex:1;border:none;outline:none;font-size:14px;font-family:var(--font);background:transparent;color:var(--text);}
+.input-area input::placeholder{color:var(--text-secondary);}
+.input-area button{background:var(--accent);color:#fff;border:none;width:38px;height:38px;border-radius:var(--radius-sm);font-size:16px;cursor:pointer;transition:all var(--transition);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.input-area button:hover{background:var(--accent-hover);transform:scale(1.05);}
+.input-area button:disabled{background:var(--border);cursor:not-allowed;transform:none;}
+.quick-btns{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:10px 0 4px;}
+.quick-btns button{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:7px 14px;font-size:12px;cursor:pointer;font-family:var(--font);transition:all var(--transition);color:var(--text-secondary);}
+.quick-btns button:hover{background:var(--accent-bg);color:var(--accent);border-color:var(--accent);}
+
+.lead-sent{display:none;text-align:center;padding:40px 20px;}
+.lead-sent.active{display:block;}
+.lead-sent h3{font-size:18px;margin-bottom:8px;}
+.lead-sent p{color:var(--text-secondary);font-size:13px;}
+
+@media(max-width:480px){
+  .nav{padding:10px 16px;}
+  .lead-card{padding:28px 20px;}
+  .msg{max-width:92%;font-size:13px;}
+  .quick-btns button{font-size:11px;padding:6px 12px;}
+}
+/* burger+lang cluster pinned right (overrides space-between spread) */
+nav{justify-content:flex-start!important}
+nav > .nav-links{margin-left:auto!important}
+nav > .royceai-lang{margin-left:8px!important;order:0}
+nav > .nav-burger{margin-left:8px!important;margin-right:0!important;flex:none;order:0}
+nav > .royceai-lang{order:1}
+nav > .nav-burger{order:2}
+nav > .nav-logo{margin-right:0!important;order:-1}
+</style>
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--radius:16px;--radius-sm:10px;--max-w:1200px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--shadow-elevated:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.04)}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .logo-icon{width:32px;height:32px;border-radius:9px;display:block;object-fit:cover}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;animation:pulse-glow 2.5s ease-in-out infinite}
+.nav-links .nav-cta:hover{background:var(--accent-light);transform:scale(1.05)}
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none}
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{color:var(--text-secondary);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--text);background:var(--accent-bg)}
+.mobile-menu .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;margin-top:10px;text-align:center;animation:pulse-glow 2.5s ease-in-out infinite}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+.mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+  .nav-links{width:auto;margin-left:auto;justify-content:flex-end}
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}
+  .nav-logo{width:auto;justify-content:flex-start}
+  .nav-links a.nav-drawer-only{display:none!important}
+</style>
+<meta property="og:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png">
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <span id="navLoginBtn"></span>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/preowned" class="nav-drawer-only">🔁 Pre-Owned Desk</a>
+    <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
+    <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
+    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
+    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
+    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/prius-prime" class="nav-drawer-only">🔌 Prius Prime Finder</a>
+    <a href="/brandon" class="nav-drawer-only">👤 Brandon Muzik</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    
+    
+    <a href="/chat" class="nav-cta">💬 Chat</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav><div class="mobile-menu" id="mobileMenu"></div><div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div><script>function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(links&&!menu.querySelector('a[data-mn]')){
+      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;if(a.classList.contains('nav-cta'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+}
+if(typeof initMobileMenu==='function')initMobileMenu();</script>
+
+
+<!-- Lead Capture -->
+<div class="lead-overlay" id="leadOverlay">
+  <div class="lead-card" id="leadCard">
+    <h2>👋 Let's talk</h2>
+    <p>Leave your details for a free consultation — Royce will reach out to you.</p>
+    <div class="form-group" id="nameGroup">
+      <label>Your Name</label>
+      <input type="text" id="leadName" placeholder="e.g. John Smith" autocomplete="name">
+      <div class="error">Please enter your name</div>
+    </div>
+    <div class="form-group" id="emailGroup">
+      <label>Email</label>
+      <input type="email" id="leadEmail" placeholder="john@example.com" autocomplete="email">
+      <div class="error">Please enter a valid email</div>
+    </div>
+    <div class="form-group" id="phoneGroup">
+      <label>Phone Number</label>
+      <input type="tel" id="leadPhone" placeholder="+1 (555) 123-4567" autocomplete="tel">
+      <div class="error">Please enter a valid phone number</div>
+    </div>
+    <button class="btn-submit" id="submitLead" onclick="submitLead()">Start Chatting →</button>
+    <div class="lead-footer">Your info is private. No payment needed.</div>
+  </div>
+  <div class="lead-sent" id="leadSent">
+    <h3>✅ You're all set</h3>
+    <p>Redirecting you to the chat...</p>
+  </div>
+</div>
+
+<!-- Chat App -->
+<div class="chat-app" id="chatApp">
+  <div class="nav">
+    <div class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:32px;height:32px;border-radius:9px;vertical-align:middle;margin-right:6px" alt="R"> Royce<span>AI</span></div>
+    <div class="nav-right">
+      <a href="/tutor" class="nav-tab">✨ Tutor</a>
+      <a href="https://royceai.com" class="nav-back">← Back to site</a>
+    </div>
+  </div>
+  <div class="chat-wrap">
+    <div class="messages" id="messages">
+      <div class="msg bot" id="welcomeMsg">
+        👋 Welcome! I'm RoyceAI. Tell me what you need and I'll connect you with a free consultation:
+        <br><br>
+        💼 <b>AI Receptionist</b> — 24/7 AI call answering<br>
+        🧠 <b>High School Tutor</b> — Math, Science, English, Korean<br>
+        🌐 <b>Websites</b> — Custom, AI-integrated<br>
+        ⚡ <b>Business AI</b> — Chatbots, automations<br>
+        Which one interests you?
+      </div>
+    </div>
+    <div class="quick-btns" id="quickBtns">
+      <button onclick="sendQuick('Tell me about your AI receptionist. How does it work?')">📞 AI Receptionist</button>
+      <button onclick="sendQuick('I need a tutor. What do you offer?')">🧠 Tutoring</button>
+      <button onclick="sendQuick('I need a website. What do you build?')">🌐 Websites</button>
+      <button onclick="sendQuick('I\'d like a free consultation. How does it work?')">✍️ Free Consultation</button>
+      
+    </div>
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Ask me anything..." autofocus onkeydown="if(event.key==='Enter') sendMessage()">
+      <button id="sendBtn" onclick="sendMessage()">➤</button>
+    </div>
+  </div>
+
+    <div style="display:flex;gap:8px;margin:8px auto 0;max-width:720px;padding:0 16px">
+      <button onclick="sendQuick('I\'d like a free consultation.')" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;background:linear-gradient(135deg,#7c5cfc,#5b3cd4);color:white;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:Inter,sans-serif;transition:all 0.2s">📅 Get a Free Consultation</button>
+    </div>
+  </div>
+
+<script>
+const API_URL = 'https://chat-api-tawny-zeta.vercel.app/api/chat';
+let history = [];
+let msgCount = 0;
+let leadInfo = null;
+
+// Check if lead already submitted
+const saved = localStorage.getItem('royceai_lead');
+if (saved) {
+  try {
+    leadInfo = JSON.parse(saved);
+    showChat();
+  } catch(e) {}
+}
+
+function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+function validatePhone(p) {
+  const cleaned = p.replace(/[\s\-\(\)\.]/g, '');
+  // Accept +1XXXXXXXXXX, 1XXXXXXXXXX, or XXXXXXXXXX (10 digits)
+  return /^(\+?1?\d{10})$/.test(cleaned) || /^\d{10}$/.test(cleaned);
+}
+
+function submitLead() {
+  const name = document.getElementById('leadName').value.trim();
+  const email = document.getElementById('leadEmail').value.trim();
+  const phone = document.getElementById('leadPhone').value.trim();
+  let valid = true;
+
+  if (!name) {
+    document.getElementById('nameGroup').classList.add('invalid');
+    valid = false;
+  } else {
+    document.getElementById('nameGroup').classList.remove('invalid');
+  }
+
+  if (!email || !validateEmail(email)) {
+    document.getElementById('emailGroup').classList.add('invalid');
+    valid = false;
+  } else {
+    document.getElementById('emailGroup').classList.remove('invalid');
+  }
+
+  if (!phone || !validatePhone(phone)) {
+    document.getElementById('phoneGroup').classList.add('invalid');
+    valid = false;
+  } else {
+    document.getElementById('phoneGroup').classList.remove('invalid');
+  }
+
+  if (!valid) return;
+
+  const btn = document.getElementById('submitLead');
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+
+  leadInfo = { name, email, phone, timestamp: new Date().toISOString() };
+  localStorage.setItem('royceai_lead', JSON.stringify(leadInfo));
+
+  // Save to API with retry
+  function saveLead(leadData, retries) {
+    fetch(API_URL.replace('/api/chat', '/api/lead'), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(leadData),
+    }).catch(function() {
+      if (retries > 0) setTimeout(function() { saveLead(leadData, retries - 1); }, 2000);
+    });
+  }
+  saveLead(leadInfo, 2);
+
+  document.getElementById('leadSent').classList.add('active');
+  setTimeout(showChat, 800);
+}
+
+function showChat() {
+  document.getElementById('leadOverlay').style.display = 'none';
+  document.getElementById('chatApp').classList.add('active');
+  document.getElementById('userInput').focus();
+}
+
+function addMessage(content, sender) {
+  const msgs = document.getElementById('messages');
+  const div = document.createElement('div');
+  div.className = 'msg ' + sender;
+  div.innerHTML = content;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping(show) {
+  const existing = document.querySelector('.typing');
+  if (existing) existing.remove();
+  if (!show) return;
+  const div = document.createElement('div');
+  div.className = 'typing';
+  div.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+  document.getElementById('messages').appendChild(div);
+  document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+}
+
+function sendQuick(text) {
+  document.getElementById('userInput').value = text;
+  sendMessage();
+}
+
+function formatReply(text) {
+  let html = text
+    .replace(/### (.*)/g, '<strong>$1</strong><br>')
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br>');
+  return html;
+}
+
+async function sendMessage() {
+  const input = document.getElementById('userInput');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  document.getElementById('sendBtn').disabled = true;
+  addMessage(text, 'user');
+  showTyping(true);
+  history.push({ role: 'user', content: text });
+  try {
+    // Content safety check
+    var dirty = text.match(/(ignore|ignore all|forget|reset|new prompt|system prompt|you are|your instructions|your system|jailbreak|dan|do anything|no filters|no restrictions|admin|password|secret|token|api.?key|bypass|override|hack|exploit|injection)/i);
+    if (dirty) {
+      addMessage('I can only help with Royce AI products and services. Let me know what you need help with.', 'bot');
+      document.getElementById('sendBtn').disabled = false;
+      fetch(API_URL.replace('/api/chat','/api/lead'), {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:'FLAG', type:'injection_attempt', content:text, timestamp:new Date().toISOString(), lead:leadInfo})}).catch(function(){});
+      return;
+    }
+    const resp = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: text,
+        history: history.slice(-20),
+        lead: leadInfo,
+      }),
+    });
+    const data = await resp.json();
+    let reply = data.reply || 'Sorry, I had trouble with that.';
+    history.push({ role: 'assistant', content: reply });
+    showTyping(false);
+    addMessage(formatReply(reply), 'bot');
+  } catch (e) {
+    showTyping(false);
+    addMessage('⚠️ Connection error. Try again later.', 'bot');
+  }
+  document.getElementById('sendBtn').disabled = false;
+  msgCount++;
+  if (msgCount === 3) {
+    addMessage('💡 Want to continue later? Bookmark this page and come back.', 'system');
+  }
+}
+
+// === QUIZ MODE ===
+const QUIZ_API = 'https://chat-api-tawny-zeta.vercel.app/api/quiz';
+const SAVE_API = 'https://chat-api-tawny-zeta.vercel.app/api/save-score';
+let quizMode = false;
+
+function getSubject() {
+  try { return new URLSearchParams(window.location.search).get('subject'); } catch(e) { return null; }
+}
+
+function initQuiz() {
+  var subject = getSubject();
+  if (!subject) return;
+  quizMode = true;
+  document.getElementById('quickBtns').style.display = 'none';
+  document.getElementById('welcomeMsg').innerHTML = '📋 ' + subject.charAt(0).toUpperCase() + subject.slice(1) + ' Quiz';
+  setTimeout(function() { sendQuizMessage('Start ' + subject + ' quiz'); }, 500);
+}
+
+function formatQuizReply(text) {
+  // Strip option text from user messages, keep buttons
+  text = text.replace(/^[A-D][.)]\s*[^\n]*\n?/gm, '');
+  return formatReply(text);
+}
+
+function renderAnswerButtons(reply) {
+  var opts = reply.match(/[A-D][)]\s*[^\n]+/g);
+  if (!opts || opts.length < 2) return;
+  var area = document.createElement('div');
+  area.className = 'ans-area';
+  area.style.cssText = 'display:flex;flex-wrap:wrap;gap:4px;padding:4px 0 8px;align-self:flex-start';
+  opts.forEach(function(o) {
+    var b = document.createElement('button');
+    b.style.cssText = 'padding:8px 16px;margin:3px;border-radius:10px;border:1px solid rgba(102,126,234,0.3);background:rgba(102,126,234,0.08);color:#f5f5f5;font-family:Inter,sans-serif;font-size:13px;cursor:pointer;';
+    b.textContent = o.trim();
+    b.onclick = function() { sendQuizMessage(o.charAt(0).toLowerCase()); };
+    area.appendChild(b);
+  });
+  var msgs = document.getElementById('messages');
+  msgs.appendChild(area);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+async function sendQuizMessage(text) {
+  var input = document.getElementById('userInput');
+  var t = text || input.value.trim();
+  if (!t) return;
+  if (input) input.value = '';
+  document.getElementById('sendBtn').disabled = true;
+  addMessage(t, 'user');
+  showTyping(true);
+  history.push({role: 'user', content: t});
+  try {
+    var r = await fetch(QUIZ_API, {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({message: t, history: history.slice(-30)})
+    });
+    var d = await r.json();
+    var reply = d.reply || 'Type next for next question';
+    history.push({role: 'assistant', content: reply});
+    showTyping(false);
+    addMessage(formatQuizReply(reply), 'bot');
+    renderAnswerButtons(reply);
+    checkSaveScore(reply);
+  } catch(e) {
+    showTyping(false);
+    addMessage('Error. Try again.', 'bot');
+  }
+  document.getElementById('sendBtn').disabled = false;
+}
+
+function checkSaveScore(reply) {
+  if (!reply || !quizMode) return;
+  var isDone = reply.match(/Quiz complete|Q10.10|completed|Complete|done|final|Great|good work/i);
+  if (!isDone) return;
+  var m = reply.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i) || reply.match(/(\d+)\s*\/\s*(\d+)\s*(?:correct|questions|answered)/i) || reply.match(/Final score.*?(\d+)\s*\/\s*(\d+)/i);
+  if (!m) return;
+  var c = parseInt(m[1]), t = parseInt(m[2]);
+  if (!t || t < 1 || c > t) return;
+  var name = 'Student';
+  if (leadInfo && leadInfo.name) name = leadInfo.name;
+  try {
+    fetch(SAVE_API, {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({student: name, correct: c, total: t, subject: getSubject() || 'quiz'})
+    }).catch(function(){});
+  } catch(e) {}
+}
+
+// Override sendMessage in quiz mode
+var origSend = sendMessage;
+sendMessage = function() {
+  if (quizMode) {
+    var text = document.getElementById('userInput').value.trim();
+    if (!text) return;
+    document.getElementById('userInput').value = '';
+    sendQuizMessage(text);
+  } else {
+    origSend();
+  }
+};
+sendQuick = function(text) {
+  if (quizMode) {
+    sendQuizMessage(text);
+  } else {
+    document.getElementById('userInput').value = text;
+    origSend();
+  }
+};
+
+// Init quiz if subject param present
+initQuiz();
+</script>
+</body>
+</html>

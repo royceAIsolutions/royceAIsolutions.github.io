@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF23H9423B"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EF23H9423B');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Federal AI — SAM.gov Opportunities & TRL 6 Readiness | RoyceAI</title>
+<meta name="description" content="RoyceAI Federal — live SAM.gov contract opportunities matched to RoyceAI capabilities, TRL 6 readiness tracker, and DoD teaming partners. Small business set-aside AI, IT, and education contracts.">
+<link rel="canonical" href="https://royceai.com/federal/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta property="og:title" content="Federal AI — SAM.gov Opportunities & TRL 6 Readiness">
+<meta property="og:description" content="Live SAM.gov opportunities, TRL 6 readiness, and DoD teaming partners — RoyceAI Federal.">
+<meta property="og:url" content="https://royceai.com/federal/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Federal AI — SAM.gov Opportunities & TRL 6 Readiness">
+<meta name="twitter:description" content="Live SAM.gov opportunities, TRL 6 readiness, and DoD teaming partners — RoyceAI Federal.">
+<script type="application/ld+json">
+[{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "RoyceAI Federal",
+  "url": "https://royceai.com/federal/",
+  "description": "Federal AI contracting — SAM.gov opportunity scanning, TRL 6 readiness tracking, and DoD teaming for small business set-aside AI/IT/education contracts.",
+  "areaServed": "US",
+  "contactPoint": {"@type": "ContactPoint", "url": "https://royceai.com/chat", "contactType": "sales"}
+}]
+</script>
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--green:#34d399;--radius:16px;--radius-sm:10px;--max-w:1200px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--shadow-elevated:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;opacity:0.012;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes breathe{0%,100%{opacity:0.3;transform:scale(1)}50%{opacity:0.5;transform:scale(1.1)}}
+@keyframes pop-in{from{opacity:0;transform:translateY(8px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;background:var(--bg);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo img{width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;animation:pulse-glow 2.5s ease-in-out infinite}
+.nav-links .nav-cta:hover{background:var(--accent-light);transform:scale(1.05)}
+.nav-links a.nav-drawer-only{display:none!important}
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.hero-sub{min-height:50vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:calc(80px + var(--nav-h)) 24px 60px;max-width:var(--max-w);margin:0 auto;animation:fade-up 0.6s ease-out}
+.hero-sub .badge{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:100px;background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(168,85,247,0.1));border:1px solid rgba(124,92,252,0.25);font-size:0.85rem;font-weight:600;color:var(--accent-light);margin-bottom:24px;animation:float 3s ease-in-out infinite}
+.hero-sub h1{font-size:clamp(2.2rem,6.5vw,3.9rem);font-weight:900;line-height:1.1;letter-spacing:-0.03em;margin-bottom:18px;max-width:820px}
+.hero-sub h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero-sub .subtitle{font-size:clamp(1rem,1.8vw,1.2rem);color:var(--text-secondary);max-width:700px;line-height:1.75;margin-bottom:14px}
+.hero-sub .tagline{font-size:1.02rem;font-weight:700;color:var(--accent-light);margin-bottom:10px}
+.hero-sub .meta{font-size:0.85rem;color:var(--text-muted);margin-top:14px}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.section{padding:70px 24px;max-width:var(--max-w);margin:0 auto}
+.section-header{text-align:center;margin-bottom:44px}
+.section-header h2{font-size:clamp(1.7rem,4.5vw,2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px}
+.section-header h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.section-header p{color:var(--text-secondary);max-width:700px;margin:0 auto;font-size:1.02rem}
+.quote{max-width:820px;margin:0 auto;text-align:center;font-size:clamp(1.15rem,2.4vw,1.5rem);font-weight:600;line-height:1.65;color:var(--text);padding:0 8px}
+.quote::before{content:'“';display:block;font-size:3rem;line-height:1;color:var(--accent-light);opacity:0.7;margin-bottom:6px}
+.quote::after{content:'”';display:block;font-size:3rem;line-height:1;color:var(--accent-light);opacity:0.7;margin-top:10px}
+.quote .src{display:block;font-size:0.85rem;font-weight:500;color:var(--text-muted);margin-top:14px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px}
+.stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 20px;text-align:center;transition:all var(--transition)}
+.stat:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
+.stat .num{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s ease-in-out infinite}
+.stat .label{color:var(--text-secondary);font-size:0.85rem;margin-top:6px}
+.timeline{max-width:760px;margin:0 auto;position:relative}
+.timeline::before{content:'';position:absolute;left:20px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,rgba(124,92,252,0.5),rgba(124,92,252,0.05))}
+.tl-item{position:relative;padding:0 0 32px 60px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:12px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:0 0 20px var(--accent-glow);border:3px solid var(--bg)}
+.tl-item h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.tl-item .tl-role{color:var(--accent-light);font-size:0.85rem;font-weight:600;margin-bottom:6px}
+.tl-item p{color:var(--text-secondary);font-size:0.92rem}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bento-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;transition:all var(--transition)}
+.bento-card:hover{border-color:rgba(124,92,252,0.35);transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
+.bento-card .icon{font-size:1.6rem;margin-bottom:14px;display:inline-block}
+.bento-card h3{font-size:1.02rem;font-weight:700;margin-bottom:8px}
+.bento-card p{color:var(--text-secondary);font-size:0.9rem}
+.bento-card ul{list-style:none;margin-top:10px}
+.bento-card li{color:var(--text-secondary);font-size:0.85rem;padding:4px 0 4px 18px;position:relative}
+.bento-card li::before{content:'\2713';position:absolute;left:0;color:var(--accent-light);font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px}
+.chip{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);color:var(--text-secondary);padding:8px 16px;border-radius:100px;font-size:0.85rem;font-weight:500;cursor:default;transition:all 0.2s}
+.chip:hover{color:var(--text);border-color:rgba(124,92,252,0.4);background:var(--accent-bg);transform:translateY(-2px)}
+.cta-section{padding:80px 24px;text-align:center;max-width:var(--max-w);margin:0 auto}
+.cta-section h2{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:14px}
+.cta-section h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.cta-section p{color:var(--text-secondary);max-width:620px;margin:0 auto 20px}
+.cta-perks{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.cta-perk{background:var(--accent-bg);border:1px solid rgba(124,92,252,0.25);color:var(--accent-light);font-size:0.82rem;font-weight:600;padding:8px 16px;border-radius:100px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:12px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all var(--transition);cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:#fff;animation:pulse-glow 2.5s ease-in-out infinite}
+.btn-primary:hover{background:var(--accent-light);transform:scale(1.03)}
+.btn-ghost{background:rgba(255,255,255,0.04);color:var(--text);border:1px solid var(--border-hover)}
+.btn-ghost:hover{background:var(--accent-bg);border-color:rgba(124,92,252,0.4);transform:scale(1.03)}
+footer{max-width:var(--max-w);margin:0 auto;padding:36px 24px 44px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center}
+footer .logo{font-weight:700}
+footer .logo span{color:var(--accent-light)}
+footer .links{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+footer .links a:hover{color:var(--text)}
+footer .copy{color:var(--text-muted);font-size:0.8rem}
+/* ===== Bot Widget ===== */
+.bot-panel{position:fixed;bottom:96px;right:24px;z-index:2001;width:370px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 120px);background:var(--bg-elevated);border:1px solid var(--border-hover);border-radius:20px;box-shadow:var(--shadow-elevated);display:none;flex-direction:column;overflow:hidden;animation:pop-in 0.3s cubic-bezier(0.16,1,0.3,1)}
+.bot-panel.open{display:flex}
+.bot-head{background:linear-gradient(135deg,rgba(124,92,252,0.18),rgba(168,85,247,0.1));border-bottom:1px solid var(--border);padding:16px 18px;display:flex;align-items:center;gap:12px}
+.bot-avatar{width:40px;height:40px;border-radius:12px;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 4s ease-in-out infinite;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:0.9rem}
+.bot-head h3{font-size:0.95rem;font-weight:700}
+.bot-head p{font-size:0.75rem;color:var(--text-secondary)}
+.bot-close{margin-left:auto;background:none;border:none;color:var(--text-secondary);font-size:1.3rem;cursor:pointer;padding:4px 8px;border-radius:8px;transition:all 0.2s}
+.bot-close:hover{color:var(--text);background:var(--accent-bg)}
+.bot-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.bot-msgs::-webkit-scrollbar{width:5px}
+.bot-msgs::-webkit-scrollbar-thumb{background:rgba(124,92,252,0.3);border-radius:3px}
+.msg{max-width:82%;padding:10px 14px;border-radius:14px;font-size:0.85rem;line-height:1.55;animation:pop-in 0.25s ease-out}
+.msg.bot{background:var(--bg-card);border:1px solid var(--border);color:var(--text);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.user{background:var(--accent);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.msg .qb{display:block;margin-top:10px}
+.bot-quick{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 10px}
+.bot-quick button{background:var(--accent-bg);border:1px solid rgba(124,92,252,0.3);color:var(--accent-light);font-size:0.78rem;font-weight:600;padding:7px 12px;border-radius:100px;cursor:pointer;transition:all 0.2s}
+.bot-quick button:hover{background:rgba(124,92,252,0.2);color:var(--text)}
+.bot-in{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--border)}
+.bot-in input{flex:1;background:var(--bg-card);border:1px solid var(--border-hover);border-radius:10px;padding:11px 14px;color:var(--text);font-size:0.85rem;outline:none;font-family:var(--font)}
+.bot-in input:focus{border-color:var(--accent)}
+.bot-in button{background:var(--accent);border:none;border-radius:10px;padding:0 16px;color:#fff;font-weight:700;cursor:pointer;transition:all 0.2s}
+.bot-in button:hover{background:var(--accent-light)}
+.bot-form{padding:16px;display:flex;flex-direction:column;gap:12px;overflow-y:auto}
+.bot-form label{font-size:0.8rem;font-weight:600;color:var(--text-secondary)}
+.bot-form input{background:var(--bg-card);border:1px solid var(--border-hover);border-radius:10px;padding:11px 14px;color:var(--text);font-size:0.85rem;outline:none;font-family:var(--font);width:100%}
+.bot-form input:focus{border-color:var(--accent)}
+.bot-form .err{color:#f87171;font-size:0.75rem;display:none}
+.bot-form .group.invalid input{border-color:#ef4444}
+.bot-form .group.invalid .err{display:block}
+.bot-form button{background:var(--accent);border:none;border-radius:12px;padding:13px;color:#fff;font-weight:700;font-size:0.9rem;cursor:pointer;transition:all 0.2s}
+.bot-form button:hover{background:var(--accent-light)}
+.bot-note{font-size:0.72rem;color:var(--text-muted);text-align:center}
+.bot-typing{display:inline-flex;gap:4px;padding:4px 2px}
+.bot-typing i{width:6px;height:6px;border-radius:50%;background:var(--text-muted);animation:breathe 1s ease-in-out infinite}
+.bot-typing i:nth-child(2){animation-delay:0.2s}
+.bot-typing i:nth-child(3){animation-delay:0.4s}
+@media(max-width:640px){
+  .hero-sub{padding:calc(60px + var(--nav-h)) 20px 40px}
+  .section{padding:50px 20px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .bento{grid-template-columns:1fr}
+  .section-header h2{font-size:clamp(1.6rem,7vw,2rem)}
+  .cta-section{padding:56px 20px}
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none}
+  
+  
+  .nav-links.open a{display:block;padding:10px 8px}
+  footer{flex-direction:column}
+}
+@media(min-width:641px) and (max-width:1023px){
+  .bento{grid-template-columns:repeat(2,1fr)}
+}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);overflow-y:auto;z-index:1000}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+nav{z-index:1001;background:var(--bg)}
+@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
+@media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
+/* burger+lang cluster pinned right (overrides space-between spread) */
+nav{justify-content:flex-start!important}
+nav > .nav-links{margin-left:auto!important}
+nav > .royceai-lang{margin-left:8px!important;order:0}
+nav > .nav-burger{margin-left:8px!important;margin-right:0!important;flex:none;order:0}
+nav > .royceai-lang{order:1}
+nav > .nav-burger{order:2}
+nav > .nav-logo{margin-right:0!important;order:-1}
+</style>
+<meta property="og:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png">
+<meta name="twitter:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png">
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <span id="navLoginBtn"></span>
+    <a class="nav-drawer-only" href="/subscribe">Subscribe</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/preowned" class="nav-drawer-only">🔁 Pre-Owned Desk</a>
+    <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
+    <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
+    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
+    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
+    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/prius-prime" class="nav-drawer-only">🔌 Prius Prime Finder</a>
+    <a href="/brandon" class="nav-drawer-only">👤 Brandon Muzik</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    
+    
+    <a href="/chat" class="nav-drawer-only">💬 Chat</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<script>function updateStudentBadge(){try{var u=JSON.parse(localStorage.getItem("tutor_user"));var nav=document.querySelector(".nav-links");var lb=document.getElementById("navLoginBtn");var e=document.getElementById("studentBadge");if(e)e.remove();if(u&&u.first&&nav){var b=document.createElement("span");b.id="studentBadge";b.style.cssText="display:inline-flex;align-items:center;gap:5px;padding:4px 14px 4px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.12));border:1px solid rgba(102,126,234,0.25);font-size:0.8rem;font-weight:600;color:#f5f5f5;margin-right:4px";var i=document.createElement("span");i.style.cssText="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:white";i.textContent=u.first[0].toUpperCase()+(u.last?u.last[0].toUpperCase():"");var n=document.createElement("span");n.textContent=u.first;b.appendChild(i);b.appendChild(n);nav.insertBefore(b,nav.firstChild);if(lb){lb.innerHTML='<a href="/tutor/dashboard" style="background:var(--accent);color:#fff;padding:7px 16px;border-radius:8px;font-weight:600;font-size:0.875rem;text-decoration:none">📚 Dashboard</a>'}}else{if(lb){lb.innerHTML='<a href="/tutor/dashboard" style="background:var(--accent);color:#fff;padding:7px 16px;border-radius:8px;font-weight:600;font-size:0.875rem;text-decoration:none">Log In →</a>'}}}catch(e){}}document.addEventListener("DOMContentLoaded",updateStudentBadge);updateStudentBadge();</script>
+
+<header class="hero-sub">
+  <div class="badge">🛰️ RoyceAI Federal — Small Business GovCon</div>
+  <h1>Federal AI contracts, <span class="gradient">scored and ready.</span></h1>
+  <p class="subtitle">RoyceAI Federal tracks SAM.gov contract opportunities matched to RoyceAI capabilities — AI, IT services, tutoring, and consulting — plus the TRL 6 readiness score that determines bid eligibility. Every opportunity scored for fit, set-aside, and deadline.</p>
+  <div class="tagline">Opportunities → Readiness → Teaming → Bids</div>
+</header><section class="section" style="padding-top:40px">
+  <div class="section-header"><h2>🎯 Live <span class="gradient">SAM.gov Opportunities</span></h2><p>Matched to RoyceAI's lane — updated daily by the SAM.gov bot (8:15am PT).</p></div>
+  <div class="bento">
+    <div class="bento-card" style="grid-column:span 2">
+      <span class="icon">🧠</span>
+      <h3>GenAI Electronic Performance Support System</h3>
+      <p>NAVWAR CSO N0003925S001 — GenAI EPSS with RAG, cited answers, Zero Trust, air-gapped support. TRL 6 required.</p>
+      <span class="tag">N0003926R9450 · Due Sep 10 · Score 14/20 →</span>
+    </div>
+    <div class="bento-card">
+      <span class="icon">🤖</span>
+      <h3>Vision-Guided Robotic Automation + Digital Twin</h3>
+      <p>Brookhaven National Lab / DOE — automation framework for autonomous experiments.</p>
+      <span class="tag">RFQ-480086 · Score 12/20 →</span>
+    </div>
+    <div class="bento-card">
+      <span class="icon">🎓</span>
+      <h3>Mathematics Tutoring Services</h3>
+      <p>FAA award notice — proof agencies buy tutoring. Recompete intel.</p>
+      <span class="tag">693KA8-26-D-00015 · Score 9/20 →</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:20px">
+  <div class="section-header"><h2>📈 TRL 6 <span class="gradient">Readiness Tracker</span></h2><p>Weighted gates to claiming TRL 6 ("technology demonstrated in a relevant environment") on DoD GenAI bids. Updated by trl6_bot.</p></div>
+  <div class="bento" id="trl6grid">
+    <div class="bento-card wide">
+      <span class="icon">🟩</span>
+      <h3>RAG pipeline w/ cited answers</h3>
+      <p>Offline demo live: llama3.2:3b + nomic-embed-text, hybrid retrieval, source citations, zero cloud.</p>
+      <span class="tag">DONE · +20/20 →</span>
+    </div>
+    <div class="bento-card wide">
+      <span class="icon">🟡</span>
+      <h3>Air-gapped / edge deployment</h3>
+      <p>Local models on M2 (8GB), fully offline inference. Signed-update packaging TBD.</p>
+      <span class="tag">IN PROGRESS · +7.5/15 →</span>
+    </div>
+    <div class="bento-card wide">
+      <span class="icon">🟡</span>
+      <h3>Relevant-environment demo dataset</h3>
+      <p>Synthetic tactical-network ops corpus (5 docs, 29 chunks) — marked illustrative, not real Navy data.</p>
+      <span class="tag">IN PROGRESS · +5/10 →</span>
+    </div>
+    <div class="bento-card wide">
+      <span class="icon">🟡</span>
+      <h3>Teaming partner w/ DoD past performance</h3>
+      <p>Shortlist built: XSITE (PMW 160 staffed) + Trabus (NAVWAR AI). Outreach template ready.</p>
+      <span class="tag">IN PROGRESS · +2.5/5 →</span>
+    </div>
+    <div class="bento-card wide">
+      <span class="icon">🟡</span>
+      <h3>Prompt-injection defense</h3>
+      <p>Production chatbot guardrails live; untested vs DoD-grade injection.</p>
+      <span class="tag">IN PROGRESS · +2.5/5 →</span>
+    </div>
+    <div class="bento-card wide">
+      <span class="icon">⬜</span>
+      <h3>Zero Trust + RBAC + audit logs</h3>
+      <p>AuthN/Z, role-based access, tamper-evident audit logging — not started.</p>
+      <span class="tag">TODO · 0/10 →</span>
+    </div>
+    <div class="bento-card wide">
+      <span class="icon">⬜</span>
+      <h3>SAM.gov + UEI registration</h3>
+      <p>Entity active in SAM with UEI — mandatory for any submission. Not yet registered.</p>
+      <span class="tag">TODO · 0/10 →</span>
+    </div>
+    <div class="bento-card wide">
+      <span class="icon">⬜</span>
+      <h3>NIST 800-171 / CMMC readiness</h3>
+      <p>Security controls documented; SPRS score; CMMC L2 roadmap — not started.</p>
+      <span class="tag">TODO · 0/10 →</span>
+    </div>
+    <div class="bento-card wide">
+      <span class="icon">⬜</span>
+      <h3>Demo video + TRL 6 evidence doc</h3>
+      <p>Recorded walkthrough in relevant environment + evidence writeup — not started.</p>
+      <span class="tag">TODO · 0/10 →</span>
+    </div>
+    <div class="bento-card wide">
+      <span class="icon">⬜</span>
+      <h3>Knowledge-base management tooling</h3>
+      <p>Ingest/update/version the corpus the RAG answers from — not started.</p>
+      <span class="tag">TODO · 0/5 →</span>
+    </div>
+  </div>
+  <div class="score-banner" style="margin-top:24px;padding:20px 24px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-card)">
+    <strong style="font-size:1.15rem">Current TRL 6 score: <span class="gradient">38/100</span></strong>
+    <div style="margin-top:8px;color:var(--text-secondary)">Target: 100/100 to claim TRL 6. Next highest-leverage moves: SAM.gov registration (+10), demo video (+10), air-gapped packaging (+7.5).</div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:20px">
+  <div class="section-header"><h2>🤝 DoD <span class="gradient">Teaming Partners</span></h2><p>San Diego SDVOSBs — small-business teams qualify under CSO/OT rules (10 USC 4022).</p></div>
+  <div class="bento">
+    <div class="bento-card">
+      <span class="icon">🥇</span>
+      <h3>XSITE LLC — Best Fit</h3>
+      <p>SDVOSB staffed on PMW 160 (CANES, ADNS) — the exact EPSS program office. Secret-cleared staff, AI/ML + software dev.</p>
+      <span class="tag">James Roe · james.roe@xsitellc.com →</span>
+    </div>
+    <div class="bento-card">
+      <span class="icon">🥈</span>
+      <h3>Trabus Technologies — Strong Fit</h3>
+      <p>SDVOSB with NAVWAR past performance ($8M SPAWAR C4I delivery order) + dedicated AI &amp; Data Science team.</p>
+      <span class="tag">info@trabus.com · 619-220-8000 →</span>
+    </div>
+    <div class="bento-card">
+      <span class="icon">🛡️</span>
+      <h3>Advantech GS Enterprises — Backup</h3>
+      <p>HUBZone/SDVOSB, 17 yrs, 115+ wins, TS-FCL facility clearance, cyber + analytics/AI.</p>
+      <span class="tag">agse.us · 858-832-8127 →</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Want a federal contract?</h2>
+  <p>RoyceAI Federal turns SAM.gov noise into scored, biddable opportunities — and tracks the TRL 6 readiness to actually win them.</p>
+  <a href="/chat" class="btn btn-primary">💬 Chat</a>
+</section>
+<footer>
+  <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
+  <div class="links">
+    <a href="/tutor" class="nav-show-mobile">Tutor</a>
+    <a href="/my">Dashboard</a>
+    
+    <a href="/land-rover" class="nav-show-mobile">🚙 Land Rover</a>
+
+  </div>
+  <div class="copy">RoyceAI Solutions. Irvine, CA</div>
+</footer>
+
+<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<script>
+(function(){
+  function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(links&&!menu.querySelector('a[data-mn]')){
+      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COD ARENA</title>
+  <meta name="description" content="Play COD ARENA, a fast browser-based shooting game on royceai.com. Jump into the arena, rack up kills, and test your aim solo right in your browser.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { overflow: hidden; background: #000; font-family: 'Courier New', monospace; }
+    canvas { display: block; }
+    #start-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 10; cursor: pointer; transition: opacity 0.3s, pointer-events 0.3s;
+    }
+    #start-overlay.hidden { opacity: 0; pointer-events: none; }
+    #start-overlay h1 { font-size: 4rem; color: #fff; text-shadow: 0 0 20px #ff3333; letter-spacing: 0.3em; margin-bottom: 0.5rem; }
+    #start-overlay p { font-size: 1.5rem; color: #aaa; text-transform: uppercase; letter-spacing: 0.2em; }
+    #hud { position: fixed; inset: 20px; pointer-events: none; display: none; }
+    #hud.visible { display: block; }
+    .hud-panel { position: absolute; color: #fff; text-shadow: 0 0 5px #000; font-size: 1.2rem; }
+    #health { bottom: 20px; left: 20px; }
+    #ammo { bottom: 20px; right: 20px; text-align: right; }
+    #score { top: 20px; left: 50%; transform: translateX(-50%); text-align: center; font-size: 1.5rem; }
+    #level { top: 20px; left: 20px; font-size: 1.3rem; }
+    #targets { top: 50px; left: 20px; font-size: 1.2rem; color: #ffaa00; }
+    #timer { top: 20px; right: 20px; font-size: 1.3rem; color: #ff4444; display: none; }
+    #crosshair {
+      position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 24px; height: 24px; pointer-events: none; display: none; z-index: 5;
+    }
+    #crosshair.visible { display: block; }
+    #crosshair::before, #crosshair::after {
+      content: ''; position: absolute; background: #fff; box-shadow: 0 0 2px #000;
+    }
+    #crosshair::before { width: 2px; height: 12px; left: 11px; top: 0; }
+    #crosshair::after { width: 12px; height: 2px; top: 11px; left: 0; }
+    #fps { position: fixed; top: 20px; right: 20px; color: #0f0; font-family: monospace; font-size: 0.9rem; z-index: 5; }
+    #level-clear {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+      display: flex; align-items: center; justify-content: center; z-index: 20;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    #level-clear.visible { opacity: 1; }
+    #level-clear h2 { font-size: 5rem; color: #00ff88; text-shadow: 0 0 30px #00ff88; letter-spacing: 0.2em; }
+    #victory-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 30; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    #victory-overlay.visible { opacity: 1; pointer-events: auto; }
+    #victory-overlay h1 { font-size: 5rem; color: #ffaa00; text-shadow: 0 0 30px #ffaa00; letter-spacing: 0.2em; margin-bottom: 1rem; }
+    #victory-overlay p { font-size: 2rem; color: #fff; margin-bottom: 2rem; }
+    #victory-overlay button {
+      padding: 1rem 3rem; font-size: 1.5rem; font-family: inherit;
+      background: #ffaa00; color: #000; border: none; cursor: pointer;
+      text-transform: uppercase; letter-spacing: 0.1em; transition: background 0.2s;
+    }
+    #victory-overlay button:hover { background: #ffcc00; }
+  /* burger+lang cluster pinned right (overrides space-between spread) */
+nav{justify-content:flex-start!important}
+nav > .nav-links{margin-left:auto!important}
+nav > .royceai-lang{margin-left:8px!important;order:0}
+nav > .nav-burger{margin-left:8px!important;margin-right:0!important;flex:none;order:0}
+nav > .royceai-lang{order:1}
+nav > .nav-burger{order:2}
+nav > .nav-logo{margin-right:0!important;order:-1}
+</style>
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--radius:16px;--radius-sm:10px;--max-w:1200px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--shadow-elevated:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.04)}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .logo-icon{width:32px;height:32px;border-radius:9px;display:block;object-fit:cover}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;animation:pulse-glow 2.5s ease-in-out infinite}
+.nav-links .nav-cta:hover{background:var(--accent-light);transform:scale(1.05)}
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none}
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{color:var(--text-secondary);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--text);background:var(--accent-bg)}
+.mobile-menu .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;margin-top:10px;text-align:center;animation:pulse-glow 2.5s ease-in-out infinite}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+.mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+  .nav-links{width:auto;margin-left:auto;justify-content:flex-end}
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}
+  .nav-logo{width:auto;justify-content:flex-start}
+  .nav-links a.nav-drawer-only{display:none!important}
+</style>
+<meta property="og:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png">
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <span id="navLoginBtn"></span>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/preowned" class="nav-drawer-only">🔁 Pre-Owned Desk</a>
+    <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
+    <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
+    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
+    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
+    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/prius-prime" class="nav-drawer-only">🔌 Prius Prime Finder</a>
+    <a href="/brandon" class="nav-drawer-only">👤 Brandon Muzik</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    
+    
+    <a href="/chat" class="nav-cta">💬 Chat</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav><div class="mobile-menu" id="mobileMenu"></div><div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div><script>function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(links&&!menu.querySelector('a[data-mn]')){
+      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;if(a.classList.contains('nav-cta'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+}
+if(typeof initMobileMenu==='function')initMobileMenu();</script>
+
+  <div id="start-overlay" onclick="startGame()">
+    <h1 id="start-title">LEVEL 1</h1>
+    <p id="start-desc">Destroy 5 targets</p>
+  </div>
+  <div id="hud">
+    <div id="health" class="hud-panel">HEALTH: <span id="health-val">100</span></div>
+    <div id="ammo" class="hud-panel">AMMO: <span id="ammo-val">30</span> / <span id="ammo-reserve">90</span></div>
+    <div id="score" class="hud-panel">SCORE: <span id="score-val">0</span></div>
+    <div id="level" class="hud-panel">LEVEL: 1</div>
+    <div id="targets" class="hud-panel">TARGETS: 0/0</div>
+    <div id="timer" class="hud-panel">TIME: 0s</div>
+  </div>
+  <div id="crosshair"></div>
+  <div id="fps">FPS: 0</div>
+  <div id="level-clear">
+    <h2>LEVEL CLEAR</h2>
+  </div>
+  <div id="victory-overlay">
+    <h1>VICTORY</h1>
+    <p>Total Score: <span id="victory-score">0</span></p>
+    <button id="play-again">Play Again</button>
+  </div>
+  <canvas id="game-canvas"></canvas>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

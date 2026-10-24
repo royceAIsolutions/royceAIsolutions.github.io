@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF23H9423B"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EF23H9423B');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royce Koh &mdash; Process, Program &amp; Requirements | Hyundai AutoEver America</title>
+<meta name="description" content="Royce Koh, Irvine CA &mdash; business process, requirements and program delivery, Korean-speaking, applying to Hyundai AutoEver America in Irvine and Costa Mesa. The three roles I am going after, and what I have done against each.">
+<link rel="canonical" href="https://royceai.com/hyundai/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta property="og:title" content="Royce Koh &mdash; Process, Program &amp; Requirements | Hyundai AutoEver America">
+<meta property="og:description" content="Irvine-based process, requirements and program delivery. The three HAEA roles I am going after, and the evidence against each.">
+<meta property="og:url" content="https://royceai.com/hyundai/">
+<meta property="og:type" content="website">
+<style>
+:root{--bg:#07090c;--card:#11151b;--line:#1f2733;--tx:#e8edf4;--mut:#96a3b4;--acc:#5fe08a;--acc2:#4da3ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+/* The site shell <nav> is position:fixed at 64px tall, so the page clears it here.
+   Do NOT add a second sticky/fixed bar at top:0 - that is what overlapped the logo and tabs. */
+body{padding-top:64px}
+.hero{padding:56px 0 30px}
+h1{font-size:clamp(30px,5vw,52px);line-height:1.08;margin:0 0 14px;letter-spacing:-.03em}
+h1 em{font-style:normal;color:var(--acc)}
+.sub{font-size:clamp(16px,2.2vw,20px);color:var(--mut);max-width:720px}
+.pills{margin:22px 0 0;display:flex;gap:10px;flex-wrap:wrap}
+.pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--mut)}
+.pill b{color:var(--tx);font-weight:700}
+.sys{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--acc2);border-radius:14px;padding:20px}
+.sys ul{margin:12px 0 0;padding-left:20px}
+.sys li{margin:0 0 10px;color:var(--mut)}
+.sys li b{color:var(--tx)}
+.cta{margin:26px 0 0;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px}
+.btn.p{background:var(--acc);color:#04120a}.btn.s{border:1px solid var(--line);color:var(--tx)}
+.btn.t{background:var(--acc);color:#04120a;font-size:14px;padding:10px 18px}
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(21px,3vw,30px);letter-spacing:-.02em;margin:0 0 8px}
+.lead{color:var(--mut);max-width:780px;margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.role{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;text-decoration:none;color:inherit;transition:.15s}
+.role:hover{border-color:var(--acc);transform:translateY(-2px)}
+.rt{font-weight:700;font-size:15px}
+.role p{margin:6px 0 0;font-size:14px;color:var(--mut)}
+.ev{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.stat b{display:block;font-size:26px;color:var(--acc);letter-spacing:-.02em}
+.stat span{font-size:13px;color:var(--mut)}
+ul.clean{list-style:none;padding:0;margin:0}
+ul.clean li{padding:11px 0;border-bottom:1px solid var(--line);color:var(--mut)}
+ul.clean li b{color:var(--tx)}
+.talk{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:14px;padding:20px}
+footer{padding:34px 0 60px;color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
+footer a{color:var(--acc2);text-decoration:none}
+
+.done{margin:16px 0 0}
+.done h4{margin:0 0 8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);font-weight:700}
+.done ul{margin:0;padding-left:18px}
+.done li{color:var(--mut);font-size:14px;margin:0 0 9px}
+.done li b{color:var(--tx)}
+.big{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin:0 0 16px}
+.big:hover{border-color:var(--acc)}
+.bh{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.bh .t{font-weight:800;font-size:19px;letter-spacing:-.01em}
+.bh .m{font-size:12px;color:var(--acc2);text-transform:uppercase;letter-spacing:.06em}
+.why{color:var(--tx);font-size:15px;margin:12px 0 0;padding-left:12px;border-left:2px solid var(--acc)}
+
+/* burger+lang cluster pinned right (overrides space-between spread) */
+nav{justify-content:flex-start!important}
+nav > .nav-links{margin-left:auto!important}
+nav > .royceai-lang{margin-left:8px!important;order:0}
+nav > .nav-burger{margin-left:8px!important;margin-right:0!important;flex:none;order:0}
+nav > .royceai-lang{order:1}
+nav > .nav-burger{order:2}
+nav > .nav-logo{margin-right:0!important;order:-1}
+</style>
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--radius:16px;--radius-sm:10px;--max-w:960px;--nav-h:64px;--font:Inter,system-ui,-apple-system,sans-serif;--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--transition:0.2s ease;--shadow-elevated:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.04) 0%,transparent 70%)}
+body::before{content:'';position:fixed;inset:0;opacity:0.012;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;background:var(--bg);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .logo-icon{width:32px;height:32px;border-radius:9px;display:block;object-fit:cover}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .btn-nav{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;transition:all 0.2s}
+.nav-links .btn-nav:hover{background:var(--accent-light);transform:scale(1.05)}
+.hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 60px;max-width:var(--max-w);margin:0 auto;position:relative;animation:fade-up 0.6s ease-out;text-align:center}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:20px}
+.hero h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero p{font-size:clamp(1rem,2vw,1.2rem);color:var(--text-secondary);max-width:600px;line-height:1.75;margin:0 auto 32px}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:var(--radius-sm);font-family:var(--font);font-size:1rem;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}
+.btn-primary:hover{background:var(--accent-light);box-shadow:0 0 0 1px var(--accent-light),0 6px 30px var(--accent-glow)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);padding:13px 31px}
+.btn-outline:hover{background:var(--accent-bg);border-color:var(--accent)}
+.features{padding:80px 24px;max-width:var(--max-w);margin:0 auto}
+.features h2{text-align:center;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;margin-bottom:48px;letter-spacing:-0.02em}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all var(--transition);text-align:center}
+.feature-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.feature-card .icon{font-size:2.2rem;margin-bottom:12px;display:block}
+.feature-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}
+.feature-card p{color:var(--text-secondary);font-size:0.85rem;line-height:1.6}
+.subjects{padding:60px 24px 80px;max-width:var(--max-w);margin:0 auto;text-align:center}
+.subjects h2{font-size:clamp(1.5rem,4vw,2rem);font-weight:700;margin-bottom:12px}
+.subjects p{color:var(--text-secondary);margin-bottom:32px}
+.subject-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.subject-tag{padding:8px 18px;border-radius:100px;background:var(--accent-bg);border:1px solid rgba(124,92,252,0.15);color:var(--accent-light);font-size:.85rem;font-weight:500}
+.pricing{text-align:center;padding:60px 24px 80px;max-width:var(--max-w);margin:0 auto}
+.pricing-card{display:inline-block;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px 48px;max-width:400px;box-shadow:var(--shadow-card)}
+.pricing-card .amount{font-size:2.5rem;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.pricing-card .amount span{font-size:1rem;color:var(--text-muted);font-weight:400}
+.pricing-card ul{list-style:none;margin:24px 0;text-align:left}
+.pricing-card ul li{padding:8px 0;color:var(--text-secondary);font-size:.9rem}
+.pricing-card ul li::before{content:"✅ ";color:var(--accent-light)}
+.pricing-card .btn{width:100%;justify-content:center}
+.faq{padding:60px 24px 80px;max-width:720px;margin:0 auto}
+.faq h2{text-align:center;font-size:1.8rem;font-weight:700;margin-bottom:32px}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-item .q{font-weight:600;color:#fff;margin-bottom:6px}
+.faq-item .a{color:var(--text-secondary);font-size:.9rem;line-height:1.6}
+.cta-section{text-align:center;padding:80px 24px 100px;max-width:var(--max-w);margin:0 auto}
+.cta-section h2{font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;margin-bottom:16px}
+.cta-section p{color:var(--text-secondary);margin-bottom:32px}
+footer{border-top:1px solid var(--border);padding:48px 24px;max-width:var(--max-w);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+footer .links{display:flex;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:.875rem;transition:color 0.2s}
+footer .links a:hover{color:var(--accent-light)}
+footer .copy{color:var(--text-muted);font-size:.8rem;width:100%;text-align:center}
+section[id]{scroll-margin-top:80px}
+*:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+@media(max-width:640px){.hero{padding:100px 20px 40px}.features{padding:60px 20px}.pricing-card{padding:28px 24px}.faq{padding:40px 20px}.cta-section{padding:60px 20px}.nav-links a:not(.btn-nav):not(.nav-show){display:none}}
+@media print{body{background:#fff!important;color:#000!important}nav,.orb,.orb-1,.orb-2,.cta-section,footer{display:none!important}.hero{min-height:auto;padding:20px}}
+
+
+
+
+/* ===== HAMBURGER NAV (neat all-widths) ===== */
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{color:var(--text-secondary);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--text);background:var(--accent-bg)}
+.mobile-menu .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;margin-top:10px;text-align:center;animation:pulse-glow 2.5s ease-in-out infinite}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+.mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+@media(max-width:1099px){
+  nav{z-index:1001;flex-direction:row;flex-wrap:nowrap;height:var(--nav-h);background:var(--bg)}
+  .nav-links{width:auto;margin-left:auto;justify-content:flex-end}
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}
+  .nav-logo{width:auto;justify-content:flex-start}
+}
+@media(min-width:1100px){
+  .nav-links a.nav-drawer-only{display:none!important}
+  #navLoginBtn{display:none!important}
+}
+
+/* desktop: full row, no burger; hide duplicate LogIn button (Tutor covers /tutor) */
+@media(min-width:1100px){
+  #navLoginBtn{display:none!important}
+}
+
+
+
+
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+html{overflow-x:clip}
+body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+@media(max-width:1099px){footer{display:none!important}}
+
+@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
+@media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
+
+/* deck-fmt guard: inactive slides must never paint over the active one */
+.slide:not(.active){display:none!important}
+</style>
+<meta property="og:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png">
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <span id="navLoginBtn"></span>
+    <a class="nav-drawer-only" href="/subscribe">Subscribe</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/preowned" class="nav-drawer-only">🔁 Pre-Owned Desk</a>
+    <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
+    <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
+    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
+    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
+    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/prius-prime" class="nav-drawer-only">🔌 Prius Prime Finder</a>
+    <a href="/brandon" class="nav-drawer-only">👤 Brandon Muzik</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    
+    
+    <a href="/chat" class="nav-drawer-only">💬 Chat</a>
+  </div>
+<button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<div class="mobile-menu" id="mobileMenu"></div>
+
+<div class="wrap hero">
+<h1>I run the requirements, the process and the reporting.<br><em>Hyundai AutoEver America &mdash; Irvine &amp; Costa Mesa.</em></h1>
+<p class="sub">Royce Koh &mdash; Irvine, CA. Fifteen years of professional experience in premium automotive operations from Seattle to Orange County, and since January 2026 the builder and operator of a production AI platform: conversational agents, RAG pipelines, multi-agent workflows and integrations to 20+ third-party services. I take requirements from the business, write them down, hand them off, and keep the reporting honest afterwards.</p>
+<div class="pills"><span class="pill">Orange County local &mdash; Irvine</span><span class="pill">15 years experience</span><span class="pill"><b>Korean</b> &mdash; speaks, reads, writes</span><span class="pill">Business process &amp; requirements</span><span class="pill">Program &amp; service delivery</span><span class="pill">Automation &amp; systems</span></div>
+<div class="cta"><a class="btn p" href="#roles">The three roles &darr;</a><a class="btn s" href="mailto:royceaisolutions@gmail.com">Email me</a></div>
+</div>
+
+<section><div class="wrap">
+<h2>Brands I have worked with</h2>
+<p class="lead">Fifteen years representing premium, luxury and exotic automotive brands &mdash; the same customer and dealer world HAEA's applications serve.</p>
+<div class="pills">
+<span class="pill"><b>Ferrari</b></span>
+<span class="pill"><b>Jaguar Land Rover</b></span>
+<span class="pill"><b>Maserati</b></span>
+<span class="pill"><b>BMW</b></span>
+<span class="pill"><b>Toyota</b></span>
+<span class="pill"><b>Lexus</b></span>
+<span class="pill"><b>VinFast</b></span>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<h2>Why Hyundai AutoEver, specifically</h2>
+<p class="lead">HAEA is the IT arm of Hyundai Motor Group and, in its own words, <b>the crucial information link between Hyundai's Global Headquarters and North American operations</b> &mdash; serving Kia, Genesis, Hyundai Translead, Hyundai Mobis, Hyundai Capital and Glovis. That description is the job I have been doing in two languages for fifteen years: the business on one side, the builders on the other, and me keeping the requirement, the timeline and the reporting true in the middle.</p>
+<p class="lead">The programs that run through Irvine are planned and built with teams in Korea. <b>I speak Korean</b> &mdash; not as a bonus line on a resume, but as the difference between a requirement that arrives correctly and one that gets reinterpreted. I have been the English-to-Korean and Korean-to-English seam in operations for years, and I am comfortable being the person who refuses to guess.</p>
+<p class="lead">I also build and run production systems myself, on my own platform, with 180+ automations and self-healing monitoring. So when an analyst writes a requirement or a program manager needs a status that is actually true, I know where the data lives and why it went missing.</p>
+</div></section>
+
+<section><div class="wrap">
+<h2>Inside the systems &mdash; CRM, process, inventory</h2>
+<p class="lead">At Jaguar Land Rover Newport Beach I am wired into the systems the store runs on, and everything the client hears from me comes out of them:</p>
+<div class="sys">
+<ul>
+<li><b>CRM and pipeline discipline.</b> Every relationship lives in <b>eLead CRM</b> &mdash; first contact, follow-up cadence, task queues, notes, outcomes. I work the queue daily, so nothing goes cold and no follow-up is dropped. That is records management in practice.</li>
+<li><b>Process and record ownership.</b> I own the record as a transaction moves: order and allocation updates, scheduling, status changes and the internal handoffs between departments. The system stays current because I keep it current.</li>
+<li><b>Inventory and location.</b> I track units through <b>Dealergard / Stargard GPS</b> and inventory status &mdash; in transit, on the lot, at the shop &mdash; so a customer gets an answer, not a guess. Same discipline as tracking one work stream across thirty of them.</li>
+<li><b>Reporting that gets used.</b> Regional KPIs, acquisition and inventory metrics, and the weekly numbers management actually made decisions with. I have built that reporting from scratch more than once.</li>
+<li><b>Why it matters here.</b> A business process analyst is asked to understand the system of record, keep it true, and prove the change worked. That is the job I already do, in a dealership and on my own platform.</li>
+</ul>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<h2>What I bring to HAEA</h2>
+<div class="grid">
+<div class="role"><div class="rt">Business process analysis</div><p>As-is and to-be mapping, gap analysis, SOPs and process flows &mdash; written so the next person can run the process without asking me. I document and automate processes daily on my own platform.</p></div>
+<div class="role"><div class="rt">Requirements into delivery</div><p>Take the requirement from the business, get it agreed in writing, hand it to the builders, and verify what came back. I do this on my own systems and I did it across 15 retail locations.</p></div>
+<div class="role"><div class="rt">Korean-language bridge</div><p>The development side of these programs is in Korea. I speak, read and write Korean &mdash; so requirements cross that seam intact instead of being translated twice and guessed at once.</p></div>
+<div class="role"><div class="rt">KPI, SLA and reporting</div><p>AutoNation: 200&percnt; growth in vehicle acquisitions, 50&percnt; inventory improvement, 4,000 leads a month closing at 8-9&percnt;. VinFast: up to 15 locations and 100 people, contributing to a 10x regional sales increase in 100 days.</p></div>
+<div class="role"><div class="rt">Automation and tooling</div><p>180+ scheduled automations, integrations to 20+ third-party services, self-healing watchdogs. If a report has to be produced every week, I would rather build the thing that produces it.</p></div>
+<div class="role"><div class="rt">Executive-ready communication</div><p>I brief the customer, the field team and the program office from the same record in the same hour &mdash; and I say plainly what is working and what is not.</p></div>
+</div>
+</div></section>
+
+<section id="roles"><div class="wrap">
+<h2>Where I fit &mdash; the three roles I am going after</h2>
+<p class="lead">Three HAEA requisitions in Orange County, verified open today. For each one: why it is the right seat, and what I have actually done that matches it. I left the rest of the board out on purpose &mdash; these are the seats where my background is the strongest match, not the longest list.</p>
+<div class="big">
+<div class="bh"><div class="t">Sr. Business Process Analyst (Corporate Planning)</div><div class="m">REQ 10755 &middot; Irvine, CA</div></div>
+<p class="why">The seat that matches what I already do: process documentation, cost-benefit and ROI work, KPI/SLA reporting, and building the cataloging method behind an IT services portfolio.</p>
+<div class="done"><h4>What I have done</h4><ul><li><b>Portfolio cataloging is a documentation job before it is a software job.</b> I document and automate processes daily on my own platform: SOPs, process flows, recurring reporting, and the measurement that proves the change worked.</li>
+<li><b>Cost-benefit and ROI on technology decisions</b> is how I ran acquisition and inventory programs at AutoNation: 200% growth in vehicle acquisitions and a 50% inventory improvement, with the business cases written to get the spend approved.</li>
+<li><b>KPI and SLA reporting:</b> I built the weekly numbers the 15-location VinFast region ran on, and I own the service levels on my own platform.</li>
+<li><b>Budgets and resources:</b> I have owned regional budget and resource plans with up to 100 people under the remit.</li></ul></div>
+</div>
+<div class="big">
+<div class="bh"><div class="t">Program Manager, Applications Development &amp; Management</div><div class="m">REQ 10512 &middot; Irvine, CA</div></div>
+<p class="why">The program-manager seat closest to the contract work currently being sourced for me: client-facing, requirements through delivery, applications portfolio, five days on-site at the Irvine HQ.</p>
+<div class="done"><h4>What I have done</h4><ul><li><b>This is the shape of my last four years:</b> I am the client-facing person who takes the requirement, gets it agreed in writing, and owns delivery against it.</li>
+<li><b>Accountable for outcomes, not tasks:</b> up to 15 retail locations and 100 salespeople as regional director - the schedule, the staffing, the process and the reporting were mine.</li>
+<li><b>Business and builders in the same hour:</b> I brief executives and developers from the same system of record, because I build and operate those systems myself.</li>
+<li><b>Growth and retention:</b> 4,000 leads a month at an 8-9% close rate at AutoNation, and contributing to a 10x regional sales increase in 100 days at VinFast.</li></ul></div>
+</div>
+<div class="big">
+<div class="bh"><div class="t">Business Process Analyst III</div><div class="m">REQ 10629 &middot; Irvine, CA</div></div>
+<p class="why">The senior individual-contributor process seat at the Irvine HQ: analysis sessions, stakeholder alignment, and carrying requirements through the development lifecycle.</p>
+<div class="done"><h4>What I have done</h4><ul><li><b>Stakeholder alignment is my daily work:</b> my platform runs 180+ automations and integrations to 20+ third-party services, and every one exists because a requirement was written down properly first.</li>
+<li><b>Liaison between business and builders:</b> dealership floor, store management and the systems side - including in Korean, which matters here because the build teams sit in Korea.</li>
+<li><b>Lifecycle support:</b> I write the acceptance criteria, verify what comes back, and own adoption and reporting after launch.</li>
+<li><b>Quantitative analysis:</b> cost, benefit and process measurement from acquisition analytics at AutoNation and regional KPI ownership at VinFast.</li></ul></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<h2>Numbers</h2>
+<div class="ev" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+<div class="stat"><b>200&percnt;</b><span>growth in vehicle acquisitions (AutoNation)</span></div>
+<div class="stat"><b>50&percnt;</b><span>inventory improvement (AutoNation)</span></div>
+<div class="stat"><b>4,000</b><span>leads per month at 8-9&percnt; close rate</span></div>
+<div class="stat"><b>15</b><span>retail locations across NorCal + SoCal (VinFast)</span></div>
+<div class="stat"><b>100</b><span>salespeople under my regional remit</span></div>
+<div class="stat"><b>180+</b><span>automations running in production</span></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<h2>How I work</h2>
+<ul class="clean">
+<li><b>Ship, then verify.</b> I read the live system back before I call anything done.</li>
+<li><b>Write it down.</b> Every process I touch leaves a document, so the next person is not dependent on me.</li>
+<li><b>Handle the unglamorous work.</b> The gap analysis, the follow-up list, the escalation at 5pm &mdash; that is the job.</li>
+<li><b>Ask before assuming.</b> If a requirement is vague, I get it in writing and confirm it back before anyone builds it.</li>
+</ul>
+</div></section>
+
+<section><div class="wrap">
+<h2>Straight talk</h2>
+<div class="talk">
+<p style="margin:0 0 10px"><b>Local, and on-site is not a problem.</b> I live in Irvine &mdash; minutes from the Bunsen Avenue headquarters, and an easy drive to Costa Mesa. HAEA's postings ask for five days on-site; that suits me.</p>
+<p style="margin:0 0 10px"><b>Korean.</b> Fluent. HAEA is the link between Hyundai's Global Headquarters and North American operations, and the build teams on these programs sit in Korea. I would rather be the person who resolves the ambiguity than the one who forwards it.</p>
+<p style="margin:0 0 10px"><b>The honest gap.</b> I do not carry a Business Process Analyst title on paper. What I have is fifteen years of doing the work &mdash; process documentation, requirements, gap analysis, KPI and SLA reporting, business cases &mdash; plus building and operating the systems myself. HAEA's own postings accept equivalent professional experience, and I would rather be judged on the work than the label.</p>
+<p style="margin:0"><b>Eligibility and availability.</b> U.S. citizen, no sponsorship needed, no relocation needed. Interview availability is open now, including same-week, and I can start on short notice.</p>
+</div>
+</div></section>
+
+<footer><div class="wrap">Royce Koh &middot; Irvine, CA &middot; <a href="mailto:royceaisolutions@gmail.com">royceaisolutions@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/roycekoh">linkedin.com/in/roycekoh</a><br>RoyceAI Solutions &mdash; <a href="/">royceai.com</a></div></footer>
+
+<script>
+(function(){
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(a.getAttribute('href'));
+      if(!t) return;
+      e.preventDefault();
+      t.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(links&&!menu.querySelector('a[data-mn]')){
+      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+</script>
+</body>
+</html>

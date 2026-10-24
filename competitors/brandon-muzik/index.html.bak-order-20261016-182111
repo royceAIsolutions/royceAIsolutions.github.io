@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF23H9423B"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EF23H9423B');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brandon Muzik — JLR Rancho Mirage | Competitive Profile</title>
+<meta name="description" content="Competitive research profile on Brandon Muzik, JLR Sales Specialist at Jaguar Land Rover Rancho Mirage (indiGO Auto Group). Pre-auto career, AmaTone, trademark record, and read on desk style.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--radius:16px;--radius-sm:10px;--max-w:1100px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--ok:#34d399;--warn:#fbbf24;--dead:#f87171}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;opacity:0.012;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;background:var(--bg);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:flex-start;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600}
+@media(max-width:1099px){.nav-links a:not(.nav-cta){display:none!important}}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+header{padding:130px 0 40px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:100px;background:var(--accent-bg);border:1px solid rgba(124,92,252,0.25);font-size:0.78rem;font-weight:700;color:var(--accent-light);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:20px}
+h1{font-size:clamp(2.1rem,6vw,3.4rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:14px}
+h1 .g{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.lede{font-size:1.05rem;color:var(--text-secondary);max-width:720px;line-height:1.75}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.chip{font-size:0.78rem;padding:6px 13px;border-radius:8px;background:rgba(255,255,255,0.03);border:1px solid var(--border);color:var(--text-secondary)}
+.flag{margin:34px 0 0;padding:20px 22px;border-radius:var(--radius-sm);border:1px solid rgba(251,191,36,0.28);background:rgba(251,191,36,0.05)}
+.flag h3{font-size:0.86rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--warn);margin-bottom:10px}
+.flag p{font-size:0.93rem;color:var(--text-secondary);margin-bottom:8px}
+.flag p:last-child{margin-bottom:0}
+section{padding:44px 0;border-top:1px solid var(--border)}
+h2{font-size:clamp(1.35rem,3vw,1.85rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:8px}
+.sub{color:var(--text-muted);font-size:0.9rem;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-card);transition:var(--transition)}
+.card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.card h4{font-size:0.95rem;font-weight:700;margin-bottom:10px}
+.card p{font-size:0.9rem;color:var(--text-secondary)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:0.9rem}
+.kv dt{color:var(--text-muted);white-space:nowrap}
+.kv dd{color:var(--text)}
+.tl{position:relative;padding-left:26px}
+.tl::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--accent),rgba(124,92,252,0.05))}
+.tl-item{position:relative;padding-bottom:22px}
+.tl-item::before{content:'';position:absolute;left:-25px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--bg)}
+.tl-item h4{font-size:0.96rem;font-weight:700}
+.tl-when{font-size:0.78rem;color:var(--accent-light);font-weight:600;letter-spacing:0.03em}
+.tl-item p{font-size:0.88rem;color:var(--text-secondary);margin-top:4px}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-card)}
+table{width:100%;border-collapse:collapse;font-size:0.86rem;min-width:680px}
+thead th{text-align:left;padding:13px 15px;color:var(--text-muted);font-weight:600;font-size:0.74rem;text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid var(--border);background:rgba(255,255,255,0.015)}
+tbody td{padding:13px 15px;border-bottom:1px solid rgba(255,255,255,0.035);color:var(--text-secondary);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody td:first-child{color:var(--text);font-weight:600}
+.st{display:inline-block;font-size:0.7rem;font-weight:700;padding:3px 9px;border-radius:6px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap}
+.st-live{color:var(--ok);background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.25)}
+.st-pend{color:var(--warn);background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.25)}
+.st-dead{color:var(--dead);background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.25)}
+ul.bul{list-style:none;font-size:0.92rem;color:var(--text-secondary)}
+ul.bul li{position:relative;padding-left:20px;margin-bottom:11px}
+ul.bul li::before{content:'—';position:absolute;left:0;color:var(--accent)}
+ul.bul li strong{color:var(--text)}
+.play{background:var(--bg-elevated);border:1px solid rgba(124,92,252,0.22);border-radius:var(--radius);padding:24px}
+.play h4{font-size:0.9rem;color:var(--accent-light);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px}
+.src{font-size:0.84rem;color:var(--text-muted);line-height:1.9}
+.src a{color:var(--accent-light);text-decoration:none;border-bottom:1px solid rgba(124,92,252,0.3)}
+.src a:hover{color:var(--text)}
+footer{padding:40px 0 60px;border-top:1px solid var(--border);margin-top:30px;font-size:0.82rem;color:var(--text-muted);text-align:center}
+footer a{color:var(--text-secondary);text-decoration:none;margin:0 8px}
+footer a:hover{color:var(--accent-light)}
+
+/* nav burger + drawer (nav_hamburger_repair.py) */
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated,#15151b);border:1px solid var(--border,#232733);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text,#f5f6f8);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border,#232733);padding:calc(var(--nav-h,64px) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{color:var(--text-secondary,#b9bdc7);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--text,#f5f6f8);background:var(--accent-bg,rgba(91,141,239,.12))}
+.mobile-menu .nav-cta{background:var(--accent,#5B8DEF);color:#fff!important;font-weight:600;margin-top:10px;text-align:center}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+.mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+
+.nav-links a.nav-drawer-only{display:none!important}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/competitors/brandon-muzik" class="nav-drawer-only">Competitor File</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/preowned" class="nav-drawer-only">🔁 Pre-Owned Desk</a>
+    <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
+    <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
+    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
+    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
+    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/prius-prime" class="nav-drawer-only">🔌 Prius Prime Finder</a>
+    <a href="/brandon" class="nav-drawer-only">👤 Brandon Muzik</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<div class="mobile-menu" id="mobileMenu"></div>
+
+<header class="wrap">
+  <div class="eyebrow">&#128202; Competitive Profile &middot; Internal</div>
+  <h1>Brandon Muzik<br><span class="g">JLR Rancho Mirage</span></h1>
+  <p class="lede">Jaguar Land Rover Sales Specialist at Rancho Mirage (indiGO Auto Group) &mdash; a ten-year health-tech founder who entered auto retail recently. This file covers the pre-car career, the AmaTone venture, his USPTO record, and a read on how he likely works a desk.</p>
+  <div class="meta-row">
+    <span class="chip">&#128205; Rancho Mirage, CA</span>
+    <span class="chip">&#127974; indiGO Auto Group</span>
+    <span class="chip">&#11088; DealerRater 5.0 (5 reviews)</span>
+    <span class="chip">&#127760; Tempe, AZ (personal)</span>
+    <span class="chip">&#128197; Compiled Oct 16 2026</span>
+  </div>
+
+  <div class="flag">
+    <h3>&#9888;&#65039; Identity caveat &mdash; read first</h3>
+    <p>Three separate "Brandon Muzik" records exist: the <strong>JLR Rancho Mirage dealer</strong>, the <strong>AmaTone founder in Tempe AZ</strong>, and a <strong>commercial HVAC partner in Greater Chicago</strong>. Nothing public directly links the dealership record to AmaTone.</p>
+    <p>The strongest evidence they are the same person: the dealer's own bio cites <strong>"biotech and business development"</strong> and <strong>IP / trademark / patenting</strong> experience &mdash; which matches the AmaTone founder's background precisely. Rated <strong>high-confidence, not proven</strong>. Everything below the line describes the AmaTone Brandon Muzik.</p>
+  </div>
+</header>
+
+<section class="wrap">
+  <h2>At a glance</h2>
+  <p class="sub">What the record shows, before the resume.</p>
+  <div class="grid">
+    <div class="card">
+      <h4>&#128188; Not a lifer</h4>
+      <p>~10 years 3 months of documented professional experience &mdash; all of it health, wellness, biotech and IP. Auto retail is a recent entry, not a career he was raised in.</p>
+    </div>
+    <div class="card">
+      <h4>&#129513; Serial filer</h4>
+      <p>Five federal trademark filings across two distinct companies &mdash; two biologics marks abandoned within months, one wellness mark registered, one re-filed four years later.</p>
+    </div>
+    <div class="card">
+      <h4>&#127973; Founder, not employee</h4>
+      <p>Ran his own company as President / CEO for roughly five years. He is used to being the one who decides, not the one who is managed.</p>
+    </div>
+    <div class="card">
+      <h4>&#128300; Consultative DNA</h4>
+      <p>Corporate wellness (B2B) sales, IRB research management, white papers, integrative medicine. His instinct is to explain a complex product, not to close hard.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Career timeline</h2>
+  <p class="sub">From his own LinkedIn record, ~10 yrs 3 mo total. Ordered oldest first.</p>
+  <div class="tl">
+    <div class="tl-item">
+      <div class="tl-when">JUN 2016 &mdash; JUN 2019</div>
+      <h4>Vice President &mdash; Genetircare Health Solutions</h4>
+      <p>Start of the documented trail. Health-sector leadership role. (Company roots several hours south of Mill Valley per business directories.)</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">OCT 2018 &mdash; AUG 2021</div>
+      <h4>Operations Manager &mdash; Cell Code</h4>
+      <p>Mill Valley, California. Operations seat at a small health-tech outfit. Overlaps his VP role and RTG.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">AUG 2019 &mdash; DEC 2022</div>
+      <h4>IP Management &mdash; Resonant Technologies Group (RTG)</h4>
+      <p>Marin County, CA. RTG is a <strong>venture capital / private equity</strong> firm (Mill Valley, founded 2019). He sat on the intellectual-property side &mdash; which explains the trademark fluency visible in his USPTO record.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">OCT 2021 &mdash; PRESENT</div>
+      <h4>President &amp; Founder/CEO &mdash; AmaTone</h4>
+      <p>Voice-analysis wellness app. Founded the company and runs product strategy, app development, data analysis, monetization, partnerships, legal compliance and competitive monitoring. Listed at 1&ndash;10 employees, HQ Sheridan, Wyoming.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">RECENT</div>
+      <h4>JLR Sales Specialist &mdash; Jaguar Land Rover Rancho Mirage</h4>
+      <p>71377 CA-111, Rancho Mirage, CA 92270. indiGO Auto Group. Store managed by GM Ian McKinley; sales managers Alan Leighton and Michael Melikian. His bio describes him as new to the industry, pairing premium-vehicle enthusiasm with his biotech / business-development background.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>The AmaTone venture</h2>
+  <p class="sub">His own company, Oct 2021 to present. Everything here is from company profiles and marketing copy.</p>
+  <div class="grid">
+    <div class="card">
+      <h4>What it claims to do</h4>
+      <p>Analyzes patterns in a user's voice to return real-time biometric reads on <strong>muscles, hydration, digestion, energy, stress and sleep</strong>. A 30-second voice recording produces personalized recommendations.</p>
+    </div>
+    <div class="card">
+      <h4>Who it sells to</h4>
+      <p>Individuals, athletes, <strong>corporate wellness programs (B2B)</strong>, and gym members. The B2B corporate-wellness angle is the revenue thesis.</p>
+    </div>
+    <div class="card">
+      <h4>Corporate facts</h4>
+      <p>Founded 2020. HQ <strong>Sheridan, Wyoming</strong> (a common LLC-formation state). Listed at <strong>1&ndash;10 employees</strong>. Business email domain <code>amatone.fit</code>; Instagram <code>@amatone.fit</code>.</p>
+    </div>
+    <div class="card">
+      <h4>Claimed milestones</h4>
+      <p><strong>1,500 hours</strong> of development and <strong>70+ TestFlight</strong> testers, per the company's own LinkedIn milestones. No funding round, revenue figure or valuation surfaced.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>USPTO trademark record</h2>
+  <p class="sub">Five filings owned by "Brandon Muzik" &mdash; note these are five serial numbers, not five distinct brands (one is a re-file).</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Mark</th><th>Serial</th><th>Filed</th><th>Class</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AMATONE</td><td>90333752</td><td>Nov 20 2020</td><td>044 &mdash; health / nutrition / lifestyle guidance</td>
+          <td><span class="st st-live">Live &middot; Registered Nov 19 2024</span></td>
+        </tr>
+        <tr>
+          <td>CELLULAR COHERENCE</td><td>99739378</td><td>Apr 1 2026</td><td>042 &mdash; SaaS, health self-assessment software</td>
+          <td><span class="st st-pend">Live &middot; Pending (as of Sep 3 2026)</span></td>
+        </tr>
+        <tr>
+          <td>CELLULAR COHERENCE</td><td>90787683</td><td>Jun 22 2021</td><td>042 &mdash; SaaS, health self-assessment software</td>
+          <td><span class="st st-dead">Dead &middot; Abandoned Jan 22 2024</span></td>
+        </tr>
+        <tr>
+          <td>PARAVI</td><td>88849449</td><td>Mar 26 2020</td><td>005 &mdash; biologics, immunotherapy</td>
+          <td><span class="st st-dead">Dead &middot; Abandoned Jul 20 2021</span></td>
+        </tr>
+        <tr>
+          <td>ONCURF</td><td>88849480</td><td>Mar 26 2020</td><td>005 &mdash; biologics, therapeutic use</td>
+          <td><span class="st st-dead">Dead &middot; Abandoned Jun 24 2020</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>What the pattern says</h2>
+  <p class="sub">Read the filings as a sequence, not a list.</p>
+  <ul class="bul">
+    <li><strong>2020 was his pivot year.</strong> PARAVI and ONCURF &mdash; two oncology/biologics marks &mdash; were filed the same day in March 2020 and both died within months. A biologic-therapeutics play that never launched.</li>
+    <li><strong>Seven months later he files AMATONE</strong> (Nov 2020) and has stayed in wellness and software ever since. The arc is pharma ambition abandoned, then a consumer-software pivot.</li>
+    <li><strong>He returns to ideas.</strong> CELLULAR COHERENCE was filed in 2021, abandoned in Jan 2024, then re-filed in April 2026 &mdash; and that re-file is currently live and pending. He does not permanently let go of a concept.</li>
+    <li><strong>He files early and lets weak marks lapse.</strong> Filing before the product exists is a tell: he is comfortable with optionality and comfortable abandoning sunk cost.</li>
+    <li><strong>The geography clusters.</strong> Genetircare, Cell Code, RTG and CLEAR Center of Health all sit in the Mill Valley / Marin County health-and-VC ecosystem. He was embedded in one Bay Area niche, then relocated to Tempe, AZ.</li>
+  </ul>
+</section>
+
+<section class="wrap">
+  <h2>Reputation signals</h2>
+  <p class="sub">Public, customer-facing, and thin &mdash; treat as directional only.</p>
+  <div class="grid">
+    <div class="card">
+      <h4>&#11088; DealerRater: 5.0</h4>
+      <p>Five reviews on his employee page, weighted toward recent. A separate JLR Rancho Mirage dealership page also carries his name.</p>
+    </div>
+    <div class="card">
+      <h4>&#128172; Named in testimonials</h4>
+      <p>Appears positively in Jaguar Rancho Mirage customer testimonials &mdash; one recommends "the JLR dealership, its team members and especially, my salesperson Brandon Muzik."</p>
+    </div>
+    <div class="card">
+      <h4>&#128663; CARFAX page</h4>
+      <p>A CARFAX dealership-page review cites him: "I was also impressed by Brandon Muzik, whose support was outstanding in every detail." That page sits alongside JLR Certified Pre-Owned listings.</p>
+    </div>
+  </div>
+  <p class="sub" style="margin-top:16px">Sample size is small and self-selected. A 5.0 across five reviews on a newly-listed salesperson is a floor of evidence, not a track record.</p>
+</section>
+
+<section class="wrap">
+  <h2>Likely desk behavior</h2>
+  <p class="sub">Inference from the record above &mdash; labelled as inference, not fact.</p>
+  <div class="play">
+    <h4>Read on how he sells</h4>
+    <ul class="bul">
+      <li><strong>Consultative, not pressure.</strong> Five years selling a complex wellness product to corporations and clinics. Expect patient explanation, spec depth, and relationship-building over hard closes.</li>
+      <li><strong>Top-of-line bias.</strong> His stated favourite unit is the <strong>Range Rover Autobiography</strong>. He is likely to sell the flagship narrative rather than lead on payment.</li>
+      <li><strong>Comfortable with complexity.</strong> IRB processes, IP filings, biomechanics &mdash; he is not intimidated by technical detail, and may over-educate where a fast close would work.</li>
+      <li><strong>Thin floor instincts.</strong> New to auto retail. Desking, financing structure and trade-walk tactics are his least-practised muscles.</li>
+      <li><strong>Founder's autonomy reflex.</strong> Used to running his own company. May resist store process and improvise &mdash; an opening on process discipline, a risk if he improvises a deal structure our way.</li>
+    </ul>
+  </div>
+  <p class="sub" style="margin-top:18px">Trade-area note: Rancho Mirage serves the Coachella Valley / Palm Springs market, roughly two hours from Newport Beach. No overlap in trade area &mdash; a peer in the same brand, not a same-street rival.</p>
+</section>
+
+<section class="wrap">
+  <h2>Where RoyceAI fits</h2>
+  <p class="sub">AmaTone is a voice product asking people to trust a black box. That is exactly the gap AI tooling closes &mdash; and it is a live prospect, not a hypothetical.</p>
+  <div class="grid">
+    <div class="card">
+      <h4>&#127908; The core problem</h4>
+      <p>A voice-biometric app has to be <strong>credible to a clinician</strong> before a corporate buyer will sign. Right now the product asserts insight from a 30-second recording; there is no visible reasoning layer behind the score. That gap is a build, not a marketing fix.</p>
+    </div>
+    <div class="card">
+      <h4>&#129302; Conversational layer</h4>
+      <p>An AI assistant that <strong>explains each reading in plain language</strong> &mdash; what changed in the voice, what it likely means, what to do next. Voice in, guidance out. This is what turns a passive dashboard into something a user opens daily.</p>
+    </div>
+    <div class="card">
+      <h4>&#128222; Voice intake, 24/7</h4>
+      <p>An AI receptionist front door for the B2B motion: <strong>answers corporate wellness inquiries around the clock</strong>, qualifies the buyer, books the demo, and hands a warmed lead to a human. That is RoyceAI's flagship product today.</p>
+    </div>
+    <div class="card">
+      <h4>&#128200; Data into decisions</h4>
+      <p>The app already collects voice samples. The missing layer is <strong>trend detection and reporting</strong> &mdash; nudge a user when a pattern shifts, generate the corporate wellness report the employer actually pays for. Passive collection becomes an active product.</p>
+    </div>
+    <div class="card">
+      <h4>&#9889; Ship speed</h4>
+      <p>He has run <strong>1,500 hours of development</strong> to reach 70+ testers. A focused AI build compresses the interrogate-measure-report loop into weeks, not quarters &mdash; and he has already proven he can ship under his own name.</p>
+    </div>
+    <div class="card">
+      <h4>&#128176; The commercial read</h4>
+      <p>Founder of a <strong>1&ndash;10 person company</strong>, in a new retail job, with a mark he re-filed in 2026 &mdash; he is still betting on this. A small operator with a stalled consumer product is a realistic buyer for a scoped AI build, not a fantasy enterprise deal.</p>
+    </div>
+  </div>
+
+  <div class="play" style="margin-top:20px">
+    <h4>Positioning, if we approach</h4>
+    <ul class="bul">
+      <li><strong>Lead with the receptionist, not the rebuild.</strong> He needs corporate leads handled before he needs a new app. 24/7 AI intake is a <strong>$3,000/mo</strong> product we already run &mdash; a low-friction first yes.</li>
+      <li><strong>Then scope the intelligence layer.</strong> Explanation, trend detection and reporting are a defined build, quotable as a one-time project against his stated product goals.</li>
+      <li><strong>Speak his language.</strong> He talks IRB, validation and white papers. Frame AI as <strong>evidence infrastructure</strong> &mdash; traceable, reviewable, defensible to a clinic &mdash; not as a gadget.</li>
+      <li><strong>Respect the founder's seat.</strong> He runs his own company and will want authorship. Pitch a <strong>partner build</strong>, not a takeover of his product.</li>
+      <li><strong>Do not lead with the car.</strong> Any approach framed as dealer-vs-dealer poisons the product conversation. Keep the two lanes separate.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Open gaps</h2>
+  <p class="sub">What this file does not establish.</p>
+  <ul class="bul">
+    <li><strong>No financial data</strong> on AmaTone &mdash; no disclosed funding round, revenue or valuation.</li>
+    <li><strong>No patents found.</strong> He claims patenting experience; only trademarks surfaced. A patent search has not been run.</li>
+    <li><strong>No proof of the identity link.</strong> Public sources do not connect the dealership record to AmaTone directly.</li>
+    <li><strong>Trademark abandonment reasons</strong> are not established &mdash; office actions and oppositions were not retrieved.</li>
+    <li><strong>Small reputation sample.</strong> Five reviews is not a performance record.</li>
+  </ul>
+</section>
+
+<section class="wrap">
+  <h2>Sources</h2>
+  <p class="sub">All statements above trace to these. Web-sourced only &mdash; no live fleet or CRM lookup was used.</p>
+  <div class="src">
+    <div>&bull; LinkedIn &mdash; <a href="https://www.linkedin.com/in/amatone2026" target="_blank" rel="noopener">Brandon Muzik, Founder &amp; CEO, AmaTone (employment + about)</a></div>
+    <div>&bull; Trademarkia &mdash; <a href="https://www.trademarkia.com/owners/brandon-muzik" target="_blank" rel="noopener">5 trademarks owned by Brandon Muzik</a></div>
+    <div>&bull; Justia Trademarks &mdash; <a href="https://trademarks.justia.com/owners/brandon-muzik-4355638/" target="_blank" rel="noopener">Brandon Muzik owner record</a></div>
+    <div>&bull; ZoomInfo &mdash; <a href="https://www.zoominfo.com/p/Brandon-Muzik/3925520281" target="_blank" rel="noopener">President at AmaTone; prior CLEAR Center of Health / RTG / Cell Code / Genetircare</a></div>
+    <div>&bull; DealerRater &mdash; <a href="https://www.dealerrater.com/sales/Brandon-Muzik-review-981100/" target="_blank" rel="noopener">Employee ratings and dealer bio</a></div>
+    <div>&bull; Land Rover Rancho Mirage &mdash; <a href="https://www.landroverranchomirage.com/about-us/staff/" target="_blank" rel="noopener">Staff directory</a></div>
+    <div>&bull; Carfax &mdash; <a href="https://www.carfax.com/Dealerships-Palm-Desert-CA_c27557" target="_blank" rel="noopener">Palm Desert dealership page (customer remark)</a></div>
+    <div>&bull; CB Insights &mdash; <a href="https://www.cbinsights.com/company/amatone" target="_blank" rel="noopener">AmaTone company profile</a></div>
+  </div>
+</section>
+
+<footer>
+  <div>Compiled Oct 16 2026 &middot; Internal competitive research &middot; Not indexed</div>
+  <div style="margin-top:12px">
+    <a href="/land-rover">Land Rover</a>
+    <a href="/preowned">Pre-Owned Desk</a>
+    <a href="/">RoyceAI</a>
+  </div>
+</footer>
+<script>
+(function(){
+  function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(links&&!menu.querySelector('a[data-mn]')){
+      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+</script>
+
+</body>
+</html>

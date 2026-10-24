@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF23H9423B"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EF23H9423B');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoyceAI Data Business — Trading Intelligence Subscriptions</title>
+<meta name="description" content="AI-powered trading signals, Polymarket picks, ETF scoring, and macro risk alerts. Subscribe on X and get daily market intelligence delivered by autonomous bots.">
+<link rel="canonical" href="https://royceai.com/data/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--green:#34d399;--green-bg:rgba(52,211,153,0.08);--orange:#f59e0b;--radius:16px;--radius-sm:10px;--max-w:1100px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(52,211,153,0.04);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;background:var(--bg);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;animation:pulse-glow 2.5s ease-in-out infinite}
+.nav-links .nav-cta:hover{background:var(--accent-light);transform:scale(1.05)}
+.hero{min-height:70vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 60px;max-width:var(--max-w);margin:0 auto;animation:fade-up 0.6s ease-out}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--accent-bg);border:1px solid rgba(124,92,252,0.15);font-size:0.8rem;font-weight:500;color:var(--accent-light);margin-bottom:32px;width:fit-content}
+.hero h1{font-size:clamp(2.5rem,7vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:24px;max-width:900px}
+.hero h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero p{font-size:clamp(1rem,2vw,1.2rem);color:var(--text-secondary);max-width:600px;line-height:1.75;margin-bottom:40px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius-sm);font-family:var(--font);font-size:0.95rem;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow);animation:pulse-glow 2.5s ease-in-out infinite}
+.btn-primary:hover{background:var(--accent-light);transform:translateY(-2px) scale(1.03)}
+.btn-secondary{background:var(--bg-elevated);color:var(--text);box-shadow:0 0 0 1px var(--border)}
+.btn-secondary:hover{background:var(--bg-card);box-shadow:0 0 0 1px var(--accent);transform:translateY(-1px)}
+.btn-x{background:#000;color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,0.1)}
+.btn-x:hover{background:#222;transform:translateY(-2px)}
+.section{padding:80px 24px;max-width:var(--max-w);margin:0 auto}
+.section-header{text-align:center;margin-bottom:56px}
+.section-header h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:12px}
+.section-header h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.section-header p{color:var(--text-secondary);font-size:1.05rem;max-width:500px;margin:0 auto}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1000px;margin:0 auto}
+.plan{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 32px;transition:all var(--transition);position:relative;display:flex;flex-direction:column}
+.plan:hover{transform:translateY(-4px);border-color:var(--border-hover)}
+.plan.featured{border-color:rgba(124,92,252,0.2);background:linear-gradient(135deg,rgba(124,92,252,0.04) 0%,transparent 100%)}
+.plan.featured::before{content:'Best Value';position:absolute;top:-10px;left:50%;transform:translateX(-50%);padding:4px 16px;border-radius:100px;background:var(--accent);color:#fff;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em}
+.plan .name{font-size:0.9rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-secondary);margin-bottom:8px}
+.plan .price{font-size:2.8rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:4px}
+.plan .price span{font-size:1rem;font-weight:500;color:var(--text-secondary)}
+.plan .desc{color:var(--text-secondary);font-size:0.9rem;margin-bottom:24px;line-height:1.5}
+.plan ul{list-style:none;padding:0;margin:0 0 32px;flex:1}
+.plan ul li{padding:10px 0;border-top:1px solid var(--border);font-size:0.9rem;display:flex;align-items:center;gap:10px}
+.plan ul li::before{content:'✓';color:var(--green);font-weight:700;font-size:1rem}
+.plan .btn{display:block;text-align:center;padding:14px;border-radius:var(--radius-sm);font-weight:600;text-decoration:none;transition:all 0.2s;font-size:1rem;font-family:var(--font);width:100%}
+.plan .btn-primary{background:var(--accent);color:#fff}
+.plan .btn-primary:hover{background:var(--accent-light);transform:translateY(-2px)}
+.plan .btn-secondary{background:var(--bg-elevated);color:var(--text);border:1px solid var(--border)}
+.plan .btn-secondary:hover{background:var(--bg-card);border-color:var(--accent)}
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.how-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center;transition:all var(--transition)}
+.how-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.how-card .step{font-size:2.5rem;font-weight:800;color:var(--accent);opacity:0.3;margin-bottom:8px}
+.how-card h3{font-size:1rem;font-weight:600;margin-bottom:6px}
+.how-card p{color:var(--text-secondary);font-size:0.88rem;line-height:1.6}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:800px;margin:40px auto 0}
+.stat-card{text-align:center;padding:24px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius)}
+.stat-card .num{font-size:2.2rem;font-weight:800;color:var(--accent-light)}
+.stat-card .label{color:var(--text-secondary);font-size:0.85rem;margin-top:4px}
+.testimonial{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;max-width:700px;margin:32px auto 0}
+.testimonial .quote{color:var(--text-secondary);font-size:1rem;line-height:1.7;font-style:italic;margin-bottom:16px}
+.testimonial .author{font-weight:600;font-size:0.9rem}
+.testimonial .author span{color:var(--text-muted);font-weight:400}
+.faq{max-width:700px;margin:0 auto}
+.faq details{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px;padding:16px 20px;cursor:pointer;transition:border-color 0.2s}
+.faq details[open]{border-color:var(--accent)}
+.faq summary{font-weight:600;font-size:0.95rem;color:var(--text);outline:none}
+.faq .answer{color:var(--text-secondary);font-size:0.9rem;padding-top:12px;line-height:1.6}
+.cta-section{text-align:center;padding:120px 24px;max-width:var(--max-w);margin:0 auto}
+.cta-section h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:16px}
+.cta-section p{color:var(--text-secondary);font-size:1.1rem;margin-bottom:40px}
+footer{border-top:1px solid var(--border);padding:48px 24px;max-width:var(--max-w);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+footer .logo{font-weight:700;font-size:1rem;color:var(--text-secondary)}
+footer .logo span{color:var(--accent-light)}
+footer .links{display:flex;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;transition:color 0.2s}
+footer .links a:hover{color:var(--accent-light)}
+footer .copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:center}
+@media(max-width:640px){
+  .nav-links a:not(.nav-cta){display:none}
+  .plans{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(2rem,10vw,3rem)}
+  .hero{padding:calc(60px + var(--nav-h)) 20px 60px}
+  .section{padding:60px 20px}
+  footer{flex-direction:column;text-align:center}
+}
+
+
+
+
+/* ===== HAMBURGER NAV (neat all-widths) ===== */
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{color:var(--text-secondary);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--text);background:var(--accent-bg)}
+.mobile-menu .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;margin-top:10px;text-align:center;animation:pulse-glow 2.5s ease-in-out infinite}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+.mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+@media(max-width:1099px){
+  nav{z-index:1001;flex-direction:row;flex-wrap:nowrap;height:var(--nav-h);background:var(--bg)}
+  .nav-links{width:auto;margin-left:auto;justify-content:flex-end}
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}
+  .nav-logo{width:auto;justify-content:flex-start}
+}
+@media(min-width:1100px){
+  .nav-links a.nav-drawer-only{display:none!important}
+  #navLoginBtn{display:none!important}
+}
+
+/* desktop: full row, no burger; hide duplicate LogIn button (Tutor covers /tutor) */
+@media(min-width:1100px){
+  #navLoginBtn{display:none!important}
+}
+
+
+
+
+
+/* ===== SITE DECK (LivAway pattern) — ALL WIDTHS, consistent ===== */
+html{overflow-x:clip}
+body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:90}
+.deck-progress-bar{height:100%;width:0%;background:var(--accent-gradient);transition:width .3s ease}
+.slide{position:fixed;top:0;left:0;right:0;bottom:0;height:100vh;height:100dvh;display:flex;padding:calc(var(--nav-h) + 28px) 24px 92px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(24px) scale(0.992);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),visibility .5s;z-index:1}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide-inner{width:100%;max-width:920px;margin:auto}
+.deck-controls{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:80}
+.dc-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);color:var(--text);font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow-card)}
+.dc-btn:hover{border-color:var(--accent);color:var(--accent-light);transform:translateY(-2px)}
+.dc-counter{font-size:0.8rem;font-weight:600;color:var(--text-muted);background:rgba(14,14,18,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);padding:8px 14px;border-radius:100px;letter-spacing:0.05em}
+.dc-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:80}
+.dc-dot{width:9px;height:9px;border-radius:100px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dc-dot.active{background:var(--accent);height:26px}
+@media(min-width:1100px){.deck-progress,.deck-progress-bar,.deck-controls,.dc-dots{display:none!important}.slide{position:static;height:auto;opacity:1;visibility:visible;transform:none;display:block;padding:calc(var(--nav-h) + 32px) 24px 72px;overflow:visible}.slide.active{transform:none;z-index:auto}.slide-inner{width:100%;max-width:920px;margin:0 auto}}
+@media(max-width:640px){.dc-dots{right:12px}.deck-controls{right:14px;bottom:14px}.dc-btn{width:40px;height:40px}}
+@media(max-width:1099px){footer{display:none!important}}
+
+@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
+@media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
+
+/* deck-fmt guard: inactive slides must never paint over the active one */
+.slide:not(.active){display:none!important}
+/* burger+lang cluster pinned right (overrides space-between spread) */
+nav{justify-content:flex-start!important}
+nav > .nav-links{margin-left:auto!important}
+nav > .royceai-lang{margin-left:8px!important;order:0}
+nav > .nav-burger{margin-left:8px!important;margin-right:0!important;flex:none;order:0}
+nav > .royceai-lang{order:1}
+nav > .nav-burger{order:2}
+nav > .nav-logo{margin-right:0!important;order:-1}
+</style>
+<meta property="og:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png">
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <span id="navLoginBtn"></span>
+    <a href="/subscribe">Subscribe</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/preowned" class="nav-drawer-only">🔁 Pre-Owned Desk</a>
+    <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
+    <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
+    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
+    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
+    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/prius-prime" class="nav-drawer-only">🔌 Prius Prime Finder</a>
+    <a href="/brandon" class="nav-drawer-only">👤 Brandon Muzik</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    
+    
+    <a href="/chat" class="nav-cta">💬 Chat</a>
+  </div>
+<button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="deck-progress"><div class="deck-progress-bar" id="deckProgressBar"></div></div>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<div class="mobile-menu" id="mobileMenu"></div>
+
+<section class="slide active hero" id="s1" >
+  <div class="slide-inner">
+
+  <div class="hero-badge">🤖 Autonomous Trading Intelligence</div>
+  <h1><span class="gradient">Turn Data Into<br>Decisions</span> While You Sleep</h1>
+  <p>AI-powered trading signals, real-time macro alerts, Polymarket sprint picks, and ETF scoring — delivered daily by bots that never sleep. Subscribe on X or directly.</p>
+  <div class="hero-actions">
+    <a href="#plans" class="btn btn-primary">View Plans →</a>
+    <a href="https://x.com/royceai" class="btn btn-x">𝕏 Follow on X</a>
+  </div>
+
+  </div>
+</section>
+
+<section class="slide section" id="s2"  id="plans">
+  <div class="slide-inner">
+
+  <div class="section-header">
+    <h2>Choose Your <span class="gradient">Edge</span></h2>
+    <p>Two tiers. One goal: put you in the right market at the right time.</p>
+  </div>
+  <div class="plans">
+    <!-- Pro -->
+    <div class="plan featured">
+      <div class="name">Pro</div>
+      <div class="price">$100<span>/mo</span></div>
+      <div class="desc">Full trading edge for serious market participants.</div>
+      <ul>
+        <li>Daily trading signals with entry/exit levels</li>
+        <li>Polymarket sprint picks (2x daily)</li>
+        <li>Real-time macro risk alerts</li>
+        <li>AI ETF scorer — top 9 ranked every session</li>
+        <li>Private Telegram group</li>
+        <li>Weekly strategy call recording</li>
+      </ul>
+      <a href="/pay?plan=pro" class="btn btn-primary">Subscribe — $100/mo</a>
+    </div>
+
+    <!-- Elite -->
+    <div class="plan">
+      <div class="name">Elite</div>
+      <div class="price">$500<span>/mo</span></div>
+      <div class="desc">Full concierge — direct access and custom strategies.</div>
+      <ul>
+        <li>Everything in Pro</li>
+        <li>Direct Telegram access to RoyceAI</li>
+        <li>Custom position sizing recommendations</li>
+        <li>Portfolio review &amp; optimization</li>
+        <li>Early access to new trading bots</li>
+        <li>Monthly 1-on-1 strategy call</li>
+      </ul>
+      <a href="/pay?plan=elite" class="btn btn-secondary">Subscribe — $500/mo</a>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<section class="slide section" id="s3" >
+  <div class="slide-inner">
+
+  <div class="section-header">
+    <h2>How It <span class="gradient">Works</span></h2>
+    <p>Autonomous bots. Daily delivery. Zero screen time required.</p>
+  </div>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="step">01</div>
+      <h3>Subscribe</h3>
+      <p>Pick Pro or Elite. Pay via PayPal or subscribe through X. $1 for 7 days trial available.</p>
+    </div>
+    <div class="how-card">
+      <div class="step">02</div>
+      <h3>Receive Signals</h3>
+      <p>Bots scan 500+ markets every 2 hours. Picks delivered to your portal, Telegram, and X feed daily.</p>
+    </div>
+    <div class="how-card">
+      <div class="step">03</div>
+      <h3>Execute &amp; Profit</h3>
+      <p>Entry, exit, rationale, and position sizing — everything you need to act. No analysis paralysis.</p>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<section class="slide section" id="s4" >
+  <div class="slide-inner">
+
+  <div class="section-header">
+    <h2>FAQ</h2>
+  </div>
+  <div class="faq">
+    <details>
+      <summary>How do I subscribe?</summary>
+      <div class="answer">Click Subscribe above to pay via PayPal, or subscribe through X (Twitter) for the algorithm boost. Either way, you get a portal login link emailed to you.</div>
+    </details>
+    <details>
+      <summary>Why subscribe through X?</summary>
+      <div class="answer">X subscriptions give you an algorithm boost — your content reaches more people. RoyceAI subscribers on X get amplified reach automatically. Plus X takes only 10% vs Apple's 30%.</div>
+    </details>
+    <details>
+      <summary>What's the $1 trial?</summary>
+      <div class="answer">$1 for 7 days of full Pro access. All features, no limits. If you don't see the edge in 7 days, you're out $1. Cancel anytime.</div>
+    </details>
+    <details>
+      <summary>How are signals generated?</summary>
+      <div class="answer">Autonomous bots scan 500+ Polymarket markets, 17 leveraged ETFs, and macro indicators every 2 hours. Signals are scored, ranked, and delivered — no human bias.</div>
+    </details>
+    <details>
+      <summary>Can I cancel anytime?</summary>
+      <div class="answer">Yes. Month-to-month. Cancel anytime with one click.</div>
+    </details>
+  </div>
+
+  </div>
+</section>
+
+<section class="slide cta-section" id="s5" >
+  <div class="slide-inner">
+
+  <h2>Ready for the <span class="gradient">Edge</span>?</h2>
+  <p>$1 for 7 days. Full Pro access. No risk.</p>
+  <a href="/pay?plan=pro" class="btn btn-primary">Start Trial — $1 →</a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
+  <div class="links">
+    <a href="/subscribe">Subscribe</a>
+    <a href="/portal">Portal</a>
+    
+    
+  </div>
+  <div class="copy">RoyceAI Solutions. Irvine, CA</div>
+</footer>
+
+
+<!-- deck navigation controls -->
+<div class="deck-controls">
+  <button class="dc-btn" id="dcPrev" aria-label="Previous slide">←</button>
+  <span class="dc-counter" id="dcCounter">1 / 1</span>
+  <button class="dc-btn" id="dcNext" aria-label="Next slide">→</button>
+</div>
+<div class="dc-dots" id="dcDots"></div>
+
+<script>
+(function(){
+  function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(links&&!menu.querySelector('a[data-mn]')){
+      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;if(a.classList.contains('nav-cta'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+</script>
+
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  if(slides.length<2)return;
+  var counter=document.getElementById('dcCounter');
+  var bar=document.getElementById('deckProgressBar');
+  var dotsWrap=document.getElementById('dcDots');
+  var current=0;
+
+  slides.forEach(function(s,i){
+    var d=document.createElement('button');
+    d.className='dc-dot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    d.addEventListener('click',function(){go(i);});
+    dotsWrap.appendChild(d);
+  });
+  var dots=[].slice.call(dotsWrap.children);
+
+  function go(i){
+    if(i<0||i>=slides.length)return;
+    current=i;
+    slides.forEach(function(s,j){s.classList.toggle('active',j===i);});
+    counter.textContent=(i+1)+' / '+slides.length;
+    dots.forEach(function(d,j){d.classList.toggle('active',j===i);});
+    bar.style.width=((i+1)/slides.length*100)+'%';
+    var active=slides[i];
+    if(active.scrollTop)active.scrollTop=0;
+    active.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el){
+      el.classList.add('visible');
+    });
+  }
+  document.getElementById('dcNext').addEventListener('click',function(){go(current+1);});
+  document.getElementById('dcPrev').addEventListener('click',function(){go(current-1);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(current+1);}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(current-1);}
+    if(e.key==='Home'){e.preventDefault();go(0);}
+    if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    if(e.key===' '&&e.target===document.body){e.preventDefault();go(current+1);}
+  });
+  var lastWheel=0;
+  window.addEventListener('wheel',function(e){
+    var now=Date.now();
+    if(now-lastWheel<800)return;
+    if(Math.abs(e.deltaY)<8)return;
+    var active=slides[current];
+    var canScroll=active.scrollHeight>active.clientHeight+4;
+    var atTop=active.scrollTop<=2;
+    var atBottom=active.scrollTop+active.clientHeight>=active.scrollHeight-2;
+    if(canScroll){
+      if(e.deltaY>0&&!atBottom)return;
+      if(e.deltaY<0&&!atTop)return;
+    }
+    if(e.deltaY>0){go(current+1);}else{go(current-1);}
+    lastWheel=now;
+  },{passive:true});
+  var tsx=null,tsy=null;
+  document.addEventListener('touchstart',function(e){tsx=e.touches[0].clientX;tsy=e.touches[0].clientY;},{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(tsx===null)return;
+    var dx=e.changedTouches[0].clientX-tsx;
+    var dy=e.changedTouches[0].clientY-tsy;
+    tsx=null;tsy=null;
+    if(Math.abs(dx)<50&&Math.abs(dy)<50)return;
+    var active=slides[current];
+    var canScroll=active.scrollHeight>active.clientHeight+4;
+    var atTop=active.scrollTop<=2;
+    var atBottom=active.scrollTop+active.clientHeight>=active.scrollHeight-2;
+    if(dy<0||dx<0){if(!canScroll||atBottom)go(current+1);}
+    else{if(!canScroll||atTop)go(current-1);}
+  },{passive:true});
+  go(0);
+})();
+</script>
+
+</body>
+</html>

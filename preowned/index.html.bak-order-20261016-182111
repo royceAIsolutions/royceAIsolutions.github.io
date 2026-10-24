@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Owned Manager &mdash; JLR Newport Beach</title>
+<meta name="description" content="Pre-owned inventory desk for Jaguar Land Rover Newport Beach: our lot, certified split, ageing, make mix, movement and the untruncated anomaly list.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --bg:#08080b; --bg-card:#0e0e12; --bg-elevated:#14141a;
+  --text:#f2f2f4; --text-secondary:#a8a8b4; --text-muted:#6e6e7c;
+  --border:#232329; --border-hover:#33333d;
+  --accent:#EA3D2F; --accent-light:#FF6B5B;
+  --accent-bg:rgba(234,61,47,.13);
+  --accent-gradient:linear-gradient(135deg,#EA3D2F 0%,#C7301F 55%,#8F2416 100%);
+  --slate:#4F5E6D; --navy:#2E3644;
+  --radius:16px; --radius-sm:12px; --nav-h:64px; --max-w:1240px;
+  --shadow-card:0 1px 2px rgba(0,0,0,.4);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:60px}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;
+  justify-content:space-between;padding:0 24px;background:rgba(8,8,11,.86);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);z-index:1001}
+.nav-logo{font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{font-size:.85rem;color:var(--text-secondary);padding:8px 12px;border-radius:9px;transition:all .2s}
+.nav-links a:hover{color:var(--text);background:var(--bg-elevated)}
+.nav-cta{background:var(--accent)!important;color:#fff!important;font-weight:600}
+.nav-burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:10px}
+.nav-burger span{width:20px;height:2px;background:var(--text);border-radius:2px}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+header.hero{padding:calc(var(--nav-h) + 54px) 24px 26px;max-width:var(--max-w);margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;
+  background:linear-gradient(135deg,rgba(234,61,47,.18),rgba(199,48,31,.10));
+  border:1px solid rgba(234,61,47,.34);color:#FF8A7C;font-size:.78rem;font-weight:600;margin-bottom:18px}
+h1{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:12px}
+.gradient{background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{color:var(--text-secondary);font-size:1rem;max-width:760px}
+.stamp{color:var(--text-muted);font-size:.8rem;margin-top:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}
+@media(max-width:1000px){.stats{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:15px 16px;box-shadow:var(--shadow-card)}
+.stat b{display:block;font-size:1.5rem;font-weight:800;letter-spacing:-.02em;margin-bottom:4px;line-height:1.15;white-space:nowrap}
+.stat span{display:block;font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700;min-height:2.2em;line-height:1.1}
+.stat em{display:block;font-style:normal;font-size:.76rem;color:var(--text-secondary);margin-top:5px;line-height:1.35;min-height:2.7em}
+main{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+section{margin:32px 0}
+section > h2{font-size:1.22rem;font-weight:750;letter-spacing:-.015em;margin-bottom:6px}
+section > p.lead{color:var(--text-secondary);font-size:.9rem;margin-bottom:16px;max-width:760px}
+.panel{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow-card)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.mixrow{display:grid;grid-template-columns:1fr 96px 40px;align-items:center;gap:12px;padding:7px 0}
+.mixrow.mine .mixname{color:var(--accent-light);font-weight:650}
+.mixname{font-size:.85rem;color:var(--text-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mixbar{height:7px;background:var(--bg-elevated);border-radius:100px;overflow:hidden}
+.mixbar i{display:block;height:100%;background:var(--slate);border-radius:100px}
+.mixrow.mine .mixbar i{background:var(--accent)}
+.mixn{font-size:.82rem;color:var(--text);font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+/* The unit table is 7 columns; on a phone it must scroll inside its own panel
+   rather than widening the document (body scrollWidth > innerWidth = broken layout). */
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -4px}
+table{width:100%;border-collapse:collapse;font-size:.85rem;min-width:640px}
+thead th{text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);
+  font-weight:700;padding:0 10px 10px;border-bottom:1px solid var(--border)}
+tbody td{padding:11px 10px;border-bottom:1px solid var(--border);color:var(--text-secondary);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+td.t{color:var(--text);font-weight:600;min-width:210px}
+td.t .u1{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+td.t .u2{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+td .sub{font-weight:400;color:var(--text-muted);font-size:.78rem;margin-top:2px}
+td.n,td.stk{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+thead th:nth-child(3),thead th:nth-child(4){text-align:right}
+.b{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.05em;padding:3px 8px;border-radius:6px}
+.b.cpo{background:var(--accent-bg);color:var(--accent-light);border:1px solid rgba(234,61,47,.3)}
+.b.used{background:rgba(79,94,109,.18);color:#9FB0BE;border:1px solid rgba(79,94,109,.4)}
+.anom{display:grid;grid-template-columns:210px 1fr auto;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:.84rem}
+.anom:last-child{border-bottom:0}
+.akind{color:var(--accent-light);font-weight:600}
+.aid{color:var(--text);font-variant-numeric:tabular-nums}
+.adlr{color:var(--text-muted);font-size:.79rem;text-align:right}
+.mv{padding:10px 0;border-bottom:1px solid var(--border);font-size:.85rem;color:var(--text-secondary)}
+.mv:last-child{border-bottom:0}
+.mtag{display:inline-block;font-size:.64rem;font-weight:800;letter-spacing:.05em;padding:3px 8px;border-radius:6px;margin-right:9px}
+.mtag.new{background:rgba(52,211,153,.13);color:#34d399}
+.mtag.out{background:rgba(79,94,109,.18);color:#9FB0BE}
+.clear{color:var(--text-muted);font-size:.85rem;padding:8px 0}
+.note{color:var(--text-muted);font-size:.78rem;margin-top:12px;line-height:1.55}
+footer{border-top:1px solid var(--border);margin-top:52px;padding:36px 24px;text-align:center;color:var(--text-muted);font-size:.82rem}
+footer .fmark{font-weight:700;color:var(--text);font-size:.94rem}
+footer .fmark span{color:var(--accent-light)}
+footer .links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:15px 0}
+footer .links a{padding:8px 15px;border:1px solid var(--border);border-radius:100px;font-size:.81rem;color:var(--text-secondary)}
+footer .links a:hover{color:var(--text);border-color:var(--border-hover)}
+@media(max-width:900px){.two{grid-template-columns:1fr}.anom{grid-template-columns:1fr;gap:3px}.adlr{text-align:left}}
+@media(max-width:1099px){nav .nav-links a:not(.nav-cta){display:none}}
+@media(max-width:640px){.nav-burger{display:flex}table{font-size:.79rem}thead th,tbody td{padding:9px 6px}}
+
+
+/* nav burger + drawer (nav_hamburger_repair.py) */
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated,#15151b);border:1px solid var(--border,#232733);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text,#f5f6f8);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border,#232733);padding:calc(var(--nav-h,64px) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{color:var(--text-secondary,#b9bdc7);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--text,#f5f6f8);background:var(--accent-bg,rgba(91,141,239,.12))}
+.mobile-menu .nav-cta{background:var(--accent,#5B8DEF);color:#fff!important;font-weight:600;margin-top:10px;text-align:center}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+.mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+
+.nav-links a.nav-drawer-only{display:none!important}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><span>Royce</span>AI</a>
+  <div class="nav-links">
+    <a class="nav-drawer-only" href="/subscribe">Subscribe</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/preowned" class="nav-drawer-only">🔁 Pre-Owned Desk</a>
+    <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
+    <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
+    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
+    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
+    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/prius-prime" class="nav-drawer-only">🔌 Prius Prime Finder</a>
+    <a href="/brandon" class="nav-drawer-only">👤 Brandon Muzik</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    
+    <a href="/chat" class="nav-drawer-only">&#128172; Chat</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<div class="mobile-menu" id="mobileMenu"></div>
+
+<header class="hero">
+  <span class="badge">&#9851; JLR Newport Beach &middot; Pre-Owned Manager</span>
+  <h1>The pre-owned <span class="gradient">desk</span></h1>
+  <p class="subtitle">Our lot, the certified split, movement since the last scan, and every anomaly the
+  daily digest truncates &mdash; in one place.</p>
+  <p class="stamp">Feed read 2026-10-15 08:26 &middot; manager state 2026-10-15 15:09</p>
+  <div class="stats">
+<div class="stat"><b>34</b><span>Our lot</span><em>on a Newport Beach rooftop</em></div>
+<div class="stat"><b>12</b><span>Certified</span><em>Land Rover Approved CPO</em></div>
+<div class="stat"><b>22</b><span>Used</span><em>non-certified on our lot</em></div>
+<div class="stat"><b>3</b><span>Anomalies</span><em>every unit, none hidden</em></div>
+<div class="stat"><b>120</b><span>Group feed</span><em>all rooftops in the feed</em></div>
+<div class="stat"><b>$22,169&ndash;$164,978</b><span>Band</span><em>asking price, our lot</em></div>
+<div class="stat"><b>0</b><span>New today</span><em>since the last scan</em></div>
+<div class="stat"><b>0</b><span>Sold / gone</span><em>cleared since the last scan</em></div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>Our lot</h2>
+    <p class="lead">Only units on a Newport Beach rooftop &mdash; ownership decided by the feed's
+    <code>dealer</code> field, never by a page URL. Jaguar and Land Rover Newport Beach are one rooftop.</p>
+    <div class="panel">
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Unit</th><th>Status</th><th>Price</th><th>Miles</th><th>Exterior</th><th>Interior</th><th>Stock</th></tr></thead>
+        <tbody><tr><td class="t"><span class="u1">2020 Porsche Cayenne</span><div class="sub u2">(AWD)</div></td><td><span class="b used">Used</span></td><td class="n">$22,169</td><td class="n">125,873 mi</td><td>White</td><td>Black</td><td class="stk">TLDA00772</td></tr><tr><td class="t"><span class="u1">2021 BMW X3</span><div class="sub u2">sDrive30i</div></td><td><span class="b used">Used</span></td><td class="n">$24,978</td><td class="n">39,832 mi</td><td>Jet Black</td><td>Black</td><td class="stk">TM9D87913</td></tr><tr><td class="t"><span class="u1">2014 Jaguar Other</span><div class="sub u2">Touring</div></td><td><span class="b used">Used</span></td><td class="n">$25,078</td><td class="n">49,766 mi</td><td>Black</td><td>Beige</td><td class="stk">GELB52911</td></tr><tr><td class="t"><span class="u1">2024 BMW 3 Series</span><div class="sub u2">330e</div></td><td><span class="b used">Used</span></td><td class="n">$28,577</td><td class="n">44,300 mi</td><td>Alpine White</td><td>Tacora Red</td><td class="stk">TR8D84124</td></tr><tr><td class="t"><span class="u1">2024 Land Rover Discovery Sport</span><div class="sub u2">Core S</div></td><td><span class="b cpo">CPO</span></td><td class="n">$30,077</td><td class="n">18,145 mi</td><td>Santorini Black Metallic</td><td>Ebony</td><td class="stk">GRH351191</td></tr><tr><td class="t"><span class="u1">2020 Land Rover Range Rover Velar</span><div class="sub u2">R-Dynamic HSE</div></td><td><span class="b used">Used</span></td><td class="n">$31,169</td><td class="n">55,767 mi</td><td>Fuji White</td><td>White</td><td class="stk">GLA238657</td></tr><tr><td class="t"><span class="u1">2024 Mercedes-Benz C-Class</span><div class="sub u2">C 300</div></td><td><span class="b used">Used</span></td><td class="n">$32,169</td><td class="n">18,644 mi</td><td>Tan</td><td>White</td><td class="stk">SRR177268</td></tr><tr><td class="t"><span class="u1">2021 Mercedes-Benz GLE</span><div class="sub u2">350</div></td><td><span class="b used">Used</span></td><td class="n">$33,169</td><td class="n">21,543 mi</td><td>designo Cardinal Red Metallic</td><td>Creme</td><td class="stk">TMA412618</td></tr><tr><td class="t"><span class="u1">2020 BMW X7</span><div class="sub u2">xDrive40i</div></td><td><span class="b used">Used</span></td><td class="n">$33,576</td><td class="n">63,854 mi</td><td>Arctic Gray Metallic</td><td>Black w Brown Stitching</td><td class="stk">TL9C95575</td></tr><tr><td class="t"><span class="u1">2022 Land Rover Range Rover</span><div class="sub u2">Westminster</div></td><td><span class="b used">Used</span></td><td class="n">$40,169</td><td class="n">62,452 mi</td><td>Blue</td><td>Blond</td><td class="stk">GNA468791</td></tr><tr><td class="t"><span class="u1">2023 Lexus RX</span><div class="sub u2">350 Premium</div></td><td><span class="b used">Used</span></td><td class="n">$40,169</td><td class="n">46,842 mi</td><td>Black</td><td>Brown</td><td class="stk">TP2003472</td></tr><tr><td class="t"><span class="u1">2023 Mercedes-Benz C-Class</span><div class="sub u2">C 300</div></td><td><span class="b used">Used</span></td><td class="n">$41,076</td><td class="n">32,064 mi</td><td>White</td><td>Red</td><td class="stk">TPG124127</td></tr><tr><td class="t"><span class="u1">2025 Jaguar Other</span><div class="sub u2">R-Dynamic S</div></td><td><span class="b used">Used</span></td><td class="n">$42,169</td><td class="n">15,227 mi</td><td>Carpathian Gray Premium Metallic</td><td>Black</td><td class="stk">TSA746793</td></tr><tr><td class="t"><span class="u1">2022 Land Rover Range Rover</span><div class="sub u2">Westminster</div></td><td><span class="b used">Used</span></td><td class="n">$49,076</td><td class="n">39,698 mi</td><td>Black</td><td>Black</td><td class="stk">MNA461859</td></tr><tr><td class="t"><span class="u1">2024 Land Rover Defender 110</span><div class="sub u2">S</div></td><td><span class="b used">Used</span></td><td class="n">$51,169</td><td class="n">25,000 mi</td><td>Tasman Blue Metallic</td><td>Blond</td><td class="stk">GR2255946</td></tr><tr><td class="t"><span class="u1">2024 BMW X7</span><div class="sub u2">xDrive40i</div></td><td><span class="b used">Used</span></td><td class="n">$54,169</td><td class="n">37,150 mi</td><td>Alpine White</td><td>Black</td><td class="stk">TR9U14162</td></tr><tr><td class="t"><span class="u1">2026 Mercedes-Benz CLE</span><div class="sub u2">300</div></td><td><span class="b used">Used</span></td><td class="n">$54,169</td><td class="n">8,098 mi</td><td>Gray</td><td>Red</td><td class="stk">STF107111</td></tr><tr><td class="t"><span class="u1">2023 Mercedes-Benz GLE</span><div class="sub u2">AMG GLE 53</div></td><td><span class="b used">Used</span></td><td class="n">$56,076</td><td class="n">21,000 mi</td><td>White</td><td>Red</td><td class="stk">TPA958182</td></tr><tr><td class="t"><span class="u1">2025 Land Rover Range Rover Sport</span><div class="sub u2">SE</div></td><td><span class="b cpo">CPO</span></td><td class="n">$65,578</td><td class="n">19,726 mi</td><td>White</td><td>Black</td><td class="stk">SSA446834</td></tr><tr><td class="t"><span class="u1">2024 Land Rover Range Rover Sport</span><div class="sub u2">SE</div></td><td><span class="b used">Used</span></td><td class="n">$66,678</td><td class="n">11,653 mi</td><td>Fuji White</td><td>Caramel</td><td class="stk">SRA166943</td></tr><tr><td class="t"><span class="u1">2025 Land Rover Defender 110</span><div class="sub u2">X-Dynamic SE</div></td><td><span class="b cpo">CPO</span></td><td class="n">$70,169</td><td class="n">10,800 mi</td><td>Carpathian Grey Premium Metallic</td><td>Black</td><td class="stk">TS2391835</td></tr><tr><td class="t"><span class="u1">2025 Land Rover Defender 110</span><div class="sub u2">X</div></td><td><span class="b cpo">CPO</span></td><td class="n">$81,077</td><td class="n">6,841 mi</td><td>Pangea Green Metallic</td><td>Brown</td><td class="stk">MS2453813</td></tr><tr><td class="t"><span class="u1">2023 Land Rover Range Rover</span><div class="sub u2">SE</div></td><td><span class="b cpo">CPO</span></td><td class="n">$83,078</td><td class="n">38,583 mi</td><td>Silicon Silver Premium Metallic</td><td>Black</td><td class="stk">GPA029490</td></tr><tr><td class="t"><span class="u1">2023 Land Rover Range Rover</span><div class="sub u2">Autobiography</div></td><td><span class="b cpo">CPO</span></td><td class="n">$94,078</td><td class="n">44,191 mi</td><td>Fuji White</td><td>Black</td><td class="stk">GPA009553</td></tr><tr><td class="t"><span class="u1">2025 Cadillac Escalade ESV</span><div class="sub u2">4WD Premium Luxury</div></td><td><span class="b used">Used</span></td><td class="n">$96,169</td><td class="n">11,362 mi</td><td>Crystal White Tricoat</td><td>Brandy With Very Dark Atmosphere Accents</td><td class="stk">TSR259911</td></tr><tr><td class="t"><span class="u1">2025 Land Rover Defender 110</span><div class="sub u2">V8</div></td><td><span class="b cpo">CPO</span></td><td class="n">$98,778</td><td class="n">2,828 mi</td><td>White</td><td>Brown</td><td class="stk">GS2430796</td></tr><tr><td class="t"><span class="u1">2025 Land Rover Range Rover</span><div class="sub u2">SE</div></td><td><span class="b cpo">CPO</span></td><td class="n">$104,678</td><td class="n">14,687 mi</td><td>Blue</td><td>Black</td><td class="stk">MSA292514</td></tr><tr><td class="t"><span class="u1">2025 Land Rover Range Rover</span><div class="sub u2">Autobiography</div></td><td><span class="b cpo">CPO</span></td><td class="n">$107,677</td><td class="n">28,146 mi</td><td>Santorini Black Metallic</td><td>Black</td><td class="stk">TSA267423</td></tr><tr><td class="t"><span class="u1">2026 Land Rover Range Rover Sport</span><div class="sub u2">Dynamic SE</div></td><td><span class="b cpo">CPO</span></td><td class="n">$120,169</td><td class="n">2,738 mi</td><td>British Racing Green in Gloss</td><td>Brown</td><td class="stk">TTA655328</td></tr><tr><td class="t"><span class="u1">2021 Mercedes-Benz G-Class</span><div class="sub u2">AMG G 63</div></td><td><span class="b used">Used</span></td><td class="n">$133,169</td><td class="n">43,785 mi</td><td>Gray</td><td>Black</td><td class="stk">SMX371731</td></tr><tr><td class="t"><span class="u1">2023 Land Rover Range Rover</span><div class="sub u2">SV</div></td><td><span class="b cpo">CPO</span></td><td class="n">$135,076</td><td class="n">26,124 mi</td><td>Blue</td><td>Blue</td><td class="stk">GPA073209</td></tr><tr><td class="t"><span class="u1">2026 Land Rover Range Rover</span><div class="sub u2">SE</div></td><td><span class="b used">Used</span></td><td class="n">$138,680</td><td class="n">12 mi</td><td>Fuji White</td><td>Ebony Ebony</td><td class="stk">TA386859</td></tr><tr><td class="t"><span class="u1">2025 Land Rover Range Rover Sport</span><div class="sub u2">SV Edition Two</div></td><td><span class="b cpo">CPO</span></td><td class="n">$140,169</td><td class="n">15,100 mi</td><td>Sunrise Copper in Satin finish</td><td>Black</td><td class="stk">SSA446808</td></tr><tr><td class="t"><span class="u1">2025 Mercedes-Benz G-Class</span><div class="sub u2">AMG G 63</div></td><td><span class="b used">Used</span></td><td class="n">$164,978</td><td class="n">51,378 mi</td><td>Manufaktur Dark Olive Green Magno</td><td>Black</td><td class="stk">MSX050779</td></tr></tbody>
+      </table>
+      </div>
+      <p class="note">Asking prices are the feed's own figures, not appraised or negotiated values,
+      and not certified quotes. 34 units on our rooftop.</p>
+    </div>
+  </section>
+
+  <section class="two">
+    <div>
+      <h2>Make mix &mdash; our lot</h2>
+      <p class="lead">What we are actually stocking.</p>
+      <div class="panel"><div class="mixrow"><span class="mixname">Land Rover</span><span class="mixbar"><i style="width:52.9%"></i></span><span class="mixn">18</span></div><div class="mixrow"><span class="mixname">Mercedes-Benz</span><span class="mixbar"><i style="width:20.6%"></i></span><span class="mixn">7</span></div><div class="mixrow"><span class="mixname">BMW</span><span class="mixbar"><i style="width:11.8%"></i></span><span class="mixn">4</span></div><div class="mixrow"><span class="mixname">Jaguar</span><span class="mixbar"><i style="width:5.9%"></i></span><span class="mixn">2</span></div><div class="mixrow"><span class="mixname">Porsche</span><span class="mixbar"><i style="width:2.9%"></i></span><span class="mixn">1</span></div><div class="mixrow"><span class="mixname">Lexus</span><span class="mixbar"><i style="width:2.9%"></i></span><span class="mixn">1</span></div><div class="mixrow"><span class="mixname">Cadillac</span><span class="mixbar"><i style="width:2.9%"></i></span><span class="mixn">1</span></div></div>
+    </div>
+    <div>
+      <h2>Rooftops in the feed</h2>
+      <p class="lead">The group feed carries sister stores; only Newport Beach is ours.</p>
+      <div class="panel"><div class="mixrow"><span class="mixname">Land Rover Beverly Hills</span><span class="mixbar"><i style="width:37.5%"></i></span><span class="mixn">45</span></div><div class="mixrow"><span class="mixname">Land Rover San Jose</span><span class="mixbar"><i style="width:29.2%"></i></span><span class="mixn">35</span></div><div class="mixrow"><span class="mixname">Land Rover Santa Monica</span><span class="mixbar"><i style="width:17.5%"></i></span><span class="mixn">21</span></div><div class="mixrow"><span class="mixname">Land Rover Pasadena</span><span class="mixbar"><i style="width:15.8%"></i></span><span class="mixn">19</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Movement since the last scan</h2>
+    <p class="lead">New arrivals and cleared units, read from the manager's own state file.</p>
+    <div class="panel"><div class="clear">No movement since the last scan.</div></div>
+  </section>
+
+  <section>
+    <h2>Anomalies</h2>
+    <p class="lead">Every flagged unit, untruncated &mdash; the daily digest stops at eight lines.</p>
+    <div class="panel"><div class="anom"><span class="akind">generic colour undecodable</span><span class="aid">SALRM4EU9P2484546 Gold</span><span class="adlr">Land Rover Pasadena</span></div><div class="anom"><span class="akind">generic colour undecodable</span><span class="aid">SALE27EU3P2195894 Green</span><span class="adlr">Land Rover Beverly Hills</span></div><div class="anom"><span class="akind">generic colour undecodable</span><span class="aid">SAL1L9FU1PA122969 Green</span><span class="adlr">Land Rover Beverly Hills</span></div></div>
+  </section>
+</main>
+
+<footer>
+  <div class="fmark">Royce<span>AI</span> &middot; JLR Newport Beach</div>
+  <div class="links">
+    <a href="/land-rover">Land Rover inventory</a>
+    <a href="/preowned">Pre-Owned Desk</a>
+  </div>
+  <div>Internal desk view. Not linked from client copy.</div>
+</footer>
+<script>
+(function(){
+  function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(links&&!menu.querySelector('a[data-mn]')){
+      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+</script>
+
+</body>
+</html>

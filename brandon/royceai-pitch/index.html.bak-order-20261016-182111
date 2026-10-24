@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What RoyceAI Puts Into AmaTone &mdash; Contribution for Brandon Muzik</title>
+<meta name="description" content="RoyceAI powers AmaTone. No subscription &mdash; RoyceAI contributes the engineering, AI systems and automation that turn a voice-reading app into a fundable company.">
+<meta property="og:title" content="What RoyceAI Puts Into AmaTone">
+<meta property="og:description" content="Voice science is yours. We build the company around it.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://royceai.com/brandon/royceai-pitch/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --bg:#07070a; --bg-card:#0e0e12; --bg-elevated:#15151b;
+  --text:#eeeef0; --text-secondary:#b9bdc7; --text-muted:#7d8291;
+  --border:rgba(255,255,255,0.06); --border-hover:rgba(255,255,255,0.1);
+  --accent:#7c5cfc; --accent-light:#a78bfa; --accent-deep:#5b3cd4;
+  --accent-bg:rgba(124,92,252,0.08);
+  --accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);
+  --ok:#5FBF7F; --warm:#E0A458;
+  --radius:16px; --radius-sm:10px; --nav-h:64px; --max-w:1080px;
+  --shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;line-height:1.6;padding-bottom:50px}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;
+  justify-content:space-between;padding:0 24px;background:rgba(8,9,12,.9);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);z-index:1001}
+.nav-logo{font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{font-size:.85rem;color:var(--text-secondary);padding:8px 12px;border-radius:9px;transition:all .2s}
+.nav-links a:hover{color:var(--text);background:var(--bg-elevated)}
+header.hero{padding:calc(var(--nav-h) + 58px) 24px 26px;max-width:var(--max-w);margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;
+  background:var(--accent-bg);border:1px solid rgba(124,92,252,.34);color:var(--accent-light);
+  font-size:.78rem;font-weight:600;margin-bottom:18px}
+h1{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-bottom:14px}
+.gradient{background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent}
+.subtitle{color:var(--text-secondary);font-size:1.05rem;max-width:780px}
+.subtitle strong{color:var(--text);font-weight:600}
+main{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+section{margin:42px 0}
+h2{font-size:1.32rem;font-weight:750;letter-spacing:-.02em;margin-bottom:8px}
+h2 .accent{color:var(--accent)}
+.sec-note{color:var(--text-muted);font-size:.86rem;margin-bottom:18px}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:22px;box-shadow:var(--shadow-card)}
+.offer{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:22px;margin-bottom:14px;box-shadow:var(--shadow-card);display:grid;
+  grid-template-columns:56px 1fr;gap:18px;transition:border-color .2s}
+.offer:hover{border-color:var(--border-hover)}
+.offer .num{font-size:1.5rem;font-weight:800;color:var(--accent);letter-spacing:-.03em;
+  font-variant-numeric:tabular-nums;opacity:.65;line-height:1.1}
+.offer h3{font-size:1.06rem;font-weight:750;letter-spacing:-.015em;margin-bottom:7px}
+.offer p{font-size:.92rem;color:var(--text-secondary)}
+.offer .row{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:13px;
+  padding-top:13px;border-top:1px solid var(--border)}
+.oTag{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;
+  color:var(--accent-light);background:var(--accent-bg);border:1px solid rgba(124,92,252,.3);
+  border-radius:6px;padding:3px 9px}
+.oKV{font-size:.83rem;color:var(--text-secondary)}
+.oKV b{color:var(--accent-light);font-weight:700;margin-right:4px}
+.fitlist{list-style:none;display:flex;flex-direction:column;gap:11px}
+.fitlist li{display:flex;justify-content:space-between;gap:16px;align-items:baseline;
+  padding-bottom:11px;border-bottom:1px solid var(--border);font-size:.9rem}
+.fitlist li:last-child{border-bottom:none;padding-bottom:0}
+.fitlist .k{color:var(--text-muted);flex-shrink:0}
+.fitlist .v{color:var(--text);font-weight:600;text-align:right}
+.blist{list-style:none;display:flex;flex-direction:column;gap:12px}
+.blist li{position:relative;padding-left:22px;font-size:.94rem;color:var(--text-secondary)}
+.blist li::before{content:'\2192';position:absolute;left:0;color:var(--accent);font-weight:700}
+.blist li strong{color:var(--text);font-weight:650}
+.contact{display:flex;flex-wrap:wrap;gap:12px}
+.cbtn{font-size:.86rem;font-weight:700;padding:11px 18px;border-radius:10px;background:var(--accent-bg);
+  border:1px solid rgba(124,92,252,.34);color:var(--accent-light);transition:all .2s;display:inline-flex;
+  align-items:center;gap:8px}
+.cbtn:hover{background:var(--accent);color:#0b0714}
+.cbtn.solid{background:var(--accent);color:#0b0714;border-color:var(--accent)}
+.cbtn.solid:hover{background:var(--accent-light)}
+.srcs{list-style:none;display:flex;flex-direction:column;gap:9px}
+.srcs li{font-size:.82rem;color:var(--text-muted);display:flex;gap:9px;align-items:baseline;line-height:1.5}
+.srcs li .n{color:var(--accent);font-weight:700;flex-shrink:0;font-variant-numeric:tabular-nums}
+.srcs li a{color:var(--accent-light);word-break:break-all}
+.srcs li a:hover{color:var(--text)}
+.note{color:var(--text-muted);font-size:.79rem;margin-top:16px;line-height:1.6;
+  border-left:2px solid var(--border);padding-left:14px}
+footer{border-top:1px solid var(--border);margin-top:56px;padding:34px 24px;text-align:center;
+  color:var(--text-muted);font-size:.82rem}
+footer .fmark{font-weight:800;color:var(--text);font-size:1.05rem;margin-bottom:7px}
+footer .fmark span{color:var(--accent)}
+
+/* Canonical mobile drawer chrome — copied from the site's tutor page (the proven source).
+   Without the burger, the two menu divs and the IIFE below, the nav-drawer-only links
+   render as visible text and the page has no hamburger at all. */
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:1000;overflow-y:auto}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{color:var(--text-secondary);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--text);background:var(--accent-bg)}
+.mobile-menu .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;margin-top:10px;text-align:center}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+.mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
+@media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
+
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" style="width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a class="nav-drawer-only" href="/subscribe">Subscribe</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/preowned" class="nav-drawer-only">🔁 Pre-Owned Desk</a>
+    <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
+    <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
+    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
+    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
+    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/prius-prime" class="nav-drawer-only">🔌 Prius Prime Finder</a>
+    <a href="/brandon" class="nav-drawer-only">👤 Brandon Muzik</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    
+    <a href="/chat" class="nav-drawer-only">&#128172; Chat</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<div class="mobile-menu" id="mobileMenu"></div>
+
+<header class="hero">
+  <span class="badge">&#129309; Partnership proposal &middot; prepared for Brandon Muzik, Founder &amp; President, AmaTone</span>
+  <h1>What RoyceAI puts<br><span class="gradient">into AmaTone</span></h1>
+  <p class="subtitle">RoyceAI powers AmaTone. We are not a vendor line item and not a subscription &mdash; we bring the engineering capacity, the AI systems and the automation that turn a voice-reading app into a company that can be funded, sold to employers and defended. Your voice science stays yours. We build everything around it.</p>
+</header>
+
+<main>
+
+<section>
+  <h2>What RoyceAI <span class="accent">contributes</span></h2>
+  <p class="sec-note">No subscription. The three things AmaTone needs come first &mdash; translation, funding and the IP estate &mdash; then the layers that make them work.</p>
+<article class="offer"><div class="num">01</div><div><h3>We take the product into the languages its next market speaks</h3><p>English-only caps the reach: the same reading in Korean or Chinese reaches users, clinics and partners who never see it otherwise. We already run our own company in three languages &mdash; the entire royceai.com site, interface text, titles and meta included, is translated by the engine we built and maintain. That is the layer that carries AmaTone's app strings, store listing, site and investor material into the next market, and keeps them in step every time the English changes.</p><div class="row"><span class="oTag">Opens the market</span><span class="oKV"><b>We contribute</b> Translation + localization</span><span class="oKV"><b>You get</b> Non-English users and buyers</span></div></div></article>
+<article class="offer"><div class="num">02</div><div><h3>We prepare the company to be funded</h3><p>The raise is underwritten by the estate, not by the story, so we lead with what is issued and what is still open. Funders and acquirers do not buy a product &mdash; they buy a defensible asset: structure, documentation, IP standing, reporting, and the ability to answer diligence without scrambling. We assemble the operational spine that makes a raise or an exit a conversation about your numbers instead of your paperwork.</p><div class="row"><span class="oTag">Diligence-ready</span><span class="oKV"><b>We contribute</b> Operational build</span><span class="oKV"><b>You get</b> Raise and exit readiness</span></div></div></article>
+<article class="offer"><div class="num">03</div><div><h3>We manage the patent and trademark estate, filing by filing</h3><p>An international portfolio is a set of expiring clocks. A missed response or an unfiled foreign priority does not just cost a filing fee &mdash; it narrows the estate a funder or acquirer is underwriting. We run the deadline desk: every jurisdiction, every basis, every response owed, tracked and escalated before it goes late. The same desk carries every basis that holds a patent position &mdash; convention priority and PCT national phase &mdash; beside the trademark bases already on file.</p><div class="row"><span class="oTag">Defends the valuation</span><span class="oKV"><b>We contribute</b> Automated monitoring</span><span class="oKV"><b>You get</b> Protects the asset base</span></div></div></article>
+<article class="offer"><div class="num">04</div><div><h3>We turn readings into a product people open daily</h3><p>AmaTone returns five indicators. That is data. What a user keeps paying for is the instruction: what changed in my voice, what it means, and the one thing to do today. We build the reasoning layer that turns each reading into plain-language guidance &mdash; so the app stops being a dashboard checked once and becomes the daily habit it was designed to be.</p><div class="row"><span class="oTag">Turns data into a habit</span><span class="oKV"><b>We contribute</b> Engineering + AI systems</span><span class="oKV"><b>You get</b> Retention and daily engagement</span></div></div></article>
+<article class="offer"><div class="num">05</div><div><h3>We build the accredited layer your buyers require</h3><p>A corporate wellness buyer, a clinic or an insurer cannot adopt a black box. They need to see what the number means, how it was produced and whether it holds up over time. We build the validation, reporting and audit trail around your existing readings &mdash; the layer that lets a skeptical buyer say yes. That layer is the missing asset between your science and your revenue.</p><div class="row"><span class="oTag">Unlocks B2B revenue</span><span class="oKV"><b>We contribute</b> Systems + evidence infrastructure</span><span class="oKV"><b>You get</b> Enterprise credibility</span></div></div></article>
+<article class="offer"><div class="num">06</div><div><h3>We give the company a front door</h3><p>You sell to employers, programs and gyms &mdash; and those decisions start with a call. Today every inbound is handled by a founder who is also running product, IP and partnerships. We put an always-answering front desk on it: every inquiry captured, qualified and booked, with you seeing only the ones ready to talk.</p><div class="row"><span class="oTag">Founder time back</span><span class="oKV"><b>We contribute</b> Automation</span><span class="oKV"><b>You get</b> Zero lost inbound</span></div></div></article>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Why this <span class="accent">fits AmaTone</span></h2>
+    <ul class="fitlist">
+<li><span class="k">Your asset</span><span class="v">Voice-biomarker science and an international IP estate</span></li><li><span class="k">What we add</span><span class="v">The company built around it</span></li><li><span class="k">What you keep</span><span class="v">Your science, your IP, your product</span></li><li><span class="k">What it costs you</span><span class="v">Nothing monthly</span></li><li><span class="k">Why we fit</span><span class="v">We already run these systems, at production scale</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>How we <span class="accent">work</span></h2>
+  <div class="card">
+    <ul class="blist">
+<li>We are not selling AmaTone a subscription. We contribute capability and share in the outcome.</li><li>We do not touch the voice science. That is your asset and your authorship &mdash; we build everything around it.</li><li>We speak your language: validation, evidence, defensibility. Not growth hacks.</li><li>We work as a co-builder you can put in front of a funder, not a vendor you have to manage.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>What this is <span class="accent">not</span></h2>
+    <ul class="blist">
+<li>Not a monthly license or subscription &mdash; this is not a cost line against AmaTone.</li><li>Not a rebuild or a replacement of the AmaTone product or its science.</li><li>Not a services retainer billed by the hour.</li>
+    </ul>
+    <p class="note">RoyceAI contributes to AmaTone as a partner in the outcome, not as a vendor invoicing AmaTone. Contribution structure is set in writing between us &mdash; there is no subscription and no monthly charge on this page by design.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Next step</h2>
+  <p class="sec-note">A 20-minute call is enough to tell whether any of this is useful to you.</p>
+  <div class="card">
+    <div class="contact">
+      <a class="cbtn solid" href="/chat">&#128172; Start a conversation</a>
+      <a class="cbtn" href="https://royceai.com/business/" target="_blank" rel="noopener">&#127760; royceai.com/business</a>
+      <a class="cbtn" href="mailto:royceaisolutions@gmail.com">&#9993; royceaisolutions@gmail.com</a>
+    </div>
+    <p class="note">Prepared for Brandon Muzik, Founder &amp; President, AmaTone by Royce AI Solutions, Irvine, CA. AmaTone facts on this page
+    come from amatone.fit and public company profiles; RoyceAI pricing and capability claims come from
+    royceai.com. This is an unsolicited proposal and is not affiliated with AmaTone, which has not reviewed or endorsed it.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Sources</h2>
+  <div class="card">
+    <ol class="srcs">
+<li><span class="n">1.</span><span>AmaTone product scope, five indicators, four audiences (incl. corporate wellness) &mdash; <a href="https://amatone.fit/" target="_blank" rel="noopener">AmaTone - amatone.fit</a></span></li><li><span class="n">2.</span><span>International basis flags (44D/44E/66A) on the live CELLULAR COHERENCE filing and its non-final action &mdash; <a href="https://www.trademarkia.com/cellular-coherence-99739378" target="_blank" rel="noopener">Trademarkia - CELLULAR COHERENCE 99739378</a></span></li><li><span class="n">3.</span><span>Five trademarks owned by Brandon Muzik, with statuses and classes &mdash; <a href="https://www.trademarkia.com/owners/brandon-muzik" target="_blank" rel="noopener">Trademarkia - owner record</a></span></li><li><span class="n">4.</span><span>AmaTone founding year, headcount and segments served &mdash; <a href="https://www.cbinsights.com/company/amatone" target="_blank" rel="noopener">CB Insights - AmaTone</a></span></li><li><span class="n">5.</span><span>Six-month non-extendable response windows for 44(d) priority and 66(a) Madrid designations &mdash; <a href="https://www.uspto.gov/trademarks/trademark-timelines/section-44d-timeline-application-based-foreign-application" target="_blank" rel="noopener">USPTO - Section 44(d) and Section 66(a) timelines</a></span></li>
+<li><span class="n">6.</span><span>RoyceAI's own site-wide translation engine &mdash; English, &#54620;&#44397;&#50612; and &#20013;&#25991; with a live language switcher &mdash; <a href="https://royceai.com/i18n/i18n.js" target="_blank" rel="noopener">royceai.com/i18n</a></span></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="fmark">What <span>RoyceAI</span> puts into AmaTone</div>
+  <div>Royce AI Solutions &middot; Irvine, CA &middot; prepared October 16, 2026</div>
+</footer>
+<script>
+(function(){
+  function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(links&&!menu.querySelector('a[data-mn]')){
+      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+</script>
+</body>
+</html>
