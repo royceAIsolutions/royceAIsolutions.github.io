@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Used E-Bike Deals in Irvine, CA - Scored Daily | RoyceAI</title>
+<meta name="description" content="Live used e-bike listings within 60 miles of Irvine, CA, pulled from Craigslist and OfferUp and scored on price vs. new, brand, condition and distance. Updated daily.">
+<link rel="canonical" href="https://royceai.com/ebikes/">
+<meta property="og:title" content="Used E-Bike Deals in Irvine, CA">
+<meta property="og:description" content="Every used e-bike within 60 miles of Irvine - scored against new price, not just listed.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+/* ---- ebikes page ---- */
+.eb-wrap{max-width:var(--max-w);margin:0 auto;padding:0 20px 80px}
+.eb-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 8px}
+.eb-stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:16px 18px;text-align:center}
+.eb-stat .n{font-size:1.7rem;font-weight:800;color:var(--text);line-height:1.1}
+.eb-stat .l{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+.eb-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 10px}
+.eb-search{flex:1 1 260px;min-width:180px;background:var(--bg-elevated);border:1px solid var(--border);
+  color:var(--text);border-radius:var(--radius-sm);padding:11px 14px;font:inherit;font-size:.92rem;outline:none}
+.eb-search:focus{border-color:var(--accent)}
+.eb-pill{background:var(--bg-elevated);border:1px solid var(--border);color:var(--text-secondary);
+  border-radius:999px;padding:8px 14px;font-size:.82rem;cursor:pointer;transition:var(--transition)}
+.eb-pill:hover{border-color:var(--border-hover);color:var(--text)}
+.eb-pill.on{background:var(--accent-bg);border-color:var(--accent);color:var(--accent-light)}
+.eb-sort{background:var(--bg-elevated);border:1px solid var(--border);color:var(--text);
+  border-radius:var(--radius-sm);padding:10px 12px;font:inherit;font-size:.85rem}
+.eb-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+.eb-card{display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:start;
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px 20px;transition:var(--transition)}
+.eb-card:hover{border-color:var(--border-hover);transform:translateY(-1px)}
+.eb-score{width:58px;height:58px;border-radius:14px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;font-weight:800;font-size:1.15rem;line-height:1;
+  background:var(--accent-bg);color:var(--accent-light);border:1px solid var(--accent)}
+.eb-score small{font-size:.55rem;letter-spacing:.1em;font-weight:700;opacity:.7;margin-top:3px}
+.eb-score.mid{color:#f5c26b;border-color:rgba(245,194,107,.5);background:rgba(245,194,107,.08)}
+.eb-score.low{color:var(--text-secondary);border-color:var(--border);background:var(--bg-elevated)}
+.eb-title{font-size:1.02rem;font-weight:700;color:var(--text);margin:0 0 4px;line-height:1.35}
+.eb-title a{color:inherit;text-decoration:none;transition:var(--transition)}
+.eb-title a:hover{color:var(--accent-light)}
+.eb-meta{font-size:.82rem;color:var(--text-secondary);display:flex;flex-wrap:wrap;gap:6px 14px;margin-bottom:8px}
+.eb-meta b{color:var(--text);font-weight:600}
+.eb-tag{display:inline-block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
+  padding:3px 8px;border-radius:6px;background:var(--bg-elevated);color:var(--text-secondary);
+  border:1px solid var(--border);margin:0 5px 5px 0}
+.eb-tag.cr{color:#9fd8ff;border-color:rgba(159,216,255,.3)}
+.eb-tag.ou{color:#a5e8c1;border-color:rgba(165,232,193,.3)}
+.eb-tag.warn{color:#f5c26b;border-color:rgba(245,194,107,.35);background:rgba(245,194,107,.07)}
+.eb-tag.bad{color:#ff9a9a;border-color:rgba(255,154,154,.35);background:rgba(255,154,154,.07)}
+.eb-price{text-align:right;min-width:120px}
+.eb-price .p{font-size:1.35rem;font-weight:800;color:var(--text);line-height:1.1}
+.eb-price .sub{font-size:.75rem;color:var(--text-muted);margin-top:3px}
+.eb-price .pct{font-size:.78rem;font-weight:700;margin-top:8px;color:var(--green)}
+.eb-price .pct.hot{color:var(--green)}
+.eb-price .pct.cold{color:var(--text-secondary)}
+.eb-detail{grid-column:2 / span 2;font-size:.83rem;color:var(--text-secondary);line-height:1.55;
+  border-top:1px dashed var(--border);padding-top:10px;margin-top:2px}
+.eb-feat{border:1px solid var(--accent);background:linear-gradient(135deg,rgba(124,92,252,.10),rgba(124,92,252,.02))}
+.eb-feat .eb-score{background:var(--accent);color:#fff}
+.eb-empty{color:var(--text-secondary);text-align:center;padding:40px 0}
+.eb-notes{margin-top:44px;background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:22px 24px}
+.eb-notes h2{font-size:1.05rem;margin:0 0 12px}
+.eb-notes ul{margin:0;padding-left:20px;color:var(--text-secondary);font-size:.88rem;line-height:1.7}
+.eb-notes li b{color:var(--text)}
+.eb-foot{color:var(--text-muted);font-size:.75rem;margin-top:26px;text-align:center;line-height:1.6}
+@media(max-width:760px){
+  .eb-stats{grid-template-columns:repeat(2,1fr)}
+  .eb-card{grid-template-columns:52px 1fr;gap:12px;padding:16px}
+  .eb-score{width:48px;height:48px;font-size:1rem}
+  .eb-price{grid-column:2;text-align:left;min-width:0;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .eb-detail{grid-column:1 / span 2}
+  .hero h1{font-size:clamp(1.9rem,8vw,2.6rem)}
+}
+
+
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--green:#34d399;--radius:16px;--radius-sm:10px;--max-w:1200px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--shadow-elevated:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;opacity:0.012;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes breathe{0%,100%{opacity:0.3;transform:scale(1)}50%{opacity:0.5;transform:scale(1.1)}}
+@keyframes pop-in{from{opacity:0;transform:translateY(8px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;background:var(--bg);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo img{width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;animation:pulse-glow 2.5s ease-in-out infinite}
+.nav-links .nav-cta:hover{background:var(--accent-light);transform:scale(1.05)}
+.nav-links a.nav-drawer-only{display:none!important}
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.hero-sub{min-height:50vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:calc(80px + var(--nav-h)) 24px 60px;max-width:var(--max-w);margin:0 auto;animation:fade-up 0.6s ease-out}
+.hero-sub .badge{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:100px;background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(168,85,247,0.1));border:1px solid rgba(124,92,252,0.25);font-size:0.85rem;font-weight:600;color:var(--accent-light);margin-bottom:24px;animation:float 3s ease-in-out infinite}
+.hero-sub h1{font-size:clamp(2.2rem,6.5vw,3.9rem);font-weight:900;line-height:1.1;letter-spacing:-0.03em;margin-bottom:18px;max-width:820px}
+.hero-sub h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero-sub .subtitle{font-size:clamp(1rem,1.8vw,1.2rem);color:var(--text-secondary);max-width:700px;line-height:1.75;margin-bottom:14px}
+.hero-sub .tagline{font-size:1.02rem;font-weight:700;color:var(--accent-light);margin-bottom:10px}
+.hero-sub .meta{font-size:0.85rem;color:var(--text-muted);margin-top:14px}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.section{padding:70px 24px;max-width:var(--max-w);margin:0 auto}
+.section-header{text-align:center;margin-bottom:44px}
+.section-header h2{font-size:clamp(1.7rem,4.5vw,2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px}
+.section-header h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.section-header p{color:var(--text-secondary);max-width:700px;margin:0 auto;font-size:1.02rem}
+.quote{max-width:820px;margin:0 auto;text-align:center;font-size:clamp(1.15rem,2.4vw,1.5rem);font-weight:600;line-height:1.65;color:var(--text);padding:0 8px}
+.quote::before{content:'“';display:block;font-size:3rem;line-height:1;color:var(--accent-light);opacity:0.7;margin-bottom:6px}
+.quote::after{content:'”';display:block;font-size:3rem;line-height:1;color:var(--accent-light);opacity:0.7;margin-top:10px}
+.quote .src{display:block;font-size:0.85rem;font-weight:500;color:var(--text-muted);margin-top:14px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px}
+.stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 20px;text-align:center;transition:all var(--transition)}
+.stat:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
+.stat .num{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s ease-in-out infinite}
+.stat .label{color:var(--text-secondary);font-size:0.85rem;margin-top:6px}
+.timeline{max-width:760px;margin:0 auto;position:relative}
+.timeline::before{content:'';position:absolute;left:20px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,rgba(124,92,252,0.5),rgba(124,92,252,0.05))}
+.tl-item{position:relative;padding:0 0 32px 60px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:12px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:0 0 20px var(--accent-glow);border:3px solid var(--bg)}
+.tl-item h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.tl-item .tl-role{color:var(--accent-light);font-size:0.85rem;font-weight:600;margin-bottom:6px}
+.tl-item p{color:var(--text-secondary);font-size:0.92rem}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bento-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;transition:all var(--transition)}
+.bento-card:hover{border-color:rgba(124,92,252,0.35);transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
+.bento-card .icon{font-size:1.6rem;margin-bottom:14px;display:inline-block}
+.bento-card h3{font-size:1.02rem;font-weight:700;margin-bottom:8px}
+.bento-card p{color:var(--text-secondary);font-size:0.9rem}
+.bento-card ul{list-style:none;margin-top:10px}
+.bento-card li{color:var(--text-secondary);font-size:0.85rem;padding:4px 0 4px 18px;position:relative}
+.bento-card li::before{content:'\2713';position:absolute;left:0;color:var(--accent-light);font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px}
+.chip{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);color:var(--text-secondary);padding:8px 16px;border-radius:100px;font-size:0.85rem;font-weight:500;cursor:default;transition:all 0.2s}
+.chip:hover{color:var(--text);border-color:rgba(124,92,252,0.4);background:var(--accent-bg);transform:translateY(-2px)}
+.cta-section{padding:80px 24px;text-align:center;max-width:var(--max-w);margin:0 auto}
+.cta-section h2{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:14px}
+.cta-section h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.cta-section p{color:var(--text-secondary);max-width:620px;margin:0 auto 20px}
+.cta-perks{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.cta-perk{background:var(--accent-bg);border:1px solid rgba(124,92,252,0.25);color:var(--accent-light);font-size:0.82rem;font-weight:600;padding:8px 16px;border-radius:100px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:12px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all var(--transition);cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:#fff;animation:pulse-glow 2.5s ease-in-out infinite}
+.btn-primary:hover{background:var(--accent-light);transform:scale(1.03)}
+.btn-ghost{background:rgba(255,255,255,0.04);color:var(--text);border:1px solid var(--border-hover)}
+.btn-ghost:hover{background:var(--accent-bg);border-color:rgba(124,92,252,0.4);transform:scale(1.03)}
+footer{max-width:var(--max-w);margin:0 auto;padding:36px 24px 44px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center}
+footer .logo{font-weight:700}
+footer .logo span{color:var(--accent-light)}
+footer .links{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+footer .links a:hover{color:var(--text)}
+footer .copy{color:var(--text-muted);font-size:0.8rem}
+/* ===== Bot Widget ===== */
+.bot-fab{position:fixed;bottom:24px;right:24px;z-index:2000;width:60px;height:60px;border-radius:50%;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 3s ease-in-out infinite,pulse-glow 2.5s ease-in-out infinite;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 8px 30px rgba(124,92,252,0.4);transition:transform 0.3s}
+.bot-fab:hover{transform:scale(1.1)}
+.bot-panel{position:fixed;bottom:96px;right:24px;z-index:2001;width:370px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 120px);background:var(--bg-elevated);border:1px solid var(--border-hover);border-radius:20px;box-shadow:var(--shadow-elevated);display:none;flex-direction:column;overflow:hidden;animation:pop-in 0.3s cubic-bezier(0.16,1,0.3,1)}
+.bot-panel.open{display:flex}
+.bot-head{background:linear-gradient(135deg,rgba(124,92,252,0.18),rgba(168,85,247,0.1));border-bottom:1px solid var(--border);padding:16px 18px;display:flex;align-items:center;gap:12px}
+.bot-avatar{width:40px;height:40px;border-radius:12px;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 4s ease-in-out infinite;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:0.9rem}
+.bot-head h3{font-size:0.95rem;font-weight:700}
+.bot-head p{font-size:0.75rem;color:var(--text-secondary)}
+.bot-close{margin-left:auto;background:none;border:none;color:var(--text-secondary);font-size:1.3rem;cursor:pointer;padding:4px 8px;border-radius:8px;transition:all 0.2s}
+.bot-close:hover{color:var(--text);background:var(--accent-bg)}
+.bot-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.bot-msgs::-webkit-scrollbar{width:5px}
+.bot-msgs::-webkit-scrollbar-thumb{background:rgba(124,92,252,0.3);border-radius:3px}
+.msg{max-width:82%;padding:10px 14px;border-radius:14px;font-size:0.85rem;line-height:1.55;animation:pop-in 0.25s ease-out}
+.msg.bot{background:var(--bg-card);border:1px solid var(--border);color:var(--text);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.user{background:var(--accent);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.msg .qb{display:block;margin-top:10px}
+.bot-quick{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 10px}
+.bot-quick button{background:var(--accent-bg);border:1px solid rgba(124,92,252,0.3);color:var(--accent-light);font-size:0.78rem;font-weight:600;padding:7px 12px;border-radius:100px;cursor:pointer;transition:all 0.2s}
+.bot-quick button:hover{background:rgba(124,92,252,0.2);color:var(--text)}
+.bot-in{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--border)}
+.bot-in input{flex:1;background:var(--bg-card);border:1px solid var(--border-hover);border-radius:10px;padding:11px 14px;color:var(--text);font-size:0.85rem;outline:none;font-family:var(--font)}
+.bot-in input:focus{border-color:var(--accent)}
+.bot-in button{background:var(--accent);border:none;border-radius:10px;padding:0 16px;color:#fff;font-weight:700;cursor:pointer;transition:all 0.2s}
+.bot-in button:hover{background:var(--accent-light)}
+.bot-form{padding:16px;display:flex;flex-direction:column;gap:12px;overflow-y:auto}
+.bot-form label{font-size:0.8rem;font-weight:600;color:var(--text-secondary)}
+.bot-form input{background:var(--bg-card);border:1px solid var(--border-hover);border-radius:10px;padding:11px 14px;color:var(--text);font-size:0.85rem;outline:none;font-family:var(--font);width:100%}
+.bot-form input:focus{border-color:var(--accent)}
+.bot-form .err{color:#f87171;font-size:0.75rem;display:none}
+.bot-form .group.invalid input{border-color:#ef4444}
+.bot-form .group.invalid .err{display:block}
+.bot-form button{background:var(--accent);border:none;border-radius:12px;padding:13px;color:#fff;font-weight:700;font-size:0.9rem;cursor:pointer;transition:all 0.2s}
+.bot-form button:hover{background:var(--accent-light)}
+.bot-note{font-size:0.72rem;color:var(--text-muted);text-align:center}
+.bot-typing{display:inline-flex;gap:4px;padding:4px 2px}
+.bot-typing i{width:6px;height:6px;border-radius:50%;background:var(--text-muted);animation:breathe 1s ease-in-out infinite}
+.bot-typing i:nth-child(2){animation-delay:0.2s}
+.bot-typing i:nth-child(3){animation-delay:0.4s}
+@media(max-width:640px){
+  .hero-sub{padding:calc(60px + var(--nav-h)) 20px 40px}
+  .section{padding:50px 20px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .bento{grid-template-columns:1fr}
+  .section-header h2{font-size:clamp(1.6rem,7vw,2rem)}
+  .cta-section{padding:56px 20px}
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none}
+  
+  
+  .nav-links.open a{display:block;padding:10px 8px}
+  footer{flex-direction:column}
+}
+@media(min-width:641px) and (max-width:1023px){
+  .bento{grid-template-columns:repeat(2,1fr)}
+}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);overflow-y:auto;z-index:1000}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+nav{z-index:1001;background:var(--bg)}
+@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
+@media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
+
+.bento-2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:640px){.bento-2{grid-template-columns:1fr}}
+/* burger+lang cluster pinned right (overrides space-between spread) */
+nav{justify-content:flex-start!important}
+nav > .nav-links{margin-left:auto!important}
+nav > .royceai-lang{margin-left:8px!important;order:0}
+nav > .nav-burger{margin-left:8px!important;margin-right:0!important;flex:none;order:0}
+nav > .royceai-lang{order:1}
+nav > .nav-burger{order:2}
+nav > .nav-logo{margin-right:0!important;order:-1}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" onerror="this.style.display='none'" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/brandon" class="nav-drawer-only">👤 Brandon Muzik</a>
+    <a href="/preowned" class="nav-drawer-only">🔁 Pre-Owned Desk</a>
+    <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
+    <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
+    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
+    <a href="/federal" class="nav-drawer-only">🛰️ Federal</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    <a class="nav-drawer-only" href="/subscribe">Subscribe</a>
+    <a href="/chat" class="nav-show-mobile">💬 Chat</a>
+    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+
+<header class="hero-sub">
+  <span class="badge">🚲 Used E-Bike Deals · Irvine + 60 miles</span>
+  <h1>Used E-Bikes,<br><span class="gradient">Scored Against New.</span></h1>
+  <p class="subtitle">Every live listing from Craigslist and OfferUp near Irvine, filtered for the traps - parts, knockoffs, over-legal-speed machines - then scored on price versus new, brand, condition and how close it is. Asking prices, updated every day.</p>
+  <div class="chips">
+    <span class="chip">📉 % of new price</span>
+    <span class="chip">🔎 Parts + knockoffs filtered</span>
+    <span class="chip">⚖️ Legal class noted</span>
+  </div>
+</header>
+<div class="eb-wrap">
+  <div class="eb-stats">
+    <div class="eb-stat"><div class="n">437</div><div class="l">Listings scored</div></div>
+    <div class="eb-stat"><div class="n">$1,599</div><div class="l">Top pick price</div></div>
+    <div class="eb-stat"><div class="n">58</div><div class="l">Median deal score</div></div>
+    <div class="eb-stat"><div class="n">$400</div><div class="l">Cheapest real one</div></div>
+  </div>
+
+  <div class="eb-bar">
+    <input id="ebSearch" class="eb-search" type="search" placeholder="Search brand or model - super73, aventon, cargo, trek…" aria-label="Search listings">
+    <button class="eb-pill on" data-filter="all">All</button>
+    <button class="eb-pill" data-filter="craigslist">Craigslist (20)</button>
+    <button class="eb-pill" data-filter="offerup">OfferUp (40)</button>
+    <button class="eb-pill" data-filter="under60">Under 60% of new</button>
+    <select id="ebSort" class="eb-sort" aria-label="Sort">
+      <option value="score">Best score</option>
+      <option value="price">Lowest price</option>
+      <option value="savings">Biggest savings</option>
+      <option value="distance">Closest</option>
+    </select>
+  </div>
+
+  <div class="eb-grid" id="ebGrid">
+<div class="eb-card eb-feat" data-title="super73-z adventure se - freshly serviced!" data-src="offerup" data-score="89.0" data-price="1599">
+        <div class="eb-score hot">89<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/a62f435d-efbd-3e12-ad7f-22f359b409f2" target="_blank" rel="noopener">SUPER73-Z Adventure SE - Freshly Serviced!</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$2,695</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Super73</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$1,599</div>
+          <div class="sub">asks 59% of new</div>
+          <div class="pct hot">saves $1,096</div>
+        </div>
+        <div class="eb-detail">Selling a SUPER73-Z Adventure Series SE in excellent condition. Just got it back from a complete professional service at a local authorized shop, so everything runs flawlessly like a brand new bike. Features: - Powerful motor with multiple riding modes - Front suspension fork for a super smooth ride…</div>
+      </div>
+<div class="eb-card" data-title="aventon e-bike" data-src="offerup" data-score="87.0" data-price="500">
+        <div class="eb-score hot">87<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/dd0780b6-8f9a-3967-900e-a36099e82afb" target="_blank" rel="noopener">aventon e-bike</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Aventon</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$500</div>
+          <div class="sub">asks 33% of new</div>
+          <div class="pct hot">saves $1,000</div>
+        </div>
+        <div class="eb-detail">Brand new battery</div>
+      </div>
+<div class="eb-card" data-title="folding ebike pedego latch" data-src="offerup" data-score="87.0" data-price="600">
+        <div class="eb-score hot">87<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/adcc5e85-48c2-382f-8173-4e456edc4a0b" target="_blank" rel="noopener">Folding Ebike Pedego Latch</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,895</b></span><span>Used (normal wear) Brand Pedego</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Pedego</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$600</div>
+          <div class="sub">asks 32% of new</div>
+          <div class="pct hot">saves $1,295</div>
+        </div>
+        <div class="eb-detail">Pedego Latch for sale. Foldable 20” bike with only 557 miles. Good condition! Comes with charger! $600 obo. Local pick up only.</div>
+      </div>
+<div class="eb-card" data-title="super73-z adventure e-bike" data-src="offerup" data-score="84.0" data-price="1599">
+        <div class="eb-score hot">84<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/75e631da-f483-3282-90e5-bf20d5ca66fe" target="_blank" rel="noopener">SUPER73-Z Adventure E-Bike</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$2,695</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Super73</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$1,599</div>
+          <div class="sub">asks 59% of new</div>
+          <div class="pct hot">saves $1,096</div>
+        </div>
+        <div class="eb-detail">Selling my SUPER73-Z Adventure E-Bike! It is in great condition, well-maintained, and runs perfectly. 💰 PRICE: - SUPER73-Z Adventure E-Bike: $1,700 ⚡ DETAILS: - Total mileage is ~1,806 miles (shows 2,906.7 km on the App). - Upgraded smart display is clear, fully functional, and working great. - Clea…</div>
+      </div>
+<div class="eb-card" data-title="pedego beach cruiser" data-src="offerup" data-score="82.0" data-price="400">
+        <div class="eb-score hot">82<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/3c14f4c6-d752-3886-a1ce-ce60288ba409" target="_blank" rel="noopener">Pedego Beach Cruiser</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,795</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Pedego</span><span class="eb-tag bad">price far below market - verify it is the real bike</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$400</div>
+          <div class="sub">asks 22% of new</div>
+          <div class="pct hot">saves $1,395</div>
+        </div>
+        <div class="eb-detail">Great ebike for a teen. Comes with a new charger. Runs great,</div>
+      </div>
+<div class="eb-card" data-title="pedego 28 inch step through electric bike city commuter" data-src="offerup" data-score="82.0" data-price="700">
+        <div class="eb-score hot">82<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/0b690e3c-0230-383d-9593-6edcd35475f5" target="_blank" rel="noopener">Pedego 28 Inch Step Through Electric Bike City Commuter</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,795</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Pedego</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$700</div>
+          <div class="sub">asks 39% of new</div>
+          <div class="pct hot">saves $1,095</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="pedego interceptor electric bike – $8000 obo" data-src="offerup" data-score="82.0" data-price="800">
+        <div class="eb-score hot">82<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/9ac86968-d10e-3c9a-b1a7-a87f3f9f57f6" target="_blank" rel="noopener">Pedego Interceptor Electric Bike – $8000 OBO</a></h3>
+          <div class="eb-meta"><span>📍 Tustin, CA · ~4 mi</span><span>New ≈ <b>$2,595</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Pedego</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$800</div>
+          <div class="sub">asks 31% of new</div>
+          <div class="pct hot">saves $1,795</div>
+        </div>
+        <div class="eb-detail">Pedego Interceptor Electric Bike – $1,000 OBO Selling my Pedego Interceptor electric cruiser bike in good used condition. The electric motor works properly, and the battery holds a good charge. Comfortable ride with a classic cruiser design and rear cargo rack. Original charger included. Great for c…</div>
+      </div>
+<div class="eb-card" data-title="super73 - z1 - light blue" data-src="offerup" data-score="82.0" data-price="900">
+        <div class="eb-score hot">82<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/a7ae089f-2576-32e8-a8c5-11d3fb8ef4fc" target="_blank" rel="noopener">Super73 - Z1 - Light Blue</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Super73</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$900</div>
+          <div class="sub">asks 60% of new</div>
+          <div class="pct hot">saves $600</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="pedego stretch/cargo e-bike" data-src="craigslist" data-score="82.0" data-price="990">
+        <div class="eb-score hot">82<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/fullerton-pedego-stretch-cargo-bike/3pUKwRTD9TG4es9siKt25x" target="_blank" rel="noopener">Pedego Stretch/cargo e-bike</a></h3>
+          <div class="eb-meta"><span>📍 Fullerton, CA · ~13 mi</span><span>New ≈ <b>$2,995</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Pedego</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$990</div>
+          <div class="sub">asks 33% of new</div>
+          <div class="pct hot">saves $2,005</div>
+        </div>
+        <div class="eb-detail">Beautiful, like new. 48v lithium ion battery replaced 2 years ago. Charger. 24-inch wheel. Sacrifice at $990.</div>
+      </div>
+<div class="eb-card" data-title="pedego ebike" data-src="offerup" data-score="82.0" data-price="1000">
+        <div class="eb-score hot">82<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/b454b2e8-8520-3251-9eb0-e536b04b45cb" target="_blank" rel="noopener">pedego ebike</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,795</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Pedego</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$1,000</div>
+          <div class="sub">asks 56% of new</div>
+          <div class="pct hot">saves $795</div>
+        </div>
+        <div class="eb-detail">it has some scrqtches on motor and and its just dirty from all the riding but 650ish mikes on it perfect for a good ride time no trades unless its has more value</div>
+      </div>
+<div class="eb-card" data-title="super73-z adventure se - great condition! (app compatible)" data-src="offerup" data-score="82.0" data-price="1600">
+        <div class="eb-score hot">82<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/8700b87d-f835-38a8-b549-209bb466f998" target="_blank" rel="noopener">SUPER73-Z Adventure SE - Great Condition! (App Compatible)</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$2,695</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Super73</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$1,600</div>
+          <div class="sub">asks 59% of new</div>
+          <div class="pct hot">saves $1,095</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="sondors thin e-bike upgraded belt drive train" data-src="craigslist" data-score="81.0" data-price="450">
+        <div class="eb-score hot">81<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/irvine-sondors-thin-bike-upgraded-belt/wRpZdkeXck7wbUN9MfToRX" target="_blank" rel="noopener">Sondors Thin E-bike upgraded belt drive train</a></h3>
+          <div class="eb-meta"><span>📍 Irvine · ~3 mi</span><span>New ≈ <b>$1,299</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Sondors</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$450</div>
+          <div class="sub">asks 35% of new</div>
+          <div class="pct hot">saves $849</div>
+        </div>
+        <div class="eb-detail">Sondors thin ebike aluminum, pretty light for an electric bike. Has the upgraded option belt drive train. Works good. Is pedal assist or use the thumb throttle. Great commuter bike or errand bike to save on gas.</div>
+      </div>
+<div class="eb-card" data-title="sondors thin e-bike upgraded belt drive train" data-src="offerup" data-score="81.0" data-price="450">
+        <div class="eb-score hot">81<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/78b910e3-4a70-3654-8235-a614705c0ddd" target="_blank" rel="noopener">Sondors Thin E-bike upgraded belt drive train</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,299</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Sondors</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$450</div>
+          <div class="sub">asks 35% of new</div>
+          <div class="pct hot">saves $849</div>
+        </div>
+        <div class="eb-detail">Sondors thin ebike aluminum, pretty light for an electric bike with newish rear self sealing tube. Has the upgraded option belt drive train. Works good. Is pedal assist or use the thumb throttle. Great commuter bike or errand bike to save on gas. I have the key for the battery lock</div>
+      </div>
+<div class="eb-card" data-title="radmission2 model ebike of radpower" data-src="offerup" data-score="81.0" data-price="800">
+        <div class="eb-score hot">81<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/00d6f150-560a-3036-9ea5-140818390d4b" target="_blank" rel="noopener">Radmission2 Model Ebike Of Radpower</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,499</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Rad Power</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$800</div>
+          <div class="sub">asks 53% of new</div>
+          <div class="pct hot">saves $699</div>
+        </div>
+        <div class="eb-detail">Originally, the new ebike didn&#x27;t come with an upgraded seat, phone holder, rain/mud guards, rear view mirror, rear bike rack, and bike lock. $1000 with the upgrades. Willing to trade for similar value items. Rad Mission, Rad Power Max height 6&#x27;2 Max weight is 275lbs</div>
+      </div>
+<div class="eb-card" data-title="super73 zx e-bike - runs great" data-src="offerup" data-score="80.0" data-price="900">
+        <div class="eb-score hot">80<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/3c7860df-1938-3bfb-b338-89f0751552e2" target="_blank" rel="noopener">Super73 ZX E-Bike - Runs Great</a></h3>
+          <div class="eb-meta"><span>📍 Lake Forest, CA · ~6 mi</span><span>New ≈ <b>$1,500</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Super73</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$900</div>
+          <div class="sub">asks 60% of new</div>
+          <div class="pct hot">saves $600</div>
+        </div>
+        <div class="eb-detail">Selling my son&#x27;s Super73 ZX. It runs perfectly and comes with the original battery and charger. There is some visible cosmetic wear, specifically some scuffs and paint chips along the top of the frame (see photos), but it doesn&#x27;t affect performance at all.</div>
+      </div>
+<div class="eb-card" data-title="super73 - s2" data-src="offerup" data-score="79.1" data-price="999">
+        <div class="eb-score hot">79<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/8fee2c9c-05c7-3c43-8ddc-4c0b917ef3f9" target="_blank" rel="noopener">Super73 - S2</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Super73</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$999</div>
+          <div class="sub">asks 67% of new</div>
+          <div class="pct cold">saves $501</div>
+        </div>
+        <div class="eb-detail">Battery is good, needs a reconnection with speedometer computer, new seat cover.</div>
+      </div>
+<div class="eb-card" data-title="rad power bikes radmission1 e-bike" data-src="offerup" data-score="79.0" data-price="675">
+        <div class="eb-score hot">79<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/1434a92f-ec73-3830-800c-0a8ecade08dc" target="_blank" rel="noopener">Rad Power Bikes Radmission1 E-bike</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,499</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Rad Power</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$675</div>
+          <div class="sub">asks 45% of new</div>
+          <div class="pct hot">saves $824</div>
+        </div>
+        <div class="eb-detail">Rad Power Bikes Radmission1 E-bike Good condition. Includes 2 keys, charger, original tool kit</div>
+      </div>
+<div class="eb-card" data-title="super73 s2" data-src="offerup" data-score="79.0" data-price="700">
+        <div class="eb-score hot">79<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/1a0bd48c-f014-31f5-a820-be09968922e4" target="_blank" rel="noopener">Super73 S2</a></h3>
+          <div class="eb-meta"><span>📍 Lake Forest, CA · ~6 mi</span><span>New ≈ <b>$1,500</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Super73</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$700</div>
+          <div class="sub">asks 47% of new</div>
+          <div class="pct hot">saves $800</div>
+        </div>
+        <div class="eb-detail">Super73 S2 electric bike in good condition that runs strong and has been well maintained. The bike has 2,250 miles, fresh brakes, and no issues. Comes with the key and charger. Reliable, solid ride and ready to go. Features &amp; Details: • Super73 S2 electric bike • Large fat tires • Strong suspension …</div>
+      </div>
+<div class="eb-card" data-title="new radpower radmission2 model e-bike in a box" data-src="offerup" data-score="79.0" data-price="800">
+        <div class="eb-score hot">79<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/d7a438c9-58a3-35ae-932c-04a3d68ce171" target="_blank" rel="noopener">New RadPower RadMission2 model E-bike In A Box</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,499</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Rad Power</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$800</div>
+          <div class="sub">asks 53% of new</div>
+          <div class="pct hot">saves $699</div>
+        </div>
+        <div class="eb-detail">Rad Power Rad Mission2 model Ebike. 1 (one) ebike. Radmission2 model ebike. Willing to trade for similar value items.</div>
+      </div>
+<div class="eb-card" data-title="radpower radmini foldable ebike" data-src="offerup" data-score="79.0" data-price="800">
+        <div class="eb-score hot">79<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/23021245-58de-38db-8d5e-07d4b99327d3" target="_blank" rel="noopener">RadPower Radmini Foldable Ebike</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,499</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Rad Power</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$800</div>
+          <div class="sub">asks 53% of new</div>
+          <div class="pct hot">saves $699</div>
+        </div>
+        <div class="eb-detail">Downsizing. This Rad Power Rad mini folding e-bike is in a good condition. It doesn&#x27;t come with a phone mount, but it has a rear view mirror. It was used for about 450 miles. Original price 1300. Willing to trade for similar value items (electric guitar, looper pedal, akai mpc, etc)</div>
+      </div>
+<div class="eb-card" data-title="‘21 giant road-e+ 28mph electric bicycle" data-src="craigslist" data-score="79.0" data-price="1400">
+        <div class="eb-score hot">79<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/brea-21-giant-road-28mph-electric/uZ45BKf2J9qW57AM69qbQ9" target="_blank" rel="noopener">‘21 Giant Road-E+ 28mph Electric Bicycle</a></h3>
+          <div class="eb-meta"><span>📍 Brea · ~13 mi</span><span>New ≈ <b>$2,600</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Giant</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$1,400</div>
+          <div class="sub">asks 54% of new</div>
+          <div class="pct hot">saves $1,200</div>
+        </div>
+        <div class="eb-detail">‘21 Giant Road-E+ Medium 5’6” - 5’11” • 28mph pedal assist • Giant CXR Carbon Wheel set / 700x40c tires • 80Nm motor • 500wh battery = long range • Giant Ride Control App = adjustable power assist • Hydraulic Disc Brakes - upgraded rotors</div>
+      </div>
+<div class="eb-card" data-title="sondors smart step folding e-bike" data-src="offerup" data-score="78.9" data-price="650">
+        <div class="eb-score hot">79<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/739499f2-8fa5-326c-ac3a-420d77d69268" target="_blank" rel="noopener">Sondors Smart Step folding e-bike</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$999</b></span><span>Used (normal wear)</span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Sondors</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$650</div>
+          <div class="sub">asks 65% of new</div>
+          <div class="pct cold">saves $349</div>
+        </div>
+        <div class="eb-detail">Sondors Smart Step electric bike in excellent condition with only 37 miles!! Features: 450w peak power Up to 20 mph 30 mile est range per charge 36v LG lithion-ion removable battery Folding aluminum frame 7-speed Shimano gearing Front suspension and disc brakes Oversized 27.5” tires for smooth, comf…</div>
+      </div>
+<div class="eb-card" data-title="sondors e-bike" data-src="craigslist" data-score="77.0" data-price="400">
+        <div class="eb-score hot">77<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/huntington-beach-sondors-bike/qvXGvUiZjJAK3jh86dUW83" target="_blank" rel="noopener">Sondors E-Bike</a></h3>
+          <div class="eb-meta"><span>📍 Huntington Beach · ~9 mi</span><span>New ≈ <b>$1,199</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Sondors</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$400</div>
+          <div class="sub">asks 33% of new</div>
+          <div class="pct hot">saves $799</div>
+        </div>
+        <div class="eb-detail">•Rides Great! Just needs brakes fixed •Charger Included</div>
+      </div>
+<div class="eb-card" data-title="rad power bikes radrunner 2 e-bike" data-src="craigslist" data-score="77.0" data-price="775">
+        <div class="eb-score hot">77<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/aliso-viejo-rad-power-bikes-radrunner-e/whnvvDZeWKgFjrv9HJDsrz" target="_blank" rel="noopener">Rad Power Bikes RadRunner 2 e-bike</a></h3>
+          <div class="eb-meta"><span>📍 Aliso Viejo · ~8 mi</span><span>New ≈ <b>$1,499</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Rad Power</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$775</div>
+          <div class="sub">asks 52% of new</div>
+          <div class="pct hot">saves $724</div>
+        </div>
+        <div class="eb-detail">Garage Queen! This RadRunner is about as nice as you&#x27;ll find. Has tasteful performance upgrades: Both front and rear brand new Shimano hydraulic brakes and brand new rotors. This Runner stops on a dime now and brakes are quiet. A standard kick-stand was fitted instead of the tedious center stand. In…</div>
+      </div>
+<div class="eb-card" data-title="lectric ebike xp4" data-src="craigslist" data-score="77.0" data-price="900">
+        <div class="eb-score hot">77<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/santa-ana-lectric-ebike-xp4/hxTvzK58B1hcfzp1gphLDK" target="_blank" rel="noopener">Lectric eBike XP4</a></h3>
+          <div class="eb-meta"><span>📍 Santa Ana · ~5 mi</span><span>New ≈ <b>$3,800</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Lectric</span><span class="eb-tag bad">price far below market - verify it is the real bike</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$900</div>
+          <div class="sub">asks 24% of new</div>
+          <div class="pct hot">saves $2,900</div>
+        </div>
+        <div class="eb-detail">- Like new Lectric eBike XP4 - Top Speed: 28mph - Range: up to 85 miles - Payload Capacity: 330 lbs - Bicycle weight: 71 lbs - It is foldable. - It has 5 riding modes: Eco Tour Sport Sport+ Turbo</div>
+      </div>
+<div class="eb-card" data-title="full suspension off-road mountain e-bike | brand new in box | 1 year warranty" data-src="offerup" data-score="75.0" data-price="850">
+        <div class="eb-score hot">75<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/aca56838-b486-3d57-8af7-c9fa01462de0" target="_blank" rel="noopener">Full Suspension Off-road Mountain E-Bike | Brand new in Box | 1 Year Warranty</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$850</div>
+          <div class="sub">asks 57% of new</div>
+          <div class="pct hot">saves $650</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="aventon electric bike e bike" data-src="craigslist" data-score="75.0" data-price="950">
+        <div class="eb-score hot">75<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/chino-hills-aventon-electric-bike-bike/a2mkZW3uCpKBQXFNz6njnx" target="_blank" rel="noopener">Aventon Electric Bike e bike</a></h3>
+          <div class="eb-meta"><span>📍 Chino Hills · ~28 mi</span><span>New ≈ <b>$1,799</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Aventon</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$950</div>
+          <div class="sub">asks 53% of new</div>
+          <div class="pct hot">saves $849</div>
+        </div>
+        <div class="eb-detail">Aventon Step Thru E Bike Model: LEVEL 2 great E bikes Purchased new a few years ago, and they spend most of the time in my garage One bike is dark grey and the other is rose gold / purple Approx mileage on each bike, 114 miles Each bike $ 950.00 Reasonable offers will be considered o Upgraded seat a…</div>
+      </div>
+<div class="eb-card" data-title="electric bike pedego city commuter," data-src="craigslist" data-score="75.0" data-price="950">
+        <div class="eb-score hot">75<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/tehachapi-electric-bike-pedego-city/hpQwSkggnYVfcdLJDAmsRu" target="_blank" rel="noopener">Electric Bike Pedego City Commuter,</a></h3>
+          <div class="eb-meta"><span>📍 tehachapi · ~60 mi</span><span>New ≈ <b>$2,295</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Pedego</span><span class="eb-tag warn">far: ~60 mi from Irvine</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$950</div>
+          <div class="sub">asks 41% of new</div>
+          <div class="pct hot">saves $1,345</div>
+        </div>
+        <div class="eb-detail">Pedego City Commuter Electric Bike , this bike is in new condition , less then 100 miles , has been stored for a while, comes with brand new battery pack, ,asking $950, located in tehachapi ca vedio on youtube https://www.youtube.com/watch?v=NjjT6hhMXDA</div>
+      </div>
+<div class="eb-card" data-title="lectric xp 2.0 folding e-bike 2022 nice clean adult owned low miles" data-src="craigslist" data-score="74.9" data-price="650">
+        <div class="eb-score mid">75<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/lomita-lectric-xp-20-folding-bike-2022/1nbXhzSUqEaLbXPCha3zAF" target="_blank" rel="noopener">Lectric XP 2.0 Folding e-Bike 2022 Nice Clean Adult Owned Low Miles</a></h3>
+          <div class="eb-meta"><span>📍 Torrance · ~30 mi</span><span>New ≈ <b>$999</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Lectric</span><span class="eb-tag">2022</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$650</div>
+          <div class="sub">asks 65% of new</div>
+          <div class="pct cold">saves $349</div>
+        </div>
+        <div class="eb-detail">2022 Lectric XP 2.0 Folding e-Bike. Adult owned, 220 original miles. NEW battery installed 8/24/2026. Bike has been sitting unridden for over a year. Bike is very clean, adult owned, never abused, no issues, functions and rides as new.</div>
+      </div>
+<div class="eb-card" data-title="lectric 2.0 electric bike ebike" data-src="craigslist" data-score="74.0" data-price="650">
+        <div class="eb-score mid">74<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/garden-grove-lectric-20-electric-bike/oAkbZTPDL2rpT5sBQEn2kZ" target="_blank" rel="noopener">Lectric 2.0 Electric bike Ebike</a></h3>
+          <div class="eb-meta"><span>📍 Garden Grove · ~10 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Lectric</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$650</div>
+          <div class="sub">asks 43% of new</div>
+          <div class="pct hot">saves $850</div>
+        </div>
+        <div class="eb-detail">2025 Lectric 2.0 folding ebike. Only 370 miles on the odometer. Comes with rear rack and basket, helmet, Lectric cable lock, charger and high capacity battery. Pristine condition, well loved and cared for. No rust, scrapes, scratches. Tires look brand new. Battery holds charge and has a good capacit…</div>
+      </div>
+<div class="eb-card" data-title="trek 2025 fx+2lt lightweight electric bike" data-src="craigslist" data-score="74.0" data-price="1200">
+        <div class="eb-score mid">74<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/malibu-trek-2025-fx2lt-lightweight/eLpVJKkVJouvmGBeNR95w6" target="_blank" rel="noopener">TREK 2025 FX+2LT lightweight electric bike</a></h3>
+          <div class="eb-meta"><span>📍 Malibu · ~60 mi</span><span>New ≈ <b>$3,300</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Trek</span><span class="eb-tag">2025</span><span class="eb-tag warn">far: ~60 mi from Irvine</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$1,200</div>
+          <div class="sub">asks 36% of new</div>
+          <div class="pct hot">saves $2,100</div>
+        </div>
+        <div class="eb-detail">New (less than 15 mi.) City/commuter bike. Pedal assist. $1200 obo.</div>
+      </div>
+<div class="eb-card" data-title="new 52v (2000w peak motor)1500w electric scrambler ebike, 35-40mph , 20ah, 25-6" data-src="craigslist" data-score="73.0" data-price="1100">
+        <div class="eb-score mid">73<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/costa-mesa-new-52v-2000w-peak/foWZU8GG7VXoz2DdVi42kX" target="_blank" rel="noopener">New 52V (2000W Peak Motor)1500W Electric Scrambler Ebike, 35-40mph , 20ah, 25-6</a></h3>
+          <div class="eb-meta"><span>📍 Costa Mesa · ~6 mi</span><span>New ≈ <b>$1,699</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag bad">speed/power claim over 28 mph - not a legal e-bike</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$1,100</div>
+          <div class="sub">asks 65% of new</div>
+          <div class="pct hot">saves $599</div>
+        </div>
+        <div class="eb-detail">✅ TAX INCLUDED ✅ FREE 🚚 DELIVERY ✅ BRAND NEW E-BIKE w/1 YEAR WARRANTY ✅ FULL ASSEMBLY+TUNING INCLUDED *This bike has great power, lots of fun, rides like an oversized moped, good for dirt trails, beach walk trails, commuting, getting around at camp sites, the list of fun goes on! •(52V) Elite Super …</div>
+      </div>
+<div class="eb-card" data-title="2022 specialized turbo vado 3.0 e-bike - size medium - less than 40 mi" data-src="craigslist" data-score="73.0" data-price="1495">
+        <div class="eb-score mid">73<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/chino-hills-2022-specialized-turbo-vado/qRsaQAWQkU3VbywcjTc5Zi" target="_blank" rel="noopener">2022 Specialized Turbo Vado 3.0 E-Bike - Size Medium - Less Than 40 Mi</a></h3>
+          <div class="eb-meta"><span>📍 Chino Hills · ~28 mi</span><span>New ≈ <b>$3,200</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Specialized</span><span class="eb-tag">2022</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$1,495</div>
+          <div class="sub">asks 47% of new</div>
+          <div class="pct hot">saves $1,705</div>
+        </div>
+        <div class="eb-detail">Selling a 2022 Specialized Turbo Vado 3.0 electric bike with less than 40 miles on it - barely ridden. Specialized 2.0E mid-drive motor (250W), 530Wh battery (up to ~56 miles per charge), Shimano Alivio 9-speed, hydraulic disc brakes, 80mm suspension fork, built-in lights. Everything included - batt…</div>
+      </div>
+<div class="eb-card" data-title="modded e-bike w/400 miles" data-src="offerup" data-score="72.0" data-price="650">
+        <div class="eb-score mid">72<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/e1d5d7a8-02e3-3ff9-83a6-358475f0c330" target="_blank" rel="noopener">Modded E-Bike w/400 miles</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$650</div>
+          <div class="sub">asks 43% of new</div>
+          <div class="pct hot">saves $850</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="rad runner e-bike brand new modded!!" data-src="offerup" data-score="72.0" data-price="800">
+        <div class="eb-score mid">72<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/78fdaf11-450b-35ba-abba-91aa167599de" target="_blank" rel="noopener">Rad runner e-bike brand new MODDED!!</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$800</div>
+          <div class="sub">asks 53% of new</div>
+          <div class="pct hot">saves $700</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="low miles aventon adventure 2 e-bike" data-src="offerup" data-score="71.9" data-price="1250">
+        <div class="eb-score mid">72<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/cc5e93d8-64f3-3cdf-98f1-ae408cba42fd" target="_blank" rel="noopener">Low Miles Aventon Adventure 2 E-bike</a></h3>
+          <div class="eb-meta"><span>📍 Santa Ana, CA · ~5 mi</span><span>New ≈ <b>$1,799</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span><span class="eb-tag">Aventon</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$1,250</div>
+          <div class="sub">asks 70% of new</div>
+          <div class="pct cold">saves $549</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="lectric ebike" data-src="craigslist" data-score="71.0" data-price="550">
+        <div class="eb-score mid">71<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/rancho-cucamonga-lectric-ebike/v3tTCWghP4uxVYM7ef655X" target="_blank" rel="noopener">Lectric EBike</a></h3>
+          <div class="eb-meta"><span>📍 inlandempire</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Lectric</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$550</div>
+          <div class="sub">asks 37% of new</div>
+          <div class="pct hot">saves $950</div>
+        </div>
+        <div class="eb-detail">Very good condition</div>
+      </div>
+<div class="eb-card" data-title="e-bike" data-src="craigslist" data-score="70.0" data-price="400">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/santa-ana-bike/9qRkZ3bwNry2RsyKKa3PyM" target="_blank" rel="noopener">e-Bike</a></h3>
+          <div class="eb-meta"><span>📍 Irvine · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag bad">price far below market - verify it is the real bike</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$400</div>
+          <div class="sub">asks 27% of new</div>
+          <div class="pct hot">saves $1,100</div>
+        </div>
+        <div class="eb-detail">For riders aged 13+ Top speed: 15.5mph Rides 3 ways: throttle, cruise control or electronic pedal assistance Range: 30 miles (pedal assist); 15 miles (throttle) Electric speed modes: 1 Mechanical gears: single speed Frame type: compact; built-in carry handle Size: 46.5(l) x 19(w) x 40(h); 14” wheel …</div>
+      </div>
+<div class="eb-card" data-title="tern link d8 folding electric bike." data-src="craigslist" data-score="70.0" data-price="400">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/marina-del-rey-tern-link-d8-folding/5HSamifSH2QxdcobU62L62" target="_blank" rel="noopener">Tern link D8 Folding Electric Bike.</a></h3>
+          <div class="eb-meta"><span>📍 westside-southbay-310 · ~60 mi</span><span>New ≈ <b>$3,200</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Tern</span><span class="eb-tag warn">far: ~60 mi from Irvine</span><span class="eb-tag bad">price far below market - verify it is the real bike</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$400</div>
+          <div class="sub">asks 12% of new</div>
+          <div class="pct hot">saves $2,800</div>
+        </div>
+        <div class="eb-detail">2014 Tern Link D8. BionX electric rear hub motor system. 350 W motor. 48V / 6.6 Ah / 317 Wh BionX battery. Battery holds a charge. Origional charger included and works properly. Shimano 8 speed gearing. Folding design - easy to store and transport Rear rack and fenders Very low milage In good workin…</div>
+      </div>
+<div class="eb-card" data-title="trek x caliber xcaliber 29er hardtail mountain bike" data-src="craigslist" data-score="70.0" data-price="450">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/rancho-cucamonga-trek-caliber-xcaliber/wrMAnZLhnykSJuysmkxpR1" target="_blank" rel="noopener">Trek X Caliber Xcaliber 29er Hardtail Mountain Bike</a></h3>
+          <div class="eb-meta"><span>📍 Rancho cucamonga · ~60 mi</span><span>New ≈ <b>$3,200</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Trek</span><span class="eb-tag warn">far: ~60 mi from Irvine</span><span class="eb-tag bad">price far below market - verify it is the real bike</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$450</div>
+          <div class="sub">asks 14% of new</div>
+          <div class="pct hot">saves $2,750</div>
+        </div>
+        <div class="eb-detail">Good condition hardtail with 29 inch wheels and a Medium 17.5 inch frame. Equipped with a Rockshox XC30 spring loaded fork with lockout compression and rebound settings. Shimano drivetrain and hydraulic disc brakes. Aggressive frame geometry great for climbing as well as decent. Specialized Ellswort…</div>
+      </div>
+<div class="eb-card" data-title="engwe t14 electric bike e-bike" data-src="offerup" data-score="70.0" data-price="450">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/97ee256a-ef3a-3f8c-b5bd-7265c1e96f73" target="_blank" rel="noopener">Engwe T14 Electric bike E-bike</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$450</div>
+          <div class="sub">asks 30% of new</div>
+          <div class="pct hot">saves $1,050</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="espin e-bike" data-src="offerup" data-score="70.0" data-price="450">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/5f939ea8-cd5f-3532-b214-cd6bad150c82" target="_blank" rel="noopener">Espin E-Bike</a></h3>
+          <div class="eb-meta"><span>📍 Tustin, CA · ~4 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$450</div>
+          <div class="sub">asks 30% of new</div>
+          <div class="pct hot">saves $1,050</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="flyer ebike" data-src="offerup" data-score="70.0" data-price="499">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/6dc04e7a-3034-376e-a888-4a1735e70875" target="_blank" rel="noopener">FLYER ebike</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$499</div>
+          <div class="sub">asks 33% of new</div>
+          <div class="pct hot">saves $1,001</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="flyer ebike step thru" data-src="offerup" data-score="70.0" data-price="499">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/e2943af9-fd89-3276-8dd7-57ebc0c9ce56" target="_blank" rel="noopener">FLYER ebike step thru</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$499</div>
+          <div class="sub">asks 33% of new</div>
+          <div class="pct hot">saves $1,001</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="ebike" data-src="offerup" data-score="70.0" data-price="500">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/7aa5b0d5-70b4-37e1-9615-0615272de9b9" target="_blank" rel="noopener">Ebike</a></h3>
+          <div class="eb-meta"><span>📍 Tustin, CA · ~4 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$500</div>
+          <div class="sub">asks 33% of new</div>
+          <div class="pct hot">saves $1,000</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="ebike" data-src="offerup" data-score="70.0" data-price="500">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/fbddd8e9-c5d3-3dff-a112-bf23b47752a0" target="_blank" rel="noopener">Ebike</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$500</div>
+          <div class="sub">asks 33% of new</div>
+          <div class="pct hot">saves $1,000</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="cycrown electric bike willing to negotiate. includes original box" data-src="offerup" data-score="70.0" data-price="520">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/bf3bab71-9e16-3385-9905-288570111cea" target="_blank" rel="noopener">Cycrown Electric Bike Willing to negotiate. Includes original box</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$520</div>
+          <div class="sub">asks 35% of new</div>
+          <div class="pct hot">saves $980</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="e-bike" data-src="offerup" data-score="70.0" data-price="550">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/5432fe5f-518f-3b19-9ab3-47a8a65742d1" target="_blank" rel="noopener">E-bike</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$550</div>
+          <div class="sub">asks 37% of new</div>
+          <div class="pct hot">saves $950</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="raleigh sprite ie ebike electric bike $700" data-src="offerup" data-score="70.0" data-price="550">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/789ed5ee-3ac5-34a2-a88a-23f5881e2816" target="_blank" rel="noopener">Raleigh Sprite iE Ebike Electric Bike $700</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$550</div>
+          <div class="sub">asks 37% of new</div>
+          <div class="pct hot">saves $950</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="tst r002 electric bike ⚡️" data-src="offerup" data-score="70.0" data-price="600">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/350b4b27-2a92-3254-bcb1-cd62485fcf25" target="_blank" rel="noopener">TST R002 Electric Bike ⚡️</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$600</div>
+          <div class="sub">asks 40% of new</div>
+          <div class="pct hot">saves $900</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="ebike sale. only. saturday and sunday. price $500" data-src="offerup" data-score="70.0" data-price="600">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/4489975e-af4b-32ba-8023-7aa12b2e8684" target="_blank" rel="noopener">Ebike sale. Only. Saturday and Sunday. Price $500</a></h3>
+          <div class="eb-meta"><span>📍 Tustin, CA · ~4 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$600</div>
+          <div class="sub">asks 40% of new</div>
+          <div class="pct hot">saves $900</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="ebike" data-src="offerup" data-score="70.0" data-price="600">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/15763260-1b15-3198-b43b-401b7510eeea" target="_blank" rel="noopener">Ebike</a></h3>
+          <div class="eb-meta"><span>📍 Tustin, CA · ~4 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$600</div>
+          <div class="sub">asks 40% of new</div>
+          <div class="pct hot">saves $900</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="rei co-op cycles generation e1.2 electric bike – pitch black – front basket + rear rack" data-src="offerup" data-score="70.0" data-price="600">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/61f8f063-19b8-3ca7-a989-8d526e6a16fb" target="_blank" rel="noopener">REI Co-op Cycles Generation e1.2 Electric Bike – Pitch Black – Front Basket + Rear Rack</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$600</div>
+          <div class="sub">asks 40% of new</div>
+          <div class="pct hot">saves $900</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="electric bike" data-src="craigslist" data-score="70.0" data-price="600">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/yorba-linda-electric-bike/f2dCz55PsunYNjp1qVKwD3" target="_blank" rel="noopener">Electric bike</a></h3>
+          <div class="eb-meta"><span>📍 Yorba Linda · ~12 mi</span><span>New ≈ <b>$2,295</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag bad">price far below market - verify it is the real bike</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$600</div>
+          <div class="sub">asks 26% of new</div>
+          <div class="pct hot">saves $1,695</div>
+        </div>
+        <div class="eb-detail">Pedego City Commuter Step-Thru E-Bike, 26&quot; Wheels, 48V 15Ah Battery – $ 600 For sale: my Pedego City Commuter step-through electric bike, the model Pedego is known for. The low step-through frame makes it easy to get on and off, and the upright riding position and Fat Frank cruising tires make for a…</div>
+      </div>
+<div class="eb-card" data-title="pedego city commuter 28&quot; classic electric bike" data-src="craigslist" data-score="70.0" data-price="650">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/aliso-viejo-pedego-city-commuter-28/nGUDi65ZGZStvwsBvM8BQn" target="_blank" rel="noopener">Pedego City Commuter 28&quot; Classic Electric Bike</a></h3>
+          <div class="eb-meta"><span>📍 Aliso Viejo · ~8 mi</span><span>New ≈ <b>$2,295</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Pedego</span><span class="eb-tag warn">seller notes a missing part/problem - verify battery and keys</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$650</div>
+          <div class="sub">asks 28% of new</div>
+          <div class="pct hot">saves $1,645</div>
+        </div>
+        <div class="eb-detail">2020 Pedego City Commuter Classic e-bike in black. Class 2, 500W rear hub motor, 20 mph assisted top speed, throttle and pedal assist, 7-speed Shimano, disc brakes, LCD display with odometer (3,260 miles), rear rack, kickstand, fenders, and chain guard. The motor runs great, and the battery is charg…</div>
+      </div>
+<div class="eb-card" data-title="electric bike , high quality" data-src="offerup" data-score="70.0" data-price="650">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/abba8d19-6e65-3501-a75c-359099bdb1cc" target="_blank" rel="noopener">Electric Bike , High Quality</a></h3>
+          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$650</div>
+          <div class="sub">asks 43% of new</div>
+          <div class="pct hot">saves $850</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="ebike" data-src="offerup" data-score="70.0" data-price="650">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/cfecc884-bf44-3f7a-9bb8-f7147cacf24d" target="_blank" rel="noopener">Ebike</a></h3>
+          <div class="eb-meta"><span>📍 Tustin, CA · ~4 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$650</div>
+          <div class="sub">asks 43% of new</div>
+          <div class="pct hot">saves $850</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="yadea trooper 01 e-bike motercycle design" data-src="craigslist" data-score="70.0" data-price="700">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/irvine-yadea-trooper-01-bike-motercycle/3v1PgK8Xkj7bgNZRF38UPg" target="_blank" rel="noopener">Yadea Trooper 01 E-Bike Motercycle Design</a></h3>
+          <div class="eb-meta"><span>📍 Irvine · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$700</div>
+          <div class="sub">asks 47% of new</div>
+          <div class="pct hot">saves $800</div>
+        </div>
+        <div class="eb-detail">Yadea Trooper 01 E-Bike (Class 2 750W, goes up to 20mph) Fat tires, straddle-style seat -Minor scratches/dirt from use; yellowing of the back logo due to sun damage -Very recently renewed tires, reflectors, and throttle Cash only; must pick up To see all dimensions, weight limit, etc, please visit t…</div>
+      </div>
+<div class="eb-card" data-title="ebike" data-src="offerup" data-score="70.0" data-price="700">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/718e0f20-a30c-3a6f-afa0-1fd7f3875293" target="_blank" rel="noopener">Ebike</a></h3>
+          <div class="eb-meta"><span>📍 Tustin, CA · ~4 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$700</div>
+          <div class="sub">asks 47% of new</div>
+          <div class="pct hot">saves $800</div>
+        </div>
+        
+      </div>
+<div class="eb-card" data-title="ebike sale" data-src="offerup" data-score="70.0" data-price="700">
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://offerup.com/item/detail/76299b87-6caa-3b5a-847a-149bfe281d13" target="_blank" rel="noopener">Ebike sale</a></h3>
+          <div class="eb-meta"><span>📍 Tustin, CA · ~4 mi</span><span>New ≈ <b>$1,500</b></span></div>
+          <div><span class="eb-tag ou">OfferUp</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$700</div>
+          <div class="sub">asks 47% of new</div>
+          <div class="pct hot">saves $800</div>
+        </div>
+        
+      </div>
+  </div>
+  <div class="eb-empty" id="ebEmpty" style="display:none">No listing matches that filter - clear the search and try again.</div>
+
+  <div class="eb-notes">
+    <h2>How the score works</h2>
+    <ul>
+      <li><b>Value vs. new (up to 58):</b> the asking price measured against the current street price of that exact model line, not the seller's "retail" claim. At 65% of new you get full points; every point above that costs.</li>
+      <li><b>Brand (up to 12):</b> a known brand with real parts and battery support scores higher than an unbranded import.</li>
+      <li><b>Local (up to 12):</b> Irvine to 5 miles is full credit, decaying to 0 past 40 miles.</li>
+      <li><b>Model year (up to 6)</b> and <b>listing text (±):</b> recent years score up; "needs battery", "no charger", "salvage" score down; owner history and receipts score up.</li>
+      <li><b>The battery is the bike.</b> Ask for miles and charge cycles, charge it to full before paying, and check for swelling. Replacement packs run several hundred to over a thousand dollars.</li>
+      <li><b>Legal line:</b> Class 1/2 assist to 20 mph, Class 3 to 28 mph - 28 mph is the ceiling. Anything shipped at 32+ mph (or dual-motor, 60V+) is a motor vehicle, not an e-bike: licence, registration, no bike lanes. Those listings are filtered out.</li>
+      <li><b>Filters that removed 13 listings:</b> parts and accessories, scam and financing spam, knockoff "73 style" clones, storefront reseller boilerplate, and machines over the e-bike speed ceiling.</li>
+    </ul>
+  </div>
+
+  <p class="eb-foot">Scanned Oct 27, 2026 08:56 AM. 1532 listings read, 437 passed the filters, 133 had their detail page read.<br>
+  Prices are <b>asking</b> prices, not sold prices - verify the bike, the battery and the receipts before paying. RoyceAI is not the seller.</p>
+</div>
+<footer>
+  <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
+  <div class="links">
+    <a href="/products">Products</a><a href="/tutor">Tutor</a>
+    <a href="/my">Dashboard</a><a href="/blog">Blog</a><a href="/chat">Chat</a>
+  </div>
+  <div class="copy">RoyceAI Solutions. Irvine, CA</div>
+</footer>
+<script>
+
+(function(){
+  function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(links&&!menu.querySelector('a[data-mn]')){
+      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+
+</script>
+<script>
+(function(){
+  var search=document.getElementById('ebSearch');
+  var grid=document.getElementById('ebGrid');
+  var cards=[].slice.call(grid.querySelectorAll('.eb-card'));
+  var pills=[].slice.call(document.querySelectorAll('.eb-pill'));
+  var sortSel=document.getElementById('ebSort');
+  var empty=document.getElementById('ebEmpty');
+  var filter='all';
+  function apply(){
+    var q=(search.value||'').toLowerCase().trim();
+    var shown=0;
+    cards.forEach(function(c){
+      var ok=true;
+      if(q && c.dataset.title.indexOf(q)<0 && c.textContent.toLowerCase().indexOf(q)<0) ok=false;
+      if(filter==='craigslist' && c.dataset.src!=='craigslist') ok=false;
+      if(filter==='offerup' && c.dataset.src!=='offerup') ok=false;
+      if(filter==='under60'){
+        var m=c.querySelector('.eb-price .sub');
+        var pct=m?parseInt(m.textContent.replace(/[^0-9]/g,''),10):100;
+        if(!(pct<=60)) ok=false;
+      }
+      c.style.display=ok?'':'none';
+      if(ok) shown++;
+    });
+    empty.style.display=shown?'none':'block';
+  }
+  function sortBy(k){
+    var sorted=cards.slice().sort(function(a,b){
+      if(k==='price') return (+a.dataset.price)-(+b.dataset.price);
+      if(k==='score') return (+b.dataset.score)-(+a.dataset.score);
+      if(k==='savings'){
+        function sv(c){var t=c.querySelector('.pct');return t?parseInt(t.textContent.replace(/[^0-9]/g,''),10)||0:0;}
+        return sv(b)-sv(a);
+      }
+      if(k==='distance'){
+        function di(c){var m=c.textContent.match(/~(\d+) mi/);return m?parseInt(m[1],10):999;}
+        return di(a)-di(b);
+      }
+      return 0;
+    });
+    sorted.forEach(function(c){grid.appendChild(c);});
+  }
+  pills.forEach(function(p){p.addEventListener('click',function(){
+    pills.forEach(function(x){x.classList.remove('on');});
+    p.classList.add('on');filter=p.dataset.filter;apply();});});
+  search.addEventListener('input',apply);
+  sortSel.addEventListener('change',function(){sortBy(sortSel.value);});
+  apply();
+})();
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF23H9423B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EF23H9423B');</script>
+</body>
+</html>
