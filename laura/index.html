@@ -91,6 +91,8 @@ main{max-width:var(--max-w);margin:0 auto;padding:0 24px}
 .bfoot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;
   gap:10px;padding-top:11px;border-top:1px solid var(--border)}
 .price{font-size:1.16rem;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.price.under-20{color:var(--ok)}
+.price.twenty-forty{color:var(--text);text-decoration:underline;text-decoration-color:var(--honey);text-decoration-thickness:2px;text-underline-offset:4px}
 .price.under-100{color:var(--ok)}
 .price.mid{color:var(--honey-light)}
 .price.high{color:var(--honey)}
@@ -156,11 +158,12 @@ footer a:hover{border-bottom-color:var(--honey)}
   <p class="subtitle">Every bear below is a <strong>real handmade teddy bear that is for sale</strong>, made by a
   working artist in the <strong>United States</strong> &mdash; mohair, glass eyes, jointed limbs, one of a kind.
   Each card shows the bear's own photo, its real asking price and a direct link to adopt it.</p>
+  <p class="subtitle" style="margin-top:12px">A note on price: <strong>1 of the 114 bears</strong> here sit between $20 and $40; the median ask is <strong>$216</strong>. That band is the bottom of the artist market, and it is a real market.</p>
   <div class="stats">
 <div class="stat"><b>114</b><span>Bears for sale</span></div>
 <div class="stat"><b>19</b><span>United States artists</span></div>
-<div class="stat"><b>$23</b><span>Lowest</span></div>
-<div class="stat"><b>$1,912</b><span>Highest</span></div>
+<div class="stat"><b>1</b><span>Bears $20&ndash;$40</span></div>
+<div class="stat"><b>$216</b><span>Median price</span></div>
   </div>
 </header>
 
@@ -168,6 +171,7 @@ footer a:hover{border-bottom-color:var(--honey)}
   <div class="bar">
     <div class="filters">
       <button class="fbtn on" data-band="all">All bears</button>
+      <button class="fbtn" data-band="twenty-forty">$20&ndash;$40</button>
       <button class="fbtn" data-band="under-100">Under $100</button>
       <button class="fbtn" data-band="mid">$100&ndash;$299</button>
       <button class="fbtn" data-band="high">$300&ndash;$599</button>
@@ -290,7 +294,7 @@ footer a:hover{border-bottom-color:var(--honey)}
 <article class="bear" data-band="under-100" data-hay="prim margie&#x27;s bears and creations united states"><a class="bimg" href="https://margiesbears.tedsby.com/238316/prim" target="_blank" rel="noopener"><img src="/laura/img/margiesbears-tedsby-com-238316-prim.jpg" alt="Prim, handmade teddy bear by Margie&#x27;s Bears and Creations" loading="lazy" decoding="async"></a><div class="bear-top"><div class="bname"><a href="https://margiesbears.tedsby.com/238316/prim" target="_blank" rel="noopener">Prim</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Margie&#x27;s Bears and Creations</div><div class="bmeta"><span class="chip">8.25″</span> <span class="chip">&#127482;&#127480; United States</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price under-100">$ 60.00</span><a class="adopt" href="https://margiesbears.tedsby.com/238316/prim" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
 <article class="bear" data-band="under-100" data-hay="winston and winona bear ladydianasdesigns united states"><a class="bimg" href="https://ladydianasdesigns.tedsby.com/141550/winston-and-winona-bear" target="_blank" rel="noopener"><img src="/laura/img/ladydianasdesigns-tedsby-com-141550-winston-and-winona-bear.jpg" alt="Winston and Winona Bear, handmade teddy bear by LadyDianasDesigns" loading="lazy" decoding="async"></a><div class="bear-top"><div class="bname"><a href="https://ladydianasdesigns.tedsby.com/141550/winston-and-winona-bear" target="_blank" rel="noopener">Winston and Winona Bear</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">LadyDianasDesigns</div><div class="bmeta"><span class="chip">22″</span> <span class="chip">&#127482;&#127480; United States</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price under-100">$ 60.00</span><a class="adopt" href="https://ladydianasdesigns.tedsby.com/141550/winston-and-winona-bear" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
 <article class="bear" data-band="under-100" data-hay="dusty grey bear ladydianasdesigns united states"><a class="bimg" href="https://ladydianasdesigns.tedsby.com/141540/dusty-grey-bear" target="_blank" rel="noopener"><img src="/laura/img/ladydianasdesigns-tedsby-com-141540-dusty-grey-bear.jpg" alt="Dusty Grey Bear, handmade teddy bear by LadyDianasDesigns" loading="lazy" decoding="async"></a><div class="bear-top"><div class="bname"><a href="https://ladydianasdesigns.tedsby.com/141540/dusty-grey-bear" target="_blank" rel="noopener">Dusty Grey Bear</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">LadyDianasDesigns</div><div class="bmeta"><span class="chip">11″</span> <span class="chip">&#127482;&#127480; United States</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price under-100">$ 55.00</span><a class="adopt" href="https://ladydianasdesigns.tedsby.com/141540/dusty-grey-bear" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
-<article class="bear" data-band="under-100" data-hay="ooak 80&#x27;s handmade artist bear small bear patricia gill united states"><a class="bimg" href="https://pattyg.tedsby.com/67683/ooak-80-s-handmade-artist-bear-small-bear" target="_blank" rel="noopener"><img src="/laura/img/pattyg-tedsby-com-67683-ooak-80-s-handmade-artist-bear-small-bear.jpg" alt="OOAK 80&#x27;s Handmade Artist Bear Small Bear, handmade teddy bear by Patricia Gill" loading="lazy" decoding="async"></a><div class="bear-top"><div class="bname"><a href="https://pattyg.tedsby.com/67683/ooak-80-s-handmade-artist-bear-small-bear" target="_blank" rel="noopener">OOAK 80&#x27;s Handmade Artist Bear Small Bear</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Patricia Gill</div><div class="bmeta"><span class="chip">8″</span> <span class="chip">&#127482;&#127480; United States</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price under-100">$ 23.00</span><a class="adopt" href="https://pattyg.tedsby.com/67683/ooak-80-s-handmade-artist-bear-small-bear" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
+<article class="bear" data-band="twenty-forty" data-hay="ooak 80&#x27;s handmade artist bear small bear patricia gill united states"><a class="bimg" href="https://pattyg.tedsby.com/67683/ooak-80-s-handmade-artist-bear-small-bear" target="_blank" rel="noopener"><img src="/laura/img/pattyg-tedsby-com-67683-ooak-80-s-handmade-artist-bear-small-bear.jpg" alt="OOAK 80&#x27;s Handmade Artist Bear Small Bear, handmade teddy bear by Patricia Gill" loading="lazy" decoding="async"></a><div class="bear-top"><div class="bname"><a href="https://pattyg.tedsby.com/67683/ooak-80-s-handmade-artist-bear-small-bear" target="_blank" rel="noopener">OOAK 80&#x27;s Handmade Artist Bear Small Bear</a></div><div class="bmark">&#129528;</div></div><div class="bmaker">Patricia Gill</div><div class="bmeta"><span class="chip">8″</span> <span class="chip">&#127482;&#127480; United States</span> <span class="chip src">Tedsby</span></div><div class="bfoot"><span class="price twenty-forty">$ 23.00</span><a class="adopt" href="https://pattyg.tedsby.com/67683/ooak-80-s-handmade-artist-bear-small-bear" target="_blank" rel="noopener">Adopt &#8594;</a></div></article>
   </div>
 
   <p class="note">Every listing above is a <strong>teddy bear that is for sale</strong>, made by a
