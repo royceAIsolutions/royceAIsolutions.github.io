@@ -64,6 +64,15 @@
 .eb-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .eb-photo .noimg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   font-size:.7rem;color:var(--text-muted);text-align:center;padding:8px}
+.eb-range{grid-column:3 / span 2;display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 0}
+.eb-rng{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;padding:5px 10px;
+  border-radius:8px;background:var(--bg-elevated);border:1px solid var(--border);color:var(--text-secondary)}
+.eb-rng b{color:var(--text);font-weight:700}
+.eb-rng .lbl{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.eb-rng.seller{border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.07)}
+.eb-rng.seller .lbl{color:var(--green)}
+.eb-rng.spec .lbl{color:var(--accent-light)}
+.eb-rng.none{border-style:dashed}
 .eb-detail{grid-column:3 / span 2;font-size:.83rem;color:var(--text-secondary);line-height:1.55;
   border-top:1px dashed var(--border);padding-top:10px;margin-top:2px}
 .eb-feat{border:1px solid var(--accent);background:linear-gradient(135deg,rgba(124,92,252,.10),rgba(124,92,252,.02))}
@@ -88,6 +97,7 @@
   .eb-score{width:48px;height:48px;font-size:1rem}
   .eb-price{grid-column:2;text-align:left;min-width:0;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
   .eb-detail{grid-column:1 / span 2}
+  .eb-range{grid-column:1 / span 2}
   .eb-card{position:relative}
   .hero h1{font-size:clamp(1.9rem,8vw,2.6rem)}
 }
@@ -302,8 +312,8 @@ nav > .nav-logo{margin-right:0!important;order:-1}
   <div class="eb-bar">
     <input id="ebSearch" class="eb-search" type="search" placeholder="Search brand or model - super73, aventon, cargo, trek…" aria-label="Search listings">
     <button class="eb-pill on" data-filter="all">All</button>
-    <button class="eb-pill" data-filter="craigslist">Craigslist (20)</button>
-    <button class="eb-pill" data-filter="offerup">OfferUp (40)</button>
+    <button class="eb-pill" data-filter="craigslist">Craigslist (21)</button>
+    <button class="eb-pill" data-filter="offerup">OfferUp (39)</button>
     <button class="eb-pill" data-filter="under60">Under 60% of new</button>
     <select id="ebSort" class="eb-sort" aria-label="Sort">
       <option value="score">Best score</option>
@@ -327,6 +337,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 22% of new</div>
           <div class="pct hot">saves $1,395</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 20-40 mi, 576Wh"><span class="lbl">Maker spec</span> <b>20-40 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="aventon e-bike" data-src="offerup" data-score="82.0" data-price="500">
@@ -342,6 +353,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 33% of new</div>
           <div class="pct hot">saves $1,000</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
 <div class="eb-card" data-title="folding ebike pedego latch" data-src="offerup" data-score="82.0" data-price="600">
@@ -357,6 +369,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 32% of new</div>
           <div class="pct hot">saves $1,295</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 20-35 mi, 432Wh"><span class="lbl">Maker spec</span> <b>20-35 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="pedego 28 inch step through electric bike city commuter" data-src="offerup" data-score="82.0" data-price="700">
@@ -372,6 +385,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 39% of new</div>
           <div class="pct hot">saves $1,095</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
 <div class="eb-card" data-title="pedego interceptor electric bike – $8000 obo" data-src="offerup" data-score="82.0" data-price="800">
@@ -387,6 +401,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 31% of new</div>
           <div class="pct hot">saves $1,795</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 20-40 mi, 576Wh"><span class="lbl">Maker spec</span> <b>20-40 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="super73 - z1 - light blue" data-src="offerup" data-score="82.0" data-price="900">
@@ -402,6 +417,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 60% of new</div>
           <div class="pct hot">saves $600</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 15-25 mi, 418Wh"><span class="lbl">Maker spec</span> <b>15-25 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="pedego stretch/cargo e-bike" data-src="craigslist" data-score="82.0" data-price="990">
@@ -417,6 +433,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 33% of new</div>
           <div class="pct hot">saves $2,005</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 25-45 mi, 576Wh"><span class="lbl">Maker spec</span> <b>25-45 mi</b></span></div>
         <div class="eb-detail">Beautiful, like new. 48v lithium ion battery replaced 2 years ago. Charger. 24-inch wheel. Sacrifice at $990.</div>
       </div>
 <div class="eb-card" data-title="pedego city commuter" data-src="offerup" data-score="82.0" data-price="1000">
@@ -432,6 +449,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 44% of new</div>
           <div class="pct hot">saves $1,295</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 20-40 mi, 576Wh"><span class="lbl">Maker spec</span> <b>20-40 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="pedego ebike" data-src="offerup" data-score="82.0" data-price="1000">
@@ -447,10 +465,11 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 56% of new</div>
           <div class="pct hot">saves $795</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
 <div class="eb-card" data-title="sondors thin e-bike upgraded belt drive train" data-src="craigslist" data-score="81.0" data-price="450">
-        <a class="eb-photo" href="https://www.craigslist.org/view/d/irvine-sondors-thin-bike-upgraded-belt/wRpZdkeXck7wbUN9MfToRX" target="_blank" rel="noopener"><img src="https://images.craigslist.org/00a0a_kwOAcWYs20_0CI0t2_600x450.jpg" alt="Sondors Thin E-bike upgraded belt drive train" onerror="this.parentNode.innerHTML='<span class=&quot;noimg&quot;>photo unavailable</span>'"></a>
+        <div class="eb-photo"><span class="noimg">no photo on listing</span></div>
         <div class="eb-score hot">81<small>SCORE</small></div>
         <div>
           <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/irvine-sondors-thin-bike-upgraded-belt/wRpZdkeXck7wbUN9MfToRX" target="_blank" rel="noopener">Sondors Thin E-bike upgraded belt drive train</a></h3>
@@ -462,7 +481,8 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 35% of new</div>
           <div class="pct hot">saves $849</div>
         </div>
-        <div class="eb-detail">Sondors thin ebike aluminum, pretty light for an electric bike. Has the upgraded option belt drive train. Works good. Is pedal assist or use the thumb throttle. Great commuter bike or errand bike to save on gas.</div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 25-40 mi, 504Wh"><span class="lbl">Maker spec</span> <b>25-40 mi</b></span></div>
+        
       </div>
 <div class="eb-card" data-title="sondors thin e-bike upgraded belt drive train" data-src="offerup" data-score="81.0" data-price="450">
         <a class="eb-photo" href="https://offerup.com/item/detail/78b910e3-4a70-3654-8235-a614705c0ddd" target="_blank" rel="noopener"><img src="https://images.offerup.com/Gdowv-knX9uRlELL72zC8-hjYSg=/250x250/e5e8/e5e8e7f3a589414481823a0677ae7ba0.jpg" alt="Sondors Thin E-bike upgraded belt drive train" onerror="this.parentNode.innerHTML='<span class=&quot;noimg&quot;>photo unavailable</span>'"></a>
@@ -477,6 +497,23 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 35% of new</div>
           <div class="pct hot">saves $849</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 25-40 mi, 504Wh"><span class="lbl">Maker spec</span> <b>25-40 mi</b></span></div>
+        
+      </div>
+<div class="eb-card" data-title="pedego city commuter 28&quot; classic electric bike" data-src="craigslist" data-score="80.0" data-price="650">
+        <div class="eb-photo"><span class="noimg">no photo on listing</span></div>
+        <div class="eb-score hot">80<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/aliso-viejo-pedego-city-commuter-28/nGUDi65ZGZStvwsBvM8BQn" target="_blank" rel="noopener">Pedego City Commuter 28&quot; Classic Electric Bike</a></h3>
+          <div class="eb-meta"><span>📍 Aliso Viejo · ~8 mi</span><span>New ≈ <b>$2,295</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Pedego</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$650</div>
+          <div class="sub">asks 28% of new</div>
+          <div class="pct hot">saves $1,645</div>
+        </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 20-40 mi, 576Wh"><span class="lbl">Maker spec</span> <b>20-40 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="pedego comfort cruiser" data-src="offerup" data-score="80.0" data-price="800">
@@ -492,6 +529,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 45% of new</div>
           <div class="pct hot">saves $995</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 20-40 mi, 576Wh"><span class="lbl">Maker spec</span> <b>20-40 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="super73 zx e-bike - runs great" data-src="offerup" data-score="80.0" data-price="900">
@@ -507,6 +545,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 60% of new</div>
           <div class="pct hot">saves $600</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 25-40 mi, 615Wh"><span class="lbl">Maker spec</span> <b>25-40 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="rad power bikes (radmission1)" data-src="offerup" data-score="79.0" data-price="600">
@@ -522,6 +561,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 40% of new</div>
           <div class="pct hot">saves $899</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 20-40 mi, 504Wh"><span class="lbl">Maker spec</span> <b>20-40 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="rad power bikes radmission1 e-bike" data-src="offerup" data-score="79.0" data-price="675">
@@ -537,6 +577,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 45% of new</div>
           <div class="pct hot">saves $824</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 20-40 mi, 504Wh"><span class="lbl">Maker spec</span> <b>20-40 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="radmission2 model ebike of radpower" data-src="offerup" data-score="79.0" data-price="800">
@@ -552,6 +593,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 53% of new</div>
           <div class="pct hot">saves $700</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 20-40 mi, 504Wh"><span class="lbl">Maker spec</span> <b>20-40 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="new radpower radmission2 model e-bike in a box" data-src="offerup" data-score="79.0" data-price="800">
@@ -567,6 +609,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 53% of new</div>
           <div class="pct hot">saves $700</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 20-40 mi, 504Wh"><span class="lbl">Maker spec</span> <b>20-40 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="radpower radmini foldable ebike" data-src="offerup" data-score="79.0" data-price="800">
@@ -582,6 +625,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 53% of new</div>
           <div class="pct hot">saves $700</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 25-45 mi, 672Wh"><span class="lbl">Maker spec</span> <b>25-45 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="sondors smart step folding e-bike" data-src="offerup" data-score="78.9" data-price="650">
@@ -597,10 +641,11 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 65% of new</div>
           <div class="pct cold">saves $349</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 25-35 mi, 504Wh"><span class="lbl">Maker spec</span> <b>25-35 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="sondors e-bike" data-src="craigslist" data-score="77.0" data-price="400">
-        <a class="eb-photo" href="https://www.craigslist.org/view/d/huntington-beach-sondors-bike/qvXGvUiZjJAK3jh86dUW83" target="_blank" rel="noopener"><img src="https://images.craigslist.org/00d0d_9uUSWcdTJOg_0t20CI_600x450.jpg" alt="Sondors E-Bike" onerror="this.parentNode.innerHTML='<span class=&quot;noimg&quot;>photo unavailable</span>'"></a>
+        <div class="eb-photo"><span class="noimg">no photo on listing</span></div>
         <div class="eb-score hot">77<small>SCORE</small></div>
         <div>
           <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/huntington-beach-sondors-bike/qvXGvUiZjJAK3jh86dUW83" target="_blank" rel="noopener">Sondors E-Bike</a></h3>
@@ -612,7 +657,8 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 33% of new</div>
           <div class="pct hot">saves $799</div>
         </div>
-        <div class="eb-detail">•Rides Great! Just needs brakes fixed •Charger Included</div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
+        
       </div>
 <div class="eb-card" data-title="rad power bikes radrunner 2 e-bike" data-src="craigslist" data-score="77.0" data-price="775">
         <a class="eb-photo" href="https://www.craigslist.org/view/d/aliso-viejo-rad-power-bikes-radrunner-e/whnvvDZeWKgFjrv9HJDsrz" target="_blank" rel="noopener"><img src="https://images.craigslist.org/00404_ekx1KXjEKYm_0kE0fu_600x450.jpg" alt="Rad Power Bikes RadRunner 2 e-bike" onerror="this.parentNode.innerHTML='<span class=&quot;noimg&quot;>photo unavailable</span>'"></a>
@@ -627,6 +673,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 52% of new</div>
           <div class="pct hot">saves $724</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 25-45 mi, 672Wh"><span class="lbl">Maker spec</span> <b>25-45 mi</b></span></div>
         <div class="eb-detail">Garage Queen! This RadRunner is about as nice as you&#x27;ll find. Has tasteful performance upgrades: Both front and rear brand new Shimano hydraulic brakes and brand new rotors. This Runner stops on a dime now and brakes are quiet. A standard kick-stand was fitted instead of the tedious center stand. In…</div>
       </div>
 <div class="eb-card" data-title="lectric ebike xp4" data-src="craigslist" data-score="77.0" data-price="900">
@@ -642,6 +689,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 24% of new</div>
           <div class="pct hot">saves $2,900</div>
         </div>
+        <div class="eb-range"><span class="eb-rng seller" title="Stated by the seller in the listing"><span class="lbl">Seller says</span> <b>85 mi</b></span><span class="eb-rng spec" title="manufacturer: up to 60 mi, 499Wh"><span class="lbl">Maker spec</span> <b>35-60 mi</b></span></div>
         <div class="eb-detail">- Like new Lectric eBike XP4 - Top Speed: 28mph - Range: up to 85 miles - Payload Capacity: 330 lbs - Bicycle weight: 71 lbs - It is foldable. - It has 5 riding modes: Eco Tour Sport Sport+ Turbo</div>
       </div>
 <div class="eb-card" data-title="full suspension off-road mountain e-bike | brand new in box | 1 year warranty" data-src="offerup" data-score="75.0" data-price="850">
@@ -657,6 +705,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 57% of new</div>
           <div class="pct hot">saves $650</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
 <div class="eb-card" data-title="aventon electric bike e bike" data-src="craigslist" data-score="75.0" data-price="950">
@@ -672,6 +721,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 53% of new</div>
           <div class="pct hot">saves $849</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         <div class="eb-detail">Aventon Step Thru E Bike Model: LEVEL 2 great E bikes Purchased new a few years ago, and they spend most of the time in my garage One bike is dark grey and the other is rose gold / purple Approx mileage on each bike, 114 miles Each bike $ 950.00 Reasonable offers will be considered o Upgraded seat a…</div>
       </div>
 <div class="eb-card" data-title="electric bike pedego city commuter," data-src="craigslist" data-score="75.0" data-price="950">
@@ -687,6 +737,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 41% of new</div>
           <div class="pct hot">saves $1,345</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 20-40 mi, 576Wh"><span class="lbl">Maker spec</span> <b>20-40 mi</b></span></div>
         <div class="eb-detail">Pedego City Commuter Electric Bike , this bike is in new condition , less then 100 miles , has been stored for a while, comes with brand new battery pack, ,asking $950, located in tehachapi ca vedio on youtube https://www.youtube.com/watch?v=NjjT6hhMXDA</div>
       </div>
 <div class="eb-card" data-title="lectric xp 2.0 folding e-bike 2022 nice clean adult owned low miles" data-src="craigslist" data-score="74.9" data-price="650">
@@ -702,6 +753,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 65% of new</div>
           <div class="pct cold">saves $349</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 25-45 mi"><span class="lbl">Maker spec</span> <b>25-45 mi</b></span></div>
         <div class="eb-detail">2022 Lectric XP 2.0 Folding e-Bike. Adult owned, 220 original miles. NEW battery installed 8/24/2026. Bike has been sitting unridden for over a year. Bike is very clean, adult owned, never abused, no issues, functions and rides as new.</div>
       </div>
 <div class="eb-card" data-title="lectric 2.0 electric bike ebike" data-src="craigslist" data-score="74.0" data-price="650">
@@ -717,6 +769,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 43% of new</div>
           <div class="pct hot">saves $850</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 25-45 mi, 460Wh"><span class="lbl">Maker spec</span> <b>25-45 mi</b></span></div>
         <div class="eb-detail">2025 Lectric 2.0 folding ebike. Only 370 miles on the odometer. Comes with rear rack and basket, helmet, Lectric cable lock, charger and high capacity battery. Pristine condition, well loved and cared for. No rust, scrapes, scratches. Tires look brand new. Battery holds charge and has a good capacit…</div>
       </div>
 <div class="eb-card" data-title="modded e-bike w/400 miles" data-src="offerup" data-score="72.0" data-price="650">
@@ -732,6 +785,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 43% of new</div>
           <div class="pct hot">saves $850</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
 <div class="eb-card" data-title="rad runner e-bike brand new modded!!" data-src="offerup" data-score="72.0" data-price="800">
@@ -747,6 +801,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 53% of new</div>
           <div class="pct hot">saves $700</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: 25-45 mi, 672Wh"><span class="lbl">Maker spec</span> <b>25-45 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="lectric ebike" data-src="craigslist" data-score="71.0" data-price="550">
@@ -762,10 +817,11 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 37% of new</div>
           <div class="pct hot">saves $950</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         <div class="eb-detail">Very good condition</div>
       </div>
 <div class="eb-card" data-title="e-bike" data-src="craigslist" data-score="70.0" data-price="400">
-        <a class="eb-photo" href="https://www.craigslist.org/view/d/santa-ana-bike/9qRkZ3bwNry2RsyKKa3PyM" target="_blank" rel="noopener"><img src="https://images.craigslist.org/00i0i_h35ypSS5JUq_0CI0t2_600x450.jpg" alt="e-Bike" onerror="this.parentNode.innerHTML='<span class=&quot;noimg&quot;>photo unavailable</span>'"></a>
+        <div class="eb-photo"><span class="noimg">no photo on listing</span></div>
         <div class="eb-score mid">70<small>SCORE</small></div>
         <div>
           <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/santa-ana-bike/9qRkZ3bwNry2RsyKKa3PyM" target="_blank" rel="noopener">e-Bike</a></h3>
@@ -777,7 +833,8 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 27% of new</div>
           <div class="pct hot">saves $1,100</div>
         </div>
-        <div class="eb-detail">For riders aged 13+ Top speed: 15.5mph Rides 3 ways: throttle, cruise control or electronic pedal assistance Range: 30 miles (pedal assist); 15 miles (throttle) Electric speed modes: 1 Mechanical gears: single speed Frame type: compact; built-in carry handle Size: 46.5(l) x 19(w) x 40(h); 14” wheel …</div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
+        
       </div>
 <div class="eb-card" data-title="tern link d8 folding electric bike." data-src="craigslist" data-score="70.0" data-price="400">
         <a class="eb-photo" href="https://www.craigslist.org/view/d/marina-del-rey-tern-link-d8-folding/5HSamifSH2QxdcobU62L62" target="_blank" rel="noopener"><img src="https://images.craigslist.org/00w0w_br5husHaWvC_0CI0t2_600x450.jpg" alt="Tern link D8 Folding Electric Bike." onerror="this.parentNode.innerHTML='<span class=&quot;noimg&quot;>photo unavailable</span>'"></a>
@@ -792,6 +849,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 12% of new</div>
           <div class="pct hot">saves $2,800</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: up to 40 mi, 418Wh"><span class="lbl">Maker spec</span> <b>20-40 mi</b></span></div>
         <div class="eb-detail">2014 Tern Link D8. BionX electric rear hub motor system. 350 W motor. 48V / 6.6 Ah / 317 Wh BionX battery. Battery holds a charge. Origional charger included and works properly. Shimano 8 speed gearing. Folding design - easy to store and transport Rear rack and fenders Very low milage In good workin…</div>
       </div>
 <div class="eb-card" data-title="trek x caliber xcaliber 29er hardtail mountain bike" data-src="craigslist" data-score="70.0" data-price="450">
@@ -807,6 +865,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 14% of new</div>
           <div class="pct hot">saves $2,750</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         <div class="eb-detail">Good condition hardtail with 29 inch wheels and a Medium 17.5 inch frame. Equipped with a Rockshox XC30 spring loaded fork with lockout compression and rebound settings. Shimano drivetrain and hydraulic disc brakes. Aggressive frame geometry great for climbing as well as decent. Specialized Ellswort…</div>
       </div>
 <div class="eb-card" data-title="engwe t14 electric bike e-bike" data-src="offerup" data-score="70.0" data-price="450">
@@ -822,6 +881,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 30% of new</div>
           <div class="pct hot">saves $1,050</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: up to 45 mi, 480Wh"><span class="lbl">Maker spec</span> <b>25-45 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="espin e-bike" data-src="offerup" data-score="70.0" data-price="450">
@@ -837,6 +897,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 30% of new</div>
           <div class="pct hot">saves $1,050</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: up to 50 mi, 480Wh"><span class="lbl">Maker spec</span> <b>25-50 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="flyer ebike" data-src="offerup" data-score="70.0" data-price="499">
@@ -852,6 +913,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 33% of new</div>
           <div class="pct hot">saves $1,001</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: up to 50 mi"><span class="lbl">Maker spec</span> <b>25-50 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="flyer ebike step thru" data-src="offerup" data-score="70.0" data-price="499">
@@ -867,6 +929,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 33% of new</div>
           <div class="pct hot">saves $1,001</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: up to 50 mi"><span class="lbl">Maker spec</span> <b>25-50 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="ebike" data-src="offerup" data-score="70.0" data-price="500">
@@ -882,6 +945,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 33% of new</div>
           <div class="pct hot">saves $1,000</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
 <div class="eb-card" data-title="ebike" data-src="offerup" data-score="70.0" data-price="500">
@@ -897,6 +961,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 33% of new</div>
           <div class="pct hot">saves $1,000</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
 <div class="eb-card" data-title="cycrown electric bike willing to negotiate. includes original box" data-src="offerup" data-score="70.0" data-price="520">
@@ -912,6 +977,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 35% of new</div>
           <div class="pct hot">saves $980</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: up to 50 mi"><span class="lbl">Maker spec</span> <b>25-50 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="e-bike" data-src="offerup" data-score="70.0" data-price="550">
@@ -927,6 +993,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 37% of new</div>
           <div class="pct hot">saves $950</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
 <div class="eb-card" data-title="raleigh sprite ie ebike electric bike $700" data-src="offerup" data-score="70.0" data-price="550">
@@ -942,6 +1009,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 37% of new</div>
           <div class="pct hot">saves $950</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: up to 45 mi, 418Wh"><span class="lbl">Maker spec</span> <b>25-45 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="tst r002 electric bike ⚡️" data-src="offerup" data-score="70.0" data-price="600">
@@ -957,6 +1025,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 40% of new</div>
           <div class="pct hot">saves $900</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: up to 50 mi"><span class="lbl">Maker spec</span> <b>25-50 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="ebike sale. only. saturday and sunday. price $500" data-src="offerup" data-score="70.0" data-price="600">
@@ -972,6 +1041,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 40% of new</div>
           <div class="pct hot">saves $900</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
 <div class="eb-card" data-title="ebike" data-src="offerup" data-score="70.0" data-price="600">
@@ -987,6 +1057,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 40% of new</div>
           <div class="pct hot">saves $900</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
 <div class="eb-card" data-title="rei co-op cycles generation e1.2 electric bike – pitch black – front basket + rear rack" data-src="offerup" data-score="70.0" data-price="600">
@@ -1002,6 +1073,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 40% of new</div>
           <div class="pct hot">saves $900</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: up to 40 mi"><span class="lbl">Maker spec</span> <b>20-40 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="electric bike" data-src="craigslist" data-score="70.0" data-price="600">
@@ -1017,22 +1089,8 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 26% of new</div>
           <div class="pct hot">saves $1,695</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         <div class="eb-detail">Pedego City Commuter Step-Thru E-Bike, 26&quot; Wheels, 48V 15Ah Battery – $ 600 For sale: my Pedego City Commuter step-through electric bike, the model Pedego is known for. The low step-through frame makes it easy to get on and off, and the upright riding position and Fat Frank cruising tires make for a…</div>
-      </div>
-<div class="eb-card" data-title="pedego city commuter 28&quot; classic electric bike" data-src="craigslist" data-score="70.0" data-price="650">
-        <a class="eb-photo" href="https://www.craigslist.org/view/d/aliso-viejo-pedego-city-commuter-28/nGUDi65ZGZStvwsBvM8BQn" target="_blank" rel="noopener"><img src="https://images.craigslist.org/00f0f_9uCWPHA2AuY_0CI0nU_600x450.jpg" alt="Pedego City Commuter 28&quot; Classic Electric Bike" onerror="this.parentNode.innerHTML='<span class=&quot;noimg&quot;>photo unavailable</span>'"></a>
-        <div class="eb-score mid">70<small>SCORE</small></div>
-        <div>
-          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/aliso-viejo-pedego-city-commuter-28/nGUDi65ZGZStvwsBvM8BQn" target="_blank" rel="noopener">Pedego City Commuter 28&quot; Classic Electric Bike</a></h3>
-          <div class="eb-meta"><span>📍 Aliso Viejo · ~8 mi</span><span>New ≈ <b>$2,295</b></span></div>
-          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Pedego</span><span class="eb-tag warn">seller notes a missing part/problem - verify battery and keys</span></div>
-        </div>
-        <div class="eb-price">
-          <div class="p">$650</div>
-          <div class="sub">asks 28% of new</div>
-          <div class="pct hot">saves $1,645</div>
-        </div>
-        <div class="eb-detail">2020 Pedego City Commuter Classic e-bike in black. Class 2, 500W rear hub motor, 20 mph assisted top speed, throttle and pedal assist, 7-speed Shimano, disc brakes, LCD display with odometer (3,260 miles), rear rack, kickstand, fenders, and chain guard. The motor runs great, and the battery is charg…</div>
       </div>
 <div class="eb-card" data-title="electric bike , high quality" data-src="offerup" data-score="70.0" data-price="650">
         <a class="eb-photo" href="https://offerup.com/item/detail/abba8d19-6e65-3501-a75c-359099bdb1cc" target="_blank" rel="noopener"><img src="https://images.offerup.com/gFngBAuCUrz5v5YrDzu6Sjzm85w=/250x250/a5e5/a5e55e4513fa484aa3b4b593311fd9f0.jpg" alt="Electric Bike , High Quality" onerror="this.parentNode.innerHTML='<span class=&quot;noimg&quot;>photo unavailable</span>'"></a>
@@ -1047,6 +1105,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 43% of new</div>
           <div class="pct hot">saves $850</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
 <div class="eb-card" data-title="ebike" data-src="offerup" data-score="70.0" data-price="650">
@@ -1062,6 +1121,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 43% of new</div>
           <div class="pct hot">saves $850</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
 <div class="eb-card" data-title="yadea trooper 01 e-bike motercycle design" data-src="craigslist" data-score="70.0" data-price="700">
@@ -1077,6 +1137,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 47% of new</div>
           <div class="pct hot">saves $800</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: up to 70 mi, 960Wh"><span class="lbl">Maker spec</span> <b>40-70 mi</b></span></div>
         <div class="eb-detail">Yadea Trooper 01 E-Bike (Class 2 750W, goes up to 20mph) Fat tires, straddle-style seat -Minor scratches/dirt from use; yellowing of the back logo due to sun damage -Very recently renewed tires, reflectors, and throttle Cash only; must pick up To see all dimensions, weight limit, etc, please visit t…</div>
       </div>
 <div class="eb-card" data-title="ebike" data-src="offerup" data-score="70.0" data-price="700">
@@ -1092,6 +1153,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 47% of new</div>
           <div class="pct hot">saves $800</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
 <div class="eb-card" data-title="ebike sale" data-src="offerup" data-score="70.0" data-price="700">
@@ -1107,6 +1169,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 47% of new</div>
           <div class="pct hot">saves $800</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
 <div class="eb-card" data-title="tst r9 electric bike ⚡️ with passenger seat" data-src="offerup" data-score="70.0" data-price="700">
@@ -1122,6 +1185,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 47% of new</div>
           <div class="pct hot">saves $800</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: up to 55 mi"><span class="lbl">Maker spec</span> <b>30-55 mi</b></span></div>
         
       </div>
 <div class="eb-card" data-title="aventon sinch foldable e-bike" data-src="craigslist" data-score="70.0" data-price="750">
@@ -1137,6 +1201,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 50% of new</div>
           <div class="pct hot">saves $749</div>
         </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: up to 45 mi, 480Wh"><span class="lbl">Maker spec</span> <b>30-45 mi</b></span></div>
         <div class="eb-detail">E-bike with upgrades (cushioned seat, rear cargo shelf, 2 Kryptonite chain locks). Only 257 miles!</div>
       </div>
 <div class="eb-card" data-title="pedego latch belt drive electric folding bike ebike 3 speed shimano" data-src="craigslist" data-score="70.0" data-price="799">
@@ -1152,22 +1217,40 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 42% of new</div>
           <div class="pct hot">saves $1,096</div>
         </div>
+        <div class="eb-range"><span class="eb-rng seller" title="Stated by the seller in the listing"><span class="lbl">Seller says</span> <b>30 mi</b></span><span class="eb-rng spec" title="manufacturer: 20-35 mi, 432Wh"><span class="lbl">Maker spec</span> <b>20-35 mi</b></span></div>
         <div class="eb-detail">Pedego Latch BELT DRIVE 20&quot; wheels Electric Folding Bike Ebike 3 Speed Shimano IGH Bicycle Used Great condition, good battery life at least 30 miles range using pedal assist. The Pedego Latch is a folding electric bike designed for portability and a full-sized riding experience. It features a 250-wa…</div>
       </div>
+<div class="eb-card" data-title="aventon soltera 2.5 e-bike" data-src="craigslist" data-score="70.0" data-price="800">
+        <div class="eb-photo"><span class="noimg">no photo on listing</span></div>
+        <div class="eb-score mid">70<small>SCORE</small></div>
+        <div>
+          <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/los-angeles-aventon-soltera-25-bike/o6EqvTbKzq9EeDwk7S5jhQ" target="_blank" rel="noopener">Aventon Soltera 2.5 E-Bike</a></h3>
+          <div class="eb-meta"><span>📍 Los Angeles · ~42 mi</span><span>New ≈ <b>$1,399</b></span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Aventon</span><span class="eb-tag warn">far: ~42 mi from Irvine</span></div>
+        </div>
+        <div class="eb-price">
+          <div class="p">$800</div>
+          <div class="sub">asks 57% of new</div>
+          <div class="pct hot">saves $599</div>
+        </div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: up to 40 mi, 360Wh"><span class="lbl">Maker spec</span> <b>20-40 mi</b></span></div>
+        
+      </div>
 <div class="eb-card" data-title="aventon pace 500 v2" data-src="craigslist" data-score="70.0" data-price="800">
-        <a class="eb-photo" href="https://www.craigslist.org/view/d/rancho-cucamonga-aventon-pace-500-v2/wLPVYXevtMPgt5bsSGBa5b" target="_blank" rel="noopener"><img src="https://images.craigslist.org/00L0L_ub2OkgY2rj_0CI0t2_600x450.jpg" alt="Aventon pace 500 v2" onerror="this.parentNode.innerHTML='<span class=&quot;noimg&quot;>photo unavailable</span>'"></a>
+        <div class="eb-photo"><span class="noimg">no photo on listing</span></div>
         <div class="eb-score mid">70<small>SCORE</small></div>
         <div>
           <h3 class="eb-title"><a href="https://www.craigslist.org/view/d/rancho-cucamonga-aventon-pace-500-v2/wLPVYXevtMPgt5bsSGBa5b" target="_blank" rel="noopener">Aventon pace 500 v2</a></h3>
           <div class="eb-meta"><span>📍 Rancho Cucamonga · ~60 mi</span><span>New ≈ <b>$1,599</b></span></div>
-          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Aventon</span><span class="eb-tag warn">far: ~60 mi from Irvine</span><span class="eb-tag bad">speed/power claim over 28 mph - not a legal e-bike</span></div>
+          <div><span class="eb-tag cr">Craigslist</span><span class="eb-tag">Aventon</span><span class="eb-tag warn">far: ~60 mi from Irvine</span></div>
         </div>
         <div class="eb-price">
           <div class="p">$800</div>
           <div class="sub">asks 50% of new</div>
           <div class="pct hot">saves $799</div>
         </div>
-        <div class="eb-detail">Aventon pace 500 v2 used but still in great condition battery life is at 100% it last all day and it reaches 28 mph using pedal assist it&#x27;s a class 3 ebike. I&#x27;m willing to trade for a really good electric scooter that goes over 40 mph cuz brand new my ebike cost $2,000 and my bike is in great condit…</div>
+        <div class="eb-range"><span class="eb-rng spec" title="manufacturer: up to 50 mi, 500Wh"><span class="lbl">Maker spec</span> <b>30-50 mi</b></span></div>
+        
       </div>
 <div class="eb-card" data-title="euybike ebike black matte" data-src="craigslist" data-score="70.0" data-price="800">
         <a class="eb-photo" href="https://www.craigslist.org/view/d/la-habra-euybike-ebike-black-matte/xfCxvboFm4tNCeQDsiZw5X" target="_blank" rel="noopener"><img src="https://images.craigslist.org/00Y0Y_xuYVMzgzIU_0t20CI_600x450.jpg" alt="Euybike ebike black matte" onerror="this.parentNode.innerHTML='<span class=&quot;noimg&quot;>photo unavailable</span>'"></a>
@@ -1182,6 +1265,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 53% of new</div>
           <div class="pct hot">saves $700</div>
         </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         <div class="eb-detail">Goes up to 55 mile per charge Top speed 28 mpr in great condition Comes with charger</div>
       </div>
 <div class="eb-card" data-title="new in box awd electric bike 🏍" data-src="offerup" data-score="70.0" data-price="850">
@@ -1197,21 +1281,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
           <div class="sub">asks 57% of new</div>
           <div class="pct hot">saves $650</div>
         </div>
-        
-      </div>
-<div class="eb-card" data-title="electric bike" data-src="offerup" data-score="70.0" data-price="850">
-        <a class="eb-photo" href="https://offerup.com/item/detail/fd30f89d-6c21-32c2-9822-b643e7435389" target="_blank" rel="noopener"><img src="https://images.offerup.com/tVRBPE3v6NVkdZlg4_2RNiV10Kk=/250x333/e159/e159dd43244c450e9741992f06dbd66a.jpg" alt="Electric Bike" onerror="this.parentNode.innerHTML='<span class=&quot;noimg&quot;>photo unavailable</span>'"></a>
-        <div class="eb-score mid">70<small>SCORE</small></div>
-        <div>
-          <h3 class="eb-title"><a href="https://offerup.com/item/detail/fd30f89d-6c21-32c2-9822-b643e7435389" target="_blank" rel="noopener">Electric Bike</a></h3>
-          <div class="eb-meta"><span>📍 Irvine, CA · ~3 mi</span><span>New ≈ <b>$1,500</b></span></div>
-          <div><span class="eb-tag ou">OfferUp</span></div>
-        </div>
-        <div class="eb-price">
-          <div class="p">$850</div>
-          <div class="sub">asks 57% of new</div>
-          <div class="pct hot">saves $650</div>
-        </div>
+        <div class="eb-range"><span class="eb-rng none"><span class="lbl">Range</span> <b>not published</b></span></div>
         
       </div>
   </div>
@@ -1226,11 +1296,12 @@ nav > .nav-logo{margin-right:0!important;order:-1}
       <li><b>Model year (up to 6)</b> and <b>listing text (±):</b> recent years score up; "needs battery", "no charger", "salvage" score down; owner history and receipts score up.</li>
       <li><b>The battery is the bike.</b> Ask for miles and charge cycles, charge it to full before paying, and check for swelling. Replacement packs run several hundred to over a thousand dollars.</li>
       <li><b>Legal line:</b> Class 1/2 assist to 20 mph, Class 3 to 28 mph - 28 mph is the ceiling. Anything shipped at 32+ mph (or dual-motor, 60V+) is a motor vehicle, not an e-bike: licence, registration, no bike lanes. Those listings are filtered out.</li>
+      <li><b>Range is two numbers, never one.</b> <em>Seller says</em> is what the listing claims at full charge; <em>Maker spec</em> is the manufacturer's published figure for that model line at full charge. When a seller states none, only the spec is shown; when no maker figure is published for the model, the card says so rather than guessing.</li>
       <li><b>Filters that removed 5 listings:</b> parts and accessories, scam and financing spam, knockoff "73 style" clones, storefront reseller boilerplate, and machines over the e-bike speed ceiling.</li>
     </ul>
   </div>
 
-  <p class="eb-foot">Scanned Oct 27, 2026 11:24 AM. 979 listings read, 228 passed the filters, 129 had their detail page read.<br>
+  <p class="eb-foot">Scanned Oct 27, 2026 11:38 AM. 955 listings read, 228 passed the filters, 98 had their detail page read.<br>
   Prices are <b>asking</b> prices, not sold prices - verify the bike, the battery and the receipts before paying. RoyceAI is not the seller.</p>
 </div>
 <footer>
