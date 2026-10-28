@@ -71,7 +71,7 @@ h1.big{font-size:82px;max-width:1240px}
 .hl{color:var(--accent-light);font-weight:900;letter-spacing:-.01em}
 .note{font-size:16px;line-height:1.6;color:var(--sec);max-width:1330px}
 .note b{color:var(--text);font-weight:600}
-.src{font-size:15px;line-height:1.5;color:var(--sec);opacity:.96;max-width:1330px;margin-top:10px;
+.src{font-size:15px;line-height:1.5;color:var(--sec);opacity:.96;max-width:1330px;margin-top:7px;
   border-top:1px solid rgba(255,255,255,.13);padding-top:9px;letter-spacing:.01em}
 .src b{color:var(--text);font-weight:700;letter-spacing:.06em}
 
@@ -109,6 +109,12 @@ h1.big{font-size:82px;max-width:1240px}
 .clock p{font-size:15.5px;line-height:1.55;color:var(--sec)}
 .clock .own{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;
   color:var(--accent-light);opacity:.85;margin-bottom:8px}
+.clock .why{font-size:13.5px;line-height:1.45;color:var(--sec);margin-top:9px;padding-top:9px;
+  border-top:1px dashed rgba(255,255,255,.16)}
+.clock .why b{display:inline;font-size:10.5px;letter-spacing:.12em;color:var(--accent-light);margin-right:6px}
+.eng{margin-top:10px;padding:14px 20px;border:1px solid rgba(234,61,47,.35);border-radius:14px;
+  background:rgba(234,61,47,.07);font-size:14.5px;line-height:1.5;color:var(--text)}
+.eng b.lab{display:block;font-size:11px;letter-spacing:.13em;color:var(--accent-light);margin-bottom:6px}
 .clock .say{font-size:14.5px;line-height:1.5;color:var(--text);font-style:italic;margin-top:10px;
   padding-top:10px;border-top:1px solid rgba(255,255,255,.12)}
 .clock .say b{font-style:normal;font-weight:800;color:var(--accent-light);
@@ -264,18 +270,19 @@ off. The name is asked once the conversation has opened, not while they are stil
       <div class="stat hi"><b>48%</b><span>Of salespeople never send a second one</span></div>
     </div>
     <div class="cards four clocks">
-      <div class="clock"><b>Same day</b><p class="own">Consultant &middot; in person, then by text</p><p>CRM note written, then a call or text with the link to the exact vehicle they looked at.</p>
-        <p class="say"><b>WORD TRACK</b>&ldquo;It&rsquo;s Royce from earlier &mdash; thank you for coming in. Here is the link to the vehicle you looked at.&rdquo;</p></div>
-      <div class="clock"><b>24 hours</b><p class="own">Consultant &middot; one call or text</p><p>One call or text, about that exact unit, that asks for nothing but an answer.</p>
-        <p class="say"><b>WORD TRACK</b>&ldquo;Morning &mdash; Royce from yesterday. Did the link come through? If the payment or the delivery date is still open, tell me which one and I&rsquo;ll answer it straight.&rdquo;</p></div>
-      <div class="clock"><b>72 hours</b><p class="own">Consultant &middot; call, carrying something</p><p>Carry a comparable vehicle, a payment that works, or the answer they left without.</p>
-        <p class="say"><b>WORD TRACK</b>&ldquo;I found a second option that fits what you told me &mdash; want me to send the link?&rdquo;</p></div>
-      <div class="clock"><b>14 days</b><p class="own">Manager &middot; the decision call</p><p>Five touches in. The desk decides: offer, reassign, or close the file in writing.</p>
-        <p class="say"><b>WORD TRACK</b>&ldquo;Before we close the file &mdash; is there a payment that would have made this a yes?&rdquo;</p></div>
+      <div class="clock"><b>Same day</b><p class="own">Consultant &middot; in person, then by text</p><p class="say"><b>WORD TRACK</b>&ldquo;It&rsquo;s Royce from earlier &mdash; thank you for coming in. Here is the link to the vehicle you looked at.&rdquo;</p>
+        <p class="why"><b>WHY</b>The link is why you had a number to ask for. Same day proves you heard which unit they stood at.</p></div>
+      <div class="clock"><b>24 hours</b><p class="own">Consultant &middot; one call or text</p><p class="say"><b>WORD TRACK</b>&ldquo;Morning &mdash; Royce from yesterday. Did the link come through? If the payment or the delivery date is still open, tell me which one and I&rsquo;ll answer it straight.&rdquo;</p>
+        <p class="why"><b>WHY</b>One question they answer in seconds &mdash; whichever half they name is the real obstacle.</p></div>
+      <div class="clock"><b>72 hours</b><p class="own">Consultant &middot; call, carrying something</p><p class="say"><b>WORD TRACK</b>&ldquo;I found a second option that fits what you told me &mdash; want me to send the link?&rdquo;</p>
+        <p class="why"><b>WHY</b>A different vehicle answers a different question: it was the car, or it is the money.</p></div>
+      <div class="clock"><b>14 days</b><p class="own">Manager &middot; the decision call</p><p class="say"><b>WORD TRACK</b>&ldquo;Before we close the file &mdash; is there a payment that would have made this a yes?&rdquo;</p>
+        <p class="why"><b>WHY</b>A file closed with a reason reopens in ninety days. A file that fades does not.</p></div>
     </div>
-    <p class="note">Five touches in fourteen days is what those two facts add up to. Then the desk decides
-    &mdash; re-engage, reassign, or close the file. Silence is not a follow-up plan; it is the default that
-    loses the deal.</p>
+    <div class="eng"><b class="lab">QUALITY OF ENGAGEMENT AFTER THEY LEFT</b>
+    Read before the next touch: link opened &middot; replied with a question of their own &middot; called back
+    &middot; appointment on the calendar. <b>Sent is not engaged.</b> Two silent touches mean change the
+    channel or the offer &mdash; never the volume.</div>
     <p class="src"><b>SOURCES</b> &mdash; 80% and 48%: ZoomInfo sales follow-up statistics (2026 compilation).
     14.1% of new sales leads never get logged in the dealer CRM: Foureyes, 2025 Automotive Dealer Benchmarks
     Report.</p>
