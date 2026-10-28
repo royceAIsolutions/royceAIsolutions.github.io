@@ -68,6 +68,10 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
 .stat:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
 .stat .num{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s ease-in-out infinite}
 .stat .label{color:var(--text-secondary);font-size:0.85rem;margin-top:6px}
+.factband{display:flex;align-items:center;gap:18px;margin:6px 0 16px;padding:16px 20px;
+  border:1px solid rgba(234,61,47,.42);background:rgba(234,61,47,.08);border-radius:14px}
+.factband b{font-size:1.75rem;font-weight:900;color:var(--accent-light);letter-spacing:-.02em;white-space:nowrap}
+.factband span{font-size:.9rem;color:var(--text-secondary);line-height:1.45}
 .timeline{max-width:760px;margin:0 auto;position:relative}
 .timeline::before{content:'';position:absolute;left:20px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,rgba(124,92,252,0.5),rgba(124,92,252,0.05))}
 .tl-item{position:relative;padding:0 0 32px 60px}
@@ -427,8 +431,11 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
         <h4>Requirement 03</h4>
         <p class="rq">Follow-up best practices</p>
         <p class="an">Same-day note and same-day call, a personal 24-hour touch about their car, a 72-hour
-        second touch with something useful, five touches over fourteen days, thirty days to decide, then nurture only for the ones still looking &mdash; silence closes the file at thirty, and nurture runs until they buy. The average buying cycle is 89 days (Cox Automotive, Car Buyer Journey)
-        instead of silence.</p>
+        second touch with something useful, five touches over fourteen days, thirty days to decide, then
+        nurture only for the ones still looking &mdash; silence closes the file at thirty, and nurture runs
+        until they buy.</p>
+        <div class="factband"><b>89 days</b><span>Average car-buying cycle, first look to keys
+        &middot; Cox Automotive, Car Buyer Journey</span></div>
         <div class="hits"><span>24h / 72h clocks</span><span>Slide 06</span><span>After the visit</span></div>
       </div>
       <div class="reqcard">
