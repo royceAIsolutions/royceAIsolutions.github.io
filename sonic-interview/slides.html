@@ -78,6 +78,14 @@ h1.big{font-size:82px;max-width:1240px}
 /* cards */
 .cards{display:grid;gap:24px;margin-top:auto;margin-bottom:8px}
 .cards.four{grid-template-columns:repeat(4,1fr)}
+.cards.five{grid-template-columns:repeat(5,1fr);gap:16px}
+.cards.five .clock{padding:22px 18px;min-height:0}
+.cards.five .clock b{font-size:24px;margin-bottom:11px}
+.cards.five .clock p{font-size:13.5px;line-height:1.5}
+.cards.five .clock .own{font-size:10px;letter-spacing:.08em}
+.cards.five .clock .say{font-size:12.5px;line-height:1.45;margin-top:8px;padding-top:8px}
+.cards.five .clock .why{font-size:12px;line-height:1.42;margin-top:7px;padding-top:7px}
+.cards.five .clock .why b{font-size:9.5px}
 .cards.three{grid-template-columns:repeat(3,1fr)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px 28px;min-height:286px;display:flex;flex-direction:column}
 .card .n{display:inline-flex;align-items:center;justify-content:center;width:56px;height:40px;border-radius:10px;
@@ -264,20 +272,23 @@ off. The name is asked once the conversation has opened, not while they are stil
   <section class="slide">
     <div class="kicker">Requirement 03 &mdash; follow-up best practices</div>
     <h1>The follow-up clocks</h1>
-    <p class="sub">Five touches in fourteen days, then a tail to thirty &mdash; because the buyer is not on your clock. One committed contact beats ten remembered intentions.</p>
+    <p class="sub">Five touches in fourteen days, then thirty days to decide: engaged and still looking goes to nurture, silence ends the file. One committed contact beats ten remembered intentions.</p>
     <div class="facts">
       <div class="stat hi"><b>80%</b><span>Of sales need five or more follow-up contacts to close</span></div>
       <div class="stat hi"><b>48%</b><span>Of salespeople never send a second one</span></div>
     </div>
-    <div class="cards four clocks">
+    <div class="cards five clocks">
       <div class="clock"><b>Same day</b><p class="own">Consultant &middot; in person, then by text</p><p class="say"><b>WORD TRACK</b>&ldquo;It&rsquo;s Royce from earlier &mdash; thank you for coming in. Here is the link to the vehicle you looked at.&rdquo;</p>
         <p class="why"><b>WHY</b>The link is why you had a number to ask for. Same day proves you heard which unit they stood at.</p></div>
       <div class="clock"><b>24 hours</b><p class="own">Consultant &middot; one call or text</p><p class="say"><b>WORD TRACK</b>&ldquo;Morning &mdash; Royce from yesterday. Did the link come through? If the payment or the delivery date is still open, tell me which one and I&rsquo;ll answer it straight.&rdquo;</p>
         <p class="why"><b>WHY</b>One question they answer in seconds &mdash; whichever half they name is the real obstacle.</p></div>
       <div class="clock"><b>72 hours</b><p class="own">Consultant &middot; call, carrying something</p><p class="say"><b>WORD TRACK</b>&ldquo;I found a second option that fits what you told me &mdash; want me to send the link?&rdquo;</p>
         <p class="why"><b>WHY</b>A different vehicle answers a different question: it was the car, or it is the money.</p></div>
-      <div class="clock"><b>14 &rarr; 30 days</b><p class="own">Manager &middot; decision call, then the tail</p><p class="say"><b>WORD TRACK</b>&ldquo;Before we close the file &mdash; is there a payment that would have made this a yes?&rdquo;</p>
-        <p class="why"><b>WHY</b>Two weeks is where most stores quit, and many buyers are still shopping. The file runs to thirty days, then monthly &mdash; not the bin.</p></div>
+      <div class="clock"><b>14 &rarr; 30 days</b><p class="own">Manager &middot; close or carry</p><p class="say"><b>WORD TRACK</b>&ldquo;Before we close the file &mdash; is there a payment that would have made this a yes?&rdquo;</p>
+        <p class="why"><b>WHY</b>Two weeks is where most stores quit. The file runs to thirty, then splits: no engagement means it closes in writing; still looking means nurture.</p></div>
+      <div class="clock"><b>Monthly</b><p class="own">Desk &middot; engaged only</p>
+        <p class="say"><b>WORD TRACK</b>&ldquo;Still looking? Two used units came in that fit what you described, and your trade is worth more than it was in March.&rdquo;</p>
+        <p class="why"><b>WHY</b>For the ones still looking or thinking, at the date they named. No response and no engagement ends at thirty &mdash; nurture is not a way to keep dead files open.</p></div>
     </div>
     <div class="eng"><b class="lab">QUALITY OF ENGAGEMENT AFTER THEY LEFT</b>
     Read before the next touch: link opened &middot; replied with a question of their own &middot; called back
