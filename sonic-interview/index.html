@@ -12,7 +12,7 @@ gtag('config', 'G-EF23H9423B');
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Royce Koh &mdash; Sonic &amp; Powersports Sales Training Director</title>
-<meta name="description" content="Royce Koh - Round 1 training presentation for the Sonic &amp; Powersports Sales Training Director interview: training salespeople to handle a walk-in, log every opportunity, and follow up after the visit.">
+<meta name="description" content="Royce Koh - Round 1 training presentation for the Sonic &amp; Powersports Sales Training Director interview: a 10-minute Friday opening session on handling a walk-in, logging every opportunity, and following up after the visit.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -299,6 +299,44 @@ footer .prep{margin-top:14px;font-size:.78rem;color:var(--text-muted)}
 .job li{position:relative;padding-left:16px;font-size:.83rem;color:var(--text-secondary);line-height:1.58;display:block}
 .job li::before{content:'';position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.85}
 .job li strong{color:var(--text);font-weight:600}
+/* ---- requirement map ---- */
+.req{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.reqcard{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow-card)}
+.reqcard h4{font-size:.72rem;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-light);font-weight:700;margin-bottom:8px}
+.reqcard .rq{font-size:.92rem;color:var(--text);font-weight:600;line-height:1.45;margin-bottom:8px}
+.reqcard .an{font-size:.84rem;color:var(--text-secondary);line-height:1.55}
+.reqcard .an b{color:var(--text);font-weight:600}
+.reqcard .hits{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.reqcard .hits span{font-size:.7rem;font-weight:700;color:var(--accent-light);background:var(--accent-bg);border:1px solid rgba(234,61,47,.28);padding:3px 9px;border-radius:100px}
+/* ---- deck run of show ---- */
+.deck{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:8px 20px;box-shadow:var(--shadow-card)}
+.slide{display:grid;grid-template-columns:54px 1fr auto;gap:16px;align-items:center;padding:13px 0;border-bottom:1px solid var(--border)}
+.slide:last-child{border-bottom:none}
+.slide .n{font-size:.78rem;font-weight:800;color:var(--accent-light);background:var(--accent-bg);border:1px solid rgba(234,61,47,.28);border-radius:8px;text-align:center;padding:5px 0}
+.slide .st{font-size:.9rem;color:var(--text);font-weight:600;line-height:1.35}
+.slide .st small{display:block;font-size:.79rem;color:var(--text-secondary);font-weight:400;margin-top:3px;line-height:1.45}
+.slide .tm{font-size:.75rem;font-weight:700;color:var(--text-muted);white-space:nowrap;letter-spacing:.03em}
+/* ---- the math ---- */
+.math{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:14px}
+.math .m{background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 15px}
+.math .m b{display:block;font-size:1.35rem;font-weight:800;letter-spacing:-.02em;color:var(--accent-light);line-height:1.1;margin-bottom:5px}
+.math .m span{display:block;font-size:.74rem;color:var(--text-muted);line-height:1.4;font-weight:600}
+.math .m.res{border-color:rgba(234,61,47,.42);background:rgba(234,61,47,.08)}
+.caution{font-size:.78rem;color:var(--text-muted);line-height:1.55;border-top:1px solid var(--border);padding-top:12px;margin-top:4px}
+/* ---- one page SOP ---- */
+.sop{background:var(--bg-card);border:1px solid rgba(234,61,47,.30);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-card)}
+.sop h3{font-size:.95rem;font-weight:800;color:var(--text);letter-spacing:-.01em;margin-bottom:4px}
+.sop .sub{font-size:.8rem;color:var(--text-muted);margin-bottom:16px}
+.sopgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.sopgrid > div h5{font-size:.7rem;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-light);font-weight:700;margin-bottom:9px}
+.sopgrid ol,.sopgrid ul{list-style:none;padding:0;margin:0}
+.sopgrid ol{counter-reset:s}
+.sopgrid ol li{counter-increment:s;position:relative;padding-left:24px;font-size:.84rem;color:var(--text-secondary);line-height:1.5;margin-bottom:7px}
+.sopgrid ol li::before{content:counter(s);position:absolute;left:0;top:.05em;width:16px;height:16px;border-radius:5px;background:var(--accent-bg);border:1px solid rgba(234,61,47,.3);color:var(--accent-light);font-size:.65rem;font-weight:800;text-align:center;line-height:15px}
+.sopgrid ul li{position:relative;padding-left:15px;font-size:.84rem;color:var(--text-secondary);line-height:1.5;margin-bottom:7px}
+.sopgrid ul li::before{content:'';position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.8}
+.sopgrid li b{color:var(--text);font-weight:600}
+@media(max-width:640px){.slide{grid-template-columns:40px 1fr}.slide .tm{display:none}.deck{padding:6px 14px}.sop{padding:18px 16px}}
 /* ---- what I would teach ---- */
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
 .skillgrp{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:17px 18px;box-shadow:var(--shadow-card)}
@@ -315,7 +353,7 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
 @media(max-width:640px){.rhead{gap:12px}.score{width:64px;height:64px}.score b{font-size:1.32rem}h1{font-size:1.8rem}header.hero{padding-top:calc(var(--nav-h) + 34px)}}
 </style>
 </head>
-<body>
+<body id="top">
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 <nav>
@@ -343,13 +381,13 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
 
 <header class="hero">
-  <span class="badge">🎯 Sonic &middot; Powersports &middot; Sales Training Director &middot; Round 1 &middot; Oct 28-29</span>
+  <span class="badge">🎯 Sonic &middot; Powersports &middot; Sales Training Director &middot; Round 1 &middot; 10-minute training</span>
   <h1>Ten minutes to change<br><span class="gradient">how the floor works</span></h1>
-  <p class="subtitle">Round 1 is a working session on how I would train salespeople to handle a walk-in
-  and follow up after they leave. The invitation, the panel and the dates are below; so is the training
-  itself, minute by minute, so the room can read exactly what it is evaluating.</p>
+  <p class="subtitle">Round 1 asks for a ten-minute training presentation, delivered as if it were the start of a
+  Friday meeting &mdash; how to handle a walk-in and follow up after the visit. This page is that session:
+  the run of show, the drill, the numbers the store can audit, and the one-page standard it leaves behind.</p>
   <div class="stats">
-    <div class="stat"><b>Every</b><span>Walk-in gets logged</span></div>
+    <div class="stat"><b>100%</b><span>Walk-ins logged</span></div>
     <div class="stat"><b>4</b><span>Steps on the floor</span></div>
     <div class="stat"><b>24h + 72h</b><span>Follow-up clocks</span></div>
     <div class="stat"><b>10:00</b><span>Friday opening segment</span></div>
@@ -357,6 +395,62 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
 </header>
 
 <main>
+
+  <section>
+    <div class="section-header">
+      <h2>Every requirement, <span class="gradient">and where it is answered</span></h2>
+      <p>The Round 1 brief names four things the presentation must cover, plus how it will be judged.
+      Each card quotes the requirement and answers it.</p>
+    </div>
+    <div class="req">
+      <div class="reqcard">
+        <h4>Requirement 01</h4>
+        <p class="rq">The importance of logging every sales opportunity</p>
+        <p class="an">An unlogged walk-in is invisible in the report and impossible to follow up. The session
+        makes logging the first measurable win &mdash; before close rate &mdash; and shows the store what the
+        gap between the door and the CRM costs in dollars.</p>
+        <div class="hits"><span>Slide 02</span><span>Step 1</span><span>The math</span></div>
+      </div>
+      <div class="reqcard">
+        <h4>Requirement 02</h4>
+        <p class="rq">Any key steps in between entering and leaving the store</p>
+        <p class="an">Four steps, in order, taught the same way at every store: greet and log, discover and
+        write the right vehicle, present one vehicle well, then present the number and commit the next
+        contact before the guest reaches the door.</p>
+        <div class="hits"><span>Steps 1-4</span><span>Run of show</span><span>One-page standard</span></div>
+      </div>
+      <div class="reqcard">
+        <h4>Requirement 03</h4>
+        <p class="rq">Follow-up best practices</p>
+        <p class="an">Same-day note and same-day call, a personal 24-hour touch about their car, a 72-hour
+        second touch with something useful, five touches over fourteen days, then a decision from the desk
+        instead of silence.</p>
+        <div class="hits"><span>24h / 72h clocks</span><span>Slide 06</span><span>After the visit</span></div>
+      </div>
+      <div class="reqcard">
+        <h4>Requirement 04</h4>
+        <p class="rq">Ten minutes or less, as the start of a Friday meeting</p>
+        <p class="an">A 10:00 run of show, second by second, ending on a 30-second drill the room performs
+        out loud and one ask for the week. It is built to open a Friday meeting, not to fill an hour.</p>
+        <div class="hits"><span>Run of show</span><span>Slide 07</span><span>The ask</span></div>
+      </div>
+      <div class="reqcard">
+        <h4>How it is judged</h4>
+        <p class="rq">Ability to communicate effectively, engage an audience, deliver clear actionable training</p>
+        <p class="an">Every segment has one job, the words the trainer says, and a proof the store can measure
+        that week. The session ends with the room talking, not the presenter &mdash; the drill is performed by
+        the team, never demonstrated at them.</p>
+        <div class="hits"><span>Do, then drill</span><span>What the room does Monday</span></div>
+      </div>
+      <div class="reqcard">
+        <h4>How it is judged</h4>
+        <p class="rq">Presented as an actual training session, not a description of one</p>
+        <p class="an">The session stands on its own for the people in the room. The page exists so the panel
+        can reread it afterwards &mdash; it is the handout for the training, not a substitute for delivering it.</p>
+        <div class="hits"><span>Run of show</span><span>One-page standard</span></div>
+      </div>
+    </div>
+  </section>
 
   <section>
     <div class="section-header">
@@ -375,7 +469,7 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
         <h4>The number we own</h4>
         <div class="big">Every walk-in logged</div>
         <p>The first measurable win is not close rate. It is a floor where a guest cannot leave without
-        a name in the CRM &mdash; because an unlogged walk-in is unfollowed-up and invisible in the report.</p>
+        a name in the CRM &mdash; because an unlogged walk-in is never followed up and invisible in the report.</p>
       </div>
       <div class="evcard">
         <h4>How the room learns</h4>
@@ -383,6 +477,25 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
         <p>Ten minutes ends with a 60-second live drill the team performs, not a slide they read.
         Everyone leaves having said the words out loud once.</p>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <h2>The deck, <span class="gradient">slide by slide</span></h2>
+      <p>Eight slides, sixteen by nine, one idea each. This is what is on the screen during the ten minutes,
+      in order, with the time it takes. The room reads the slide while the trainer talks &mdash; the slide never
+      reads to the room.</p>
+    </div>
+    <div class="deck">
+      <div class="slide"><div class="n">01</div><div class="st">Ten minutes that changes the floor<small>The frame, in their words: ten minutes at the start of a Friday meeting, as the new initiative for this store. One sentence, no agenda slide.</small></div><div class="tm">0:00 - 1:00</div></div>
+      <div class="slide"><div class="n">02</div><div class="st">What an unlogged walk-in costs<small>Three numbers on the screen: walk-ins a week, the share never written down, and the deals that share should have produced. Requirement 01 lives here.</small></div><div class="tm">1:00 - 2:30</div></div>
+      <div class="slide"><div class="n">03</div><div class="st">Four steps, in this order<small>Greet and log. Discover and write the right vehicle. Present one vehicle well. The desk and the next contact. One line each &mdash; the whole store process on one slide.</small></div><div class="tm">2:30 - 3:30</div></div>
+      <div class="slide"><div class="n">04</div><div class="st">Step 1: greet and log<small>Inside 30 seconds: name, mobile, written down in front of the guest. Why the act of writing is the training, not the CRM entry after they leave.</small></div><div class="tm">3:30 - 5:00</div></div>
+      <div class="slide"><div class="n">05</div><div class="st">Steps 2-4: the visit<small>Three discovery questions, one vehicle presented well instead of three badly, notes written at the vehicle, the number before the trade, and the next contact committed before the door.</small></div><div class="tm">5:00 - 6:30</div></div>
+      <div class="slide"><div class="n">06</div><div class="st">The follow-up clocks<small>Same day, 24 hours, 72 hours, five touches over fourteen days, then a decision. Requirement 03 lives here. One committed contact beats ten remembered intentions.</small></div><div class="tm">6:30 - 8:00</div></div>
+      <div class="slide"><div class="n">07</div><div class="st">The 30-second drill<small>The room turns to a partner and collects a name and a mobile number out loud, in 30 seconds. Nobody is asked to be a hero; everybody says the words once.</small></div><div class="tm">8:00 - 9:30</div></div>
+      <div class="slide"><div class="n">08</div><div class="st">The ask, and what Friday measures<small>One ask for the week: every walk-in logged before the guest reaches the door. One number the GM walks: traffic count against logged opportunities.</small></div><div class="tm">9:30 - 10:00</div></div>
     </div>
   </section>
 
@@ -492,6 +605,44 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
 
   <section>
     <div class="section-header">
+      <h2>What an unlogged walk-in <span class="gradient">costs</span></h2>
+      <p>The first number this training fixes is not close rate. It is the gap between the people who walked
+      through the door and the names in the CRM. Here is the arithmetic the room will see, with the floor
+      assumptions stated up front so anybody can swap in their own store.</p>
+    </div>
+    <div class="math">
+      <div class="m"><b>40</b><span>Walk-ins per week, one store</span></div>
+      <div class="m"><b>25%</b><span>Never written down</span></div>
+      <div class="m"><b>10</b><span>Lost opportunities per week</span></div>
+      <div class="m"><b>10%</b><span>Close rate on a worked lead</span></div>
+      <div class="m res"><b>1 / week</b><span>Deliveries that never got a chance</span></div>
+      <div class="m res"><b>4 / month</b><span>Same loss, across a month</span></div>
+    </div>
+    <div class="ev">
+      <div class="evcard">
+        <h4>Why this is the first fix</h4>
+        <p>A lead that was never written down cannot be called, cannot be counted and cannot be coached.
+        Every other number in the store &mdash; close rate, appointment rate, follow-up compliance &mdash; is
+        measured against a denominator that is short by whatever walked out unrecorded.</p>
+      </div>
+      <div class="evcard">
+        <h4>What the training does about it</h4>
+        <p>It removes the excuse. The guest's name and number are written in front of the guest, by the
+        consultant, before the walkaround &mdash; not typed into the CRM at the end of the day from memory.</p>
+      </div>
+      <div class="evcard">
+        <h4>What the desk measures</h4>
+        <p>Door count against logged opportunities, walked daily. The target is not a better percentage;
+        it is a gap of zero between the traffic counter and the CRM.</p>
+      </div>
+    </div>
+    <p class="caution">These are illustrative floor assumptions, not claimed store data. The method is the
+    point: substitute the store's real traffic count and logged opportunities and the same arithmetic returns
+    the store's own number. That swap is the first thing the trainer does on day one.</p>
+  </section>
+
+  <section>
+    <div class="section-header">
       <h2>Round 1 <span class="gradient">logistics</span></h2>
       <p>What the interview team has set out for every candidate in the round.</p>
     </div>
@@ -531,9 +682,9 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
       </div>
       <div class="evcard">
         <h4>Brand range</h4>
-        <div class="big">9 brands</div>
-        <p>Ferrari, Maserati, Jaguar Land Rover, Audi, Lexus, BMW, Toyota, VinFast, plus performance
-        tuning. Premium, franchise, EV and exotic.</p>
+        <div class="big">8 brands</div>
+        <p>Ferrari, Maserati, Jaguar Land Rover, Audi, Lexus, BMW, Toyota and VinFast &mdash; premium,
+        franchise and EV, plus performance tuning.</p>
       </div>
       <div class="evcard">
         <h4>The walk-in habit</h4>
@@ -544,16 +695,56 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
     </div>
   </section>
 
+  <section>
+    <div class="section-header">
+      <h2>The standard the store <span class="gradient">keeps</span></h2>
+      <p>The ten minutes end with something the store can print and pin. One page: four steps, three clocks,
+      one number. If the room remembers nothing else from the session, it keeps this.</p>
+    </div>
+    <div class="sop">
+      <h3>Walk-in Standard &mdash; one page</h3>
+      <div class="sub">Every guest, every visit. Taught the same way at every store, audited the same way by the GM.</div>
+      <div class="sopgrid">
+        <div>
+          <h5>Four steps on the floor</h5>
+          <ol>
+            <li><b>Greet and log.</b> Inside 30 seconds. Name and mobile written in front of the guest.</li>
+            <li><b>Discover and write the right vehicle.</b> Who is it for, what are they driving now, what must be true on delivery day.</li>
+            <li><b>Present one vehicle well.</b> Feature, benefit, proof &mdash; notes written at the vehicle, not after.</li>
+            <li><b>Desk and next contact.</b> The number before the trade, and a day, a time and an owner before they reach the door.</li>
+          </ol>
+        </div>
+        <div>
+          <h5>Three follow-up clocks</h5>
+          <ul>
+            <li><b>Same day</b> &mdash; note in the CRM and a call while the visit is still fresh.</li>
+            <li><b>24 hours</b> &mdash; a personal call or text about their car, never a template.</li>
+            <li><b>72 hours</b> &mdash; a second touch with something useful: a vehicle, a payment, an answer.</li>
+            <li><b>14 days</b> &mdash; five touches in total, then a decision from the desk instead of silence.</li>
+          </ul>
+        </div>
+        <div>
+          <h5>One number</h5>
+          <ul>
+            <li><b>Door count against logged opportunities.</b> The gap is the only number this training is scored on in week one.</li>
+            <li>Walked daily by the desk. Reviewed Friday in the same ten-minute window.</li>
+            <li>One win, one miss, one thing the room drills again next week.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
   <div class="fmark">Royce Koh &middot; Irvine, CA</div>
   <div class="links">
+    <a href="/sonic-interview/#top">Round 1 Training</a>
     <a href="/about">About Royce</a>
-    <a href="/sonic-trainer">Sales Trainer Fit</a>
   </div>
-  <div class="copy">Round 1 training presentation outline for the Sonic and Powersports Sales Training
-  Director interview, October 28-29, 2026. Panel: James Walter, Ray Farrow, Mike Verrigni.</div>
+  <div class="copy">Round 1 training presentation for the Sonic and Powersports Sales Training Director
+  interview. Panel: James Walter, Ray Farrow, Mike Verrigni.</div>
   <div class="prep">royceaisolutions@gmail.com &middot; (949) 501-8072</div>
 </footer>
 
