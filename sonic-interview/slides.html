@@ -64,6 +64,11 @@ h1.big{font-size:82px;max-width:1240px}
 .stat span{display:block;font-size:13.5px;color:var(--muted);font-weight:700;line-height:1.35;text-transform:uppercase;letter-spacing:.05em}
 .stat.hi{background:rgba(234,61,47,.09);border-color:rgba(234,61,47,.42)}
 .stat.hi b{color:var(--accent-light)}
+.facts{display:flex;gap:18px;margin-top:20px}
+.facts .stat{flex:1;display:flex;align-items:center;gap:22px;min-height:0;padding:15px 22px}
+.facts .stat b{margin-bottom:0;font-size:44px;white-space:nowrap}
+.facts .stat span{font-size:12.5px;letter-spacing:.06em}
+.hl{color:var(--accent-light);font-weight:900;letter-spacing:-.01em}
 .note{font-size:16px;line-height:1.6;color:var(--sec);max-width:1330px}
 .note b{color:var(--text);font-weight:600}
 .src{font-size:15px;line-height:1.5;color:var(--sec);opacity:.96;max-width:1330px;margin-top:10px;
@@ -178,7 +183,7 @@ body.showui #bar,body.showui #hud{opacity:1}
     <p class="sub">Not close rate. The gap between the people who walked in and the names in the CRM.</p>
     <div class="stats six">
       <div class="stat"><b>40</b><span>Guests walk in per week &mdash; this store's traffic count</span></div>
-      <div class="stat"><b>12.4%</b><span>Of qualified leads are never logged in the CRM (published benchmark)</span></div>
+      <div class="stat hi"><b>12.4%</b><span>Of qualified leads are never logged in the CRM (published benchmark)</span></div>
       <div class="stat"><b>5</b><span>Lost names per week (40 &times; 12.4%)</span></div>
       <div class="stat"><b>10%</b><span>Close rate on a lead somebody actually works</span></div>
       <div class="stat hi"><b>1 / 2 wks</b><span>Deliveries nobody could call (5 &times; 10%)</span></div>
@@ -267,13 +272,16 @@ off. The name is asked once the conversation has opened, not while they are stil
       <div class="clock"><b>14 days</b><p class="own">Manager &middot; the decision call</p><p>Five touches in. The desk decides: offer, reassign, or close the file in writing.</p>
         <p class="say"><b>WORD TRACK</b>&ldquo;Before we close the file &mdash; is there a payment that would have made this a yes?&rdquo;</p></div>
     </div>
-    <p class="note"><b>Why five:</b> most sales need at least five contacts to close, and most consultants stop
-    after two. Then the desk decides &mdash; re-engage, reassign, or close the file. Silence is not a follow-up
-    plan; it is the default that loses the deal.</p>
-    <p class="src"><b>SOURCES</b> &mdash; 80% of sales need five or more follow-up contacts, and 48% of
-    salespeople never send a second one: ZoomInfo sales follow-up statistics (2026 compilation). 14.1% of new
-    sales leads never get logged in the dealer CRM: Foureyes, 2025 Automotive Dealer Benchmarks Report. Five
-    touches in fourteen days is what those two facts add up to.</p>
+    <div class="facts">
+      <div class="stat hi"><b>80%</b><span>Of sales need five or more follow-up contacts to close</span></div>
+      <div class="stat hi"><b>48%</b><span>Of salespeople never send a second one</span></div>
+    </div>
+    <p class="note">Five touches in fourteen days is what those two facts add up to. Then the desk decides
+    &mdash; re-engage, reassign, or close the file. Silence is not a follow-up plan; it is the default that
+    loses the deal.</p>
+    <p class="src"><b>SOURCES</b> &mdash; 80% and 48%: ZoomInfo sales follow-up statistics (2026 compilation).
+    14.1% of new sales leads never get logged in the dealer CRM: Foureyes, 2025 Automotive Dealer Benchmarks
+    Report.</p>
   </section>
 
   <!-- 07 -->
@@ -283,7 +291,7 @@ off. The name is asked once the conversation has opened, not while they are stil
     <p class="sub">Nobody is asked to be a hero. Everybody says the words out loud, once, before they walk the floor.</p>
     <div class="drill">
       <div class="lab">TURN TO A PARTNER</div>
-      <p>Greet them, get their name and mobile out loud, and write it down in front of them. Thirty seconds,
+      <p>Greet them, get their name and mobile out loud, and write it down in front of them. <span class="hl">Thirty seconds</span>,
       clocked from eye contact &mdash; then swap.<br><br>
       <b>The four moves:</b> 1) greet them by name. 2) ask for their name and best number. 3) write it where
       they can see the pen move. 4) read it back.<br><br>
@@ -306,7 +314,7 @@ off. The name is asked once the conversation has opened, not while they are stil
     <p class="note"><b>Why the counter is separate:</b> counting ups in the CRM and comparing them to the CRM
     measures nothing. The traffic figure has to come from the door.<br><br>
     <b>How it is read:</b> door count and logged opportunities should match inside the same
-    day. If they diverge by more than one in ten, the Friday meeting is about that gap &mdash; not about a
+    day. If they diverge by more than <span class="hl">one in ten</span>, the Friday meeting is about that gap &mdash; not about a
     new initiative. Five weeks of that number is the whole scoreboard.<br><br>
     That is the whole system: four steps on the floor, four follow-up clocks, and one number nobody has to
     interpret. <b>Thank you &mdash; questions?</b></p>
