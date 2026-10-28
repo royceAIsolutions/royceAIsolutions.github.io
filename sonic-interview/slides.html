@@ -29,11 +29,13 @@ body{font-family:var(--font);color:var(--text);-webkit-font-smoothing:antialiase
   position:absolute;inset:0;padding:86px 100px 74px;
   display:flex;flex-direction:column;
   opacity:0;visibility:hidden;transform:translateX(42px);
-  transition:opacity .42s cubic-bezier(.16,1,.3,1),transform .42s cubic-bezier(.16,1,.3,1),visibility .42s;
+  transition:opacity .34s cubic-bezier(.16,1,.3,1),transform .34s cubic-bezier(.16,1,.3,1),visibility 0s linear .34s;
   will-change:opacity,transform;
 }
-.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
-.slide.prev{transform:translateX(-42px)}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:3;transition:opacity .34s cubic-bezier(.16,1,.3,1),transform .34s cubic-bezier(.16,1,.3,1),visibility 0s}
+.slide.prev{transform:translateX(-42px);opacity:0;visibility:hidden;z-index:1}
+/* instant cleanup for the outgoing slide when jumping around */
+.slide.fadeout{transition:opacity .34s cubic-bezier(.16,1,.3,1),transform .34s cubic-bezier(.16,1,.3,1),visibility 0s linear .34s}
 
 .kicker{font-size:15px;font-weight:800;letter-spacing:.13em;color:var(--accent-light);text-transform:uppercase;margin-bottom:26px}
 h1{font-size:56px;font-weight:900;letter-spacing:-.03em;line-height:1.04}
@@ -290,9 +292,24 @@ body.showui #bar,body.showui #hud{opacity:1}
   function show(n){
     n = Math.max(0, Math.min(slides.length - 1, n));
     slides.forEach(function(el, k){
+      var wasActive = el.classList.contains('active');
       el.classList.remove('active','prev');
-      if (k === n) el.classList.add('active');
-      else if (k < n) el.classList.add('prev');
+      if (k === n){
+        el.classList.add('active');
+        // restart the enter animation cleanly, no double-paint
+        void el.offsetWidth;
+      } else if (k < n){
+        el.classList.add('prev');
+      }
+      if (wasActive && k !== n){
+        el.style.transition = 'none';
+        el.style.opacity = '0';
+        el.style.visibility = 'hidden';
+      } else {
+        el.style.transition = '';
+        el.style.opacity = '';
+        el.style.visibility = '';
+      }
     });
     i = n;
     hudn.textContent = (n + 1);
