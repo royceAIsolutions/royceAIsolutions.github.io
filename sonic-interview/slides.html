@@ -87,6 +87,9 @@ h1.big{font-size:82px;max-width:1240px}
 .cards.five .clock .why{font-size:12px;line-height:1.42;margin-top:7px;padding-top:7px}
 .cards.five .clock .why b{font-size:9.5px}
 .cards.three{grid-template-columns:repeat(3,1fr)}
+/* slide 5 only: the number ask added a bullet, so the list runs tighter than the sheet default */
+.slide.tight .card ul{gap:10px}
+.slide.tight .src{margin-top:0}
 .cards.four.agenda{align-items:start;margin-top:auto;margin-bottom:auto}.cards.four.agenda .card{min-height:0;padding:28px 26px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px 28px;min-height:286px;display:flex;flex-direction:column}
 .card .n{display:inline-flex;align-items:center;justify-content:center;width:56px;height:40px;border-radius:10px;
@@ -214,7 +217,7 @@ body.showui #bar,body.showui #hud{opacity:1}
     <div class="cards four agenda">
       <div class="card"><div class="n">01</div><h3>👋 Greet</h3><p>Hello and your name inside 30 seconds &mdash; not a pitch.</p></div>
       <div class="card"><div class="n">02</div><h3>🪑 Seat, then discover</h3><p>Ask for the seat, then three questions that pick the vehicle.</p></div>
-      <div class="card"><div class="n">03</div><h3>🚙 Present and test drive</h3><p>One unit, presented &mdash; then ask for the drive. Yes: logged and license scanned. No: a date.</p></div>
+      <div class="card"><div class="n">03</div><h3>🚙 Present and test drive</h3><p>One unit, presented &mdash; the moment they land on it, ask for the number and text your contact card. Then ask for the drive. Yes: license scanned. No: a date.</p></div>
       <div class="card"><div class="n">04</div><h3>💵 The desk prices it</h3><p>They price from the profile; you present it while they are still here.</p></div>
     </div>
   </section>
@@ -253,7 +256,7 @@ body.showui #bar,body.showui #hud{opacity:1}
   </section>
 
   <!-- 05 -->
-  <section class="slide">
+  <section class="slide tight">
     <div class="kicker">Steps 2, 3 and 4</div>
     <h1>The visit</h1>
     <p class="sub">Seat them, three questions, one vehicle presented well &mdash; and a next contact agreed before they drive off.</p>
@@ -264,14 +267,14 @@ body.showui #bar,body.showui #hud{opacity:1}
       </div>
       <div class="card">
         <div class="lab">🚙 03 &middot; Present and test drive</div>
-        <ul><li>One unit, chosen from those answers &mdash; not three</li><li>Feature, benefit, proof, standing at it with them &mdash; until they land on this one</li><li><b>Ask for the drive:</b> &ldquo;Would you like to take it out?&rdquo;</li><li><b>Yes?</b> Log them &mdash; number by text, contact card out, name and number both into eLeads &mdash; scan the license, touch the desk</li><li><b>No?</b> Ask when a good day would be &mdash; a date in the log, not &ldquo;soon&rdquo;</li><li><b>On the drive:</b> they drive, you listen. No drive, no pricing</li></ul>
+        <ul><li>One unit, chosen from those answers &mdash; not three</li><li>Feature, benefit, proof, standing at it with them &mdash; until they land on this one</li><li><b>They land on it &mdash; ask for the number and text your contact card:</b> &ldquo;I&rsquo;ll send you the link to this one &mdash; what&rsquo;s the best number?&rdquo; Card out, name and number into eLeads</li><li><b>Then ask for the drive:</b> &ldquo;Would you like to take it out?&rdquo; Yes: scan the license, touch the desk. No: a date in the log, not &ldquo;soon&rdquo;</li><li><b>On the drive:</b> they drive, you listen. No drive, no pricing</li></ul>
       </div>
       <div class="card">
         <div class="lab">💵 04 &middot; The numbers &mdash; price, present, close</div>
         <ul><li><b>The unit is where this starts, not ends</b> &mdash; the work from here is the profile, the numbers and the close</li><li><b>Before pricing, sit them down</b> and build the full profile in the CRM &mdash; name, mobile, ZIP and address, trade, money down, who it is for</li><li>The desk prices from that profile, you present it &mdash; price, allowance, payment, term, rate, fees, priced to their ZIP</li><li><b>Go for the close</b> &mdash; ask for the paperwork, and <b>get the manager involved</b>: the desk closes what a consultant cannot</li><li><b>Cannot close?</b> Agree the day to follow up &mdash; a date, not &ldquo;soon&rdquo;</li></ul>
       </div>
     </div>
-    <p class="src" style="margin-top:5px"><b>📱 THE NUMBER IS ASKED HERE, AT THE VEHICLE</b> &mdash; not at hello. Your contact card goes by text:
+    <p class="src" style="margin-top:5px"><b>📱 THE NUMBER IS ASKED THE MOMENT THEY LAND ON THE VEHICLE</b> &mdash; not at hello, and not at the desk. Your contact card goes by text:
     that is your direct line. <b>Pricing comes from the eLeads CRM on the office number</b>, so the quote is
     traceable. <b>Ask their ZIP the same time</b> &mdash; tax and fees follow where the vehicle is registered.</p>
   </section>
@@ -315,7 +318,7 @@ body.showui #bar,body.showui #hud{opacity:1}
     <h1>The drill</h1>
     <div class="drill">
       <div class="lab">📱 PHONES OUT &middot; TURN TO A NEIGHBOR</div>
-      <p><b>1) Get their number, the way you get it at the vehicle:</b> &ldquo;I&rsquo;ll send you the link to this
+      <p><b>1) Get their number, the way you get it once they land on the vehicle:</b> &ldquo;I&rsquo;ll send you the link to this
       one &mdash; what&rsquo;s the best number for it?&rdquo;<br><br>
       <b>2) Text them your contact card from your phone</b> &mdash; no paper: &ldquo;That&rsquo;s me saved for a
       direct call. Anything on the numbers will come from our eLeads CRM on the office number.&rdquo;<br><br>
@@ -335,7 +338,7 @@ body.showui #bar,body.showui #hud{opacity:1}
 </div>
 
 <div id="bar"><i></i></div>
-<div id="hud"><span id="hudn">1</span> / 8</div>
+<div id="hud"><span id="hudn">1</span> / <b id="hudtot">7</b></div>
 <div id="hint">
   <div style="font-size:12px;letter-spacing:.14em;font-weight:800;color:var(--accent-light);margin-bottom:12px">SONIC &middot; POWERSPORTS &middot; 7 SLIDES &middot; 10 MINUTES</div>
   <div><b>&rarr;</b> or <kbd>Space</kbd> next &middot; <b>&larr;</b> back</div>
@@ -349,6 +352,7 @@ body.showui #bar,body.showui #hud{opacity:1}
   var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
   var hint = document.getElementById('hint');
   var hudn = document.getElementById('hudn');
+  document.getElementById('hudtot').textContent = slides.length;
   var fill = document.querySelector('#bar i');
   var i = 0, uiTimer = null;
 
