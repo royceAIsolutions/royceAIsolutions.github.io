@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royce Koh &mdash; Sonic Round 1 Training</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07070a; --card:#0e0e12; --elev:#15151b; --text:#eeeef0;
+  --sec:#88889a; --muted:#5c5c6e; --accent:#EA3D2F; --accent-light:#FF6B5B;
+  --line:rgba(255,255,255,.07); --accent-bg:rgba(234,61,47,.13);
+  --font:'Inter',system-ui,-apple-system,'Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#000;overflow:hidden}
+body{font-family:var(--font);color:var(--text);-webkit-font-smoothing:antialiased}
+
+/* 16:9 stage that scales to any projector or screen share */
+#stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#000}
+#deck{
+  position:relative;width:1600px;height:900px;background:var(--bg);overflow:hidden;flex:none;
+  transform-origin:center center;
+}
+.slide{
+  position:absolute;inset:0;padding:86px 100px 74px;
+  display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;transform:translateX(42px);
+  transition:opacity .42s cubic-bezier(.16,1,.3,1),transform .42s cubic-bezier(.16,1,.3,1),visibility .42s;
+  will-change:opacity,transform;
+}
+.slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
+.slide.prev{transform:translateX(-42px)}
+
+.kicker{font-size:15px;font-weight:800;letter-spacing:.13em;color:var(--accent-light);text-transform:uppercase;margin-bottom:26px}
+h1{font-size:56px;font-weight:900;letter-spacing:-.03em;line-height:1.04}
+h1.big{font-size:82px;max-width:1240px}
+.sub{font-size:25px;color:var(--sec);line-height:1.5;max-width:1080px;margin-top:20px;font-weight:400}
+.body{margin-top:auto;padding-top:34px}
+
+/* slide 1 */
+.s1{padding-top:150px}
+.s1 .tag{display:inline-flex;align-self:flex-start;align-items:center;gap:10px;padding:11px 24px;border-radius:100px;
+  background:rgba(234,61,47,.12);border:1px solid rgba(234,61,47,.32);color:var(--accent-light);
+  font-size:14px;font-weight:700;letter-spacing:.08em;margin-bottom:40px}
+.s1 h1{margin-bottom:0}
+.s1 .lede{font-size:26px;line-height:1.5;color:var(--sec);max-width:1050px;margin-top:32px}
+.s1 .lede b{color:var(--text);font-weight:600}
+.s1 .who{margin-top:auto;padding-top:30px}
+.s1 .who b{display:block;font-size:19px;font-weight:700}
+.s1 .who span{display:block;font-size:15px;color:var(--muted);margin-top:4px}
+.s1 .accentbar{position:absolute;left:0;top:0;bottom:0;width:7px;background:linear-gradient(180deg,var(--accent),#8F2416)}
+
+/* stat row */
+.stats{display:grid;gap:18px;margin-top:auto;margin-bottom:26px}
+.stats.six{grid-template-columns:repeat(6,1fr)}
+.stat{background:var(--elev);border:1px solid var(--line);border-radius:14px;padding:26px 20px 24px;min-height:158px}
+.stat b{display:block;font-size:40px;font-weight:900;letter-spacing:-.03em;line-height:1;margin-bottom:16px}
+.stat span{display:block;font-size:13.5px;color:var(--muted);font-weight:700;line-height:1.35;text-transform:uppercase;letter-spacing:.05em}
+.stat.hi{background:rgba(234,61,47,.09);border-color:rgba(234,61,47,.42)}
+.stat.hi b{color:var(--accent-light)}
+.note{font-size:16px;line-height:1.6;color:var(--sec);max-width:1330px}
+.note b{color:var(--text);font-weight:600}
+
+/* cards */
+.cards{display:grid;gap:24px;margin-top:auto;margin-bottom:8px}
+.cards.four{grid-template-columns:repeat(4,1fr)}
+.cards.three{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px 28px;min-height:286px;display:flex;flex-direction:column}
+.card .n{display:inline-flex;align-items:center;justify-content:center;width:56px;height:40px;border-radius:10px;
+  background:rgba(234,61,47,.12);border:1px solid rgba(234,61,47,.3);color:var(--accent-light);
+  font-size:16px;font-weight:800;margin-bottom:26px}
+.card h3{font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-bottom:14px}
+.card p{font-size:16.5px;line-height:1.6;color:var(--sec)}
+.card .lab{font-size:13px;font-weight:800;letter-spacing:.13em;color:var(--accent-light);text-transform:uppercase;margin-bottom:26px}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:15px;margin-top:6px}
+.card li{position:relative;padding-left:22px;font-size:17px;line-height:1.5;color:var(--sec)}
+.card li::before{content:'';position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+
+/* step 1 metric rail */
+.rail{display:flex;flex-direction:column;gap:0}
+.railrow{display:flex;align-items:baseline;gap:34px;padding:24px 0;border-bottom:1px solid var(--line)}
+.railrow:last-child{border-bottom:none}
+.railrow b{font-size:40px;font-weight:900;color:var(--accent-light);letter-spacing:-.03em;min-width:190px}
+.railrow span{font-size:20px;color:var(--sec)}
+.split{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;margin-top:auto;align-items:start}
+.quote{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:36px 34px}
+.quote .lab{font-size:13px;font-weight:800;letter-spacing:.13em;color:var(--accent-light);margin-bottom:22px}
+.quote p{font-size:21px;line-height:1.6;color:var(--sec)}
+.quote p b{color:var(--text);font-weight:700}
+
+/* clocks */
+.clocks{gap:20px}
+.clock{background:var(--elev);border:1px solid var(--line);border-radius:16px;padding:30px 26px;min-height:210px}
+.clock b{display:block;font-size:30px;font-weight:900;color:var(--accent-light);letter-spacing:-.02em;margin-bottom:16px}
+.clock p{font-size:15.5px;line-height:1.55;color:var(--sec)}
+
+/* drill */
+.drill{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:46px 44px;margin-top:auto;margin-bottom:28px}
+.drill .lab{font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--accent-light);margin-bottom:22px}
+.drill p{font-size:29px;line-height:1.55;font-weight:600;letter-spacing:-.01em}
+
+/* closing */
+.closegrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:auto;margin-bottom:34px}
+.askbox{background:rgba(234,61,47,.09);border:1px solid rgba(234,61,47,.45);border-radius:18px;padding:34px 30px;min-height:234px}
+.darkbox{background:var(--elev);border:1px solid var(--line);border-radius:18px;padding:34px 30px;min-height:234px}
+.askbox .lab,.darkbox .lab{font-size:13px;font-weight:800;letter-spacing:.13em;color:var(--accent-light);margin-bottom:20px}
+.askbox p{font-size:30px;font-weight:800;line-height:1.28;letter-spacing:-.02em}
+.darkbox p{font-size:25px;font-weight:700;line-height:1.35;letter-spacing:-.01em}
+
+/* chrome */
+#bar{position:fixed;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.08);z-index:50;opacity:0;transition:opacity .3s}
+#bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .35s cubic-bezier(.16,1,.3,1)}
+#hud{position:fixed;right:22px;bottom:18px;z-index:51;font-size:13px;font-weight:700;color:rgba(255,255,255,.34);
+  letter-spacing:.06em;opacity:0;transition:opacity .3s;pointer-events:none;font-variant-numeric:tabular-nums}
+body.showui #bar,body.showui #hud{opacity:1}
+#hint{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:60;background:rgba(14,14,18,.96);
+  border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:26px 34px;text-align:center;
+  font-size:15px;color:var(--sec);line-height:1.9;transition:opacity .5s;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+#hint b{color:var(--text);font-weight:700}
+#hint kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.14);color:var(--text);font-family:var(--font);font-size:12.5px;font-weight:700;margin:0 2px}
+#hint.out{opacity:0;pointer-events:none}
+#hint button{margin-top:14px;background:var(--accent);border:none;color:#fff;font-family:var(--font);font-weight:800;
+  font-size:14px;padding:10px 24px;border-radius:10px;cursor:pointer}
+#clickzone{position:fixed;inset:0;z-index:5;cursor:pointer}
+@media print{
+  html,body{overflow:visible;background:#fff}
+  #stage{position:static;display:block;background:#fff}
+  #deck{width:1600px;height:900px;transform:none!important}
+  .slide{position:relative;inset:auto;opacity:1!important;visibility:visible!important;transform:none!important;
+    page-break-after:always;break-after:page;height:900px;background:var(--bg)}
+  #bar,#hud,#hint,#clickzone{display:none!important}
+  @page{size:1600px 900px;margin:0}
+}
+</style>
+</head>
+<body>
+<div id="stage">
+<div id="deck">
+
+  <!-- 01 -->
+  <section class="slide s1 active">
+    <div class="accentbar"></div>
+    <div class="tag">SONIC &middot; POWERSPORTS &middot; ROUND 1</div>
+    <h1 class="big">Ten minutes that<br>changes the floor</h1>
+    <p class="lede">The first ten minutes of a Friday meeting, as the new initiative for this store.
+    <b>How we handle a walk-in</b> and <b>how we follow up after they leave.</b></p>
+    <div class="who"><b>Royce Koh</b><span>Sales trainer candidate &middot; Irvine, CA</span></div>
+  </section>
+
+  <!-- 02 -->
+  <section class="slide">
+    <div class="kicker">Requirement 01 &mdash; log every opportunity</div>
+    <h1>What an unlogged walk-in costs</h1>
+    <p class="sub">Not close rate. The gap between the people who walked in and the names in the CRM.</p>
+    <div class="stats six">
+      <div class="stat"><b>40</b><span>Walk-ins per week</span></div>
+      <div class="stat"><b>25%</b><span>Never written down</span></div>
+      <div class="stat"><b>10</b><span>Lost opportunities per week</span></div>
+      <div class="stat"><b>10%</b><span>Close rate on a worked lead</span></div>
+      <div class="stat hi"><b>1 / wk</b><span>Deliveries that never got a chance</span></div>
+      <div class="stat hi"><b>4 / mo</b><span>Same loss, every month</span></div>
+    </div>
+    <p class="note">A lead that was never written down cannot be called, counted, or coached. Every other store number is measured against a denominator that is short by whatever walked out unrecorded. <b>Illustrative floor assumptions</b> &mdash; swap in this store's traffic count and the same arithmetic returns this store's number.</p>
+  </section>
+
+  <!-- 03 -->
+  <section class="slide">
+    <div class="kicker">Requirement 02 &mdash; key steps in the store</div>
+    <h1>Four steps, in this order</h1>
+    <p class="sub">One process. Taught the same way at every store, audited the same way by the GM.</p>
+    <div class="cards four">
+      <div class="card"><div class="n">01</div><h3>Greet and log</h3><p>Inside 30 seconds. Name and mobile written in front of the guest.</p></div>
+      <div class="card"><div class="n">02</div><h3>Discover</h3><p>Who it is for, what they drive now, what must be true on delivery day.</p></div>
+      <div class="card"><div class="n">03</div><h3>Present one vehicle</h3><p>Feature, benefit, proof. Notes written at the vehicle, not after.</p></div>
+      <div class="card"><div class="n">04</div><h3>Desk and next contact</h3><p>The number before the trade. Day, time, owner before the door.</p></div>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="slide">
+    <div class="kicker">Step 1</div>
+    <h1>Greet and log</h1>
+    <p class="sub">The moment it is written, the store owns the follow-up clock &mdash; not the consultant's memory.</p>
+    <div class="split">
+      <div class="rail">
+        <div class="railrow"><b>30 sec</b><span>To the greeting</span></div>
+        <div class="railrow"><b>2</b><span>Things to get &mdash; name, mobile</span></div>
+        <div class="railrow"><b>1</b><span>Place &mdash; written in front of the guest</span></div>
+      </div>
+      <div class="quote">
+        <div class="lab">SAY IT LIKE THIS</div>
+        <p><b>Welcome in &mdash; I'm Royce.</b> Before we walk the lot, can I get your name and the best number to reach you? I write every guest down so I can follow up properly &mdash; I don't want you to have to remember me.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="slide">
+    <div class="kicker">Steps 2, 3 and 4</div>
+    <h1>The visit</h1>
+    <p class="sub">Three questions, one vehicle presented well, and a next contact committed before they reach the door.</p>
+    <div class="cards three">
+      <div class="card">
+        <div class="lab">Discover</div>
+        <ul><li>Who is the vehicle for?</li><li>What are you driving now?</li><li>What must be true on delivery day?</li></ul>
+      </div>
+      <div class="card">
+        <div class="lab">Present</div>
+        <ul><li>One vehicle, presented well</li><li>Feature, benefit, proof</li><li>Notes written at the vehicle</li></ul>
+      </div>
+      <div class="card">
+        <div class="lab">The desk</div>
+        <ul><li>The number before the trade</li><li>Day, time, and owner agreed</li><li>Next contact before the door</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section class="slide">
+    <div class="kicker">Requirement 03 &mdash; follow-up best practices</div>
+    <h1>The follow-up clocks</h1>
+    <p class="sub">One committed contact beats ten remembered intentions.</p>
+    <div class="cards four clocks">
+      <div class="clock"><b>Same day</b><p>Note in the CRM and a call while the visit is still fresh.</p></div>
+      <div class="clock"><b>24 hours</b><p>A personal call or text about their car &mdash; never a template.</p></div>
+      <div class="clock"><b>72 hours</b><p>A second touch with something useful: a vehicle, a payment, an answer.</p></div>
+      <div class="clock"><b>14 days</b><p>Five touches, then a decision from the desk instead of silence.</p></div>
+    </div>
+    <p class="note">Then the desk decides: re-engage, reassign, or close the file. Silence is not a follow-up plan &mdash; it is the default that loses the deal.</p>
+  </section>
+
+  <!-- 07 -->
+  <section class="slide">
+    <div class="kicker">Do, then drill</div>
+    <h1>The 30-second drill</h1>
+    <p class="sub">Nobody is asked to be a hero. Everybody says the words out loud, once, before they walk the floor.</p>
+    <div class="drill">
+      <div class="lab">TURN TO A PARTNER</div>
+      <p>Greet them, get their name and mobile number out loud, and write it down in front of them &mdash; in 30 seconds. Then swap.</p>
+    </div>
+    <p class="note">Every person leaves having done it once. <b>That is what changes the Monday.</b></p>
+  </section>
+
+  <!-- 08 -->
+  <section class="slide">
+    <div class="kicker">The ask</div>
+    <h1>One ask. One number.</h1>
+    <p class="sub">What the GM can walk the floor and see by the end of the first week.</p>
+    <div class="closegrid">
+      <div class="askbox"><div class="lab">THE ASK</div><p>Every walk-in is logged before the guest reaches the door.</p></div>
+      <div class="darkbox"><div class="lab">THE NUMBER</div><p>Door count against logged opportunities &mdash; walked daily, reviewed Friday.</p></div>
+    </div>
+    <p class="note">That is the whole system: four steps on the floor, four follow-up clocks, and one number nobody has to interpret. <b>Thank you &mdash; questions?</b></p>
+  </section>
+
+</div>
+</div>
+
+<div id="bar"><i></i></div>
+<div id="hud"><span id="hudn">1</span> / 8</div>
+<div id="hint">
+  <div style="font-size:12px;letter-spacing:.14em;font-weight:800;color:var(--accent-light);margin-bottom:12px">SONIC ROUND 1</div>
+  <div><b>&rarr;</b> or <kbd>Space</kbd> next &middot; <b>&larr;</b> back</div>
+  <div><kbd>F</kbd> full screen &middot; <kbd>R</kbd> start over &middot; <kbd>Esc</kbd> to exit</div>
+  <button id="hintbtn">Start</button>
+</div>
+
+<script>
+(function(){
+  var deck = document.getElementById('deck');
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var hint = document.getElementById('hint');
+  var hudn = document.getElementById('hudn');
+  var fill = document.querySelector('#bar i');
+  var i = 0, uiTimer = null;
+
+  function fit(){
+    var pad = 0;
+    var s = Math.min((window.innerWidth - pad) / 1600, (window.innerHeight - pad) / 900);
+    deck.style.transform = 'scale(' + s + ')';
+  }
+  window.addEventListener('resize', fit);
+  fit();
+
+  function show(n){
+    n = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function(el, k){
+      el.classList.remove('active','prev');
+      if (k === n) el.classList.add('active');
+      else if (k < n) el.classList.add('prev');
+    });
+    i = n;
+    hudn.textContent = (n + 1);
+    fill.style.width = ((n + (n === slides.length - 1 ? 1 : 0)) / slides.length * 100) + '%';
+    document.body.classList.add('showui');
+    clearTimeout(uiTimer);
+    uiTimer = setTimeout(function(){ document.body.classList.remove('showui'); }, 1600);
+    var h = location.hash;
+    var want = '#' + (n + 1);
+    if (h !== want) history.replaceState(null, '', want);
+  }
+
+  // hash deep links: /#4 opens slide 4, so a panel member can be pointed at a page
+  var start = parseInt((location.hash || '').replace('#',''), 10);
+  if (!isNaN(start) && start >= 1 && start <= slides.length) i = start - 1;
+  show(i);
+
+  function dismiss(){ if (!hint.classList.contains('out')) { hint.classList.add('out'); } }
+  function next(){ dismiss(); if (i < slides.length - 1) show(i + 1); }
+  function prev(){ dismiss(); if (i > 0) show(i - 1); }
+
+  document.addEventListener('keydown', function(e){
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'ArrowDown' || k === ' ' || k === 'PageDown' || k === 'Enter'){ e.preventDefault(); next(); }
+    else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp' || k === 'Backspace'){ e.preventDefault(); prev(); }
+    else if (k === 'Home'){ e.preventDefault(); dismiss(); show(0); }
+    else if (k === 'End'){ e.preventDefault(); dismiss(); show(slides.length - 1); }
+    else if (k === 'f' || k === 'F'){ e.preventDefault(); toggleFS(); }
+    else if (k === 'r' || k === 'R'){ e.preventDefault(); show(0); }
+    else if (k === 'Escape'){ if (document.fullscreenElement) document.exitFullscreen(); }
+    else if (/^[1-8]$/.test(k)){ dismiss(); show(parseInt(k,10) - 1); }
+  });
+
+  function toggleFS(){
+    var el = document.documentElement;
+    if (!document.fullscreenElement){
+      (el.requestFullscreen || el.webkitRequestFullscreen || function(){}).call(el);
+    } else {
+      (document.exitFullscreen || document.webkitExitFullscreen || function(){}).call(document);
+    }
+  }
+
+  // click anywhere to advance, but never on the hint button
+  deck.addEventListener('click', function(e){
+    var r = deck.getBoundingClientRect();
+    var x = (e.clientX - r.left) / r.width;
+    if (x > 0.72) next(); else prev();
+  });
+
+  // trackpad / mouse wheel
+  var wLock = false;
+  window.addEventListener('wheel', function(e){
+    if (Math.abs(e.deltaY) < 12) return;
+    if (wLock) return;
+    wLock = true; setTimeout(function(){ wLock = false; }, 420);
+    if (e.deltaY > 0) next(); else prev();
+  }, {passive:true});
+
+  // touch swipe, for showing it off a phone or tablet
+  var tx = 0, ty = 0;
+  deck.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, {passive:true});
+  deck.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+    if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) { dx < 0 ? next() : prev(); }
+  }, {passive:true});
+
+  document.getElementById('hintbtn').addEventListener('click', function(e){
+    e.stopPropagation(); dismiss(); toggleFS();
+  });
+  setTimeout(dismiss, 6000);
+})();
+</script>
+</body>
+</html>
