@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royce Koh &mdash; Sonic Round 1 Training Presentation</title>
+<meta name="description" content="Royce Koh - the Sonic and Powersports Sales Training Director Round 1 presentation as a page: seven slides on logging every walk-in, four steps on the floor, and follow-up that runs until they buy.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07070a; --card:#0e0e12; --elev:#15151b; --text:#eeeef0;
+  --sec:#e6e6ec; --muted:#b7b7c6; --line:rgba(255,255,255,.09);
+  --accent:#EA3D2F; --accent-light:#FF6B5B; --accent-bg:rgba(234,61,47,.13);
+  --accent-gradient:linear-gradient(135deg,#EA3D2F 0%,#C7301F 55%,#8F2416 100%);
+  --nav-h:64px; --max-w:1120px;
+  --font:'Inter',system-ui,-apple-system,'Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+
+/* ===== NAV + HAMBURGER ===== */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;background:rgba(7,7,10,.94);
+  backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);
+  border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;
+  padding:0 20px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo img{width:40px;height:40px;border-radius:9px;margin-right:4px}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all .2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links a.nav-drawer-only{display:none!important}
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;
+  width:42px;height:42px;background:var(--elev);border:1px solid var(--line);border-radius:10px;
+  cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.98);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--line);
+  padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;
+  transform:translateX(105%);transition:transform .35s cubic-bezier(.16,1,.3,1);overflow-y:auto;z-index:1000}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{color:var(--sec);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s;display:block}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--text);background:var(--accent-bg)}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+.mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
+
+/* ===== SHELL ===== */
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 20px}
+header.hero{padding:calc(var(--nav-h) + 54px) 20px 8px;max-width:var(--max-w);margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:100px;
+  background:linear-gradient(135deg,rgba(234,61,47,.18),rgba(199,48,31,.12));
+  border:1px solid rgba(234,61,47,.34);color:var(--accent-light);font-size:.78rem;font-weight:700;
+  letter-spacing:.05em;margin-bottom:20px}
+h1{font-size:clamp(2rem,5.2vw,3.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.06;margin-bottom:14px}
+h1 .gradient{background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{color:var(--sec);font-size:1.02rem;max-width:760px;line-height:1.7;margin-bottom:22px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:12px;font-weight:700;
+  font-size:.92rem;text-decoration:none;transition:all .3s;border:none;cursor:pointer}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-light);transform:translateY(-1px)}
+.btn-ghost{background:rgba(255,255,255,.04);color:var(--text);border:1px solid rgba(255,255,255,.14)}
+.btn-ghost:hover{background:var(--accent-bg);border-color:rgba(234,61,47,.4)}
+.idx{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px}
+.idx a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--muted);
+  font-size:.84rem;font-weight:600;padding:7px 14px;border-radius:100px;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);transition:all .2s}
+.idx a:hover{color:var(--text);border-color:rgba(234,61,47,.45);background:var(--accent-bg)}
+.idx a b{color:var(--accent-light);font-weight:800;font-size:.76rem;letter-spacing:.06em}
+.idx + p.hint{color:var(--muted);font-size:.82rem;margin:14px 0 26px}
+
+/* ===== SLIDE SHEETS ===== */
+main{padding-bottom:30px}
+.sheet{background:var(--card);border:1px solid var(--line);border-radius:20px;
+  padding:clamp(20px,3.2vw,42px);margin:0 0 22px;scroll-margin-top:calc(var(--nav-h) + 18px);
+  box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.sheet:first-of-type{border-top:3px solid var(--accent)}
+.sheet-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.sheet-num{display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:32px;
+  border-radius:9px;background:var(--accent-bg);border:1px solid rgba(234,61,47,.3);
+  color:var(--accent-light);font-size:.82rem;font-weight:800;letter-spacing:.04em}
+.sheet-kicker{font-size:.72rem;font-weight:800;letter-spacing:.13em;color:var(--accent-light);text-transform:uppercase}
+.sheet h2.big{font-size:clamp(1.8rem,4.4vw,2.9rem);font-weight:900;letter-spacing:-.03em;line-height:1.08}
+.sheet h2{font-size:clamp(1.45rem,3.2vw,2.1rem);font-weight:900;letter-spacing:-.025em;line-height:1.12}
+.kicker{font-size:.72rem;font-weight:800;letter-spacing:.13em;color:var(--accent-light);text-transform:uppercase;margin-bottom:14px}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:100px;
+  background:rgba(234,61,47,.12);border:1px solid rgba(234,61,47,.32);color:var(--accent-light);
+  font-size:.72rem;font-weight:800;letter-spacing:.08em;margin-bottom:20px}
+.lede{font-size:1.04rem;line-height:1.72;color:var(--sec);max-width:820px;margin-top:16px}
+.lede b{color:var(--text);font-weight:600}
+.who{margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.who b{display:block;font-size:1rem;font-weight:700}
+.who span{display:block;font-size:.85rem;color:var(--muted);margin-top:3px}
+.sub{font-size:1rem;color:var(--sec);line-height:1.65;max-width:820px;margin-top:12px}
+.hl{color:var(--accent-light);font-weight:900}
+.note{font-size:.94rem;line-height:1.65;color:var(--sec);margin-top:16px;max-width:860px}
+.note b{color:var(--text);font-weight:600}
+.src{font-size:.88rem;line-height:1.6;color:var(--sec);max-width:900px;margin-top:14px;
+  border-top:1px solid rgba(255,255,255,.14);padding-top:10px}
+.src b{color:var(--text);font-weight:700;letter-spacing:.05em}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:12px;margin-top:20px}
+.stat{background:var(--elev);border:1px solid var(--line);border-radius:14px;padding:18px 16px}
+.stat b{display:block;font-size:1.85rem;font-weight:900;letter-spacing:-.03em;line-height:1.05;margin-bottom:8px}
+.stat span{display:block;font-size:.72rem;color:var(--muted);font-weight:700;line-height:1.4;
+  text-transform:uppercase;letter-spacing:.04em}
+.stat.hi{background:rgba(234,61,47,.09);border-color:rgba(234,61,47,.42)}
+.stat.hi b{color:var(--accent-light)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:16px}
+.facts .stat{display:flex;align-items:center;gap:16px;padding:14px 18px}
+.facts .stat b{margin-bottom:0;font-size:2rem;white-space:nowrap}
+.facts .stat span{font-size:.78rem;color:#f4f4f8;text-transform:none;letter-spacing:0}
+
+.cards{display:grid;gap:14px;margin-top:22px}
+.cards.four,.cards.three{grid-template-columns:repeat(auto-fit,minmax(262px,1fr))}
+.cards.five{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--elev);border:1px solid var(--line);border-radius:16px;padding:20px;
+  display:flex;flex-direction:column}
+.card .n{display:inline-flex;align-items:center;justify-content:center;width:46px;height:32px;
+  border-radius:9px;background:rgba(234,61,47,.12);border:1px solid rgba(234,61,47,.3);
+  color:var(--accent-light);font-size:.85rem;font-weight:800;margin-bottom:14px}
+.card h3{font-size:1.16rem;font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-bottom:9px}
+.card p{font-size:.92rem;line-height:1.6;color:var(--sec)}
+.card .lab{font-size:.7rem;font-weight:800;letter-spacing:.11em;color:var(--accent-light);
+  text-transform:uppercase;margin-bottom:14px}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.card li{position:relative;padding-left:17px;font-size:.9rem;line-height:1.55;color:var(--sec)}
+.card li::before{content:'';position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;align-items:start}
+.railrow{display:flex;align-items:baseline;gap:22px;padding:14px 0;border-bottom:1px solid var(--line)}
+.railrow:last-child{border-bottom:none}
+.railrow b{font-size:1.15rem;font-weight:900;color:var(--accent-light);letter-spacing:-.02em;min-width:132px;flex:none}
+.railrow span{font-size:.94rem;color:var(--sec);line-height:1.5}
+.quote{background:var(--elev);border:1px solid var(--line);border-radius:16px;padding:22px}
+.quote .lab{font-size:.7rem;font-weight:800;letter-spacing:.11em;color:var(--accent-light);margin-bottom:14px}
+.quote p{font-size:1rem;line-height:1.7;color:var(--sec)}
+.quote p b{color:var(--text);font-weight:700}
+
+.clock{background:var(--elev);border:1px solid var(--line);border-radius:16px;padding:20px}
+.clock b{display:block;font-size:1.2rem;font-weight:900;color:var(--accent-light);letter-spacing:-.02em;margin-bottom:10px}
+.clock p{font-size:.9rem;line-height:1.6;color:var(--sec);font-weight:500}
+.clock .own{font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;font-weight:800;
+  color:var(--accent-light);margin-bottom:7px}
+.clock .say{font-size:.9rem;line-height:1.6;color:#fff;font-weight:500;margin-top:10px;padding-left:12px;
+  border-left:2px solid rgba(234,61,47,.55);padding-top:10px;border-top:1px solid rgba(255,255,255,.12)}
+.clock .why{font-size:.88rem;line-height:1.5;color:#f2f2f6;font-weight:500;margin-top:9px;padding-top:9px;
+  border-top:1px dashed rgba(255,255,255,.16)}
+.clock .why b{display:inline;font-size:.65rem;letter-spacing:.12em;color:var(--accent-light);margin-right:6px}
+.eng{margin-top:14px;padding:14px 18px;border:1px solid rgba(234,61,47,.35);border-radius:14px;
+  background:rgba(234,61,47,.07);font-size:.92rem;line-height:1.6;color:#fff;font-weight:500}
+.eng b.lab{display:block;font-size:.7rem;letter-spacing:.12em;color:var(--accent-light);margin-bottom:6px}
+.drill{background:var(--elev);border:1px solid rgba(234,61,47,.35);border-radius:18px;padding:clamp(20px,3vw,32px);margin-top:20px}
+.drill .lab{font-size:.72rem;font-weight:800;letter-spacing:.14em;color:var(--accent-light);margin-bottom:16px}
+.drill p{font-size:clamp(1rem,2vw,1.22rem);line-height:1.65;font-weight:600;letter-spacing:-.01em}
+
+footer{border-top:1px solid var(--line);margin-top:34px;padding:34px 20px 46px;text-align:center;
+  color:var(--muted);font-size:.82rem}
+footer .fmark{font-weight:700;color:var(--text);font-size:.95rem}
+footer .fmark span{color:var(--accent-light)}
+footer .links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:16px 0 14px}
+footer .links a{color:var(--sec);text-decoration:none;padding:8px 16px;border:1px solid var(--line);
+  border-radius:100px;font-size:.82rem;font-weight:500;transition:all .2s}
+footer .links a:hover{color:var(--text);border-color:rgba(234,61,47,.4);background:var(--elev)}
+footer .copy{max-width:620px;margin:0 auto;line-height:1.6}
+
+@media(max-width:860px){
+  .split{grid-template-columns:1fr}
+  .facts .stat b{font-size:1.6rem}
+}
+@media(max-width:600px){
+  nav{padding:0 12px}
+  .sheet{border-radius:16px;padding:18px 15px}
+  .stat b{font-size:1.55rem}
+  .tag{font-size:.66rem;padding:8px 14px}
+  .railrow{flex-direction:column;gap:4px}
+  .railrow b{min-width:0}
+  header.hero{padding-top:calc(var(--nav-h) + 30px)}
+}
+@media print{
+  nav,.mobile-menu,.mobile-menu-backdrop,.live-note{display:none!important}
+  body{background:#fff;color:#111}
+  .sheet{break-inside:avoid;border:1px solid #ddd;box-shadow:none;background:#fff}
+}
+</style>
+</head>
+<body id="top">
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
+    <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
+    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/sonic-interview/" class="nav-drawer-only">🏍️ Sonic</a>
+    <a href="/sonic-interview/presentation/" class="nav-drawer-only">🎤 Sonic Presentation</a>
+    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    <a class="nav-drawer-only" href="/subscribe">Subscribe</a>
+    <a href="/chat" class="nav-drawer-only">💬 Chat</a>
+    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+
+<header class="hero">
+  <span class="badge">🎤 ROUND 1 &middot; 7 SLIDES &middot; 10 MINUTES</span>
+  <h1>The training, <span class="gradient">as a page</span></h1>
+  <p class="subtitle">Every slide from the Round 1 deck, readable top to bottom &mdash; logging every walk-in,
+  four steps on the floor, and follow-up that runs until they buy. Same words as the deck; nothing here is a
+  summary.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="/sonic-interview/slides.html">▶ Present full screen</a>
+    <a class="btn btn-ghost" href="/sonic-interview/">📋 The plan page</a>
+    <a class="btn btn-ghost" href="/sonic-interview/Royce_Koh_Sonic_Round1_Training.pptx" download>⬇️ Download the PowerPoint</a>
+  </div>
+  <div class="idx">
+    <a href="#s1"><b>01</b> The leak</a>
+    <a href="#s2"><b>02</b> What it costs</a>
+    <a href="#s3"><b>03</b> Four steps</a>
+    <a href="#s4"><b>04</b> The greeting</a>
+    <a href="#s5"><b>05</b> The visit</a>
+    <a href="#s6"><b>06</b> Follow-up clocks</a>
+    <a href="#s7"><b>07</b> The drill</a>
+  </div>
+  <p class="hint">Slide 1 is the leak and the promise; slides 2&ndash;6 are the three requirements; slide 7 is the drill the room performs.</p>
+</header>
+
+<main class="wrap">
+<section class="sheet" id="s1">
+<div class="sheet-head"><span class="sheet-num">01</span><span class="sheet-kicker">Opening</span></div>
+<div class="tag">SONIC &middot; POWERSPORTS &middot; SALES TRAINING</div>
+    
+    <h2 class="big">Five customers a week<br>walk out nameless</h2>
+    <p class="lede">They pull in. We greet them. They take the brochure and drive off &mdash; and nothing goes
+    in the book. Forty walk-ins a week at 12.4% unlogged is five names we cannot call: a delivery every two
+    weeks, twenty-four a year.<br><br>
+    <b>The conversation was never written down</b> &mdash; so the call that decides the sale never happens.
+    <b>Ten minutes, three requirements:</b> log every walk-in, four steps on the floor, follow-up that runs
+    until they buy. Then we run the drill.</p>
+    <div class="who"><b>Royce Koh</b><span>Sales trainer candidate &middot; Irvine, CA</span></div>
+</section>
+
+<section class="sheet" id="s2">
+<div class="sheet-head"><span class="sheet-num">02</span><span class="sheet-kicker">Requirement 01 — log every opportunity</span></div>
+    <h2>What an unlogged walk-in costs</h2>
+    <p class="sub">Not close rate. The gap between the people who walked in and the names in the CRM.</p>
+    <div class="stats six">
+      <div class="stat"><b>40</b><span>Guests walk in per week &mdash; this store's traffic count</span></div>
+      <div class="stat hi"><b>12.4%</b><span>Of qualified leads are never logged in the CRM (published benchmark)</span></div>
+      <div class="stat"><b>5</b><span>Lost names per week (40 &times; 12.4%)</span></div>
+      <div class="stat"><b>10%</b><span>Close rate on a lead somebody actually works</span></div>
+      <div class="stat hi"><b>1 / 2 wks</b><span>Deliveries nobody could call (5 &times; 10%)</span></div>
+      <div class="stat hi"><b>24 / yr</b><span>The same loss every year</span></div>
+    </div>
+    <p class="note"><b>The chain, in one line:</b> 40 walk-ins a week, 12.4% of them never written down
+    &mdash; 5 names the store cannot call &mdash; and at a 10% close rate that is a delivery every two weeks,
+    about 24 a year, from the same habit. A lead never written down cannot be called, counted or coached, and
+    every other store number is measured against a denominator that is short by whatever walked out
+    unrecorded.</p>
+    <p class="src"><b>SOURCES</b> &mdash; 12.4%: Better Car People, 2023 Dealer Benchmark Report &mdash;
+    qualified leads never logged in the dealer CRM. No published benchmark exists for walk-ins specifically,
+    and a walk-in leaves less trail than a lead, so treat 12.4% as the floor, not the ceiling. The 40 walk-ins
+    and the 10% close rate are this store&rsquo;s own numbers to replace.</p>
+</section>
+
+<section class="sheet" id="s3">
+<div class="sheet-head"><span class="sheet-num">03</span><span class="sheet-kicker">Requirement 02 — key steps in the store</span></div>
+    <h2>Four steps, in this order</h2>
+    <p class="sub">The shape of the process, in order &mdash; each step gets its own slide.</p>
+    <div class="cards four agenda">
+      <div class="card"><div class="n">01</div><h3>👋 Greet</h3><p>Hello and your name inside 30 seconds &mdash; not a pitch.</p></div>
+      <div class="card"><div class="n">02</div><h3>🪑 Seat, then discover</h3><p>Ask for the seat, then three questions that pick the vehicle.</p></div>
+      <div class="card"><div class="n">03</div><h3>🚙 Present and test drive</h3><p>One unit, presented &mdash; then ask for the drive. Yes: logged and license scanned. No: a date.</p></div>
+      <div class="card"><div class="n">04</div><h3>💵 The desk prices it</h3><p>They price from the profile; you present it while they are still here.</p></div>
+    </div>
+</section>
+
+<section class="sheet" id="s4">
+<div class="sheet-head"><span class="sheet-num">04</span><span class="sheet-kicker">Step 1</span></div>
+    <h2>The greeting</h2>
+    <p class="sub" style="margin-top:12px">Thirty seconds, one question, and their name said back to them.</p>
+    <div class="facts" style="margin-top:12px">
+      <div class="stat hi"><b>17.3%</b><span>More spent per person with the name used</span></div>
+      <div class="stat hi"><b>2&times;</b><span>Upsells accepted, 48.4% vs 22.6%</span></div>
+      <div class="stat hi"><b>15.9%</b><span>Higher satisfaction unless overused</span></div>
+      <div class="stat hi"><b>12%</b><span>More satisfied where badges were worn</span></div>
+    </div>
+    <div class="split">
+      <div class="rail">
+        <div class="railrow"><b>⏱ 30 sec</b><span>Of eye contact, then hello and your name</span></div>
+        <div class="railrow"><b>🏷 1 badge</b><span>Worn &mdash; your name read before it is asked</span></div>
+        <div class="railrow"><b>🗣 1 name</b><span>Theirs, once or twice &mdash; recognition, not a script</span></div>
+        <div class="railrow"><b>❓ 1 question</b><span>What they came in to look at</span></div>
+      </div>
+      <div class="quote">
+        <div class="lab">🗣 SAY IT LIKE THIS</div>
+        <p><b>At hello:</b> &ldquo;Welcome in &mdash; I&rsquo;m Royce. What&rsquo;s your name?&rdquo;<br><br>
+        <b>Then use it, once:</b> &ldquo;Good to meet you, Jim &mdash; what did you come in to look at today?&rdquo;<br><br>
+        <b>Twice is the whole technique</b> &mdash; at hello, and when you hand them to the desk.</p>
+      </div>
+    </div>
+    <p class="note"><b>A greeting inside 30 seconds of eye contact &mdash; hello and your name, not a pitch.</b> The badge
+    does the reintroducing: they read your name off your chest, so you say it once. Theirs, once or twice, reads as
+    recognition; in every sentence it reads as a script.</p>
+    <p class="src"><b>SOURCES</b> &mdash; Journal of Retailing (2026), <i>Call me by my name</i>: spend +17.3%, upsell
+    22.6% &rarr; 48.4%, satisfaction +15.9%. Badges: Shopper Anonymous, 116,000 mystery shops in the UK, Australia and
+    New Zealand &mdash; satisfaction +12%. Misnaming: Rank-Christman et al., J. Consumer Psychology (2017).</p>
+</section>
+
+<section class="sheet" id="s5">
+<div class="sheet-head"><span class="sheet-num">05</span><span class="sheet-kicker">Steps 2, 3 and 4</span></div>
+    <h2>The visit</h2>
+    <p class="sub">Seat them, three questions, one vehicle presented well &mdash; and a next contact agreed before they drive off.</p>
+    <div class="cards three">
+      <div class="card">
+        <div class="lab">🪑 02 &middot; Seat them, then discover</div>
+        <ul><li><b>Ask permission:</b> &ldquo;May I sit with you and ask a few questions so we pick the right vehicle?&rdquo; A guest in a chair talks</li><li>Who is it for &mdash; them, their kid, their property?</li><li>What do you drive now, and what is wrong with it?</li><li>What has to be true on delivery day &mdash; payment, trade, transport, first trip?</li><li>Done when you can repeat their answer back word for word.</li></ul>
+      </div>
+      <div class="card">
+        <div class="lab">🚙 03 &middot; Present and test drive</div>
+        <ul><li>One unit, chosen from those answers &mdash; not three</li><li>Feature, benefit, proof, standing at it with them &mdash; until they land on this one</li><li><b>Ask for the drive:</b> &ldquo;Would you like to take it out?&rdquo;</li><li><b>Yes?</b> Log them &mdash; number by text, contact card out, name and number both into eLeads &mdash; scan the license, touch the desk</li><li><b>No?</b> Ask when a good day would be &mdash; a date in the log, not &ldquo;soon&rdquo;</li><li><b>On the drive:</b> they drive, you listen. No drive, no pricing</li></ul>
+      </div>
+      <div class="card">
+        <div class="lab">💵 04 &middot; The numbers &mdash; price, present, close</div>
+        <ul><li><b>The unit is where this starts, not ends</b> &mdash; the work from here is the profile, the numbers and the close</li><li><b>Before pricing, sit them down</b> and build the full profile in the CRM &mdash; name, mobile, ZIP and address, trade, money down, who it is for</li><li>The desk prices from that profile, you present it &mdash; price, allowance, payment, term, rate, fees, priced to their ZIP</li><li><b>Go for the close</b> &mdash; ask for the paperwork, and <b>get the manager involved</b>: the desk closes what a consultant cannot</li><li><b>Cannot close?</b> Agree the day to follow up &mdash; a date, not &ldquo;soon&rdquo;</li></ul>
+      </div>
+    </div>
+    <p class="src" style="margin-top:5px"><b>📱 THE NUMBER IS ASKED HERE, AT THE VEHICLE</b> &mdash; not at hello. Your contact card goes by text:
+    that is your direct line. <b>Pricing comes from the eLeads CRM on the office number</b>, so the quote is
+    traceable. <b>Ask their ZIP the same time</b> &mdash; tax and fees follow where the vehicle is registered.</p>
+</section>
+
+<section class="sheet" id="s6">
+<div class="sheet-head"><span class="sheet-num">06</span><span class="sheet-kicker">Requirement 03 — follow-up best practices</span></div>
+    <h2>The follow-up clocks</h2>
+    <p class="sub">Five touches in fourteen days, then thirty days to decide: engaged and still looking goes to nurture, silence ends the file. One committed contact beats ten remembered intentions.</p>
+    <div class="facts">
+      <div class="stat hi"><b>80%</b><span>Of sales need five or more follow-up contacts to close</span></div>
+      <div class="stat hi"><b>48%</b><span>Of salespeople never send a second one</span></div>
+      <div class="stat hi"><b>89 days</b><span>Average buying cycle, first look to keys (Cox Automotive)</span></div>
+    </div>
+    <div class="cards five clocks">
+      <div class="clock"><b>📲 Same day</b><p class="own">Consultant &middot; in person, then by text</p><p class="say">&ldquo;It&rsquo;s Royce from earlier &mdash; thank you for coming in. Here is the link to the vehicle you looked at.&rdquo;</p>
+        <p class="why"><b>WHY</b>The link is why you had a number to ask for. Same day proves you heard which unit they stood at.</p></div>
+      <div class="clock"><b>☎️ 24 hours</b><p class="own">Consultant &middot; one call or text</p><p class="say">&ldquo;Morning &mdash; Royce from yesterday. Did the link come through? If the payment or the delivery date is still open, tell me which one and I&rsquo;ll answer it straight.&rdquo;</p>
+        <p class="why"><b>WHY</b>One question they answer in seconds &mdash; whichever half they name is the real obstacle.</p></div>
+      <div class="clock"><b>🚙 72 hours</b><p class="own">Consultant &middot; call, carrying something</p><p class="say">&ldquo;I found a second option that fits what you told me &mdash; want me to send the link?&rdquo;</p>
+        <p class="why"><b>WHY</b>A different vehicle answers a different question: it was the car, or it is the money.</p></div>
+      <div class="clock"><b>📅 14 &rarr; 30 days</b><p class="own">Consultant &middot; manager reviews</p><p class="say">&ldquo;Before we close the file &mdash; is there a payment that would have made this a yes?&rdquo;</p>
+        <p class="why"><b>WHY</b>Two weeks is where most stores quit. The salesperson keeps the file to thirty; the manager reviews it there to close the lead or keep it alive.</p></div>
+      <div class="clock"><b>🔄 Nurture</b><p class="own">Consultant &middot; until they buy</p>
+        <p class="say">&ldquo;Still looking? Two used units came in that fit what you described, and your trade is worth more than it was in March.&rdquo;</p>
+        <p class="why"><b>WHY</b>The average cycle runs 89 days, three times the window most stores work. Nurture runs until they buy or tell you no &mdash; it is not a way to keep dead files open.</p></div>
+    </div>
+    <div class="eng"><b class="lab">📊 QUALITY OF ENGAGEMENT AFTER THEY LEFT</b>
+    Read before the next touch: link opened &middot; replied with a question of their own &middot; called back
+    &middot; appointment on the calendar. <b>Sent is not engaged.</b> Two silent touches mean change the
+    channel or the offer &mdash; never the volume.</div>
+    <p class="src"><b>SOURCES</b> &mdash; 80% / 48%: ZoomInfo, sales follow-up statistics (2026). 89 days: Cox
+    Automotive, Car Buyer Journey &mdash; average buying cycle, as reported 2026. Customer Traac, <i>The 90-Day
+    Buyer</i> (2026) &mdash; many buyers take 30+ days, most 60 to 90. Proactive Training Solutions (2026) &mdash;
+    30 days of 6&ndash;8 contacts, then monthly nurture.</p>
+</section>
+
+<section class="sheet" id="s7">
+<div class="sheet-head"><span class="sheet-num">07</span><span class="sheet-kicker">Do, then drill</span></div>
+    <h2>The drill</h2>
+    <div class="drill">
+      <div class="lab">📱 PHONES OUT &middot; TURN TO A NEIGHBOR</div>
+      <p><b>1) Get their number, the way you get it at the vehicle:</b> &ldquo;I&rsquo;ll send you the link to this
+      one &mdash; what&rsquo;s the best number for it?&rdquo;<br><br>
+      <b>2) Text them your contact card from your phone</b> &mdash; no paper: &ldquo;That&rsquo;s me saved for a
+      direct call. Anything on the numbers will come from our eLeads CRM on the office number.&rdquo;<br><br>
+      <b>3) The call next morning:</b> &ldquo;It&rsquo;s Royce from yesterday, on our office line &mdash; did the
+      link come through?&rdquo;<br><br>
+      Real number, real text, once each &mdash; then swap.</p>
+    </div>
+    <p class="note">Standing up, Friday meeting, every person once &mdash; ten minutes for the room. The words are
+    the easy part; the flinch is what gets drilled out. <b>Practice the basics and the customer experience is
+    <span class="hl">seamless and elevated</span></b> &mdash; that is the whole argument for the drill.
+    <b>Thank you &mdash; questions?</b></p>
+</section>
+</main>
+
+<footer>
+  <div class="fmark">Royce<span>AI</span></div>
+  <div class="links">
+    <a href="/sonic-interview/slides.html">Present the deck</a>
+    <a href="/sonic-interview/">The plan page</a>
+    <a href="/about">About Royce</a>
+  </div>
+  <div class="copy">Round 1 training presentation for the Sonic and Powersports Sales Training Director
+  interview. Panel: James Walter, Ray Farrow, Mike Verrigni.</div>
+</footer>
+
+<script>
+(function(){
+  function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    var menu=document.getElementById('mobileMenu');
+    if(!burger||!menu||menu.dataset.mnInit)return;
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(links&&!menu.querySelector('a[data-mn]')){
+      links.querySelectorAll('a').forEach(function(a){
+        var h=a.getAttribute('href')||'';
+        if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;
+        var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);
+      });
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=(a.getAttribute('href')||'').split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+</script>
+
+</body>
+</html>

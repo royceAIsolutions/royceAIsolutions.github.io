@@ -170,7 +170,11 @@ footer .copy{color:var(--text-muted);font-size:0.8rem}
 .nav-burger.open span:nth-child(2){opacity:0}
 .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);overflow-y:auto;z-index:1000}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{display:block;color:var(--text-secondary);text-decoration:none;font-size:1rem;font-weight:500;padding:12px 14px;border-radius:10px;transition:all .2s}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--text);background:var(--accent-bg)}
 .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+.mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
 nav{z-index:1001;background:var(--bg)}
 @media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
 @media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
@@ -369,6 +373,7 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
     <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
     <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
     <a href="/sonic-interview/" class="nav-drawer-only">🏍️ Sonic</a>
+    <a href="/sonic-interview/presentation/" class="nav-drawer-only">🎤 Sonic Presentation</a>
     <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
     <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
     <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
@@ -390,6 +395,7 @@ nav > .nav-burger{display:inline-flex;width:42px;height:42px;align-self:center}
   the run of show, the drill, the numbers the store can audit, and the one-page standard it leaves behind.</p>
   <div class="hero-ctas" style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
     <a class="btn btn-primary" href="/sonic-interview/slides.html" style="text-decoration:none">Open the slideshow</a>
+    <a class="btn btn-ghost" href="/sonic-interview/presentation/" style="text-decoration:none">Read the deck as a page</a>
     <a class="btn btn-ghost" href="/sonic-interview/Royce_Koh_Sonic_Round1_Training.pptx" download style="text-decoration:none">Download the PowerPoint</a>
   </div>
   <div class="stats">
