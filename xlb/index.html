@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Xiao Long Bao in Orange County - Scored | RoyceAI</title>
+<meta name="description" content="Every serious xiao long bao counter in Orange County, scored soup-first on broth, wrapper, craft, specialization and real cost per dumpling.">
+<link rel="canonical" href="https://royceai.com/xlb/">
+<meta property="og:title" content="Best Xiao Long Bao in Orange County - Scored">
+<meta property="og:description" content="12 OC soup dumpling counters, scored soup-first with real cost per dumpling.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+/* ---- ebikes page ---- */
+.eb-wrap{max-width:var(--max-w);margin:0 auto;padding:0 20px 80px}
+.eb-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 8px}
+.eb-stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:16px 18px;text-align:center}
+.eb-stat .n{font-size:1.7rem;font-weight:800;color:var(--text);line-height:1.1}
+.eb-stat .l{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+.eb-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 10px}
+.eb-search{flex:1 1 260px;min-width:180px;background:var(--bg-elevated);border:1px solid var(--border);
+  color:var(--text);border-radius:var(--radius-sm);padding:11px 14px;font:inherit;font-size:.92rem;outline:none}
+.eb-search:focus{border-color:var(--accent)}
+.eb-pill{background:var(--bg-elevated);border:1px solid var(--border);color:var(--text-secondary);
+  border-radius:999px;padding:8px 14px;font-size:.82rem;cursor:pointer;transition:var(--transition)}
+.eb-pill:hover{border-color:var(--border-hover);color:var(--text)}
+.eb-pill.on{background:var(--accent-bg);border-color:var(--accent);color:var(--accent-light)}
+.eb-sort{background:var(--bg-elevated);border:1px solid var(--border);color:var(--text);
+  border-radius:var(--radius-sm);padding:10px 12px;font:inherit;font-size:.85rem}
+.eb-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+.eb-card{display:grid;grid-template-columns:200px 64px 1fr auto;gap:16px;align-items:start;
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px 20px;transition:var(--transition)}
+.eb-card:hover{border-color:var(--border-hover);transform:translateY(-1px)}
+.eb-score{width:58px;height:58px;border-radius:14px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;font-weight:800;font-size:1.15rem;line-height:1;
+  background:var(--accent-bg);color:var(--accent-light);border:1px solid var(--accent)}
+.eb-score small{font-size:.55rem;letter-spacing:.1em;font-weight:700;opacity:.7;margin-top:3px}
+.eb-score.mid{color:#f5c26b;border-color:rgba(245,194,107,.5);background:rgba(245,194,107,.08)}
+.eb-score.low{color:var(--text-secondary);border-color:var(--border);background:var(--bg-elevated)}
+.eb-title{font-size:1.02rem;font-weight:700;color:var(--text);margin:0 0 4px;line-height:1.35}
+.eb-title a{color:inherit;text-decoration:none;transition:var(--transition)}
+.eb-title a:hover{color:var(--accent-light)}
+.eb-meta{font-size:.82rem;color:var(--text-secondary);display:flex;flex-wrap:wrap;gap:6px 14px;margin-bottom:8px}
+.eb-meta b{color:var(--text);font-weight:600}
+.eb-tag{display:inline-block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
+  padding:3px 8px;border-radius:6px;background:var(--bg-elevated);color:var(--text-secondary);
+  border:1px solid var(--border);margin:0 5px 5px 0}
+.eb-tag.cr{color:#9fd8ff;border-color:rgba(159,216,255,.3)}
+.eb-tag.ou{color:#a5e8c1;border-color:rgba(165,232,193,.3)}
+.eb-tag.warn{color:#f5c26b;border-color:rgba(245,194,107,.35);background:rgba(245,194,107,.07)}
+.eb-tag.bad{color:#ff9a9a;border-color:rgba(255,154,154,.35);background:rgba(255,154,154,.07)}
+.eb-price{text-align:right;min-width:120px}
+.eb-price .p{font-size:1.35rem;font-weight:800;color:var(--text);line-height:1.1}
+.eb-price .sub{font-size:.75rem;color:var(--text-muted);margin-top:3px}
+.eb-price .pct{font-size:.78rem;font-weight:700;margin-top:8px;color:var(--green)}
+.eb-price .pct.hot{color:var(--green)}
+.eb-price .pct.cold{color:var(--text-secondary)}
+.eb-photo{grid-row:1 / span 2;border-radius:var(--radius-sm);overflow:hidden;background:var(--bg-elevated);
+  border:1px solid var(--border);aspect-ratio:4/3;display:block;position:relative}
+.eb-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.eb-photo .noimg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;color:var(--text-muted);text-align:center;padding:8px}
+.eb-range{grid-column:3 / span 2;display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 0}
+.eb-rng{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;padding:5px 10px;
+  border-radius:8px;background:var(--bg-elevated);border:1px solid var(--border);color:var(--text-secondary)}
+.eb-rng b{color:var(--text);font-weight:700}
+.eb-rng .lbl{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.eb-rng.seller{border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.07)}
+.eb-rng.seller .lbl{color:var(--green)}
+.eb-rng.spec .lbl{color:var(--accent-light)}
+.eb-rng.none{border-style:dashed}
+.eb-detail{grid-column:3 / span 2;font-size:.83rem;color:var(--text-secondary);line-height:1.55;
+  border-top:1px dashed var(--border);padding-top:10px;margin-top:2px}
+.eb-feat{border:1px solid var(--accent);background:linear-gradient(135deg,rgba(124,92,252,.10),rgba(124,92,252,.02))}
+.eb-feat .eb-score{background:var(--accent);color:#fff}
+.eb-empty{color:var(--text-secondary);text-align:center;padding:40px 0}
+.eb-notes{margin-top:44px;background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:22px 24px}
+.eb-notes h2{font-size:1.05rem;margin:0 0 12px}
+.eb-notes ul{margin:0;padding-left:20px;color:var(--text-secondary);font-size:.88rem;line-height:1.7}
+.eb-notes li b{color:var(--text)}
+.eb-foot{color:var(--text-muted);font-size:.75rem;margin-top:26px;text-align:center;line-height:1.6}
+@media(max-width:900px){
+  .eb-card{grid-template-columns:150px 52px 1fr;gap:12px}
+  .eb-photo{grid-row:1 / span 2}
+  .eb-price{grid-column:2 / span 2}
+}
+@media(max-width:760px){
+  .eb-stats{grid-template-columns:repeat(2,1fr)}
+  .eb-card{grid-template-columns:96px 1fr;gap:12px;padding:14px}
+  .eb-photo{grid-row:1 / span 3;aspect-ratio:1/1}
+  .eb-score{position:absolute;margin-top:-46px;width:40px;height:40px;font-size:.8rem;border-radius:10px}
+  .eb-score{width:48px;height:48px;font-size:1rem}
+  .eb-price{grid-column:2;text-align:left;min-width:0;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .eb-detail{grid-column:1 / span 2}
+  .eb-range{grid-column:1 / span 2}
+  .eb-card{position:relative}
+  .hero h1{font-size:clamp(1.9rem,8vw,2.6rem)}
+}
+
+
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--green:#34d399;--radius:16px;--radius-sm:10px;--max-w:1200px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--shadow-elevated:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;opacity:0.012;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes breathe{0%,100%{opacity:0.3;transform:scale(1)}50%{opacity:0.5;transform:scale(1.1)}}
+@keyframes pop-in{from{opacity:0;transform:translateY(8px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;background:var(--bg);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo img{width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;animation:pulse-glow 2.5s ease-in-out infinite}
+.nav-links .nav-cta:hover{background:var(--accent-light);transform:scale(1.05)}
+.nav-links a.nav-drawer-only{display:none!important}
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.hero-sub{min-height:50vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:calc(80px + var(--nav-h)) 24px 60px;max-width:var(--max-w);margin:0 auto;animation:fade-up 0.6s ease-out}
+.hero-sub .badge{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:100px;background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(168,85,247,0.1));border:1px solid rgba(124,92,252,0.25);font-size:0.85rem;font-weight:600;color:var(--accent-light);margin-bottom:24px;animation:float 3s ease-in-out infinite}
+.hero-sub h1{font-size:clamp(2.2rem,6.5vw,3.9rem);font-weight:900;line-height:1.1;letter-spacing:-0.03em;margin-bottom:18px;max-width:820px}
+.hero-sub h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero-sub .subtitle{font-size:clamp(1rem,1.8vw,1.2rem);color:var(--text-secondary);max-width:700px;line-height:1.75;margin-bottom:14px}
+.hero-sub .tagline{font-size:1.02rem;font-weight:700;color:var(--accent-light);margin-bottom:10px}
+.hero-sub .meta{font-size:0.85rem;color:var(--text-muted);margin-top:14px}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.section{padding:70px 24px;max-width:var(--max-w);margin:0 auto}
+.section-header{text-align:center;margin-bottom:44px}
+.section-header h2{font-size:clamp(1.7rem,4.5vw,2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px}
+.section-header h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.section-header p{color:var(--text-secondary);max-width:700px;margin:0 auto;font-size:1.02rem}
+.quote{max-width:820px;margin:0 auto;text-align:center;font-size:clamp(1.15rem,2.4vw,1.5rem);font-weight:600;line-height:1.65;color:var(--text);padding:0 8px}
+.quote::before{content:'“';display:block;font-size:3rem;line-height:1;color:var(--accent-light);opacity:0.7;margin-bottom:6px}
+.quote::after{content:'”';display:block;font-size:3rem;line-height:1;color:var(--accent-light);opacity:0.7;margin-top:10px}
+.quote .src{display:block;font-size:0.85rem;font-weight:500;color:var(--text-muted);margin-top:14px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px}
+.stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 20px;text-align:center;transition:all var(--transition)}
+.stat:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
+.stat .num{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s ease-in-out infinite}
+.stat .label{color:var(--text-secondary);font-size:0.85rem;margin-top:6px}
+.timeline{max-width:760px;margin:0 auto;position:relative}
+.timeline::before{content:'';position:absolute;left:20px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,rgba(124,92,252,0.5),rgba(124,92,252,0.05))}
+.tl-item{position:relative;padding:0 0 32px 60px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:12px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:0 0 20px var(--accent-glow);border:3px solid var(--bg)}
+.tl-item h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.tl-item .tl-role{color:var(--accent-light);font-size:0.85rem;font-weight:600;margin-bottom:6px}
+.tl-item p{color:var(--text-secondary);font-size:0.92rem}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bento-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;transition:all var(--transition)}
+.bento-card:hover{border-color:rgba(124,92,252,0.35);transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
+.bento-card .icon{font-size:1.6rem;margin-bottom:14px;display:inline-block}
+.bento-card h3{font-size:1.02rem;font-weight:700;margin-bottom:8px}
+.bento-card p{color:var(--text-secondary);font-size:0.9rem}
+.bento-card ul{list-style:none;margin-top:10px}
+.bento-card li{color:var(--text-secondary);font-size:0.85rem;padding:4px 0 4px 18px;position:relative}
+.bento-card li::before{content:'\2713';position:absolute;left:0;color:var(--accent-light);font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px}
+.chip{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);color:var(--text-secondary);padding:8px 16px;border-radius:100px;font-size:0.85rem;font-weight:500;cursor:default;transition:all 0.2s}
+.chip:hover{color:var(--text);border-color:rgba(124,92,252,0.4);background:var(--accent-bg);transform:translateY(-2px)}
+.cta-section{padding:80px 24px;text-align:center;max-width:var(--max-w);margin:0 auto}
+.cta-section h2{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:14px}
+.cta-section h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.cta-section p{color:var(--text-secondary);max-width:620px;margin:0 auto 20px}
+.cta-perks{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.cta-perk{background:var(--accent-bg);border:1px solid rgba(124,92,252,0.25);color:var(--accent-light);font-size:0.82rem;font-weight:600;padding:8px 16px;border-radius:100px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:12px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all var(--transition);cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:#fff;animation:pulse-glow 2.5s ease-in-out infinite}
+.btn-primary:hover{background:var(--accent-light);transform:scale(1.03)}
+.btn-ghost{background:rgba(255,255,255,0.04);color:var(--text);border:1px solid var(--border-hover)}
+.btn-ghost:hover{background:var(--accent-bg);border-color:rgba(124,92,252,0.4);transform:scale(1.03)}
+footer{max-width:var(--max-w);margin:0 auto;padding:36px 24px 44px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center}
+footer .logo{font-weight:700}
+footer .logo span{color:var(--accent-light)}
+footer .links{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+footer .links a:hover{color:var(--text)}
+footer .copy{color:var(--text-muted);font-size:0.8rem}
+/* ===== Bot Widget ===== */
+.bot-fab{position:fixed;bottom:24px;right:24px;z-index:2000;width:60px;height:60px;border-radius:50%;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 3s ease-in-out infinite,pulse-glow 2.5s ease-in-out infinite;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 8px 30px rgba(124,92,252,0.4);transition:transform 0.3s}
+.bot-fab:hover{transform:scale(1.1)}
+.bot-panel{position:fixed;bottom:96px;right:24px;z-index:2001;width:370px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 120px);background:var(--bg-elevated);border:1px solid var(--border-hover);border-radius:20px;box-shadow:var(--shadow-elevated);display:none;flex-direction:column;overflow:hidden;animation:pop-in 0.3s cubic-bezier(0.16,1,0.3,1)}
+.bot-panel.open{display:flex}
+.bot-head{background:linear-gradient(135deg,rgba(124,92,252,0.18),rgba(168,85,247,0.1));border-bottom:1px solid var(--border);padding:16px 18px;display:flex;align-items:center;gap:12px}
+.bot-avatar{width:40px;height:40px;border-radius:12px;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 4s ease-in-out infinite;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:0.9rem}
+.bot-head h3{font-size:0.95rem;font-weight:700}
+.bot-head p{font-size:0.75rem;color:var(--text-secondary)}
+.bot-close{margin-left:auto;background:none;border:none;color:var(--text-secondary);font-size:1.3rem;cursor:pointer;padding:4px 8px;border-radius:8px;transition:all 0.2s}
+.bot-close:hover{color:var(--text);background:var(--accent-bg)}
+.bot-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.bot-msgs::-webkit-scrollbar{width:5px}
+.bot-msgs::-webkit-scrollbar-thumb{background:rgba(124,92,252,0.3);border-radius:3px}
+.msg{max-width:82%;padding:10px 14px;border-radius:14px;font-size:0.85rem;line-height:1.55;animation:pop-in 0.25s ease-out}
+.msg.bot{background:var(--bg-card);border:1px solid var(--border);color:var(--text);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.user{background:var(--accent);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.msg .qb{display:block;margin-top:10px}
+.bot-quick{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 10px}
+.bot-quick button{background:var(--accent-bg);border:1px solid rgba(124,92,252,0.3);color:var(--accent-light);font-size:0.78rem;font-weight:600;padding:7px 12px;border-radius:100px;cursor:pointer;transition:all 0.2s}
+.bot-quick button:hover{background:rgba(124,92,252,0.2);color:var(--text)}
+.bot-in{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--border)}
+.bot-in input{flex:1;background:var(--bg-card);border:1px solid var(--border-hover);border-radius:10px;padding:11px 14px;color:var(--text);font-size:0.85rem;outline:none;font-family:var(--font)}
+.bot-in input:focus{border-color:var(--accent)}
+.bot-in button{background:var(--accent);border:none;border-radius:10px;padding:0 16px;color:#fff;font-weight:700;cursor:pointer;transition:all 0.2s}
+.bot-in button:hover{background:var(--accent-light)}
+.bot-form{padding:16px;display:flex;flex-direction:column;gap:12px;overflow-y:auto}
+.bot-form label{font-size:0.8rem;font-weight:600;color:var(--text-secondary)}
+.bot-form input{background:var(--bg-card);border:1px solid var(--border-hover);border-radius:10px;padding:11px 14px;color:var(--text);font-size:0.85rem;outline:none;font-family:var(--font);width:100%}
+.bot-form input:focus{border-color:var(--accent)}
+.bot-form .err{color:#f87171;font-size:0.75rem;display:none}
+.bot-form .group.invalid input{border-color:#ef4444}
+.bot-form .group.invalid .err{display:block}
+.bot-form button{background:var(--accent);border:none;border-radius:12px;padding:13px;color:#fff;font-weight:700;font-size:0.9rem;cursor:pointer;transition:all 0.2s}
+.bot-form button:hover{background:var(--accent-light)}
+.bot-note{font-size:0.72rem;color:var(--text-muted);text-align:center}
+.bot-typing{display:inline-flex;gap:4px;padding:4px 2px}
+.bot-typing i{width:6px;height:6px;border-radius:50%;background:var(--text-muted);animation:breathe 1s ease-in-out infinite}
+.bot-typing i:nth-child(2){animation-delay:0.2s}
+.bot-typing i:nth-child(3){animation-delay:0.4s}
+@media(max-width:640px){
+  .hero-sub{padding:calc(60px + var(--nav-h)) 20px 40px}
+  .section{padding:50px 20px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .bento{grid-template-columns:1fr}
+  .section-header h2{font-size:clamp(1.6rem,7vw,2rem)}
+  .cta-section{padding:56px 20px}
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none}
+  
+  
+  .nav-links.open a{display:block;padding:10px 8px}
+  footer{flex-direction:column}
+}
+@media(min-width:641px) and (max-width:1023px){
+  .bento{grid-template-columns:repeat(2,1fr)}
+}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);overflow-y:auto;z-index:1000}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+nav{z-index:1001;background:var(--bg)}
+@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
+@media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
+
+.bento-2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:640px){.bento-2{grid-template-columns:1fr}}
+/* burger+lang cluster pinned right (overrides space-between spread) */
+nav{justify-content:flex-start!important}
+nav > .nav-links{margin-left:auto!important}
+nav > .royceai-lang{margin-left:8px!important;order:0}
+nav > .nav-burger{margin-left:8px!important;margin-right:0!important;flex:none;order:0}
+nav > .royceai-lang{order:1}
+nav > .nav-burger{order:2}
+nav > .nav-logo{margin-right:0!important;order:-1}
+
+  .xlb-wrap{max-width:1080px;margin:0 auto;padding:0 20px 70px}
+  .xlb-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 34px}
+  .xlb-stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:18px}
+  .xlb-stat .n{font-size:26px;font-weight:800;color:#fff}
+  .xlb-stat .l{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8fa3bf;margin-top:4px}
+  .xlb-card{display:grid;grid-template-columns:56px 1fr;gap:18px;background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:20px;margin-bottom:14px}
+  .xlb-card.top{border-color:rgba(120,200,255,.45);background:rgba(120,200,255,.07)}
+  .xlb-rank{font-size:30px;font-weight:900;color:#5f7d9f;line-height:1}
+  .xlb-card.top .xlb-rank{color:#8fd0ff}
+  .xlb-name{font-size:19px;font-weight:800;color:#fff;margin:0 0 2px}
+  .xlb-area{font-size:13px;color:#8fa3bf}
+  .xlb-score{float:right;font-size:22px;font-weight:900;color:#8fd0ff}
+  .xlb-score small{font-size:12px;color:#7d90a8;font-weight:600}
+  .xlb-crit{font-size:12.5px;color:#a9bcd4;margin:10px 0 8px;line-height:1.7}
+  .xlb-price{display:inline-block;font-size:13px;font-weight:700;color:#7ee0a8;background:rgba(126,224,168,.1);
+    border:1px solid rgba(126,224,168,.25);border-radius:999px;padding:3px 11px;margin-right:8px}
+  .xlb-price.none{color:#c8b07a;background:rgba(200,176,122,.1);border-color:rgba(200,176,122,.25)}
+  .xlb-rating{font-size:13px;color:#9fb3cb}
+  .xlb-note{font-size:13.5px;color:#c3d2e4;margin-top:9px;line-height:1.6}
+  .xlb-h2{font-size:22px;font-weight:800;color:#fff;margin:44px 0 12px}
+  .xlb-tbl{width:100%;border-collapse:collapse;font-size:13.5px;color:#b8c8dc}
+  .xlb-tbl th,.xlb-tbl td{text-align:left;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.07)}
+  .xlb-tbl th{color:#8fa3bf;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase}
+  .xlb-tbl td.w{color:#8fd0ff;font-weight:700}
+  .xlb-foot{font-size:12.5px;color:#7d90a8;line-height:1.8;margin-top:26px}
+  @media(max-width:720px){.xlb-stats{grid-template-columns:repeat(2,1fr)}.xlb-card{grid-template-columns:1fr}
+    .xlb-score{float:none;display:block;margin-bottom:6px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" onerror="this.style.display='none'" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
+    <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
+    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/sonic-interview/" class="nav-drawer-only">🏍️ Sonic</a>
+    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/xlb" class="nav-drawer-only">🥟 XLB Dumplings</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    <a class="nav-drawer-only" href="/subscribe">Subscribe</a>
+    <a href="/chat" class="nav-show-mobile">💬 Chat</a>
+    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+
+
+<header class="hero-sub">
+  <span class="badge">🥟 Xiao Long Bao &middot; Orange County &middot; 12 venues scored</span>
+  <h1>Best Soup Dumplings in OC,<br><span class="gradient">Scored, Not Guessed.</span></h1>
+  <p class="subtitle">Every serious xiao long bao counter in Orange County, scored on the soup first and the price last.
+  Value is derived from cost per dumpling, review scores are confidence-weighted so a 14-review listing cannot
+  outrank an 18-fold benchmark, and any venue with no published price has its value weight removed rather than guessed.</p>
+  <div class="chips">
+    <span class="chip">🍜 Soup-first rubric</span><span class="chip">💵 $/dumpling, derived</span>
+    <span class="chip">📊 Review volume weighted</span><span class="chip">🚫 No invented prices</span>
+  </div>
+</header>
+<div class="xlb-wrap">
+  <div class="xlb-stats">
+    <div class="xlb-stat"><div class="n">12</div><div class="l">Venues scored</div></div>
+    <div class="xlb-stat"><div class="n">8.8</div><div class="l">Top score</div></div>
+    <div class="xlb-stat"><div class="n">$1.33</div><div class="l">Cheapest / dumpling</div></div>
+    <div class="xlb-stat"><div class="n">7</div><div class="l">No published price</div></div>
+  </div>
+  
+    <div class="xlb-card top">
+      <div class="xlb-rank">1</div>
+      <div>
+        <div class="xlb-score">8.8<small>/10</small></div>
+        <h3 class="xlb-name">Din Tai Fung — South Coast Plaza</h3>
+        <div class="xlb-area">Costa Mesa &middot; 3333 Bristol St</div>
+        <div class="xlb-crit">soup 9.3 &middot; wrap/fill 9.2 &middot; craft 9.4 &middot; spec 8.8 &middot; value 8.8 &middot; reviews 8.7 &middot; access 8.5 &middot; prox 6.0</div>
+        <div><span class="xlb-price">$14.50 &middot; 10 pc &middot; $1.45 each</span><span class="xlb-rating">Google 4.5 (4,439 reviews)</span></div>
+        <div class="xlb-note">The benchmark. 18-fold, thin skin, clear broth, crab-and-pork upgrade $18.50. Reservations or a real wait.</div>
+      </div>
+    </div>
+    <div class="xlb-card top">
+      <div class="xlb-rank">2</div>
+      <div>
+        <div class="xlb-score">8.7<small>/10</small></div>
+        <h3 class="xlb-name">Din Tai Fung — Irvine Spectrum</h3>
+        <div class="xlb-area">Irvine &middot; 812 Spectrum Center Dr</div>
+        <div class="xlb-crit">soup 9.3 &middot; wrap/fill 9.2 &middot; craft 9.4 &middot; spec 8.8 &middot; value 8.8 &middot; reviews 7.3 &middot; access 8.7 &middot; prox 7.3</div>
+        <div><span class="xlb-price">$14.50 &middot; 10 pc &middot; $1.45 each</span><span class="xlb-rating">Google 4.3 (278 reviews)</span></div>
+        <div class="xlb-note">Same kitchen standards as South Coast, closer, easier parking, shorter wait — but a thinner review base.</div>
+      </div>
+    </div>
+    <div class="xlb-card top">
+      <div class="xlb-rank">3</div>
+      <div>
+        <div class="xlb-score">8.5<small>/10</small></div>
+        <h3 class="xlb-name">Linglong 玲珑 Soup Dumplings</h3>
+        <div class="xlb-area">Fountain Valley &middot; 18420 Brookhurst St</div>
+        <div class="xlb-crit">soup 8.8 &middot; wrap/fill 8.7 &middot; craft 8.9 &middot; spec 9.3 &middot; value n/a &middot; reviews 8.8 &middot; access 8.0 &middot; prox 4.8</div>
+        <div><span class="xlb-price none">price not published</span><span class="xlb-rating">Google 4.6 (138 reviews)</span></div>
+        <div class="xlb-note">Soup dumplings are the whole menu, not a side item. Highest rating in the set. Price not published online — call.</div>
+      </div>
+    </div>
+    <div class="xlb-card">
+      <div class="xlb-rank">4</div>
+      <div>
+        <div class="xlb-score">8.2<small>/10</small></div>
+        <h3 class="xlb-name">Paradise Dynasty</h3>
+        <div class="xlb-area">Costa Mesa &middot; 3333 Bristol Street, BLM, 1 Bloomingdale's</div>
+        <div class="xlb-crit">soup 8.7 &middot; wrap/fill 8.5 &middot; craft 8.9 &middot; spec 9.2 &middot; value n/a &middot; reviews 6.7 &middot; access 7.5 &middot; prox 6.0</div>
+        <div><span class="xlb-price none">price not published</span><span class="xlb-rating">Google 4.2 (899 reviews)</span></div>
+        <div class="xlb-note">The 8-flavour Dynasty basket — the only place in OC where colour = flavour. Slightly thicker skin than DTF.</div>
+      </div>
+    </div>
+    <div class="xlb-card">
+      <div class="xlb-rank">5</div>
+      <div>
+        <div class="xlb-score">8.0<small>/10</small></div>
+        <h3 class="xlb-name">Sunny Dumpling House</h3>
+        <div class="xlb-area">Lake Forest &middot; 24602 Raymond Way H</div>
+        <div class="xlb-crit">soup 8.2 &middot; wrap/fill 8.3 &middot; craft 8.4 &middot; spec 8.0 &middot; value 10.0 &middot; reviews 6.7 &middot; access 8.0 &middot; prox 4.2</div>
+        <div><span class="xlb-price">$11.99 &middot; 9 pc &middot; $1.33 each</span><span class="xlb-rating">Google 4.2 (860 reviews)</span></div>
+        <div class="xlb-note">Hand-weighed and folded per the menu; best price per dumpling of the verified set. Far south — a drive.</div>
+      </div>
+    </div>
+    <div class="xlb-card">
+      <div class="xlb-rank">6</div>
+      <div>
+        <div class="xlb-score">8.0<small>/10</small></div>
+        <h3 class="xlb-name">Noodle Nest 和悦</h3>
+        <div class="xlb-area">Irvine &middot; 2710 Alton Pkwy #117</div>
+        <div class="xlb-crit">soup 8.3 &middot; wrap/fill 8.2 &middot; craft 8.1 &middot; spec 6.2 &middot; value n/a &middot; reviews 9.3 &middot; access 8.6 &middot; prox 7.8</div>
+        <div><span class="xlb-price none">price not published</span><span class="xlb-rating">Google 4.6 (614 reviews)</span></div>
+        <div class="xlb-note">Highest volume-plus-rating in Irvine, but XLB is one item on a broad menu — not the house specialty.</div>
+      </div>
+    </div>
+    <div class="xlb-card">
+      <div class="xlb-rank">7</div>
+      <div>
+        <div class="xlb-score">7.7<small>/10</small></div>
+        <h3 class="xlb-name">A&amp;J Restaurant</h3>
+        <div class="xlb-area">Irvine &middot; 14805 Jeffrey Rd</div>
+        <div class="xlb-crit">soup 8.0 &middot; wrap/fill 8.1 &middot; craft 8.0 &middot; spec 5.8 &middot; value n/a &middot; reviews 8.0 &middot; access 8.5 &middot; prox 7.1</div>
+        <div><span class="xlb-price none">price not published</span><span class="xlb-rating">Google 4.4 (1,183 reviews)</span></div>
+        <div class="xlb-note">Old-school Taiwanese, cheapest bracket, biggest review base. XLB is decent, not the reason to go.</div>
+      </div>
+    </div>
+    <div class="xlb-card">
+      <div class="xlb-rank">8</div>
+      <div>
+        <div class="xlb-score">7.7<small>/10</small></div>
+        <h3 class="xlb-name">JA Jiaozi Authentic Dumplings</h3>
+        <div class="xlb-area">Irvine &middot; 13776 Jamboree Rd</div>
+        <div class="xlb-crit">soup 8.5 &middot; wrap/fill 8.6 &middot; craft 8.7 &middot; spec 7.8 &middot; value 4.0 &middot; reviews 7.3 &middot; access 8.8 &middot; prox 8.0</div>
+        <div><span class="xlb-price">$9.50 &middot; 5 pc &middot; $1.90 each</span><span class="xlb-rating">Google 4.3 (583 reviews)</span></div>
+        <div class="xlb-note">Kurobuta pork, spicy version available. 5-piece order means a higher per-piece cost than it looks.</div>
+      </div>
+    </div>
+    <div class="xlb-card">
+      <div class="xlb-rank">9</div>
+      <div>
+        <div class="xlb-score">7.6<small>/10</small></div>
+        <h3 class="xlb-name">Bao Chick</h3>
+        <div class="xlb-area">Irvine &middot; 2222 Michelson Dr Ste 212</div>
+        <div class="xlb-crit">soup 7.9 &middot; wrap/fill 7.9 &middot; craft 7.6 &middot; spec 6.4 &middot; value n/a &middot; reviews 8.0 &middot; access 8.4 &middot; prox 7.5</div>
+        <div><span class="xlb-price none">price not published</span><span class="xlb-rating">Google 4.4 (305 reviews)</span></div>
+        <div class="xlb-note">Fried-chicken-led menu that also does XLB; reviews call the XLB good, not destination.</div>
+      </div>
+    </div>
+    <div class="xlb-card">
+      <div class="xlb-rank">10</div>
+      <div>
+        <div class="xlb-score">7.5<small>/10</small></div>
+        <h3 class="xlb-name">Mama Lu's Dumpling House</h3>
+        <div class="xlb-area">Tustin &middot; 17662 17th St</div>
+        <div class="xlb-crit">soup 7.9 &middot; wrap/fill 7.9 &middot; craft 7.7 &middot; spec 6.8 &middot; value n/a &middot; reviews 6.7 &middot; access 8.2 &middot; prox 6.2</div>
+        <div><span class="xlb-price none">price not published</span><span class="xlb-rating">Google 4.2 (350 reviews)</span></div>
+        <div class="xlb-note">Big-menu dumpling house; known for potstickers and noodles more than XLB craft.</div>
+      </div>
+    </div>
+    <div class="xlb-card">
+      <div class="xlb-rank">11</div>
+      <div>
+        <div class="xlb-score">7.3<small>/10</small></div>
+        <h3 class="xlb-name">Juicy Dumpling Factory</h3>
+        <div class="xlb-area">Costa Mesa &middot; 3030 Harbor Blvd J-1</div>
+        <div class="xlb-crit">soup 8.0 &middot; wrap/fill 7.9 &middot; craft 7.9 &middot; spec 7.2 &middot; value 6.2 &middot; reviews 6.1 &middot; access 7.8 &middot; prox 5.5</div>
+        <div><span class="xlb-price">$13.50 &middot; 8 pc &middot; $1.69 each</span><span class="xlb-rating">Google 4.5 (14 reviews)</span></div>
+        <div class="xlb-note">14 reviews is not a verdict — treat as unknown, not as a 4.5.</div>
+      </div>
+    </div>
+    <div class="xlb-card">
+      <div class="xlb-rank">12</div>
+      <div>
+        <div class="xlb-score">7.1<small>/10</small></div>
+        <h3 class="xlb-name">Bafang Dumpling</h3>
+        <div class="xlb-area">Irvine &middot; 5410 Walnut Ave</div>
+        <div class="xlb-crit">soup 7.4 &middot; wrap/fill 7.5 &middot; craft 7.3 &middot; spec 5.8 &middot; value n/a &middot; reviews 5.8 &middot; access 9.0 &middot; prox 6.6</div>
+        <div><span class="xlb-price none">price not published</span><span class="xlb-rating">Google 4.1 (135 reviews)</span></div>
+        <div class="xlb-note">Taiwanese chain — potsticker and bao first; XLB is an afterthought. Cheap, fast, open late.</div>
+      </div>
+    </div>
+
+  <h2 class="xlb-h2">How the score is built</h2>
+  <table class="xlb-tbl">
+    <tr><th>Criterion</th><th>Weight</th><th>What it measures</th></tr>
+    <tr><td>Soup / broth</td><td class='w'>0.20</td><td>Flavour and volume — the reason to order XLB at all</td></tr><tr><td>Wrapper &amp; filling</td><td class='w'>0.18</td><td>Skin thinness and tear resistance; filling seasoning</td></tr><tr><td>Craft</td><td class='w'>0.15</td><td>Fold consistency, soup retention, made to order</td></tr><tr><td>Specialization</td><td class='w'>0.10</td><td>Is XLB the house specialty, or one line on a big menu</td></tr><tr><td>Value</td><td class='w'>0.12</td><td>DERIVED from $/dumpling — never a hand-set score. Excluded when no price is published</td></tr><tr><td>Reviews</td><td class='w'>0.10</td><td>Rating scaled by review volume — 14 reviews is not a verdict</td></tr><tr><td>Access</td><td class='w'>0.08</td><td>Hours, wait, takeout</td></tr><tr><td>Proximity</td><td class='w'>0.05</td><td>DERIVED from driving distance to Irvine</td></tr><tr><td>Health</td><td class='w'>0.02</td><td>Sodium / richness tail — cannot flip a ranking</td></tr>
+  </table>
+
+  <h2 class="xlb-h2">What this page will not do</h2>
+  <p class="xlb-foot">
+    It will not quote a price it did not read. 7 of 12 venues publish no XLB price online —
+    their value weight is renormalised away, which is why they can rank high on craft and still be marked
+    "price not published". It will not treat a thin review base as a verdict: review score is scaled by volume,
+    so a 4.5 on 14 reviews scores like an unknown, not like a 4.5. Ratings and prices were read live on
+    2026-10-30 and are asking prices, not what you will pay after tax and tip.
+    Always call ahead — soup dumpling counters close early when the dough runs out.
+  </p>
+</div>
+<footer>
+  <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
+  <div class="links">
+    <a href="/products">Products</a><a href="/tutor">Tutor</a>
+    <a href="/my">Dashboard</a><a href="/blog">Blog</a><a href="/chat">Chat</a>
+  </div>
+  <div class="copy">RoyceAI Solutions. Irvine, CA</div>
+</footer>
+<script>
+
+(function(){
+  function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(links&&!menu.querySelector('a[data-mn]')){
+      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+
+</script>
+<script>
+(function(){
+  var search=document.getElementById('ebSearch');
+  var grid=document.getElementById('ebGrid');
+  var cards=[].slice.call(grid.querySelectorAll('.eb-card'));
+  var pills=[].slice.call(document.querySelectorAll('.eb-pill'));
+  var sortSel=document.getElementById('ebSort');
+  var empty=document.getElementById('ebEmpty');
+  var filter='all';
+  function apply(){
+    var q=(search.value||'').toLowerCase().trim();
+    var shown=0;
+    cards.forEach(function(c){
+      var ok=true;
+      if(q && c.dataset.title.indexOf(q)<0 && c.textContent.toLowerCase().indexOf(q)<0) ok=false;
+      if(filter==='craigslist' && c.dataset.src!=='craigslist') ok=false;
+      if(filter==='offerup' && c.dataset.src!=='offerup') ok=false;
+      if(filter==='under60'){
+        var m=c.querySelector('.eb-price .sub');
+        var pct=m?parseInt(m.textContent.replace(/[^0-9]/g,''),10):100;
+        if(!(pct<=60)) ok=false;
+      }
+      c.style.display=ok?'':'none';
+      if(ok) shown++;
+    });
+    empty.style.display=shown?'none':'block';
+  }
+  function sortBy(k){
+    var sorted=cards.slice().sort(function(a,b){
+      if(k==='price') return (+a.dataset.price)-(+b.dataset.price);
+      if(k==='score') return (+b.dataset.score)-(+a.dataset.score);
+      if(k==='savings'){
+        function sv(c){var t=c.querySelector('.pct');return t?parseInt(t.textContent.replace(/[^0-9]/g,''),10)||0:0;}
+        return sv(b)-sv(a);
+      }
+      if(k==='distance'){
+        function di(c){var m=c.textContent.match(/~(\d+) mi/);return m?parseInt(m[1],10):999;}
+        return di(a)-di(b);
+      }
+      return 0;
+    });
+    sorted.forEach(function(c){grid.appendChild(c);});
+  }
+  pills.forEach(function(p){p.addEventListener('click',function(){
+    pills.forEach(function(x){x.classList.remove('on');});
+    p.classList.add('on');filter=p.dataset.filter;apply();});});
+  search.addEventListener('input',apply);
+  sortSel.addEventListener('change',function(){sortBy(sortSel.value);});
+  apply();
+})();
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF23H9423B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EF23H9423B');</script>
+</body>
+</html>
