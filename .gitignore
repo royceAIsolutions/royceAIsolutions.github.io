@@ -5,3 +5,7 @@ data/flags.json
 tutor/calories.json
 tutor/licenses.json
 tutor/tutor-sheet.json
+
+# local edit backups must never ship
+*.bak-*
+*.bak

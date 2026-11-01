@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurants Scored — Orange County Board | RoyceAI</title>
+<meta name="description" content="88 Orange County restaurants scored on flavor, satisfaction, quality, timing, value, distance and BP-friendliness — every venue with its criteria line shown.">
+<link rel="canonical" href="https://royceai.com/restaurants/">
+<meta property="og:title" content="Restaurants Scored — Orange County">
+<meta property="og:description" content="88 OC restaurants, scored with the breakdown showing.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+/* ---- ebikes page ---- */
+.eb-wrap{max-width:var(--max-w);margin:0 auto;padding:0 20px 80px}
+.eb-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 8px}
+.eb-stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:16px 18px;text-align:center}
+.eb-stat .n{font-size:1.7rem;font-weight:800;color:var(--text);line-height:1.1}
+.eb-stat .l{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+.eb-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 10px}
+.eb-search{flex:1 1 260px;min-width:180px;background:var(--bg-elevated);border:1px solid var(--border);
+  color:var(--text);border-radius:var(--radius-sm);padding:11px 14px;font:inherit;font-size:.92rem;outline:none}
+.eb-search:focus{border-color:var(--accent)}
+.eb-pill{background:var(--bg-elevated);border:1px solid var(--border);color:var(--text-secondary);
+  border-radius:999px;padding:8px 14px;font-size:.82rem;cursor:pointer;transition:var(--transition)}
+.eb-pill:hover{border-color:var(--border-hover);color:var(--text)}
+.eb-pill.on{background:var(--accent-bg);border-color:var(--accent);color:var(--accent-light)}
+.eb-sort{background:var(--bg-elevated);border:1px solid var(--border);color:var(--text);
+  border-radius:var(--radius-sm);padding:10px 12px;font:inherit;font-size:.85rem}
+.eb-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+.eb-card{display:grid;grid-template-columns:200px 64px 1fr auto;gap:16px;align-items:start;
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px 20px;transition:var(--transition)}
+.eb-card:hover{border-color:var(--border-hover);transform:translateY(-1px)}
+.eb-score{width:58px;height:58px;border-radius:14px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;font-weight:800;font-size:1.15rem;line-height:1;
+  background:var(--accent-bg);color:var(--accent-light);border:1px solid var(--accent)}
+.eb-score small{font-size:.55rem;letter-spacing:.1em;font-weight:700;opacity:.7;margin-top:3px}
+.eb-score.mid{color:#f5c26b;border-color:rgba(245,194,107,.5);background:rgba(245,194,107,.08)}
+.eb-score.low{color:var(--text-secondary);border-color:var(--border);background:var(--bg-elevated)}
+.eb-title{font-size:1.02rem;font-weight:700;color:var(--text);margin:0 0 4px;line-height:1.35}
+.eb-title a{color:inherit;text-decoration:none;transition:var(--transition)}
+.eb-title a:hover{color:var(--accent-light)}
+.eb-meta{font-size:.82rem;color:var(--text-secondary);display:flex;flex-wrap:wrap;gap:6px 14px;margin-bottom:8px}
+.eb-meta b{color:var(--text);font-weight:600}
+.eb-tag{display:inline-block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
+  padding:3px 8px;border-radius:6px;background:var(--bg-elevated);color:var(--text-secondary);
+  border:1px solid var(--border);margin:0 5px 5px 0}
+.eb-tag.cr{color:#9fd8ff;border-color:rgba(159,216,255,.3)}
+.eb-tag.ou{color:#a5e8c1;border-color:rgba(165,232,193,.3)}
+.eb-tag.warn{color:#f5c26b;border-color:rgba(245,194,107,.35);background:rgba(245,194,107,.07)}
+.eb-tag.bad{color:#ff9a9a;border-color:rgba(255,154,154,.35);background:rgba(255,154,154,.07)}
+.eb-price{text-align:right;min-width:120px}
+.eb-price .p{font-size:1.35rem;font-weight:800;color:var(--text);line-height:1.1}
+.eb-price .sub{font-size:.75rem;color:var(--text-muted);margin-top:3px}
+.eb-price .pct{font-size:.78rem;font-weight:700;margin-top:8px;color:var(--green)}
+.eb-price .pct.hot{color:var(--green)}
+.eb-price .pct.cold{color:var(--text-secondary)}
+.eb-photo{grid-row:1 / span 2;border-radius:var(--radius-sm);overflow:hidden;background:var(--bg-elevated);
+  border:1px solid var(--border);aspect-ratio:4/3;display:block;position:relative}
+.eb-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.eb-photo .noimg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;color:var(--text-muted);text-align:center;padding:8px}
+.eb-range{grid-column:3 / span 2;display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 0}
+.eb-rng{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;padding:5px 10px;
+  border-radius:8px;background:var(--bg-elevated);border:1px solid var(--border);color:var(--text-secondary)}
+.eb-rng b{color:var(--text);font-weight:700}
+.eb-rng .lbl{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.eb-rng.seller{border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.07)}
+.eb-rng.seller .lbl{color:var(--green)}
+.eb-rng.spec .lbl{color:var(--accent-light)}
+.eb-rng.none{border-style:dashed}
+.eb-detail{grid-column:3 / span 2;font-size:.83rem;color:var(--text-secondary);line-height:1.55;
+  border-top:1px dashed var(--border);padding-top:10px;margin-top:2px}
+.eb-feat{border:1px solid var(--accent);background:linear-gradient(135deg,rgba(124,92,252,.10),rgba(124,92,252,.02))}
+.eb-feat .eb-score{background:var(--accent);color:#fff}
+.eb-empty{color:var(--text-secondary);text-align:center;padding:40px 0}
+.eb-notes{margin-top:44px;background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:22px 24px}
+.eb-notes h2{font-size:1.05rem;margin:0 0 12px}
+.eb-notes ul{margin:0;padding-left:20px;color:var(--text-secondary);font-size:.88rem;line-height:1.7}
+.eb-notes li b{color:var(--text)}
+.eb-foot{color:var(--text-muted);font-size:.75rem;margin-top:26px;text-align:center;line-height:1.6}
+@media(max-width:900px){
+  .eb-card{grid-template-columns:150px 52px 1fr;gap:12px}
+  .eb-photo{grid-row:1 / span 2}
+  .eb-price{grid-column:2 / span 2}
+}
+@media(max-width:760px){
+  .eb-stats{grid-template-columns:repeat(2,1fr)}
+  .eb-card{grid-template-columns:96px 1fr;gap:12px;padding:14px}
+  .eb-photo{grid-row:1 / span 3;aspect-ratio:1/1}
+  .eb-score{position:absolute;margin-top:-46px;width:40px;height:40px;font-size:.8rem;border-radius:10px}
+  .eb-score{width:48px;height:48px;font-size:1rem}
+  .eb-price{grid-column:2;text-align:left;min-width:0;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .eb-detail{grid-column:1 / span 2}
+  .eb-range{grid-column:1 / span 2}
+  .eb-card{position:relative}
+  .hero h1{font-size:clamp(1.9rem,8vw,2.6rem)}
+}
+
+
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--green:#34d399;--radius:16px;--radius-sm:10px;--max-w:1200px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--shadow-elevated:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;opacity:0.012;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes breathe{0%,100%{opacity:0.3;transform:scale(1)}50%{opacity:0.5;transform:scale(1.1)}}
+@keyframes pop-in{from{opacity:0;transform:translateY(8px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;background:var(--bg);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo img{width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 20px;border-radius:8px;animation:pulse-glow 2.5s ease-in-out infinite}
+.nav-links .nav-cta:hover{background:var(--accent-light);transform:scale(1.05)}
+.nav-links a.nav-drawer-only{display:none!important}
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.hero-sub{min-height:50vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:calc(80px + var(--nav-h)) 24px 60px;max-width:var(--max-w);margin:0 auto;animation:fade-up 0.6s ease-out}
+.hero-sub .badge{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:100px;background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(168,85,247,0.1));border:1px solid rgba(124,92,252,0.25);font-size:0.85rem;font-weight:600;color:var(--accent-light);margin-bottom:24px;animation:float 3s ease-in-out infinite}
+.hero-sub h1{font-size:clamp(2.2rem,6.5vw,3.9rem);font-weight:900;line-height:1.1;letter-spacing:-0.03em;margin-bottom:18px;max-width:820px}
+.hero-sub h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero-sub .subtitle{font-size:clamp(1rem,1.8vw,1.2rem);color:var(--text-secondary);max-width:700px;line-height:1.75;margin-bottom:14px}
+.hero-sub .tagline{font-size:1.02rem;font-weight:700;color:var(--accent-light);margin-bottom:10px}
+.hero-sub .meta{font-size:0.85rem;color:var(--text-muted);margin-top:14px}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.section{padding:70px 24px;max-width:var(--max-w);margin:0 auto}
+.section-header{text-align:center;margin-bottom:44px}
+.section-header h2{font-size:clamp(1.7rem,4.5vw,2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px}
+.section-header h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.section-header p{color:var(--text-secondary);max-width:700px;margin:0 auto;font-size:1.02rem}
+.quote{max-width:820px;margin:0 auto;text-align:center;font-size:clamp(1.15rem,2.4vw,1.5rem);font-weight:600;line-height:1.65;color:var(--text);padding:0 8px}
+.quote::before{content:'“';display:block;font-size:3rem;line-height:1;color:var(--accent-light);opacity:0.7;margin-bottom:6px}
+.quote::after{content:'”';display:block;font-size:3rem;line-height:1;color:var(--accent-light);opacity:0.7;margin-top:10px}
+.quote .src{display:block;font-size:0.85rem;font-weight:500;color:var(--text-muted);margin-top:14px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px}
+.stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 20px;text-align:center;transition:all var(--transition)}
+.stat:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
+.stat .num{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s ease-in-out infinite}
+.stat .label{color:var(--text-secondary);font-size:0.85rem;margin-top:6px}
+.timeline{max-width:760px;margin:0 auto;position:relative}
+.timeline::before{content:'';position:absolute;left:20px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,rgba(124,92,252,0.5),rgba(124,92,252,0.05))}
+.tl-item{position:relative;padding:0 0 32px 60px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:12px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:0 0 20px var(--accent-glow);border:3px solid var(--bg)}
+.tl-item h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.tl-item .tl-role{color:var(--accent-light);font-size:0.85rem;font-weight:600;margin-bottom:6px}
+.tl-item p{color:var(--text-secondary);font-size:0.92rem}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bento-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;transition:all var(--transition)}
+.bento-card:hover{border-color:rgba(124,92,252,0.35);transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
+.bento-card .icon{font-size:1.6rem;margin-bottom:14px;display:inline-block}
+.bento-card h3{font-size:1.02rem;font-weight:700;margin-bottom:8px}
+.bento-card p{color:var(--text-secondary);font-size:0.9rem}
+.bento-card ul{list-style:none;margin-top:10px}
+.bento-card li{color:var(--text-secondary);font-size:0.85rem;padding:4px 0 4px 18px;position:relative}
+.bento-card li::before{content:'\2713';position:absolute;left:0;color:var(--accent-light);font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px}
+.chip{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);color:var(--text-secondary);padding:8px 16px;border-radius:100px;font-size:0.85rem;font-weight:500;cursor:default;transition:all 0.2s}
+.chip:hover{color:var(--text);border-color:rgba(124,92,252,0.4);background:var(--accent-bg);transform:translateY(-2px)}
+.cta-section{padding:80px 24px;text-align:center;max-width:var(--max-w);margin:0 auto}
+.cta-section h2{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:14px}
+.cta-section h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.cta-section p{color:var(--text-secondary);max-width:620px;margin:0 auto 20px}
+.cta-perks{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.cta-perk{background:var(--accent-bg);border:1px solid rgba(124,92,252,0.25);color:var(--accent-light);font-size:0.82rem;font-weight:600;padding:8px 16px;border-radius:100px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:12px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all var(--transition);cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:#fff;animation:pulse-glow 2.5s ease-in-out infinite}
+.btn-primary:hover{background:var(--accent-light);transform:scale(1.03)}
+.btn-ghost{background:rgba(255,255,255,0.04);color:var(--text);border:1px solid var(--border-hover)}
+.btn-ghost:hover{background:var(--accent-bg);border-color:rgba(124,92,252,0.4);transform:scale(1.03)}
+footer{max-width:var(--max-w);margin:0 auto;padding:36px 24px 44px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center}
+footer .logo{font-weight:700}
+footer .logo span{color:var(--accent-light)}
+footer .links{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+footer .links a:hover{color:var(--text)}
+footer .copy{color:var(--text-muted);font-size:0.8rem}
+/* ===== Bot Widget ===== */
+.bot-fab{position:fixed;bottom:24px;right:24px;z-index:2000;width:60px;height:60px;border-radius:50%;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 3s ease-in-out infinite,pulse-glow 2.5s ease-in-out infinite;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 8px 30px rgba(124,92,252,0.4);transition:transform 0.3s}
+.bot-fab:hover{transform:scale(1.1)}
+.bot-panel{position:fixed;bottom:96px;right:24px;z-index:2001;width:370px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 120px);background:var(--bg-elevated);border:1px solid var(--border-hover);border-radius:20px;box-shadow:var(--shadow-elevated);display:none;flex-direction:column;overflow:hidden;animation:pop-in 0.3s cubic-bezier(0.16,1,0.3,1)}
+.bot-panel.open{display:flex}
+.bot-head{background:linear-gradient(135deg,rgba(124,92,252,0.18),rgba(168,85,247,0.1));border-bottom:1px solid var(--border);padding:16px 18px;display:flex;align-items:center;gap:12px}
+.bot-avatar{width:40px;height:40px;border-radius:12px;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 4s ease-in-out infinite;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:0.9rem}
+.bot-head h3{font-size:0.95rem;font-weight:700}
+.bot-head p{font-size:0.75rem;color:var(--text-secondary)}
+.bot-close{margin-left:auto;background:none;border:none;color:var(--text-secondary);font-size:1.3rem;cursor:pointer;padding:4px 8px;border-radius:8px;transition:all 0.2s}
+.bot-close:hover{color:var(--text);background:var(--accent-bg)}
+.bot-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.bot-msgs::-webkit-scrollbar{width:5px}
+.bot-msgs::-webkit-scrollbar-thumb{background:rgba(124,92,252,0.3);border-radius:3px}
+.msg{max-width:82%;padding:10px 14px;border-radius:14px;font-size:0.85rem;line-height:1.55;animation:pop-in 0.25s ease-out}
+.msg.bot{background:var(--bg-card);border:1px solid var(--border);color:var(--text);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.user{background:var(--accent);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.msg .qb{display:block;margin-top:10px}
+.bot-quick{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 10px}
+.bot-quick button{background:var(--accent-bg);border:1px solid rgba(124,92,252,0.3);color:var(--accent-light);font-size:0.78rem;font-weight:600;padding:7px 12px;border-radius:100px;cursor:pointer;transition:all 0.2s}
+.bot-quick button:hover{background:rgba(124,92,252,0.2);color:var(--text)}
+.bot-in{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--border)}
+.bot-in input{flex:1;background:var(--bg-card);border:1px solid var(--border-hover);border-radius:10px;padding:11px 14px;color:var(--text);font-size:0.85rem;outline:none;font-family:var(--font)}
+.bot-in input:focus{border-color:var(--accent)}
+.bot-in button{background:var(--accent);border:none;border-radius:10px;padding:0 16px;color:#fff;font-weight:700;cursor:pointer;transition:all 0.2s}
+.bot-in button:hover{background:var(--accent-light)}
+.bot-form{padding:16px;display:flex;flex-direction:column;gap:12px;overflow-y:auto}
+.bot-form label{font-size:0.8rem;font-weight:600;color:var(--text-secondary)}
+.bot-form input{background:var(--bg-card);border:1px solid var(--border-hover);border-radius:10px;padding:11px 14px;color:var(--text);font-size:0.85rem;outline:none;font-family:var(--font);width:100%}
+.bot-form input:focus{border-color:var(--accent)}
+.bot-form .err{color:#f87171;font-size:0.75rem;display:none}
+.bot-form .group.invalid input{border-color:#ef4444}
+.bot-form .group.invalid .err{display:block}
+.bot-form button{background:var(--accent);border:none;border-radius:12px;padding:13px;color:#fff;font-weight:700;font-size:0.9rem;cursor:pointer;transition:all 0.2s}
+.bot-form button:hover{background:var(--accent-light)}
+.bot-note{font-size:0.72rem;color:var(--text-muted);text-align:center}
+.bot-typing{display:inline-flex;gap:4px;padding:4px 2px}
+.bot-typing i{width:6px;height:6px;border-radius:50%;background:var(--text-muted);animation:breathe 1s ease-in-out infinite}
+.bot-typing i:nth-child(2){animation-delay:0.2s}
+.bot-typing i:nth-child(3){animation-delay:0.4s}
+@media(max-width:640px){
+  .hero-sub{padding:calc(60px + var(--nav-h)) 20px 40px}
+  .section{padding:50px 20px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .bento{grid-template-columns:1fr}
+  .section-header h2{font-size:clamp(1.6rem,7vw,2rem)}
+  .cta-section{padding:56px 20px}
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none}
+  
+  
+  .nav-links.open a{display:block;padding:10px 8px}
+  footer{flex-direction:column}
+}
+@media(min-width:641px) and (max-width:1023px){
+  .bento{grid-template-columns:repeat(2,1fr)}
+}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);overflow-y:auto;z-index:1000}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+nav{z-index:1001;background:var(--bg)}
+@media(min-width:1100px){.nav-links a.nav-drawer-only{display:none!important}}
+@media(max-width:1099px){.nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none!important}}
+
+.bento-2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:640px){.bento-2{grid-template-columns:1fr}}
+/* burger+lang cluster pinned right (overrides space-between spread) */
+nav{justify-content:flex-start!important}
+nav > .nav-links{margin-left:auto!important}
+nav > .royceai-lang{margin-left:8px!important;order:0}
+nav > .nav-burger{margin-left:8px!important;margin-right:0!important;flex:none;order:0}
+nav > .royceai-lang{order:1}
+nav > .nav-burger{order:2}
+nav > .nav-logo{margin-right:0!important;order:-1}
+
+  .rs-hero{padding:3rem 1.5rem 1rem;text-align:center;max-width:900px;margin:0 auto}
+  .rs-hero h1{font-size:2.3rem;font-weight:800;letter-spacing:-.03em}
+  .rs-hero p{color:#8fa3bf;margin-top:.6rem}
+  .rs-filters{max-width:1160px;margin:1.4rem auto 0;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .rs-filters input,.rs-filters select{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+    color:#e8eef7;padding:10px 13px;border-radius:11px;font-size:13.5px;font-family:inherit;outline:none}
+  .rs-filters input{flex:1 1 220px}
+  .rs-filters input:focus,.rs-filters select:focus{border-color:rgba(120,200,255,.55)}
+  .rs-toggle{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);padding:9px 13px;border-radius:11px;font-size:13px;color:#8fa3bf;cursor:pointer;user-select:none}
+  .rs-toggle input{display:none}
+  .rs-toggle .box{width:17px;height:17px;border-radius:5px;border:1px solid rgba(255,255,255,.22);
+    display:inline-flex;align-items:center;justify-content:center;font-size:11px;color:transparent}
+  .rs-toggle input:checked+.box{background:#8fd0ff;border-color:#8fd0ff;color:#08121c}
+  .rs-toggle.on{color:#e8eef7}
+  .rs-grid{max-width:1160px;margin:1.6rem auto 3rem;padding:0 20px;display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+  .rs-card{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:16px;
+    padding:18px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+  .rs-card:hover{transform:translateY(-3px);border-color:rgba(120,200,255,.4)}
+  .rs-card.top{border-color:rgba(120,200,255,.45);background:rgba(120,200,255,.07)}
+  .rs-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+  .rs-name{font-size:16px;font-weight:800;color:#fff;line-height:1.3;margin:0}
+  .rs-addr{font-size:12px;color:#8fa3bf;margin-top:3px}
+  .rs-score{flex:none;min-width:50px;height:50px;border-radius:13px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;line-height:1.05;background:rgba(120,200,255,.1);
+    border:1px solid rgba(120,200,255,.35)}
+  .rs-score b{font-size:19px;font-weight:900;color:#fff}
+  .rs-score small{font-size:9.5px;color:#8fd0ff;letter-spacing:.08em}
+  .rs-badges{display:flex;gap:6px;flex-wrap:wrap;margin:11px 0 8px}
+  .rs-badge{font-size:10.5px;font-weight:600;padding:3px 9px;border-radius:100px;letter-spacing:.02em}
+  .rs-badge.cuisine{background:rgba(120,200,255,.12);border:1px solid rgba(120,200,255,.25);color:#bfe4ff}
+  .rs-badge.price{background:rgba(126,224,168,.1);border:1px solid rgba(126,224,168,.25);color:#7ee0a8}
+  .rs-badge.draft{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3);color:#fcd34d}
+  .rs-badge.bp{background:rgba(126,224,168,.08);border:1px solid rgba(126,224,168,.2);color:#7ee0a8}
+  .rs-badge.area{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#8fa3bf}
+  .rs-badge.v2{background:rgba(158,240,192,.1);border:1px solid rgba(158,240,192,.25);color:#9ef0c0}
+  .rs-badge.legacy{background:rgba(200,176,122,.1);border:1px solid rgba(200,176,122,.25);color:#c8b07a}
+  .rs-badge.norating{background:rgba(224,160,160,.1);border:1px solid rgba(224,160,160,.25);color:#e0a0a0}
+  .rs-crit{font-size:11.5px;color:#a9bcd4;line-height:1.7;border-top:1px solid rgba(255,255,255,.06);padding-top:9px;margin-top:auto}
+  .rs-order{font-size:12px;color:#bfe4ff;margin-top:7px}
+  .rs-order b{color:#8fd0ff;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;display:block;margin-bottom:2px}
+  .rs-note{font-size:12px;color:#93a7bf;margin-top:7px;line-height:1.5}
+  .rs-empty{max-width:1160px;margin:2rem auto;text-align:center;color:#8fa3bf;padding:0 20px}
+  .rs-h2{max-width:1160px;margin:38px auto 10px;padding:0 20px;font-size:21px;font-weight:800;color:#fff}
+  .rs-foot{max-width:1160px;margin:0 auto 60px;padding:0 20px;font-size:12.5px;color:#7d90a8;line-height:1.8}
+  @media(max-width:640px){.rs-hero h1{font-size:1.7rem}.rs-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/royceai-logo-40.jpeg" onerror="this.style.display='none'" alt="R"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
+    <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/royceai-business" class="nav-drawer-only">🏢 RoyceAI Business</a>
+    <a href="/dealerships" class="nav-drawer-only">🚗 Dealerships</a>
+    <a href="/sonic-interview/" class="nav-drawer-only">🏍️ Sonic</a>
+    <a href="/different" class="nav-drawer-only">⚡ Why We're Different</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/xlb" class="nav-drawer-only">🥟 XLB Dumplings</a>
+    <a href="/restaurants" class="nav-drawer-only">🍽️ Restaurants</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/about" class="nav-drawer-only">👤 About Royce</a>
+    <a class="nav-drawer-only" href="/subscribe">Subscribe</a>
+    <a href="/chat" class="nav-show-mobile">💬 Chat</a>
+    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+
+
+<section class="rs-hero">
+  <span class="badge">🍽️ 88 venues · every score with its breakdown</span>
+  <h1>Every Restaurant We Score,<br><span class="gradient">With the Math Showing.</span></h1>
+  <p>Live from the same engine that picks dinner in chat — 88 Orange County venues scored on flavor and
+  satisfaction first, then quality, timing, value, distance, extras and BP-friendliness. Search it, filter it,
+  sort it by what matters to you tonight.</p>
+</section>
+
+<div class="rs-filters">
+  <input type="text" id="q" placeholder="Search a name, cuisine or area — ramen, korean, santa ana…" aria-label="Search restaurants">
+  <select id="cuisine"><option value="">All cuisines</option><option value="american">american</option><option value="asian fusion">asian fusion</option><option value="asian-fusion">asian-fusion</option><option value="bakery">bakery</option><option value="bar">bar</option><option value="bbq">bbq</option><option value="breakfast">breakfast</option><option value="burger">burger</option><option value="burgers">burgers</option><option value="cafe">cafe</option><option value="chicken">chicken</option><option value="chinese">chinese</option><option value="deli">deli</option><option value="dessert">dessert</option><option value="filipino">filipino</option><option value="food hall">food hall</option><option value="french">french</option><option value="german">german</option><option value="grilled cheese">grilled cheese</option><option value="hawaiian">hawaiian</option><option value="healthy">healthy</option><option value="indian">indian</option><option value="italian">italian</option><option value="japanese">japanese</option><option value="korean">korean</option><option value="mediterranean">mediterranean</option><option value="mexican">mexican</option><option value="pizza">pizza</option><option value="pub">pub</option><option value="ramen">ramen</option><option value="salvadoran">salvadoran</option><option value="sandwich">sandwich</option><option value="seafood">seafood</option><option value="spanish">spanish</option><option value="steakhouse">steakhouse</option><option value="taiwanese">taiwanese</option><option value="tasting menu">tasting menu</option><option value="thai">thai</option><option value="vegan">vegan</option><option value="vietnamese">vietnamese</option><option value="waffles">waffles</option></select>
+  <select id="price">
+    <option value="">Any price</option><option value="$">$ · under $13</option>
+    <option value="$$">$$ · $13–20</option><option value="$$$">$$$ · $20–35</option>
+    <option value="$$$$">$$$$ · $35+</option>
+  </select>
+  <select id="area"><option value="">All areas</option><option value="anaheim">anaheim</option><option value="costa-mesa">costa-mesa</option><option value="garden-grove">garden-grove</option><option value="hb">hb</option><option value="irvine">irvine</option><option value="newport-beach">newport-beach</option><option value="orange">orange</option><option value="san-clemente">san-clemente</option><option value="santa-ana">santa-ana</option><option value="tustin">tustin</option></select>
+  <label class="rs-toggle" id="draftToggle"><input type="checkbox" id="draft"><span class="box">✓</span>🍺 Draft beer</label>
+  <select id="sort">
+    <option value="score">Sort: score</option><option value="price_asc">Price ↑</option>
+    <option value="price_desc">Price ↓</option><option value="name">Name A–Z</option>
+  </select>
+</div>
+
+<div class="rs-grid" id="grid"></div>
+<div class="rs-empty" id="empty" style="display:none">Nothing matches those filters.</div>
+
+<h2 class="rs-h2">How to read this board honestly</h2>
+<p class="rs-foot">
+  <b>Timing is neutralised on this page.</b> In chat the engine scores open-now and line risk; a static page
+  cannot, so timing is held at 8.0 here and the live call stays in the bot. <b>37 of 88 venues have no
+  rating on file</b> — they are labelled, not given a number. <b>2 of 88 are scored on the flavor-first
+  rubric</b> (🔥 flavor and 😋 satisfaction researched and stored); the rest run the older weights and are badged
+  <i>legacy</i>, because the two rubrics are not directly comparable and saying so beats hiding it. Prices are
+  typical entrée prices, not today's menu. Health carries 5% and can never flip a ranking — flavor and
+  satisfaction lead, by design. Generated from <code>restaurant_score_bot.js</code>; if this page and the bot ever
+  disagree, the bot is right and this page is stale.
+</p>
+
+<script>
+const R = [{"name": "The Yellow Chilli Tustin", "area": "tustin", "cuisine": "indian", "addr": "2463 Park Ave, Tustin (The District @ Tustin Legacy)", "price": 23, "rating": 8.8, "score": 8.1, "v2": true, "draft": true, "bp": true, "crit": "🔥 8.8 · 😋 8.6 · ⭐ 8.8 · 🕐 8.0 · 💰 5.1 · 📍 8.0 · 🍺 8.5 · 🫀 10.0 · 🍜 5.0", "parts": {"flavor": 8.8, "satisfy": 8.6, "quality": 8.8, "timing": 8, "value": 5.050000000000001, "prox": 8, "extras": 8.5, "health": 10, "fit": 5}, "note": "SK Restaurants / Master Chef Sanjeev Kapoor. OpenTable 4.6 (334) vs Yelp 3.9 (985) - the gap is service and consistency, not the food. Full bar, cocktails, patio, private dining. Dinner only till 10p; lunch Mon-Fri only.", "order": "Murgh Angaar Bedgi (clay-oven chicken tikka in Bedgi chili) + Shaam Savera + garlic naan + raita. Skip the cream gravies if BP.", "entrees": ["Murgh Angaar Bedgi (clay-oven chicken tikka in Bedgi chili) + Shaam Savera + garlic naan + raita. Skip the cream gravies if BP."], "yelp": null}, {"name": "HiroNori Craft Ramen", "area": "irvine", "cuisine": "ramen", "addr": "15231 Barranca Pkwy, Irvine", "price": 17, "rating": 9, "score": 7.6, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 9.0 · 🕐 8.0 · 💰 6.8 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 9, "timing": 8, "value": 6.75, "prox": 10, "extras": 5.5, "health": 4}, "note": "Tonkotsu house, Yelp 4.5 (4,892 reviews) — verified Sep 2026. Burnt garlic oil is the move. No liquor license (no beer).", "order": "Original Tonkotsu + burnt garlic oil, firm noodles + pork gyoza", "entrees": ["Original Tonkotsu + burnt garlic oil, firm noodles + pork gyoza"], "yelp": null}, {"name": "Annapoorna Indian Cuisine", "area": "irvine", "cuisine": "indian", "addr": "14450 Culver Dr Ste A, Irvine 92604", "price": 19, "rating": 7.8, "score": 7.6, "v2": true, "draft": false, "bp": true, "crit": "🔥 8.0 · 😋 8.8 · ⭐ 7.8 · 🕐 8.0 · 💰 5.0 · 📍 10.0 · 🍺 4.0 · 🫀 10.0 · 🍜 5.0", "parts": {"flavor": 8, "satisfy": 8.8, "quality": 7.8, "timing": 8, "value": 5.05, "prox": 10, "extras": 4, "health": 10, "fit": 5}, "note": "Dinner window modeled (5:00-9:30p daily); real hours are lunch 11a-2:30p + dinner 5-9:30p every day. Yelp 3.8 (1.2k) yet ranked #3 Indian in Irvine by volume; TripAdvisor #72 of Irvine. Daily lunch buffet $18.99 (reviewe", "order": "Lunch buffet if it's before 2:30p - unbeatable variety for $18.99. At dinner: Chicken 65 to start, Lamb Biryani, garlic naan. Skip anything fried if BP.", "entrees": ["Lunch buffet if it's before 2:30p - unbeatable variety for $18.99. At dinner: Chicken 65 to start, Lamb Biryani, garlic naan. Skip anything fried if BP."], "yelp": null}, {"name": "Jackson Legacy Barbecue", "area": "santa-ana", "cuisine": "bbq", "addr": "201 E 4th St, Santa Ana (inside 4th Street Market)", "price": 20, "rating": 9, "score": 7.5, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 9.0 · 🕐 8.0 · 💰 6.0 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 9, "timing": 8, "value": 6, "prox": 10, "extras": 5.5, "health": 4}, "note": "Family-owned Southern BBQ inside 4th Street Market — slow-smoked brisket, ribs, pulled pork, rib tips. Strictly takeout at the counter. Hours conflict across sources (Yelp Tue-Wed 11-4; Google shows to 8pm; one listing s", "order": "", "entrees": [], "yelp": null}, {"name": "Shin-Sen-Gumi Hakata Ramen", "area": "irvine", "cuisine": "ramen", "addr": "4039 Barranca Pkwy, Irvine", "price": 15, "rating": 8.6, "score": 7.3, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 8.6 · 🕐 8.0 · 💰 6.8 · 📍 10.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 8.6, "timing": 8, "value": 6.85, "prox": 10, "extras": 8, "health": 4}, "note": "Hakata tonkotsu, customize richness/noodle firmness. Has beer. Great gyoza.", "order": "Tonkotsu, katai (firm) noodles, extra garlic + gyoza", "entrees": ["Tonkotsu, katai (firm) noodles, extra garlic + gyoza"], "yelp": null}, {"name": "The Stand", "area": "irvine", "cuisine": "burger", "addr": "Irvine (multiple OC locations)", "price": 15, "rating": 8.6, "score": 7.3, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 8.6 · 🕐 8.0 · 💰 6.8 · 📍 10.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 8.6, "timing": 8, "value": 6.85, "prox": 10, "extras": 8, "health": 4}, "note": "'Big Blue' Burger — beef patty, blue cheese, grilled onions, bacon, tomato, arugula, BBQ sauce on brioche (~$15). 4.3 (1,300).", "order": "", "entrees": [], "yelp": null}, {"name": "Eureka!", "area": "irvine", "cuisine": "american", "addr": "3932 Barranca Pkwy, Irvine", "price": 18, "rating": 7.5, "score": 7.2, "v2": false, "draft": true, "bp": true, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.0 · 📍 10.0 · 🍺 8.0 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5, "prox": 10, "extras": 8, "health": 10}, "note": "Gastro pub. Rotating craft taps. Bar seating. Burgers, salads.", "order": "", "entrees": [], "yelp": null}, {"name": "RA Sushi", "area": "irvine", "cuisine": "japanese", "addr": "2937 Bristol St, Costa Mesa", "price": 18, "rating": 7.5, "score": 7.2, "v2": false, "draft": true, "bp": true, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.0 · 📍 10.0 · 🍺 8.0 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5, "prox": 10, "extras": 8, "health": 10}, "note": "Sushi bar seating. Solo-friendly. Happy hour 3-7pm.", "order": "", "entrees": [], "yelp": null}, {"name": "Lazy Dog", "area": "irvine", "cuisine": "american", "addr": "2937 Bristol St, Costa Mesa", "price": 18, "rating": 7.5, "score": 7.2, "v2": false, "draft": true, "bp": true, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.0 · 📍 10.0 · 🍺 8.0 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5, "prox": 10, "extras": 8, "health": 10}, "note": "Bar seating. TVs. Craft beer. Bowls, burgers. Solo at bar.", "order": "", "entrees": [], "yelp": null}, {"name": "The Cut Handcrafted Burgers", "area": "irvine", "cuisine": "burger", "addr": "31 Fortune Dr, Irvine", "price": 18.5, "rating": 8.6, "score": 7.2, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 8.6 · 🕐 8.0 · 💰 6.0 · 📍 10.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 8.6, "timing": 8, "value": 5.975, "prox": 10, "extras": 8, "health": 4}, "note": "'Blue Cut' Burger — bacon, blue cheese, caramelized onions, BBQ steak sauce ($18-19). Blue cheese also sold as an add-on ($3.50-4). 4.3 stars (2,220).", "order": "", "entrees": [], "yelp": null}, {"name": "BCD Tofu House", "area": "irvine", "cuisine": "korean", "addr": "5463 Walnut Ave, Irvine", "price": 15, "rating": 7.8, "score": 7.1, "v2": false, "draft": false, "bp": true, "crit": "🍜 5.0 · ⭐ 7.8 · 🕐 8.0 · 💰 6.0 · 📍 10.0 · 🍺 5.5 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.8, "timing": 8, "value": 6.05, "prox": 10, "extras": 5.5, "health": 10}, "note": "Soondubu + banchan bar. Yelp 3.9 (3,711) — huge volume, average score. Counter seats, no alcohol.", "order": "", "entrees": [], "yelp": null}, {"name": "Wursthaus", "area": "santa-ana", "cuisine": "german", "addr": "305 E 4th St #106 (same block)", "price": 0, "rating": null, "score": 7.1, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 10.0 · 🍺 10.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 10, "extras": 10, "health": 4}, "note": "Sausage hall + 20 German/Belgian taps. Exotic sausages (alligator, wagyu, bison), Belgian fries, 5 mustards. Happy hour 8pm-close.", "order": "Wagyu sausage + Belgian fries, pint of Delirium", "entrees": ["Wagyu sausage + Belgian fries, pint of Delirium"], "yelp": null}, {"name": "Bangkok City", "area": "irvine", "cuisine": "thai", "addr": "14418 Culver Dr, Irvine", "price": 14, "rating": 7.5, "score": 7, "v2": false, "draft": false, "bp": true, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 6.0 · 📍 10.0 · 🍺 5.5 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 6, "prox": 10, "extras": 5.5, "health": 10}, "note": "Good pad thai, curries, tom yum. Ask light sauce for BP.", "order": "", "entrees": [], "yelp": null}, {"name": "Thai Cafe", "area": "irvine", "cuisine": "thai", "addr": "14250 Culver Dr, Irvine", "price": 13, "rating": 7.5, "score": 7, "v2": false, "draft": false, "bp": true, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 6.2 · 📍 10.0 · 🍺 5.5 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 6.25, "prox": 10, "extras": 5.5, "health": 10}, "note": "Solid thai. Quick counter service. Solo no problem.", "order": "", "entrees": [], "yelp": null}, {"name": "Urban Plates", "area": "irvine", "cuisine": "healthy", "addr": "15315 Culver Dr, Irvine", "price": 15, "rating": 7.5, "score": 7, "v2": false, "draft": false, "bp": true, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 10.0 · 🍺 5.5 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 10, "extras": 5.5, "health": 10}, "note": "Plate service. Grilled salmon, veggie bowls. Good for BP.", "order": "", "entrees": [], "yelp": null}, {"name": "Luna Grill", "area": "irvine", "cuisine": "mediterranean", "addr": "2957 Michelson Dr, Irvine", "price": 14, "rating": 7.5, "score": 7, "v2": false, "draft": false, "bp": true, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 6.0 · 📍 10.0 · 🍺 5.5 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 6, "prox": 10, "extras": 5.5, "health": 10}, "note": "Greek bowls, chicken skewers. Counter order. Easy solo.", "order": "", "entrees": [], "yelp": null}, {"name": "Hangar 24", "area": "irvine", "cuisine": "american", "addr": "17877 Von Karman Ave, Irvine", "price": 16, "rating": 7.8, "score": 7, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.8 · 🕐 8.0 · 💰 5.8 · 📍 10.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.8, "timing": 8, "value": 5.8, "prox": 10, "extras": 8, "health": 4}, "note": "'Burger 18' — blackened 1/3 lb Angus, Cajun garlic aioli, blue cheese crumbles, caramelized onions, mushrooms, cream ale bun (~$16). Bravo Zulu BBQ burger $14 has a bleu cheese drizzle. 3.9 (705).", "order": "", "entrees": [], "yelp": null}, {"name": "Fire Wings", "area": "irvine", "cuisine": "chicken", "addr": "14376 Culver Dr, Irvine", "price": 11, "rating": 7.5, "score": 7, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 6.8 · 📍 10.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 6.75, "prox": 10, "extras": 8, "health": 4}, "note": "Wings + a chicken-sandwich category (thigh-based). Counter service, order at the counter. Solo lunch or dinner.", "order": "", "entrees": [], "yelp": null}, {"name": "Tustin Brewing Co", "area": "tustin", "cuisine": "american", "addr": "1300 Newport Ave, Tustin", "price": 16, "rating": 7.5, "score": 7, "v2": false, "draft": true, "bp": true, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.5 · 📍 8.0 · 🍺 8.0 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.5, "prox": 8, "extras": 8, "health": 10}, "note": "Brewpub. House beers on draft. Burgers, beer. TVs.", "order": "", "entrees": [], "yelp": null}, {"name": "Grater Grilled Cheese", "area": "irvine", "cuisine": "grilled cheese", "addr": "6628 Irvine Center Dr, Irvine (Sand Canyon Plaza)", "price": 15, "rating": 8.6, "score": 7, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 8.6 · 🕐 8.0 · 💰 6.8 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 8.6, "timing": 8, "value": 6.85, "prox": 10, "extras": 5.5, "health": 4}, "note": "Gourmet grilled cheese. In-store: Basic 5 build-your-own $10.99; gourmet sandwiches $14.99 (Philly, Nashville Hot, NY Patty Melt, Chicken Pesto, Mushroom-Truffle, Avocado, Veggie); Smokehouse + Lobster $16.99; Loaded Mac", "order": "", "entrees": [], "yelp": null}, {"name": "Pelicana Chicken", "area": "irvine", "cuisine": "korean", "addr": "4970 Irvine Blvd #110, Irvine (NOT 2710 Alton — stale)", "price": 14, "rating": 7.2, "score": 6.9, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.2 · 🕐 8.0 · 💰 5.7 · 📍 10.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.2, "timing": 8, "value": 5.7, "prox": 10, "extras": 8, "health": 4}, "note": "Korean fried chicken (Pelicana, since 1982). Counter service, beer. NOTE: Yelp 3.6 (179) / Google 3.6 — address in old data was wrong; verified 4970 Irvine Blvd.", "order": "", "entrees": [], "yelp": null}, {"name": "In-N-Out", "area": "irvine", "cuisine": "burger", "addr": "5631 Alton Pkwy, Irvine", "price": 8, "rating": 7.5, "score": 6.9, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 7.5 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 7.5, "prox": 10, "extras": 5.5, "health": 4}, "note": "Classic. Protein style for BP. Fast solo.", "order": "", "entrees": [], "yelp": null}, {"name": "North Italia", "area": "irvine", "cuisine": "italian", "addr": "2957 Michelson Dr, Irvine", "price": 20, "rating": 7.5, "score": 6.9, "v2": false, "draft": false, "bp": true, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 4.5 · 📍 10.0 · 🍺 5.5 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 4.5, "prox": 10, "extras": 5.5, "health": 10}, "note": "Italian. Bar dining. Ask light sauce for BP.", "order": "", "entrees": [], "yelp": null}, {"name": "The Golden Eatery", "area": "santa-ana", "cuisine": "american", "addr": "201 E 4th St, Santa Ana (4th Street Market)", "price": 0, "rating": 9.2, "score": 6.9, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 9.2 · 🕐 8.0 · 💰 7.4 · 📍 7.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 9.2, "timing": 8, "value": 7.449999999999999, "prox": 7, "extras": 5.5, "health": 4}, "note": "Smashburgers + Nashville hot chicken + wings. Latinx-owned, chef Oscar Gonzalez (open since 2020). Verified rating 4.6/5 (100+ DoorDash ratings). Menu not published online — DoorDash store is deactivated.", "order": "Double Smash + Nashville hot chicken, medium — split the fries", "entrees": ["Double Smash + Nashville hot chicken, medium — split the fries"], "yelp": null}, {"name": "Native Son Alehouse", "area": "santa-ana", "cuisine": "bar", "addr": "305 E 4th St", "price": 0, "rating": null, "score": 6.9, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 10.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 10, "extras": 8, "health": 4}, "note": "Craft alehouse on the same block — tap list leans local/California.", "order": "", "entrees": [], "yelp": null}, {"name": "The Habit", "area": "irvine", "cuisine": "burger", "addr": "3950 Barranca Pkwy, Irvine", "price": 10, "rating": 7.5, "score": 6.8, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 7.0 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 7, "prox": 10, "extras": 5.5, "health": 4}, "note": "Charburgers. Easy solo. No wait.", "order": "", "entrees": [], "yelp": null}, {"name": "Board & Brew", "area": "irvine", "cuisine": "sandwich", "addr": "3972 Barranca Pkwy J3, Irvine", "price": 12, "rating": 7.5, "score": 6.8, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 6.5 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 6.5, "prox": 10, "extras": 5.5, "health": 4}, "note": "Sandwiches. Counter service. Solo-friendly vibe.", "order": "", "entrees": [], "yelp": null}, {"name": "Chick-fil-A", "area": "irvine", "cuisine": "chicken", "addr": "3962 Barranca Pkwy, Irvine", "price": 10, "rating": 7.5, "score": 6.8, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 7.0 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 7, "prox": 10, "extras": 5.5, "health": 4}, "note": "Closed Sunday. Quick solo. Grilled option lighter.", "order": "", "entrees": [], "yelp": null}, {"name": "Naf Naf Grill", "area": "irvine", "cuisine": "mediterranean", "addr": "2947 Michelson Dr, Irvine", "price": 12, "rating": 7.5, "score": 6.8, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 6.5 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 6.5, "prox": 10, "extras": 5.5, "health": 4}, "note": "Middle eastern bowls. Fast casual. Good portions.", "order": "", "entrees": [], "yelp": null}, {"name": "El Taco Loco", "area": "irvine", "cuisine": "mexican", "addr": "15130 Kensington Park Dr, Tustin", "price": 10, "rating": 7.5, "score": 6.8, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 7.0 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 7, "prox": 10, "extras": 5.5, "health": 4}, "note": "Tacos, burritos. Counter. Cheap. Fast.", "order": "", "entrees": [], "yelp": null}, {"name": "VOX Kitchen", "area": "costa-mesa", "cuisine": "asian-fusion", "addr": "655 Paularino Ave, Costa Mesa", "price": 18, "rating": 7.5, "score": 6.8, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.0 · 📍 7.0 · 🍺 10.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5, "prox": 7, "extras": 10, "health": 4}, "note": "Asian gastropub. Draft beer. HH M-F 2-5pm. Bar counter.", "order": "", "entrees": [], "yelp": null}, {"name": "Faka's Island Grill", "area": "santa-ana", "cuisine": "hawaiian", "addr": "201 E 4th St, Santa Ana (4th Street Market)", "price": 0, "rating": 8.8, "score": 6.8, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 8.8 · 🕐 8.0 · 💰 7.1 · 📍 7.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 8.8, "timing": 8, "value": 7.050000000000001, "prox": 7, "extras": 5.5, "health": 4}, "note": "Modern Hawaiian, chef-owner David Pese. Biggest portions in the hall, free fountain refills. Closed Mondays.", "order": "Honey shrimp plate + Kings Island Sandwich to share", "entrees": ["Honey shrimp plate + Kings Island Sandwich to share"], "yelp": null}, {"name": "Yuchun", "area": "irvine", "cuisine": "korean", "addr": "2710 Alton Pkwy, Irvine", "price": 15, "rating": 7.5, "score": 6.7, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 10, "extras": 5.5, "health": 4}, "note": "Korean soup & sushi. Bar seating. Fast solo meal.", "order": "", "entrees": [], "yelp": null}, {"name": "NOVA Kitchen", "area": "garden-grove", "cuisine": "asian-fusion", "addr": "12151 Brookhurst St, Garden Grove", "price": 18, "rating": 7.5, "score": 6.7, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.0 · 📍 6.0 · 🍺 10.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5, "prox": 6, "extras": 10, "health": 4}, "note": "Asian fusion. Draft beer. HH 4-6pm Thu-Sat. Bar seats.", "order": "", "entrees": [], "yelp": null}, {"name": "Pho So 1", "area": "garden-grove", "cuisine": "vietnamese", "addr": "14082 Euclid St, Garden Grove", "price": 12, "rating": 7.5, "score": 6.7, "v2": false, "draft": false, "bp": true, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 6.5 · 📍 6.0 · 🍺 5.5 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 6.5, "prox": 6, "extras": 5.5, "health": 10}, "note": "Pho. Counter seating. Light on sodium option. Solo standard.", "order": "", "entrees": [], "yelp": null}, {"name": "The Chicken Rice", "area": "santa-ana", "cuisine": "thai", "addr": "201 E 4th St, Santa Ana (4th Street Market)", "price": 0, "rating": null, "score": 6.7, "v2": false, "draft": false, "bp": true, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 7.0 · 🍺 5.5 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 7, "extras": 5.5, "health": 10}, "note": "Thai-style Hainanese chicken rice (khao man gai). Short window, single-focus menu.", "order": "", "entrees": [], "yelp": null}, {"name": "Deli Station", "area": "santa-ana", "cuisine": "deli", "addr": "201 E 4th St, Santa Ana (4th Street Market)", "price": 16, "rating": null, "score": 6.7, "v2": false, "draft": false, "bp": true, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.5 · 📍 7.0 · 🍺 5.5 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.5, "prox": 7, "extras": 5.5, "health": 10}, "note": "Family-run deli: handcrafted sandwiches, wraps, soups, salads. Earliest full kitchen in the hall (10am). UberEats: sandwiches $15.59-18.84, salads $16.89-18.19 (Sep 2026). Rating 5.0 but only 5 ratings — thin sample.", "order": "Best early-lunch option in the hall", "entrees": ["Best early-lunch option in the hall"], "yelp": null}, {"name": "Playground", "area": "santa-ana", "cuisine": "american", "addr": "220 E 4th St #102 (across the street)", "price": 0, "rating": null, "score": 6.7, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 10, "extras": 5.5, "health": 4}, "note": "Chef-driven small plates, menu changes daily, no modifications. Sunday supper by reservation only.", "order": "", "entrees": [], "yelp": null}, {"name": "Trust DTSA", "area": "santa-ana", "cuisine": "tasting menu", "addr": "220 E 4th St (formerly Playground 2.0)", "price": 0, "rating": null, "score": 6.7, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 10, "extras": 5.5, "health": 4}, "note": "18-seat chef's counter, 12-course prix fixe with pairings. Book well ahead (~$$$$).", "order": "", "entrees": [], "yelp": null}, {"name": "Tacos Los Cholos", "area": "santa-ana", "cuisine": "mexican", "addr": "113 E 4th St", "price": 0, "rating": null, "score": 6.7, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 10, "extras": 5.5, "health": 4}, "note": "Mesquite-grilled tacos, meat tiers. NO ALCOHOL at this location (Anaheim/HB serve beer).", "order": "", "entrees": ["Loaded potato +", "Burrito + loaded potato +"], "yelp": "https://www.yelp.com/biz/tacos-los-cholos-santa-ana-santa-ana-7"}, {"name": "Taquerias Guadalajara", "area": "santa-ana", "cuisine": "mexican", "addr": "305 E 4th St", "price": 0, "rating": null, "score": 6.7, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 10, "extras": 5.5, "health": 4}, "note": "Long-running DTSA taqueria — straightforward tacos, burritos, tortas.", "order": "", "entrees": [], "yelp": null}, {"name": "McFadden Public Market", "area": "santa-ana", "cuisine": "food hall", "addr": "515 N Main St", "price": 0, "rating": null, "score": 6.7, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 8.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 8, "extras": 8, "health": 4}, "note": "Small food hall + bar with rotating vendors and a big patio; good group fallback.", "order": "", "entrees": [], "yelp": null}, {"name": "The Twisted Tiki Bar & Lounge", "area": "santa-ana", "cuisine": "bar", "addr": "N Main St", "price": 0, "rating": null, "score": 6.7, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 8.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 8, "extras": 8, "health": 4}, "note": "Tiki cocktails, evening-only, closed Mondays.", "order": "", "entrees": [], "yelp": null}, {"name": "Koba BBQ", "area": "irvine", "cuisine": "korean", "addr": "3972 Barranca Pkwy, Irvine", "price": 18, "rating": 7.5, "score": 6.6, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.0 · 📍 10.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5, "prox": 10, "extras": 5.5, "health": 4}, "note": "Korean BBQ bowls. Fast casual, no table service needed.", "order": "", "entrees": [], "yelp": null}, {"name": "Taco Rosa", "area": "tustin", "cuisine": "mexican", "addr": "2961 El Camino Real, Tustin (The Market Place)", "price": 22, "rating": 7.5, "score": 6.6, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 4.0 · 📍 8.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 4, "prox": 8, "extras": 8, "health": 4}, "note": "Mexico City-style, upscale. Rosa Burritos (carnitas/pastor $19), Maine lobster flautas $25, happy hour + Taco Tuesday. Full bar.", "order": "", "entrees": [], "yelp": null}, {"name": "Wako Donki", "area": "tustin", "cuisine": "japanese", "addr": "13952 Newport Ave, Tustin", "price": 12, "rating": 7.5, "score": 6.6, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 6.5 · 📍 8.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 6.5, "prox": 8, "extras": 5.5, "health": 4}, "note": "Japanese curry. Counter service. Fast, filling, solo.", "order": "", "entrees": [], "yelp": null}, {"name": "Duke's HB", "area": "hb", "cuisine": "american", "addr": "317 Pacific Coast Hwy, Huntington Beach", "price": 22, "rating": 7.5, "score": 6.6, "v2": false, "draft": true, "bp": true, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 4.0 · 📍 5.0 · 🍺 8.0 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 4, "prox": 5, "extras": 8, "health": 10}, "note": "Ocean view. Bar seating. Draft beer. Fish, steak. Solo at bar.", "order": "", "entrees": [], "yelp": null}, {"name": "KoKo Chicken", "area": "garden-grove", "cuisine": "korean", "addr": "14081 Euclid St, Garden Grove", "price": 13, "rating": 7.5, "score": 6.6, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 6.2 · 📍 6.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 6.25, "prox": 6, "extras": 8, "health": 4}, "note": "Korean fried chicken. Counter. Beer available. Solo staple.", "order": "", "entrees": [], "yelp": null}, {"name": "Santouka Ramen", "area": "costa-mesa", "cuisine": "ramen", "addr": "665 Paularino Ave (Mitsuwa), Costa Mesa", "price": 18, "rating": 8.5, "score": 6.6, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 8.5 · 🕐 8.0 · 💰 6.0 · 📍 7.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 8.5, "timing": 8, "value": 6, "prox": 7, "extras": 5.5, "health": 4}, "note": "Hokkaido shio house. Legendary melt-in-mouth pork cheek (toro).", "order": "Shio w/ chashu + add toro pork cheek + chashu don", "entrees": ["Shio w/ chashu + add toro pork cheek + chashu don"], "yelp": null}, {"name": "Mode Bar", "area": "santa-ana", "cuisine": "bar", "addr": "201 E 4th St, Santa Ana (4th Street Market)", "price": 0, "rating": null, "score": 6.6, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 7, "extras": 8, "health": 4}, "note": "Full bar + NA cocktails (adaptogens/nootropics) inside the hall.", "order": "", "entrees": [], "yelp": null}, {"name": "Las Cazuelas", "area": "santa-ana", "cuisine": "mexican", "addr": "N Bush St (E 4th)", "price": 0, "rating": null, "score": 6.6, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 9.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 9, "extras": 5.5, "health": 4}, "note": "Neighborhood Mexican kitchen steps from the market.", "order": "", "entrees": [], "yelp": null}, {"name": "Loosies Pizza", "area": "santa-ana", "cuisine": "pizza", "addr": "300 E 4th St", "price": 0, "rating": null, "score": 6.6, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 9.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 9, "extras": 5.5, "health": 4}, "note": "NY-style slices, walk-up counter. Closed Mon-Tue.", "order": "", "entrees": [], "yelp": null}, {"name": "Congregation Ale House", "area": "santa-ana", "cuisine": "pub", "addr": "W 2nd St", "price": 0, "rating": null, "score": 6.6, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 7, "extras": 8, "health": 4}, "note": "Craft beer hall in a former church — 30+ taps, pub food, big patio.", "order": "", "entrees": [], "yelp": null}, {"name": "Proof", "area": "santa-ana", "cuisine": "bar", "addr": "N Broadway", "price": 0, "rating": null, "score": 6.6, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 7, "extras": 8, "health": 4}, "note": "DTSA cocktail/beer bar, evening-only.", "order": "", "entrees": [], "yelp": null}, {"name": "Tiny's Burger", "area": "costa-mesa", "cuisine": "burgers", "addr": "South Coast Plaza, 3333 Bristol St, Costa Mesa", "price": 18, "rating": null, "score": 6.6, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.0 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5, "prox": 7, "extras": 8, "health": 4}, "note": "Newest add — Chef Sang Yoon (Father's Office) burger stand with Asian accents.", "order": "", "entrees": ["Smash Burger", "Tiny's Double", "Truffle Fries"], "yelp": null}, {"name": "Bruxie", "area": "costa-mesa", "cuisine": "waffles", "addr": "South Coast Plaza, 3333 Bristol St, Costa Mesa", "price": 15, "rating": null, "score": 6.6, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 7, "extras": 8, "health": 4}, "note": "Fried chicken & waffle sandwiches, waffle-cut fries, Nutella shake. OC-born fast-casual.", "order": "Chicken & waffle sandwich", "entrees": ["Chicken & waffle sandwich"], "yelp": null}, {"name": "Marugame Udon", "area": "costa-mesa", "cuisine": "japanese", "addr": "South Coast Plaza, 3333 Bristol St, Costa Mesa", "price": 15, "rating": null, "score": 6.6, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 7, "extras": 8, "health": 4}, "note": "Sanuki-style udon, self-serve line, fast and cheap for a mall.", "order": "", "entrees": [], "yelp": null}, {"name": "Pura Vida Miami", "area": "costa-mesa", "cuisine": "healthy", "addr": "South Coast Plaza, 3333 Bristol St, Costa Mesa", "price": 18, "rating": null, "score": 6.6, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.0 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5, "prox": 7, "extras": 8, "health": 4}, "note": "Newest add — bowls, wraps, smoothies, all-day breakfast, dietary-friendly.", "order": "", "entrees": [], "yelp": null}, {"name": "Nick's", "area": "san-clemente", "cuisine": "american", "addr": "San Clemente (also Laguna Beach)", "price": 15, "rating": 8.8, "score": 6.6, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 8.8 · 🕐 8.0 · 💰 7.1 · 📍 3.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 8.8, "timing": 8, "value": 7.050000000000001, "prox": 3, "extras": 8, "health": 4}, "note": "Classic Blue Cheese Wedge $15 — blue cheese crumbles, Nueske's bacon, deviled egg, buttermilk blue cheese dressing. Prime rib dip comes with blue cheese. 4.4 (2,448).", "order": "", "entrees": [], "yelp": null}, {"name": "Stacks Pancake House", "area": "tustin", "cuisine": "breakfast", "addr": "13982 Newport Ave, Tustin", "price": 14, "rating": 7.5, "score": 6.5, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 6.0 · 📍 8.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 6, "prox": 8, "extras": 5.5, "health": 4}, "note": "Breakfast/lunch only. Pancakes, omelettes. Counter.", "order": "", "entrees": [], "yelp": null}, {"name": "Chicken Maison", "area": "hb", "cuisine": "mediterranean", "addr": "21100 Pacific Coast Hwy, Huntington Beach", "price": 14, "rating": 7.5, "score": 6.5, "v2": false, "draft": false, "bp": true, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 6.0 · 📍 5.0 · 🍺 5.5 · 🫀 10.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 6, "prox": 5, "extras": 5.5, "health": 10}, "note": "Grilled chicken plates. Counter service. Healthy solo.", "order": "", "entrees": [], "yelp": null}, {"name": "Kitakata Ramen Ban Nai", "area": "costa-mesa", "cuisine": "ramen", "addr": "3321 Hyland Ave, Costa Mesa", "price": 15, "rating": 8, "score": 6.5, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 8.0 · 🕐 8.0 · 💰 6.2 · 📍 7.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 8, "timing": 8, "value": 6.25, "prox": 7, "extras": 5.5, "health": 4}, "note": "Kitakata-style: clear shoyu, thin curly noodles, melt-in-mouth chashu.", "order": "Chashu Shoyu (+ Kogashi charred garlic) + gyoza", "entrees": ["Chashu Shoyu (+ Kogashi charred garlic) + gyoza"], "yelp": null}, {"name": "Munchies Vegan Diner", "area": "santa-ana", "cuisine": "vegan", "addr": "515 N Main St (McFadden Public Market)", "price": 0, "rating": null, "score": 6.5, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 8.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 8, "extras": 5.5, "health": 4}, "note": "Vegan diner inside McFadden Public Market — plant-based takes on diner food.", "order": "", "entrees": [], "yelp": null}, {"name": "Kaizen Shabu", "area": "santa-ana", "cuisine": "japanese", "addr": "303 N Spurgeon St", "price": 0, "rating": null, "score": 6.5, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 8.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 8, "extras": 5.5, "health": 4}, "note": "Premium shabu-shabu, sake + Japanese whiskey list. Sleek room, good for a slower dinner.", "order": "", "entrees": [], "yelp": null}, {"name": "Mongiello's Pizza and Wings", "area": "santa-ana", "cuisine": "pizza", "addr": "N Main St", "price": 0, "rating": null, "score": 6.5, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 8.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 8, "extras": 5.5, "health": 4}, "note": "Pizza + wings, late-night hours (closes 11pm-midnight).", "order": "", "entrees": [], "yelp": null}, {"name": "Tacompadre Tacos Chingones", "area": "santa-ana", "cuisine": "mexican", "addr": "N Main St", "price": 0, "rating": null, "score": 6.5, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 8.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 8, "extras": 5.5, "health": 4}, "note": "Late-night taco window on Main. Closed Mondays.", "order": "", "entrees": [], "yelp": null}, {"name": "Chapter One: the modern local", "area": "santa-ana", "cuisine": "american", "addr": "227 N Broadway", "price": 18, "rating": 7.4, "score": 6.5, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.4 · 🕐 8.0 · 💰 4.9 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.4, "timing": 8, "value": 4.9, "prox": 7, "extras": 8, "health": 4}, "note": "DTSA staple since 2011. Blue cheese dishes: Steak Panini (culotte steak, blue cheese, caramelized onion, arugula, herb-garlic aioli, duck fat fries, ~$18), Chapter One Burger w/ blue cheese crumbles $18, wings w/ bleu dr", "order": "BBQ Burger + duck fat fries at the bar", "entrees": ["BBQ Burger + duck fat fries at the bar"], "yelp": null}, {"name": "Knife Pleat", "area": "costa-mesa", "cuisine": "french", "addr": "South Coast Plaza, 3333 Bristol St, Costa Mesa", "price": 95, "rating": 9.5, "score": 6.5, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 9.5 · 🕐 8.0 · 💰 0.0 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 9.5, "timing": 8, "value": 0, "prox": 7, "extras": 8, "health": 4}, "note": "Michelin-starred chef Tony Esnault, French, Level 3 Penthouse. Caviar service, courtyard patio lunch.", "order": "", "entrees": ["Tasting Menu (seasonal)", "Butter-Poached Lobster", "Baba Au Rhum"], "yelp": null}, {"name": "Slater's 50/50", "area": "anaheim", "cuisine": "burger", "addr": "Anaheim Hills", "price": 17.49, "rating": 7.8, "score": 6.5, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.8 · 🕐 8.0 · 💰 5.4 · 📍 5.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.8, "timing": 8, "value": 5.4275, "prox": 5, "extras": 8, "health": 4}, "note": "'Hi-Brow' Burger $17.49 — Swiss AND blue cheeses on the 50/50 bacon-beef patty; blue cheese available on any burger. Anaheim Hills: Wed-Thu 1-9, Fri-Sat 11-10, Sun 11-7, closed Mon+Tue. 3.9 (4,018).", "order": "", "entrees": [], "yelp": null}, {"name": "Bosscat Kitchen", "area": "orange", "cuisine": "american", "addr": "212 N Glassell St, Orange", "price": 20, "rating": 7.5, "score": 6.4, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 4.5 · 📍 6.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 4.5, "prox": 6, "extras": 8, "health": 4}, "note": "Whiskey bar + craft beer. Bar seating. Burgers.", "order": "", "entrees": [], "yelp": null}, {"name": "Tuk Tuk Thai Street Food", "area": "santa-ana", "cuisine": "thai", "addr": "201 E 4th St, Santa Ana (4th Street Market)", "price": 0, "rating": null, "score": 6.4, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 7.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 7, "extras": 5.5, "health": 4}, "note": "OC Register critic (Brad Johnson) singled out the spicy crab fried rice. Chef Toto Limsombat, Thailand native.", "order": "Spicy crab fried rice — the critic's pick", "entrees": ["Spicy crab fried rice — the critic's pick"], "yelp": null}, {"name": "Tayabak by Dakine Grindz", "area": "santa-ana", "cuisine": "filipino", "addr": "201 E 4th St, Santa Ana (4th Street Market)", "price": 0, "rating": null, "score": 6.4, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 7.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 7, "extras": 5.5, "health": 4}, "note": "Filipino classics + American staples (Dakine Grindz). Little verified review data yet.", "order": "", "entrees": [], "yelp": null}, {"name": "Sivar Treats", "area": "santa-ana", "cuisine": "salvadoran", "addr": "201 E 4th St, Santa Ana (4th Street Market)", "price": 0, "rating": null, "score": 6.4, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 7.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 7, "extras": 5.5, "health": 4}, "note": "Salvadoran — pupusas. Evening-only window (4-8pm).", "order": "", "entrees": [], "yelp": null}, {"name": "Baked Banhs", "area": "santa-ana", "cuisine": "bakery", "addr": "201 E 4th St, Santa Ana (4th Street Market)", "price": 0, "rating": null, "score": 6.4, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 7.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 7, "extras": 5.5, "health": 4}, "note": "Microbakery — croissants, conchas, danishes, cakes. Thu-Sun only, 12-4 or until sold out.", "order": "", "entrees": [], "yelp": null}, {"name": "Gina's Crepes & Waffles", "area": "santa-ana", "cuisine": "dessert", "addr": "201 E 4th St, Santa Ana (4th Street Market)", "price": 0, "rating": null, "score": 6.4, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 7.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 7, "extras": 5.5, "health": 4}, "note": "Crepes and waffles with fresh fruit and spreads. Closed Mondays.", "order": "", "entrees": [], "yelp": null}, {"name": "Alta Baja Market", "area": "santa-ana", "cuisine": "mexican", "addr": "201 E 4th St, Santa Ana (4th Street Market)", "price": 0, "rating": null, "score": 6.4, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 7.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 7, "extras": 5.5, "health": 4}, "note": "Mexican/California/Southwest market + deli; micheladas. Also hosts cooking classes.", "order": "", "entrees": ["Tacos de Pescado", "Mushroom Tostada", "Mexican Brunch"], "yelp": null}, {"name": "The Den", "area": "santa-ana", "cuisine": "cafe", "addr": "125D W 2nd St", "price": 0, "rating": null, "score": 6.4, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 7.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 7, "extras": 5.5, "health": 4}, "note": "Coffee/café stop — daytime only.", "order": "", "entrees": [], "yelp": null}, {"name": "Caló Kitchen + Tequila", "area": "costa-mesa", "cuisine": "mexican", "addr": "South Coast Plaza, 3333 Bristol St, Costa Mesa", "price": 25, "rating": null, "score": 6.4, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 3.2 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 3.25, "prox": 7, "extras": 8, "health": 4}, "note": "Local (Clemente Heredia) Mexican — third location. Dozen+ tequila/mezcal labels; short-rib enchiladas.", "order": "", "entrees": [], "yelp": null}, {"name": "Din Tai Fung", "area": "costa-mesa", "cuisine": "taiwanese", "addr": "South Coast Plaza, 3333 Bristol St, Costa Mesa", "price": 30, "rating": null, "score": 6.3, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 2.0 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 2, "prox": 7, "extras": 8, "health": 4}, "note": "Global xiao long bao chain (Level 2). Expect a wait.", "order": "Pork XLB + spicy wontons", "entrees": ["Pork XLB + spicy wontons"], "yelp": null}, {"name": "Paradise Dynasty", "area": "costa-mesa", "cuisine": "chinese", "addr": "South Coast Plaza, 3333 Bristol St, Costa Mesa", "price": 28, "rating": null, "score": 6.3, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 2.5 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 2.5, "prox": 7, "extras": 8, "health": 4}, "note": "Soup-dumpling specialist with flavored XLB flights.", "order": "", "entrees": [], "yelp": null}, {"name": "BJ's Restaurant & Brewhouse", "area": "hb", "cuisine": "american", "addr": "Huntington Beach (original, 1978)", "price": 15.5, "rating": 7.2, "score": 6.3, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.2 · 🕐 8.0 · 💰 5.3 · 📍 5.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.2, "timing": 8, "value": 5.325, "prox": 5, "extras": 8, "health": 4}, "note": "'Black & Bleu-House' Burger — bleu cheese crumbles, applewood bacon, grilled onions, roasted garlic aioli, parmesan-crusted bun (~$15-16). Ratings split: Google 4.0 (379), Yelp 3.2 (1,987) — scored at 3.6.", "order": "", "entrees": [], "yelp": null}, {"name": "Fleming's Prime Steakhouse", "area": "newport-beach", "cuisine": "steakhouse", "addr": "455 Newport Center Dr, Newport Beach", "price": 19.75, "rating": 8, "score": 6.3, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 8.0 · 🕐 8.0 · 💰 5.1 · 📍 5.0 · 🍺 6.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 8, "timing": 8, "value": 5.0625, "prox": 5, "extras": 6.5, "health": 4}, "note": "Chopped Wedge — Danish blue cheese, bacon, campari tomato, red onion, balsamic glaze ($19-20.50). Pair with a steak. 4.0 (2,434).", "order": "", "entrees": [], "yelp": null}, {"name": "Sandy's Beach Shack", "area": "hb", "cuisine": "american", "addr": "315 Pacific Coast Hwy, Huntington Beach", "price": 15, "rating": 7.5, "score": 6.2, "v2": false, "draft": false, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 5.8 · 📍 5.0 · 🍺 5.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 5.75, "prox": 5, "extras": 5.5, "health": 4}, "note": "Beachside. Burgers, tacos. Casual solo.", "order": "", "entrees": [], "yelp": null}, {"name": "Vaca", "area": "costa-mesa", "cuisine": "spanish", "addr": "South Coast Plaza, 3333 Bristol St, Costa Mesa", "price": 65, "rating": null, "score": 6.1, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 0.0 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 0, "prox": 7, "extras": 8, "health": 4}, "note": "Top Chef alum Amar Santana — tapas, paella, wood-grilled steaks, Spanish wines. Across Bristol St.", "order": "", "entrees": ["Paella de Mariscos", "50+ Day Dry-Aged Prime Ribeye", "Smoked Chicken Cannelloni"], "yelp": null}, {"name": "Water Grill", "area": "costa-mesa", "cuisine": "seafood", "addr": "South Coast Plaza, 3333 Bristol St, Costa Mesa", "price": 70, "rating": null, "score": 6.1, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 0.0 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 0, "prox": 7, "extras": 8, "health": 4}, "note": "Family-owned (King's Seafood) seafood house next to Segerstrom Center. Menu changes daily.", "order": "", "entrees": [], "yelp": null}, {"name": "The Capital Grille", "area": "costa-mesa", "cuisine": "steakhouse", "addr": "South Coast Plaza, 3333 Bristol St, Costa Mesa", "price": 85, "rating": null, "score": 6.1, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 0.0 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 0, "prox": 7, "extras": 8, "health": 4}, "note": "Dry-aged steaks aged on premise 18+ days, in-house butchers, business-dinner room. OC Register critic rates the bone-in NY strip.", "order": "", "entrees": [], "yelp": null}, {"name": "AnQi Bistro", "area": "costa-mesa", "cuisine": "asian fusion", "addr": "South Coast Plaza, 3333 Bristol St, Costa Mesa", "price": 45, "rating": null, "score": 6.1, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 7.5 · 🕐 8.0 · 💰 0.0 · 📍 7.0 · 🍺 8.0 · 🫀 4.0", "parts": {"fit": 5, "quality": 7.5, "timing": 8, "value": 0, "prox": 7, "extras": 8, "health": 4}, "note": "House of An (sister of Crustacean, Beverly Hills). Garlic noodles, kimchi fried rice, truffle sashimi.", "order": "Garlic noodles + kimchi fried rice", "entrees": ["Garlic noodles + kimchi fried rice"], "yelp": null}, {"name": "Mastro's Steakhouse", "area": "costa-mesa", "cuisine": "steakhouse", "addr": "633 Anton Blvd, Costa Mesa", "price": 99, "rating": 8, "score": 6, "v2": false, "draft": true, "bp": false, "crit": "🍜 5.0 · ⭐ 8.0 · 🕐 8.0 · 💰 0.0 · 📍 7.0 · 🍺 6.5 · 🫀 4.0", "parts": {"fit": 5, "quality": 8, "timing": 8, "value": 0, "prox": 7, "extras": 6.5, "health": 4}, "note": "Sautéed Blue Cheese steak topping on the 7oz filet ($99) — or the wedge with buttermilk blue cheese dressing + crumbles ($20.90). 4.0 (4,444).", "order": "", "entrees": [], "yelp": null}];
+const EMOJI = {"korean": "🇰🇷", "japanese": "🍣", "ramen": "🍜", "chinese": "🥟", "thai": "🍛", "vietnamese": "🍲", "indian": "🍛", "mexican": "🌮", "italian": "🍝", "pizza": "🍕", "burger": "🍔", "burgers": "🍔", "american": "🍺", "seafood": "🦞", "steakhouse": "🥩", "bbq": "🔥", "breakfast": "🥞", "sandwich": "🥪", "mediterranean": "🥙", "healthy": "🥗", "asian-fusion": "🥢", "german": "🥨", "chicken": "🍗", "california-coastal": "🌊", "dessert": "🍰", "cafe": "☕", "bakery": "🥐", "sushi": "🍣", "hot-pot": "🍲"};
+const TIER = p => !p ? "$$" : p <= 13 ? "$" : p <= 20 ? "$$" : p <= 35 ? "$$$" : "$$$$";
+const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+const el = id => document.getElementById(id);
+
+function card(d){
+  const emoji = EMOJI[d.cuisine] || "🍽️";
+  const badges = [
+    '<span class="rs-badge cuisine">' + emoji + ' ' + (d.cuisine||"other").replace(/-/g," ") + '</span>',
+    '<span class="rs-badge price">' + TIER(d.price) + ' · $' + (d.price||"?") + '</span>',
+    d.draft ? '<span class="rs-badge draft">🍺 Draft</span>' : "",
+    d.bp ? '<span class="rs-badge bp">🫀 BP</span>' : "",
+    d.area ? '<span class="rs-badge area">📍 ' + d.area.replace(/-/g," ") + '</span>' : "",
+    d.v2 ? '<span class="rs-badge v2">flavor-first</span>' : '<span class="rs-badge legacy">legacy rubric</span>',
+    d.rating === null ? '<span class="rs-badge norating">no rating on file</span>'
+                      : '<span class="rs-badge area">★ ' + d.rating + '</span>'
+  ].join("");
+  const order = (d.entrees && d.entrees.length)
+    ? '<div class="rs-order"><b>Get this</b>' + d.entrees.map(esc).join(" · ") + '</div>' : "";
+  const note = d.note ? '<div class="rs-note">' + esc(d.note) + '</div>' : "";
+  const yelp = d.yelp ? '<div class="rs-order"><a href="' + d.yelp + '" target="_blank" rel="noopener" style="color:#8fd0ff">View on Yelp →</a></div>' : "";
+  return '<div class="rs-card">'
+    + '<div class="rs-head"><div><div class="rs-name">' + esc(d.name) + '</div>'
+    + '<div class="rs-addr">📍 ' + esc(d.addr || d.area) + '</div></div>'
+    + '<div class="rs-score"><b>' + d.score.toFixed(1) + '</b><small>/10</small></div></div>'
+    + '<div class="rs-badges">' + badges + '</div>'
+    + order + note + yelp
+    + '<div class="rs-crit">' + d.crit + '</div></div>';
+}
+
+function render(){
+  let f = { q: el("q").value.trim().toLowerCase(), c: el("cuisine").value, p: el("price").value,
+            a: el("area").value, d: el("draft").checked, s: el("sort").value };
+  let list = R.filter(r => {
+    if (f.c && r.cuisine !== f.c) return false;
+    if (f.p && TIER(r.price) !== f.p) return false;
+    if (f.a && r.area !== f.a) return false;
+    if (f.d && !r.draft) return false;
+    if (f.q) {
+      const hay = (r.name + " " + r.cuisine + " " + r.addr + " " + r.area + " " + (r.note||"")).toLowerCase();
+      if (hay.indexOf(f.q) < 0) return false;
+    }
+    return true;
+  });
+  if (f.s === "price_asc") list.sort((a,b) => a.price - b.price);
+  else if (f.s === "price_desc") list.sort((a,b) => b.price - a.price);
+  else if (f.s === "name") list.sort((a,b) => a.name.localeCompare(b.name));
+  else list.sort((a,b) => b.score - a.score);
+  el("grid").innerHTML = list.map(card).join("");
+  el("empty").style.display = list.length ? "none" : "block";
+}
+["q","cuisine","price","area","draft","sort"].forEach(id => {
+  el(id).addEventListener("input", render);
+  el(id).addEventListener("change", render);
+});
+render();
+</script>
+<footer>
+  <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
+  <div class="links">
+    <a href="/products">Products</a><a href="/tutor">Tutor</a>
+    <a href="/my">Dashboard</a><a href="/blog">Blog</a><a href="/chat">Chat</a>
+  </div>
+  <div class="copy">RoyceAI Solutions. Irvine, CA</div>
+</footer>
+<script>
+
+(function(){
+  function initMobileMenu(){
+    var burger=document.getElementById('navBurger');
+    if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
+    var menu=document.getElementById('mobileMenu');
+    var backdrop=document.getElementById('mobileMenuBackdrop');
+    var links=document.querySelector('.nav-links');
+    if(links&&!menu.querySelector('a[data-mn]')){
+      links.querySelectorAll('a').forEach(function(a){if(a.closest('#navLoginBtn'))return;var h=a.getAttribute('href')||'';if(!a.classList.contains('nav-drawer-only')&&h!=='/products'&&h!=='/subscribe')return;var c=a.cloneNode(true);c.setAttribute('data-mn','1');menu.appendChild(c);});
+    }
+    var p=location.pathname;
+    if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);
+    menu.querySelectorAll('a').forEach(function(a){
+      var h=a.getAttribute('href')||'';
+      h=h.split('?')[0].split('#')[0];
+      if(h.length>1&&h.endsWith('/'))h=h.slice(0,-1);
+      if(h==='/'?p==='/':p.indexOf(h)===0)a.classList.add('active');
+    });
+    function open(){menu.classList.add('open');backdrop.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');backdrop.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    burger.addEventListener('click',function(){menu.classList.contains('open')?close():open();});
+    backdrop.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    menu.dataset.mnInit='1';
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+
+</script>
+<script>
+(function(){
+  var search=document.getElementById('ebSearch');
+  var grid=document.getElementById('ebGrid');
+  var cards=[].slice.call(grid.querySelectorAll('.eb-card'));
+  var pills=[].slice.call(document.querySelectorAll('.eb-pill'));
+  var sortSel=document.getElementById('ebSort');
+  var empty=document.getElementById('ebEmpty');
+  var filter='all';
+  function apply(){
+    var q=(search.value||'').toLowerCase().trim();
+    var shown=0;
+    cards.forEach(function(c){
+      var ok=true;
+      if(q && c.dataset.title.indexOf(q)<0 && c.textContent.toLowerCase().indexOf(q)<0) ok=false;
+      if(filter==='craigslist' && c.dataset.src!=='craigslist') ok=false;
+      if(filter==='offerup' && c.dataset.src!=='offerup') ok=false;
+      if(filter==='under60'){
+        var m=c.querySelector('.eb-price .sub');
+        var pct=m?parseInt(m.textContent.replace(/[^0-9]/g,''),10):100;
+        if(!(pct<=60)) ok=false;
+      }
+      c.style.display=ok?'':'none';
+      if(ok) shown++;
+    });
+    empty.style.display=shown?'none':'block';
+  }
+  function sortBy(k){
+    var sorted=cards.slice().sort(function(a,b){
+      if(k==='price') return (+a.dataset.price)-(+b.dataset.price);
+      if(k==='score') return (+b.dataset.score)-(+a.dataset.score);
+      if(k==='savings'){
+        function sv(c){var t=c.querySelector('.pct');return t?parseInt(t.textContent.replace(/[^0-9]/g,''),10)||0:0;}
+        return sv(b)-sv(a);
+      }
+      if(k==='distance'){
+        function di(c){var m=c.textContent.match(/~(\d+) mi/);return m?parseInt(m[1],10):999;}
+        return di(a)-di(b);
+      }
+      return 0;
+    });
+    sorted.forEach(function(c){grid.appendChild(c);});
+  }
+  pills.forEach(function(p){p.addEventListener('click',function(){
+    pills.forEach(function(x){x.classList.remove('on');});
+    p.classList.add('on');filter=p.dataset.filter;apply();});});
+  search.addEventListener('input',apply);
+  sortSel.addEventListener('change',function(){sortBy(sortSel.value);});
+  apply();
+})();
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF23H9423B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EF23H9423B');</script>
+</body>
+</html>
