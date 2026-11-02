@@ -125,6 +125,22 @@ nav > .nav-logo{margin-right:0!important;order:-1}
   </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+.gc-wrap{margin-top:var(--space-lg);border-top:1px solid var(--border);padding-top:var(--space-lg)}
+.gc-h{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px;text-align:center}
+.gc-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--border);border-radius:9px;margin-bottom:7px;font-size:.86rem;background:var(--bg-card)}
+.gc-row.below{border-color:#f87171}.gc-row.unknown{opacity:.65}
+.gc-course{font-weight:600;flex:1;text-align:left}
+.gc-mark{font-weight:700;min-width:38px;text-align:center}
+.gc-mark.below{color:#f87171}.gc-mark.ok{color:#4ade80}.gc-mark.unknown{color:var(--text-secondary)}
+.gc-pct{min-width:56px;text-align:right;color:var(--text-secondary);font-variant-numeric:tabular-nums}
+.gc-lever{font-size:.74rem;color:var(--text-secondary);margin-top:4px}
+.el-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:6px}
+.el-item{padding:10px 12px;border:1px solid var(--border);border-radius:9px;font-size:.8rem;background:var(--bg-card);text-align:left}
+.el-item .el-k{display:block;color:var(--text-secondary);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.el-item .el-v{font-weight:700}
+.el-ok{color:#4ade80}.el-bad{color:#f87171}.el-wait{color:#fbbf24}
+.el-note{font-size:.72rem;color:var(--text-secondary);margin-top:8px;text-align:left}
+@media(max-width:480px){.el-grid{grid-template-columns:1fr}}
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
 <div class="mobile-menu" id="mobileMenu"></div>
 <div class="login-screen" id="loginScreen">
@@ -160,6 +176,12 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <span id="difficultyBadge" style="display:none"></span>
 <span>&#x1f3af; Topics:</span><span id="topicsList">&mdash;</span>
 </div>
+<div id="gradeCard" class="gc-wrap" style="display:none">
+<div class="gc-h">&#x1f4da; Grades &mdash; <span id="gradesAsOf">&mdash;</span></div>
+<div id="gradeRows"></div>
+<div class="gc-h" style="margin-top:18px">&#x1f3c0; College basketball eligibility (NCAA D1)</div>
+<div class="el-grid" id="eligGrid"></div>
+<div class="el-note" id="eligNote"></div>
 </div>
 </div>
 <div class="dash-grid" id="dashGrid">
@@ -196,7 +218,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v16-nov01-2026';
+var PAGE_VER='v17-nov01-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -260,8 +282,56 @@ function renderSB(u){
   // student's real topics never appeared anywhere. And difficultyBadge was a dead element: nothing
   // ever wrote to it. Both fixed here.
   var tp=document.getElementById("topicsList"); if(tp) tp.textContent=u.topics||u.subjects||"-";
+  try{ renderGradeCard(u); }catch(e){}
   var db=document.getElementById("difficultyBadge");
   if(db){ if(u.difficulty&&u.difficulty!=="\u2014"){ db.textContent=u.difficulty; db.style.display="inline-block"; } else { db.style.display="none"; } }
+}
+function renderGradeCard(u){
+  var card=document.getElementById("gradeCard"); if(!card) return;
+  var rows=u.grades||[], el=u.eligibility||null;
+  if(!rows.length && !el){ card.style.display="none"; return; }
+  card.style.display="block";
+  var ao=document.getElementById("gradesAsOf"); if(ao) ao.textContent=u.grades_as_of||"—";
+  var box=document.getElementById("gradeRows");
+  if(box){
+    box.innerHTML="";
+    rows.forEach(function(r){
+      var cls=r.status==="BELOW-C"?"below":(r.status==="UNKNOWN"?"unknown":"");
+      var d=document.createElement("div"); d.className="gc-row "+cls;
+      var markCls=r.status==="BELOW-C"?"below":(r.status==="UNKNOWN"?"unknown":"ok");
+      d.innerHTML='<span class="gc-course">'+r.course+'<div class="gc-lever">'+
+        (r.lever?("to reach C: "+r.lever):(r.why?("no percent on this scale — "+r.why):"at or above C"))+
+        '</div></span><span class="gc-mark '+markCls+'">'+r.mark+'</span><span class="gc-pct">'+
+        (r.percent===null||r.percent===undefined?"—":r.percent.toFixed(2)+"%")+'</span>';
+      box.appendChild(d);
+    });
+  }
+  var grid=document.getElementById("eligGrid"); var note=document.getElementById("eligNote");
+  if(grid&&el){
+    grid.innerHTML="";
+    var items=[
+      ["Core GPA (audited)", el.core_gpa.toFixed(2)+" / "+el.min_core_gpa.toFixed(2)+" min", el.gpa_meets?"ok":"bad"],
+      ["If these marks hold", (el.projected_core_gpa===null?"—":el.projected_core_gpa.toFixed(2))+
+        (el.projected_core_gpa!==null&&el.projected_core_gpa<el.min_core_gpa?" BELOW FLOOR":""),
+        el.projected_core_gpa===null?"wait":(el.projected_core_gpa>=el.min_core_gpa?"wait":"bad")],
+      ["10/7 progression", (el.progression_have===null?"—":el.progression_have)+"/"+(el.progression_need||20)+
+        " core units"+(el.progression_met?" met":" — not yet"), el.progression_met?"ok":"wait"],
+      ["SAT / ACT", el.test_required?"required":"not required (NCAA dropped it 2023)", "ok"]
+    ];
+    items.forEach(function(it){
+      var d=document.createElement("div"); d.className="el-item";
+      d.innerHTML='<span class="el-k">'+it[0]+'</span><span class="el-v el-'+it[2]+'">'+it[1]+'</span>';
+      grid.appendChild(d);
+    });
+    if(note){
+      var bits=[];
+      if(el.below_c_now&&el.below_c_now.length) bits.push("Below C now: "+el.below_c_now.join(", ")+" — a D earns 1.0 core points and satisfies no A-G requirement.");
+      if(el.shortfalls&&el.shortfalls.length) bits.push("Units still to earn: "+el.shortfalls.join(" · ")+".");
+      if(el.failed_core&&el.failed_core.length) bits.push("Failed core course on the transcript: "+el.failed_core.map(function(f){return f.title||f.course}).join(", ")+" (retake required).");
+      bits.push(el.projection_note?("Projection: "+el.projection_note+"."):"");
+      note.textContent=bits.filter(Boolean).join(" ");
+    }
+  }
 }
 async function loadHist(n){
   var el=document.getElementById("quizHistory"),tb=document.getElementById("quizHistoryBody");
@@ -482,7 +552,7 @@ setInterval(function(){
   .then(function(d){
     if(d.found&&d.data){
       var u=d.data;
-      CU.today=u.today||"-";CU.mtd=u.mtd||"-";CU.ytd=u.ytd||"-";CU.kpis=u.kpis||CU.kpis;
+      CU.today=u.today||"-";CU.mtd=u.mtd||"-";CU.ytd=u.ytd||"-";CU.kpis=u.kpis||CU.kpis;CU.grades=u.grades||CU.grades;CU.eligibility=u.eligibility||CU.eligibility;
       renderSB(CU);
     }
   }).catch(function(){});
