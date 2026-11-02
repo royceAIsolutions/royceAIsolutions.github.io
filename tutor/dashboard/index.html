@@ -161,45 +161,58 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <span>&#x1f3af; Topics:</span><span id="topicsList">&mdash;</span>
 </div>
 <style>
-#gradeCard{margin-top:26px;padding-top:22px;border-top:1px solid var(--border)}
-.el-banner{display:none;align-items:center;gap:12px;padding:16px 18px;border-radius:12px;margin-bottom:20px;border:1.5px solid;font-weight:700}
+#gradeCard{margin-top:24px;padding:20px 20px 18px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.02)}
+#gradeCard .gc-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+#gradeCard .gc-title{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);font-weight:700}
+#gradeCard .gc-date{font-size:.7rem;color:var(--text-muted);font-variant-numeric:tabular-nums;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.el-banner{display:none;align-items:flex-start;gap:12px;padding:14px 16px;border-radius:12px;margin-bottom:18px;border:1px solid;border-left-width:4px}
 .el-banner.show{display:flex}
-.el-banner.bad{background:rgba(248,113,113,.10);border-color:#f87171;color:#fecaca}
-.el-banner.wait{background:rgba(251,191,36,.10);border-color:#fbbf24;color:#fde68a}
-.el-banner.ok{background:rgba(74,222,128,.10);border-color:#4ade80;color:#bbf7d0}
-.el-banner .vb-icon{font-size:1.6rem;line-height:1}
-.el-banner .vb-state{font-size:1.18rem;letter-spacing:.06em;text-transform:uppercase;line-height:1.2}
-.el-banner .vb-why{font-size:.78rem;font-weight:400;opacity:.9;margin-top:4px;line-height:1.4}
-@media(max-width:560px){.el-banner{padding:13px 14px}.el-banner .vb-state{font-size:1rem}}
-.gc-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin:0 0 10px}
-.gc-h span{letter-spacing:0;text-transform:none;font-weight:600;font-size:.74rem;color:var(--text-secondary)}
-.gc-row{display:grid;grid-template-columns:1fr 44px 74px;gap:12px;align-items:start;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.88rem}
-.gc-row:last-child{border-bottom:0}
-.gc-course{font-weight:600;color:var(--text);line-height:1.3}
-.gc-teacher{color:var(--text-muted);font-weight:400;font-size:.76rem;margin-left:7px}
-.gc-lever{color:var(--text-secondary);font-size:.76rem;font-weight:400;margin-top:4px;line-height:1.4}
-.gc-mark{font-weight:800;font-size:.95rem;text-align:center;line-height:1.3}
-.gc-pct{text-align:right;color:var(--text-secondary);font-variant-numeric:tabular-nums;font-size:.82rem;line-height:1.4}
-.gc-row.below .gc-mark{color:#f87171}
-.gc-row.below .gc-course{color:#fecaca}
-.gc-row.ok .gc-mark{color:#4ade80}
-.gc-row.unknown .gc-mark{color:var(--text-muted)}
-.gc-row.ok{opacity:.92}
-.el-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:2px}
-.el-item{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:11px 13px}
-.el-k{display:block;font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
-.el-v{font-size:.95rem;font-weight:700;line-height:1.3}
+.el-banner.bad{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.45);border-left-color:#f87171;color:#fecaca}
+.el-banner.wait{background:rgba(251,191,36,.07);border-color:rgba(251,191,36,.40);border-left-color:#fbbf24;color:#fde68a}
+.el-banner.ok{background:rgba(74,222,128,.07);border-color:rgba(74,222,128,.40);border-left-color:#4ade80;color:#bbf7d0}
+.el-banner .vb-icon{font-size:1.25rem;line-height:1.2;flex:0 0 auto}
+.el-banner .vb-body{min-width:0}
+.el-banner .vb-state{display:block;font-size:1.06rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;line-height:1.25}
+.el-banner .vb-why{display:block;font-size:.78rem;font-weight:400;opacity:.92;margin-top:5px;line-height:1.45}
+.gc-row{display:grid;grid-template-columns:1fr 52px 78px;gap:14px;align-items:center;padding:11px 0 11px 12px;border-bottom:1px solid rgba(255,255,255,.05);border-left:3px solid transparent}
+.gc-row:last-of-type{border-bottom:0}
+.gc-row.below{border-left-color:#f87171}
+.gc-row.ok{border-left-color:rgba(74,222,128,.45)}
+.gc-row.unknown{border-left-color:rgba(255,255,255,.12)}
+.gc-course{font-weight:600;color:var(--text);line-height:1.3;min-width:0}
+.gc-teacher{color:var(--text-muted);font-weight:400;font-size:.75rem;margin-left:8px;white-space:nowrap}
+.gc-lever{color:var(--text-secondary);font-size:.75rem;font-weight:400;margin-top:4px;line-height:1.4}
+.gc-lever b{color:#fecaca;font-weight:600}
+.gc-mark{font-weight:800;font-size:.86rem;text-align:center;line-height:1;padding:5px 0;border-radius:6px;background:rgba(255,255,255,.05)}
+.gc-row.below .gc-mark{color:#fecaca;background:rgba(248,113,113,.16)}
+.gc-row.ok .gc-mark{color:#bbf7d0;background:rgba(74,222,128,.13)}
+.gc-row.unknown .gc-mark{color:var(--text-secondary);background:rgba(255,255,255,.04)}
+.gc-pct{text-align:right;color:var(--text-secondary);font-variant-numeric:tabular-nums;font-size:.82rem;line-height:1.2}
+.el-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:22px 0 10px}
+.el-head .gc-title{display:block}
+.el-head .el-tag{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.el-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.el-item{background:rgba(255,255,255,.03);border:1px solid var(--border);border-left:3px solid rgba(255,255,255,.12);border-radius:9px;padding:11px 13px}
+.el-item.ok{border-left-color:#4ade80}
+.el-item.wait{border-left-color:#fbbf24}
+.el-item.bad{border-left-color:#f87171}
+.el-k{display:block;font-size:.67rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:5px}
+.el-v{font-size:.95rem;font-weight:700;line-height:1.25}
 .el-ok{color:#4ade80}.el-wait{color:#fbbf24}.el-bad{color:#f87171}
-.el-note{font-size:.76rem;line-height:1.55;color:var(--text-secondary);margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.05)}
-@media(max-width:560px){.gc-row{grid-template-columns:1fr 40px 64px;gap:8px;font-size:.84rem}.el-grid{grid-template-columns:1fr}.gc-h{font-size:.68rem}}
+.el-note{margin:14px 0 0;padding:12px 0 0;border-top:1px solid rgba(255,255,255,.05);list-style:none}
+.el-note li{position:relative;font-size:.76rem;line-height:1.5;color:var(--text-secondary);padding-left:14px;margin-bottom:6px}
+.el-note li:before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.22)}
+.el-note li:last-child{margin-bottom:0}
+.el-note li.warn:before{background:#f87171}
+@media(max-width:560px){#gradeCard{padding:15px 14px 14px}.gc-row{grid-template-columns:1fr 44px 64px;gap:9px;padding-left:9px}.el-grid{grid-template-columns:1fr}.el-banner .vb-state{font-size:.98rem}}
 </style>
 <div id="gradeCard" style="display:none">
-<div id="eligBanner" class="el-banner"><span class="vb-icon" id="vbIcon"></span><span><span class="vb-state" id="vbState"></span><span class="vb-why" id="vbWhy"></span></span></div>
-<div class="gc-h"><b>&#x1f4da; Grades</b><span id="gradesAsOf">&mdash;</span></div>
+<div id="eligBanner" class="el-banner"><span class="vb-icon" id="vbIcon"></span><span class="vb-body"><span class="vb-state" id="vbState"></span><span class="vb-why" id="vbWhy"></span></span></div>
+<div class="gc-head"><span class="gc-title">Grades</span><span class="gc-date" id="gradesAsOf">&mdash;</span></div>
 <div id="gradeRows"></div>
-<div class="gc-h" style="margin-top:22px"><b>&#x1f3c0; College basketball eligibility</b><span>NCAA D1</span></div>
+<div class="el-head"><span class="gc-title">College basketball eligibility</span><span class="el-tag">NCAA D1</span></div>
 <div class="el-grid" id="eligGrid"></div>
-<div class="el-note" id="eligNote"></div>
+<ul class="el-note" id="eligNote"></ul>
 </div>
 </div>
 <div class="dash-grid" id="dashGrid">
@@ -236,7 +249,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v19-nov01-2026';
+var PAGE_VER='v20-nov01-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -320,7 +333,7 @@ function renderGradeCard(u){
       d.innerHTML='<div class="gc-course">'+r.course+
         (r.teacher?'<span class="gc-teacher">'+r.teacher+'</span>':'')+
         '<div class="gc-lever">'+
-        (r.lever?("to reach C: "+r.lever):(r.why?"no percent on this scale":"at or above C"))+
+        (r.lever?("to reach C: <b>"+r.lever.split(" ")[0]+"</b> "+r.lever.split(" ").slice(1).join(" ")):(r.why?"no percent on this scale":"at or above C"))+
         '</div></div><div class="gc-mark '+markCls+'">'+r.mark+'</div><div class="gc-pct">'+
         (r.percent===null||r.percent===undefined?"&mdash;":r.percent.toFixed(2)+"%")+'</div>';
       box.appendChild(d);
@@ -335,6 +348,7 @@ function renderGradeCard(u){
     if(st) st.textContent = (col==="ok"?"ELIGIBLE":(col==="wait"?"ON TRACK — NOT YET ELIGIBLE":"NOT ELIGIBLE"))+
       (el.verdict?" ("+el.verdict+")":"");
     if(wy) wy.textContent = el.reason||"";
+    if(st) st.setAttribute("title", el.verdict||"");
   } else if(bn){ bn.className="el-banner"; }
   var grid=document.getElementById("eligGrid"); var note=document.getElementById("eligNote");
   if(grid&&el){
@@ -350,6 +364,7 @@ function renderGradeCard(u){
     ];
     items.forEach(function(it){
       var d=document.createElement("div"); d.className="el-item";
+      d.className="el-item "+it[2];
       d.innerHTML='<span class="el-k">'+it[0]+'</span><span class="el-v el-'+it[2]+'">'+it[1]+'</span>';
       grid.appendChild(d);
     });
@@ -358,8 +373,14 @@ function renderGradeCard(u){
       if(el.below_c_now&&el.below_c_now.length) bits.push("Below C now: "+el.below_c_now.join(", ")+" — a D earns 1.0 core points and satisfies no A-G requirement.");
       if(el.shortfalls&&el.shortfalls.length) bits.push("Units still to earn: "+el.shortfalls.join(" · ")+".");
       if(el.failed_core&&el.failed_core.length) bits.push("Failed core course on the transcript: "+el.failed_core.map(function(f){return f.title||f.course}).join(", ")+" (retake required).");
-      bits.push(el.projection_note?("Projection: "+el.projection_note+"."):"");
-      note.textContent=bits.filter(Boolean).join(" ");
+      if(el.projection_note) bits.push("Projection assumes "+el.projection_note+".");
+      var warnIdx = (el.below_c_now&&el.below_c_now.length)?0:-1;
+      note.innerHTML="";
+      bits.filter(Boolean).forEach(function(t,i){
+        var li=document.createElement("li"); li.textContent=t;
+        if(i===warnIdx) li.className="warn";
+        note.appendChild(li);
+      });
     }
   }
 }
