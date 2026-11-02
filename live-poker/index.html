@@ -148,6 +148,8 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
 .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
 .mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
 @media(max-width:1099px){.nav-links a:not(.nav-cta){display:none!important}}
+/* NAV: top bar = logo + burger only (no tab row) */
+.nav-links>a:not(.nav-cta){display:none!important}
 </style>
 </head>
 <body>

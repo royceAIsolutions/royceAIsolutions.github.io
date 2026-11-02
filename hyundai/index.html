@@ -212,6 +212,8 @@ body{overflow-x:clip}.deck-progress{position:fixed;top:var(--nav-h);left:0;right
 
 /* deck-fmt guard: inactive slides must never paint over the active one */
 .slide:not(.active){display:none!important}
+/* NAV: top bar = logo + burger only (no tab row) */
+.nav-links>a:not(.nav-cta){display:none!important}
 </style>
 <meta property="og:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png?v=2">
 <meta name="twitter:card" content="summary_large_image">

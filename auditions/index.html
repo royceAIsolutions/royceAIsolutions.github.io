@@ -106,6 +106,8 @@ ul.flags li b{color:#fff}
 footer{margin-top:70px;padding-top:26px;border-top:1px solid var(--line);color:#5f5b75;font-size:13px;text-align:center;line-height:1.7}
 footer a{color:var(--accent);font-weight:700}
 @media(max-width:760px){.two{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.stats{gap:10px}.stat{padding:14px 18px;min-width:130px}}
+/* NAV: top bar = logo + burger only (no tab row) */
+.nav-links>a:not(.nav-cta){display:none!important}
 </style>
 <link rel="icon" href="/favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/assets/logo/brand/royceai-mark.svg?v=2">
@@ -118,9 +120,6 @@ footer a{color:var(--accent);font-weight:700}
 <nav>
   <a href="/" class="nav-logo"><img src="/assets/logo/brand/royceai-mark.svg?v=2" alt="RoyceAI" width="32" height="32" style="width:32px;height:32px;display:inline-block;vertical-align:middle;margin-right:8px"> Royce<span>AI</span></a>
   <div class="nav-links">
-    <a href="/land-rover">Land Rover</a>
-    <a href="/dealerships">Dealerships</a>
-    <a href="/auditions" class="nav-cta">Auditions</a>
   <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
     <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
     <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
@@ -324,7 +323,9 @@ document.getElementById("mobileMenuBackdrop").addEventListener("click", function
   document.getElementById("navBurger").setAttribute("aria-expanded","false");
 });
 document.getElementById("mobileMenu").innerHTML =
-  '<a href="/">Home</a><a href="/land-rover">Land Rover</a><a href="/dealerships">Dealerships</a><a href="/auditions">Auditions</a><a href="/about">About Royce</a>';
+  [...document.querySelectorAll('.nav-links a')].map(function(a){
+    return '<a href="' + a.getAttribute('href') + '"' + (a.target ? ' target="_blank" rel="noopener"' : '') + '>' + a.innerHTML + '</a>';
+  }).join('');
 paintChips();
 render();
 </script>

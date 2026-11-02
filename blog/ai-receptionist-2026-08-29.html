@@ -78,6 +78,8 @@ nav > .nav-burger{margin-left:8px!important;margin-right:0!important;flex:none;o
 nav > .royceai-lang{order:1}
 nav > .nav-burger{order:2}
 nav > .nav-logo{margin-right:0!important;order:-1}
+/* NAV: top bar = logo + burger only (no tab row) */
+.nav-links>a:not(.nav-cta){display:none!important}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "AI Receptionist Weekly — August 29, 2026", "datePublished": "August 29, 2026", "description": "Weekly AI Solutions update", "author": {"@type": "Person", "name": "RoyceAI"}, "publisher": {"@type": "Organization", "name": "Royce AI Solutions"}}</script>
 <meta property="og:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png?v=2">
@@ -95,7 +97,6 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
 <div class="nav-links">
     <span id="navLoginBtn"></span>
-    <a href="/subscribe">Subscribe</a>
     <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
     <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
     <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>

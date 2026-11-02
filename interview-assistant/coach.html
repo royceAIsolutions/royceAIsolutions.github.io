@@ -146,6 +146,8 @@ nav > .nav-burger{margin-left:8px!important;margin-right:0!important;flex:none;o
 nav > .royceai-lang{order:1}
 nav > .nav-burger{order:2}
 nav > .nav-logo{margin-right:0!important;order:-1}
+/* NAV: top bar = logo + burger only (no tab row) */
+.nav-links>a:not(.nav-cta){display:none!important}
 </style>
 <meta property="og:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png?v=2">
 <meta name="twitter:card" content="summary_large_image">
@@ -159,7 +161,6 @@ nav > .nav-logo{margin-right:0!important;order:-1}
   <a href="/" class="nav-logo"><img src="/assets/logo/brand/royceai-mark.svg?v=2" alt="RoyceAI" width="32" height="32" style="width:32px;height:32px;display:inline-block;vertical-align:middle;margin-right:8px"> Royce<span>AI</span></a>
   <div class="nav-links">
     <span id="navLoginBtn"></span>
-    <a href="/subscribe">Subscribe</a>
     <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
     <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
     <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>

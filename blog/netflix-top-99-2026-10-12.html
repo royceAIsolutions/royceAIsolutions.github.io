@@ -76,6 +76,8 @@
 .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
 .mobile-menu-backdrop.open{opacity:1;pointer-events:auto}
 
+/* NAV: top bar = logo + burger only (no tab row) */
+.nav-links>a:not(.nav-cta){display:none!important}
 </style>
 <link rel="icon" href="/favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/assets/logo/brand/royceai-mark.svg?v=2">
@@ -85,9 +87,6 @@
 <nav>
     <a href="/" class="logo">Royce<span>AI</span></a>
     <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/blog/" class="active">Blog</a>
-        <a href="/tutor/">Tutor</a>
         <a href="/velocity" class="nav-drawer-only">⚡ Velocity Recon</a>
     <a href="/laura" class="nav-drawer-only">🧸 Laura</a>
     <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
@@ -96,8 +95,7 @@
     <a href="/auditions" class="nav-drawer-only">🎭 Auditions</a>
     <a href="/xlb" class="nav-drawer-only">🥟 XLB Dumplings</a>
     <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
-    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a><a href="/chat" class="nav-btn">Get Started</a>
-    </div>
+    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>    </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
