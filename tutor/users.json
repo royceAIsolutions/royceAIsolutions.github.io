@@ -46,7 +46,7 @@
     "active": true,
     "today": "—",
     "mtd": "—",
-    "ytd": "497/711 (70%)",
+    "ytd": "111/174 (64%)",
     "topics": "Calorie Tracking",
     "difficulty": "—",
     "focus": "4K cal daily + Bench Builder",
@@ -58,22 +58,14 @@
     ],
     "kpis": [
       {
-        "label": "A-G GPA",
-        "val": "In repair"
-      },
-      {
-        "label": "AP Bio",
-        "val": "Junior"
-      },
-      {
         "label": "Streak",
-        "val": "5 days"
+        "val": "—"
       }
     ],
     "calories": false,
     "week": "—",
-    "sessions": "6",
-    "streak": "5 days"
+    "sessions": "19",
+    "streak": "—"
   },
   {
     "first": "Angel",
@@ -287,44 +279,6 @@
     "week": "—"
   },
   {
-    "first": "Carter",
-    "last": "Touch",
-    "id": "carter touch",
-    "name": "Carter Touch",
-    "subjects": "Grade 9, Liberty HS, Math",
-    "active": true,
-    "today": "—",
-    "mtd": "—",
-    "ytd": "—",
-    "topics": "—",
-    "difficulty": "📚 Freshman — Liberty HS",
-    "focus": "Algebra 1, Biology, English 9",
-    "plan": "free_trial",
-    "cards": "math,grade9",
-    "authorized": true,
-    "products": [
-      "tutor",
-      "therapy"
-    ],
-    "kpis": [
-      {
-        "label": "GPA",
-        "val": "3.5"
-      },
-      {
-        "label": "Liberty HS",
-        "val": "Freshman"
-      },
-      {
-        "label": "Sessions",
-        "val": "0"
-      }
-    ],
-    "calories": false,
-    "sessions": "0",
-    "week": "—"
-  },
-  {
     "first": "Chase",
     "last": "Touch",
     "id": "chase touch",
@@ -426,34 +380,6 @@
     ],
     "sessions": "3",
     "streak": "1 day",
-    "week": "—"
-  },
-  {
-    "id": "test user",
-    "first": "Test",
-    "last": "User",
-    "subjects": "Math, SAT Prep, Science",
-    "today": "—",
-    "mtd": "—",
-    "ytd": "—",
-    "sessions": "3",
-    "streak": "1 day",
-    "plan": "free_trial",
-    "cards": "math,sat,grade9",
-    "kpis": [
-      {
-        "label": "Math",
-        "val": "8/10"
-      },
-      {
-        "label": "SAT",
-        "val": "70/80"
-      },
-      {
-        "label": "Streak",
-        "val": "1 day"
-      }
-    ],
     "week": "—"
   },
   {
