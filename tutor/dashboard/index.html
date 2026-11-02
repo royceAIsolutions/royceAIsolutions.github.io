@@ -213,7 +213,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v11-nov01-2026';
+var PAGE_VER='v12-nov01-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -525,7 +525,9 @@ s.textContent=".iq-btn{display:flex;align-items:center;gap:10px;width:100%;paddi
 document.head.appendChild(s);
 
 var saved=localStorage.getItem("tutor_user");
-if(saved){
+// A ?student= deep link OUTRANKS the remembered device user: otherwise the stored student logs in
+// first and the link is ignored (measured: ?student=jiho landed Carter).
+if(saved && !/[?&]student=/.test(location.search)){
   try{
     var u=JSON.parse(saved),match=UDATA.find(function(x){return x.first===u.first&&x.last===u.last;});
     // Saved snapshot is only a name hint. Always ask the API - the hardcoded
