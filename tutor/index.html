@@ -143,6 +143,10 @@ nav > .nav-burger{order:2}
 nav > .nav-logo{margin-right:0!important;order:-1}
 /* NAV: top bar = logo + burger only (no tab row) */
 .nav-links>a:not(.nav-cta){display:none!important}
+/* tutor: the one visible top-bar action — students log in from every page state */
+.nav-links>a.nav-login{display:inline-flex!important;align-items:center;background:var(--accent);color:#fff!important;font-weight:700;padding:8px 16px;border-radius:9px;text-decoration:none;font-size:0.875rem;line-height:1}
+.nav-links>a.nav-login:hover{background:var(--accent-light);transform:translateY(-1px)}
+@media(max-width:640px){.nav-links>a.nav-login{padding:7px 12px;font-size:0.8rem}}
 </style><meta property="og:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png?v=3">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://royceai.com/assets/logo/brand/png/royceai-mark-1024.png?v=3">
@@ -160,6 +164,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
     <a href="/xlb" class="nav-drawer-only">🥟 XLB Dumplings</a>
     <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
     <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
+    <a href="/tutor/dashboard" class="nav-cta nav-login">Log In</a>
   </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
