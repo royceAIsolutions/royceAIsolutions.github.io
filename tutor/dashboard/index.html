@@ -161,6 +161,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <div id="greetingRow">&#x2600;&#xfe0f; Good Morning</div>
 <h1><span id="studentName">Student</span></h1>
 <p id="studentInfo">Your personalized learning dashboard</p>
+<button id="navLogoutBtn" class="logout-btn" style="display:none;margin-top:14px" onclick="logout()">Log out</button>
 </div>
 <div class="scoreboard hidden">
 <div class="scoreboard-title">&#x1f3ae; Scoreboard</div>
@@ -212,7 +213,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v8-nov01-2026';
+var PAGE_VER='v9-nov01-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -308,7 +309,7 @@ function showDash(u){
   document.getElementById("appContainer").classList.add("show");
   document.getElementById("loginScreen").style.display="none";
   document.querySelector(".scoreboard").classList.remove("hidden");
-  document.getElementById("navLogoutBtn").style.display="inline-flex";
+  var lb=document.getElementById("navLogoutBtn"); if(lb) lb.style.display="inline-flex";
   var h=new Date().getHours();
   document.getElementById("greetingRow").textContent=(h<12?"Good Morning":h<17?"Good Afternoon":"Good Evening")+", "+u.first;
   document.getElementById("studentName").textContent=u.first+" "+u.last;
@@ -355,7 +356,7 @@ function logout(){
   document.getElementById("studentFirstName").value="";
   document.getElementById("studentLastName").value="";
   CU=null;
-  document.getElementById("navLogoutBtn").style.display="none";
+  var lbx=document.getElementById("navLogoutBtn"); if(lbx) lbx.style.display="none";
 }
 
 var iqHist=[],iqSubj="",iqCorr=0,iqTot=0,iqTotal=33,iqBusy=false,iqRetry=0;
