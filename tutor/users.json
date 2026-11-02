@@ -58,8 +58,9 @@
   ],
   "kpis": [
    {
-    "label": "Core GPA",
-    "val": "3.19 / 2.30 min"
+    "label": "NCAA at risk",
+    "val": "AT RISK · GPA 3.19",
+    "color": "bad"
    },
    {
     "label": "Overall",
@@ -146,10 +147,13 @@
     }
    ],
    "below_c_now": [
-    "AP Eng Lang - Fall semester",
-    "AP Biology A - Fall semester"
+    "AP Eng Lang",
+    "AP Biology A"
    ],
-   "test_required": false
+   "test_required": false,
+   "verdict": "AT RISK",
+   "color": "bad",
+   "reason": "2 core courses below C right now: AP Eng Lang, AP Biology A. A D earns 1.0 core point and satisfies no A-G requirement."
   },
   "grades_as_of": "2026-11-01"
  },

@@ -125,22 +125,6 @@ nav > .nav-logo{margin-right:0!important;order:-1}
   </div>
 <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
-.gc-wrap{margin-top:var(--space-lg);border-top:1px solid var(--border);padding-top:var(--space-lg)}
-.gc-h{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px;text-align:center}
-.gc-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--border);border-radius:9px;margin-bottom:7px;font-size:.86rem;background:var(--bg-card)}
-.gc-row.below{border-color:#f87171}.gc-row.unknown{opacity:.65}
-.gc-course{font-weight:600;flex:1;text-align:left}
-.gc-mark{font-weight:700;min-width:38px;text-align:center}
-.gc-mark.below{color:#f87171}.gc-mark.ok{color:#4ade80}.gc-mark.unknown{color:var(--text-secondary)}
-.gc-pct{min-width:56px;text-align:right;color:var(--text-secondary);font-variant-numeric:tabular-nums}
-.gc-lever{font-size:.74rem;color:var(--text-secondary);margin-top:4px}
-.el-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:6px}
-.el-item{padding:10px 12px;border:1px solid var(--border);border-radius:9px;font-size:.8rem;background:var(--bg-card);text-align:left}
-.el-item .el-k{display:block;color:var(--text-secondary);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
-.el-item .el-v{font-weight:700}
-.el-ok{color:#4ade80}.el-bad{color:#f87171}.el-wait{color:#fbbf24}
-.el-note{font-size:.72rem;color:var(--text-secondary);margin-top:8px;text-align:left}
-@media(max-width:480px){.el-grid{grid-template-columns:1fr}}
 <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
 <div class="mobile-menu" id="mobileMenu"></div>
 <div class="login-screen" id="loginScreen">
@@ -176,10 +160,44 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <span id="difficultyBadge" style="display:none"></span>
 <span>&#x1f3af; Topics:</span><span id="topicsList">&mdash;</span>
 </div>
-<div id="gradeCard" class="gc-wrap" style="display:none">
-<div class="gc-h">&#x1f4da; Grades &mdash; <span id="gradesAsOf">&mdash;</span></div>
+<style>
+#gradeCard{margin-top:26px;padding-top:22px;border-top:1px solid var(--border)}
+.el-banner{display:none;align-items:center;gap:12px;padding:16px 18px;border-radius:12px;margin-bottom:20px;border:1.5px solid;font-weight:700}
+.el-banner.show{display:flex}
+.el-banner.bad{background:rgba(248,113,113,.10);border-color:#f87171;color:#fecaca}
+.el-banner.wait{background:rgba(251,191,36,.10);border-color:#fbbf24;color:#fde68a}
+.el-banner.ok{background:rgba(74,222,128,.10);border-color:#4ade80;color:#bbf7d0}
+.el-banner .vb-icon{font-size:1.6rem;line-height:1}
+.el-banner .vb-state{font-size:1.18rem;letter-spacing:.06em;text-transform:uppercase;line-height:1.2}
+.el-banner .vb-why{font-size:.78rem;font-weight:400;opacity:.9;margin-top:4px;line-height:1.4}
+@media(max-width:560px){.el-banner{padding:13px 14px}.el-banner .vb-state{font-size:1rem}}
+.gc-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin:0 0 10px}
+.gc-h span{letter-spacing:0;text-transform:none;font-weight:600;font-size:.74rem;color:var(--text-secondary)}
+.gc-row{display:grid;grid-template-columns:1fr 44px 74px;gap:12px;align-items:start;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.88rem}
+.gc-row:last-child{border-bottom:0}
+.gc-course{font-weight:600;color:var(--text);line-height:1.3}
+.gc-teacher{color:var(--text-muted);font-weight:400;font-size:.76rem;margin-left:7px}
+.gc-lever{color:var(--text-secondary);font-size:.76rem;font-weight:400;margin-top:4px;line-height:1.4}
+.gc-mark{font-weight:800;font-size:.95rem;text-align:center;line-height:1.3}
+.gc-pct{text-align:right;color:var(--text-secondary);font-variant-numeric:tabular-nums;font-size:.82rem;line-height:1.4}
+.gc-row.below .gc-mark{color:#f87171}
+.gc-row.below .gc-course{color:#fecaca}
+.gc-row.ok .gc-mark{color:#4ade80}
+.gc-row.unknown .gc-mark{color:var(--text-muted)}
+.gc-row.ok{opacity:.92}
+.el-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:2px}
+.el-item{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:11px 13px}
+.el-k{display:block;font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
+.el-v{font-size:.95rem;font-weight:700;line-height:1.3}
+.el-ok{color:#4ade80}.el-wait{color:#fbbf24}.el-bad{color:#f87171}
+.el-note{font-size:.76rem;line-height:1.55;color:var(--text-secondary);margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.05)}
+@media(max-width:560px){.gc-row{grid-template-columns:1fr 40px 64px;gap:8px;font-size:.84rem}.el-grid{grid-template-columns:1fr}.gc-h{font-size:.68rem}}
+</style>
+<div id="gradeCard" style="display:none">
+<div id="eligBanner" class="el-banner"><span class="vb-icon" id="vbIcon"></span><span><span class="vb-state" id="vbState"></span><span class="vb-why" id="vbWhy"></span></span></div>
+<div class="gc-h"><b>&#x1f4da; Grades</b><span id="gradesAsOf">&mdash;</span></div>
 <div id="gradeRows"></div>
-<div class="gc-h" style="margin-top:18px">&#x1f3c0; College basketball eligibility (NCAA D1)</div>
+<div class="gc-h" style="margin-top:22px"><b>&#x1f3c0; College basketball eligibility</b><span>NCAA D1</span></div>
 <div class="el-grid" id="eligGrid"></div>
 <div class="el-note" id="eligNote"></div>
 </div>
@@ -218,7 +236,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v17-nov01-2026';
+var PAGE_VER='v19-nov01-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -276,7 +294,7 @@ function renderSB(u){
   (u.kpis||[]).forEach(function(k,i){
     var j=i+1,lab=document.getElementById("kpi"+j+"Label"),val=document.getElementById("kpi"+j+"Val");
     if(lab)lab.textContent=k.label||"";
-    if(val)val.textContent=k.val||"-";
+    if(val){val.textContent=k.val||"-"; if(k.color){val.style.color=(k.color==="ok"?"#4ade80":(k.color==="wait"?"#fbbf24":"#f87171"))}}
   });
   // "Topics:" was rendering the SUBJECT line (the same string already shown under the name), so a
   // student's real topics never appeared anywhere. And difficultyBadge was a dead element: nothing
@@ -291,7 +309,7 @@ function renderGradeCard(u){
   var rows=u.grades||[], el=u.eligibility||null;
   if(!rows.length && !el){ card.style.display="none"; return; }
   card.style.display="block";
-  var ao=document.getElementById("gradesAsOf"); if(ao) ao.textContent=u.grades_as_of||"—";
+  var ao=document.getElementById("gradesAsOf"); if(ao) ao.textContent="as of "+(u.grades_as_of||"—");
   var box=document.getElementById("gradeRows");
   if(box){
     box.innerHTML="";
@@ -299,13 +317,25 @@ function renderGradeCard(u){
       var cls=r.status==="BELOW-C"?"below":(r.status==="UNKNOWN"?"unknown":"");
       var d=document.createElement("div"); d.className="gc-row "+cls;
       var markCls=r.status==="BELOW-C"?"below":(r.status==="UNKNOWN"?"unknown":"ok");
-      d.innerHTML='<span class="gc-course">'+r.course+'<div class="gc-lever">'+
-        (r.lever?("to reach C: "+r.lever):(r.why?("no percent on this scale — "+r.why):"at or above C"))+
-        '</div></span><span class="gc-mark '+markCls+'">'+r.mark+'</span><span class="gc-pct">'+
-        (r.percent===null||r.percent===undefined?"—":r.percent.toFixed(2)+"%")+'</span>';
+      d.innerHTML='<div class="gc-course">'+r.course+
+        (r.teacher?'<span class="gc-teacher">'+r.teacher+'</span>':'')+
+        '<div class="gc-lever">'+
+        (r.lever?("to reach C: "+r.lever):(r.why?"no percent on this scale":"at or above C"))+
+        '</div></div><div class="gc-mark '+markCls+'">'+r.mark+'</div><div class="gc-pct">'+
+        (r.percent===null||r.percent===undefined?"&mdash;":r.percent.toFixed(2)+"%")+'</div>';
       box.appendChild(d);
     });
   }
+  var bn=document.getElementById("eligBanner");
+  if(bn&&el&&el.verdict){
+    var col=el.color||"wait";
+    bn.className="el-banner show "+col;
+    var ic=document.getElementById("vbIcon"), st=document.getElementById("vbState"), wy=document.getElementById("vbWhy");
+    if(ic) ic.textContent = col==="ok"?"\u2705":(col==="wait"?"\u23f3":"\u26a0\ufe0f");
+    if(st) st.textContent = (col==="ok"?"ELIGIBLE":(col==="wait"?"ON TRACK — NOT YET ELIGIBLE":"NOT ELIGIBLE"))+
+      (el.verdict?" ("+el.verdict+")":"");
+    if(wy) wy.textContent = el.reason||"";
+  } else if(bn){ bn.className="el-banner"; }
   var grid=document.getElementById("eligGrid"); var note=document.getElementById("eligNote");
   if(grid&&el){
     grid.innerHTML="";
