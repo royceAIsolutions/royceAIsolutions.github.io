@@ -213,7 +213,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v9-nov01-2026';
+var PAGE_VER='v10-nov01-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -329,7 +329,12 @@ function renderSB(u){
     if(lab)lab.textContent=k.label||"";
     if(val)val.textContent=k.val||"-";
   });
-  document.getElementById("topicsList").textContent=u.subjects||"-";
+  // "Topics:" was rendering the SUBJECT line (the same string already shown under the name), so a
+  // student's real topics never appeared anywhere. And difficultyBadge was a dead element: nothing
+  // ever wrote to it. Both fixed here.
+  var tp=document.getElementById("topicsList"); if(tp) tp.textContent=u.topics||u.subjects||"-";
+  var db=document.getElementById("difficultyBadge");
+  if(db){ if(u.difficulty&&u.difficulty!=="\u2014"){ db.textContent=u.difficulty; db.style.display="inline-block"; } else { db.style.display="none"; } }
 }
 async function loadHist(n){
   var el=document.getElementById("quizHistory"),tb=document.getElementById("quizHistoryBody");
