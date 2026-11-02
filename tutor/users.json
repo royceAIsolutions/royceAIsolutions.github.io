@@ -58,8 +58,16 @@
   ],
   "kpis": [
    {
-    "label": "Streak",
-    "val": "—"
+    "label": "Overall",
+    "val": "111/174 (64%)"
+   },
+   {
+    "label": "Sessions",
+    "val": "19"
+   },
+   {
+    "label": "Last quiz",
+    "val": "Jul 31"
    }
   ],
   "calories": false,
