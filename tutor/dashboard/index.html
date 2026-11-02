@@ -213,12 +213,16 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v12-nov01-2026';
+var PAGE_VER='v13-nov01-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
-  if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
+  // A ?student= deep link must SURVIVE the version redirect: the redirect rewrites the query
+  // string, and dropping the param turned every bookmarked link into a plain login screen.
+  var _sm=location.search.match(/[?&]student=([^&]+)/);
+  var _keep=_sm?('&student='+_sm[1]):'';
+  if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER+_keep}
   // Also check if URL has the version param — if not, redirect once
-  if(location.search.indexOf('v='+PAGE_VER)<0){location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
+  if(location.search.indexOf('v='+PAGE_VER)<0){location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER+_keep}
   else localStorage.setItem('tutor_page_ver',PAGE_VER);
 }catch(e){}
 // ─── Config ─────────────────────────────────────────────────────
