@@ -47,11 +47,11 @@
   "today": "—",
   "mtd": "—",
   "ytd": "497/711 (70%)",
-  "topics": "SAT Math, Grade 11 Review",
+  "topics": "Algebra 2, Grade 11 Review",
   "difficulty": "📚 11th Grade — AP course load",
-  "focus": "SAT Math, AP Biology, Algebra 2",
+  "focus": "AP Biology, AP English Lang, Algebra 2",
   "plan": "free_trial",
-  "cards": "math,grade11,sat",
+  "cards": "math,grade11",
   "authorized": true,
   "products": [
    "tutor"
@@ -345,7 +345,7 @@
   "difficulty": "📚 Grade 2 — Foundations",
   "focus": "Reading Comprehension, Addition, Subtraction, Phonics",
   "plan": "free_trial",
-  "cards": "reading,math,grade2",
+  "cards": "reading,math",
   "authorized": true,
   "products": [
    "tutor"
@@ -382,7 +382,7 @@
   "difficulty": "📚 7th Grade — Nelson MS",
   "focus": "Pre-Algebra, Reading, Science",
   "plan": "free_trial",
-  "cards": "math,reading,grade7",
+  "cards": "math,reading",
   "authorized": true,
   "products": [
    "tutor",
@@ -420,7 +420,7 @@
   "difficulty": "🧠 Therapy",
   "focus": "Mental wellness, Therapy Bot",
   "plan": "free_trial",
-  "cards": "therapy",
+  "cards": "",
   "authorized": true,
   "products": [
    "therapy"
