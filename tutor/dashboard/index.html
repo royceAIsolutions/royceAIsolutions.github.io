@@ -227,6 +227,10 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <div class="dash-card" data-subject="baby"><span class="icon">&#x1f476;</span><h3>Baby Play</h3><p>Sensory, Colors, Sounds.</p><a href="/tutor/game/baby/" class="btn-dynamic btn-primary">&#x1f3ae; Play Game</a></div>
 <div class="dash-card" data-subject="grade9"><span class="icon">&#x1f4da;</span><h3>9th Grade Prep</h3><p>Math 1, Biology, English 9.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('grade9');return false">&#x26a1; Start Quiz</a></div>
 <div class="dash-card" data-subject="grade4"><span class="icon">&#x1f4da;</span><h3>4th Grade Prep</h3><p>Math, Reading, Science, Social Studies.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('grade4');return false">&#x26a1; Start Quiz</a></div>
+<div class="dash-card" data-subject="apbio"><span class="icon">&#x1f9ec;</span><h3>AP Biology</h3><p>Tests 50% of the grade &mdash; cell, genetics, evolution.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('AP Biology');return false">&#x26a1; Prep</a></div>
+<div class="dash-card" data-subject="apeng"><span class="icon">&#x1f4dd;</span><h3>AP English Lang</h3><p>Quizzes 30% &mdash; rhetoric, synthesis, close reading.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('AP English Language');return false">&#x26a1; Prep</a></div>
+<div class="dash-card" data-subject="physics"><span class="icon">&#x1f9ee;</span><h3>Physics</h3><p>Motion, forces, energy, momentum.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('Physics');return false">&#x26a1; Prep</a></div>
+<div class="dash-card" data-subject="ushist"><span class="icon">&#x1f5fd;</span><h3>US History</h3><p>Assessment 75% &mdash; periods, documents, causation.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('US History');return false">&#x26a1; Prep</a></div>
 <div class="dash-card" data-subject="grade11"><span class="icon">&#x1f4d6;</span><h3>11th Grade Prep</h3><p>Precalculus, Chemistry, English 11.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('grade11');return false">&#x26a1; Start Quiz</a></div>
 </div>
 <div class="quiz-history" id="quizHistory" style="display:none">
@@ -249,7 +253,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v20-nov01-2026';
+var PAGE_VER='v21-nov01-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -296,6 +300,10 @@ function showDash(u){
   document.getElementById("studentInfo").textContent=(u.subjects||"")+" - "+(u.plan||"");
   var k=u.cards?u.cards.split(","):["math"];
   document.querySelectorAll(".dash-card").forEach(function(c){c.style.display=k.indexOf(c.dataset.subject)>=0?"block":"none";});
+  // The roster's `cards` order is the weakness order (below C first, written by the gradecard publisher),
+  // so the grid follows it instead of the markup's fixed order.
+  var grid=document.getElementById("dashGrid");
+  if(grid) k.forEach(function(id){var el=grid.querySelector('[data-subject="'+id+'"]'); if(el) grid.appendChild(el);});
   renderSB(u);loadHist(u.first);
 }
 function renderSB(u){

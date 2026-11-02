@@ -42,7 +42,7 @@
   "last": "Koh",
   "id": "carter koh",
   "name": "Carter Koh",
-  "subjects": "Algebra 2, AP Biology, AP Language, US History",
+  "subjects": "AP English Language, AP Biology, Algebra 2, US History, Physics",
   "active": true,
   "today": "—",
   "mtd": "—",
@@ -51,7 +51,7 @@
   "difficulty": "📚 11th Grade — AP course load",
   "focus": "AP Biology, AP English Lang, Algebra 2",
   "plan": "free_trial",
-  "cards": "math,grade11",
+  "cards": "apeng,apbio,physics,math",
   "authorized": true,
   "products": [
    "tutor"
@@ -63,12 +63,13 @@
     "color": "bad"
    },
    {
-    "label": "Overall",
-    "val": "111/174 (64%)"
+    "label": "NCAA at risk",
+    "val": "AT RISK · GPA 3.19",
+    "color": "bad"
    },
    {
-    "label": "Sessions",
-    "val": "19"
+    "label": "Overall",
+    "val": "111/174 (64%)"
    }
   ],
   "calories": false,
