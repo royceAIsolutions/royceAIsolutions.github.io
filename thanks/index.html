@@ -85,7 +85,8 @@ nav > .nav-logo{margin-right:0!important;order:-1}
     <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
   </div>
   <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</nav><div class="mobile-menu" id="mobileMenu"></div><div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div><script>function initMobileMenu(){
+</nav><div class="mobile-menu" id="mobileMenu"></div><div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div><script>(function(){
+function initMobileMenu(){
     var burger=document.getElementById('navBurger');
     if(!burger||document.getElementById('mobileMenu').dataset.mnInit)return;
     var menu=document.getElementById('mobileMenu');
@@ -111,8 +112,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
     menu.dataset.mnInit='1';
   }
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
-}
-if(typeof initMobileMenu==='function')initMobileMenu();</script>
+})();</script>
 
 <div class="icon">✅</div>
 <h1>Payment <span>Sent</span></h1>
