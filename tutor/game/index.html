@@ -404,7 +404,7 @@ document.addEventListener('touchstart',function(){initAudio()},{once:true});
     if(!b||!d) return;
     if(!d.children.length){
       var links=document.querySelector('nav a[href], .nav a[href]');
-      var targets=[['/','Home'],['/tutor/dashboard','Dashboard'],['/tutor','Tutor'],['/live-poker','Live Poker'],['/land-rover','Land Rover'],['/playlist','Playlist'],['/businesses','SBA Deals'],['/livaway','LivAway'],['/dealerships','Dealerships'],['/different','Why We\'re Different'],['/federal','Federal'],['/royceai-business','RoyceAI Business'],['/about','About Royce'],['/chat','Chat']];
+      var targets=[['/','Home'],['/tutor/dashboard','Dashboard'],['/tutor','Tutor'],['/live-poker','Live Poker'],['/land-rover','Land Rover'],['/business','SBA Deals'],['/dealerships','Dealerships'],['/different','Why We\'re Different'],['/federal','Federal'],['/royceai-business','RoyceAI Business'],['/about','About Royce'],['/chat','Chat']];
       targets.forEach(function(t){var a=document.createElement('a');a.href=t[0];a.textContent=t[1];d.appendChild(a);});
     }
     var bd=document.getElementById('siteDrawerBackdrop');
