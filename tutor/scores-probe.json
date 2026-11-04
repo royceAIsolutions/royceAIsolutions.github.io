@@ -18,5 +18,16 @@
     "ts": 1793835084976,
     "run": "sync-smoke-2822",
     "src": "discord"
+  },
+  {
+    "student": "QuizVerify Sync",
+    "correct": 4,
+    "total": 5,
+    "percent": 80,
+    "subject": "US History",
+    "date": "2026-11-04",
+    "ts": 1793835091079,
+    "run": "flow-test-1",
+    "src": "discord"
   }
 ]
