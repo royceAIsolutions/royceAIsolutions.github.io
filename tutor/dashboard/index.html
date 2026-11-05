@@ -216,7 +216,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 </div>
 </div>
 <div class="dash-grid" id="dashGrid">
-<div class="dash-card" data-subject="math"><span class="icon">&#x1f4d0;</span><h3>Math</h3><p>Algebra, Geometry, Precalculus.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('math');return false">&#x26a1; Start Quiz</a></div>
+<div class="dash-card" data-subject="math"><span class="icon">&#x1f4d0;</span><h3>Math</h3><p>Course-level math, calibrated to the student.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('math');return false">&#x26a1; Start Quiz</a></div>
 <div class="dash-card" data-subject="sat"><span class="icon">&#x1f3af;</span><h3>SAT Prep</h3><p>Math, Reading, Writing.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('sat');return false">&#x26a1; Start Quiz</a></div>
 <div class="dash-card" data-subject="series66"><span class="icon">&#x1f4cb;</span><h3>Series 66</h3><p>Uniform Combined State Law.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('series66');return false">&#x26a1; Start Quiz</a></div>
 <div class="dash-card" data-subject="series7"><span class="icon">&#x1f4cb;</span><h3>Series 7</h3><p>General Securities Exam.</p><a href="javascript:void(0)" class="btn-dynamic btn-primary" onclick="startInlineQuiz('series7');return false">&#x26a1; Start Quiz</a></div>
@@ -254,7 +254,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v21-nov01-2026';
+var PAGE_VER='v22-nov04-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -450,7 +450,7 @@ function closeIQ(){
 function askQ(msg){
   iqBusy=true;
   document.getElementById("quizA").innerHTML="<div style='color:var(--text-muted);padding:20px'>Loading...</div>";
-  fetch(API+"/quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:msg,history:iqHist.slice(-30),subject:iqSubj})})
+  fetch(API+"/quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:msg,history:iqHist.slice(-30),subject:iqSubj,level:(CU&&CU.difficulty)||""})})
   .then(function(r){return r.json()})
   .then(function(d){
     var reply=d.reply||"No response";
@@ -500,7 +500,7 @@ function ansQ(btn){
   btn.style.borderColor="var(--accent)";btn.style.background="rgba(124,92,252,0.15)";
   document.getElementById("quizA").innerHTML="";
   document.getElementById("quizQ").innerHTML="<div style='color:var(--text-muted);padding:10px'>Checking answer...</div>";
-  fetch(API+"/quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:letter,history:iqHist.slice(-30),subject:iqSubj})})
+  fetch(API+"/quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:letter,history:iqHist.slice(-30),subject:iqSubj,level:(CU&&CU.difficulty)||""})})
   .then(function(r){return r.json()})
   .then(function(d){
     var reply=d.reply||"No response";
