@@ -511,6 +511,9 @@ function ansQ(btn){
     var pct=Math.round(iqCorr/Math.max(iqTot,1)*100);
     document.getElementById("quizProg").textContent="Q"+iqTot+"/"+iqTotal;
     document.getElementById("quizScr").textContent=pct+"%";
+    // A deck that ends itself (authored banks stop at their last question) must save
+    // regardless of accuracy — otherwise a sub-80% drill is never recorded at all.
+    if(/Quiz complete/i.test(reply)){finishQ(reply);return;}
     if(iqTot>=33&&pct>=80){finishQ(reply);return;}
     if(iqTot>=50){finishQ("Quiz complete — 50 questions max. Score: "+iqCorr+"/"+iqTot);return;}
     showQ(reply);
