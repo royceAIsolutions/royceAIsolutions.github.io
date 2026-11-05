@@ -417,7 +417,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
   }
   stats.push({k:'Live tables', v: D.arena.table_count!=null? num(D.arena.table_count):'unread', cls:''});
   stats.push({k:'Blocks played', v: num((D.sessions||[]).length), cls:''});
-  stats.push({k:'Hands logged', v: num(D.total_hands), cls:''});
+  stats.push({k:'Hands logged here', v: num(D.total_hands), cls:''});   // local ledger, not the season total
   var se=document.getElementById('stats');
   se.innerHTML = stats.map(function(s){return '<div class="stat"><div class="k">'+esc(s.k)+'</div><div class="v '+s.cls+'">'+esc(s.v)+'</div></div>';}).join('');
 
