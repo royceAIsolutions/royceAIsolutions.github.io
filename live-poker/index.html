@@ -308,8 +308,9 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
       if(last.block) parts.push('Last block: ' + esc(last.block) + '');
       if(last.hands != null) parts.push(num(last.hands) + ' hands');
       if(last.start_chips != null && last.chips != null){
-        var net = Number(last.chips) - Number(last.start_chips);
-        parts.push('started ' + num(last.start_chips) + ', finished ' + num(last.chips) + ' (' + (net>=0?'+':'') + num(net) + ')');
+        var net = Number(last.chips);
+        parts.push('started ' + num(last.start_chips) + ', finished ' + num(Number(last.start_chips)+net)
+                   + ' (' + (net>=0?'+':'') + num(net) + ')');
       }
       if(last.ended) parts.push('ended ' + esc(String(last.ended).slice(0,16).replace('T',' ')) + ' UTC');
       if(parts.length){
@@ -406,9 +407,10 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
       stats.push({k:'Net this block', v:(netLive>=0?'+':'')+num(netLive)+' (from '+num(blockStart)+')', cls: netLive>=0?'green':'red'});
     }
   } else if(latest && latest.chips != null){
-    var net = (latest.start_chips!=null)? (latest.chips - latest.start_chips) : null;
-    stats.push({k:'Our stack (last block)', v:num(latest.chips), cls: latest.chips>= (latest.start_chips||0)?'green':'red'});
-    if(net!=null) stats.push({k:'Net that block', v:(net>=0?'+':'')+num(net), cls: net>=0?'green':'red'});
+    var netLast = Number(latest.chips);                       // `chips` is the block's NET
+    var endLast = (latest.start_chips!=null) ? Number(latest.start_chips)+netLast : null;
+    stats.push({k:'Our stack (last block)', v:(endLast!=null?num(endLast):'unread'), cls: netLast>=0?'green':'red'});
+    stats.push({k:'Net that block', v:(netLast>=0?'+':'')+num(netLast), cls: netLast>=0?'green':'red'});
   }
   if(D.peak_stack!=null){
     stats.push({k:'Peak this block', v:num(D.peak_stack), cls:'green'});
@@ -439,7 +441,10 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
   if(latest){
     document.getElementById('botLine').textContent = latest.bot || 'RoyceAI_Solutions';
     var bits = [];
-    if(latest.chips!=null) bits.push('stack '+num(latest.chips));
+    var stackNow = isLive ? liveSeatStack() : null;
+    if(stackNow==null && latest.start_chips!=null && latest.chips!=null) stackNow = Number(latest.start_chips)+Number(latest.chips);
+    if(stackNow!=null) bits.push('stack '+num(stackNow));
+    if(latest.chips!=null) bits.push('net '+(latest.chips>=0?'+':'')+num(latest.chips));
     if(latest.bb100!=null) bits.push(latest.bb100+' bb/100');
     if(latest.hph!=null) bits.push(latest.hph+' hands/hr');
     document.getElementById('botLine2').textContent = bits.join(' · ') || 'awaiting first read';
@@ -450,8 +455,9 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
   var sess = (D.sessions||[]).slice().reverse();
   if(sess.length){
     st.innerHTML = sess.map(function(s){
-      var net = (s.chips!=null && s.start_chips!=null)? (s.chips-s.start_chips):null;
-      return '<tr><td>'+esc(s.block)+'</td><td>'+num(s.hands)+'</td><td>'+num(s.won)+'</td><td>'+(s.start_chips!=null?num(s.start_chips):'—')+'</td><td>'+(net!=null?chips(net):(s.chips!=null?num(s.chips):'—'))+'</td><td>'+(s.bb100!=null?s.bb100:'—')+'</td><td style="color:var(--text-muted)">'+esc(String(s.ended==null?'':s.ended).slice(0,16).replace('T',' '))+'</td></tr>';
+      // a block record's `chips` is the NET for the block (bb/100 is derived from it), so showing
+      // chips-start_chips printed -2,160 for a block that actually lost 160. Net in, net out.
+      return '<tr><td>'+esc(s.block)+'</td><td>'+num(s.hands)+'</td><td>'+num(s.won)+'</td><td>'+(s.start_chips!=null?num(s.start_chips):'—')+'</td><td>'+(s.chips!=null?chips(s.chips):'—')+'</td><td>'+(s.bb100!=null?s.bb100:'—')+'</td><td style="color:var(--text-muted)">'+esc(String(s.ended==null?'':s.ended).slice(0,16).replace('T',' '))+'</td></tr>';
     }).join('');
   } else { st.innerHTML = '<tr><td colspan="7" style="color:var(--text-muted)">No sessions logged yet.</td></tr>'; }
 
