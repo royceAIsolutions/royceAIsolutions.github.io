@@ -251,6 +251,23 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
   function num(n){return (n==null)?null:Number(n).toLocaleString('en-US');}
   function chips(n){ if(n==null) return '<span class="unread">unread</span>';
     return '<span style="color:var(--'+(Number(n)>=0?'green':'red')+')">'+ (Number(n)>=0?'+':'') + num(n) + '</span>'; }
+  // Ledger contract (shared with openpoker_bot2.py): a block's `chips` is the ENDING STACK,
+  // `delta` is its NET (rebuy credit already subtracted), `start_chips` is the stack actually
+  // sat down with. Legacy rows with no `delta` stored `chips` as the net - read those the old
+  // way instead of printing a 4,891-chip stack as a 4,891-chip win.
+  function netOf(s){
+    if(!s) return null;
+    if(s.delta!=null) return Number(s.delta);
+    if(s.chips==null) return null;
+    if(s.start_chips!=null) return Number(s.chips)-Number(s.start_chips)-Number(s.rebuy_credit||0);
+    return Number(s.chips);
+  }
+  function stackOf(s){
+    if(!s) return null;
+    if(s.chips==null) return null;
+    if(s.delta!=null) return Number(s.chips);
+    return (s.start_chips!=null) ? Number(s.start_chips)+Number(s.chips) : Number(s.chips);
+  }
 
   var arena = D.arena || {};
   var live = arena.live_row;
@@ -318,10 +335,10 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
       var parts = [];
       if(last.block) parts.push('Last block: ' + esc(last.block) + '');
       if(last.hands != null) parts.push(num(last.hands) + ' hands');
-      if(last.start_chips != null && last.chips != null){
-        var net = Number(last.chips);
-        parts.push('started ' + num(last.start_chips) + ', finished ' + num(Number(last.start_chips)+net)
-                   + ' (' + (net>=0?'+':'') + num(net) + ')');
+      var lastNet = netOf(last);
+      if(last.start_chips != null && lastNet != null){
+        parts.push('started ' + num(last.start_chips) + ', finished ' + num(stackOf(last))
+                   + ' (' + (lastNet>=0?'+':'') + num(lastNet) + ')');
       }
       if(last.ended) parts.push('ended ' + esc(String(last.ended).slice(0,16).replace('T',' ')) + ' UTC');
       if(parts.length){
@@ -418,8 +435,8 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
       stats.push({k:'Net this block', v:(netLive>=0?'+':'')+num(netLive)+' (from '+num(blockStart)+')', cls: netLive>=0?'green':'red'});
     }
   } else if(latest && latest.chips != null){
-    var netLast = Number(latest.chips);                       // `chips` is the block's NET
-    var endLast = (latest.start_chips!=null) ? Number(latest.start_chips)+netLast : null;
+    var netLast = netOf(latest);                              // `delta` is the NET; `chips` is the ending stack
+    var endLast = stackOf(latest);
     stats.push({k:'Our stack (last block)', v:(endLast!=null?num(endLast):'unread'), cls: netLast>=0?'green':'red'});
     stats.push({k:'Net that block', v:(netLast>=0?'+':'')+num(netLast), cls: netLast>=0?'green':'red'});
   }
@@ -453,9 +470,10 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
     document.getElementById('botLine').textContent = latest.bot || 'RoyceAI_Solutions';
     var bits = [];
     var stackNow = isLive ? liveSeatStack() : null;
-    if(stackNow==null && latest.start_chips!=null && latest.chips!=null) stackNow = Number(latest.start_chips)+Number(latest.chips);
+    if(stackNow==null) stackNow = stackOf(latest);
     if(stackNow!=null) bits.push('stack '+num(stackNow));
-    if(latest.chips!=null) bits.push('net '+(latest.chips>=0?'+':'')+num(latest.chips));
+    var netLatest = netOf(latest);
+    if(netLatest!=null) bits.push('net '+(netLatest>=0?'+':'')+num(netLatest));
     if(latest.bb100!=null) bits.push(latest.bb100+' bb/100');
     if(latest.hph!=null) bits.push(latest.hph+' hands/hr');
     document.getElementById('botLine2').textContent = bits.join(' · ') || 'awaiting first read';
@@ -466,9 +484,10 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
   var sess = (D.sessions||[]).slice().reverse();
   if(sess.length){
     st.innerHTML = sess.map(function(s){
-      // a block record's `chips` is the NET for the block (bb/100 is derived from it), so showing
-      // chips-start_chips printed -2,160 for a block that actually lost 160. Net in, net out.
-      return '<tr><td>'+esc(s.block)+'</td><td>'+num(s.hands)+'</td><td>'+num(s.won)+'</td><td>'+(s.start_chips!=null?num(s.start_chips):'—')+'</td><td>'+(s.chips!=null?chips(s.chips):'—')+'</td><td>'+(s.bb100!=null?s.bb100:'—')+'</td><td style="color:var(--text-muted)">'+esc(String(s.ended==null?'':s.ended).slice(0,16).replace('T',' '))+'</td></tr>';
+      // CHIPS column = the block's NET (`delta`), never the ending stack: start + net must add up,
+      // and bb/100 is derived from that same net. Start stays beside it so the pair reads honestly.
+      var bnet = netOf(s);
+      return '<tr><td>'+esc(s.block)+'</td><td>'+num(s.hands)+'</td><td>'+num(s.won)+'</td><td>'+(s.start_chips!=null?num(s.start_chips):'—')+'</td><td>'+(bnet!=null?chips(bnet):'—')+'</td><td>'+(s.bb100!=null?s.bb100:'—')+'</td><td style="color:var(--text-muted)">'+esc(String(s.ended==null?'':s.ended).slice(0,16).replace('T',' '))+'</td></tr>';
     }).join('');
   } else { st.innerHTML = '<tr><td colspan="7" style="color:var(--text-muted)">No sessions logged yet.</td></tr>'; }
 
