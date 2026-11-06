@@ -1,0 +1,28 @@
+{
+  "updated": "2026-11-05",
+  "source": "Carter's own scans/study-guide archive: AP Bio Ch 11-12 pages, the 11-4 worksheet, Jacobs' 22-item Unit 4 review sheet; Kane's AP Lang reading quizzes. Only courses with real scan evidence are listed - everything else falls back to the deck's course scope.",
+  "students": {
+    "carter koh": {
+      "apbio": {
+        "current": "AP Biology Unit 4. The Wed 11/4 unit test covered Chapter 11 (cell signaling) and Chapter 12 (cell cycle); Chapter 12 material carries a quiz on Monday.",
+        "focus": [
+          "cyclin-CDK pairs pushing past G1/S and G2/M; Rb phosphorylation releasing E2F",
+          "mitosis phases, spindle and kinetochore attachment, cytokinesis in plants vs animals",
+          "meiosis, crossing over, independent assortment, nondisjunction",
+          "signal transduction: reception, transduction, response; GPCR and RTK pathways; second messengers (cAMP, Ca2+)",
+          "feedback and checkpoint failure: oncogenes, tumor suppressors, apoptosis",
+          "the teacher's review-sheet style: predict the outcome of a block, knockout, or inhibitor"
+        ]
+      },
+      "apeng": {
+        "current": "AP English Language with Kane - graded reading quizzes on comprehension plus the quiz/project lever (currently 46.7%).",
+        "focus": [
+          "close reading of a short passage with a specific rhetorical choice identified in the stem",
+          "claims vs evidence and line of reasoning in a student draft",
+          "synthesis: what a source can and cannot support",
+          "tone, diction, syntax, and structure questions at AP multiple-choice difficulty"
+        ]
+      }
+    }
+  }
+}
