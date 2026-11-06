@@ -254,7 +254,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v22-nov04-2026';
+var PAGE_VER='v23-nov05-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -450,7 +450,7 @@ function closeIQ(){
 function askQ(msg){
   iqBusy=true;
   document.getElementById("quizA").innerHTML="<div style='color:var(--text-muted);padding:20px'>Loading...</div>";
-  fetch(API+"/quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:msg,history:iqHist.slice(-30),subject:iqSubj,level:(CU&&CU.difficulty)||""})})
+  fetch(API+"/quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:msg,history:iqHist.slice(-30),subject:iqSubj,student:(CU&&CU.name)||"",level:(CU&&CU.difficulty)||""})})
   .then(function(r){return r.json()})
   .then(function(d){
     var reply=d.reply||"No response";
@@ -500,7 +500,7 @@ function ansQ(btn){
   btn.style.borderColor="var(--accent)";btn.style.background="rgba(124,92,252,0.15)";
   document.getElementById("quizA").innerHTML="";
   document.getElementById("quizQ").innerHTML="<div style='color:var(--text-muted);padding:10px'>Checking answer...</div>";
-  fetch(API+"/quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:letter,history:iqHist.slice(-30),subject:iqSubj,level:(CU&&CU.difficulty)||""})})
+  fetch(API+"/quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:letter,history:iqHist.slice(-30),subject:iqSubj,student:(CU&&CU.name)||"",level:(CU&&CU.difficulty)||""})})
   .then(function(r){return r.json()})
   .then(function(d){
     var reply=d.reply||"No response";
