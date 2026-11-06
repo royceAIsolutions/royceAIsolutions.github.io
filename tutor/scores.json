@@ -1,1070 +1,1080 @@
 [
- {
-  "student": "Jiho Pak",
-  "correct": 19,
-  "total": 20,
-  "percent": 95,
-  "subject": "math",
-  "date": "2026-07-07",
-  "ts": 1720310400000
- },
- {
-  "student": "Jiho Pak",
-  "correct": 20,
-  "total": 20,
-  "percent": 100,
-  "subject": "math",
-  "date": "2026-07-10",
-  "ts": 1720569600000
- },
- {
-  "student": "Jiho Pak",
-  "correct": 95,
-  "total": 100,
-  "percent": 95,
-  "subject": "math",
-  "date": "2026-07-11",
-  "ts": 1720656000000
- },
- {
-  "student": "Josh Lucero",
-  "correct": 9,
-  "total": 10,
-  "percent": 90,
-  "subject": "series66",
-  "date": "2026-07-12",
-  "ts": 1720738800000
- },
- {
-  "student": "Jiho Pak",
-  "correct": 95,
-  "total": 100,
-  "percent": 95,
-  "subject": "math",
-  "date": "2026-07-12",
-  "ts": 1720742400000
- },
- {
-  "student": "Josh Lucero",
-  "correct": 10,
-  "total": 10,
-  "percent": 100,
-  "subject": "series66",
-  "date": "2026-07-13",
-  "ts": 1720825200000
- },
- {
-  "student": "Jiho Pak",
-  "correct": 48,
-  "total": 52,
-  "percent": 92,
-  "subject": "math",
-  "date": "2026-07-13",
-  "ts": 1720828800000
- },
- {
-  "student": "Jiho Pak",
-  "correct": 88,
-  "total": 100,
-  "percent": 88,
-  "subject": "math",
-  "date": "2026-07-14",
-  "ts": 1720915200000
- },
- {
-  "student": "Carter Koh",
-  "correct": 8,
-  "total": 10,
-  "percent": 80,
-  "subject": "grade11",
-  "date": "2026-07-15",
-  "ts": 1721060000000
- },
- {
-  "student": "Josh Lucero",
-  "correct": 8,
-  "total": 10,
-  "percent": 80,
-  "subject": "series66",
-  "date": "2026-07-14",
-  "ts": 1784062579819
- },
- {
-  "student": "Carter Koh",
-  "correct": 7,
-  "total": 10,
-  "percent": 70,
-  "subject": "sat",
-  "date": "2026-07-14",
-  "ts": 1784065110418
- },
- {
-  "student": "Carter Koh",
-  "correct": 64,
-  "total": 80,
-  "percent": 80,
-  "subject": "sat",
-  "date": "2026-07-14",
-  "ts": 1784065657030
- },
- {
-  "student": "Carter Koh",
-  "correct": 64,
-  "total": 80,
-  "percent": 80,
-  "subject": "sat",
-  "date": "2026-07-14",
-  "ts": 1784065665280
- },
- {
-  "student": "Josh Lucero",
-  "correct": 7,
-  "total": 10,
-  "percent": 70,
-  "subject": "series7",
-  "date": "2026-07-14",
-  "ts": 1784067805092
- },
- {
-  "student": "Josh Lucero",
-  "correct": 10,
-  "total": 10,
-  "percent": 100,
-  "subject": "series66",
-  "date": "2026-07-14",
-  "ts": 1784067969532
- },
- {
-  "student": "Josh Lucero",
-  "correct": 8,
-  "total": 10,
-  "percent": 80,
-  "subject": "series66",
-  "date": "2026-07-15",
-  "ts": 1784079170449
- },
- {
-  "student": "Josh Lucero",
-  "correct": 27,
-  "total": 30,
-  "percent": 90,
-  "subject": "series66",
-  "date": "2026-07-15",
-  "ts": 1784080576113
- },
- {
-  "student": "Jiho Pak",
-  "correct": 96,
-  "total": 100,
-  "percent": 96,
-  "subject": "math",
-  "date": "2026-07-15",
-  "ts": 1784133483722
- },
- {
-  "student": "Carter Koh",
-  "correct": 1,
-  "total": 10,
-  "percent": 10,
-  "subject": "grade11",
-  "date": "2026-07-15",
-  "ts": 1784136358330
- },
- {
-  "student": "Carter Koh",
-  "correct": 2,
-  "total": 10,
-  "percent": 20,
-  "subject": "grade11",
-  "date": "2026-07-15",
-  "ts": 1784136398847
- },
- {
-  "student": "Carter Koh",
-  "correct": 3,
-  "total": 10,
-  "percent": 30,
-  "subject": "grade11",
-  "date": "2026-07-15",
-  "ts": 1784136430648
- },
- {
-  "student": "Carter Koh",
-  "correct": 3,
-  "total": 10,
-  "percent": 30,
-  "subject": "grade11",
-  "date": "2026-07-15",
-  "ts": 1784136507236
- },
- {
-  "student": "Carter Koh",
-  "correct": 4,
-  "total": 10,
-  "percent": 40,
-  "subject": "grade11",
-  "date": "2026-07-15",
-  "ts": 1784136543231
- },
- {
-  "student": "Carter Koh",
-  "correct": 5,
-  "total": 10,
-  "percent": 50,
-  "subject": "grade11",
-  "date": "2026-07-15",
-  "ts": 1784136622964
- },
- {
-  "student": "Carter Koh",
-  "correct": 6,
-  "total": 10,
-  "percent": 60,
-  "subject": "grade11",
-  "date": "2026-07-15",
-  "ts": 1784136656434
- },
- {
-  "student": "Carter Koh",
-  "correct": 6,
-  "total": 10,
-  "percent": 60,
-  "subject": "grade11",
-  "date": "2026-07-15",
-  "ts": 1784136741243
- },
- {
-  "student": "Carter Koh",
-  "correct": 7,
-  "total": 10,
-  "percent": 70,
-  "subject": "grade11",
-  "date": "2026-07-15",
-  "ts": 1784136792681
- },
- {
-  "student": "Carter Koh",
-  "correct": 8,
-  "total": 10,
-  "percent": 80,
-  "subject": "grade11",
-  "date": "2026-07-15",
-  "ts": 1784136847620
- },
- {
-  "student": "Carter Koh",
-  "correct": 38,
-  "total": 49,
-  "percent": 78,
-  "subject": "sat",
-  "date": "2026-07-15",
-  "ts": 1784138713618
- },
- {
-  "student": "Carter Koh",
-  "correct": 40,
-  "total": 50,
-  "percent": 80,
-  "subject": "sat",
-  "date": "2026-07-15",
-  "ts": 1784138746086
- },
- {
-  "student": "Josh Lucero",
-  "correct": 20,
-  "total": 20,
-  "percent": 100,
-  "subject": "series66",
-  "date": "2026-07-18",
-  "ts": 1784417068212
- },
- {
-  "student": "Jiho Pak",
-  "correct": 8,
-  "total": 10,
-  "percent": 80,
-  "subject": "grade9",
-  "date": "2026-07-20",
-  "ts": 1784565026720
- },
- {
-  "student": "Jiho Pak",
-  "correct": 9,
-  "total": 9,
-  "percent": 100,
-  "subject": "grade9",
-  "date": "2026-07-20",
-  "ts": 1784565144717
- },
- {
-  "student": "Jiho Pak",
-  "correct": 5,
-  "total": 5,
-  "percent": 100,
-  "subject": "math",
-  "date": "2026-07-20",
-  "ts": 1784565377736
- },
- {
-  "student": "Jiho Pak",
-  "correct": 10,
-  "total": 10,
-  "percent": 100,
-  "subject": "grade9",
-  "date": "2026-07-20",
-  "ts": 1784565879727
- },
- {
-  "student": "Carter Koh",
-  "correct": 7,
-  "total": 10,
-  "percent": 70,
-  "subject": "grade11",
-  "date": "2026-07-20",
-  "ts": 1784568923252
- },
- {
-  "student": "Carter Koh",
-  "correct": 10,
-  "total": 10,
-  "percent": 100,
-  "subject": "sat",
-  "date": "2026-07-20",
-  "ts": 1784569088136
- },
- {
-  "student": "Carter Koh",
-  "correct": 5,
-  "total": 10,
-  "percent": 50,
-  "subject": "grade11",
-  "date": "2026-07-20",
-  "ts": 1784569297093
- },
- {
-  "student": "Carter Koh",
-  "correct": 10,
-  "total": 10,
-  "percent": 100,
-  "subject": "sat",
-  "date": "2026-07-20",
-  "ts": 1784569607067
- },
- {
-  "student": "Carter Koh",
-  "correct": 5,
-  "total": 9,
-  "percent": 56,
-  "subject": "grade11",
-  "date": "2026-07-20",
-  "ts": 1784570028206
- },
- {
-  "student": "Carter Koh",
-  "correct": 10,
-  "total": 10,
-  "percent": 100,
-  "subject": "sat",
-  "date": "2026-07-20",
-  "ts": 1784570757939
- },
- {
-  "student": "Carter Koh",
-  "correct": 9,
-  "total": 9,
-  "percent": 100,
-  "subject": "grade11",
-  "date": "2026-07-20",
-  "ts": 1784570971798
- },
- {
-  "student": "Carter Koh",
-  "correct": 5,
-  "total": 5,
-  "percent": 100,
-  "subject": "sat",
-  "date": "2026-07-20",
-  "ts": 1784571050923
- },
- {
-  "student": "Carter Koh",
-  "correct": 8,
-  "total": 9,
-  "percent": 89,
-  "subject": "sat",
-  "date": "2026-07-20",
-  "ts": 1784571862421
- },
- {
-  "student": "Carter Koh",
-  "correct": 3,
-  "total": 9,
-  "percent": 33,
-  "subject": "grade11",
-  "date": "2026-07-20",
-  "ts": 1784572040015
- },
- {
-  "student": "Carter Koh",
-  "correct": 3,
-  "total": 10,
-  "percent": 30,
-  "subject": "sat",
-  "date": "2026-07-20",
-  "ts": 1784572289574
- },
- {
-  "student": "Carter Koh",
-  "correct": 10,
-  "total": 10,
-  "percent": 100,
-  "subject": "sat",
-  "date": "2026-07-20",
-  "ts": 1784572525796
- },
- {
-  "student": "Carter Koh",
-  "correct": 10,
-  "total": 10,
-  "percent": 100,
-  "subject": "sat",
-  "date": "2026-07-21",
-  "ts": 1784592550180
- },
- {
-  "student": "Carter Koh",
-  "correct": 20,
-  "total": 20,
-  "percent": 100,
-  "subject": "sat",
-  "date": "2026-07-21",
-  "ts": 1784613062922
- },
- {
-  "student": "Carter Koh",
-  "correct": 4,
-  "total": 10,
-  "percent": 40,
-  "subject": "grade11",
-  "date": "2026-07-21",
-  "ts": 1784613244283
- },
- {
-  "student": "Carter Koh",
-  "correct": 11,
-  "total": 12,
-  "percent": 92,
-  "subject": "sat",
-  "date": "2026-07-21",
-  "ts": 1784613635402
- },
- {
-  "student": "Jiho Pak",
-  "correct": 10,
-  "total": 10,
-  "percent": 100,
-  "subject": "grade9",
-  "date": "2026-07-22",
-  "ts": 1784736548043
- },
- {
-  "student": "Jiho Pak",
-  "correct": 10,
-  "total": 10,
-  "percent": 100,
-  "subject": "math",
-  "date": "2026-07-22",
-  "ts": 1784736723066
- },
- {
-  "student": "Jiho Pak",
-  "correct": 10,
-  "total": 10,
-  "percent": 100,
-  "subject": "grade9",
-  "date": "2026-07-22",
-  "ts": 1784737286779
- },
- {
-  "student": "Jiho Pak",
-  "correct": 10,
-  "total": 10,
-  "percent": 100,
-  "subject": "grade9",
-  "date": "2026-07-22",
-  "ts": 1784737846235
- },
- {
-  "student": "Jiho Pak",
-  "correct": 10,
-  "total": 10,
-  "percent": 100,
-  "subject": "grade9",
-  "date": "2026-07-22",
-  "ts": 1784738324814
- },
- {
-  "student": "Jiho Pak",
-  "correct": 33,
-  "total": 33,
-  "percent": 100,
-  "subject": "grade9",
-  "date": "2026-07-22",
-  "ts": 1784738900412
- },
- {
-  "student": "Jiho Pak",
-  "correct": 33,
-  "total": 33,
-  "percent": 100,
-  "subject": "grade9",
-  "date": "2026-07-22",
-  "ts": 1784739305659
- },
- {
-  "student": "Jiho Pak",
-  "correct": 33,
-  "total": 33,
-  "percent": 100,
-  "subject": "grade9",
-  "date": "2026-07-22",
-  "ts": 1784740209047
- },
- {
-  "student": "Jiho Pak",
-  "correct": 27,
-  "total": 33,
-  "percent": 82,
-  "subject": "grade9",
-  "date": "2026-07-22",
-  "ts": 1784741370387
- },
- {
-  "student": "Jiho Pak",
-  "correct": 29,
-  "total": 33,
-  "percent": 88,
-  "subject": "grade9",
-  "date": "2026-07-23",
-  "ts": 1784825980640
- },
- {
-  "student": "Jiho Pak",
-  "correct": 27,
-  "total": 33,
-  "percent": 82,
-  "subject": "grade9",
-  "date": "2026-07-24",
-  "ts": 1784908876929
- },
- {
-  "student": "Jiho Pak",
-  "correct": 28,
-  "total": 33,
-  "percent": 85,
-  "subject": "grade9",
-  "date": "2026-07-25",
-  "ts": 1784996714811
- },
- {
-  "student": "Jiho Pak",
-  "correct": 29,
-  "total": 33,
-  "percent": 88,
-  "subject": "grade9",
-  "date": "2026-07-26",
-  "ts": 1785081001629
- },
- {
-  "student": "Jiho Pak",
-  "correct": 28,
-  "total": 33,
-  "percent": 85,
-  "subject": "grade9",
-  "date": "2026-07-27",
-  "ts": 1785169637429
- },
- {
-  "student": "Jiho Pak",
-  "correct": 28,
-  "total": 33,
-  "percent": 85,
-  "subject": "grade9",
-  "date": "2026-07-28",
-  "ts": 1785256081325
- },
- {
-  "student": "Jiho Pak",
-  "correct": 24,
-  "total": 33,
-  "percent": 73,
-  "subject": "grade9",
-  "date": "2026-07-29",
-  "ts": 1785340622998
- },
- {
-  "student": "Jiho Pak",
-  "correct": 27,
-  "total": 33,
-  "percent": 82,
-  "subject": "grade9",
-  "date": "2026-07-29",
-  "ts": 1785342041627
- },
- {
-  "student": "Jiho Pak",
-  "correct": 29,
-  "total": 33,
-  "percent": 88,
-  "subject": "grade9",
-  "date": "2026-07-30",
-  "ts": 1785429436554
- },
- {
-  "student": "Carter Koh",
-  "correct": 17,
-  "total": 33,
-  "percent": 52,
-  "subject": "grade11",
-  "date": "2026-07-30",
-  "ts": 1785438837237
- },
- {
-  "student": "Carter Koh",
-  "correct": 20,
-  "total": 33,
-  "percent": 61,
-  "subject": "grade11",
-  "date": "2026-07-30",
-  "ts": 1785440228769
- },
- {
-  "student": "Carter Koh",
-  "correct": 13,
-  "total": 22,
-  "percent": 59,
-  "subject": "sat",
-  "date": "2026-07-31",
-  "ts": 1785521614631
- },
- {
-  "student": "Carter Koh",
-  "correct": 18,
-  "total": 33,
-  "percent": 55,
-  "subject": "grade11",
-  "date": "2026-07-31",
-  "ts": 1785522276888
- },
- {
-  "student": "Carter Koh",
-  "correct": 10,
-  "total": 15,
-  "percent": 67,
-  "subject": "sat",
-  "date": "2026-07-31",
-  "ts": 1785522838856
- },
- {
-  "student": "Carter Koh",
-  "correct": 23,
-  "total": 33,
-  "percent": 70,
-  "subject": "grade11",
-  "date": "2026-07-31",
-  "ts": 1785523642187
- },
- {
-  "student": "Jiho Pak",
-  "correct": 25,
-  "total": 33,
-  "percent": 76,
-  "subject": "grade9",
-  "date": "2026-08-08",
-  "ts": 1786206425210
- },
- {
-  "student": "Jiho Pak",
-  "correct": 26,
-  "total": 33,
-  "percent": 79,
-  "subject": "grade9",
-  "date": "2026-08-11",
-  "ts": 1786465193575
- },
- {
-  "student": "Jiho Pak",
-  "correct": 26,
-  "total": 33,
-  "percent": 79,
-  "subject": "grade9",
-  "date": "2026-08-13",
-  "ts": 1786639117880
- },
- {
-  "student": "Jiho Pak",
-  "correct": 27,
-  "total": 33,
-  "percent": 82,
-  "subject": "grade9",
-  "date": "2026-08-16",
-  "ts": 1786897536039
- },
- {
-  "student": "Jiho Pak",
-  "correct": 27,
-  "total": 33,
-  "percent": 82,
-  "subject": "grade9",
-  "date": "2026-08-30",
-  "ts": 1788107281146
- },
- {
-  "student": "Jiho Pak",
-  "correct": 24,
-  "total": 33,
-  "percent": 73,
-  "subject": "grade9",
-  "date": "2026-09-12",
-  "ts": 1789228238198
- },
- {
-  "student": "Jiho Pak",
-  "correct": 27,
-  "total": 33,
-  "percent": 82,
-  "subject": "grade9",
-  "date": "2026-09-12",
-  "ts": 1789228686043
- },
- {
-  "student": "Carter Koh",
-  "correct": 20,
-  "total": 22,
-  "percent": 90.9,
-  "subject": "AP English Language",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "ap-lang-mcq-4"
- },
- {
-  "student": "Carter Koh",
-  "correct": 12,
-  "total": 15,
-  "percent": 80.0,
-  "subject": "AP English Language",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "ap-lang-mcq-5"
- },
- {
-  "student": "Carter Koh",
-  "correct": 14,
-  "total": 14,
-  "percent": 100.0,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "apbio-u2-core"
- },
- {
-  "student": "Carter Koh",
-  "correct": 10,
-  "total": 12,
-  "percent": 83.3,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "apbio-u2-depth3"
- },
- {
-  "student": "Carter Koh",
-  "correct": 19,
-  "total": 29,
-  "percent": 65.5,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "apbio-u2-diagrams"
- },
- {
-  "student": "Carter Koh",
-  "correct": 10,
-  "total": 11,
-  "percent": 90.9,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "apbio-u2-examsim"
- },
- {
-  "student": "Carter Koh",
-  "correct": 4,
-  "total": 4,
-  "percent": 100.0,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "apbio-u2-finalcheck"
- },
- {
-  "student": "Carter Koh",
-  "correct": 4,
-  "total": 4,
-  "percent": 100.0,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "apbio-u2-recheck"
- },
- {
-  "student": "Carter Koh",
-  "correct": 14,
-  "total": 16,
-  "percent": 87.5,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "apbio-u2-run2"
- },
- {
-  "student": "Carter Koh",
-  "correct": 10,
-  "total": 13,
-  "percent": 76.9,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "apbio-u2-weaklist"
- },
- {
-  "student": "Carter Koh",
-  "correct": 25,
-  "total": 40,
-  "percent": 62.5,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "bio-mach-1015-42"
- },
- {
-  "student": "Carter Koh",
-  "correct": 1,
-  "total": 3,
-  "percent": 33.3,
-  "subject": "Mixed review",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "daily-mix-2026-10-05"
- },
- {
-  "student": "Carter Koh",
-  "correct": 5,
-  "total": 6,
-  "percent": 83.3,
-  "subject": "AP English Language",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "eng-passage-j"
- },
- {
-  "student": "Carter Koh",
-  "correct": 4,
-  "total": 4,
-  "percent": 100.0,
-  "subject": "US History",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "hist-leakdrill"
- },
- {
-  "student": "Carter Koh",
-  "correct": 10,
-  "total": 12,
-  "percent": 83.3,
-  "subject": "US History",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "hist-review2"
- },
- {
-  "student": "Carter Koh",
-  "correct": 8,
-  "total": 8,
-  "percent": 100.0,
-  "subject": "US History",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "hist-sim50-pace"
- },
- {
-  "student": "Carter Koh",
-  "correct": 17,
-  "total": 26,
-  "percent": 65.4,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "unit2-diagram-run1"
- },
- {
-  "student": "Carter Koh",
-  "correct": 7,
-  "total": 9,
-  "percent": 77.8,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "unit2-diagram-run2"
- },
- {
-  "student": "Carter Koh",
-  "correct": 2,
-  "total": 2,
-  "percent": 100.0,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "unit2-diagram-run3"
- },
- {
-  "student": "Carter Koh",
-  "correct": 11,
-  "total": 12,
-  "percent": 91.7,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "unit2-freshmix"
- },
- {
-  "student": "Carter Koh",
-  "correct": 5,
-  "total": 6,
-  "percent": 83.3,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "unit2-psis-reps1"
- },
- {
-  "student": "Carter Koh",
-  "correct": 12,
-  "total": 13,
-  "percent": 92.3,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "unit2-s4-reps"
- },
- {
-  "student": "Carter Koh",
-  "correct": 18,
-  "total": 20,
-  "percent": 90.0,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "unit2-test-run1"
- },
- {
-  "student": "Carter Koh",
-  "correct": 9,
-  "total": 12,
-  "percent": 75.0,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "unit2-test-run2"
- },
- {
-  "student": "Carter Koh",
-  "correct": 11,
-  "total": 12,
-  "percent": 91.7,
-  "subject": "AP Biology",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "unit2-test-run3"
- },
- {
-  "student": "Carter Koh",
-  "correct": 12,
-  "total": 13,
-  "percent": 92.3,
-  "subject": "US History",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "us-history-drill-1"
- },
- {
-  "student": "Carter Koh",
-  "correct": 19,
-  "total": 25,
-  "percent": 76.0,
-  "subject": "US History",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "us-history-set2"
- },
- {
-  "student": "Carter Koh",
-  "correct": 20,
-  "total": 21,
-  "percent": 95.2,
-  "subject": "US History",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "us-history-set3"
- },
- {
-  "student": "Carter Koh",
-  "correct": 20,
-  "total": 25,
-  "percent": 80.0,
-  "subject": "US History",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "us-history-set4"
- },
- {
-  "student": "Carter Koh",
-  "correct": 25,
-  "total": 25,
-  "percent": 100.0,
-  "subject": "US History",
-  "date": "2026-10-29",
-  "ts": 1793605273,
-  "src": "discord",
-  "run": "us-history-sprint15"
- }
+  {
+    "student": "Jiho Pak",
+    "correct": 19,
+    "total": 20,
+    "percent": 95,
+    "subject": "math",
+    "date": "2026-07-07",
+    "ts": 1720310400000
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 20,
+    "total": 20,
+    "percent": 100,
+    "subject": "math",
+    "date": "2026-07-10",
+    "ts": 1720569600000
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 95,
+    "total": 100,
+    "percent": 95,
+    "subject": "math",
+    "date": "2026-07-11",
+    "ts": 1720656000000
+  },
+  {
+    "student": "Josh Lucero",
+    "correct": 9,
+    "total": 10,
+    "percent": 90,
+    "subject": "series66",
+    "date": "2026-07-12",
+    "ts": 1720738800000
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 95,
+    "total": 100,
+    "percent": 95,
+    "subject": "math",
+    "date": "2026-07-12",
+    "ts": 1720742400000
+  },
+  {
+    "student": "Josh Lucero",
+    "correct": 10,
+    "total": 10,
+    "percent": 100,
+    "subject": "series66",
+    "date": "2026-07-13",
+    "ts": 1720825200000
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 48,
+    "total": 52,
+    "percent": 92,
+    "subject": "math",
+    "date": "2026-07-13",
+    "ts": 1720828800000
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 88,
+    "total": 100,
+    "percent": 88,
+    "subject": "math",
+    "date": "2026-07-14",
+    "ts": 1720915200000
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 8,
+    "total": 10,
+    "percent": 80,
+    "subject": "grade11",
+    "date": "2026-07-15",
+    "ts": 1721060000000
+  },
+  {
+    "student": "Josh Lucero",
+    "correct": 8,
+    "total": 10,
+    "percent": 80,
+    "subject": "series66",
+    "date": "2026-07-14",
+    "ts": 1784062579819
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 7,
+    "total": 10,
+    "percent": 70,
+    "subject": "sat",
+    "date": "2026-07-14",
+    "ts": 1784065110418
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 64,
+    "total": 80,
+    "percent": 80,
+    "subject": "sat",
+    "date": "2026-07-14",
+    "ts": 1784065657030
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 64,
+    "total": 80,
+    "percent": 80,
+    "subject": "sat",
+    "date": "2026-07-14",
+    "ts": 1784065665280
+  },
+  {
+    "student": "Josh Lucero",
+    "correct": 7,
+    "total": 10,
+    "percent": 70,
+    "subject": "series7",
+    "date": "2026-07-14",
+    "ts": 1784067805092
+  },
+  {
+    "student": "Josh Lucero",
+    "correct": 10,
+    "total": 10,
+    "percent": 100,
+    "subject": "series66",
+    "date": "2026-07-14",
+    "ts": 1784067969532
+  },
+  {
+    "student": "Josh Lucero",
+    "correct": 8,
+    "total": 10,
+    "percent": 80,
+    "subject": "series66",
+    "date": "2026-07-15",
+    "ts": 1784079170449
+  },
+  {
+    "student": "Josh Lucero",
+    "correct": 27,
+    "total": 30,
+    "percent": 90,
+    "subject": "series66",
+    "date": "2026-07-15",
+    "ts": 1784080576113
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 96,
+    "total": 100,
+    "percent": 96,
+    "subject": "math",
+    "date": "2026-07-15",
+    "ts": 1784133483722
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 1,
+    "total": 10,
+    "percent": 10,
+    "subject": "grade11",
+    "date": "2026-07-15",
+    "ts": 1784136358330
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 2,
+    "total": 10,
+    "percent": 20,
+    "subject": "grade11",
+    "date": "2026-07-15",
+    "ts": 1784136398847
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 3,
+    "total": 10,
+    "percent": 30,
+    "subject": "grade11",
+    "date": "2026-07-15",
+    "ts": 1784136430648
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 3,
+    "total": 10,
+    "percent": 30,
+    "subject": "grade11",
+    "date": "2026-07-15",
+    "ts": 1784136507236
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 4,
+    "total": 10,
+    "percent": 40,
+    "subject": "grade11",
+    "date": "2026-07-15",
+    "ts": 1784136543231
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 5,
+    "total": 10,
+    "percent": 50,
+    "subject": "grade11",
+    "date": "2026-07-15",
+    "ts": 1784136622964
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 6,
+    "total": 10,
+    "percent": 60,
+    "subject": "grade11",
+    "date": "2026-07-15",
+    "ts": 1784136656434
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 6,
+    "total": 10,
+    "percent": 60,
+    "subject": "grade11",
+    "date": "2026-07-15",
+    "ts": 1784136741243
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 7,
+    "total": 10,
+    "percent": 70,
+    "subject": "grade11",
+    "date": "2026-07-15",
+    "ts": 1784136792681
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 8,
+    "total": 10,
+    "percent": 80,
+    "subject": "grade11",
+    "date": "2026-07-15",
+    "ts": 1784136847620
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 38,
+    "total": 49,
+    "percent": 78,
+    "subject": "sat",
+    "date": "2026-07-15",
+    "ts": 1784138713618
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 40,
+    "total": 50,
+    "percent": 80,
+    "subject": "sat",
+    "date": "2026-07-15",
+    "ts": 1784138746086
+  },
+  {
+    "student": "Josh Lucero",
+    "correct": 20,
+    "total": 20,
+    "percent": 100,
+    "subject": "series66",
+    "date": "2026-07-18",
+    "ts": 1784417068212
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 8,
+    "total": 10,
+    "percent": 80,
+    "subject": "grade9",
+    "date": "2026-07-20",
+    "ts": 1784565026720
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 9,
+    "total": 9,
+    "percent": 100,
+    "subject": "grade9",
+    "date": "2026-07-20",
+    "ts": 1784565144717
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 5,
+    "total": 5,
+    "percent": 100,
+    "subject": "math",
+    "date": "2026-07-20",
+    "ts": 1784565377736
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 10,
+    "total": 10,
+    "percent": 100,
+    "subject": "grade9",
+    "date": "2026-07-20",
+    "ts": 1784565879727
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 7,
+    "total": 10,
+    "percent": 70,
+    "subject": "grade11",
+    "date": "2026-07-20",
+    "ts": 1784568923252
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 10,
+    "total": 10,
+    "percent": 100,
+    "subject": "sat",
+    "date": "2026-07-20",
+    "ts": 1784569088136
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 5,
+    "total": 10,
+    "percent": 50,
+    "subject": "grade11",
+    "date": "2026-07-20",
+    "ts": 1784569297093
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 10,
+    "total": 10,
+    "percent": 100,
+    "subject": "sat",
+    "date": "2026-07-20",
+    "ts": 1784569607067
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 5,
+    "total": 9,
+    "percent": 56,
+    "subject": "grade11",
+    "date": "2026-07-20",
+    "ts": 1784570028206
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 10,
+    "total": 10,
+    "percent": 100,
+    "subject": "sat",
+    "date": "2026-07-20",
+    "ts": 1784570757939
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 9,
+    "total": 9,
+    "percent": 100,
+    "subject": "grade11",
+    "date": "2026-07-20",
+    "ts": 1784570971798
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 5,
+    "total": 5,
+    "percent": 100,
+    "subject": "sat",
+    "date": "2026-07-20",
+    "ts": 1784571050923
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 8,
+    "total": 9,
+    "percent": 89,
+    "subject": "sat",
+    "date": "2026-07-20",
+    "ts": 1784571862421
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 3,
+    "total": 9,
+    "percent": 33,
+    "subject": "grade11",
+    "date": "2026-07-20",
+    "ts": 1784572040015
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 3,
+    "total": 10,
+    "percent": 30,
+    "subject": "sat",
+    "date": "2026-07-20",
+    "ts": 1784572289574
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 10,
+    "total": 10,
+    "percent": 100,
+    "subject": "sat",
+    "date": "2026-07-20",
+    "ts": 1784572525796
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 10,
+    "total": 10,
+    "percent": 100,
+    "subject": "sat",
+    "date": "2026-07-21",
+    "ts": 1784592550180
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 20,
+    "total": 20,
+    "percent": 100,
+    "subject": "sat",
+    "date": "2026-07-21",
+    "ts": 1784613062922
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 4,
+    "total": 10,
+    "percent": 40,
+    "subject": "grade11",
+    "date": "2026-07-21",
+    "ts": 1784613244283
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 11,
+    "total": 12,
+    "percent": 92,
+    "subject": "sat",
+    "date": "2026-07-21",
+    "ts": 1784613635402
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 10,
+    "total": 10,
+    "percent": 100,
+    "subject": "grade9",
+    "date": "2026-07-22",
+    "ts": 1784736548043
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 10,
+    "total": 10,
+    "percent": 100,
+    "subject": "math",
+    "date": "2026-07-22",
+    "ts": 1784736723066
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 10,
+    "total": 10,
+    "percent": 100,
+    "subject": "grade9",
+    "date": "2026-07-22",
+    "ts": 1784737286779
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 10,
+    "total": 10,
+    "percent": 100,
+    "subject": "grade9",
+    "date": "2026-07-22",
+    "ts": 1784737846235
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 10,
+    "total": 10,
+    "percent": 100,
+    "subject": "grade9",
+    "date": "2026-07-22",
+    "ts": 1784738324814
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 33,
+    "total": 33,
+    "percent": 100,
+    "subject": "grade9",
+    "date": "2026-07-22",
+    "ts": 1784738900412
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 33,
+    "total": 33,
+    "percent": 100,
+    "subject": "grade9",
+    "date": "2026-07-22",
+    "ts": 1784739305659
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 33,
+    "total": 33,
+    "percent": 100,
+    "subject": "grade9",
+    "date": "2026-07-22",
+    "ts": 1784740209047
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 27,
+    "total": 33,
+    "percent": 82,
+    "subject": "grade9",
+    "date": "2026-07-22",
+    "ts": 1784741370387
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 29,
+    "total": 33,
+    "percent": 88,
+    "subject": "grade9",
+    "date": "2026-07-23",
+    "ts": 1784825980640
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 27,
+    "total": 33,
+    "percent": 82,
+    "subject": "grade9",
+    "date": "2026-07-24",
+    "ts": 1784908876929
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 28,
+    "total": 33,
+    "percent": 85,
+    "subject": "grade9",
+    "date": "2026-07-25",
+    "ts": 1784996714811
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 29,
+    "total": 33,
+    "percent": 88,
+    "subject": "grade9",
+    "date": "2026-07-26",
+    "ts": 1785081001629
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 28,
+    "total": 33,
+    "percent": 85,
+    "subject": "grade9",
+    "date": "2026-07-27",
+    "ts": 1785169637429
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 28,
+    "total": 33,
+    "percent": 85,
+    "subject": "grade9",
+    "date": "2026-07-28",
+    "ts": 1785256081325
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 24,
+    "total": 33,
+    "percent": 73,
+    "subject": "grade9",
+    "date": "2026-07-29",
+    "ts": 1785340622998
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 27,
+    "total": 33,
+    "percent": 82,
+    "subject": "grade9",
+    "date": "2026-07-29",
+    "ts": 1785342041627
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 29,
+    "total": 33,
+    "percent": 88,
+    "subject": "grade9",
+    "date": "2026-07-30",
+    "ts": 1785429436554
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 17,
+    "total": 33,
+    "percent": 52,
+    "subject": "grade11",
+    "date": "2026-07-30",
+    "ts": 1785438837237
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 20,
+    "total": 33,
+    "percent": 61,
+    "subject": "grade11",
+    "date": "2026-07-30",
+    "ts": 1785440228769
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 13,
+    "total": 22,
+    "percent": 59,
+    "subject": "sat",
+    "date": "2026-07-31",
+    "ts": 1785521614631
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 18,
+    "total": 33,
+    "percent": 55,
+    "subject": "grade11",
+    "date": "2026-07-31",
+    "ts": 1785522276888
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 10,
+    "total": 15,
+    "percent": 67,
+    "subject": "sat",
+    "date": "2026-07-31",
+    "ts": 1785522838856
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 23,
+    "total": 33,
+    "percent": 70,
+    "subject": "grade11",
+    "date": "2026-07-31",
+    "ts": 1785523642187
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 25,
+    "total": 33,
+    "percent": 76,
+    "subject": "grade9",
+    "date": "2026-08-08",
+    "ts": 1786206425210
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 26,
+    "total": 33,
+    "percent": 79,
+    "subject": "grade9",
+    "date": "2026-08-11",
+    "ts": 1786465193575
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 26,
+    "total": 33,
+    "percent": 79,
+    "subject": "grade9",
+    "date": "2026-08-13",
+    "ts": 1786639117880
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 27,
+    "total": 33,
+    "percent": 82,
+    "subject": "grade9",
+    "date": "2026-08-16",
+    "ts": 1786897536039
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 27,
+    "total": 33,
+    "percent": 82,
+    "subject": "grade9",
+    "date": "2026-08-30",
+    "ts": 1788107281146
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 24,
+    "total": 33,
+    "percent": 73,
+    "subject": "grade9",
+    "date": "2026-09-12",
+    "ts": 1789228238198
+  },
+  {
+    "student": "Jiho Pak",
+    "correct": 27,
+    "total": 33,
+    "percent": 82,
+    "subject": "grade9",
+    "date": "2026-09-12",
+    "ts": 1789228686043
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 20,
+    "total": 22,
+    "percent": 90.9,
+    "subject": "AP English Language",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "ap-lang-mcq-4"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 12,
+    "total": 15,
+    "percent": 80,
+    "subject": "AP English Language",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "ap-lang-mcq-5"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 14,
+    "total": 14,
+    "percent": 100,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "apbio-u2-core"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 10,
+    "total": 12,
+    "percent": 83.3,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "apbio-u2-depth3"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 19,
+    "total": 29,
+    "percent": 65.5,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "apbio-u2-diagrams"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 10,
+    "total": 11,
+    "percent": 90.9,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "apbio-u2-examsim"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 4,
+    "total": 4,
+    "percent": 100,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "apbio-u2-finalcheck"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 4,
+    "total": 4,
+    "percent": 100,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "apbio-u2-recheck"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 14,
+    "total": 16,
+    "percent": 87.5,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "apbio-u2-run2"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 10,
+    "total": 13,
+    "percent": 76.9,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "apbio-u2-weaklist"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 25,
+    "total": 40,
+    "percent": 62.5,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "bio-mach-1015-42"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 1,
+    "total": 3,
+    "percent": 33.3,
+    "subject": "Mixed review",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "daily-mix-2026-10-05"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 5,
+    "total": 6,
+    "percent": 83.3,
+    "subject": "AP English Language",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "eng-passage-j"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 4,
+    "total": 4,
+    "percent": 100,
+    "subject": "US History",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "hist-leakdrill"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 10,
+    "total": 12,
+    "percent": 83.3,
+    "subject": "US History",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "hist-review2"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 8,
+    "total": 8,
+    "percent": 100,
+    "subject": "US History",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "hist-sim50-pace"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 17,
+    "total": 26,
+    "percent": 65.4,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "unit2-diagram-run1"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 7,
+    "total": 9,
+    "percent": 77.8,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "unit2-diagram-run2"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 2,
+    "total": 2,
+    "percent": 100,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "unit2-diagram-run3"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 11,
+    "total": 12,
+    "percent": 91.7,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "unit2-freshmix"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 5,
+    "total": 6,
+    "percent": 83.3,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "unit2-psis-reps1"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 12,
+    "total": 13,
+    "percent": 92.3,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "unit2-s4-reps"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 18,
+    "total": 20,
+    "percent": 90,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "unit2-test-run1"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 9,
+    "total": 12,
+    "percent": 75,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "unit2-test-run2"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 11,
+    "total": 12,
+    "percent": 91.7,
+    "subject": "AP Biology",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "unit2-test-run3"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 12,
+    "total": 13,
+    "percent": 92.3,
+    "subject": "US History",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "us-history-drill-1"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 19,
+    "total": 25,
+    "percent": 76,
+    "subject": "US History",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "us-history-set2"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 20,
+    "total": 21,
+    "percent": 95.2,
+    "subject": "US History",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "us-history-set3"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 20,
+    "total": 25,
+    "percent": 80,
+    "subject": "US History",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "us-history-set4"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 25,
+    "total": 25,
+    "percent": 100,
+    "subject": "US History",
+    "date": "2026-10-29",
+    "ts": 1793605273,
+    "src": "discord",
+    "run": "us-history-sprint15"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 14,
+    "total": 33,
+    "percent": 42,
+    "subject": "Grade Rescue",
+    "date": "2026-11-06",
+    "ts": 1793946393088,
+    "src": "web"
+  }
 ]
