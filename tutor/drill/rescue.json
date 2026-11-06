@@ -1,470 +1,470 @@
 {
   "id": "rescue",
   "title": "Grade Rescue",
-  "generated": "2026-11-05",
+  "generated": "2026-11-06",
   "source": "generated",
   "questions": [
     {
       "n": 1,
       "course": "AP Biology",
-      "unit": "Gene Regulation",
-      "stem": "An E. coli culture growing in glucose is shifted to a medium whose only sugar is lactose. Which sequence best describes what happens at the lac operon?",
+      "unit": "Organelle function",
+      "stem": "A pancreatic beta cell synthesizes insulin and releases it by exocytosis. Which structures are most directly required, in order, for producing and secreting this protein?",
       "options": [
-        "Lactose binds CAP, blocking CAP from helping RNA polymerase bind the promoter.",
-        "The lac repressor binds the operator more tightly, preventing transcription.",
-        "Lactose binds the repressor so it releases the operator, and CAP helps RNA polymerase transcribe.",
-        "Glucose binds the operator and directly recruits RNA polymerase to lacZ."
+        "Smooth ER, lysosome, and plasma membrane",
+        "Nucleolus, peroxisome, and cell wall",
+        "Rough ER, Golgi apparatus, and secretory vesicles",
+        "Free ribosomes, mitochondria, and smooth ER"
       ],
       "answer": "C",
-      "why": "Lactose is the inducer: it binds the repressor and frees the operator, while low glucose raises cAMP so CAP activates transcription."
+      "why": "Insulin is a secreted protein: it is translated on the rough ER, modified and sorted in the Golgi, then carried in secretory vesicles that fuse with the plasma membrane."
     },
     {
       "n": 2,
       "course": "AP English Language",
-      "unit": "Rhetorical Situation",
-      "stem": "A superintendent opens a bond proposal to a room of parents: \"I have three children in this district, and two of them are in classrooms with broken heaters.\" The primary function of this opening is to",
+      "unit": "Diction and tone",
+      "stem": "\"The district has not eliminated the arts. It has merely consolidated them into a single period shared by the band, the choir, and the ceramics studio.\" The tone of the second sentence is best described as",
       "options": [
-        "establish a statistical basis for the bond's cost.",
-        "align the speaker with the audience's stake before making an argument.",
-        "concede that the district has mismanaged its facilities budget.",
-        "shift the audience's attention from the proposal to the speaker's family."
+        "candid admiration for the district's efficiency",
+        "ironic understatement that exposes the policy's real effect",
+        "neutral technical description with no evaluative language",
+        "urgent alarm signaled by exclamation and direct address"
       ],
       "answer": "B",
-      "why": "The detail builds shared stake and ethos with parents, positioning the speaker as an insider before the proposal is argued."
+      "why": "\"Merely consolidated\" and one shared period for three ensembles understate an obvious loss; the gap between the mild wording and the effect is the irony."
     },
     {
       "n": 3,
       "course": "AP Biology",
-      "unit": "DNA Replication",
-      "stem": "A cell is treated with a drug that inhibits DNA ligase. Which best describes the direct consequence during replication?",
+      "unit": "Membrane transport",
+      "stem": "An animal cell shows no net volume change in 0.9% NaCl. It is then moved to 0.3% NaCl. Which best predicts the immediate result and its cause?",
       "options": [
-        "Okazaki fragments on the lagging strand remain unjoined, leaving nicks in the new strand.",
-        "The leading strand is synthesized discontinuously instead of continuously.",
-        "Helicase can no longer unwind the double helix at the replication fork.",
-        "DNA polymerase inserts ribonucleotides where deoxynucleotides belong."
+        "Water enters the cell by osmosis because the surrounding solute concentration is lower.",
+        "Water leaves the cell because NaCl is actively pumped out of the cytoplasm.",
+        "The cell shrinks because the membrane becomes impermeable to water.",
+        "No change occurs because NaCl cannot cross the membrane in either direction."
       ],
       "answer": "A",
-      "why": "Ligase seals the nicks between Okazaki fragments, so without it the lagging strand stays in pieces. Leading-strand synthesis and unwinding are unaffected."
+      "why": "0.3% NaCl is hypotonic to the cell, so water moves down its concentration gradient inward; the membrane's permeability to water, not to Na+, drives the change."
     },
     {
       "n": 4,
       "course": "AP English Language",
-      "unit": "Concession and Refutation",
-      "stem": "\"The budget does increase class size in the short term. But a class of 28 with a teacher who stays is worth more than a class of 22 with one who leaves in June.\" The second sentence works by",
+      "unit": "Logical fallacies",
+      "stem": "\"Our principal opposes the new schedule, but she has never taught a class that starts before 7:30, so her opinion on start times carries no weight.\" The reasoning is flawed mainly because it",
       "options": [
-        "conceding the opposing point and dropping the argument.",
-        "restating the concession in more extreme terms.",
-        "attacking the motives of the people who made the budget.",
-        "granting the cost and reframing the comparison that should decide the issue."
+        "presents a single anecdote as a representative sample.",
+        "assumes that whatever is popular must be correct.",
+        "attacks a position its author does not actually hold.",
+        "dismisses a claim by discrediting the speaker rather than the evidence."
       ],
       "answer": "D",
-      "why": "It concedes the real cost, then replaces the metric of class size alone with teacher retention, shifting the terms of judgment."
+      "why": "The argument never engages the merits of the schedule; it rejects the claim because of who made it, which is an ad hominem move."
     },
     {
       "n": 5,
       "course": "AP Biology",
-      "unit": "Biotechnology",
-      "stem": "A DNA sample is cut with a restriction enzyme and run on a gel. A student's sample shows two bands while the reference shows one band at the same total length. The best explanation is that the student's sample",
+      "unit": "Cell cycle",
+      "stem": "A cell in G2 is treated with a drug that prevents assembly of the mitotic spindle. Which is the most likely outcome?",
       "options": [
-        "contains longer DNA fragments that migrated further because of their charge.",
-        "was loaded at the negative electrode, reversing the direction of migration.",
-        "has a higher concentration of DNA, so the single band split in two.",
-        "has an extra restriction site, cutting one fragment into two smaller ones."
+        "The cell completes mitosis but produces two nuclei inside one cell.",
+        "The cell arrests in metaphase because chromosomes cannot align at the metaphase plate.",
+        "The cell re-enters G1 immediately and replicates its DNA a second time.",
+        "Chromosomes fail to condense, so the cell cannot enter prophase."
       ],
-      "answer": "D",
-      "why": "An added cut site produces two fragments that migrate faster than the single full-length band. Concentration changes band intensity, not band count."
+      "answer": "B",
+      "why": "Spindle microtubules attach to kinetochores and align chromosomes; without them the spindle assembly checkpoint holds the cell in metaphase, often until apoptosis."
     },
     {
       "n": 6,
       "course": "AP English Language",
-      "unit": "Irony and Satire",
-      "stem": "\"The committee spent nine months studying the potholes and produced a report recommending that we continue to study the potholes.\" The writer's attitude is best described as",
+      "unit": "Thesis development",
+      "stem": "\"School should start later because sleep is important and everyone knows teenagers are tired.\" The thesis is weak primarily because it",
       "options": [
-        "dryly contemptuous of the committee's inaction.",
-        "genuinely impressed by the report's thoroughness.",
-        "neutral, presenting the timeline without judgment.",
-        "nostalgic about the committee's early enthusiasm."
+        "asserts a claim without offering a reason a skeptic would accept as evidence.",
+        "takes a position that no reasonable reader could possibly disagree with.",
+        "supports a narrow claim with an excess of statistical data.",
+        "answers a counterargument before stating its own position."
       ],
       "answer": "A",
-      "why": "The flat pairing of study with more study is deadpan mockery; the understatement signals contempt for the delay."
+      "why": "The sentence restates the conclusion's importance instead of linking later start times to a specific outcome, so it cannot move an opponent."
     },
     {
       "n": 7,
       "course": "AP Biology",
-      "unit": "Immune System",
-      "stem": "A child is infected with a virus and recovers. Years later the same virus enters the body and is neutralized within hours, before symptoms appear. Which best explains the speed?",
+      "unit": "Meiosis",
+      "stem": "Nondisjunction occurs in meiosis II for a single chromosome pair, after homologs separated normally in meiosis I. Which gamete types result?",
       "options": [
-        "Innate immunity improved because neutrophil counts rose permanently after the first infection.",
-        "Memory B and T cells from the first response expanded rapidly and produced antibody sooner.",
-        "The virus was destroyed by the same antibodies still circulating at high levels from year one.",
-        "Complement proteins learned to recognize the virus and now act without antibody."
+        "All four gametes carry an extra or missing copy of every chromosome.",
+        "Two gametes are normal and two carry an extra or missing copy of that one chromosome.",
+        "All four gametes carry one extra copy of that chromosome.",
+        "No gamete is affected because the homologs separated normally."
       ],
       "answer": "B",
-      "why": "Adaptive memory, meaning expanded clones of B and T cells, shortens the lag to antibody production. Antibody titers typically fall, and complement does not learn."
+      "why": "A meiosis II error affects only the two products of that division: two gametes are normal, one is disomic and one nullisomic for the single chromosome."
     },
     {
       "n": 8,
       "course": "AP English Language",
-      "unit": "Qualifying a Claim",
-      "stem": "\"Screens are not the sole cause of adolescent anxiety, but any account that leaves them out is incomplete.\" The sentence is most effective because it",
+      "unit": "Evidence selection",
+      "stem": "A student argues that a district's later start time improved attendance. Which evidence would best support that claim?",
       "options": [
-        "rejects the opposing view outright before presenting its own.",
-        "offers a statistic that settles the causal question.",
-        "limits its own claim so the argument survives the obvious counterexample.",
-        "shifts blame from screens to parents without support."
+        "A parent's recollection that her son seems more awake in the morning.",
+        "A national report establishing that sleep deprivation harms adolescents.",
+        "Attendance data showing absences fell in the district while neighboring districts stayed flat.",
+        "A survey in which students say they prefer the later start."
       ],
       "answer": "C",
-      "why": "It concedes screens are not the only cause, which pre-empts the strongest objection while keeping them relevant to the account."
+      "why": "Only a before-and-after comparison with a control group separates the schedule change from other causes; preference and general reports do not measure attendance."
     },
     {
       "n": 9,
       "course": "AP Biology",
-      "unit": "Nervous System",
-      "stem": "During an action potential, voltage-gated sodium channels open at threshold. Which sequence best describes the immediate result?",
+      "unit": "Signal transduction",
+      "stem": "A liver cell exposed to epinephrine increases glycogen breakdown within seconds. Which best explains how such a fast, amplified response is produced?",
       "options": [
-        "Na+ rushes in, depolarizing the membrane toward a positive interior potential.",
-        "K+ rushes in, hyperpolarizing the membrane below resting potential.",
-        "Na+ rushes out, repolarizing the membrane toward rest.",
-        "Cl- enters, holding the membrane at threshold without further change."
+        "A receptor activates a G protein that raises cAMP, triggering a kinase cascade.",
+        "Epinephrine enters the nucleus and directly transcribes the phosphorylase gene.",
+        "Epinephrine binds glycogen phosphorylase directly and lowers its activation energy.",
+        "A receptor opens a channel that lets glycogen diffuse out of the cell."
       ],
       "answer": "A",
-      "why": "Na+ influx drives depolarization and the rising phase, while K+ efflux later repolarizes. Direction of flow follows the electrochemical gradient."
+      "why": "Epinephrine is a ligand that does not enter the cell; a G-protein-coupled receptor raises cAMP, and each kinase step multiplies the original signal."
     },
     {
       "n": 10,
       "course": "AP English Language",
-      "unit": "Audience",
-      "stem": "An op-ed arguing for later school start times is published in a district newsletter rather than a national paper. The most important adjustment the writer should make is to",
+      "unit": "Understatement and hyperbole",
+      "stem": "\"Losing the library's evening hours is a modest inconvenience for a town where the median commute is ninety minutes.\" The sentence's effect depends mainly on",
       "options": [
-        "remove all evidence, since local readers already know the issue.",
-        "cite local schedules, bus routes, and the specific board vote.",
-        "increase the number of national sleep studies cited.",
-        "adopt a more formal, academic register throughout."
+        "citing data the reader is expected to verify independently.",
+        "a deliberate gap between mild wording and a burden the reader recognizes as severe.",
+        "an appeal to the writer's credentials as a librarian.",
+        "a logical proof that evening hours cause longer commutes."
       ],
       "answer": "B",
-      "why": "A local audience is moved by specifics it can verify and act on, such as its own buses and its own vote, rather than broader national framing."
+      "why": "\"Modest inconvenience\" clashes with the ninety-minute commute, and the reader supplies the severity the writer refuses to state outright."
     },
     {
       "n": 11,
       "course": "AP Biology",
-      "unit": "Endocrine System",
-      "stem": "Blood glucose rises after a meal. Which best describes the negative feedback loop that restores it?",
+      "unit": "Cellular respiration",
+      "stem": "Mitochondria are supplied with succinate and an inhibitor that blocks complex III of the electron transport chain. Which best predicts the result?",
       "options": [
-        "The pancreas releases glucagon, which triggers cells to take up glucose.",
-        "The liver releases insulin, which converts glucose to glycogen.",
-        "The pancreas releases insulin, and cells take up glucose, lowering the stimulus.",
-        "The adrenal glands release cortisol, which raises blood glucose further."
+        "Oxygen consumption increases because electrons bypass complex III.",
+        "ATP synthesis increases because the proton gradient is preserved.",
+        "Oxygen consumption falls to near zero because electrons cannot reach complex IV.",
+        "Oxygen consumption is unchanged because succinate donates electrons directly to complex IV."
       ],
       "answer": "C",
-      "why": "Insulin from pancreatic beta cells increases glucose uptake and storage. The fall in glucose then reduces insulin release, which is negative feedback; glucagon raises glucose."
+      "why": "Complex III is a required relay between the quinone pool and cytochrome c; blocking it stops electron flow to complex IV, so O2 can no longer be reduced."
     },
     {
       "n": 12,
       "course": "AP English Language",
-      "unit": "Counterargument",
-      "stem": "\"Critics say the fee will drive away low-income families. In fact the fee is waived for every family below the median income, a fact the critics' op-ed never mentions.\" The writer strengthens the argument mainly by",
+      "unit": "Metaphor and analogy",
+      "stem": "\"Testing every student to find the few who struggle is like draining the reservoir to find a leak.\" The analogy's weakness as an argument is that it",
       "options": [
-        "dismissing the critics as uninformed without evidence.",
-        "changing the subject from equity to revenue.",
-        "conceding that the fee is unfair to some families.",
-        "answering the objection with a specific fact that undercuts its premise."
+        "substitutes emotionally loaded language for factual support.",
+        "offers no comparison at all, only an unsupported assertion.",
+        "concedes the opposing position before the argument begins.",
+        "treats a screening measure that preserves the system as a destructive one."
       ],
       "answer": "D",
-      "why": "Naming the waiver answers the objection on its own ground rather than merely asserting that the critics are wrong."
+      "why": "A test is a low-cost screen that leaves the system intact, while draining a reservoir is irreversible; the analogy imports a cost the situation lacks."
     },
     {
       "n": 13,
       "course": "AP Biology",
-      "unit": "Osmoregulation",
-      "stem": "A patient's ADH secretion rises sharply. Which best predicts the effect on urine and blood?",
+      "unit": "Photosynthesis",
+      "stem": "A herbicide blocks the oxidation of water at photosystem II. Which immediate consequence is most likely?",
       "options": [
-        "Urine volume increases and blood osmolarity rises.",
-        "Urine becomes more dilute and blood pressure falls.",
-        "Aquaporins are removed from collecting duct cells, so less water is reabsorbed.",
-        "Aquaporins increase in collecting duct cells, so more water is reabsorbed and urine concentrates."
+        "ATP production rises because the proton gradient becomes uncoupled.",
+        "Carbon fixation accelerates because RuBP is regenerated faster.",
+        "Photosystem I reduces NADP+ at a higher rate than normal.",
+        "Electrons are not replaced in photosystem II, so linear electron flow slows."
       ],
       "answer": "D",
-      "why": "ADH inserts aquaporins in the collecting duct and raises water reabsorption, so urine volume falls and blood osmolarity drops."
+      "why": "Water is the electron donor for PSII; without its oxidation the reaction center cannot be re-reduced, so electron transport and the proton gradient collapse."
     },
     {
       "n": 14,
       "course": "AP English Language",
-      "unit": "Parallelism",
-      "stem": "\"The bill was written in a back room, passed in a voice vote, and signed at midnight.\" The parallel structure primarily",
+      "unit": "Statistical evidence",
+      "stem": "\"Ninety percent of parents surveyed said the new schedule helped their child. Clearly the schedule is working.\" Which question most directly exposes the weakness of the inference?",
       "options": [
-        "builds momentum toward a cumulative indictment of the process.",
-        "softens the criticism by spreading blame across three events.",
-        "introduces a counterargument the writer will later refute.",
-        "creates a comic contrast between the three settings."
+        "How many parents volunteered to respond, and do they resemble the wider parent body?",
+        "Did the survey use a rating scale or open-ended questions?",
+        "Were parents surveyed in person or online?",
+        "How long has the new schedule been in place at the school?"
       ],
       "answer": "A",
-      "why": "Three parallel passive constructions accumulate into a single judgment that the process was uniformly opaque."
+      "why": "Self-selected respondents who feel strongly can produce a high satisfaction rate that says nothing about the parents who did not answer."
     },
     {
       "n": 15,
       "course": "AP Biology",
-      "unit": "Phylogeny",
-      "stem": "Two species share a derived trait that a third, closely related species lacks. On a cladogram, the two that share the trait",
+      "unit": "Mendelian genetics",
+      "stem": "Two heterozygous tall pea plants are crossed and produce 400 offspring: 305 tall and 95 short. Which best explains the deviation from the expected 3:1 ratio?",
       "options": [
-        "are more distantly related because the trait is derived.",
-        "form a clade that excludes the third species.",
-        "must have acquired the trait independently, so no clade is defined.",
-        "are placed at the base of the tree as the outgroup."
+        "The short allele is dominant, so the expected ratio should be 1:3.",
+        "Sampling variation in a finite number of offspring produces deviations from expected ratios.",
+        "The tall allele must be linked to a lethal allele.",
+        "Both parents cannot be heterozygous if any short offspring appear."
       ],
       "answer": "B",
-      "why": "A shared derived trait, a synapomorphy, defines a clade: the species that share it group together to the exclusion of those that lack it."
+      "why": "Expected is 300 tall to 100 short; 305 to 95 falls inside normal sampling variation for 400 offspring, and the short offspring confirm both parents carry t."
     },
     {
       "n": 16,
       "course": "AP English Language",
-      "unit": "Commentary",
-      "stem": "A student writes: \"The author uses the word 'unprecedented' three times.\" The teacher marks it as insufficient commentary. The student should add",
+      "unit": "Cause and effect reasoning",
+      "stem": "\"Since the district added a late bus, tardies have dropped. The late bus is therefore the cause of better attendance.\" The reasoning is most vulnerable because it",
       "options": [
-        "a fourth example of the word's use.",
-        "a summary of the article's main claim.",
-        "an explanation of what the repetition makes the reader believe.",
-        "a definition of the word as a dictionary gives it."
+        "relies on a correlation observed in only one semester.",
+        "uses a key term in two different senses.",
+        "fails to exclude another concurrent change, such as a new start time, that could explain both.",
+        "generalizes from a sample that contains no students."
       ],
       "answer": "C",
-      "why": "Naming a device is evidence. Commentary must say what that choice does to the reader or to the argument's credibility."
+      "why": "Correlation permits an unmeasured common cause; without controlling for changes made at the same time, the bus cannot be credited with the drop."
     },
     {
       "n": 17,
       "course": "AP Biology",
-      "unit": "Population Genetics",
-      "stem": "A population of 200 birds is reduced to 12 by a storm, then recovers to 200. Compared with the original population, the recovered one most likely has",
+      "unit": "Enzyme kinetics",
+      "stem": "An enzyme's rate rises with substrate concentration and then plateaus. A competitive inhibitor is added at fixed concentration. Which kinetic change is expected?",
       "options": [
-        "the same allele frequencies, because the population size returned to 200.",
-        "higher genetic diversity, because the survivors reproduced rapidly.",
-        "lower genetic diversity and shifted allele frequencies from the bottleneck.",
-        "no change in allele frequency, because mutation rates stay constant."
+        "Vmax is unchanged, but a higher substrate concentration is needed to reach half of Vmax.",
+        "Vmax falls, and the substrate concentration at half-maximum is unchanged.",
+        "Both Vmax and the half-maximum substrate concentration fall.",
+        "The rate becomes independent of substrate concentration at every concentration."
       ],
-      "answer": "C",
-      "why": "A bottleneck samples a small subset of alleles. Recovery restores numbers, not the lost variation, and drift shifts the frequencies."
+      "answer": "A",
+      "why": "A competitive inhibitor occupies the active site reversibly, so enough substrate can outcompete it: Vmax is unchanged while the apparent Km rises."
     },
     {
       "n": 18,
       "course": "AP English Language",
-      "unit": "Transitions and Cohesion",
-      "stem": "\"The district cut arts first. ______, it now reports that enrollment in the magnet program has fallen by a third.\" Which transition best fits the logic of the two sentences?",
+      "unit": "Rhetorical questions",
+      "stem": "\"If the district cannot afford to heat the classrooms, how can it afford a new football stadium?\" The question functions as",
       "options": [
-        "Nevertheless",
-        "Predictably",
-        "Admittedly",
-        "Similarly"
+        "a request for information the writer does not possess.",
+        "an assertion of inconsistent priorities the audience is invited to accept as obvious.",
+        "a concession that the stadium spending may be justified.",
+        "an appeal to the reader's sympathy for student athletes."
       ],
       "answer": "B",
-      "why": "The second sentence reports an expected consequence of the first. \"Predictably\" marks that causal expectation, while \"Nevertheless\" would signal contrast."
+      "why": "Rhetorical questions assert rather than ask; the point is that the two spending choices cannot be reconciled, and the audience is meant to answer for itself."
     },
     {
       "n": 19,
       "course": "AP Biology",
-      "unit": "Mutation and Repair",
-      "stem": "An insertion of two nucleotides occurs early in a coding sequence. Which best predicts the effect on the protein?",
+      "unit": "Transcription",
+      "stem": "A single-base mutation in a gene's promoter reduces binding of RNA polymerase. Which is the most direct predicted effect?",
       "options": [
-        "A frameshift changes every downstream codon, usually producing a truncated or nonfunctional protein.",
-        "A single amino acid changes and the rest of the sequence is unaffected.",
-        "The reading frame is restored because two nucleotides were added.",
-        "The mRNA is not translated because insertions block ribosome binding."
+        "The mRNA gains an intron because splicing is disrupted.",
+        "The protein gains an extra amino acid because the reading frame shifts.",
+        "The gene's mRNA is produced at a lower rate, with no change to its coding sequence.",
+        "The protein is made at a normal rate but folds incorrectly."
       ],
-      "answer": "A",
-      "why": "Two inserted bases shift the reading frame, so every downstream codon is re-read and a premature stop usually appears. Frames reset only in multiples of three."
+      "answer": "C",
+      "why": "Promoters recruit RNA polymerase, so weaker binding lowers the rate of transcription initiation; the transcript's sequence, and thus the protein, is unchanged."
     },
     {
       "n": 20,
       "course": "AP English Language",
-      "unit": "Source Integration",
-      "stem": "In a synthesis essay, a student writes: \"According to Smith, funding fell 40%. According to Jones, funding fell 40%. According to Lee, funding fell 40%.\" The weakest feature of this passage is that it",
+      "unit": "Juxtaposition",
+      "stem": "\"The board approved the cuts at 9:04 p.m. By 9:06 the meeting had ended and the room was empty.\" The two sentences work mainly by",
       "options": [
-        "uses too few sources for the claim.",
-        "misrepresents the sources' data.",
-        "relies on a single dated statistic.",
-        "stacks agreement without saying what the agreement means for the argument."
+        "citing a formal record to establish the writer's credibility.",
+        "offering a causal explanation for the board's decision.",
+        "asking the reader to weigh two competing statistics.",
+        "letting the compressed timeline imply how little deliberation occurred."
       ],
       "answer": "D",
-      "why": "Three sources saying the same thing is one point repeated. Synthesis requires the writer to interpret why the convergence matters."
+      "why": "The two-minute gap does the arguing: a decision that fast reads as one that was not seriously debated, and the writer never has to say so."
     },
     {
       "n": 21,
       "course": "AP Biology",
-      "unit": "Plant Transport",
-      "stem": "A tall tree continues to move water to its canopy on a hot, dry day. Which mechanism best explains the upward movement?",
+      "unit": "Natural selection",
+      "stem": "On an island, beetles are dark or light and birds hunt them on pale sand. After twenty years, dark beetles are rare. Which best explains the change?",
       "options": [
-        "Root pressure alone pushes water up the full height of the trunk.",
-        "Active transport of water through xylem cells consumes ATP at each meter.",
-        "Phloem loading pulls water upward through companion cells.",
-        "Transpiration creates tension, and cohesion between water molecules pulls a continuous column up."
+        "Individual beetles became lighter in response to the sand and passed that change on.",
+        "The dark allele was lost because mutation stopped producing it.",
+        "Dark beetles moved to the sand and gradually turned light.",
+        "Light beetles survived and reproduced more, so the light allele rose in frequency."
       ],
       "answer": "D",
-      "why": "Evaporation at the leaves lowers pressure in the xylem, and cohesion plus adhesion keep the column intact so tension pulls water up. Root pressure is far too weak for tall trees."
+      "why": "Selection changes allele frequencies across generations through differential reproduction; individuals do not acquire a color change and transmit it."
     },
     {
       "n": 22,
       "course": "AP English Language",
-      "unit": "Appeals",
-      "stem": "\"Every parent in this room has done the math on a babysitter at 7 a.m. Nobody needs a study to tell them what that morning felt like.\" The dominant appeal is",
+      "unit": "Call to action",
+      "stem": "\"Write to the board before Thursday. The agenda is short, the room is small, and the members count the letters they receive.\" The last sentence mainly",
       "options": [
-        "pathos, grounded in a shared experience the audience recognizes.",
-        "logos, resting on a cited study of morning schedules.",
-        "ethos, established by the speaker's professional credentials.",
-        "logos, built from the arithmetic of childcare costs."
+        "gives a practical reason the requested action is likely to succeed.",
+        "restates the essay's thesis in more general terms.",
+        "concedes that the board may ignore the letters entirely.",
+        "introduces a counterargument the writer will go on to answer."
       ],
       "answer": "A",
-      "why": "The appeal works through shared feeling and memory rather than data or the speaker's authority, and it invokes \"the math\" only to set it aside."
+      "why": "Details about the agenda, the room and the letter count tell the reader the action will have effect, which is what makes the call credible."
     },
     {
       "n": 23,
       "course": "AP Biology",
-      "unit": "Viruses",
-      "stem": "A retrovirus enters a host cell and within hours the cell is producing viral proteins. Which best explains how the viral RNA is expressed?",
+      "unit": "Hardy-Weinberg",
+      "stem": "In a population of 1,000 individuals at Hardy-Weinberg equilibrium, 90 show the recessive phenotype. Approximately how many are heterozygous?",
       "options": [
-        "The viral RNA is translated directly by host ribosomes without any preliminary step.",
-        "The viral RNA is copied into DNA, which is then transcribed and translated by host machinery.",
-        "The host cell's DNA polymerase replicates the viral RNA into new genomes.",
-        "The viral proteins were already present in the capsid and are simply released."
+        "90",
+        "420",
+        "490",
+        "810"
       ],
       "answer": "B",
-      "why": "Reverse transcriptase makes DNA from the viral RNA, which integrates and is transcribed. Host ribosomes then translate the resulting viral mRNA."
+      "why": "q squared is 0.09, so q is 0.3 and p is 0.7; 2pq is 0.42, which is about 420 of the 1,000 individuals."
     },
     {
       "n": 24,
       "course": "AP English Language",
-      "unit": "Structure of an Argument",
-      "stem": "An essay opens with a vivid anecdote, states its thesis in the fourth paragraph, then spends three paragraphs on a counterargument before returning to evidence. The most likely cost of this structure is that",
+      "unit": "Syntax and sentence structure",
+      "stem": "\"The plan was cheap. The plan was fast. The plan was wrong.\" Compared with one compound sentence, this structure mainly",
       "options": [
-        "the anecdote will be forgotten by the time the thesis arrives.",
-        "the counterargument will be mistaken for the writer's position.",
-        "the thesis arrives late and the counterargument interrupts the case before it is built.",
-        "the evidence will be too close to the conclusion to persuade."
+        "softens the criticism by spreading it across three claims.",
+        "shows that the three qualities matter equally to the writer.",
+        "builds a pattern that makes the final short clause land as a verdict.",
+        "creates ambiguity about which quality the writer objects to."
       ],
       "answer": "C",
-      "why": "Delaying the thesis spends the reader's attention without direction, and placing the counterargument before the supporting case makes the argument feel defensive."
+      "why": "Repetition establishes a rhythm that the abrupt final clause breaks, so \"wrong\" reads as a conclusion rather than one item in a list."
     },
     {
       "n": 25,
       "course": "AP Biology",
-      "unit": "Cancer Biology",
-      "stem": "A mutation inactivates a tumor suppressor gene in a lung cell. Which best describes the most likely consequence?",
+      "unit": "Ecology and energy flow",
+      "stem": "Only about 10% of the energy at one trophic level is transferred to the next. Which best explains what happens to the other 90%?",
       "options": [
-        "The cell immediately divides without any further mutation.",
-        "Oncogenes are permanently silenced in that cell.",
-        "Cell cycle checkpoints lose a brake, letting damaged DNA be replicated.",
-        "The cell's DNA repair enzymes stop recognizing mutations entirely."
+        "Most is lost as heat from metabolism and remains in uneaten or undigested material.",
+        "It is destroyed when one organism is eaten by another.",
+        "It is converted entirely into biomass at the next trophic level.",
+        "Predators spend most of it growing new tissue for the following generation."
       ],
-      "answer": "C",
-      "why": "Tumor suppressors restrain division and checkpoints, so losing one removes a brake and permits replication of damage. Cancer typically requires multiple hits."
+      "answer": "A",
+      "why": "Cellular respiration releases much of the energy as heat, and much biomass is never consumed or assimilated, so little becomes predator tissue."
     },
     {
       "n": 26,
       "course": "AP English Language",
-      "unit": "Definition of Terms",
-      "stem": "\"The district calls the program 'optional.' A program that meets during the only free period of the day is optional the way a toll road is optional.\" The writer mainly",
+      "unit": "Anecdote as evidence",
+      "stem": "\"My daughter lost forty minutes of instruction every morning waiting for the late bus. That is what the new schedule does.\" The anecdote's main limitation is that it",
       "options": [
-        "provides a neutral definition of the term from the dictionary.",
-        "redefines 'optional' through an analogy that exposes the word as misleading.",
-        "concedes that the program is genuinely voluntary.",
-        "abandons the argument to make a joke about roads."
+        "uses emotional language instead of specific detail.",
+        "describes one case that may not represent the district's students.",
+        "contradicts the writer's own thesis about the schedule.",
+        "depends on a source the writer declines to name."
       ],
       "answer": "B",
-      "why": "The analogy redefines the term by showing that a constrained choice is not a real choice."
+      "why": "One family's experience can illustrate a claim but cannot establish how widespread the effect is; the argument needs aggregate data behind it."
     },
     {
       "n": 27,
       "course": "AP Biology",
-      "unit": "Metabolic Regulation",
-      "stem": "The end product of a metabolic pathway inhibits the enzyme that catalyzes the pathway's first step. This regulation",
+      "unit": "Symbiosis",
+      "stem": "A plant supplies carbohydrate to a nitrogen-fixing bacterium living in its roots, and the bacterium supplies the plant with usable nitrogen. This relationship is best classified as",
       "options": [
-        "prevents wasteful accumulation of the end product by shutting the pathway off early.",
-        "accelerates the pathway by removing a bottleneck.",
-        "has no effect unless the end product binds the active site.",
-        "acts only after the end product has been degraded."
+        "parasitism, because the plant loses carbohydrate it could otherwise use.",
+        "commensalism, because only the bacterium derives a benefit.",
+        "mutualism, because both partners gain a fitness benefit.",
+        "competition, because both require the same resources from the soil."
       ],
-      "answer": "A",
-      "why": "Feedback inhibition at the committed step conserves resources. The end product typically binds an allosteric site, not the active site."
+      "answer": "C",
+      "why": "Each partner receives a resource it could not easily obtain alone and both gain fitness, which is the definition of mutualism."
     },
     {
       "n": 28,
       "course": "AP English Language",
-      "unit": "Framing a Quote",
-      "stem": "A student writes: \"As the report notes, 'the program was discontinued.'\" The integration is weak mainly because the student",
+      "unit": "Definition argument",
+      "stem": "\"A program that meets during the only free period of the day is 'optional' the way a toll road is optional.\" The writer is arguing mainly about",
       "options": [
-        "quotes too long a passage from the report.",
-        "fails to name the report's author.",
-        "misstates the report's finding.",
-        "lets the quotation speak without saying what it shows."
+        "how the word \"optional\" should be applied in this case.",
+        "whether toll roads are an efficient way to fund transit.",
+        "the cost of the program compared with its measurable benefits.",
+        "whether students ought to have a free period at all."
       ],
-      "answer": "D",
-      "why": "A dropped quote outsources the analysis. The writer must explain what the discontinued program demonstrates for the argument."
+      "answer": "A",
+      "why": "The sentence disputes the district's use of \"optional\" by showing that a formally available choice is not a real one; the dispute is definitional."
     },
     {
       "n": 29,
       "course": "AP Biology",
-      "unit": "Fermentation",
-      "stem": "During intense exercise, a muscle cell's oxygen supply cannot keep pace with demand. Which best explains why fermentation occurs?",
+      "unit": "Water potential",
+      "stem": "A plant cell has a solute potential of minus 0.6 MPa and a pressure potential of plus 0.3 MPa. It is placed in pure water. Which best predicts water movement?",
       "options": [
-        "Fermentation produces far more ATP per glucose than aerobic respiration.",
-        "Fermentation allows the electron transport chain to run without oxygen.",
-        "Fermentation removes oxygen from the cell so glycolysis can restart.",
-        "Fermentation regenerates NAD+ so glycolysis can continue producing ATP."
+        "Water leaves the cell because the pressure potential is positive.",
+        "Water enters until pressure potential rises enough to make the cell's water potential zero.",
+        "No water moves, because a cell in pure water is already at equilibrium.",
+        "Water enters until the solute potential itself reaches zero."
       ],
-      "answer": "D",
-      "why": "Without oxygen the electron transport chain backs up. Regenerating NAD+ from pyruvate lets glycolysis keep making ATP, while aerobic respiration yields far more ATP per glucose."
+      "answer": "B",
+      "why": "Cell water potential is minus 0.3 MPa against 0 MPa outside, so water enters until turgor raises pressure potential to plus 0.6 MPa and the cell reaches zero."
     },
     {
       "n": 30,
       "course": "AP English Language",
-      "unit": "Concluding Move",
-      "stem": "An argument essay spends three paragraphs on cost data. Its final line reads: \"The question was never whether we could afford the library. It was whether we could afford to be the kind of town without one.\" The line works because it",
+      "unit": "Warrant and assumption",
+      "stem": "\"The school should cut the arts budget, because test scores are what the state measures.\" The argument depends on the unstated assumption that",
       "options": [
-        "elevates the stakes from budget to identity, giving the data a frame.",
-        "introduces new cost evidence the essay has not addressed.",
-        "concedes that the library is unaffordable.",
-        "summarizes the three paragraphs of cost data."
+        "arts classes have no measurable effect on any outcome the state tracks.",
+        "what the state measures should be the only basis for setting school priorities.",
+        "test scores in the district have been declining for several years.",
+        "the arts budget is larger than the athletics budget."
       ],
-      "answer": "A",
-      "why": "It reframes the issue as a question of civic identity, which is what the data were meant to serve. A conclusion should interpret rather than summarize."
+      "answer": "B",
+      "why": "The premise states only what is measured; the conclusion is about what should be cut, which requires assuming measurement alone sets priorities."
     },
     {
       "n": 31,
       "course": "AP Biology",
-      "unit": "Speciation",
-      "stem": "Two populations of the same beetle species are separated by a new river. After many generations they can no longer interbreed successfully. Which best describes what occurred?",
+      "unit": "Experimental design",
+      "stem": "A researcher observes that male birds sing more at dawn and hypothesizes that song attracts mates. Which design best isolates that hypothesis?",
       "options": [
-        "Sympatric speciation driven by a change in chromosome number.",
-        "Allopatric speciation: geographic isolation allowed divergence, then reproductive isolation evolved.",
-        "Convergent evolution produced two species from separate ancestors.",
-        "Speciation could not occur, since a river is not a genetic barrier."
+        "Count songs at dawn and again at noon on the same day.",
+        "Compare song rates between two species that share the same forest.",
+        "Record dawn song rates and correlate them with morning temperature.",
+        "Remove females from some territories and compare those males' song rates with control territories."
       ],
-      "answer": "B",
-      "why": "Geographic separation, then accumulated divergence, then reproductive isolation is allopatric speciation. Sympatry requires isolation without a physical barrier."
+      "answer": "D",
+      "why": "Manipulating the presence of mates isolates it as the variable; comparisons across time, species or temperature leave alternative explanations open."
     },
     {
       "n": 32,
       "course": "AP English Language",
-      "unit": "Point of View",
-      "stem": "\"We did what we were told. We filed the forms, kept the records, and answered every request. And when the review came, we were the ones called to account.\" The use of 'we' throughout mainly",
+      "unit": "Tone shift",
+      "stem": "\"For three paragraphs the writer praises the district's transparency. The fourth begins: 'And yet the minutes of that meeting are posted nowhere.'\" The shift mainly",
       "options": [
-        "distances the writer from the group being described.",
-        "creates an impersonal, procedural tone.",
-        "aligns the writer with the accused and builds a sense of shared grievance.",
-        "signals that the writer is an outside observer of the process."
+        "confirms the praise offered in the earlier paragraphs.",
+        "introduces a concession the writer will later abandon.",
+        "turns the earlier praise into evidence for a criticism of the district.",
+        "signals that the essay will change subjects entirely."
       ],
       "answer": "C",
-      "why": "The first-person plural places the writer inside the group, so the final clause reads as the group's collective injury."
+      "why": "The praise sets a standard, and the missing minutes show the district failing it, so the earlier material becomes the basis for the rebuke."
     },
     {
       "n": 33,
       "course": "AP Biology",
-      "unit": "Translation",
-      "stem": "A mutation changes a codon from GAA to GAG. Both code for glutamic acid. Which best describes this change?",
+      "unit": "Reproductive isolation",
+      "stem": "Two nearly identical salamander species live on opposite sides of a mountain range. Which observation most strongly indicates they are separate species under the biological species concept?",
       "options": [
-        "A frameshift mutation that alters all downstream codons.",
-        "A nonsense mutation that truncates the protein.",
-        "A silent mutation: the amino acid sequence is unchanged.",
-        "A missense mutation that substitutes a different amino acid."
+        "They occupy the same ecological niche on their respective slopes.",
+        "Their mitochondrial DNA differs at several loci.",
+        "They look nearly identical in body shape and coloration.",
+        "Brought together in the lab, they produce no viable offspring."
       ],
-      "answer": "C",
-      "why": "Different codons can specify the same amino acid, which is the degeneracy of the code, so the protein is unchanged: a silent substitution."
+      "answer": "D",
+      "why": "The biological species concept defines species by reproductive isolation; niche, DNA distance and appearance are consistent with separate species but do not demonstrate it."
     }
   ]
 }
