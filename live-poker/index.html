@@ -72,6 +72,7 @@ td .stack{font-variant-numeric:tabular-nums;font-weight:600}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
 .grid2 > div{display:flex;flex-direction:column;height:100%}
 .grid2 > div > .card:last-child{margin-top:auto}
+.grid2 > div > .card:first-child{flex:1 1 auto}   /* seat table stretches to meet the bot card's foot */
 @media(max-width:960px){.grid2{grid-template-columns:1fr}}
 .log{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:4px 0;max-height:420px;overflow-y:auto}
 .log .row{display:flex;gap:16px;padding:14px 20px;font-size:.86rem;line-height:1.6;border-bottom:1px solid var(--border)}
