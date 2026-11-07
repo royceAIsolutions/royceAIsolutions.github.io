@@ -70,7 +70,8 @@ td .stack{font-variant-numeric:tabular-nums;font-weight:600}
 .chip .s{color:var(--text-muted);font-variant-numeric:tabular-nums}
 .chip.you{border-color:var(--accent);background:var(--accent-bg)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
-.grid2 > div{display:flex;flex-direction:column;height:100%}
+.grid2 > div:not(.card){display:flex;flex-direction:column;height:100%}
+.grid2 > .card{height:100%}   /* the left column IS the card */
 .grid2 > div > .card:last-child{margin-top:auto}
 .grid2 > div > .card:first-child{flex:1 1 auto}   /* seat table stretches to meet the bot card's foot */
 @media(max-width:960px){.grid2{grid-template-columns:1fr}}
