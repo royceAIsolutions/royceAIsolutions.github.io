@@ -44,6 +44,9 @@ h1 .g{background:linear-gradient(135deg,#7c5cfc,#a78bfa 50%,#3ddc84);-webkit-bac
 .watch-url span{text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;font-weight:700;margin-right:6px}
 .watch-url a{color:var(--accent-light);text-decoration:none;font-variant-numeric:tabular-nums}
 .watch-url a:hover{text-decoration:underline}
+.watch-fallback{margin:0;font-size:.78rem;color:var(--text-muted);text-align:center}
+.watch-fallback a{color:var(--accent-light);text-decoration:none}
+.watch-fallback a:hover{text-decoration:underline}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:11px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid var(--border);transition:all .2s}
 .btn.primary{background:var(--accent);color:#fff;border-color:transparent}
 .btn.primary:hover{background:var(--accent-light);transform:translateY(-2px)}
@@ -74,7 +77,6 @@ td .stack{font-variant-numeric:tabular-nums;font-weight:600}
 .chip.you{border-color:var(--accent);background:var(--accent-bg)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
 .grid2 > div:not(.card){display:flex;flex-direction:column;height:100%}
-.grid2 > .card{height:100%}   /* the left column IS the card */
 .arena-side{padding:20px}
 .arena-title{font-size:1.15rem;font-weight:700;margin-top:6px}
 .arena-side .note{margin-top:8px}
@@ -106,7 +108,7 @@ td .stack{font-variant-numeric:tabular-nums;font-weight:600}
 .stand-gap .v{font-size:1.6rem;font-weight:800;font-variant-numeric:tabular-nums;color:var(--text)}
 .stand-gap .v.green{color:var(--green)}
 .stand-gap .note{margin:0;font-size:.78rem}
-@media(max-width:560px){.stand-hero{grid-template-columns:1fr}.stand-row{padding:13px 2px}.stand-row .v{font-size:1.15rem}}
+@media(max-width:560px){.stand-hero{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stand-row{padding:13px 2px}.stand-row .v{font-size:1.15rem}}
 /* kz-274 formatting: measured on a 390px phone the ledger table was 444px and the seat table 606px inside
    340px wrappers, so both forced a sideways scroll. Tighten cells, allow the long columns to wrap, and
    never let a table force the page wider than the screen. */
@@ -145,6 +147,8 @@ td .stack{font-variant-numeric:tabular-nums;font-weight:600}
   .grid2{gap:16px}
   .grid2 > div > .card:last-child{margin-top:16px}
   .players{gap:7px}
+  .cta-buttons{gap:8px;flex-wrap:nowrap}
+  .cta-buttons .btn{padding:11px 14px;font-size:.86rem;white-space:nowrap}
   .log .row{padding:12px 14px;gap:10px;font-size:.82rem}
   .chip{padding:6px 12px;font-size:.8rem}
 }
@@ -341,10 +345,13 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
       fb.href = arena.watch_fallback || 'https://openpoker.ai/room';
       fb.target = '_blank'; fb.rel = 'noopener';
       fb.textContent = 'All live tables';
-      note.appendChild(fb);
-      note.appendChild(document.createTextNode(arena.seat_baked_at
-        ? ' - seat checked ' + String(arena.seat_baked_at).slice(11,16) + ' UTC; if this table has no RoyceAI_Solutions, the agent has moved.'
-        : ' - if this table has no RoyceAI_Solutions, the agent has moved.'));
+      var fbLine = document.createElement('p');
+      fbLine.className = 'watch-fallback';
+      fbLine.appendChild(fb);
+      fbLine.appendChild(document.createTextNode(arena.seat_baked_at
+        ? ' \u00b7 seat checked ' + String(arena.seat_baked_at).slice(11,16) + ' UTC \u00b7 if this table has no RoyceAI_Solutions, the agent has moved'
+        : ' \u00b7 if this table has no RoyceAI_Solutions, the agent has moved'));
+      if(note.parentNode) note.parentNode.insertBefore(fbLine, note.nextSibling);
     }
     var u = document.getElementById('watchUrl');
     var urow = document.getElementById('watchUrlRow');
