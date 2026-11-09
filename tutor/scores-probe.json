@@ -171,5 +171,28 @@
     ],
     "run": "missed-probe-1",
     "src": "kaizen"
+  },
+  {
+    "student": "Kaizen Probe",
+    "correct": 15,
+    "total": 33,
+    "percent": 45,
+    "subject": "rescue",
+    "date": "2026-11-09",
+    "ts": 1794246802673,
+    "missed": [
+      {
+        "n": 12,
+        "q": "Which rhetorical choice advances the critique?",
+        "p": "C"
+      },
+      {
+        "n": 19,
+        "q": "frameshift insertion",
+        "p": "B"
+      }
+    ],
+    "run": "picked-probe-1",
+    "src": "kaizen"
   }
 ]
