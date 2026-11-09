@@ -254,7 +254,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v26-nov09-2026';
+var PAGE_VER='v27-nov09-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -513,7 +513,7 @@ function ansQ(btn){
     iqHist.push({role:"user",content:letter},{role:"assistant",content:reply});
     iqBusy=false;
     if(reply.match(/^Correct/i)){iqCorr++;}
-    else if(/^Incorrect/i.test(reply)&&iqCurQ){var mi={n:iqTot,q:iqCurQ,p:letter};if(iqCurOpts.length>=4)mi.o=iqCurOpts;if(iqMissed.length<8)iqMissed.push(mi);}
+    else if(/^Incorrect/i.test(reply)&&iqCurQ){var mi={n:iqTot,q:iqCurQ,p:letter};var km=reply.match(/(?:correct\s+)?answer\s+is\s*\(?([A-D])\b/i)||reply.match(/^\s*Incorrect\D{0,24}\(?([A-D])\)?[).:\u2014-]/i)||reply.match(/(?:^|\s)(?:answer|key)\s*[:\-]\s*\(?([A-D])\)?\b/i);if(km)mi.k=km[1].toUpperCase();if(iqCurOpts.length>=4)mi.o=iqCurOpts;if(iqMissed.length<8)iqMissed.push(mi);}
     // Check 80% mastery: minimum 33 questions, need 80%+ accuracy, max 50
     var pct=Math.round(iqCorr/Math.max(iqTot,1)*100);
     document.getElementById("quizProg").textContent="Q"+iqTot+"/"+iqTotal;
