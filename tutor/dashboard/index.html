@@ -254,7 +254,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v23-nov05-2026';
+var PAGE_VER='v24-nov09-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -421,9 +421,9 @@ function logout(){
   var lbx=document.getElementById("navLogoutBtn"); if(lbx) lbx.style.display="none";
 }
 
-var iqHist=[],iqSubj="",iqCorr=0,iqTot=0,iqTotal=33,iqBusy=false,iqRetry=0;
+var iqHist=[],iqSubj="",iqCorr=0,iqTot=0,iqTotal=33,iqBusy=false,iqRetry=0,iqCurQ="",iqMissed=[];
 function startInlineQuiz(s){
-  iqSubj=s;iqCorr=0;iqTot=0;iqHist=[];iqBusy=false;iqRetry=0;
+  iqSubj=s;iqCorr=0;iqTot=0;iqHist=[];iqBusy=false;iqRetry=0;iqCurQ="";iqMissed=[];
   document.getElementById("dashGrid").style.display="none";
   document.getElementById("quizHistory").style.display="none";
   document.getElementById("quizPanel").style.display="block";
@@ -469,6 +469,9 @@ function askQ(msg){
 }
 function showQ(reply){
   var qText=reply.replace(/^[A-D][)]\s*[^\n]*\n?/gm,"").trim();
+  // Keep the current stem so a wrong answer can be recorded with its question.
+  var stem=qText.replace(/^\s*(Correct|Incorrect)[^.]*\.\s*/i,"").split("\n")[0].trim();
+  if(stem.length>10) iqCurQ=stem.slice(0,120);
   document.getElementById("quizQ").innerHTML=qText.replace(/\n/g,"<br>");
   var opts=reply.match(/(?:^|[\n])([A-D][)]\s*[^\n*]+)/g);
   if(opts)opts=opts.map(function(o){return o.replace(/^[\n]/,"").trim();});
@@ -506,7 +509,8 @@ function ansQ(btn){
     var reply=d.reply||"No response";
     iqHist.push({role:"user",content:letter},{role:"assistant",content:reply});
     iqBusy=false;
-    if(reply.match(/^Correct/i))iqCorr++;
+    if(reply.match(/^Correct/i)){iqCorr++;}
+    else if(/^Incorrect/i.test(reply)&&iqCurQ){iqMissed.push({n:iqTot,q:iqCurQ});}
     // Check 80% mastery: minimum 33 questions, need 80%+ accuracy, max 50
     var pct=Math.round(iqCorr/Math.max(iqTot,1)*100);
     document.getElementById("quizProg").textContent="Q"+iqTot+"/"+iqTotal;
@@ -551,7 +555,7 @@ function finishQ(reply){
   document.getElementById("quizQ").innerHTML=reply.replace(/\n/g,"<br>");
   document.getElementById("quizA").innerHTML="<div style='color:var(--text-muted);padding:10px'>Saving score...</div>";
   var name=CU?CU.first+" "+CU.last:"Student";
-  fetch(API+"/save-score",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:name,correct:corr,total:tot,subject:iqSubj})})
+  fetch(API+"/save-score",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({student:name,correct:corr,total:tot,subject:iqSubj,missed:iqMissed.slice(0,40)})})
   .then(function(r){return r.json()})
   .then(function(){
     document.getElementById("quizA").innerHTML="<div style='color:var(--text-muted);padding:10px'>Updating stats...</div>";
