@@ -44,7 +44,7 @@
     "name": "Carter Koh",
     "subjects": "AP English Language, AP Biology, Algebra 2, US History, Physics",
     "active": true,
-    "today": "15/33 (45%)",
+    "today": "—",
     "mtd": "42/99 (42%)",
     "ytd": "897/1244 (72%)",
     "topics": "Algebra 2, Grade 11 Review",
@@ -63,17 +63,12 @@
         "color": "bad"
       },
       {
-        "label": "NCAA at risk",
-        "val": "AT RISK · GPA 3.19",
-        "color": "bad"
-      },
-      {
         "label": "Overall",
-        "val": "111/174 (64%)"
+        "val": "897/1244 (72%)"
       }
     ],
     "calories": false,
-    "week": "358/434 (82%)",
+    "week": "42/99 (42%)",
     "sessions": "19",
     "streak": "—",
     "grades": [
