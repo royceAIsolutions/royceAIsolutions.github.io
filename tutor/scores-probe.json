@@ -150,5 +150,26 @@
     "ts": 1794246343456,
     "run": "kz-1794246343",
     "src": "kaizen"
+  },
+  {
+    "student": "Kaizen Probe",
+    "correct": 15,
+    "total": 33,
+    "percent": 45,
+    "subject": "grade-rescue",
+    "date": "2026-11-09",
+    "ts": 1794246471050,
+    "missed": [
+      {
+        "n": 3,
+        "q": "An inhibitor blocks succinate dehydrogenase — predict the effect"
+      },
+      {
+        "n": 7,
+        "q": "Which rhetorical choice advances the critique?"
+      }
+    ],
+    "run": "missed-probe-1",
+    "src": "kaizen"
   }
 ]
