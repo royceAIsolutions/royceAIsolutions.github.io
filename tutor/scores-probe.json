@@ -194,5 +194,34 @@
     ],
     "run": "picked-probe-1",
     "src": "kaizen"
+  },
+  {
+    "student": "Kaizen Probe",
+    "correct": 12,
+    "total": 33,
+    "percent": 36,
+    "subject": "AP Biology",
+    "date": "2026-11-09",
+    "ts": 1794250883588,
+    "missed": [
+      {
+        "n": 9,
+        "q": "Which best explains the G1 arrest?",
+        "p": "A",
+        "o": [
+          "E2F is constitutively active",
+          "Hypophosphorylated Rb stays bound to E2F",
+          "CDK4/6 is degraded",
+          "Rb is hyperphosphorylated by CDK1"
+        ]
+      },
+      {
+        "n": 14,
+        "q": "no options captured",
+        "p": "C"
+      }
+    ],
+    "run": "opts-probe-1",
+    "src": "kaizen"
   }
 ]
