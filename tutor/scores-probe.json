@@ -234,5 +234,16 @@
     "ts": 1794271060171,
     "run": "kz-1794271059",
     "src": "kaizen"
+  },
+  {
+    "student": "Kaizen Probe",
+    "correct": 5,
+    "total": 5,
+    "percent": 100,
+    "subject": "probe",
+    "date": "2026-11-10",
+    "ts": 1794271306179,
+    "run": "kz-1794271305",
+    "src": "kaizen"
   }
 ]
