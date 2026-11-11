@@ -1,470 +1,394 @@
 {
-  "id": "rescue",
-  "title": "Grade Rescue",
-  "generated": "2026-11-11",
-  "source": "generated",
-  "questions": [
-    {
-      "n": 1,
-      "course": "AP Biology",
-      "unit": "Cell cycle regulation",
-      "stem": "Cultured human cells are treated with a drug that prevents cyclin B from being degraded. The cells enter mitosis and their chromosomes align, but they never divide. Which best explains the arrest?",
-      "options": [
-        "Cyclin B destruction is required for DNA replication, so the cells arrest before S phase.",
-        "Without cyclin B breakdown the spindle cannot attach to kinetochores, so chromosomes never align.",
-        "MPF activity stays high, so the cell cannot exit mitosis and complete division.",
-        "Cyclin B acts as a tumor suppressor, so its loss triggers a G1 checkpoint arrest."
-      ],
-      "answer": "C",
-      "why": "Degradation of cyclin B inactivates MPF (cyclin B-CDK1), which is required for mitotic exit; blocking it holds cells in mitosis even after chromosomes align."
-    },
-    {
-      "n": 2,
-      "course": "AP English Language",
-      "unit": "Rhetorical appeals",
-      "stem": "A district memo defends its new reading program by citing the assistant superintendent's thirty years in the classroom. It reports no student data and names no study. The memo's main weakness as an argument is that it",
-      "options": [
-        "substitutes the administrator's experience for evidence about whether the program works",
-        "cites quantitative findings without identifying their source",
-        "answers an objection that its opponents never actually raised",
-        "overstates how quickly reading scores can be expected to change"
-      ],
-      "answer": "A",
-      "why": "Experience is a weak form of ethos when the claim is about outcomes; the memo never supplies data on whether students learned more."
-    },
-    {
-      "n": 3,
-      "course": "AP Biology",
-      "unit": "DNA replication",
-      "stem": "A bacterial culture is grown for one generation in medium with a heavy nitrogen label, then shifted to light medium for one round of replication. What fraction of the DNA molecules after that second round contains one heavy and one light strand?",
-      "options": [
-        "One-quarter",
-        "One-half",
-        "All of them",
-        "None: every molecule is fully light"
-      ],
-      "answer": "B",
-      "why": "Semiconservative replication pairs each original heavy strand with a new light strand, so after one light round half the molecules are hybrid and half are entirely light."
-    },
-    {
-      "n": 4,
-      "course": "AP English Language",
-      "unit": "Thesis strength",
-      "stem": "Draft thesis: \"Later start times are good for teenagers in many ways.\" The teacher asks for a claim a school board could vote on and a skeptic could dispute. Which revision best meets that request?",
-      "options": [
-        "Later start times matter because sleep is important for teenagers and everyone should care about it.",
-        "Many districts have debated start times, and the issue remains controversial across the country.",
-        "Teenagers need more sleep, and schools should consider whether their schedules are part of the problem.",
-        "Shifting the high school start time to 8:30 would raise first-period attendance and reduce tardies, as three comparable districts found."
-      ],
-      "answer": "D",
-      "why": "A debatable claim names the change and the expected outcomes; the others are vague, unfalsifiable, or merely describe a debate."
-    },
-    {
-      "n": 5,
-      "course": "AP Biology",
-      "unit": "Transcription and translation",
-      "stem": "A single-base substitution changes a GAA codon to GAG, and the resulting protein works normally. Which best explains why the protein is unaffected?",
-      "options": [
-        "The change is silent: both codons specify the same amino acid, so the primary sequence is unchanged.",
-        "The substitution lies in an intron that is spliced out before translation.",
-        "The ribosome proofreads and restores the original base before elongation.",
-        "The substitution shifts the reading frame, but compensatory changes restore the protein."
-      ],
-      "answer": "A",
-      "why": "GAA and GAG both encode glutamate, so a third-position change is silent and leaves both the reading frame and the amino acid sequence intact."
-    },
-    {
-      "n": 6,
-      "course": "AP English Language",
-      "unit": "Syntax and sentence function",
-      "stem": "Passage: \"The committee met for four hours, reviewed two proposals, postponed the vote, scheduled another meeting, and adjourned without a recommendation.\" The sentence's structure mainly",
-      "options": [
-        "uses short, abrupt clauses to convey that the meeting was chaotic",
-        "interrupts itself with qualifications that weaken the main claim",
-        "piles up completed actions in one series to dramatize the committee's failure to decide",
-        "shifts from past to present tense to suggest the problem continues"
-      ],
-      "answer": "C",
-      "why": "A long parallel series of finished verbs, capped by \"without a recommendation,\" enacts the delay instead of merely reporting it."
-    },
-    {
-      "n": 7,
-      "course": "AP Biology",
-      "unit": "Gene regulation",
-      "stem": "In E. coli, a mutation in the lac operator prevents the repressor from binding. In medium with no lactose and no glucose, which best predicts expression of the lac operon?",
-      "options": [
-        "The operon is never transcribed because the repressor stays bound to the operator.",
-        "The operon is transcribed at a high level, because repression fails and low glucose allows CAP activation.",
-        "The operon is transcribed only after lactose binds the repressor and releases it.",
-        "The operon is transcribed, but its mRNA is not translated without lactose."
-      ],
-      "answer": "B",
-      "why": "An unusable operator means repression cannot occur, and with glucose absent cAMP-CAP activates the promoter, so transcription is high even without lactose."
-    },
-    {
-      "n": 8,
-      "course": "AP English Language",
-      "unit": "Concession and rebuttal",
-      "stem": "A student writes: \"Some will say busing costs rise, and that is a real concern, but three districts absorbed the change by shifting elementary start times.\" The move this sentence makes is to",
-      "options": [
-        "concede a legitimate objection and answer it with a concrete alternative",
-        "abandon the original claim in order to avoid conflict",
-        "introduce a counterargument and then leave it unanswered",
-        "shift the argument from costs to a discussion of elementary schools"
-      ],
-      "answer": "A",
-      "why": "It grants the objection's force and then rebuts it with specific implementation evidence rather than dismissing the concern."
-    },
-    {
-      "n": 9,
-      "course": "AP Biology",
-      "unit": "Biotechnology",
-      "stem": "A plasmid and a gene fragment are cut with the same restriction enzyme, joined with DNA ligase, and used to transform bacteria. Only cells taking up the recombinant plasmid grow on the selective plate. What is the essential role of cutting both with the same enzyme?",
-      "options": [
-        "It removes the antibiotic-resistance gene so transformed cells can be identified.",
-        "It separates DNA fragments by size before ligation.",
-        "It methylates the plasmid so bacterial enzymes ignore it.",
-        "It produces complementary sticky ends so ligase can join the fragment to the plasmid."
-      ],
-      "answer": "D",
-      "why": "One enzyme generates matching overhangs that base-pair, letting ligase seal the insert; selection then relies on an intact marker elsewhere on the plasmid."
-    },
-    {
-      "n": 10,
-      "course": "AP English Language",
-      "unit": "Figurative language",
-      "stem": "Passage: \"The new schedule is a bridge: it does not shorten the river, but it lets students cross to the other side of the day.\" The metaphor mainly works by",
-      "options": [
-        "claiming the schedule literally solves every problem students face",
-        "comparing the school day to water that must be drained away",
-        "framing the change as a way to cross a difficulty rather than to remove it",
-        "suggesting the change is temporary and will be dismantled"
-      ],
-      "answer": "C",
-      "why": "The bridge admits the obstacle remains (\"does not shorten the river\") while offering passage, sharpening the claim that the change helps without erasing the difficulty."
-    },
-    {
-      "n": 11,
-      "course": "AP Biology",
-      "unit": "Natural selection",
-      "stem": "A lizard population on fine sand is hunted by birds that search by sight. Over twenty years mean body length falls and the share of striped individuals drops sharply. Which best explains the change?",
-      "options": [
-        "The lizards needed to become smaller, so individuals shrank during their lifetimes and passed the change on.",
-        "Directional selection against larger, striped animals removed those phenotypes before they reproduced.",
-        "Genetic drift reduced variation, and body length changed by chance alone.",
-        "Stabilizing selection favored the largest animals and raised mean length."
-      ],
-      "answer": "B",
-      "why": "Heritable variation in size and patterning, filtered by visual predation across generations, is directional selection; shrinkage acquired in a lifetime is not inherited."
-    },
-    {
-      "n": 12,
-      "course": "AP English Language",
-      "unit": "Logical fallacies",
-      "stem": "Passage: \"We cannot adopt a later start time, because our current start time is the one we have always used, and changing it would mean the schedule was wrong before.\" The reasoning is flawed because it",
-      "options": [
-        "treats the age of a policy as evidence of its merit and assumes change implies past error",
-        "generalizes from a sample too small to support any conclusion",
-        "attacks the character of the people proposing the change",
-        "confuses correlation between two events with causation"
-      ],
-      "answer": "A",
-      "why": "It appeals to tradition and adds a false implication that reform concedes past failure; neither addresses whether a later start works."
-    },
-    {
-      "n": 13,
-      "course": "AP Biology",
-      "unit": "Population ecology",
-      "stem": "A lake's fish are sampled by marking 200 individuals and releasing them. A later catch of 400 fish holds 40 marked ones. Which estimate of population size is best, and which assumption matters most?",
-      "options": [
-        "About 8,000, assuming no fish enter or leave the lake",
-        "About 200, assuming every fish is caught at most once",
-        "About 2,000, assuming marked and unmarked fish mix and are equally catchable",
-        "About 2,000, assuming marked fish die at a higher rate than unmarked ones"
-      ],
-      "answer": "C",
-      "why": "Lincoln-Petersen gives (200 x 400)/40 = 2,000; the estimate holds only if marks are retained and marked fish are as catchable as unmarked ones."
-    },
-    {
-      "n": 14,
-      "course": "AP English Language",
-      "unit": "Repetition and parallelism",
-      "stem": "Passage: \"We have waited for a plan. We have waited for a budget. We have waited for a single honest sentence about next year.\" The repetition mainly",
-      "options": [
-        "creates a balanced, neutral tone that keeps the writer's view hidden",
-        "signals that the writer has lost track of the argument",
-        "parodies bureaucratic language by using it ironically",
-        "builds momentum that turns a list of delays into an accusation"
-      ],
-      "answer": "D",
-      "why": "Anaphora escalates, and the third item breaks the pattern with a sharper demand, converting repetition into an indictment."
-    },
-    {
-      "n": 15,
-      "course": "AP Biology",
-      "unit": "Ecosystem energetics",
-      "stem": "A grassland's producers fix 40,000 kJ in a year; herbivores assimilate 4,000 kJ and carnivores 400 kJ. Which best explains the pattern across levels?",
-      "options": [
-        "Energy is destroyed at each level, so higher trophic levels cannot persist.",
-        "About 10% of energy passes between levels; the rest is lost mainly as heat through respiration.",
-        "Carnivores assimilate less only because they are smaller, not because of energy loss.",
-        "The 10% figure reflects indigestible biomass rather than respiration losses."
-      ],
-      "answer": "B",
-      "why": "Roughly a tenth of energy reaches the next level; respiration, heat, and unassimilated material account for the rest, which caps food-chain length."
-    },
-    {
-      "n": 16,
-      "course": "AP English Language",
-      "unit": "Rhetorical questions",
-      "stem": "Passage: \"If the district can find money for a scoreboard, why can it not find money for lab equipment?\" The question's main rhetorical function is to",
-      "options": [
-        "point to an inconsistency in spending priorities without stating the accusation outright",
-        "request information the writer genuinely needs before continuing",
-        "concede that the district's budget decisions are reasonable",
-        "conclude the argument by summarizing the evidence already presented"
-      ],
-      "answer": "A",
-      "why": "No answer is sought; the reader is invited to supply the indictment, which makes the charge harder to refute head-on."
-    },
-    {
-      "n": 17,
-      "course": "AP Biology",
-      "unit": "Immune system",
-      "stem": "A student is exposed to measles virus as a child and again fifteen years later. The second exposure produces a much faster and larger antibody response. Which best explains the difference?",
-      "options": [
-        "The second exposure delivers a larger dose of antigen than the first.",
-        "Innate immunity alone accounts for the faster response.",
-        "The virus mutates so the immune system recognizes it more easily.",
-        "Memory B cells from the first exposure proliferate and differentiate quickly on re-exposure."
-      ],
-      "answer": "D",
-      "why": "Adaptive immunity retains memory B and T cells; their rapid clonal expansion and antibody production define the secondary response."
-    },
-    {
-      "n": 18,
-      "course": "AP English Language",
-      "unit": "Evidence selection",
-      "stem": "Claim: \"The new tutoring block improved student confidence.\" Which evidence best supports this claim?",
-      "options": [
-        "A rise in the school's average test scores in the tutored subject",
-        "An interview with the principal describing the program as successful",
-        "A before-and-after survey in which students rate their confidence in the tutored subject",
-        "The number of students who signed up for the tutoring block"
-      ],
-      "answer": "C",
-      "why": "The claim is about confidence, so a direct self-report measure before and after fits; test scores address achievement and enrollment addresses uptake."
-    },
-    {
-      "n": 19,
-      "course": "AP Biology",
-      "unit": "Osmoregulation",
-      "stem": "A desert mammal produces very concentrated urine. Compared with one producing dilute urine, which feature of its kidney is most likely enhanced?",
-      "options": [
-        "A larger glomerulus, which filters more water into the capsule",
-        "A longer loop of Henle, which steepens the medullary osmotic gradient",
-        "Fewer aquaporins in the collecting duct",
-        "Higher blood pressure in the afferent arteriole"
-      ],
-      "answer": "B",
-      "why": "A long loop of Henle builds a steeper gradient so more water can leave the collecting duct under ADH; more aquaporins, not fewer, allow that concentration."
-    },
-    {
-      "n": 20,
-      "course": "AP English Language",
-      "unit": "Irony and understatement",
-      "stem": "Passage: \"The consultant's report ran three hundred pages. Its recommendation, on page 287, was that the district should perhaps consider thinking about reviewing its options.\" The understatement mainly",
-      "options": [
-        "mocks the report's evasiveness by making its central advice sound absurdly tentative",
-        "praises the report for the caution of its recommendation",
-        "complains that the report was too short to be useful",
-        "shifts the passage's focus from the report to the district's budget"
-      ],
-      "answer": "A",
-      "why": "The stacked hedges understate the recommendation so heavily that the timidity itself becomes the target of the sentence."
-    },
-    {
-      "n": 21,
-      "course": "AP Biology",
-      "unit": "Muscle contraction",
-      "stem": "A muscle fiber is stimulated, but no calcium is released from the sarcoplasmic reticulum. Which best describes the result?",
-      "options": [
-        "Acetylcholine cannot cross the synaptic cleft, so the fiber never depolarizes.",
-        "ATP hydrolysis stops, so myosin heads remain permanently attached.",
-        "The sarcomere shortens normally because contraction does not require calcium.",
-        "Myosin heads cannot bind actin because tropomyosin never moves, so no power stroke occurs."
-      ],
-      "answer": "D",
-      "why": "Calcium binding to troponin shifts tropomyosin off actin's binding sites; without it cross-bridge cycling cannot start even though the fiber is depolarized."
-    },
-    {
-      "n": 22,
-      "course": "AP English Language",
-      "unit": "Qualifying a claim",
-      "stem": "An essay has shown that later start times raised attendance in three districts. Which closing sentence states that finding with appropriate qualification?",
-      "options": [
-        "Later start times always raise attendance in every school that adopts them.",
-        "Later start times are the single most effective reform available to schools.",
-        "In the three districts studied, a later start time was associated with higher attendance.",
-        "Attendance cannot be improved by any other means, as these districts show."
-      ],
-      "answer": "C",
-      "why": "Naming the sample and using \"associated with\" matches the evidence; the other options convert a limited finding into universal claims."
-    },
-    {
-      "n": 23,
-      "course": "AP Biology",
-      "unit": "Endomembrane system",
-      "stem": "A mutation prevents vesicles from fusing with the Golgi apparatus. Which protein's route to its destination would be most directly disrupted?",
-      "options": [
-        "A ribosome subunit assembled in the nucleolus",
-        "A secreted digestive enzyme",
-        "A membrane protein inserted into the inner mitochondrial membrane",
-        "A cytosolic enzyme that acts in glycolysis"
-      ],
-      "answer": "B",
-      "why": "Secretory proteins travel ER to Golgi to plasma membrane by vesicle fusion; nuclear, cytosolic, and mitochondrial proteins use separate import routes."
-    },
-    {
-      "n": 24,
-      "course": "AP English Language",
-      "unit": "Function of detail",
-      "stem": "Passage: \"The ballot measure was defeated by 211 votes. In the room where the count was held, a coffee cup still sat on the table from the night before.\" The second sentence mainly",
-      "options": [
-        "adds a detail that makes the loss feel intimate rather than statistical",
-        "provides the evidence that the vote was miscounted",
-        "introduces a new argument against the measure",
-        "corrects the number given in the first sentence"
-      ],
-      "answer": "A",
-      "why": "The stray cup is unargued detail that turns an abstract margin into a scene, heightening the sense of a narrowly missed outcome."
-    },
-    {
-      "n": 25,
-      "course": "AP Biology",
-      "unit": "Photosynthetic light reactions",
-      "stem": "A herbicide blocks electron flow from photosystem II to the plastoquinone pool. Which immediate consequence is most likely?",
-      "options": [
-        "Carbon fixation increases because electrons are conserved.",
-        "Water splitting accelerates to compensate for the block.",
-        "ATP and NADPH production fall, and the Calvin cycle slows for lack of both.",
-        "Photosystem I is destroyed because it absorbs too much light."
-      ],
-      "answer": "C",
-      "why": "Interrupting the chain between PSII and the quinone pool stops proton pumping and NADPH production, starving the Calvin cycle of both inputs."
-    },
-    {
-      "n": 26,
-      "course": "AP English Language",
-      "unit": "Appeals in context",
-      "stem": "Passage: \"These are not statistics. They are the names of eleven students who stopped coming to first period.\" The sentence's main move is from",
-      "options": [
-        "emotional appeal to statistical evidence, in order to seem objective",
-        "a claim about attendance to a claim about curriculum",
-        "the writer's opinion to the district's official position",
-        "abstract numbers to individual persons, in order to make the cost concrete"
-      ],
-      "answer": "D",
-      "why": "It rejects figures in favor of named individuals, trading abstraction for pathos that makes the consequence visible."
-    },
-    {
-      "n": 27,
-      "course": "AP Biology",
-      "unit": "Cancer genetics",
-      "stem": "A cell line carries one mutated copy of a proto-oncogene and one mutated copy of a tumor-suppressor gene. Which best explains the likely effect of each mutation?",
-      "options": [
-        "Both mutations require a second hit before the cell divides faster.",
-        "The oncogene mutation can act dominantly to drive growth; the suppressor mutation typically requires loss of the second copy.",
-        "Neither mutation affects the cell until both copies of both genes are lost.",
-        "Oncogenes restrain division and tumor suppressors promote it, so the effects cancel."
-      ],
-      "answer": "B",
-      "why": "Gain-of-function oncogene alleles are dominant, while tumor suppressors usually need both alleles inactivated, the classic two-hit logic."
-    },
-    {
-      "n": 28,
-      "course": "AP English Language",
-      "unit": "Sentence variety",
-      "stem": "Passage: \"That the district knew about the leak for months, filed no report, and told parents nothing, this is what the audit finally made public.\" The sentence's main effect is to",
-      "options": [
-        "hold the indictment back until the end, making the delay itself part of the point",
-        "state the accusation immediately so the reader is not kept waiting",
-        "use a series of short fragments to convey panic",
-        "avoid naming the district in order to protect the writer"
-      ],
-      "answer": "A",
-      "why": "The periodic structure suspends the main clause behind a long list of failures, so the weight lands on the final revelation."
-    },
-    {
-      "n": 29,
-      "course": "AP Biology",
-      "unit": "Synaptic transmission",
-      "stem": "A drug blocks acetylcholinesterase at the neuromuscular junction. Which best predicts the effect on muscle contraction?",
-      "options": [
-        "Acetylcholine is never released, so the muscle cannot be stimulated at all.",
-        "Receptors are blocked, so acetylcholine cannot bind.",
-        "The muscle relaxes faster because acetylcholine is cleared more quickly.",
-        "Acetylcholine persists in the cleft, so the muscle stays depolarized and may fatigue."
-      ],
-      "answer": "D",
-      "why": "Without hydrolysis the transmitter lingers and keeps receptors open, preventing repolarization and normal relaxation between stimuli."
-    },
-    {
-      "n": 30,
-      "course": "AP English Language",
-      "unit": "False dilemma",
-      "stem": "Passage: \"Either we keep the current start time or we accept that our students will never be prepared for college.\" The sentence's flaw is that it",
-      "options": [
-        "relies on an expert who is not named",
-        "draws a conclusion from too few examples",
-        "presents two extremes as the only alternatives, excluding middle options",
-        "confuses the order of events with cause and effect"
-      ],
-      "answer": "C",
-      "why": "It is a false dilemma: other schedules exist, so the argument's force depends on a binary the passage never defends."
-    },
-    {
-      "n": 31,
-      "course": "AP Biology",
-      "unit": "Gas exchange",
-      "stem": "As blood passes through exercising muscle, hemoglobin's oxygen saturation drops steeply while oxygen partial pressure falls only slightly. Which property best explains this?",
-      "options": [
-        "A linear binding curve, in which saturation falls in direct proportion to oxygen partial pressure",
-        "A sigmoid dissociation curve shifted right by falling pH and rising carbon dioxide, making unloading steep in that range",
-        "Higher temperature increasing hemoglobin's affinity for oxygen",
-        "Hemoglobin binding carbon dioxide at the same sites as oxygen"
-      ],
-      "answer": "B",
-      "why": "Cooperativity gives a sigmoid curve, and the Bohr shift moves it right so saturation falls sharply over a narrow range of oxygen pressure."
-    },
-    {
-      "n": 32,
-      "course": "AP English Language",
-      "unit": "Opening strategy",
-      "stem": "An op-ed on school start times begins: \"At 7:15 on a Tuesday, the parking lot is full of idling cars and sleeping drivers.\" The opening mainly serves to",
-      "options": [
-        "state the writer's thesis in a form the reader can debate immediately",
-        "cite evidence from a study on adolescent sleep",
-        "acknowledge the strongest objection to the writer's position",
-        "ground the issue in a concrete scene before the argument is named"
-      ],
-      "answer": "D",
-      "why": "The scene supplies an image the reader can see, delaying the claim so the argument arrives with the problem already felt."
-    },
-    {
-      "n": 33,
-      "course": "AP Biology",
-      "unit": "Experimental design",
-      "stem": "Researchers test whether a fertilizer increases algal growth. One tank receives fertilizer, a second receives none, and both sit under identical lights. After two weeks the fertilized tank looks greener. How should the conclusion that fertilizer caused the difference be evaluated?",
-      "options": [
-        "It holds only if the tanks were otherwise identical and the response was measured, not judged by eye.",
-        "It holds regardless, because the two tanks differed in exactly one way.",
-        "It fails, because algal growth cannot be measured.",
-        "It fails, because a control tank was used instead of a second treatment."
-      ],
-      "answer": "A",
-      "why": "A single-variable comparison supports causation only with replication and a measured response; an impression of greenness is not a measurement."
-    }
-  ]
+ "id": "rescue",
+ "title": "Grade Rescue",
+ "generated": "2026-11-11",
+ "source": "generated",
+ "questions": [
+  {
+   "n": 1, "course": "AP Biology", "unit": "Cell cycle regulation",
+   "stem": "A researcher fuses a cell arrested in G2 with a cell in M phase. The G2 nucleus begins mitosis immediately, without copying its DNA. Which conclusion does this result best support?",
+   "options": [
+    "Chromosomes must be duplicated before any nucleus can enter mitosis.",
+    "The M-phase nucleus supplies the G2 cell with extra chromosomes.",
+    "Molecules in the M-phase cytoplasm can drive a nucleus into mitosis.",
+    "G2 arrest is caused by the absence of nutrients in the culture medium."
+   ],
+   "answer": "C",
+   "why": "The G2 nucleus skips S phase yet still enters mitosis, so the trigger is a cytoplasmic factor rather than fresh DNA."
+  },
+  {
+   "n": 2, "course": "AP English Language", "unit": "Rhetorical appeals",
+   "stem": "A hospital letter to donors reads: \"Last winter, eleven children in this county waited for a bed we did not have.\" Which appeal does this sentence primarily make?",
+   "options": [
+    "Pathos, because it frames a budget problem as a specific human cost.",
+    "Logos, because a statistic is by definition a logical proof.",
+    "Ethos, because the hospital speaks as a medical authority.",
+    "Kairos, because it names a particular season of the year."
+   ],
+   "answer": "A",
+   "why": "The number exists to put children in front of the reader, so the appeal is emotional rather than evidentiary."
+  },
+  {
+   "n": 3, "course": "AP Biology", "unit": "DNA replication",
+   "stem": "A drug blocks helicase in a dividing cell. Which immediate consequence should appear during S phase?",
+   "options": [
+    "Primase adds RNA primers to separated strands as usual.",
+    "Replication forks stall, because the duplex cannot be unwound.",
+    "DNA polymerase proofreads faster to compensate for the block.",
+    "Ligase joins Okazaki fragments more quickly than normal."
+   ],
+   "answer": "B",
+   "why": "Helicase separates the strands; without unwinding there is no single-stranded template, so fork progression stops."
+  },
+  {
+   "n": 4, "course": "AP English Language", "unit": "Thesis strength",
+   "stem": "Draft thesis: \"Social media is bad for teenagers.\" Which revision would most strengthen it for an AP argument essay?",
+   "options": [
+    "Social media is very bad for teenagers in many different ways.",
+    "Teenagers use social media for hours every day, and that is bad.",
+    "Social media is bad for teenagers because it is unhealthy and distracting.",
+    "Because social platforms reward constant comparison, they raise anxiety in teenagers who measure their worth by engagement."
+   ],
+   "answer": "D",
+   "why": "A defensible thesis names a mechanism and a consequence that can be argued; vague adjectives add words without making a claim."
+  },
+  {
+   "n": 5, "course": "AP Biology", "unit": "Transcription and translation",
+   "stem": "A single base substitution changes a codon from UAC to UAA in the middle of an mRNA. What is the most likely effect on the protein?",
+   "options": [
+    "One amino acid is replaced by a similar one, leaving function mostly intact.",
+    "The reading frame shifts, changing every amino acid after the mutation.",
+    "Translation stops early, producing a shortened and usually nonfunctional protein.",
+    "Nothing changes, because the genetic code is redundant at that position."
+   ],
+   "answer": "C",
+   "why": "UAA is a stop codon, so the ribosome terminates there; a nonsense mutation truncates the protein."
+  },
+  {
+   "n": 6, "course": "AP English Language", "unit": "Syntax and sentence function",
+   "stem": "The report noted the delays, the overruns, the missing signatures, the rewritten budget, and the resignations, and then, in one line, recommended approval. What is the effect of that long list followed by the short clause?",
+   "options": [
+    "The list proves the recommendation follows from the evidence.",
+    "The accumulated list makes the brief recommendation feel abrupt and unearned.",
+    "The short clause calms the passage and signals a fair conclusion.",
+    "The list is a digression that the sentence structure treats as unimportant."
+   ],
+   "answer": "B",
+   "why": "The contrast of bulk evidence against a single line of conclusion reads as a dismissal of the findings."
+  },
+  {
+   "n": 7, "course": "AP Biology", "unit": "Gene regulation",
+   "stem": "In E. coli, glucose is absent and lactose is present. Which pairing correctly describes CAP and the lac repressor?",
+   "options": [
+    "CAP is bound to the promoter and the repressor is off the operator, so transcription is high.",
+    "CAP is off the promoter and the repressor is on the operator, so transcription is low.",
+    "Both CAP and the repressor are bound, so transcription stays at a moderate rate.",
+    "Neither protein binds DNA, so transcription depends only on RNA polymerase."
+   ],
+   "answer": "A",
+   "why": "Low glucose raises cAMP so CAP binds and activates, and lactose removes the repressor; both conditions favor strong transcription."
+  },
+  {
+   "n": 8, "course": "AP English Language", "unit": "Concession and rebuttal",
+   "stem": "An essay argues that a four-day school week helps rural districts. Which sentence most strengthens the argument by conceding a real objection?",
+   "options": [
+    "Some parents object to the schedule, but their concerns are exaggerated.",
+    "Four-day weeks are popular with students in the districts that use them.",
+    "Most rural districts that tried the schedule report higher attendance.",
+    "A four-day week costs more in childcare, but districts that lengthened the other days offset it with lower transport and substitute spending."
+   ],
+   "answer": "D",
+   "why": "It grants the practical cost and answers it with a measured offset, which builds credibility rather than dodging the objection."
+  },
+  {
+   "n": 9, "course": "AP Biology", "unit": "Biotechnology",
+   "stem": "A plasmid digested with one enzyme gives fragments of 1.2, 2.4, and 3.6 kb. A digest with two enzymes gives 1.2, 1.0, 1.4, and 3.6 kb. What does the second digest show?",
+   "options": [
+    "The plasmid lost 1.2 kb of DNA between the two digests.",
+    "Both enzymes cut at one site, producing overlapping fragments.",
+    "One new enzyme cuts inside the 2.4 kb fragment while the other leaves it alone.",
+    "The 3.6 kb fragment contains two recognition sites for the new enzymes."
+   ],
+   "answer": "C",
+   "why": "The 2.4 kb band is replaced by 1.0 and 1.4, which sum to 2.4, and the 3.6 kb band is untouched."
+  },
+  {
+   "n": 10, "course": "AP English Language", "unit": "Logical fallacies",
+   "stem": "Students say the dress code targets them unfairly. The principal replies that the school has never banned a single student from wearing clothes. Which reasoning error does the reply commit?",
+   "options": [
+    "Circular reasoning, because the conclusion restates the premise.",
+    "Straw man, because it answers a claim no one made.",
+    "Post hoc, because it assumes an earlier event caused a later one.",
+    "Hasty generalization, because it draws a rule from one case."
+   ],
+   "answer": "B",
+   "why": "The students complained about unfair application, not a ban, so the reply substitutes an easier claim and defeats that instead."
+  },
+  {
+   "n": 11, "course": "AP Biology", "unit": "Meiosis and nondisjunction",
+   "stem": "A diploid cell with 2n = 6 completes meiosis and produces four gametes: two with 4 chromosomes and two with 2. Crossing over occurred normally. Which event explains this pattern?",
+   "options": [
+    "Nondisjunction of one homologous pair at meiosis I, sending both homologs to one pole.",
+    "Nondisjunction of sister chromatids at meiosis II in one of the two cells.",
+    "Failure of cytokinesis after telophase II, leaving a cell with extra nuclei.",
+    "Premature separation of sister chromatids during anaphase I of meiosis."
+   ],
+   "answer": "A",
+   "why": "Meiosis I separates homologs; when a pair fails, both products of that division carry the extra chromosome and both of the other are short one."
+  },
+  {
+   "n": 12, "course": "AP English Language", "unit": "Evidence selection",
+   "stem": "A student argues that congestion pricing reduced traffic in a city center. Which evidence would most directly support that claim?",
+   "options": [
+    "A statement from the mayor who championed the policy.",
+    "A comparison of congestion pricing programs in several other countries.",
+    "A survey in which drivers say traffic feels better than before.",
+    "A count of vehicles in the center in the year before and the year after the charge took effect."
+   ],
+   "answer": "D",
+   "why": "The claim concerns a change in traffic, so the strongest evidence measures the outcome itself before and after."
+  },
+  {
+   "n": 13, "course": "AP Biology", "unit": "Mendelian genetics",
+   "stem": "A testcross of a tall, round-seeded plant produces four phenotypic classes in roughly equal numbers. What does this result establish about that parent?",
+   "options": [
+    "The parent is homozygous for both traits, and the genes are linked.",
+    "The parent is homozygous for height and heterozygous for seed shape.",
+    "The parent is heterozygous for both traits, and the genes assort independently.",
+    "The parent is heterozygous for both traits, and the genes are completely linked."
+   ],
+   "answer": "C",
+   "why": "Equal numbers of all four classes is the 1:1:1:1 signature of a double heterozygote with unlinked genes; complete linkage would give only parental classes."
+  },
+  {
+   "n": 14, "course": "AP English Language", "unit": "Irony and understatement",
+   "stem": "After the third review found the same accounting error, the board memo observed that \"the process may benefit from minor refinement.\" What does the understatement accomplish?",
+   "options": [
+    "It signals that the problem is far more serious than the wording admits, creating dry criticism.",
+    "It shows that the board did not understand the reviews' findings.",
+    "It softens the memo so the error can be corrected without blame.",
+    "It suggests that the process needs no change at all."
+   ],
+   "answer": "A",
+   "why": "Understatement works by the gap between trivial wording and repeated failure, which is where the irony sits."
+  },
+  {
+   "n": 15, "course": "AP Biology", "unit": "Hardy-Weinberg",
+   "stem": "In a population at Hardy-Weinberg equilibrium, 64 percent of individuals show the dominant phenotype. What fraction of the population is heterozygous?",
+   "options": ["0.16", "0.48", "0.32", "0.64"],
+   "answer": "B",
+   "why": "q squared is 0.36, so q is 0.6 and p is 0.4; the heterozygote fraction is 2pq, which is 0.48."
+  },
+  {
+   "n": 16, "course": "AP English Language", "unit": "Figurative language",
+   "stem": "The proposal arrived as a suit of armor: impressive at a glance, and impossible to move. What does the metaphor imply about the proposal?",
+   "options": [
+    "It was well researched and carefully defended.",
+    "It was designed to protect people outside the organization.",
+    "It was admired by everyone who read it.",
+    "It looked strong but left no room for action."
+   ],
+   "answer": "D",
+   "why": "The metaphor pairs visual impressiveness with immobility, which is the writer's judgment: impressive form, unusable plan."
+  },
+  {
+   "n": 17, "course": "AP Biology", "unit": "Meiosis and nondisjunction",
+   "stem": "A cell with 2n = 8 finishes meiosis I normally and arrests at metaphase II. How many chromosomes and chromatids are in each of the two cells at that point?",
+   "options": [
+    "8 chromosomes, 8 chromatids",
+    "4 chromosomes, 4 chromatids",
+    "4 chromosomes, 8 chromatids",
+    "2 chromosomes, 4 chromatids"
+   ],
+   "answer": "C",
+   "why": "Meiosis I halves the chromosome number to 4, but each chromosome still has two sister chromatids until anaphase II."
+  },
+  {
+   "n": 18, "course": "AP English Language", "unit": "Appeals in context",
+   "stem": "A district memo to school principals opens with \"As you know, our attendance data have been falling.\" Which choice best explains that opening?",
+   "options": [
+    "It insults the audience by implying they should already have known.",
+    "It invokes shared expertise, aligning the writer with the readers before a request.",
+    "It establishes the writer as an outsider who needs the principals' help.",
+    "It admits that the district bears no responsibility for attendance."
+   ],
+   "answer": "B",
+   "why": "As you know attributes shared knowledge to the audience, a credibility move that sets up compliance with what follows."
+  },
+  {
+   "n": 19, "course": "AP Biology", "unit": "Mendelian genetics",
+   "stem": "A tall pea plant of unknown genotype is crossed with a dwarf plant. All 40 offspring are tall. What is the best conclusion?",
+   "options": [
+    "The tall parent is homozygous dominant, because no recessive offspring appeared.",
+    "The tall parent is heterozygous, because the dwarf parent contributes only recessive alleles.",
+    "The tall parent is heterozygous, but the sample was too small to show recessives.",
+    "The cross cannot distinguish the genotypes until a second generation is grown."
+   ],
+   "answer": "A",
+   "why": "A heterozygote crossed to a dwarf yields roughly equal tall and dwarf offspring; 40 tall and no dwarf makes homozygosity the best explanation."
+  },
+  {
+   "n": 20, "course": "AP English Language", "unit": "False dilemma",
+   "stem": "Either we adopt the new curriculum this year, or we accept that our students will fall behind. Which description of the flaw in this sentence is most accurate?",
+   "options": [
+    "It uses evidence too small to support a generalization.",
+    "It attacks an opponent's character instead of the argument.",
+    "It assumes that what happened before caused what happened after.",
+    "It presents a choice between two options as though no others exist."
+   ],
+   "answer": "D",
+   "why": "The sentence frames two options as exhaustive; the fallacy is the false dilemma, which rules out alternatives by assertion."
+  },
+  {
+   "n": 21, "course": "AP Biology", "unit": "Hardy-Weinberg",
+   "stem": "A beetle population of 1,000 at Hardy-Weinberg equilibrium is reduced to 20 individuals on an isolated island. Which assumption of the model is most likely to fail first?",
+   "options": [
+    "No mutation, because small populations mutate faster.",
+    "Random mating, because small populations mate assortatively.",
+    "A large population, because chance sampling error grows as numbers fall.",
+    "No natural selection, because small populations face stronger selection."
+   ],
+   "answer": "C",
+   "why": "Genetic drift follows directly from small numbers: allele frequencies fluctuate by chance regardless of fitness."
+  },
+  {
+   "n": 22, "course": "AP English Language", "unit": "Repetition and parallelism",
+   "stem": "We submitted the plan. We submitted the budget. We submitted the schedule. What is the most likely effect of repeating the opening clause?",
+   "options": [
+    "It suggests the writer is unsure of the facts.",
+    "It builds insistence, emphasizing that every requirement was met.",
+    "It converts the sentences into a question for the audience.",
+    "It shortens the passage by removing the need for transitions."
+   ],
+   "answer": "B",
+   "why": "Anaphora accumulates identical constructions so the final item lands with emphasis, here reinforcing thorough compliance."
+  },
+  {
+   "n": 23, "course": "AP Biology", "unit": "Natural selection",
+   "stem": "After a drought, a population of finches shows a rapid rise in average beak depth. Which explanation is most consistent with natural selection?",
+   "options": [
+    "Birds with deeper beaks obtained more food and left more offspring in that environment.",
+    "Individual birds deepened their beaks during the drought and passed the change on.",
+    "The drought caused new mutations for beak depth at a much higher rate.",
+    "Beak depth is not heritable, so the shift reflects only environmental variation."
+   ],
+   "answer": "A",
+   "why": "Selection acts on heritable variation: the environment changed which phenotypes reproduced, shifting the population mean."
+  },
+  {
+   "n": 24, "course": "AP English Language", "unit": "Rhetorical questions",
+   "stem": "A columnist writes: \"What does a city owe the people who clean it at 4 a.m.?\" What does the question do for the argument?",
+   "options": [
+    "It concedes that no answer to the question exists.",
+    "It supplies statistical evidence about wages and hours.",
+    "It changes the subject from labor to public health.",
+    "It invites readers to answer with the writer, making a moral claim seem self-evident."
+   ],
+   "answer": "D",
+   "why": "A rhetorical question prompts the audience to supply the expected answer, so the writer's judgment arrives as though the reader reached it."
+  },
+  {
+   "n": 25, "course": "AP Biology", "unit": "Population ecology",
+   "stem": "A population introduced to a new habitat grows rapidly at first, then levels off as resources become limiting. Which description fits that curve?",
+   "options": [
+    "Exponential growth, in which the per capita rate stays constant.",
+    "Logistic growth, in which growth slows as the population nears carrying capacity.",
+    "A rate that falls to zero because the population overshoots and crashes.",
+    "Exponential growth that continues as long as immigration occurs."
+   ],
+   "answer": "B",
+   "why": "A rapid rise followed by a plateau is the logistic pattern, with growth slowing as density-dependent limits tighten near K."
+  },
+  {
+   "n": 26, "course": "AP English Language", "unit": "Sentence variety",
+   "stem": "The hearing ran six hours, produced three amendments, and ended with the chair thanking everyone for their patience. No date was set. Why does the writer end with a short sentence?",
+   "options": [
+    "To create a smooth transition into the next paragraph.",
+    "To add a second conclusion of equal emphasis to the first.",
+    "To let the missing deadline land as the most important point.",
+    "To lighten the tone after a sentence about the hearing."
+   ],
+   "answer": "C",
+   "why": "The abrupt short sentence isolates the fact and gives it stress, signaling that it matters more than the session's details."
+  },
+  {
+   "n": 27, "course": "AP Biology", "unit": "Ecosystem energetics",
+   "stem": "A trophic pyramid shows 10,000 kJ at the producer level. Roughly how much energy is available to secondary consumers, two levels up?",
+   "options": ["About 100 kJ", "About 1,000 kJ", "About 5,000 kJ", "About 10 kJ"],
+   "answer": "A",
+   "why": "Roughly 10 percent passes to each level, so 10,000 becomes about 1,000 at primary consumers and 100 at secondary consumers."
+  },
+  {
+   "n": 28, "course": "AP English Language", "unit": "Function of detail",
+   "stem": "An op-ed about teacher turnover notes that one school lost 14 of its 30 teachers in a single year. Why does that specific pair of numbers strengthen the claim?",
+   "options": [
+    "It shows the writer had access to a confidential report.",
+    "It suggests the problem exists across the entire district.",
+    "It replaces the need to explain why the teachers left.",
+    "It makes an abstract problem concrete and shows its scale at one site."
+   ],
+   "answer": "D",
+   "why": "A specific ratio turns a general trend into a measurable local case, which is more credible and more vivid than an adjective."
+  },
+  {
+   "n": 29, "course": "AP Biology", "unit": "Immune system",
+   "stem": "A child is exposed to measles virus years after vaccination. Which response best explains the rapid, large rise in antibody?",
+   "options": [
+    "Innate immunity recognizing the virus immediately through pattern receptors.",
+    "Memory B cells from the first exposure rapidly producing plasma cells and antibody.",
+    "A higher dose of virus in the second exposure triggering more inflammation.",
+    "Complement proteins binding the virus without any involvement of lymphocytes."
+   ],
+   "answer": "B",
+   "why": "The secondary response is carried by memory B and T cells, which expand faster and make higher-affinity antibody than the primary response."
+  },
+  {
+   "n": 30, "course": "AP English Language", "unit": "Qualifying a claim",
+   "stem": "A student claims that school uniforms improve focus. Which phrasing is best qualified for an argument essay?",
+   "options": [
+    "Uniforms modestly improve focus where enforcement is consistent, though studies disagree about achievement.",
+    "Uniforms are the only reliable way to improve student focus.",
+    "Uniforms always improve focus, and no evidence contradicts this.",
+    "Some people say uniforms help focus, and some say they do not."
+   ],
+   "answer": "A",
+   "why": "The qualified version scopes the claim to consistent enforcement and names the disagreement, so it can be defended."
+  },
+  {
+   "n": 31, "course": "AP Biology", "unit": "Osmoregulation",
+   "stem": "A freshwater fish is placed in water with a much lower solute concentration than its body fluids. What must the fish do to maintain water balance?",
+   "options": [
+    "Drink continuously and excrete concentrated urine.",
+    "Actively retain salts and stop all urine production.",
+    "Let water enter freely, since the process requires no energy.",
+    "Excrete large volumes of dilute urine and take up salts actively."
+   ],
+   "answer": "D",
+   "why": "Freshwater fish gain water osmotically and lose salts, so they must dump water and actively transport ions back in."
+  },
+  {
+   "n": 32, "course": "AP English Language", "unit": "Opening strategy",
+   "stem": "An essay about standardized testing begins with the writer's own Saturday spent filling in bubbles on a practice exam. What is the risk and the benefit of that opening?",
+   "options": [
+    "Risk: it cannot be verified; benefit: it establishes authority.",
+    "Risk: it delays the argument; benefit: it defines key terms.",
+    "Risk: it reads as personal rather than evidentiary; benefit: it creates immediacy and stakes.",
+    "Risk: it confuses the audience; benefit: it cites a study without argument."
+   ],
+   "answer": "C",
+   "why": "Personal anecdote buys engagement at the cost of evidentiary weight, which is why the essay must tie it to a larger claim."
+  },
+  {
+   "n": 33, "course": "AP Biology", "unit": "Experimental design",
+   "stem": "In a trial of a new fertilizer, one field receives fertilizer and another receives none, and both are measured for yield. Why is the untreated field necessary?",
+   "options": [
+    "It increases the total sample size of the experiment.",
+    "It shows what yield looks like without the treatment, so the difference can be attributed to fertilizer.",
+    "It guarantees the treated field will not be affected by weather.",
+    "It provides a second treatment that can be compared with the first."
+   ],
+   "answer": "B",
+   "why": "The untreated field is the control; without it, seasonal and soil effects cannot be separated from the fertilizer's effect."
+  }
+ ]
 }
