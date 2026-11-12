@@ -1214,5 +1214,53 @@
       }
     ],
     "src": "web"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 32,
+    "total": 33,
+    "percent": 97,
+    "subject": "AP English Language",
+    "date": "2026-11-12",
+    "ts": 1794454030523,
+    "missed": [
+      {
+        "n": 7,
+        "q": "It uses the source's evidence while flagging the bias that limits it.",
+        "p": "D",
+        "k": "B",
+        "o": [
+          "admiration for the senator's evident sincerity",
+          "suspicion that the speech's polish substitutes for substance",
+          "indifference to the speech's rhetorical craft",
+          "confidence that the audience understood the senator's argume"
+        ]
+      },
+      {
+        "n": 10,
+        "q": "An anecdote illustrates; it cannot carry the general claim alone.",
+        "p": "A",
+        "k": "C",
+        "o": [
+          "earnestly reassuring",
+          "wearily resigned",
+          "dryly ironic",
+          "openly indignant"
+        ]
+      },
+      {
+        "n": 26,
+        "q": "The source supplies a funding option, so \"impossible\" overstates it.",
+        "p": "A",
+        "k": "B",
+        "o": [
+          "emphasize the writer's admiration through enthusiastic resta",
+          "convert praise into deadpan irony by repeating it verbatim",
+          "correct an earlier mischaracterization of the wing",
+          "describe two separate architectural features of the wing"
+        ]
+      }
+    ],
+    "src": "web"
   }
 ]
