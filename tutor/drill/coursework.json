@@ -1,17 +1,22 @@
 {
-  "updated": "2026-11-05",
-  "source": "Carter's own scans/study-guide archive: AP Bio Ch 11-12 pages, the 11-4 worksheet, Jacobs' 22-item Unit 4 review sheet; Kane's AP Lang reading quizzes. Only courses with real scan evidence are listed - everything else falls back to the deck's course scope.",
+  "updated": "2026-11-11",
+  "source": "Carter's own scans/study-guide archive plus the teacher's own material: the Ch 13 slide deck (slides 1-51, dropped 11/11) and Carter's spoken priority note for the Fri 11/13 quiz; earlier AP Bio Ch 11-12 pages, the 11-4 worksheet and Jacobs' 22-item Unit 4 review sheet; Kane's AP Lang reading quizzes. Only courses with real evidence are listed - everything else falls back to the deck's course scope.",
   "students": {
     "carter koh": {
       "apbio": {
-        "current": "AP Biology Unit 4. The Wed 11/4 unit test covered Chapter 11 (cell signaling) and Chapter 12 (cell cycle); Chapter 12 material carries a quiz on Monday.",
+        "current": "AP Biology Chapter 13, meiosis and sexual life cycles. The Fri 11/13 quiz covers meiosis plus Mendelian genetics and Hardy-Weinberg; the teacher starred the Ch 13 slides in class, and Carter's own priority list names karyotype, homologous chromosomes, sex chromosomes and autosomes as sure items.",
         "focus": [
-          "cyclin-CDK pairs pushing past G1/S and G2/M; Rb phosphorylation releasing E2F",
-          "mitosis phases, spindle and kinetochore attachment, cytokinesis in plants vs animals",
-          "meiosis, crossing over, independent assortment, nondisjunction",
-          "signal transduction: reception, transduction, response; GPCR and RTK pathways; second messengers (cAMP, Ca2+)",
-          "feedback and checkpoint failure: oncogenes, tumor suppressors, apoptosis",
-          "the teacher's review-sheet style: predict the outcome of a block, knockout, or inhibitor"
+          "gamete = sperm or egg, produced by meiosis, the only haploid cells in animals; fertilization restores 2n = 46 in the zygote",
+          "karyotype reading: 23 pairs, 22 autosome pairs plus one sex pair, XX vs XY, homologous pairs matched by length and shape",
+          "crossing over in prophase I: synapsis, chiasmata, recombinant chromosomes, more genetic variation",
+          "independent assortment at metaphase I and the 2^n gamete-combination formula (2^23 is about 8.4 million in humans)",
+          "anaphase I separates homologous chromosomes while sister chromatids stay attached; anaphase II separates sister chromatids",
+          "one S phase, two divisions, no replication between meiosis I and II; four haploid daughter cells, each genetically distinct",
+          "the three sources of genetic variation: independent assortment, crossing over, random fertilization",
+          "nondisjunction: all four gametes abnormal means meiosis I failed, two of four abnormal means meiosis II failed; trisomy vs monosomy",
+          "Mendelian testcross logic: no recessive offspring means homozygous dominant, a 1:1 ratio means heterozygous",
+          "Hardy-Weinberg one direction: the recessive phenotype count is q^2, then q, p = 1 - q, and heterozygotes = 2pq",
+          "her question style: name the phase, give the chromosome and chromatid count, predict the consequence of a defect"
         ]
       },
       "apeng": {
