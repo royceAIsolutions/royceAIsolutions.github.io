@@ -1,394 +1,470 @@
 {
  "id": "rescue",
- "title": "Grade Rescue",
+ "title": "Grade Rescue — daily rotation",
  "generated": "2026-11-11",
- "source": "generated",
+ "source": "Carter's Ch 13 guide: her slide deck 1-51 plus his spoken priority list; bio items 1-21 cover the starred meiosis/Mendel/Hardy-Weinberg scope for the 11/13 quiz",
  "questions": [
   {
-   "n": 1, "course": "AP Biology", "unit": "Cell cycle regulation",
-   "stem": "A researcher fuses a cell arrested in G2 with a cell in M phase. The G2 nucleus begins mitosis immediately, without copying its DNA. Which conclusion does this result best support?",
+   "n": 1,
+   "course": "AP Biology",
+   "unit": "Chromosomes and karyotype",
+   "stem": "A human karyotype is prepared from a somatic cell and the chromosomes are arranged in 23 pairs. How many of those pairs are autosomes, and what does the pairing itself show?",
    "options": [
-    "Chromosomes must be duplicated before any nucleus can enter mitosis.",
-    "The M-phase nucleus supplies the G2 cell with extra chromosomes.",
-    "Molecules in the M-phase cytoplasm can drive a nucleus into mitosis.",
-    "G2 arrest is caused by the absence of nutrients in the culture medium."
-   ],
-   "answer": "C",
-   "why": "The G2 nucleus skips S phase yet still enters mitosis, so the trigger is a cytoplasmic factor rather than fresh DNA."
-  },
-  {
-   "n": 2, "course": "AP English Language", "unit": "Rhetorical appeals",
-   "stem": "A hospital letter to donors reads: \"Last winter, eleven children in this county waited for a bed we did not have.\" Which appeal does this sentence primarily make?",
-   "options": [
-    "Pathos, because it frames a budget problem as a specific human cost.",
-    "Logos, because a statistic is by definition a logical proof.",
-    "Ethos, because the hospital speaks as a medical authority.",
-    "Kairos, because it names a particular season of the year."
+    "22 autosome pairs; the members of each pair are homologs, matched in length and shape, one from each parent.",
+    "23 autosome pairs; the pairing shows the cell is haploid.",
+    "22 autosome pairs; each pair is a set of sister chromatids made in S phase.",
+    "46 autosome pairs; each pair represents a separate chromosome set."
    ],
    "answer": "A",
-   "why": "The number exists to put children in front of the reader, so the appeal is emotional rather than evidentiary."
+   "why": "Humans have 22 autosome pairs plus one sex-chromosome pair, and homologs match in length and shape with one copy from each parent."
   },
   {
-   "n": 3, "course": "AP Biology", "unit": "DNA replication",
-   "stem": "A drug blocks helicase in a dividing cell. Which immediate consequence should appear during S phase?",
+   "n": 2,
+   "course": "AP English Language",
+   "unit": "Rhetorical appeals",
+   "stem": "A city council candidate opens a speech: \"I have met a payroll for twenty years. I know what a dollar buys.\" Which appeal is primary, and on what does it rest?",
    "options": [
-    "Primase adds RNA primers to separated strands as usual.",
-    "Replication forks stall, because the duplex cannot be unwound.",
-    "DNA polymerase proofreads faster to compensate for the block.",
-    "Ligase joins Okazaki fragments more quickly than normal."
+    "Pathos, resting on the audience's fear of unemployment.",
+    "Ethos, resting on the speaker's credibility and experience.",
+    "Logos, resting on a statistical comparison of budgets.",
+    "Kairos, resting on the urgency of the current election."
    ],
    "answer": "B",
-   "why": "Helicase separates the strands; without unwinding there is no single-stranded template, so fork progression stops."
+   "why": "The speaker offers no data and no emotional scene; the claim to authority is the credential itself, which is ethos."
   },
   {
-   "n": 4, "course": "AP English Language", "unit": "Thesis strength",
-   "stem": "Draft thesis: \"Social media is bad for teenagers.\" Which revision would most strengthen it for an AP argument essay?",
+   "n": 3,
+   "course": "AP Biology",
+   "unit": "Sex chromosomes",
+   "stem": "A sperm cell carries a Y chromosome. What does that tell you about the zygote it will form, and about the sperm's own chromosome set?",
    "options": [
-    "Social media is very bad for teenagers in many different ways.",
-    "Teenagers use social media for hours every day, and that is bad.",
-    "Social media is bad for teenagers because it is unhealthy and distracting.",
-    "Because social platforms reward constant comparison, they raise anxiety in teenagers who measure their worth by engagement."
-   ],
-   "answer": "D",
-   "why": "A defensible thesis names a mechanism and a consequence that can be argued; vague adjectives add words without making a claim."
-  },
-  {
-   "n": 5, "course": "AP Biology", "unit": "Transcription and translation",
-   "stem": "A single base substitution changes a codon from UAC to UAA in the middle of an mRNA. What is the most likely effect on the protein?",
-   "options": [
-    "One amino acid is replaced by a similar one, leaving function mostly intact.",
-    "The reading frame shifts, changing every amino acid after the mutation.",
-    "Translation stops early, producing a shortened and usually nonfunctional protein.",
-    "Nothing changes, because the genetic code is redundant at that position."
+    "The zygote will be XX and female, and the sperm was diploid.",
+    "The zygote will be XY and male, and the sperm carried two sets of 23.",
+    "The zygote will be XY and male, and the sperm carried one set of 23, so it was haploid.",
+    "The zygote's sex cannot be predicted because the egg may also carry a Y."
    ],
    "answer": "C",
-   "why": "UAA is a stop codon, so the ribosome terminates there; a nonsense mutation truncates the protein."
+   "why": "An unfertilized egg always carries X, so a Y-bearing sperm gives XY, a male; gametes carry a single set, so the sperm is haploid (n = 23)."
   },
   {
-   "n": 6, "course": "AP English Language", "unit": "Syntax and sentence function",
-   "stem": "The report noted the delays, the overruns, the missing signatures, the rewritten budget, and the resignations, and then, in one line, recommended approval. What is the effect of that long list followed by the short clause?",
+   "n": 4,
+   "course": "AP English Language",
+   "unit": "Thesis strength",
+   "stem": "Draft thesis: \"Homework is bad.\" Which revision would most strengthen it for an AP argument essay?",
    "options": [
-    "The list proves the recommendation follows from the evidence.",
-    "The accumulated list makes the brief recommendation feel abrupt and unearned.",
-    "The short clause calms the passage and signals a fair conclusion.",
-    "The list is a digression that the sentence structure treats as unimportant."
-   ],
-   "answer": "B",
-   "why": "The contrast of bulk evidence against a single line of conclusion reads as a dismissal of the findings."
-  },
-  {
-   "n": 7, "course": "AP Biology", "unit": "Gene regulation",
-   "stem": "In E. coli, glucose is absent and lactose is present. Which pairing correctly describes CAP and the lac repressor?",
-   "options": [
-    "CAP is bound to the promoter and the repressor is off the operator, so transcription is high.",
-    "CAP is off the promoter and the repressor is on the operator, so transcription is low.",
-    "Both CAP and the repressor are bound, so transcription stays at a moderate rate.",
-    "Neither protein binds DNA, so transcription depends only on RNA polymerase."
-   ],
-   "answer": "A",
-   "why": "Low glucose raises cAMP so CAP binds and activates, and lactose removes the repressor; both conditions favor strong transcription."
-  },
-  {
-   "n": 8, "course": "AP English Language", "unit": "Concession and rebuttal",
-   "stem": "An essay argues that a four-day school week helps rural districts. Which sentence most strengthens the argument by conceding a real objection?",
-   "options": [
-    "Some parents object to the schedule, but their concerns are exaggerated.",
-    "Four-day weeks are popular with students in the districts that use them.",
-    "Most rural districts that tried the schedule report higher attendance.",
-    "A four-day week costs more in childcare, but districts that lengthened the other days offset it with lower transport and substitute spending."
+    "Homework should be abolished everywhere immediately.",
+    "Homework is bad for students in many ways.",
+    "Homework: some say it helps, some say it hurts.",
+    "Schools should cap nightly homework at 45 minutes per subject, because the sleep it costs outweighs the marginal practice it buys."
    ],
    "answer": "D",
-   "why": "It grants the practical cost and answers it with a measured offset, which builds credibility rather than dodging the objection."
+   "why": "The revision names a specific policy, a reason, and a measurable cost, so a reader can agree or disagree with it."
   },
   {
-   "n": 9, "course": "AP Biology", "unit": "Biotechnology",
-   "stem": "A plasmid digested with one enzyme gives fragments of 1.2, 2.4, and 3.6 kb. A digest with two enzymes gives 1.2, 1.0, 1.4, and 3.6 kb. What does the second digest show?",
+   "n": 5,
+   "course": "AP Biology",
+   "unit": "Gametes and fertilization",
+   "stem": "Which statement correctly pairs meiosis with fertilization in a human life cycle?",
    "options": [
-    "The plasmid lost 1.2 kb of DNA between the two digests.",
-    "Both enzymes cut at one site, producing overlapping fragments.",
-    "One new enzyme cuts inside the 2.4 kb fragment while the other leaves it alone.",
-    "The 3.6 kb fragment contains two recognition sites for the new enzymes."
+    "Meiosis produces haploid gametes (n = 23), and fertilization restores the diploid number (2n = 46).",
+    "Meiosis doubles the chromosome number, and fertilization halves it.",
+    "Both meiosis and fertilization produce haploid cells, and mitosis restores 46.",
+    "Meiosis produces diploid gametes, and fertilization reduces them to 23."
+   ],
+   "answer": "A",
+   "why": "Meiosis halves the set to n in gametes; fusion of two n gametes gives 2n = 46 in the zygote."
+  },
+  {
+   "n": 6,
+   "course": "AP English Language",
+   "unit": "Concession and rebuttal",
+   "stem": "An essay argues that later school start times improve attendance. Which sentence best concedes a real objection?",
+   "options": [
+    "Anyone who opposes later start times is ignoring the science.",
+    "Critics point out that bus schedules are hard to change, but the districts that shifted pickup times still saw attendance gains.",
+    "Attendance is the only outcome that matters here.",
+    "Later start times are obviously better for every student."
+   ],
+   "answer": "B",
+   "why": "It grants the strongest practical objection and answers it with evidence, which is what a concession must do to earn credit."
+  },
+  {
+   "n": 7,
+   "course": "AP Biology",
+   "unit": "Crossing over",
+   "stem": "During prophase I a segment of one nonsister chromatid is exchanged with the corresponding segment of the other. Which outcome follows, and in which phase does it happen?",
+   "options": [
+    "The chromosome number drops from 46 to 23, in prophase I.",
+    "The two sister chromatids become identical again, in metaphase I.",
+    "The recombinant chromatids carry new combinations of alleles, and it happens in prophase I.",
+    "Homologs are pulled to opposite poles, in anaphase I."
    ],
    "answer": "C",
-   "why": "The 2.4 kb band is replaced by 1.0 and 1.4, which sum to 2.4, and the 3.6 kb band is untouched."
+   "why": "Crossing over swaps corresponding segments between nonsister chromatids in prophase I, so each chromatid ends up with a mixed set of alleles."
   },
   {
-   "n": 10, "course": "AP English Language", "unit": "Logical fallacies",
-   "stem": "Students say the dress code targets them unfairly. The principal replies that the school has never banned a single student from wearing clothes. Which reasoning error does the reply commit?",
+   "n": 8,
+   "course": "AP English Language",
+   "unit": "Evidence selection",
+   "stem": "A student claims a new tutoring program raised scores. Which evidence would most directly support that claim?",
    "options": [
-    "Circular reasoning, because the conclusion restates the premise.",
-    "Straw man, because it answers a claim no one made.",
-    "Post hoc, because it assumes an earlier event caused a later one.",
-    "Hasty generalization, because it draws a rule from one case."
-   ],
-   "answer": "B",
-   "why": "The students complained about unfair application, not a ban, so the reply substitutes an easier claim and defeats that instead."
-  },
-  {
-   "n": 11, "course": "AP Biology", "unit": "Meiosis and nondisjunction",
-   "stem": "A diploid cell with 2n = 6 completes meiosis and produces four gametes: two with 4 chromosomes and two with 2. Crossing over occurred normally. Which event explains this pattern?",
-   "options": [
-    "Nondisjunction of one homologous pair at meiosis I, sending both homologs to one pole.",
-    "Nondisjunction of sister chromatids at meiosis II in one of the two cells.",
-    "Failure of cytokinesis after telophase II, leaving a cell with extra nuclei.",
-    "Premature separation of sister chromatids during anaphase I of meiosis."
-   ],
-   "answer": "A",
-   "why": "Meiosis I separates homologs; when a pair fails, both products of that division carry the extra chromosome and both of the other are short one."
-  },
-  {
-   "n": 12, "course": "AP English Language", "unit": "Evidence selection",
-   "stem": "A student argues that congestion pricing reduced traffic in a city center. Which evidence would most directly support that claim?",
-   "options": [
-    "A statement from the mayor who championed the policy.",
-    "A comparison of congestion pricing programs in several other countries.",
-    "A survey in which drivers say traffic feels better than before.",
-    "A count of vehicles in the center in the year before and the year after the charge took effect."
+    "Anecdotes from two students who enjoyed the tutors.",
+    "The district's rising graduation rate over the past ten years.",
+    "The program's cost per student compared with other districts.",
+    "A before-and-after comparison of the same students' scores set against a matched group that did not enroll."
    ],
    "answer": "D",
-   "why": "The claim concerns a change in traffic, so the strongest evidence measures the outcome itself before and after."
+   "why": "A comparison with a matched non-enrolled group controls for other causes, which is what makes the claim about the program testable."
   },
   {
-   "n": 13, "course": "AP Biology", "unit": "Mendelian genetics",
-   "stem": "A testcross of a tall, round-seeded plant produces four phenotypic classes in roughly equal numbers. What does this result establish about that parent?",
+   "n": 9,
+   "course": "AP Biology",
+   "unit": "Independent assortment",
+   "stem": "Two homologous pairs (Aa and Bb) orient at the metaphase I plate. What does independent assortment predict about the gametes?",
    "options": [
-    "The parent is homozygous for both traits, and the genes are linked.",
-    "The parent is homozygous for height and heterozygous for seed shape.",
-    "The parent is heterozygous for both traits, and the genes assort independently.",
-    "The parent is heterozygous for both traits, and the genes are completely linked."
+    "Gametes include AB, Ab, aB and ab, because each pair orients independently of the other.",
+    "All gametes carry either AB or ab, because the pairs travel together.",
+    "Gametes carry two copies of each gene, because the pairs have not separated.",
+    "Only two gamete types form, because crossing over fixes the combinations."
+   ],
+   "answer": "A",
+   "why": "Each pair lines up without reference to the others, so the two orientations combine to give four equally likely gamete types."
+  },
+  {
+   "n": 10,
+   "course": "AP English Language",
+   "unit": "Function of detail",
+   "stem": "A report lists eleven failed inspections in one sentence, then closes the paragraph with four words: \"The building passed.\" What does that final sentence do?",
+   "options": [
+    "It supplies the statistical summary the list lacked.",
+    "It delivers the outcome with no transition, so the flat close undercuts the list and creates irony.",
+    "It concedes that the list of failures was exaggerated.",
+    "It restates the list's main point in simpler words."
+   ],
+   "answer": "B",
+   "why": "The abrupt, unqualified verdict after eleven failures is an ironic juxtaposition; the effect depends on the absence of a transition."
+  },
+  {
+   "n": 11,
+   "course": "AP Biology",
+   "unit": "Nondisjunction",
+   "stem": "Four gametes from a single 2n = 8 cell carry 5, 5, 3 and 3 chromosomes. Crossing over was normal. Which division failed?",
+   "options": [
+    "Meiosis II, because only one of the two cells divided badly.",
+    "Crossing over, because it changed the chromosome count.",
+    "Meiosis I, because every gamete is abnormal and the error is in homolog separation.",
+    "Cytokinesis, because it failed after meiosis II."
    ],
    "answer": "C",
-   "why": "Equal numbers of all four classes is the 1:1:1:1 signature of a double heterozygote with unlinked genes; complete linkage would give only parental classes."
+   "why": "When both products of meiosis I carry the error, all four gametes are abnormal — two with an extra chromosome and two missing one, offsetting 4 each."
   },
   {
-   "n": 14, "course": "AP English Language", "unit": "Irony and understatement",
-   "stem": "After the third review found the same accounting error, the board memo observed that \"the process may benefit from minor refinement.\" What does the understatement accomplish?",
+   "n": 12,
+   "course": "AP English Language",
+   "unit": "Irony and understatement",
+   "stem": "A memo describes a 300 percent budget overrun as \"a modest variance.\" What does the understatement accomplish?",
    "options": [
-    "It signals that the problem is far more serious than the wording admits, creating dry criticism.",
-    "It shows that the board did not understand the reviews' findings.",
-    "It softens the memo so the error can be corrected without blame.",
-    "It suggests that the process needs no change at all."
-   ],
-   "answer": "A",
-   "why": "Understatement works by the gap between trivial wording and repeated failure, which is where the irony sits."
-  },
-  {
-   "n": 15, "course": "AP Biology", "unit": "Hardy-Weinberg",
-   "stem": "In a population at Hardy-Weinberg equilibrium, 64 percent of individuals show the dominant phenotype. What fraction of the population is heterozygous?",
-   "options": ["0.16", "0.48", "0.32", "0.64"],
-   "answer": "B",
-   "why": "q squared is 0.36, so q is 0.6 and p is 0.4; the heterozygote fraction is 2pq, which is 0.48."
-  },
-  {
-   "n": 16, "course": "AP English Language", "unit": "Figurative language",
-   "stem": "The proposal arrived as a suit of armor: impressive at a glance, and impossible to move. What does the metaphor imply about the proposal?",
-   "options": [
-    "It was well researched and carefully defended.",
-    "It was designed to protect people outside the organization.",
-    "It was admired by everyone who read it.",
-    "It looked strong but left no room for action."
+    "It exaggerates the size of the overrun for emphasis.",
+    "It shifts responsibility for the overrun to the auditors.",
+    "It gives the reader a precise measurement of the overrun.",
+    "It makes the overrun sound routine by naming it blandly, which is the ironic effect."
    ],
    "answer": "D",
-   "why": "The metaphor pairs visual impressiveness with immobility, which is the writer's judgment: impressive form, unusable plan."
+   "why": "Understatement deliberately under-names a large problem; the gap between the word and the fact is the irony."
   },
   {
-   "n": 17, "course": "AP Biology", "unit": "Meiosis and nondisjunction",
-   "stem": "A cell with 2n = 8 finishes meiosis I normally and arrests at metaphase II. How many chromosomes and chromatids are in each of the two cells at that point?",
+   "n": 13,
+   "course": "AP Biology",
+   "unit": "Anaphase II",
+   "stem": "A cell is observed in anaphase II. Which description matches that stage?",
    "options": [
-    "8 chromosomes, 8 chromatids",
-    "4 chromosomes, 4 chromatids",
-    "4 chromosomes, 8 chromatids",
-    "2 chromosomes, 4 chromatids"
+    "Sister chromatids have separated and are moving to opposite poles as individual chromosomes.",
+    "Homologous chromosomes are being pulled to opposite poles, each still two chromatids.",
+    "Homologs have paired and are exchanging corresponding segments.",
+    "A nucleus is re-forming around 46 chromosomes."
+   ],
+   "answer": "A",
+   "why": "Meiosis II separates sister chromatids, so each chromatid becomes its own chromosome moving to a pole."
+  },
+  {
+   "n": 14,
+   "course": "AP English Language",
+   "unit": "Figurative language",
+   "stem": "\"The policy was a paper umbrella in a hurricane.\" What does the metaphor imply about the policy?",
+   "options": [
+    "It was expensive but broadly popular.",
+    "It offered protection that could not possibly hold up under the pressure it faced.",
+    "It caused the storm of criticism that followed.",
+    "It was written by officials who never saw a storm."
+   ],
+   "answer": "B",
+   "why": "A paper umbrella looks like protection and fails instantly in a hurricane, so the vehicle carries uselessness under real stress."
+  },
+  {
+   "n": 15,
+   "course": "AP Biology",
+   "unit": "2^n combinations",
+   "stem": "Which set correctly names the three mechanisms that produce genetic variation among offspring, and states the combination formula for independent assortment?",
+   "options": [
+    "Mutation, mitosis and fertilization; 2n combinations, where n is the diploid number.",
+    "Crossing over, cytokinesis and nondisjunction; n^2 combinations.",
+    "Independent assortment, crossing over and random fertilization; 2^n combinations, where n is the haploid number.",
+    "Independent assortment, translation and fertilization; 2^n combinations."
    ],
    "answer": "C",
-   "why": "Meiosis I halves the chromosome number to 4, but each chromosome still has two sister chromatids until anaphase II."
+   "why": "Her three sources are independent assortment, crossing over and random fertilization; chromosomes assorting independently give 2^n gamete combinations."
   },
   {
-   "n": 18, "course": "AP English Language", "unit": "Appeals in context",
-   "stem": "A district memo to school principals opens with \"As you know, our attendance data have been falling.\" Which choice best explains that opening?",
+   "n": 16,
+   "course": "AP English Language",
+   "unit": "Syntax and sentence function",
+   "stem": "\"The committee met. It debated. It adjourned. Nothing changed.\" What does the run of short sentences accomplish?",
    "options": [
-    "It insults the audience by implying they should already have known.",
-    "It invokes shared expertise, aligning the writer with the readers before a request.",
-    "It establishes the writer as an outsider who needs the principals' help.",
-    "It admits that the district bears no responsibility for attendance."
-   ],
-   "answer": "B",
-   "why": "As you know attributes shared knowledge to the audience, a credibility move that sets up compliance with what follows."
-  },
-  {
-   "n": 19, "course": "AP Biology", "unit": "Mendelian genetics",
-   "stem": "A tall pea plant of unknown genotype is crossed with a dwarf plant. All 40 offspring are tall. What is the best conclusion?",
-   "options": [
-    "The tall parent is homozygous dominant, because no recessive offspring appeared.",
-    "The tall parent is heterozygous, because the dwarf parent contributes only recessive alleles.",
-    "The tall parent is heterozygous, but the sample was too small to show recessives.",
-    "The cross cannot distinguish the genotypes until a second generation is grown."
-   ],
-   "answer": "A",
-   "why": "A heterozygote crossed to a dwarf yields roughly equal tall and dwarf offspring; 40 tall and no dwarf makes homozygosity the best explanation."
-  },
-  {
-   "n": 20, "course": "AP English Language", "unit": "False dilemma",
-   "stem": "Either we adopt the new curriculum this year, or we accept that our students will fall behind. Which description of the flaw in this sentence is most accurate?",
-   "options": [
-    "It uses evidence too small to support a generalization.",
-    "It attacks an opponent's character instead of the argument.",
-    "It assumes that what happened before caused what happened after.",
-    "It presents a choice between two options as though no others exist."
+    "It creates a sense of exhaustive detail about the meeting.",
+    "It establishes the committee's authority on the issue.",
+    "It softens the criticism of how the committee worked.",
+    "It mirrors the stalemate by flattening four events into equal, unconnected beats."
    ],
    "answer": "D",
-   "why": "The sentence frames two options as exhaustive; the fallacy is the false dilemma, which rules out alternatives by assertion."
+   "why": "Equal, clipped sentences with no subordination make the events feel weightless, which is the point about the outcome."
   },
   {
-   "n": 21, "course": "AP Biology", "unit": "Hardy-Weinberg",
-   "stem": "A beetle population of 1,000 at Hardy-Weinberg equilibrium is reduced to 20 individuals on an isolated island. Which assumption of the model is most likely to fail first?",
+   "n": 17,
+   "course": "AP Biology",
+   "unit": "Meiosis I: anaphase",
+   "stem": "At anaphase I, what separates and what stays together?",
    "options": [
-    "No mutation, because small populations mutate faster.",
-    "Random mating, because small populations mate assortatively.",
-    "A large population, because chance sampling error grows as numbers fall.",
-    "No natural selection, because small populations face stronger selection."
+    "Homologous chromosomes separate, and sister chromatids stay attached at the centromere.",
+    "Sister chromatids separate, and homologs stay paired at the plate.",
+    "Homologs and sister chromatids separate at the same moment.",
+    "Nothing separates, and the cell divides with 46 duplicated chromosomes."
+   ],
+   "answer": "A",
+   "why": "Anaphase I pulls homologs apart while cohesin along the arms is cut; centromeric cohesin persists so sisters travel as one unit."
+  },
+  {
+   "n": 18,
+   "course": "AP English Language",
+   "unit": "Qualifying a claim",
+   "stem": "Which sentence states a claim that is best qualified for an AP argument essay?",
+   "options": [
+    "Standardized tests are useless.",
+    "Standardized tests tend to reward test-taking skill as much as content knowledge, especially for students without coaching.",
+    "Everyone knows standardized tests are unfair.",
+    "Standardized tests should be abolished by Friday."
+   ],
+   "answer": "B",
+   "why": "A hedged, conditional claim with a named exception leaves room for evidence, which an absolute claim does not."
+  },
+  {
+   "n": 19,
+   "course": "AP Biology",
+   "unit": "Mendelian genetics",
+   "stem": "A round-seeded plant is crossed with a wrinkled-seeded plant (rr), and all 60 offspring are round. What does that result establish about the round-seeded parent?",
+   "options": [
+    "It is heterozygous (Rr), because half the offspring should be wrinkled.",
+    "It proves seed shape and height are linked genes.",
+    "It is homozygous dominant (RR), because no recessive offspring appeared among 60.",
+    "Nothing can be concluded without a second cross to the same parent."
    ],
    "answer": "C",
-   "why": "Genetic drift follows directly from small numbers: allele frequencies fluctuate by chance regardless of fitness."
+   "why": "A heterozygote crossed to rr yields about 1:1; with 60 offspring all dominant, the parent is almost certainly RR — the absence of the recessive class is the evidence."
   },
   {
-   "n": 22, "course": "AP English Language", "unit": "Repetition and parallelism",
-   "stem": "We submitted the plan. We submitted the budget. We submitted the schedule. What is the most likely effect of repeating the opening clause?",
+   "n": 20,
+   "course": "AP English Language",
+   "unit": "Logical fallacies",
+   "stem": "\"Either we restore the arts budget or we admit we do not care about children.\" Which flaw is present?",
    "options": [
-    "It suggests the writer is unsure of the facts.",
-    "It builds insistence, emphasizing that every requirement was met.",
-    "It converts the sentences into a question for the audience.",
-    "It shortens the passage by removing the need for transitions."
-   ],
-   "answer": "B",
-   "why": "Anaphora accumulates identical constructions so the final item lands with emphasis, here reinforcing thorough compliance."
-  },
-  {
-   "n": 23, "course": "AP Biology", "unit": "Natural selection",
-   "stem": "After a drought, a population of finches shows a rapid rise in average beak depth. Which explanation is most consistent with natural selection?",
-   "options": [
-    "Birds with deeper beaks obtained more food and left more offspring in that environment.",
-    "Individual birds deepened their beaks during the drought and passed the change on.",
-    "The drought caused new mutations for beak depth at a much higher rate.",
-    "Beak depth is not heritable, so the shift reflects only environmental variation."
-   ],
-   "answer": "A",
-   "why": "Selection acts on heritable variation: the environment changed which phenotypes reproduced, shifting the population mean."
-  },
-  {
-   "n": 24, "course": "AP English Language", "unit": "Rhetorical questions",
-   "stem": "A columnist writes: \"What does a city owe the people who clean it at 4 a.m.?\" What does the question do for the argument?",
-   "options": [
-    "It concedes that no answer to the question exists.",
-    "It supplies statistical evidence about wages and hours.",
-    "It changes the subject from labor to public health.",
-    "It invites readers to answer with the writer, making a moral claim seem self-evident."
+    "Ad hominem, because it attacks a person rather than a claim.",
+    "Slippery slope, because it predicts a chain of disasters.",
+    "Straw man, because it misstates an opponent's position.",
+    "False dilemma, because only two options are offered where more exist."
    ],
    "answer": "D",
-   "why": "A rhetorical question prompts the audience to supply the expected answer, so the writer's judgment arrives as though the reader reached it."
+   "why": "The sentence forces a choice between two extremes and ignores every middle option, which is the false dilemma."
   },
   {
-   "n": 25, "course": "AP Biology", "unit": "Population ecology",
-   "stem": "A population introduced to a new habitat grows rapidly at first, then levels off as resources become limiting. Which description fits that curve?",
+   "n": 21,
+   "course": "AP Biology",
+   "unit": "Hardy-Weinberg",
+   "stem": "In a population at Hardy-Weinberg equilibrium, 9 percent of individuals show the recessive phenotype. What fraction of the population is heterozygous?",
    "options": [
-    "Exponential growth, in which the per capita rate stays constant.",
-    "Logistic growth, in which growth slows as the population nears carrying capacity.",
-    "A rate that falls to zero because the population overshoots and crashes.",
-    "Exponential growth that continues as long as immigration occurs."
+    "0.42, because q = 0.3 and 2pq = 0.42.",
+    "0.09, because the recessive phenotype count equals the heterozygote count.",
+    "0.21, because q multiplied by p gives the heterozygote fraction.",
+    "0.49, because p squared gives the heterozygote fraction."
+   ],
+   "answer": "A",
+   "why": "q^2 = 0.09 gives q = 0.3, so p = 0.7 and 2pq = 2(0.7)(0.3) = 0.42."
+  },
+  {
+   "n": 22,
+   "course": "AP English Language",
+   "unit": "Rhetorical questions",
+   "stem": "An op-ed opens: \"Who decided that a fifteen-minute passing period was enough for two thousand students?\" What does the question do for the argument?",
+   "options": [
+    "It supplies evidence about how the schedule was built.",
+    "It frames the schedule as an unreasonable decision the reader is invited to question.",
+    "It concedes that fifteen minutes is adequate.",
+    "It shifts the argument to an unrelated topic."
    ],
    "answer": "B",
-   "why": "A rapid rise followed by a plateau is the logistic pattern, with growth slowing as density-dependent limits tighten near K."
+   "why": "A rhetorical question presupposes its answer, so the reader accepts the premise that the decision was arbitrary."
   },
   {
-   "n": 26, "course": "AP English Language", "unit": "Sentence variety",
-   "stem": "The hearing ran six hours, produced three amendments, and ended with the chair thanking everyone for their patience. No date was set. Why does the writer end with a short sentence?",
+   "n": 23,
+   "course": "AP Biology",
+   "unit": "DNA replication",
+   "stem": "A drug inhibits DNA ligase in a replicating cell. Which consequence appears on the lagging strand?",
    "options": [
-    "To create a smooth transition into the next paragraph.",
-    "To add a second conclusion of equal emphasis to the first.",
-    "To let the missing deadline land as the most important point.",
-    "To lighten the tone after a sentence about the hearing."
+    "Helicase can no longer unwind the double helix.",
+    "Primase can no longer lay down RNA primers.",
+    "Okazaki fragments remain unjoined, leaving nicks in the new strand.",
+    "The leading strand is synthesized in the wrong direction."
    ],
    "answer": "C",
-   "why": "The abrupt short sentence isolates the fact and gives it stress, signaling that it matters more than the session's details."
+   "why": "Ligase seals the nicks between Okazaki fragments; without it the fragments stay separate even though synthesis itself proceeds."
   },
   {
-   "n": 27, "course": "AP Biology", "unit": "Ecosystem energetics",
-   "stem": "A trophic pyramid shows 10,000 kJ at the producer level. Roughly how much energy is available to secondary consumers, two levels up?",
-   "options": ["About 100 kJ", "About 1,000 kJ", "About 5,000 kJ", "About 10 kJ"],
-   "answer": "A",
-   "why": "Roughly 10 percent passes to each level, so 10,000 becomes about 1,000 at primary consumers and 100 at secondary consumers."
-  },
-  {
-   "n": 28, "course": "AP English Language", "unit": "Function of detail",
-   "stem": "An op-ed about teacher turnover notes that one school lost 14 of its 30 teachers in a single year. Why does that specific pair of numbers strengthen the claim?",
+   "n": 24,
+   "course": "AP English Language",
+   "unit": "Repetition and parallelism",
+   "stem": "\"We asked for the data. We asked for a timeline. We asked for a plan.\" What is the effect of the repeated opening?",
    "options": [
-    "It shows the writer had access to a confidential report.",
-    "It suggests the problem exists across the entire district.",
-    "It replaces the need to explain why the teachers left.",
-    "It makes an abstract problem concrete and shows its scale at one site."
+    "It suggests the requests were all satisfied in turn.",
+    "It introduces three unrelated claims.",
+    "It weakens the paragraph through unnecessary repetition.",
+    "It builds insistence and implies the requests went unanswered."
    ],
    "answer": "D",
-   "why": "A specific ratio turns a general trend into a measurable local case, which is more credible and more vivid than an adjective."
+   "why": "Anaphora accumulates pressure; three identical requests imply refusal, not completion."
   },
   {
-   "n": 29, "course": "AP Biology", "unit": "Immune system",
-   "stem": "A child is exposed to measles virus years after vaccination. Which response best explains the rapid, large rise in antibody?",
+   "n": 25,
+   "course": "AP Biology",
+   "unit": "Transcription and translation",
+   "stem": "A single base is inserted early in a coding region. What is the most likely consequence for the protein?",
    "options": [
-    "Innate immunity recognizing the virus immediately through pattern receptors.",
-    "Memory B cells from the first exposure rapidly producing plasma cells and antibody.",
-    "A higher dose of virus in the second exposure triggering more inflammation.",
-    "Complement proteins binding the virus without any involvement of lymphocytes."
+    "Every codon downstream is read in a shifted frame, so the protein is usually nonfunctional.",
+    "One amino acid is substituted and the rest of the protein is unchanged.",
+    "Transcription stops immediately at the point of insertion.",
+    "The mRNA is degraded before translation can begin."
+   ],
+   "answer": "A",
+   "why": "An insertion shifts the reading frame, changing every downstream codon and usually producing a truncated or garbled protein."
+  },
+  {
+   "n": 26,
+   "course": "AP English Language",
+   "unit": "Opening strategy",
+   "stem": "An essay on school funding opens with the writer's memory of a leaking classroom ceiling. What is the main risk of that opening?",
+   "options": [
+    "It cannot support any argument about funding.",
+    "It can read as sentimental and delay the argument unless it is quickly tied to a claim.",
+    "It makes the essay too statistical for a general reader.",
+    "It assumes the reader already agrees with the writer."
    ],
    "answer": "B",
-   "why": "The secondary response is carried by memory B and T cells, which expand faster and make higher-affinity antibody than the primary response."
+   "why": "A personal scene earns attention but costs time; its value depends on how fast the writer converts it into a claim."
   },
   {
-   "n": 30, "course": "AP English Language", "unit": "Qualifying a claim",
-   "stem": "A student claims that school uniforms improve focus. Which phrasing is best qualified for an argument essay?",
+   "n": 27,
+   "course": "AP Biology",
+   "unit": "Gene regulation",
+   "stem": "In the lac operon, glucose is absent and lactose is present. Which pairing correctly describes the two regulator proteins?",
    "options": [
-    "Uniforms modestly improve focus where enforcement is consistent, though studies disagree about achievement.",
-    "Uniforms are the only reliable way to improve student focus.",
-    "Uniforms always improve focus, and no evidence contradicts this.",
-    "Some people say uniforms help focus, and some say they do not."
-   ],
-   "answer": "A",
-   "why": "The qualified version scopes the claim to consistent enforcement and names the disagreement, so it can be defended."
-  },
-  {
-   "n": 31, "course": "AP Biology", "unit": "Osmoregulation",
-   "stem": "A freshwater fish is placed in water with a much lower solute concentration than its body fluids. What must the fish do to maintain water balance?",
-   "options": [
-    "Drink continuously and excrete concentrated urine.",
-    "Actively retain salts and stop all urine production.",
-    "Let water enter freely, since the process requires no energy.",
-    "Excrete large volumes of dilute urine and take up salts actively."
-   ],
-   "answer": "D",
-   "why": "Freshwater fish gain water osmotically and lose salts, so they must dump water and actively transport ions back in."
-  },
-  {
-   "n": 32, "course": "AP English Language", "unit": "Opening strategy",
-   "stem": "An essay about standardized testing begins with the writer's own Saturday spent filling in bubbles on a practice exam. What is the risk and the benefit of that opening?",
-   "options": [
-    "Risk: it cannot be verified; benefit: it establishes authority.",
-    "Risk: it delays the argument; benefit: it defines key terms.",
-    "Risk: it reads as personal rather than evidentiary; benefit: it creates immediacy and stakes.",
-    "Risk: it confuses the audience; benefit: it cites a study without argument."
+    "CAP is bound and the repressor is bound, so transcription is off.",
+    "CAP is released and the repressor is bound, so transcription is off.",
+    "CAP is bound and the repressor is released, so transcription is high.",
+    "CAP is released and the repressor is released, so transcription is low."
    ],
    "answer": "C",
-   "why": "Personal anecdote buys engagement at the cost of evidentiary weight, which is why the essay must tie it to a larger claim."
+   "why": "Low glucose raises cAMP so CAP binds and activates; lactose removes the repressor, so both conditions favor high expression."
   },
   {
-   "n": 33, "course": "AP Biology", "unit": "Experimental design",
-   "stem": "In a trial of a new fertilizer, one field receives fertilizer and another receives none, and both are measured for yield. Why is the untreated field necessary?",
+   "n": 28,
+   "course": "AP English Language",
+   "unit": "Appeals in context",
+   "stem": "A health department flyer states that 340 residents waited more than six hours for care last year. Which appeal does the specific number chiefly serve?",
    "options": [
-    "It increases the total sample size of the experiment.",
-    "It shows what yield looks like without the treatment, so the difference can be attributed to fertilizer.",
-    "It guarantees the treated field will not be affected by weather.",
-    "It provides a second treatment that can be compared with the first."
+    "Ethos, because the department is an authority.",
+    "Logos only, because numbers cannot move an audience.",
+    "None, because statistics are neutral by definition.",
+    "Pathos, because the concrete number makes the burden on real people immediate."
+   ],
+   "answer": "D",
+   "why": "The number is used for its human weight rather than its proof value, so it functions as an emotional appeal in context."
+  },
+  {
+   "n": 29,
+   "course": "AP Biology",
+   "unit": "Biotechnology",
+   "stem": "A gene is inserted into a plasmid in the middle of an ampicillin-resistance gene, disrupting it. What should be true of bacteria carrying the recombinant plasmid?",
+   "options": [
+    "They are sensitive to ampicillin but can still grow on plates without it.",
+    "They are resistant to ampicillin and grow on any plate.",
+    "They are resistant to ampicillin and to a second antibiotic.",
+    "They cannot replicate the plasmid at all."
+   ],
+   "answer": "A",
+   "why": "Insertional inactivation removes resistance, so recombinants lose the ability to grow on ampicillin while remaining viable without it."
+  },
+  {
+   "n": 30,
+   "course": "AP English Language",
+   "unit": "Sentence variety",
+   "stem": "How would combining one long periodic sentence with several short declaratives most likely affect a paragraph?",
+   "options": [
+    "Every sentence would carry equal weight and emphasis.",
+    "The long sentence would carry the qualification while the short ones deliver the verdict.",
+    "The paragraph would no longer need evidence.",
+    "The paragraph would become harder to follow in every case."
    ],
    "answer": "B",
-   "why": "The untreated field is the control; without it, seasonal and soil effects cannot be separated from the fertilizer's effect."
+   "why": "Varying length assigns roles: the suspended clause holds complexity, and the clipped sentence lands the judgment."
+  },
+  {
+   "n": 31,
+   "course": "AP Biology",
+   "unit": "Natural selection",
+   "stem": "On an island, a lizard population has larger jaws in years when only hard seeds are available. Which statement explains this as natural selection rather than individual change?",
+   "options": [
+    "Individual lizards grew larger jaws by eating hard seeds.",
+    "The hard seeds caused new jaw mutations in the population.",
+    "Lizards with larger jaws survived and reproduced more in hard-seed years, so those alleles increased.",
+    "Jaw size is not heritable, so selection cannot act on it."
+   ],
+   "answer": "C",
+   "why": "Selection changes allele frequencies across generations through differential reproduction, not through an individual's use or disuse."
+  },
+  {
+   "n": 32,
+   "course": "AP English Language",
+   "unit": "Line of reasoning",
+   "stem": "\"If we install lights, more students will play sports, so grades will rise, so the dropout rate will fall.\" What is the main weakness?",
+   "options": [
+    "The first claim is irrelevant to the conclusion.",
+    "The conclusion contradicts the premises.",
+    "The argument relies on a false dilemma.",
+    "Each link is asserted rather than shown, so the chain needs evidence at every step."
+   ],
+   "answer": "D",
+   "why": "A causal chain is only as strong as its weakest link; here every transition is assumed, so the reasoning is unsupported at three points."
+  },
+  {
+   "n": 33,
+   "course": "AP Biology",
+   "unit": "Experimental design",
+   "stem": "A fertilizer trial measures yield in one treated field and one untreated field. Which change would most strengthen the design?",
+   "options": [
+    "Replicate each treatment across several fields and assign treatments at random.",
+    "Measure the treated field more often than the untreated field.",
+    "Use a larger field for the treated condition.",
+    "Drop the untreated field to save time and money."
+   ],
+   "answer": "A",
+   "why": "Replication and random assignment control for field-to-field variation and for confounding, which a single pair of fields cannot."
   }
  ]
 }
