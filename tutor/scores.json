@@ -1106,5 +1106,29 @@
     "date": "2026-11-10",
     "ts": 1794287657019,
     "src": "web"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 32,
+    "total": 33,
+    "percent": 97,
+    "subject": "Grade Rescue",
+    "date": "2026-11-12",
+    "ts": 1794443939046,
+    "missed": [
+      {
+        "n": 27,
+        "q": "A personal scene earns attention but costs time; its value depends on how fast the writer converts it into a claim.",
+        "p": "D",
+        "k": "C",
+        "o": [
+          "CAP is bound and the repressor is bound, so transcription is",
+          "CAP is released and the repressor is bound, so transcription",
+          "CAP is bound and the repressor is released, so transcription",
+          "CAP is released and the repressor is released, so transcript"
+        ]
+      }
+    ],
+    "src": "web"
   }
 ]
