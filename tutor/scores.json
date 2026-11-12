@@ -1130,5 +1130,89 @@
       }
     ],
     "src": "web"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 27,
+    "total": 33,
+    "percent": 82,
+    "subject": "AP Biology",
+    "date": "2026-11-12",
+    "ts": 1794445043540,
+    "missed": [
+      {
+        "n": 11,
+        "q": "A single chromosome carrying DNA from both homologs is the signature of crossing over; assortment only mixes intact chro",
+        "p": "A",
+        "k": "C",
+        "o": [
+          "2^46, more than 70 trillion combinations.",
+          "23^2, or 529 combinations.",
+          "2^23, more than 8 million combinations.",
+          "2 x 23, or 46 combinations."
+        ]
+      },
+      {
+        "n": 16,
+        "q": "n+1 plus n gives three copies (trisomy, as in trisomy 21); n-1 plus n leaves one copy (monosomy), which is usually not v",
+        "p": "B",
+        "k": "D",
+        "o": [
+          "The zygote will be XX and female, and the sperm carried two",
+          "The zygote will be XY and male, and the sperm carried 46 chr",
+          "The zygote's sex cannot be predicted, because the egg may al",
+          "The zygote will be XY and male, and the sperm carried a sing"
+        ]
+      },
+      {
+        "n": 20,
+        "q": "Those three events are the reason meiosis reduces the set; everything else on the list is shared machinery.",
+        "p": "C",
+        "k": "D",
+        "o": [
+          "The number of chromatids per chromosome, one versus two.",
+          "The amount of DNA in the nucleus, 2C versus 4C.",
+          "Whether the cell is a gamete or a somatic cell, regardless o",
+          "The number of chromosome SETS: one of each chromosome versus"
+        ]
+      },
+      {
+        "n": 24,
+        "q": "A heterozygote crossed to tt yields roughly 1:1; with 80 offspring all dominant, the parent is almost certainly TT.",
+        "p": "A",
+        "k": "D",
+        "o": [
+          "The two genes are completely linked, which is why all four c",
+          "One gene is epistatic to the other, which masks one class.",
+          "The parent was homozygous for both traits, which is why the",
+          "The two genes assort independently, which is why the 1:1:1:1"
+        ]
+      },
+      {
+        "n": 25,
+        "q": "The answer is D — Equal numbers of all four classes is the signature of independent assortment; complete linkage would k",
+        "p": "B",
+        "k": "A",
+        "o": [
+          "9:3:3:1 across the four phenotype combinations.",
+          "1:1:1:1, because each gene assorts independently.",
+          "3:1, because only one gene is segregating.",
+          "1:2:1, because each genotype appears once."
+        ]
+      },
+      {
+        "n": 27,
+        "q": "Only recessive homozygotes show the recessive phenotype, so their frequency is q^2; rooting it gives q.",
+        "p": "A",
+        "k": "C",
+        "o": [
+          "0.16, because the recessive phenotype frequency equals the h",
+          "0.24, because q times p gives the heterozygote fraction.",
+          "0.48, because q = 0.4, p = 0.6, and 2pq = 0.48.",
+          "0.36, because p squared gives the heterozygote fraction."
+        ]
+      }
+    ],
+    "src": "web"
   }
 ]
