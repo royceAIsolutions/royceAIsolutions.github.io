@@ -1,0 +1,473 @@
+{
+ "id": "math",
+ "title": "Math II (Algebra 2)",
+ "generated": "2026-11-12",
+ "source": "generated",
+ "courses": [
+  "Math II (Algebra 2)"
+ ],
+ "questions": [
+  {
+   "n": 1,
+   "course": "Math II (Algebra 2)",
+   "unit": "Vertex form",
+   "stem": "The function f(x) = 2x² − 12x + 23 is rewritten in vertex form. Which expression is equivalent?",
+   "options": [
+    "2(x − 3)² + 5",
+    "2(x − 3)² + 23",
+    "2(x − 6)² − 13",
+    "2(x + 3)² + 5"
+   ],
+   "answer": "A",
+   "why": "Complete the square: 2(x² − 6x) + 23 = 2(x − 3)² − 18 + 23, so the vertex form is 2(x − 3)² + 5 with vertex (3, 5)."
+  },
+  {
+   "n": 2,
+   "course": "Math II (Algebra 2)",
+   "unit": "Complex roots",
+   "stem": "Which values solve x² + 6x + 13 = 0 over the complex numbers?",
+   "options": [
+    "x = −3 ± i√13",
+    "x = −3 ± 2i",
+    "x = 3 ± 2i",
+    "x = −6 ± 2i"
+   ],
+   "answer": "B",
+   "why": "The discriminant is 36 − 52 = −16, so x = (−6 ± 4i)/2 = −3 ± 2i."
+  },
+  {
+   "n": 3,
+   "course": "Math II (Algebra 2)",
+   "unit": "Polynomial multiplicity",
+   "stem": "For f(x) = (x − 2)³(x + 1)², what happens at each x-intercept of the graph?",
+   "options": [
+    "The graph touches at x = 2 and crosses at x = −1.",
+    "The graph touches the axis at both intercepts.",
+    "The graph crosses the axis at x = 2 and touches it without crossing at x = −1.",
+    "The graph crosses the axis at both intercepts."
+   ],
+   "answer": "C",
+   "why": "An odd multiplicity makes the graph cross at x = 2, while an even multiplicity makes it touch and turn at x = −1."
+  },
+  {
+   "n": 4,
+   "course": "Math II (Algebra 2)",
+   "unit": "Remainder theorem",
+   "stem": "What is the remainder when p(x) = 2x³ − 5x² + 4x − 7 is divided by x − 2?",
+   "options": [
+    "13",
+    "−11",
+    "−5",
+    "−3"
+   ],
+   "answer": "D",
+   "why": "By the Remainder Theorem the remainder is p(2) = 16 − 20 + 8 − 7 = −3."
+  },
+  {
+   "n": 5,
+   "course": "Math II (Algebra 2)",
+   "unit": "Rational root theorem",
+   "stem": "According to the Rational Root Theorem, which list gives all possible rational roots of 3x³ − 4x² + 5x − 6 = 0?",
+   "options": [
+    "±1, ±2, ±3, ±6, ±1/3, ±2/3",
+    "±1, ±2, ±3, ±6",
+    "±1, ±2, ±3, ±6, ±1/3, ±2/3, ±1/2",
+    "±1, ±2, ±3, ±1/3"
+   ],
+   "answer": "A",
+   "why": "Possible roots are factors of the constant 6 over factors of the leading coefficient 3: ±1, ±2, ±3, ±6, ±1/3, ±2/3."
+  },
+  {
+   "n": 6,
+   "course": "Math II (Algebra 2)",
+   "unit": "Complex arithmetic",
+   "stem": "Which expression is equal to (3 − 2i)(4 + 5i)?",
+   "options": [
+    "22 − 7i",
+    "22 + 7i",
+    "12 − 10i",
+    "2 + 23i"
+   ],
+   "answer": "B",
+   "why": "Expand: 12 + 15i − 8i − 10i² = 12 + 7i + 10 = 22 + 7i, since i² = −1."
+  },
+  {
+   "n": 7,
+   "course": "Math II (Algebra 2)",
+   "unit": "Completing the square",
+   "stem": "Solve x² − 4x − 1 = 0 by completing the square. Which values of x are correct?",
+   "options": [
+    "x = −2 ± √5",
+    "x = 2 ± √3",
+    "x = 2 ± √5",
+    "x = 4 ± √5"
+   ],
+   "answer": "C",
+   "why": "Add 1 to both sides and complete the square: (x − 2)² = 5, so x = 2 ± √5."
+  },
+  {
+   "n": 8,
+   "course": "Math II (Algebra 2)",
+   "unit": "Quadratic systems",
+   "stem": "The line y = 2x + 3 intersects the parabola y = x² − 2x + 3. What are the intersection points?",
+   "options": [
+    "(0, 3) and (−4, −5)",
+    "(2, 7) and (4, 11)",
+    "(0, 3) only",
+    "(0, 3) and (4, 11)"
+   ],
+   "answer": "D",
+   "why": "Set x² − 2x + 3 = 2x + 3, giving x² − 4x = 0, so x = 0 or x = 4 and the points are (0, 3) and (4, 11)."
+  },
+  {
+   "n": 9,
+   "course": "Math II (Algebra 2)",
+   "unit": "Rational exponents",
+   "stem": "Which expression is equivalent to (8x⁶)^(2/3) for x > 0?",
+   "options": [
+    "4x⁴",
+    "4x⁹",
+    "16x⁴",
+    "4x²"
+   ],
+   "answer": "A",
+   "why": "Raise each factor to 2/3: 8^(2/3) = 4 and (x⁶)^(2/3) = x⁴, so the result is 4x⁴."
+  },
+  {
+   "n": 10,
+   "course": "Math II (Algebra 2)",
+   "unit": "Radical equations",
+   "stem": "What is the solution set of √(2x + 7) = x + 2?",
+   "options": [
+    "x = 1 and x = −3",
+    "x = 1 only",
+    "x = −3 only",
+    "no real solution"
+   ],
+   "answer": "B",
+   "why": "Squaring gives x² + 2x − 3 = 0, so x = 1 or x = −3; the second makes the right side negative, so only x = 1 works."
+  },
+  {
+   "n": 11,
+   "course": "Math II (Algebra 2)",
+   "unit": "Inverse functions",
+   "stem": "If f(x) = (x − 3)/5, which function is f⁻¹(x)?",
+   "options": [
+    "5x − 3",
+    "(x + 3)/5",
+    "5x + 3",
+    "5(x − 3)"
+   ],
+   "answer": "C",
+   "why": "Swap x and y and solve: x = (y − 3)/5 gives y = 5x + 3."
+  },
+  {
+   "n": 12,
+   "course": "Math II (Algebra 2)",
+   "unit": "Function composition",
+   "stem": "For f(x) = x² + 1 and g(x) = 2x − 3, which expression equals (f ∘ g)(x)?",
+   "options": [
+    "4x² − 12x + 8",
+    "2x² − 1",
+    "4x² + 10",
+    "4x² − 12x + 10"
+   ],
+   "answer": "D",
+   "why": "(f ∘ g)(x) = (2x − 3)² + 1 = 4x² − 12x + 9 + 1 = 4x² − 12x + 10."
+  },
+  {
+   "n": 13,
+   "course": "Math II (Algebra 2)",
+   "unit": "Logarithm properties",
+   "stem": "Which value equals ln(e⁷) + ln(e³)?",
+   "options": [
+    "10",
+    "21",
+    "e²¹",
+    "e⁴"
+   ],
+   "answer": "A",
+   "why": "Adding logs multiplies the arguments: ln(e⁷ · e³) = ln(e¹⁰) = 10."
+  },
+  {
+   "n": 14,
+   "course": "Math II (Algebra 2)",
+   "unit": "Exponential equations",
+   "stem": "Solve 3^(2x − 1) = 27^(x − 2) for x.",
+   "options": [
+    "x = −5",
+    "x = 5",
+    "x = 1",
+    "x = 7/3"
+   ],
+   "answer": "B",
+   "why": "Since 27 = 3³, the exponents are equal: 2x − 1 = 3x − 6, so x = 5."
+  },
+  {
+   "n": 15,
+   "course": "Math II (Algebra 2)",
+   "unit": "Compound interest",
+   "stem": "Which expression gives the value of $4,000 invested for 6 years at 5% annual interest compounded quarterly?",
+   "options": [
+    "4000(1 + 0.05)⁶",
+    "4000(1 + 0.05/12)⁷²",
+    "4000(1 + 0.05/4)²⁴",
+    "4000(1 + 0.05/4)⁶"
+   ],
+   "answer": "C",
+   "why": "Quarterly compounding uses rate 0.05/4 per period and 4 · 6 = 24 periods, giving 4000(1 + 0.0125)²⁴."
+  },
+  {
+   "n": 16,
+   "course": "Math II (Algebra 2)",
+   "unit": "Half-life models",
+   "stem": "An 80 mg sample of a substance has a half-life of 12 years. About how much remains after 30 years?",
+   "options": [
+    "about 20 mg",
+    "about 10 mg",
+    "about 40 mg",
+    "about 14 mg"
+   ],
+   "answer": "D",
+   "why": "Use 80(1/2)^(30/12) = 80(1/2)^2.5 ≈ 14.1 mg, since 30 years is 2.5 half-lives."
+  },
+  {
+   "n": 17,
+   "course": "Math II (Algebra 2)",
+   "unit": "Logarithmic equations",
+   "stem": "Solve log₃(x − 2) + log₃(x + 4) = 3.",
+   "options": [
+    "x = 5",
+    "x = 5 or x = −7",
+    "x = 7",
+    "x = 2"
+   ],
+   "answer": "A",
+   "why": "Combining logs gives (x − 2)(x + 4) = 27, so x² + 2x − 35 = 0 and x = 5 or x = −7; x = −7 is rejected because it makes both arguments negative."
+  },
+  {
+   "n": 18,
+   "course": "Math II (Algebra 2)",
+   "unit": "Rational function graphs",
+   "stem": "For f(x) = (2x² − 8)/(x² − 3x + 2), which statement describes its asymptotes and holes?",
+   "options": [
+    "Vertical asymptotes x = 1 and x = 2, horizontal asymptote y = 2",
+    "Vertical asymptote x = 1, hole at x = 2, horizontal asymptote y = 2",
+    "Vertical asymptote x = 2, hole at x = 1, horizontal asymptote y = 0",
+    "Hole at x = 1, vertical asymptote x = 2, no horizontal asymptote"
+   ],
+   "answer": "B",
+   "why": "Factoring gives 2(x − 2)(x + 2)/((x − 1)(x − 2)); the shared factor x − 2 is a hole, x = 1 stays a vertical asymptote, and equal degrees give y = 2."
+  },
+  {
+   "n": 19,
+   "course": "Math II (Algebra 2)",
+   "unit": "Arithmetic sequences",
+   "stem": "In an arithmetic sequence, a₃ = 11 and a₉ = 35. What is a₂₀?",
+   "options": [
+    "75",
+    "83",
+    "79",
+    "71"
+   ],
+   "answer": "C",
+   "why": "The common difference is (35 − 11)/6 = 4, so a₁ = 3 and a₂₀ = 3 + 19(4) = 79."
+  },
+  {
+   "n": 20,
+   "course": "Math II (Algebra 2)",
+   "unit": "Infinite geometric series",
+   "stem": "What is the sum of the infinite geometric series 6 + 4 + 8/3 + 16/9 + ⋯?",
+   "options": [
+    "12",
+    "24",
+    "The series diverges.",
+    "18"
+   ],
+   "answer": "D",
+   "why": "The ratio is 2/3, so the sum is a/(1 − r) = 6/(1/3) = 18."
+  },
+  {
+   "n": 21,
+   "course": "Math II (Algebra 2)",
+   "unit": "Geometric sequences",
+   "stem": "A geometric sequence has a₂ = 6 and a₅ = 48. What is a₈?",
+   "options": [
+    "384",
+    "192",
+    "768",
+    "96"
+   ],
+   "answer": "A",
+   "why": "The ratio satisfies r³ = 48/6 = 8, so r = 2; then a₈ = a₅ · r³ = 48 · 8 = 384."
+  },
+  {
+   "n": 22,
+   "course": "Math II (Algebra 2)",
+   "unit": "Binomial theorem",
+   "stem": "What is the coefficient of x³ in the expansion of (2x − 3)⁵?",
+   "options": [
+    "−720",
+    "720",
+    "1080",
+    "270"
+   ],
+   "answer": "B",
+   "why": "The x³ term is C(5,3)(2x)³(−3)² = 10 · 8x³ · 9 = 720x³."
+  },
+  {
+   "n": 23,
+   "course": "Math II (Algebra 2)",
+   "unit": "Unit circle",
+   "stem": "If θ = 5π/6, what is tan θ?",
+   "options": [
+    "√3/3",
+    "−√3",
+    "−√3/3",
+    "−1/2"
+   ],
+   "answer": "C",
+   "why": "At 5π/6, sin θ = 1/2 and cos θ = −√3/2, so tan θ = (1/2)/(−√3/2) = −1/√3 = −√3/3."
+  },
+  {
+   "n": 24,
+   "course": "Math II (Algebra 2)",
+   "unit": "Trigonometric graphs",
+   "stem": "What are the amplitude and period of y = 3 sin(2x − π/2)?",
+   "options": [
+    "Amplitude 3, period 2π",
+    "Amplitude 2, period π",
+    "Amplitude 3, period π/2",
+    "Amplitude 3, period π"
+   ],
+   "answer": "D",
+   "why": "The amplitude is |3| = 3 and the period is 2π/2 = π; the −π/2 inside shifts the graph but changes neither."
+  },
+  {
+   "n": 25,
+   "course": "Math II (Algebra 2)",
+   "unit": "Law of Cosines",
+   "stem": "A triangle has sides of length 7 and 10 with an included angle of 60°. What is the length of the third side?",
+   "options": [
+    "√79",
+    "√149",
+    "√219",
+    "13"
+   ],
+   "answer": "A",
+   "why": "By the Law of Cosines, c² = 49 + 100 − 2(7)(10)cos 60° = 149 − 70 = 79, so c = √79."
+  },
+  {
+   "n": 26,
+   "course": "Math II (Algebra 2)",
+   "unit": "Trigonometric identities",
+   "stem": "Which expression is equivalent to (1 − cos²θ)/(sin θ cos θ) for values where it is defined?",
+   "options": [
+    "cot θ",
+    "tan θ",
+    "sin θ",
+    "sec θ"
+   ],
+   "answer": "B",
+   "why": "Since 1 − cos²θ = sin²θ, the expression becomes sin²θ/(sin θ cos θ) = sin θ/cos θ = tan θ."
+  },
+  {
+   "n": 27,
+   "course": "Math II (Algebra 2)",
+   "unit": "Normal distribution",
+   "stem": "Scores on a test are normally distributed with mean 70 and standard deviation 8. Approximately what percent of scores are above 86?",
+   "options": [
+    "about 5%",
+    "about 16%",
+    "about 2.5%",
+    "about 32%"
+   ],
+   "answer": "C",
+   "why": "A score of 86 is z = (86 − 70)/8 = 2; about 95% lie within two standard deviations, leaving about 2.5% in the upper tail."
+  },
+  {
+   "n": 28,
+   "course": "Math II (Algebra 2)",
+   "unit": "Permutations with repetition",
+   "stem": "How many distinct arrangements can be made from all the letters of the word BANANA?",
+   "options": [
+    "720",
+    "120",
+    "20",
+    "60"
+   ],
+   "answer": "D",
+   "why": "There are 6!/(3!·2!) = 720/12 = 60 arrangements because A repeats three times and N twice."
+  },
+  {
+   "n": 29,
+   "course": "Math II (Algebra 2)",
+   "unit": "Conditional probability",
+   "stem": "For events A and B, P(A) = 0.5, P(B) = 0.4, and P(A ∩ B) = 0.2. What is P(A | B)?",
+   "options": [
+    "0.5",
+    "0.4",
+    "0.2",
+    "0.8"
+   ],
+   "answer": "A",
+   "why": "P(A | B) = P(A ∩ B)/P(B) = 0.2/0.4 = 0.5, which also matches P(A), so the events are independent."
+  },
+  {
+   "n": 30,
+   "course": "Math II (Algebra 2)",
+   "unit": "Domain of radical-rational functions",
+   "stem": "What is the domain of f(x) = √(x − 3)/(x − 5)?",
+   "options": [
+    "(3, ∞)",
+    "[3, 5) ∪ (5, ∞)",
+    "[3, ∞)",
+    "[3, 5)"
+   ],
+   "answer": "B",
+   "why": "The radicand requires x ≥ 3 and the denominator excludes x = 5, so the domain is [3, 5) ∪ (5, ∞)."
+  },
+  {
+   "n": 31,
+   "course": "Math II (Algebra 2)",
+   "unit": "Function transformations",
+   "stem": "How is the graph of g(x) = −f(x + 2) − 1 obtained from the graph of f?",
+   "options": [
+    "Reflect across the y-axis, shift 2 right, then shift 1 down",
+    "Reflect across the x-axis, shift 2 right, then shift 1 up",
+    "Reflect across the x-axis, shift 2 left, then shift 1 down",
+    "Reflect across the x-axis, shift 2 left, then shift 1 up"
+   ],
+   "answer": "C",
+   "why": "The negative sign reflects over the x-axis, x + 2 shifts left 2, and −1 outside shifts the graph down 1."
+  },
+  {
+   "n": 32,
+   "course": "Math II (Algebra 2)",
+   "unit": "Quadratic applications",
+   "stem": "The height in feet of a ball is h(t) = −16t² + 64t + 5, where t is time in seconds. What is the ball's maximum height?",
+   "options": [
+    "64 ft",
+    "5 ft",
+    "133 ft",
+    "69 ft"
+   ],
+   "answer": "D",
+   "why": "The vertex occurs at t = −64/(2·−16) = 2, and h(2) = −64 + 128 + 5 = 69 feet."
+  },
+  {
+   "n": 33,
+   "course": "Math II (Algebra 2)",
+   "unit": "Quadratic inequalities",
+   "stem": "What is the solution set of x² − x − 6 ≤ 0?",
+   "options": [
+    "−2 ≤ x ≤ 3",
+    "x ≤ −2 or x ≥ 3",
+    "−3 ≤ x ≤ 2",
+    "x ≤ 3"
+   ],
+   "answer": "A",
+   "why": "The parabola opens upward with zeros at x = −2 and x = 3, so it is at or below zero between them: −2 ≤ x ≤ 3."
+  }
+ ]
+}
