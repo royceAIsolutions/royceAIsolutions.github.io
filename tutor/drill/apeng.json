@@ -1,0 +1,473 @@
+{
+ "id": "apeng",
+ "title": "AP English Language",
+ "generated": "2026-11-12",
+ "source": "generated",
+ "courses": [
+  "AP English Language"
+ ],
+ "questions": [
+  {
+   "n": 1,
+   "course": "AP English Language",
+   "unit": "Rhetorical situation",
+   "stem": "In 1963 eight Alabama clergymen published a statement calling King's Birmingham protests 'unwise and untimely.' King answered from a jail cell, addressing them as 'My dear Fellow Clergymen.' What does that salutation chiefly establish about the rhetorical situation?",
+   "options": [
+    "It places writer and readers inside one clerical calling, so the letter reads as a dispute among colleagues rather than an attack from outside.",
+    "It concedes that the clergymen outrank King and that his argument must defer to their authority.",
+    "It marks the letter as private correspondence rather than a public argument.",
+    "It avoids naming an audience so the letter can reach any reader who happens to find it."
+   ],
+   "answer": "A",
+   "why": "Calling them fellow clergymen assigns both parties the same role, which lets King argue as an insider whose criticism cannot be dismissed as outside agitation."
+  },
+  {
+   "n": 2,
+   "course": "AP English Language",
+   "unit": "Purpose versus topic",
+   "stem": "A student opens an essay with a paragraph of detail about the 1911 Triangle factory fire, then closes the paragraph: 'The fire did not teach us safety; it taught us what we were willing to pay for it.' Which sentence best states the paragraph's purpose, as opposed to its topic?",
+   "options": [
+    "It summarizes the fire's factual causes for readers who have never heard of it.",
+    "It asks readers to reinterpret the fire as evidence of a price the public accepted, not simply to remember the disaster.",
+    "It argues that safety regulation was unnecessary in 1911.",
+    "It narrates the writer's own visit to the factory site."
+   ],
+   "answer": "B",
+   "why": "The closing sentence converts a remembered event into a claim about what the public tolerated, so the paragraph's job is reinterpretation rather than summary."
+  },
+  {
+   "n": 3,
+   "course": "AP English Language",
+   "unit": "Concession and rebuttal",
+   "stem": "An op-ed on later school start times grants that 'some parents will have to rearrange work schedules, and that burden is real,' then adds, 'but a district that schedules around adult convenience has decided whose time matters.' What does the concession accomplish?",
+   "options": [
+    "It withdraws the proposal so the writer need not defend a specific policy.",
+    "It raises a counterargument that the writer leaves unanswered.",
+    "It grants the strongest practical objection so the next clause can reframe the issue as a question of priorities rather than logistics.",
+    "It shifts the essay from persuasion to neutral reporting."
+   ],
+   "answer": "C",
+   "why": "Conceding the burden removes the easiest rebuttal, and 'whose time matters' moves the argument from scheduling to values."
+  },
+  {
+   "n": 4,
+   "course": "AP English Language",
+   "unit": "Ethos through qualification",
+   "stem": "A physician writing for a general audience begins, 'I have treated about four hundred patients with this condition, and I still do not know why it strikes some people and not others.' What is the rhetorical effect of admitting uncertainty?",
+   "options": [
+    "It undercuts the writer's authority so the advice that follows carries less weight.",
+    "It appeals mainly to pity by describing suffering patients.",
+    "It warns readers that the article will refuse to take a position.",
+    "It builds credibility by showing that the writer's claims are bounded by evidence rather than inflated by authority."
+   ],
+   "answer": "D",
+   "why": "Acknowledging the limit of four hundred cases makes the writer sound like a witness rather than a salesman, which is what earns trust for the advice that follows."
+  },
+  {
+   "n": 5,
+   "course": "AP English Language",
+   "unit": "Function of concrete detail",
+   "stem": "A profile of a retiring teacher, one paragraph after discussing his forty years at the school, lists what sits on his desk: a coffee cup with a chipped rim, a stapler older than the computer lab, a photograph of a class from 1988. What do these objects do for the paragraph?",
+   "options": [
+    "Their wear and age make the length of his tenure tangible, setting up the question of whether his methods have aged along with the desk.",
+    "They specify the school's location so the reader can picture the building.",
+    "They document the district's spending on classroom supplies.",
+    "They turn the profile's tone from admiration to open mockery of the teacher."
+   ],
+   "answer": "A",
+   "why": "Dated, worn objects convert forty years from a number into something visible, and the implied comparison to his teaching is what the next sentence can use."
+  },
+  {
+   "n": 6,
+   "course": "AP English Language",
+   "unit": "Tone shift through syntax",
+   "stem": "A report opens: 'The bridge carried 41,000 vehicles a day. Inspections averaged twenty-four months.' Its second paragraph reads: 'Nobody counted the trucks. Nobody counted the weight. Nobody thought to.' What does the syntax of the second paragraph accomplish?",
+   "options": [
+    "The parallelism clarifies the inspection schedule that the first paragraph left vague.",
+    "The parallel short clauses turn a procedural lapse into an accusation, shifting the report from neutral record to indictment.",
+    "The fragments imitate the engineers' speech, adding documentary realism.",
+    "The repetition slows the pace so that the reader can absorb the statistics."
+   ],
+   "answer": "B",
+   "why": "Anaphora on 'Nobody' plus clipped clauses transfers blame to people rather than procedures, which is a change of stance, not a clarification."
+  },
+  {
+   "n": 7,
+   "course": "AP English Language",
+   "unit": "Evidence and commentary",
+   "stem": "A student writes: 'Absenteeism fell 12 percent after the shuttle program began. This proves the program works.' Which revision supplies the commentary an AP reader expects?",
+   "options": [
+    "Absenteeism fell 12 percent after the shuttle program began, which is a large number and therefore convincing.",
+    "Absenteeism fell 12 percent after the shuttle program began, and numbers do not lie.",
+    "Absenteeism fell 12 percent after the shuttle program began, a drop consistent with the program's aim, though ridership and bell schedules changed that same term.",
+    "Absenteeism fell 12 percent after the shuttle program began, so the program works for every student in the district."
+   ],
+   "answer": "C",
+   "why": "Commentary must explain how the evidence supports the claim while naming what else changed; the other options assert, overgeneralize, or substitute slogans for reasoning."
+  },
+  {
+   "n": 8,
+   "course": "AP English Language",
+   "unit": "Thesis strength",
+   "stem": "Which thesis best meets the demands of an AP argument essay on whether schools should ban phones during class?",
+   "options": [
+    "Phones are bad for students and schools should ban them.",
+    "There are good points on both sides of the phone debate in schools.",
+    "Phones are a distraction, a safety tool, and a fact of modern life.",
+    "Schools should restrict phones during instruction but not between classes, because the costs fall on teaching while the benefits of contact fall on the margins of the day."
+   ],
+   "answer": "D",
+   "why": "A defensible thesis takes a position narrow enough to argue and specific enough to predict the essay's structure; the others are a bare assertion, a non-claim, and a list."
+  },
+  {
+   "n": 9,
+   "course": "AP English Language",
+   "unit": "Synthesis and source use",
+   "stem": "In a synthesis essay on urban tree cover, a student writes: 'A 2019 study found that neighborhoods with more canopy are three degrees cooler. This is why every city must plant trees immediately.' Which weakness does the second sentence introduce?",
+   "options": [
+    "It leaps from one correlational finding to a universal mandate, ignoring cost, feasibility, and sources that qualify the benefit.",
+    "It cites a source without naming the author, which is a citation error.",
+    "It repeats the first sentence's evidence instead of adding a new source.",
+    "It qualifies the finding so heavily that no policy can follow from it."
+   ],
+   "answer": "A",
+   "why": "The defect is the size of the inference: one study of a temperature difference does not by itself settle what every city should do or what it would cost."
+  },
+  {
+   "n": 10,
+   "course": "AP English Language",
+   "unit": "Rhetorical questions",
+   "stem": "An editorial asks, 'If the district cannot afford to fix the roof, what exactly is it spending the maintenance budget on?' What is the question's function in the argument?",
+   "options": [
+    "It requests information that the editorial will later supply from public records.",
+    "It leads the reader to an inference the writer never states, so the accusation feels like the reader's own conclusion.",
+    "It signals that the writer is unsure where the budget went.",
+    "It shifts the appeal from logic to sympathy for teachers."
+   ],
+   "answer": "B",
+   "why": "A rhetorical question with an obvious implication invites the reader to supply the charge, which is more persuasive than stating it outright."
+  },
+  {
+   "n": 11,
+   "course": "AP English Language",
+   "unit": "Irony and understatement",
+   "stem": "A memo on a project nine months late and four times over budget reports that 'the timeline has required modest adjustment.' What does the understatement accomplish?",
+   "options": [
+    "It hides the delay so that the reader must consult the attached schedule.",
+    "It presents the memo's author as a cautious professional who never exaggerates.",
+    "The gap between the words and the facts forces the reader to supply the criticism the memo will not state, which stings more than a complaint would.",
+    "It softens the news so that the reader can accept the delay without resentment."
+   ],
+   "answer": "C",
+   "why": "Understatement works by mismatch: the reader performs the arithmetic and draws the harsher conclusion, which the writer can then disown."
+  },
+  {
+   "n": 12,
+   "course": "AP English Language",
+   "unit": "Pathos and specificity",
+   "stem": "A charity tests two fundraising letters: one follows a single child through a day and asks for twenty dollars, the other reports that five thousand children need help and asks for the same amount. Why does the first usually raise more?",
+   "options": [
+    "Statistics are always less persuasive than stories in fundraising.",
+    "The first letter appeals to logic by itemizing one child's exact budget.",
+    "The second letter asks for more money than most readers can give.",
+    "A named, specific case makes the need imaginable, while the aggregate lets the reader feel that one contribution cannot matter."
+   ],
+   "answer": "D",
+   "why": "'Always' makes the first option false as a general rule; the real mechanism is identifiability, which converts a large number into a picture the reader can act on."
+  },
+  {
+   "n": 13,
+   "course": "AP English Language",
+   "unit": "Periodic sentence",
+   "stem": "Compare 'Because the county ignored three warnings, because the levee was never reinforced, and because the evacuation order came at midnight, the town flooded' with 'The town flooded.' What does delaying the main clause accomplish?",
+   "options": [
+    "It makes the reader accumulate causes first, so the flood arrives as a conclusion the sentence has already proved.",
+    "It shortens the subject of the sentence, making the prose more concise.",
+    "It shifts agency from the county to the town.",
+    "It removes the writer's judgment, leaving only chronology."
+   ],
+   "answer": "A",
+   "why": "A periodic sentence withholds its main clause until the end; the delay makes the outcome feel caused rather than merely reported."
+  },
+  {
+   "n": 14,
+   "course": "AP English Language",
+   "unit": "Diction and connotation",
+   "stem": "A reporter writes that after the chemical spill residents 'were processed out of the district.' What does 'processed' imply that 'evacuated' would not?",
+   "options": [
+    "It suggests that the residents left voluntarily and in good order.",
+    "It frames residents as material moving through a system, hinting at bureaucratic indifference rather than emergency care.",
+    "It specifies how long the evacuation was expected to last.",
+    "It shifts blame for the spill from the agency to the residents."
+   ],
+   "answer": "B",
+   "why": "The word borrows the vocabulary of factories and forms, so its connotation is administrative handling rather than protection."
+  },
+  {
+   "n": 15,
+   "course": "AP English Language",
+   "unit": "False dilemma",
+   "stem": "'Either we cut the arts budget or we admit that this school does not care about math.' Which flaw does the sentence contain?",
+   "options": [
+    "It attacks the character of arts teachers instead of their position.",
+    "It assumes that whatever happened earlier caused the budget shortfall.",
+    "It presents two options as exhaustive when funds could be combined, raised elsewhere, or cut from another line.",
+    "It generalizes from one school's budget to every school in the state."
+   ],
+   "answer": "C",
+   "why": "A false dilemma narrows a range of choices to two; the arts-or-math pairing is the invented pair."
+  },
+  {
+   "n": 16,
+   "course": "AP English Language",
+   "unit": "Straw man",
+   "stem": "An editorial opposing a later start time writes, 'Supporters want teenagers to sleep until noon and skip first period entirely.' Which flaw is this?",
+   "options": [
+    "It relies on an unrepresentative sample of teenagers.",
+    "It appeals to tradition without offering an argument.",
+    "It confuses correlation with causation in the sleep research.",
+    "It substitutes an exaggerated version of the proposal, a cancelled school day, for the proposal itself."
+   ],
+   "answer": "D",
+   "why": "A later start is not a cancelled day; attacking the exaggerated version lets the writer avoid the real claim."
+  },
+  {
+   "n": 17,
+   "course": "AP English Language",
+   "unit": "Qualifying a claim",
+   "stem": "Which sentence qualifies a claim without abandoning it?",
+   "options": [
+    "Recycling reduces landfill volume where collection is reliable, though the effect shrinks when markets for recycled material collapse.",
+    "Recycling reduces landfill volume in most cases, more or less.",
+    "Recycling may or may not reduce landfill volume, depending on things.",
+    "Recycling reduces landfill volume because everyone agrees that it does."
+   ],
+   "answer": "A",
+   "why": "A qualifier names the condition under which the claim holds; vague hedges name no condition, and the last sentence substitutes consensus for evidence."
+  },
+  {
+   "n": 18,
+   "course": "AP English Language",
+   "unit": "Line of reasoning and order",
+   "stem": "An essay's paragraphs run: the problem, a failed first attempt, the objection that the second attempt costs too much, the second attempt's results, the recommendation. What revision most improves the line of reasoning?",
+   "options": [
+    "Move the recommendation to the opening so that readers know the conclusion immediately.",
+    "Move the results paragraph before the objection, so the cost objection answers a proposal already shown to work.",
+    "Move the failed attempt to the end so that the essay closes on failure.",
+    "Combine the problem and the failed attempt to shorten the introduction."
+   ],
+   "answer": "B",
+   "why": "An objection lands hardest against a proposal the reader has already seen succeed; as ordered, the objection answers nothing yet."
+  },
+  {
+   "n": 19,
+   "course": "AP English Language",
+   "unit": "Evidence selection",
+   "stem": "A student argues that new bike lanes reduced collisions on a downtown corridor. Which evidence would most directly support the claim?",
+   "options": [
+    "Survey data showing that most residents approve of the lanes.",
+    "A national study of bike lanes in ten other cities.",
+    "Collision counts for that corridor in the two years before and the two years after the lanes were installed.",
+    "The mayor's statement that the lanes have made streets safer."
+   ],
+   "answer": "C",
+   "why": "The claim is about one corridor changing after an intervention, so before-and-after counts from that corridor are the direct test; approval, other cities, and official praise are adjacent evidence."
+  },
+  {
+   "n": 20,
+   "course": "AP English Language",
+   "unit": "Attribution in synthesis",
+   "stem": "Which sentence integrates a source most effectively into an argument about free school meals?",
+   "options": [
+    "Wu (2021) says free meals are good, and I agree with her.",
+    "According to a study, free meals matter (Wu).",
+    "Free meals matter, as anyone who has eaten cafeteria food knows (Wu 2021).",
+    "Although Wu (2021) finds that students eat more vegetables when meals are free, her district sample is small enough that the finding is suggestive rather than settled."
+   ],
+   "answer": "D",
+   "why": "Effective attribution states the finding and then judges its weight; the others agree, gesture, or attach a citation to the writer's own opinion."
+  },
+  {
+   "n": 21,
+   "course": "AP English Language",
+   "unit": "Deadpan satire",
+   "stem": "A satirical column notes that air travelers now remove their shoes, belts, and dignity, 'which the agency reports has reduced incidents involving untied laces to zero.' What does the final detail do?",
+   "options": [
+    "It offers a trivial benefit as if it were a serious measure of success, exposing the policy's costs through misplaced emphasis.",
+    "It supplies the statistic that justifies the security procedure.",
+    "It apologizes for the inconvenience that the column has just described.",
+    "It redirects the column from passengers to the agency's budget."
+   ],
+   "answer": "A",
+   "why": "The joke is the scale of the benefit set against the scale of the cost; the sentence never argues, it lets the mismatch argue."
+  },
+  {
+   "n": 22,
+   "course": "AP English Language",
+   "unit": "Sentence function in context",
+   "stem": "A paragraph in an essay on public libraries ends: 'The library did not make the town smarter. It made the town less lonely.' What is the second sentence's function?",
+   "options": [
+    "It restates the first sentence in plainer words for emphasis.",
+    "It replaces the measure the first sentence rejects with a different one, turning the paragraph from intellectual benefit to social benefit.",
+    "It introduces evidence that the next paragraph will document.",
+    "It concedes that libraries fail to educate anyone."
+   ],
+   "answer": "B",
+   "why": "The negation clears away one standard and the second clause installs another, which is a shift in the paragraph's criterion, not a restatement."
+  },
+  {
+   "n": 23,
+   "course": "AP English Language",
+   "unit": "Parallelism in revision",
+   "stem": "Which version of this sentence is clearest and most parallel? 'The proposal was rejected because it was expensive, the timing was bad, and residents objected.'",
+   "options": [
+    "The proposal was rejected because of expense, bad timing, and because residents objected.",
+    "The proposal was rejected, and the reasons were that it cost a lot and timing and residents.",
+    "The proposal was rejected because it was expensive, ill-timed, and unpopular with residents.",
+    "Rejecting the proposal, the reasons were expense, timing, and residents objecting."
+   ],
+   "answer": "C",
+   "why": "Three parallel adjectives follow one 'because'; the other versions mix a clause with nouns or leave the opening modifier dangling."
+  },
+  {
+   "n": 24,
+   "course": "AP English Language",
+   "unit": "Modifier placement",
+   "stem": "Which sentence places its opening modifier so that the meaning is unambiguous?",
+   "options": [
+    "Written in a single night, the committee was still persuaded by the report.",
+    "The report persuaded the committee, written in a single night.",
+    "The committee, written in a single night, was persuaded by the report.",
+    "Written in a single night, the report still persuaded the committee."
+   ],
+   "answer": "D",
+   "why": "A participial phrase attaches to the nearest sensible noun; only the first sentence gives 'written' a report to modify."
+  },
+  {
+   "n": 25,
+   "course": "AP English Language",
+   "unit": "Transitions",
+   "stem": "Which transition best expresses the relationship between these sentences? 'The dam reduced flooding downstream. ___ it also trapped sediment that once rebuilt the delta.'",
+   "options": [
+    "However,",
+    "Therefore,",
+    "In other words,",
+    "For example,"
+   ],
+   "answer": "A",
+   "why": "The second fact cuts against the benefit named in the first, which calls for contrast; the others claim causation, restatement, or illustration."
+  },
+  {
+   "n": 26,
+   "course": "AP English Language",
+   "unit": "Conflicting sources",
+   "stem": "Two studies disagree about whether homework helps elementary students. Which sentence uses the disagreement most productively in an argument?",
+   "options": [
+    "The studies disagree, so neither of them can be trusted.",
+    "The studies disagree, and the disagreement is informative: the benefit appears where practice is measured and disappears where test scores are.",
+    "The studies disagree, which proves that homework is ineffective.",
+    "The studies disagree, and both are correct in their own way."
+   ],
+   "answer": "B",
+   "why": "Naming what differs between the studies turns a contradiction into a claim about measurement; dismissing both, choosing one, or flattening the difference wastes the evidence."
+  },
+  {
+   "n": 27,
+   "course": "AP English Language",
+   "unit": "Rhetorical analysis thesis",
+   "stem": "Which sentence is the strongest thesis for a rhetorical analysis of a speech?",
+   "options": [
+    "The speech uses many rhetorical devices, including repetition, metaphor, and appeals to emotion.",
+    "The speech is effective because the speaker is a widely respected figure.",
+    "The speech wins its audience by conceding the policy's cost in its first minute, then spending the rest converting that cost into proof of the country's seriousness.",
+    "The speech argues that the policy is expensive but worthwhile."
+   ],
+   "answer": "C",
+   "why": "A rhetorical analysis thesis names a choice and its effect; listing devices, praising the speaker, or summarizing the argument does neither."
+  },
+  {
+   "n": 28,
+   "course": "AP English Language",
+   "unit": "Definition as argument",
+   "stem": "An essay on censorship argues, 'A library is not a warehouse of approved books; it is a place where a town can find out what it does not yet know.' What is this move?",
+   "options": [
+    "It defines a term in order to avoid taking a position on the policy.",
+    "It appeals to the reader's nostalgia for childhood reading.",
+    "It concedes that libraries store books and simply adds a second function.",
+    "It contests a definition so that the debate shifts to what a library is for, a question the writer's opponents must now answer."
+   ],
+   "answer": "D",
+   "why": "Rejecting the warehouse definition relocates the argument onto purpose, where the writer's framing governs the terms of the disagreement."
+  },
+  {
+   "n": 29,
+   "course": "AP English Language",
+   "unit": "Anecdote and statistic",
+   "stem": "A report on rural broadband opens with a student driving forty minutes to a parking lot to submit homework. What does the anecdote do that '28 percent lack access' cannot?",
+   "options": [
+    "It makes the gap visible in time and effort, giving the number a consequence the reader can picture.",
+    "It shows that the report's author interviewed the student personally.",
+    "It removes the need for statistics later in the report.",
+    "It appeals to sympathy for schools rather than for families."
+   ],
+   "answer": "A",
+   "why": "Specifics dramatize a rate: the reader sees what the percentage costs one person, and the statistic then reads as a measure of that cost."
+  },
+  {
+   "n": 30,
+   "course": "AP English Language",
+   "unit": "Precise hedging",
+   "stem": "Which sentence hedges precisely rather than vaguely?",
+   "options": [
+    "The policy had a significant impact on applications, one way or another.",
+    "The policy cut applications by about a third in its first year, though the effect may fade as families learn the new rules.",
+    "The policy reduced applications, possibly, in some ways, for some families.",
+    "The policy reduced applications by roughly a lot, almost certainly."
+   ],
+   "answer": "B",
+   "why": "Precise hedging states the size of the estimate and the condition that could change it; the others hedge the meaning itself into nothing."
+  },
+  {
+   "n": 31,
+   "course": "AP English Language",
+   "unit": "Counterargument placement",
+   "stem": "In a short argument essay, where does an objection do the most work?",
+   "options": [
+    "In the first sentence, so that the essay opens on the opposing view.",
+    "In the final sentence, so that the essay can end by agreeing with opponents.",
+    "After the writer's main evidence, so that the rebuttal can answer the strongest version of the objection.",
+    "In a footnote, so that the body paragraphs stay focused on the thesis."
+   ],
+   "answer": "C",
+   "why": "An objection is useful when it is answered; placed after the evidence, it can be met with that evidence rather than merely announced."
+  },
+  {
+   "n": 32,
+   "course": "AP English Language",
+   "unit": "Antithesis",
+   "stem": "'The test measured what students could memorize; the project measured what they could do with it.' What does the sentence's structure accomplish?",
+   "options": [
+    "The parallelism shows that the test and the project measured the same skill.",
+    "The semicolon marks the second clause as an example of the first.",
+    "The repetition of 'measured' softens the difference between the two assessments.",
+    "The balanced antithesis opposes two verbs, so the contrast reads as a judgment on the test rather than a neutral comparison."
+   ],
+   "answer": "D",
+   "why": "Parallel clauses with opposed verbs invite the reader to weigh one against the other, and 'could do with it' wins the comparison."
+  },
+  {
+   "n": 33,
+   "course": "AP English Language",
+   "unit": "Concision",
+   "stem": "Which revision removes the most redundancy without losing meaning? 'In the event that the weather should happen to turn bad, the event will be canceled due to the fact that it is unsafe.'",
+   "options": [
+    "If the weather turns bad, the event will be canceled because it is unsafe.",
+    "In the event the weather turns bad, the event will be canceled due to safety.",
+    "Should bad weather happen to occur, cancellation will follow for reasons of safety.",
+    "If it is unsafe due to the weather turning bad, the event will be canceled."
+   ],
+   "answer": "A",
+   "why": "'In the event that,' 'should happen to,' and 'due to the fact that' are three padded phrases; one 'if' and one 'because' carry the same meaning."
+  }
+ ]
+}
