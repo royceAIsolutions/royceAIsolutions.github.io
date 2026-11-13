@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>역전 할매 (Yeokjeon Halmae): a 2,200-won beer empire that outgrew its own economics — RoyceAI</title>
+<meta name="description" content="Financial analysis of 역전할머니맥주 / 역전에프앤씨: revenue, operating margin collapse from 30% to 3.5%, 250억 in dividends against 38억 of net income, the PEF exit math, and a test of the claim that it profits $50,000–100,000 per month.">
+<link rel="canonical" href="https://royceai.com/blog/yeokjeon-halmae-2026-11-12.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta property="og:title" content="역전 할매: a 2,200-won beer empire that outgrew its own economics">
+<meta property="og:description" content="Revenue is flat, operating margin fell from 30% to 3.5%, and 250억 of dividends went out against 38억 of net income. A financial read on 역전할머니맥주 — plus a test of the '$50-100k/month profit' claim.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://royceai.com/assets/logo/brand/png/royceai-og-1200x630.png?v=6">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=6">
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-bg:rgba(124,92,252,0.08);--green:#34d399;--red:#ef4444;--nav-h:64px;--max-w:1200px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;overflow-x:hidden;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,92,252,0.05) 0%,transparent 70%)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:var(--nav-h);max-width:var(--max-w);margin:0 auto;border-bottom:1px solid var(--border);background:rgba(7,7,10,.8);backdrop-filter:blur(20px);position:sticky;top:0;z-index:100}
+.nav-logo{font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all .2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links .nav-cta{background:var(--accent);color:#fff!important;font-weight:600;padding:8px 22px}
+.post-wrap{max-width:760px;margin:0 auto;padding:3rem 1.5rem 5rem}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent-light);text-decoration:none;font-size:.9rem;font-weight:500;margin-bottom:2rem}
+.back-link:hover{color:#fff}
+.kicker{color:var(--accent-light);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.75rem}
+.post-wrap h1{font-size:2.15rem;font-weight:800;line-height:1.25;letter-spacing:-.03em;margin-bottom:.9rem}
+.post-wrap .deck{color:#c9c9d1;font-size:1.12rem;line-height:1.7;margin-bottom:1.5rem}
+.post-wrap .meta{color:var(--text-muted);font-size:.82rem;display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:2.25rem;padding-bottom:1.35rem;border-bottom:1px solid var(--border)}
+.post-wrap .meta .tag{background:var(--accent-bg);color:var(--accent-light);padding:3px 10px;border-radius:6px;font-weight:600;font-size:.72rem}
+.post-wrap h2{font-size:1.45rem;font-weight:700;margin:2.6rem 0 .9rem;letter-spacing:-.02em;color:#fff}
+.post-wrap h3{font-size:1.08rem;font-weight:650;color:var(--accent-light);margin:1.6rem 0 .5rem}
+.post-wrap p{color:#d4d4d8;margin:.9rem 0;font-size:1.02rem}
+.post-wrap ul,.post-wrap ol{padding-left:1.35rem;margin:.9rem 0;color:#d4d4d8}
+.post-wrap li{margin:.45rem 0}
+.post-wrap strong{color:#fff;font-weight:650}
+.post-wrap a{color:var(--accent-light)}
+.highlight{background:var(--accent-bg);border-left:3px solid var(--accent);padding:.95rem 1.2rem;border-radius:0 10px 10px 0;margin:1.4rem 0;color:#d4d4d8;font-size:.95rem}
+.verdict{border-left-color:var(--green);background:rgba(52,211,153,.07)}
+.warn{border-left-color:#f59e0b;background:rgba(245,158,11,.07)}
+table{width:100%;border-collapse:collapse;margin:1.4rem 0;font-size:.9rem}
+caption{caption-side:top;text-align:left;color:var(--text-muted);font-size:.78rem;padding-bottom:.5rem}
+th,td{padding:.55rem .6rem;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left;color:#c9c9d1;white-space:normal}
+thead th{color:var(--text-muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;font-weight:600;border-bottom:1px solid rgba(255,255,255,.12)}
+tbody tr:hover{background:rgba(255,255,255,.02)}
+td.pos{color:var(--green)}td.neg{color:var(--red)}
+.tbl-wrap{overflow-x:auto}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:1.4rem 0}
+.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1rem}
+.stat-card .num{font-size:1.45rem;font-weight:800;color:var(--accent-light);line-height:1.2}
+.stat-card .desc{color:var(--text-secondary);font-size:.78rem;margin-top:.3rem}
+.src{color:var(--text-muted);font-size:.78rem;margin-top:.4rem}
+.post-wrap .src a{color:#8f7bd8}
+.cta-box{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;margin:3rem 0 1rem}
+.cta-box h3{color:#fff;margin-bottom:.6rem}
+.cta-box p{color:var(--text-secondary);font-size:.9rem;margin-bottom:1.1rem}
+.cta-btn{display:inline-flex;gap:8px;background:var(--accent);color:#fff!important;text-decoration:none;padding:12px 26px;border-radius:10px;font-weight:600;font-size:.95rem}
+.cta-btn:hover{background:var(--accent-light)}
+footer{border-top:1px solid var(--border);padding:44px 24px;max-width:var(--max-w);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+footer .links{display:flex;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:.875rem}
+footer .links a:hover{color:var(--accent-light)}
+footer .copy{color:var(--text-muted);font-size:.8rem;width:100%;text-align:center}
+@media(max-width:640px){.post-wrap{padding:1.5rem 1rem 3rem}.post-wrap h1{font-size:1.6rem}.post-wrap h2{font-size:1.22rem}.post-wrap p,.post-wrap li{font-size:.95rem}nav{padding:0 16px}.nav-links a:not(.nav-cta){display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><span class="logo-icon">R</span> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/blog">Blog</a>
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="/chat" class="nav-cta">💬 Chat</a>
+  </div>
+</nav>
+
+<div class="post-wrap">
+  <a class="back-link" href="/blog">← All analysis</a>
+  <div class="kicker">Business analysis · Korea → US</div>
+  <h1>역전 할매: a 2,200-won beer empire that outgrew its own economics</h1>
+  <p class="deck">역전할머니맥주 built ~960 pubs on the cheapest draft beer in Korea and a
+  station-front location model. Between 2022 and 2025 its parent went from a 30% operating
+  margin to 3.5%, paid out 250억 in dividends against 38억 of net income, and shrank its
+  equity by a quarter. Here is the financial read — including a test of the claim that the
+  business profits $50,000–$100,000 a month.</p>
+  <div class="meta">
+    <span class="tag">Financial analysis</span>
+    <span>November 12, 2026</span>
+    <span>8 min read</span>
+    <span>FX ₩1,334 / $1 (Nov 13, 2026)</span>
+  </div>
+
+  <h2>1. What the business actually is</h2>
+  <p><strong>역전 할매</strong> ("the grandma in front of the station") is the shorthand
+  customers use for <strong>역전할머니맥주</strong>, operated by <strong>역전에프앤씨</strong>.
+  The proposition is a single number: draft beer at roughly <strong>2,200 won</strong> a glass
+  (about <strong>$1.65</strong>), served with cheap, salty anju in a no-frills room near a
+  station or a university gate. Revenue in a franchise like this does not come from the beer
+  margin at the table — it comes from <strong>selling supply to the franchisee</strong>
+  (beer, food, fixtures, signage) plus fees, across as many stores as the brand can hold.</p>
+  <p>That distinction decides every number below. The company's revenue is roughly
+  <strong>₩108 million a year per store</strong> — the wholesale value of what each franchisee
+  buys — not the store's own sales.</p>
+
+  <h2>2. The financial record</h2>
+  <div class="tbl-wrap">
+  <table>
+    <caption>역전에프앤씨 (역전할머니맥주 operator). FY ends December. ₩ billions.</caption>
+    <thead><tr><th>Year</th><th>Revenue</th><th>Operating profit</th><th>OP margin</th><th>Net income</th><th>Stores (year-end)</th></tr></thead>
+    <tbody>
+      <tr><td>2019</td><td>33.0</td><td>13.0</td><td>39.4%</td><td>—</td><td>—</td></tr>
+      <tr><td>2020</td><td>60.7</td><td>21.2</td><td>34.9%</td><td>—</td><td>~600</td></tr>
+      <tr><td>2021</td><td>66.0</td><td>19.1</td><td>28.9%</td><td>—</td><td>—</td></tr>
+      <tr><td>2022</td><td>92.8</td><td>27.7</td><td>29.8%</td><td>—</td><td>—</td></tr>
+      <tr><td>2024</td><td>108.6</td><td>9.9</td><td>9.1%</td><td class="pos">4.3</td><td>963</td></tr>
+      <tr><td>2025</td><td>104.1</td><td>3.6</td><td>3.5%</td><td class="neg">−0.5</td><td>~1,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="src">Revenue and operating profit 2019–2022: 딜사이트 (Jun 11, 2025). FY2024–25 revenue,
+  operating profit, net income, store count, dividends and equity: 뉴스핌 (Aug 27, 2026) and
+  뉴스워커 (Sep 9, 2026). FY2023 is not in the disclosed series used here.</p>
+
+  <div class="stat-row">
+    <div class="stat-card"><div class="num">−87%</div><div class="desc">operating profit, 2022 → 2025</div></div>
+    <div class="stat-card"><div class="num">3.5%</div><div class="desc">operating margin, FY2025</div></div>
+    <div class="stat-card"><div class="num">−4.1%</div><div class="desc">first revenue decline, FY2025</div></div>
+    <div class="stat-card"><div class="num">−23.8%</div><div class="desc">equity, FY2024 → FY2025</div></div>
+  </div>
+
+  <h2>3. Where the profit went</h2>
+  <p>The interesting part is that <strong>gross margin did not collapse</strong>. 뉴스워커 has
+  gross margin at 42.7% → 43.4% across the two years — the supply business still earns its
+  markup. What destroyed operating profit was <strong>fixed cost</strong>: promotions, labour,
+  logistics, and a second growth axis (bringing the US sandwich brand <strong>Jimmy John's</strong>
+  into Korea). Operating margin fell from ~30% (2021–22) to 9.1% (2024) to 3.5% (2025).</p>
+  <p>That pattern matters for how to read the business. A franchisor at a 30% margin is a
+  royalty machine: each new store is close to pure profit. At 3.5%, the same store count barely
+  covers the head office, and every new initiative has to be paid for out of a shrinking pool.
+  Store growth stopped being self-funding somewhere between 2022 and 2024.</p>
+
+  <h2>4. The cash that left the building</h2>
+  <p>In June 2022, <strong>케이스톤파트너스</strong> (Keiston Partners) bought 100% of 역전에프앤씨
+  from founder <strong>소종근</strong> for about <strong>₩145–150 billion</strong>, out of a
+  ₩530 billion fourth blind fund. Within roughly the first year the company paid out around
+  <strong>₩60 billion</strong> in dividends — about <strong>40% of the invested capital</strong> —
+  leaving retained earnings near zero.</p>
+  <p>Then the business turned. FY2024 net income was <strong>₩4.3 billion</strong> and the
+  dividend was <strong>₩5.0 billion</strong>. FY2025 was a <strong>₩0.5 billion net loss</strong>
+  and the dividend was <strong>₩20 billion</strong>.</p>
+  <div class="highlight warn"><strong>The two-year arithmetic:</strong> ₩3.8 billion of net income
+  against ₩25 billion of dividends — <strong>6.6×</strong> — while total equity fell from
+  ₩86.1 billion to ₩65.6 billion (−₩20.5 billion). The company did not fund that distribution out
+  of earnings; it funded it out of the balance sheet.</div>
+  <p>This is a dividend recapitalisation, not a scandal. It is the standard way a fund harvests
+  a mature asset before a sale: take the cash out now, sell the remaining cash flow later. But it
+  has a cost the buyer inherits — less equity, less reinvestment in brand and store quality, and
+  a head office that has to defend a 2,200-won price point while its own cushion shrinks. The
+  hygiene-inspection ranking (투다리 and 역전할머니맥주 as the worst two, 뉴스1, Sep 2025) and the
+  portion-size dispute over the squid dish (위즈경제, Sep 2026) are the kind of finding that shows
+  up when franchisees are squeezed at both ends.</p>
+
+  <h2>5. What the exit is worth now</h2>
+  <p>In 2022 the fund marked enterprise value above <strong>₩220 billion</strong> on
+  ₩34 billion of EBITDA. With FY2025 operating profit at ₩3.6 billion, EBITDA is plausibly in the
+  ₩8–15 billion range once depreciation on company stores and lease assets is added back — an
+  estimate, since the D&amp;A line is not in the public series. At the same multiple:</p>
+  <div class="tbl-wrap">
+  <table>
+    <caption>Illustrative exit value. Estimates — not disclosed figures.</caption>
+    <thead><tr><th>EBITDA (est.)</th><th>5.0×</th><th>6.5× (2022 mark)</th><th>8.0×</th></tr></thead>
+    <tbody>
+      <tr><td>₩8.0 bn</td><td>₩40 bn</td><td>₩52 bn</td><td>₩64 bn</td></tr>
+      <tr><td>₩10.0 bn</td><td>₩50 bn</td><td>₩65 bn</td><td>₩80 bn</td></tr>
+      <tr><td>₩15.0 bn</td><td>₩75 bn</td><td>₩98 bn</td><td>₩120 bn</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Against a ₩145–150 billion entry price and ₩85 billion already taken out in dividends, that
+  is roughly break-even at best on the equity — which explains the timing of everything else in
+  this story. 뉴스핌 notes the holding is now <strong>4 years 3 months</strong> old, past the
+  usual exit window for a Korean PEF, and three of the four PEF-owned food companies it surveyed
+  are loss-making. A seller needs a growth story at that point, not a cost story.</p>
+
+  <h2>6. The growth story: Fullerton and Ho Chi Minh City</h2>
+  <p>Two moves, both announced in 2026:</p>
+  <ul>
+    <li><strong>United States</strong> — first store in <strong>Fullerton, Orange County</strong>,
+    opened June 2026, following a May announcement framing it as a college-district play
+    (연합뉴스, May 15, 2026; 미주중앙일보, Jun 24, 2026). Orange County is the right catchment:
+    dense Korean-American population, a university base, and a beer culture where a $7–9 draft is
+    normal — which makes a $3–4 glass a genuine wedge rather than a novelty.</li>
+    <li><strong>Vietnam</strong> — a ~<strong>300-pyeong (≈1,000 m²) flagship in Ho Chi Minh City</strong>,
+    targeted for <strong>January 2027</strong> (한국경제, 동아일보, Oct 30, 2026).</li>
+  </ul>
+  <p>The US is the more interesting bet because the price gap is real and the reference price is
+  high; Vietnam is the more familiar one (K-food, Korean pub format, a large expat and local
+  drinking culture). Both, though, are being launched by a company whose domestic operating
+  margin is 3.5% — the expansion is being financed by the same balance sheet that the dividends
+  already thinned. That is the central tension in the story.</p>
+
+  <h2>7. "The owner says it profits $50,000–$100,000 a month"</h2>
+  <p>This claim cannot be judged until you say <strong>which profit, of which entity</strong>.
+  The two readings give opposite answers, and the arithmetic separates them cleanly.</p>
+
+  <h3>Reading A — the franchisor (역전에프앤씨) nets $50k–100k/month</h3>
+  <p>$50,000–$100,000 a month is <strong>$600,000–$1.2 million a year</strong>, or
+  <strong>₩8.0–16.0 billion</strong> at ₩1,334/$.</p>
+  <div class="tbl-wrap">
+  <table>
+    <caption>Claim vs reported net income, franchisor level.</caption>
+    <thead><tr><th></th><th>₩ bn / year</th><th>$ / month</th></tr></thead>
+    <tbody>
+      <tr><td>Claim (low)</td><td>8.0</td><td>$50,000</td></tr>
+      <tr><td>Claim (high)</td><td>16.0</td><td>$100,000</td></tr>
+      <tr><td>FY2024 actual net income</td><td>4.3</td><td>$269,000 <span style="color:#88889a">(yr ÷ 12)</span></td></tr>
+      <tr><td>FY2025 actual net income</td><td class="neg">−0.5</td><td class="neg">−$31,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><strong>Verdict (A):</strong> as a claim about the <em>net</em> profit of the operating
+  company, it is <strong>too high for FY2025 by any margin</strong> — that year was a net loss —
+  and it is roughly <strong>1.9×–3.7× FY2024's actual ₩4.3 billion</strong>. The one version that
+  survives is if "profit" means <em>operating</em> profit before the head-office drag: FY2025
+  operating profit was ₩3.6 billion ($2.7 million, ~$225k/month) and FY2024 was ₩9.9 billion
+  (~$620k/month). On an operating basis the claim is not just plausible, it is <em>conservative</em>
+  for 2024. So the number is real if the words are "operating profit, 2024" — and wrong if they
+  are "net profit, now".</p>
+
+  <h3>Reading B — one franchisee store nets $50k–100k/month</h3>
+  <p>This is where the claim breaks. Work from the top down:</p>
+  <ul>
+    <li>The whole company's revenue is ₩104.1 billion across ~963 stores —
+    <strong>₩108 million ($81,000) of annual head-office revenue per store</strong>.</li>
+    <li>That ₩108 million is the franchisee's <em>purchases</em>, not its sales. If supply and
+    fees are 10–15% of a store's turnover, a typical store sells roughly
+    <strong>₩0.7–1.1 billion a year</strong> ($0.5–0.8 million).</li>
+    <li>A well-run 주점 keeps 10–15% of sales at the store level after rent, labour and
+    royalties: <strong>₩70–165 million a year</strong>, or <strong>$4,400–$10,300 a month</strong>.</li>
+  </ul>
+  <div class="highlight"><strong>Verdict (B):</strong> $50,000–$100,000 a month of profit in one
+  store would require either ₩3–4 billion of annual sales at a 15% store margin, or a 35–50%
+  margin on ~₩1 billion of sales. Neither exists in a format that sells beer at 2,200 won. The
+  claim overstates single-store profitability by <strong>roughly 5–10×</strong>. A top-decile
+  store in a prime station location might reach $15,000–$25,000 a month in a good year; that is
+  the ceiling, not the base case.</div>
+
+  <h3>What would change the verdict</h3>
+  <ul>
+    <li><strong>Entity.</strong> If "the owner" means the franchisor's owner (the fund), Reading A
+    applies. If it means a store owner, Reading B applies. Almost every disagreement about this
+    business turns out to be that confusion.</li>
+    <li><strong>Period.</strong> 2024 was a ₩9.9 billion operating-profit year; 2025 was ₩3.6
+    billion; 2026 has the Jimmy John's investment and a first US store in the cost base. A number
+    quoted without a year is a number about 2024.</li>
+    <li><strong>Cash vs accrual.</strong> The company has paid ₩25 billion in dividends across two
+    years in which it earned ₩3.8 billion. "Profit" that is distributed as a recap is not
+    evidence of a business generating that profit.</li>
+    <li><strong>One store vs a chain.</strong> Korea's per-store economics do not scale to a
+    US price point, so a US store's profit tells you nothing about a Korean one — and vice
+    versa.</li>
+  </ul>
+
+  <h2>8. What to watch</h2>
+  <ul>
+    <li><strong>Per-store revenue.</strong> ₩108M (FY2024) → ₩108M (FY2025) of head-office revenue
+    per store, flat while store count grew. Flat per-store revenue plus falling margin is the
+    signature of a saturated format.</li>
+    <li><strong>The FY2026 filings.</strong> Does operating margin stabilise above 5%, or does
+    Jimmy John's Korea plus the Fullerton build consume the year?</li>
+    <li><strong>Store churn.</strong> The number that matters is net closures, not openings. A
+    963-store base losing franchisees is a different business from one adding them.</li>
+    <li><strong>Sale process.</strong> A holding at 4+ years with a 3.5% margin is a seller. Any
+    announced deal will be priced off EBITDA, and the price will be the verdict on the growth
+    story.</li>
+  </ul>
+
+  <div class="highlight verdict"><strong>Bottom line.</strong> 역전 할매 is a genuinely large,
+  genuinely cheap brand — 963 stores, ₩104 billion of revenue, 2,200 won beer — whose profit
+  engine has been dismantled by fixed costs and by ₩250억 of distributions against ₩38억 of
+  earnings. The $50,000–$100,000-a-month figure is achievable as <em>franchisor operating profit
+  in a good year</em> like 2024, and is not achievable as a <em>single store's net profit</em> —
+  it overstates that by roughly 5–10×. Quote it with the entity and the year, or it is not a fact
+  about this business.</div>
+
+  <h2>Sources</h2>
+  <ul class="src" style="list-style:none;padding-left:0">
+    <li>뉴스핌, "[단독] PEF 소유 외식업체 4곳 중 3곳 적자…매각 앞두고 '배당 회수' 나서", Aug 27, 2026 (FY2025 revenue/operating/net, dividends, equity).</li>
+    <li>뉴스워커, "[분석_외식플랫폼 ⑥역전에프앤씨] … 케이스톤 인수 후 배당 회수 뒤 남은 과제", Sep 9, 2026 (gross margin, store count, acquisition, initial dividends).</li>
+    <li>딜사이트, "케이스톤파트너스, '역전할맥' 성장에 함박웃음", Jun 11, 2025 (2019–2022 revenue and operating profit, ₩150bn entry, 2022 dividends, ₩220bn EV mark).</li>
+    <li>동행일보, "'역전할머니맥주' 순이익 43억 원인데 배당금은 200억 원…사모펀드 배당잔치", Dec 10, 2025.</li>
+    <li>톱데일리, "역전에프앤씨, 자기자본 전액 배당 '텅 빈 곳간'", Apr 5, 2023.</li>
+    <li>연합뉴스, "역전할머니맥주, 캘리포니아 진출…대학가에 '살얼음 맥주' 상륙", May 15, 2026; 미주중앙일보, "살얼음 맥주가 왔다…역전할머니맥주, 풀러턴 미국 1호점 오픈", Jun 24, 2026.</li>
+    <li>한국경제 / 동아일보, "역전할머니맥주, 베트남 호치민 1호점…2027년 1월 개점", Oct 30, 2026.</li>
+    <li>뉴스1, "투다리·역전할머니맥주, 위생불량 1·2위", Sep 25, 2025; 위즈경제, "역전할머니맥주 '오징어입 정량' 논란", Sep 11, 2026.</li>
+    <li>채널A/YouTube "30대 창업자 1000억 돈방석" (조선일보, May 13, 2022) for the founder-sale and 2,200-won price framing.</li>
+  </ul>
+  <p class="src">FX: 1 USD = ₩1,334.18 (open.er-api.com, Nov 13, 2026). Store-level margins,
+  head-office revenue split and EBITDA are the author's estimates from disclosed revenue and
+  store counts; they are labelled as estimates wherever they appear. Not investment advice.</p>
+
+  <div class="cta-box">
+    <h3>Want this done on a business you're looking at?</h3>
+    <p>RoyceAI builds the same financial read — revenue quality, margin structure, owner claims
+    tested against filings — for any company or franchise you name.</p>
+    <a href="/chat" class="cta-btn">💬 Chat with RoyceAI</a>
+  </div>
+</div>
+
+<footer>
+  <div class="links"><a href="/">Home</a><a href="/blog">Blog</a><a href="/products">Products</a><a href="/tutor">Tutor</a><a href="/chat">Chat</a></div>
+  <div class="copy">RoyceAI Solutions · Irvine, CA</div>
+</footer>
+</body>
+</html>
