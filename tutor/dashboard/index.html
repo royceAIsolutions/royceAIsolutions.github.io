@@ -436,7 +436,14 @@ function startInlineQuiz(s){
   var prevTopics=[];
   try{var stored=localStorage.getItem(prevKey);if(stored)prevTopics=JSON.parse(stored);}catch(e){}
   var seed=Date.now().toString(36)+Math.random().toString(36).slice(2,6);
-  var contextMsg="Start "+s+" quiz. Seed: "+seed;
+  // Rotation counter: every new drill asks the API for the next set, so two
+  // sessions in a row can never be served the same 33 questions.
+  var setN=0;
+  try{
+    setN=parseInt(localStorage.getItem("tutor_set_"+s)||"0",10)||0;
+    localStorage.setItem("tutor_set_"+s,String(setN+1));
+  }catch(e){}
+  var contextMsg="Start "+s+" quiz. Set: "+setN+". Seed: "+seed;
   if(prevTopics.length>0){
     contextMsg+=" Already asked: "+prevTopics.slice(-20).join(", ")+". Ask completely different questions.";
   }
