@@ -9,661 +9,661 @@
  "questions": [
   {
    "course": "AP English Language",
-   "unit": "Rhetorical terms",
-   "stem": "A speaker tells the audience: 'We have waited for permits. We have waited for funding. We have waited for someone else to go first.' Which term best names the repeated opening in these sentences?",
-   "correct": "Anaphora",
+   "unit": "Tone",
+   "stem": "Read the sentence: 'The last train pulled out at 6:10. The platform emptied. I folded the timetable into eighths and slid it into my coat.' Which phrase best describes the tone?",
+   "correct": "subdued resignation",
    "distractors": [
-    "Epistrophe",
-    "Asyndeton",
-    "Antithesis"
+    "open bitterness",
+    "eager anticipation",
+    "warm nostalgia"
    ],
-   "why": "Anaphora repeats a word or phrase at the start of successive clauses; epistrophe repeats at the end, asyndeton omits conjunctions, and antithesis balances opposites.",
+   "why": "The flat details and folded timetable suggest quiet acceptance; 'warm nostalgia' mistakes a mention of the timetable for fond memory.",
    "n": 1,
    "options": [
-    "Anaphora",
-    "Asyndeton",
-    "Epistrophe",
-    "Antithesis"
+    "subdued resignation",
+    "eager anticipation",
+    "open bitterness",
+    "warm nostalgia"
    ],
    "answer": "A"
   },
   {
    "course": "AP English Language",
-   "unit": "Rhetorical terms",
-   "stem": "A budget report describes the agency's new policy as 'a deliberate accident' and 'a planned surprise.' Which term best describes these two-word contradictions?",
-   "correct": "Oxymoron",
+   "unit": "Circular reasoning",
+   "stem": "A student writes, 'The school day should start later because a later start time is the right schedule for teenagers.' Why does the sentence fail as an argument?",
+   "correct": "Its reason merely restates its conclusion.",
    "distractors": [
-    "Paradox",
-    "Pun",
-    "Malapropism"
+    "It attacks the character of opponents.",
+    "It generalizes from one example.",
+    "It presents only two possible choices."
    ],
-   "why": "An oxymoron joins contradictory words in a phrase; a paradox is a contradictory statement or idea, a pun plays on meanings, and a malapropism is a word used in error.",
+   "why": "The premise says the same thing as the conclusion; 'generalizes from one example' misdescribes circular reasoning as a sampling error.",
    "n": 2,
    "options": [
-    "Paradox",
-    "Oxymoron",
-    "Pun",
-    "Malapropism"
+    "It generalizes from one example.",
+    "Its reason merely restates its conclusion.",
+    "It attacks the character of opponents.",
+    "It presents only two possible choices."
    ],
    "answer": "B"
   },
   {
    "course": "AP English Language",
-   "unit": "Rhetorical terms",
-   "stem": "A news anchor says, 'The White House announced new tariffs today,' meaning the administration rather than the building. Which term best describes this substitution?",
-   "correct": "Metonymy",
+   "unit": "Red herring",
+   "stem": "In a debate over a new public pool, a speaker says, 'The town's roads are full of potholes, so we should not build a pool.' What role does the pothole remark play?",
+   "correct": "It diverts to an unrelated issue instead of addressing the pool.",
    "distractors": [
-    "Synecdoche",
-    "Personification",
-    "Hyperbole"
+    "It attacks the motives of pool supporters.",
+    "It generalizes from a single example.",
+    "It forces a choice between two extremes."
    ],
-   "why": "Metonymy replaces a thing with something associated with it, such as a building for its occupants; synecdoche uses a part for a whole or a whole for a part.",
+   "why": "Potholes may matter but do not bear on the pool's merits; 'forces a choice' names false dilemma instead of diversion.",
    "n": 3,
    "options": [
-    "Hyperbole",
-    "Personification",
-    "Metonymy",
-    "Synecdoche"
+    "It generalizes from a single example.",
+    "It forces a choice between two extremes.",
+    "It diverts to an unrelated issue instead of addressing the pool.",
+    "It attacks the motives of pool supporters."
    ],
    "answer": "C"
   },
   {
    "course": "AP English Language",
-   "unit": "Rhetorical terms",
-   "stem": "A survivor recalls: 'We had water and bread and blankets and a radio and one another.' Which term best describes the repeated conjunction in the list?",
-   "correct": "Polysyndeton",
+   "unit": "False authority",
+   "stem": "A diet company advertises, 'A Nobel Prize-winning physicist says this meal plan works, so it must be effective.' Which weakness most undermines the advertisement?",
+   "correct": "The physicist's expertise is outside nutrition.",
    "distractors": [
-    "Asyndeton",
-    "Anaphora",
-    "Zeugma"
+    "The advertisement relies on the plan's popularity.",
+    "The advertisement attacks nutritionists personally.",
+    "The advertisement assumes earlier events caused later ones."
    ],
-   "why": "Polysyndeton uses repeated conjunctions, often slowing the sentence; asyndeton omits conjunctions, anaphora repeats openings, and zeugma yokes unequal items to one verb.",
+   "why": "A physics prize does not establish nutrition expertise; 'relies on popularity' confuses authority with bandwagon appeal.",
    "n": 4,
    "options": [
-    "Zeugma",
-    "Asyndeton",
-    "Anaphora",
-    "Polysyndeton"
+    "The advertisement relies on the plan's popularity.",
+    "The advertisement assumes earlier events caused later ones.",
+    "The advertisement attacks nutritionists personally.",
+    "The physicist's expertise is outside nutrition."
    ],
    "answer": "D"
   },
   {
    "course": "AP English Language",
-   "unit": "Rhetorical terms",
-   "stem": "A columnist writes, 'The city does not need a mayor who acts like a celebrity; it needs a celebrity who acts like a mayor.' Which term best describes the reversed pattern?",
-   "correct": "Chiasmus",
+   "unit": "Argument by analogy",
+   "stem": "A student argues, 'A library should ban certain books because a pharmacy bans certain medicines: if a product can harm someone, the institution should keep it off the shelf.' Which criticism most directly weakens the analogy?",
+   "correct": "Libraries and pharmacies differ in their purposes and in what choice means.",
    "distractors": [
-    "Parallelism",
-    "Antithesis",
-    "Zeugma"
+    "The student attacks librarians instead of books.",
+    "The student relies on a survey of pharmacists.",
+    "The student offers only two possible policies."
    ],
-   "why": "Chiasmus reverses the order of parallel elements; parallelism repeats the same order, antithesis balances opposites, and zeugma joins unequal items under one verb.",
+   "why": "The analogy ignores differences between lending books and dispensing medicine; 'only two possible policies' names false dilemma, not faulty analogy.",
    "n": 5,
    "options": [
-    "Chiasmus",
-    "Antithesis",
-    "Zeugma",
-    "Parallelism"
+    "Libraries and pharmacies differ in their purposes and in what choice means.",
+    "The student offers only two possible policies.",
+    "The student attacks librarians instead of books.",
+    "The student relies on a survey of pharmacists."
    ],
    "answer": "A"
   },
   {
    "course": "AP English Language",
-   "unit": "Rhetorical terms",
-   "stem": "An essay says, 'The old factory swallowed the town's young men and exhaled them as paychecks.' Which term best describes the factory's portrayal?",
-   "correct": "Personification",
+   "unit": "Necessary vs. sufficient condition",
+   "stem": "A mayor says, 'To attract business, the city must fix its sidewalks. We fixed the sidewalks, so business will now improve.' What is the error in this reasoning?",
+   "correct": "It treats a necessary condition as if it were sufficient.",
    "distractors": [
-    "Simile",
-    "Hyperbole",
-    "Onomatopoeia"
+    "It attacks the motives of business owners.",
+    "It generalizes from a single sidewalk project.",
+    "It assumes that popular ideas are true."
    ],
-   "why": "Personification gives human actions to an inanimate factory; a simile uses like or as, hyperbole exaggerates, and onomatopoeia imitates sounds.",
+   "why": "Fixing sidewalks is presented as required but not enough; 'generalizes from a single project' mistakes a conditional error for sample size.",
    "n": 6,
    "options": [
-    "Hyperbole",
-    "Personification",
-    "Simile",
-    "Onomatopoeia"
+    "It attacks the motives of business owners.",
+    "It treats a necessary condition as if it were sufficient.",
+    "It assumes that popular ideas are true.",
+    "It generalizes from a single sidewalk project."
    ],
    "answer": "B"
   },
   {
    "course": "AP English Language",
-   "unit": "Rhetorical terms",
-   "stem": "An op-ed on climate inaction says, 'We are not building an ark; we are arguing about the blueprints while it rains.' Which term best describes the reference to Noah's ark?",
-   "correct": "Allusion",
+   "unit": "Appeal to ignorance",
+   "stem": "A board member says, 'No study has shown that the new schedule harms students, so we can assume it is safe.' Which statement best names the problem with this conclusion?",
+   "correct": "It treats lack of evidence of harm as proof of safety.",
    "distractors": [
-    "Allegory",
-    "Parody",
-    "Idiom"
+    "It relies on an unqualified expert's testimony.",
+    "It presents only two possible schedules.",
+    "It attacks the researchers' character."
    ],
-   "why": "An allusion is a brief, indirect reference to a familiar story or text; an allegory is an extended symbolic narrative, parody imitates for comic effect, and an idiom is a fixed expression.",
+   "why": "No evidence of harm is not evidence of safety; 'only two possible schedules' mistakes this for a false dilemma.",
    "n": 7,
    "options": [
-    "Parody",
-    "Allegory",
-    "Allusion",
-    "Idiom"
+    "It attacks the researchers' character.",
+    "It presents only two possible schedules.",
+    "It treats lack of evidence of harm as proof of safety.",
+    "It relies on an unqualified expert's testimony."
    ],
    "answer": "C"
   },
   {
    "course": "AP English Language",
-   "unit": "Word choice",
-   "stem": "A hospital press release says a merger will 'realign care delivery' and create 'synergies across the continuum.' Which term best describes this specialized, abstract language?",
-   "correct": "Jargon",
+   "unit": "Comma splice",
+   "stem": "Which revision fixes the comma splice while keeping both clauses independent? 'The committee reviewed the proposal, it approved the budget.'",
+   "correct": "The committee reviewed the proposal; it approved the budget.",
    "distractors": [
-    "Euphemism",
-    "Colloquialism",
-    "Hyperbole"
+    "The committee reviewed the proposal, and approved the budget.",
+    "The committee reviewed the proposal, approving the budget.",
+    "The committee reviewed the proposal, it then approved the budget."
    ],
-   "why": "Jargon is the specialized or inflated vocabulary of a group; euphemism softens an unpleasant term, colloquialism is informal speech, and hyperbole is exaggeration.",
+   "why": "A semicolon correctly joins two independent clauses; the 'and' version drops the second subject, so it no longer keeps two independent clauses.",
    "n": 8,
    "options": [
-    "Colloquialism",
-    "Euphemism",
-    "Hyperbole",
-    "Jargon"
+    "The committee reviewed the proposal, approving the budget.",
+    "The committee reviewed the proposal, it then approved the budget.",
+    "The committee reviewed the proposal, and approved the budget.",
+    "The committee reviewed the proposal; it approved the budget."
    ],
    "answer": "D"
   },
   {
    "course": "AP English Language",
-   "unit": "Logical fallacies",
-   "stem": "A parent argues against a later school start: 'The consultant recommending it was fired from his last district, so we can ignore his sleep research.' Which flaw does the parent commit?",
-   "correct": "Ad hominem",
+   "unit": "Subordination",
+   "stem": "Which sentence most clearly presents the storm as the cause of the cancellation?",
+   "correct": "Because the storm flooded the roads, the school canceled classes.",
    "distractors": [
-    "Hasty generalization",
-    "Red herring",
-    "Appeal to ignorance"
+    "The storm flooded the roads, and the school canceled classes.",
+    "The storm flooded the roads; the school canceled classes.",
+    "The school canceled classes, and the storm flooded the roads."
    ],
-   "why": "Ad hominem attacks the person offering evidence rather than the evidence itself; hasty generalization rushes from too little data, red herring diverts, and appeal to ignorance treats lack of proof as proof.",
+   "why": "'Because' subordinates the flooding as the cause; 'and' merely coordinates two events without establishing causation.",
    "n": 9,
    "options": [
-    "Ad hominem",
-    "Hasty generalization",
-    "Appeal to ignorance",
-    "Red herring"
+    "Because the storm flooded the roads, the school canceled classes.",
+    "The storm flooded the roads, and the school canceled classes.",
+    "The storm flooded the roads; the school canceled classes.",
+    "The school canceled classes, and the storm flooded the roads."
    ],
    "answer": "A"
   },
   {
    "course": "AP English Language",
-   "unit": "Logical fallacies",
-   "stem": "A student writes, 'Test scores rose after we painted the cafeteria green, so the paint improved learning.' Which flaw does the reasoning contain?",
-   "correct": "Post hoc",
+   "unit": "Sentence rhythm",
+   "stem": "A paragraph reads: 'The district spent three years revising the schedule, surveying families, retraining bus drivers, and printing new routes. It failed.' What is the main effect of the one-word sentence?",
+   "correct": "It delivers the verdict with abrupt emphasis after the long buildup.",
    "distractors": [
-    "Circular reasoning",
-    "Slippery slope",
-    "Bandwagon appeal"
+    "It introduces a new piece of evidence about the schedule.",
+    "It creates a parallel structure with the previous sentence.",
+    "It shifts the passage into a more informal register."
    ],
-   "why": "Post hoc assumes that because one event followed another, the first caused the second; circular reasoning restates the claim, slippery slope predicts extremes, and bandwagon cites popularity.",
+   "why": "The short sentence lands the verdict after a long buildup; 'parallel structure' mistakes brevity for balance.",
    "n": 10,
    "options": [
-    "Circular reasoning",
-    "Post hoc",
-    "Slippery slope",
-    "Bandwagon appeal"
+    "It introduces a new piece of evidence about the schedule.",
+    "It delivers the verdict with abrupt emphasis after the long buildup.",
+    "It creates a parallel structure with the previous sentence.",
+    "It shifts the passage into a more informal register."
    ],
    "answer": "B"
   },
   {
    "course": "AP English Language",
-   "unit": "Logical fallacies",
-   "stem": "After one bad meal, a reviewer writes, 'This restaurant's entire kitchen is incompetent.' Which flaw does the reviewer commit?",
-   "correct": "Hasty generalization",
+   "unit": "Pronoun shift",
+   "stem": "A mayor says, 'You have asked for safer crossings for years. My office has heard you, and my office will act.' What does the shift from 'you' to 'my office' mainly accomplish?",
+   "correct": "It distinguishes the audience's demand from the office's responsibility to respond.",
    "distractors": [
-    "Ad hominem",
-    "Post hoc",
-    "Red herring"
+    "It creates a pronoun error that blurs who is speaking.",
+    "It suggests the audience is to blame for the delay.",
+    "It moves the statement from public to private register."
    ],
-   "why": "Hasty generalization draws a broad conclusion from a single case; ad hominem attacks a person, post hoc mistakes sequence for cause, and red herring diverts from the issue.",
+   "why": "The shift clarifies who demands and who must answer; 'pronoun error' assumes every shift is a mistake.",
    "n": 11,
    "options": [
-    "Ad hominem",
-    "Red herring",
-    "Hasty generalization",
-    "Post hoc"
+    "It moves the statement from public to private register.",
+    "It suggests the audience is to blame for the delay.",
+    "It distinguishes the audience's demand from the office's responsibility to respond.",
+    "It creates a pronoun error that blurs who is speaking."
    ],
    "answer": "C"
   },
   {
    "course": "AP English Language",
-   "unit": "Rhetorical analysis: passive voice",
-   "stem": "A mayor's statement reads: 'Mistakes were made in the permitting process, and improvements will be implemented.' A reporter asks who approved the permits. What does the passive construction chiefly accomplish?",
-   "correct": "It omits the agent, making responsibility harder to assign.",
+   "unit": "Survey wording",
+   "stem": "A city polls residents: 'Do you support the wasteful new fee that would raise monthly water bills by $8 to fund unnecessary office renovations?' Sixty-two percent say no. A council member concludes, 'Residents overwhelmingly oppose the fee.' Which criticism of that conclusion is most accurate?",
+   "correct": "The loaded wording—'wasteful' and 'unnecessary'—likely pushed respondents toward opposition, so 62 percent cannot be read as a clean measure of opinion.",
    "distractors": [
-    "It emphasizes the mistakes more than the officials involved.",
-    "It gives the statement a formal tone suitable for public remarks.",
-    "It clarifies that the process, not people, caused the problem."
+    "The sample size is too small to support any conclusion about what city residents think.",
+    "An $8 monthly fee is too small to affect how respondents answer a poll.",
+    "The poll should have asked about office renovations instead of water bills."
    ],
-   "why": "Passive voice can sound formal, but here it removes the actor; the misconception is that passive is merely a formal register rather than a way to deflect blame.",
+   "why": "It identifies question-wording bias; the misconception is that any poll percentage measures opinion directly, regardless of how the question is phrased.",
    "n": 12,
    "options": [
-    "It gives the statement a formal tone suitable for public remarks.",
-    "It clarifies that the process, not people, caused the problem.",
-    "It emphasizes the mistakes more than the officials involved.",
-    "It omits the agent, making responsibility harder to assign."
+    "The poll should have asked about office renovations instead of water bills.",
+    "An $8 monthly fee is too small to affect how respondents answer a poll.",
+    "The sample size is too small to support any conclusion about what city residents think.",
+    "The loaded wording—'wasteful' and 'unnecessary'—likely pushed respondents toward opposition, so 62 percent cannot be read as a clean measure of opinion."
    ],
    "answer": "D"
   },
   {
    "course": "AP English Language",
-   "unit": "Synthesis: accurate attribution",
-   "stem": "A student writes: 'The county study proves that curbside composting cuts landfill waste by 30 percent.' The study actually says composting 'may be associated with reductions of up to 30 percent' in three pilot neighborhoods. Which revision is most accurate?",
-   "correct": "The county study reported that composting may be associated with reductions of up to 30 percent in three pilot neighborhoods.",
+   "unit": "Risk statistics",
+   "stem": "A brochure says a screening test 'cuts your risk of advanced disease by 50 percent.' The study reports advanced disease in 2 of 1,000 screened people and 4 of 1,000 unscreened people. Which sentence reports the finding most accurately?",
+   "correct": "Screening reduced advanced disease from 4 to 2 cases per 1,000 people—a 50 percent relative reduction but only a 2-in-1,000 absolute difference.",
    "distractors": [
-    "The county study proves that composting cuts landfill waste by 30 percent throughout the county.",
-    "The county study suggests that composting may cut landfill waste by exactly 30 percent everywhere.",
-    "The county study shows that three neighborhoods reduced landfill waste by 30 percent through composting."
+    "Screening reduced advanced disease by 50 percentage points, from 4 percent to 2 percent.",
+    "Screening prevented advanced disease in half of all people who were screened.",
+    "Screening saved 500 lives for every 1,000 people who were screened."
    ],
-   "why": "The study is hedged and limited to pilot neighborhoods; the misconception is that quoting a statistic accurately is enough even when the source's certainty and scope are overstated.",
+   "why": "It distinguishes relative risk reduction from absolute risk; the wrong options inflate a 2-in-1,000 difference into a percentage-point or per-person benefit.",
    "n": 13,
    "options": [
-    "The county study reported that composting may be associated with reductions of up to 30 percent in three pilot neighborhoods.",
-    "The county study shows that three neighborhoods reduced landfill waste by 30 percent through composting.",
-    "The county study suggests that composting may cut landfill waste by exactly 30 percent everywhere.",
-    "The county study proves that composting cuts landfill waste by 30 percent throughout the county."
+    "Screening reduced advanced disease from 4 to 2 cases per 1,000 people—a 50 percent relative reduction but only a 2-in-1,000 absolute difference.",
+    "Screening reduced advanced disease by 50 percentage points, from 4 percent to 2 percent.",
+    "Screening prevented advanced disease in half of all people who were screened.",
+    "Screening saved 500 lives for every 1,000 people who were screened."
    ],
    "answer": "A"
   },
   {
    "course": "AP English Language",
-   "unit": "Rhetorical analysis: scare quotes",
-   "stem": "A columnist writes: 'The board's “listening tour” included one public stop and no questions.' What do the quotation marks around listening tour mainly signal?",
-   "correct": "Skepticism about whether the tour actually listened.",
+   "unit": "Mean and median",
+   "stem": "A jobs report states: 'The average starting salary for graduates of the program is $78,000; the median is $41,000.' Which conclusion is best supported?",
+   "correct": "A few very high salaries pull the average above the typical graduate's salary, so the median better describes a typical outcome.",
    "distractors": [
-    "That the phrase is a direct quotation from the board.",
-    "That the columnist endorses the board's description.",
-    "That the term is being introduced for the first time."
+    "Most graduates earn about $78,000, because the average is the standard measure of what is typical.",
+    "The median is unreliable because it ignores every salary above $41,000.",
+    "The program should report only the average, since the median hides high earners."
    ],
-   "why": "Scare quotes distance the writer from the term; the misconception is that quotation marks only mark direct quotation or simple emphasis.",
+   "why": "It reads a skewed distribution correctly; the misconception is that the mean always represents a typical case rather than being pulled by outliers.",
    "n": 14,
    "options": [
-    "That the term is being introduced for the first time.",
-    "Skepticism about whether the tour actually listened.",
-    "That the columnist endorses the board's description.",
-    "That the phrase is a direct quotation from the board."
+    "Most graduates earn about $78,000, because the average is the standard measure of what is typical.",
+    "A few very high salaries pull the average above the typical graduate's salary, so the median better describes a typical outcome.",
+    "The program should report only the average, since the median hides high earners.",
+    "The median is unreliable because it ignores every salary above $41,000."
    ],
    "answer": "B"
   },
   {
    "course": "AP English Language",
-   "unit": "Rhetorical analysis: hyperbole",
-   "stem": "An op-ed about a proposed zoning change says, 'This ordinance will turn every quiet street into a racetrack and every homeowner into a prisoner.' Which description best captures the rhetorical effect of the exaggeration?",
-   "correct": "It dramatizes the feared outcome to provoke opposition.",
+   "unit": "Denominators",
+   "stem": "A parks department budget is $5 million, and 60 percent goes to salaries. A student writes, 'Salaries consume 60 percent of the city's budget.' The city's total budget is $80 million. Which revision is most accurate?",
+   "correct": "Salaries consume 60 percent of the parks department's $5 million budget, or about 3.75 percent of the city's $80 million budget.",
    "distractors": [
-    "It proves that the ordinance will cause traffic accidents.",
-    "It weakens the argument by making the writer seem unserious.",
-    "It clarifies the ordinance's exact traffic provisions."
+    "Salaries consume 60 percent of the city's $80 million budget, since the parks budget is part of the city budget.",
+    "Salaries consume 3.75 percent of the parks department's budget, since $3 million divided by $80 million is 3.75 percent.",
+    "Salaries consume 6.25 percent of the city budget, since the $5 million parks budget is 6.25 percent of $80 million."
    ],
-   "why": "Hyperbole can intensify an appeal to emotion; the misconception is that exaggeration automatically invalidates the argument rather than shaping its tone and urgency.",
+   "why": "It tracks the correct base for each percentage; the misconception is that a share of a subunit can be reported as a share of the whole, or that the subunit's total is the salaries figure.",
    "n": 15,
    "options": [
-    "It proves that the ordinance will cause traffic accidents.",
-    "It weakens the argument by making the writer seem unserious.",
-    "It dramatizes the feared outcome to provoke opposition.",
-    "It clarifies the ordinance's exact traffic provisions."
+    "Salaries consume 6.25 percent of the city budget, since the $5 million parks budget is 6.25 percent of $80 million.",
+    "Salaries consume 60 percent of the city's $80 million budget, since the parks budget is part of the city budget.",
+    "Salaries consume 60 percent of the parks department's $5 million budget, or about 3.75 percent of the city's $80 million budget.",
+    "Salaries consume 3.75 percent of the parks department's budget, since $3 million divided by $80 million is 3.75 percent."
    ],
    "answer": "C"
   },
   {
    "course": "AP English Language",
-   "unit": "Style: concision",
-   "stem": "Which revision of 'There is a need for the committee to conduct a review of the proposal before making a decision' is most concise without losing meaning?",
-   "correct": "The committee must review the proposal before deciding.",
+   "unit": "Pooled rates",
+   "stem": "Two schools report algebra pass rates. School A: 40 of 50 students passed. School B: 120 of 200 passed. A memo says, 'The average pass rate is 70 percent, because the school rates are 80 percent and 60 percent.' Which correction is accurate?",
+   "correct": "The combined rate is 64 percent (160 of 250), because the larger school's lower rate should carry more weight than a simple average of school rates.",
    "distractors": [
-    "There is a need for the committee to review the proposal before a decision is made.",
-    "A review of the proposal by the committee is needed prior to decision-making.",
-    "The committee needs to conduct a review of the proposal before it makes a decision."
+    "The combined rate is 70 percent, because averaging the two school rates gives each school equal weight.",
+    "The combined rate is 80 percent, because the higher-performing school sets the district standard.",
+    "The combined rate cannot be calculated without knowing each school's total enrollment."
    ],
-   "why": "The correct version removes empty phrasing such as 'there is a need' and 'conduct a review'; the misconception is that formal noun-heavy phrasing is more precise.",
+   "why": "It computes a weighted pooled rate; the misconception is that an average of group percentages equals the percentage for the combined group.",
    "n": 16,
    "options": [
-    "There is a need for the committee to review the proposal before a decision is made.",
-    "A review of the proposal by the committee is needed prior to decision-making.",
-    "The committee needs to conduct a review of the proposal before it makes a decision.",
-    "The committee must review the proposal before deciding."
+    "The combined rate cannot be calculated without knowing each school's total enrollment.",
+    "The combined rate is 70 percent, because averaging the two school rates gives each school equal weight.",
+    "The combined rate is 80 percent, because the higher-performing school sets the district standard.",
+    "The combined rate is 64 percent (160 of 250), because the larger school's lower rate should carry more weight than a simple average of school rates."
    ],
    "answer": "D"
   },
   {
    "course": "AP English Language",
-   "unit": "Editing: pronoun ambiguity",
-   "stem": "A report states: 'The city council thanked the volunteers after they cleaned the park because they had organized the event.' Which revision removes the ambiguity?",
-   "correct": "The volunteers had organized the event, so the city council thanked them after they cleaned the park.",
+   "unit": "Statistical significance",
+   "stem": "A study of 10,000 students finds that a new tutoring program raises scores by 0.3 points on a 100-point test, with a result described as 'statistically significant (p < .05).' A director says, 'The program works; we should adopt it districtwide.' Which response best evaluates the claim?",
+   "correct": "The gain is statistically detectable but very small in practical terms, so adoption should depend on cost and whether 0.3 points matters.",
    "distractors": [
-    "The city council thanked the volunteers after they cleaned the park because the council had organized the event.",
-    "After cleaning the park, the city council thanked the volunteers because they had organized the event.",
-    "The city council, after they cleaned the park, thanked the volunteers because they had organized the event."
+    "Statistical significance proves the gain is large enough to justify districtwide adoption.",
+    "Because the sample is small, the result cannot be trusted as evidence about the program.",
+    "The p-value shows that the program caused a 0.3-point gain in every student."
    ],
-   "why": "The original 'they' could refer to the council or the volunteers; the misconception is that a pronoun is clear simply because a noun appeared nearby.",
+   "why": "It separates statistical significance from practical importance; the misconception is that a significant result must be large or automatically worth adopting.",
    "n": 17,
    "options": [
-    "The volunteers had organized the event, so the city council thanked them after they cleaned the park.",
-    "The city council thanked the volunteers after they cleaned the park because the council had organized the event.",
-    "The city council, after they cleaned the park, thanked the volunteers because they had organized the event.",
-    "After cleaning the park, the city council thanked the volunteers because they had organized the event."
+    "The gain is statistically detectable but very small in practical terms, so adoption should depend on cost and whether 0.3 points matters.",
+    "The p-value shows that the program caused a 0.3-point gain in every student.",
+    "Statistical significance proves the gain is large enough to justify districtwide adoption.",
+    "Because the sample is small, the result cannot be trusted as evidence about the program."
    ],
    "answer": "A"
   },
   {
    "course": "AP English Language",
-   "unit": "Style: register",
-   "stem": "A student writes to a school board: 'The new science lab is gonna be a total game-changer for kids.' Which revision best fits a formal letter while preserving the meaning?",
-   "correct": "The new science lab will significantly improve students' learning opportunities.",
+   "unit": "Source attribution",
+   "stem": "In a synthesis essay on a proposed soda tax, a student writes: 'A 2023 study by the Beverage Institute found that soda taxes reduce sales by only 2 percent, so taxes do not change behavior.' Which revision uses the source most responsibly?",
+   "correct": "A 2023 Beverage Institute study found a 2 percent sales drop, but an industry-funded group may have incentives to minimize the tax's effect, so the finding needs comparison with independent research.",
    "distractors": [
-    "The new science lab will be a total game-changer for students.",
-    "The new science lab will produce a paradigm shift in pedagogical outcomes.",
-    "The new science lab is going to be super beneficial for kids."
+    "A 2023 study found that soda taxes reduce sales by 2 percent, which proves taxes do not change behavior.",
+    "The Beverage Institute is biased, so its study should not be mentioned anywhere in the essay.",
+    "Soda taxes reduce sales by exactly 2 percent, according to a study that all researchers accept."
    ],
-   "why": "Formal register requires clear, appropriate diction, not inflated jargon; the misconception is that bigger words automatically make writing more formal.",
+   "why": "It qualifies an interested source instead of treating it as neutral or discarding it; the misconception is that a biased source has no evidentiary use.",
    "n": 18,
    "options": [
-    "The new science lab is going to be super beneficial for kids.",
-    "The new science lab will significantly improve students' learning opportunities.",
-    "The new science lab will produce a paradigm shift in pedagogical outcomes.",
-    "The new science lab will be a total game-changer for students."
+    "Soda taxes reduce sales by exactly 2 percent, according to a study that all researchers accept.",
+    "A 2023 Beverage Institute study found a 2 percent sales drop, but an industry-funded group may have incentives to minimize the tax's effect, so the finding needs comparison with independent research.",
+    "A 2023 study found that soda taxes reduce sales by 2 percent, which proves taxes do not change behavior.",
+    "The Beverage Institute is biased, so its study should not be mentioned anywhere in the essay."
    ],
    "answer": "B"
   },
   {
    "course": "AP English Language",
-   "unit": "Synthesis: source interest",
-   "stem": "A student cites a corporate blog's claim that its packaging is 'fully recyclable' as neutral proof that the company is environmentally responsible. What is the main problem with using the source this way?",
-   "correct": "The source has a financial interest in the claim and is not neutral.",
+   "unit": "Rhetorical numbers",
+   "stem": "In a speech urging the city to fund mental-health services, a nurse says, 'I have held the hands of 212 patients in emergency rooms who waited three days for a bed.' What does the specific number mainly contribute to the rhetoric?",
+   "correct": "It gives concrete, accumulated experience that strengthens the nurse's credibility and makes an abstract shortage feel particular.",
    "distractors": [
-    "The source uses the word fully, which is always an exaggeration.",
-    "The source is a blog, so it cannot contain accurate information.",
-    "The claim is about packaging rather than the company's overall emissions."
+    "It proves statistically that city policy is responsible for the three-day waits.",
+    "It creates a formal syllogism about the exact number of beds the city needs.",
+    "It softens the criticism by making the nurse's claim more tentative and cautious."
    ],
-   "why": "The key issue is the source's interest in the claim; the misconception is that a source is either automatically invalid because of its format or automatically trustworthy because it states facts.",
+   "why": "It identifies ethos and concrete detail; the misconception is that a vivid number functions as statistical proof of cause or of an exact policy remedy.",
    "n": 19,
    "options": [
-    "The claim is about packaging rather than the company's overall emissions.",
-    "The source is a blog, so it cannot contain accurate information.",
-    "The source has a financial interest in the claim and is not neutral.",
-    "The source uses the word fully, which is always an exaggeration."
+    "It softens the criticism by making the nurse's claim more tentative and cautious.",
+    "It creates a formal syllogism about the exact number of beds the city needs.",
+    "It gives concrete, accumulated experience that strengthens the nurse's credibility and makes an abstract shortage feel particular.",
+    "It proves statistically that city policy is responsible for the three-day waits."
    ],
    "answer": "C"
   },
   {
    "course": "AP English Language",
-   "unit": "Synthesis: counterevidence",
-   "stem": "A student argues that a city's new bike-share program reduced traffic. The student finds a study finding no significant traffic reduction in a similar city. What is the most effective way to use this source?",
-   "correct": "Acknowledge the contrary finding and explain why the local program might still differ.",
+   "unit": "Successive percentages",
+   "stem": "A jacket is marked down 30 percent, and the register takes another 20 percent off the reduced price. A shopper says, 'That is 50 percent off.' Which statement is accurate?",
+   "correct": "The total discount is 44 percent, because the second discount applies to the already reduced price.",
    "distractors": [
-    "Omit it so the essay's argument remains clear and consistent.",
-    "Cite it as proof that bike-share programs never reduce traffic.",
-    "Mention it only in a footnote so it does not weaken the thesis."
+    "The total discount is 50 percent, because the two percentages are added together.",
+    "The total discount is 56 percent, because the discounts compound upward.",
+    "The total discount cannot be calculated without knowing the jacket's original price."
    ],
-   "why": "Counterevidence can strengthen an argument when it is qualified and answered; the misconception is that admitting contrary evidence ruins an essay's position.",
+   "why": "It applies successive discounts multiplicatively; the misconception is that percentage reductions can simply be added.",
    "n": 20,
    "options": [
-    "Cite it as proof that bike-share programs never reduce traffic.",
-    "Omit it so the essay's argument remains clear and consistent.",
-    "Mention it only in a footnote so it does not weaken the thesis.",
-    "Acknowledge the contrary finding and explain why the local program might still differ."
+    "The total discount cannot be calculated without knowing the jacket's original price.",
+    "The total discount is 56 percent, because the discounts compound upward.",
+    "The total discount is 50 percent, because the two percentages are added together.",
+    "The total discount is 44 percent, because the second discount applies to the already reduced price."
    ],
    "answer": "D"
   },
   {
    "course": "AP English Language",
-   "unit": "Rhetorical analysis: inclusive we",
-   "stem": "A speaker begins a budget address: 'We all know that a city that cannot repair its roads cannot attract new business.' What does the opening 'We all know' mainly do?",
-   "correct": "It treats a contested claim as shared ground, making disagreement seem unreasonable.",
+   "unit": "Attributing a maximum",
+   "stem": "A nonprofit's report says that in pilot sites, 'up to 40 percent of participants' found jobs within six months. A student writes: 'The program helps 40 percent of participants find jobs.' Which revision most accurately attributes the finding?",
+   "correct": "The report says that at some pilot sites as many as 40 percent found jobs within six months, not that 40 percent did so overall.",
    "distractors": [
-    "It proves that the audience has already studied the city budget.",
-    "It limits the claim to people who have driven on the roads.",
-    "It gives the speech a conversational tone by avoiding technical language."
+    "The report proves the program helps exactly 40 percent of all participants find jobs.",
+    "The report's 40 percent figure is meaningless because it is only a maximum.",
+    "The report shows that fewer than 40 percent of participants found jobs at every site."
    ],
-   "why": "'We all know' constructs agreement; the misconception is that inclusive pronouns merely sound friendly rather than positioning listeners to accept a premise.",
+   "why": "It preserves the ceiling and limited scope of 'up to'; the misconception is that a maximum or best-site figure describes the overall program.",
    "n": 21,
    "options": [
-    "It treats a contested claim as shared ground, making disagreement seem unreasonable.",
-    "It proves that the audience has already studied the city budget.",
-    "It limits the claim to people who have driven on the roads.",
-    "It gives the speech a conversational tone by avoiding technical language."
+    "The report says that at some pilot sites as many as 40 percent found jobs within six months, not that 40 percent did so overall.",
+    "The report proves the program helps exactly 40 percent of all participants find jobs.",
+    "The report's 40 percent figure is meaningless because it is only a maximum.",
+    "The report shows that fewer than 40 percent of participants found jobs at every site."
    ],
    "answer": "A"
   },
   {
    "course": "AP English Language",
-   "unit": "Argument: false analogy",
-   "stem": "A student argues: 'A restaurant should not serve spoiled food, so a public library should not carry books that some residents find offensive.' Which flaw does this argument contain?",
-   "correct": "It compares two things whose relevant responsibilities are too different to support the conclusion.",
+   "unit": "Procedural clarity",
+   "stem": "A student writes: 'First the surveys were distributed, then after the data was collected it was analyzed, and finally a report was written by the committee.' Which revision best clarifies the sequence and the actor?",
+   "correct": "First the committee distributed the surveys; then it analyzed the data; finally it wrote the report.",
    "distractors": [
-    "It assumes that all residents agree on which books are offensive.",
-    "It relies on a statistic that has not been properly cited.",
-    "It attacks the librarians' character instead of their policy."
+    "First surveys were distributed, then data was collected, then a report was written.",
+    "The committee distributed surveys, and a report was written after data analysis.",
+    "After the report was written, the committee distributed surveys and analyzed the data."
    ],
-   "why": "The argument is a false analogy: food safety and book selection involve different public responsibilities; the misconception is that any shared feature makes a comparison logically useful.",
+   "why": "It uses active voice and parallel sequence to show who did each step; the misconception is that passive constructions clarify procedure simply by sounding formal.",
    "n": 22,
    "options": [
-    "It attacks the librarians' character instead of their policy.",
-    "It compares two things whose relevant responsibilities are too different to support the conclusion.",
-    "It assumes that all residents agree on which books are offensive.",
-    "It relies on a statistic that has not been properly cited."
+    "The committee distributed surveys, and a report was written after data analysis.",
+    "First the committee distributed the surveys; then it analyzed the data; finally it wrote the report.",
+    "After the report was written, the committee distributed surveys and analyzed the data.",
+    "First surveys were distributed, then data was collected, then a report was written."
    ],
    "answer": "B"
   },
   {
    "course": "AP English Language",
-   "unit": "Quantitative evidence",
-   "stem": "An op-ed says, 'Since the new bike lane opened, crashes on Main Street fell 50 percent — from two last year to one this year.' Which criticism of this evidence is most accurate?",
-   "correct": "A change from two crashes to one is too small to support a percentage claim about safety.",
+   "unit": "Alternatives sequence",
+   "stem": "In a speech, a council member says: 'We tried closing Main Street to cars. We tried timed lights. We tried a crossing guard. Now we are asking for a roundabout.' What does the sequence of attempted solutions mainly accomplish?",
+   "correct": "It presents the roundabout as the remaining option after others have been tried, making the request seem tested rather than impulsive.",
    "distractors": [
-    "The writer should have used an anecdote about a cyclist to make the number vivid.",
-    "The comparison is invalid because crashes are always underreported by police.",
-    "The statistic confuses causation with correlation by ignoring weather."
+    "It suggests the earlier solutions were never seriously attempted, so the roundabout is the first real plan.",
+    "It creates a false dilemma by claiming that only a roundabout can reduce traffic.",
+    "It shifts blame for traffic onto drivers by listing their failures."
    ],
-   "why": "A 50 percent drop sounds dramatic, but with counts this tiny a single crash changes the rate; the misconception is that any percentage is meaningful regardless of base size.",
+   "why": "The list establishes prior effort and makes the final request seem like the next step. The false-dilemma misreading ignores that alternatives were actually tried.",
    "n": 23,
    "options": [
-    "The statistic confuses causation with correlation by ignoring weather.",
-    "The comparison is invalid because crashes are always underreported by police.",
-    "A change from two crashes to one is too small to support a percentage claim about safety.",
-    "The writer should have used an anecdote about a cyclist to make the number vivid."
+    "It shifts blame for traffic onto drivers by listing their failures.",
+    "It creates a false dilemma by claiming that only a roundabout can reduce traffic.",
+    "It presents the roundabout as the remaining option after others have been tried, making the request seem tested rather than impulsive.",
+    "It suggests the earlier solutions were never seriously attempted, so the roundabout is the first real plan."
    ],
    "answer": "C"
   },
   {
    "course": "AP English Language",
-   "unit": "Sampling and generalization",
-   "stem": "A student writes in a synthesis essay: 'A survey of 200 readers of a food blog found that 70 percent avoid store-brand groceries, so most Americans avoid store brands.' Which revision best limits the claim to the evidence?",
-   "correct": "Among the food blog's readers surveyed, 70 percent said they avoid store-brand groceries.",
+   "unit": "Question-answer sequence",
+   "stem": "A columnist writes: 'What does the board fear? It fears the parents who have read the budget.' What does answering the rhetorical question immediately mainly accomplish?",
+   "correct": "It creates the impression of exposing a hidden motive while keeping control of the answer.",
    "distractors": [
-    "Most Americans avoid store-brand groceries, according to a survey of food blog readers.",
-    "A survey of 200 people proves that store brands are unpopular nationwide.",
-    "Because the survey had 200 responses, its findings can be trusted for the whole country."
+    "It invites readers to deliberate honestly before the writer states a position.",
+    "It concedes that the board's motives are unknowable and should be investigated.",
+    "It shifts the burden of proof onto parents by asking them to respond."
    ],
-   "why": "The original leaps from a self-selected niche audience to all Americans; the defensible claim stays within the surveyed group. The wrong options keep the overgeneralization or assume sample size alone fixes representativeness.",
+   "why": "This is hypophora: the writer raises a question only to supply a damning answer, not to open genuine inquiry. Reading it as an invitation to deliberate mistakes control for openness.",
    "n": 24,
    "options": [
-    "Most Americans avoid store-brand groceries, according to a survey of food blog readers.",
-    "A survey of 200 people proves that store brands are unpopular nationwide.",
-    "Because the survey had 200 responses, its findings can be trusted for the whole country.",
-    "Among the food blog's readers surveyed, 70 percent said they avoid store-brand groceries."
+    "It shifts the burden of proof onto parents by asking them to respond.",
+    "It concedes that the board's motives are unknowable and should be investigated.",
+    "It invites readers to deliberate honestly before the writer states a position.",
+    "It creates the impression of exposing a hidden motive while keeping control of the answer."
    ],
    "answer": "D"
   },
   {
    "course": "AP English Language",
-   "unit": "Causal reasoning",
-   "stem": "A student argues: 'Library visits rose 15 percent the same year the city opened a new transit line and extended library hours. The extended hours caused the increase.' Which thesis best avoids the reasoning problem?",
-   "correct": "Extended hours may have contributed to the rise, but the new transit line is another possible cause.",
+   "unit": "Thesis placement",
+   "stem": "A student's essay opens with three paragraphs on the history of standardized testing, then states its thesis in paragraph four. What is the main problem with this sequence?",
+   "correct": "Readers cannot tell which historical details matter until the thesis arrives, so the opening reads as undirected.",
    "distractors": [
-    "Extended hours definitely caused the rise because visits went up afterward.",
-    "The new transit line caused the rise because it opened that same year.",
-    "Library visits cannot be explained without more data, so the increase is meaningless."
+    "It gives the essay too little evidence for its claim by delaying the thesis.",
+    "It makes the essay's conclusion impossible to support with historical facts.",
+    "It weakens the thesis by placing it after the strongest evidence."
    ],
-   "why": "The original assumes one cause when another change occurred at the same time; the correct thesis treats the evidence as suggestive rather than conclusive. The wrong options simply swap one post hoc cause for another or dismiss the data.",
+   "why": "A thesis should orient readers before supporting details; delaying it turns the history into a list rather than an argument. The other options confuse late placement with lack of evidence.",
    "n": 25,
    "options": [
-    "Extended hours may have contributed to the rise, but the new transit line is another possible cause.",
-    "The new transit line caused the rise because it opened that same year.",
-    "Extended hours definitely caused the rise because visits went up afterward.",
-    "Library visits cannot be explained without more data, so the increase is meaningless."
+    "Readers cannot tell which historical details matter until the thesis arrives, so the opening reads as undirected.",
+    "It gives the essay too little evidence for its claim by delaying the thesis.",
+    "It makes the essay's conclusion impossible to support with historical facts.",
+    "It weakens the thesis by placing it after the strongest evidence."
    ],
    "answer": "A"
   },
   {
    "course": "AP English Language",
-   "unit": "Clarity in data reports",
-   "stem": "A report reads: 'The average was calculated by dividing total attendance by the number of days, which was 12.' Which revision removes the ambiguity about what 12 refers to?",
-   "correct": "The average was calculated by dividing total attendance by 12, the number of days.",
+   "unit": "Chronological revision",
+   "stem": "Which revision makes the order of events in this sentence clearest? 'After the committee reviewed the proposal, it approved the budget, having received public comments.'",
+   "correct": "After receiving public comments, the committee reviewed the proposal and approved the budget.",
    "distractors": [
-    "The average was calculated by dividing total attendance by the number of days, a calculation that was 12.",
-    "The average, which was 12, was calculated by dividing total attendance by the number of days.",
-    "The average was calculated by dividing total attendance, which was 12, by the number of days."
+    "Having approved the budget, the committee reviewed the proposal after receiving public comments.",
+    "The committee received public comments after it reviewed the proposal and approved the budget.",
+    "The proposal was reviewed after the budget was approved by the committee, which had received public comments."
    ],
-   "why": "The original 'which' could modify days or the calculation; the correct version places 12 directly next to days. The wrong versions make 12 modify the calculation or attendance.",
+   "why": "The original buries the earliest event in a trailing phrase; the correct version orders comments, review, then approval. The distractors scramble that sequence.",
    "n": 26,
    "options": [
-    "The average, which was 12, was calculated by dividing total attendance by the number of days.",
-    "The average was calculated by dividing total attendance by 12, the number of days.",
-    "The average was calculated by dividing total attendance, which was 12, by the number of days.",
-    "The average was calculated by dividing total attendance by the number of days, a calculation that was 12."
+    "The committee received public comments after it reviewed the proposal and approved the budget.",
+    "After receiving public comments, the committee reviewed the proposal and approved the budget.",
+    "The proposal was reviewed after the budget was approved by the committee, which had received public comments.",
+    "Having approved the budget, the committee reviewed the proposal after receiving public comments."
    ],
    "answer": "B"
   },
   {
    "course": "AP English Language",
-   "unit": "Visual rhetoric",
-   "stem": "A slide shows a bar graph comparing graduation rates before and after a program. The bars rise from 91 percent to 93 percent, but the vertical axis begins at 90 percent, making the second bar look nearly twice as tall. What is the main rhetorical effect of this design?",
-   "correct": "It exaggerates a small change by cropping the axis and enlarging the visual difference.",
+   "unit": "Causal chain test",
+   "stem": "A report claims: 'Because the city replaced sodium streetlights with LEDs, streets became brighter, so nighttime pedestrian crashes fell.' Which question most directly tests the argument's causal chain?",
+   "correct": "Did crashes fall on the relit streets compared with similar streets that kept sodium lights?",
    "distractors": [
-    "It makes the data more honest by focusing only on the relevant range of scores.",
-    "It relies on an anecdote about one student to make the graduation rate memorable.",
-    "It creates a false dilemma between keeping and canceling the program."
+    "Did residents prefer the whiter color of the new LED lights?",
+    "How much electricity did the city save by switching to LEDs?",
+    "Were the LED fixtures more expensive to install than sodium fixtures?"
    ],
-   "why": "A truncated axis magnifies a two-point change into a dramatic-looking climb; the misconception is that any graph is neutral. The wrong choices name devices not present in the graph.",
+   "why": "The claim chains lighting to brightness to fewer crashes; a comparison group tests whether that link is causal rather than coincidental. The distractors ask about preferences, savings, or costs instead.",
    "n": 27,
    "options": [
-    "It makes the data more honest by focusing only on the relevant range of scores.",
-    "It relies on an anecdote about one student to make the graduation rate memorable.",
-    "It exaggerates a small change by cropping the axis and enlarging the visual difference.",
-    "It creates a false dilemma between keeping and canceling the program."
+    "Did residents prefer the whiter color of the new LED lights?",
+    "How much electricity did the city save by switching to LEDs?",
+    "Did crashes fall on the relit streets compared with similar streets that kept sodium lights?",
+    "Were the LED fixtures more expensive to install than sodium fixtures?"
    ],
    "answer": "C"
   },
   {
    "course": "AP English Language",
-   "unit": "Attribution and causation",
-   "stem": "A district report says attendance improved after a phone ban but notes it did not control for a new morning bus schedule. Which sentence uses the report most responsibly in an essay?",
-   "correct": "The report found attendance rose after the ban, though it did not rule out the new bus schedule as a factor.",
+   "unit": "Process description",
+   "stem": "A writer explains a rumor's spread: 'A neighbor tells two people. Each tells two more. By Thursday the story has a lawyer.' What does this sequence mainly make the rumor feel like?",
+   "correct": "A mechanical process that accelerates predictably until its exaggeration lands as the logical result.",
    "distractors": [
-    "The report proves that the phone ban caused attendance to improve.",
-    "The report is worthless because it did not control for every possible factor.",
-    "The report shows that attendance improved, so the ban should be expanded immediately."
+    "A slow, uncertain story that readers should doubt because it lacks evidence.",
+    "A personal confession that asks readers to forgive the speaker.",
+    "A statistical trend that depends on precise counts rather than momentum."
    ],
-   "why": "The responsible sentence reports the finding while naming the report's own limitation; 'proves' and the immediate-expansion claim overstate the evidence, while dismissing the report entirely is too extreme.",
+   "why": "The doubling pattern supplies a clear mechanism, so the absurd final detail feels earned by the sequence. Reading it as doubt misses the comic acceleration.",
    "n": 28,
    "options": [
-    "The report is worthless because it did not control for every possible factor.",
-    "The report shows that attendance improved, so the ban should be expanded immediately.",
-    "The report proves that the phone ban caused attendance to improve.",
-    "The report found attendance rose after the ban, though it did not rule out the new bus schedule as a factor."
+    "A personal confession that asks readers to forgive the speaker.",
+    "A statistical trend that depends on precise counts rather than momentum.",
+    "A slow, uncertain story that readers should doubt because it lacks evidence.",
+    "A mechanical process that accelerates predictably until its exaggeration lands as the logical result."
    ],
    "answer": "D"
   },
   {
    "course": "AP English Language",
-   "unit": "Concession and rebuttal",
-   "stem": "An editorial supports later school start times. It has these figures: new busing costs $1.2 million yearly; reduced tardiness and absenteeism are estimated to save $3 million yearly. Which sentence best concedes and rebuts the cost objection?",
-   "correct": "The $1.2 million busing cost is real, but the estimated $3 million in attendance savings makes the change worth considering.",
+   "unit": "Chronological qualification",
+   "stem": "A student cites a district report: a tutoring pilot raised scores in year one; a later memo says the district ended the program after funding lapsed. Which sentence best uses both sources to qualify a claim about tutoring?",
+   "correct": "The pilot initially raised scores, but the program was discontinued, so its long-term effect remains unknown.",
    "distractors": [
-    "Busing costs $1.2 million, which is a price no district should ever pay for sleep.",
-    "The $3 million in savings is certain, so the $1.2 million cost should not be discussed.",
-    "Critics who mention busing costs simply do not care about students' health."
+    "The tutoring pilot raised scores, and the district ended it after funding lapsed.",
+    "Because the program was discontinued, the pilot could not have raised scores.",
+    "The pilot's first-year success proves the program should be expanded immediately."
    ],
-   "why": "A strong concession acknowledges the real cost and then answers it with the larger estimated benefit; the wrong options dismiss the cost, overstate certainty, or attack critics. The misconception is that concession means abandoning your claim.",
+   "why": "The sequence success-then-discontinuation limits what can be claimed: initial gains are real, but durability is untested. The distractors either stack facts without inference or overcorrect.",
    "n": 29,
    "options": [
-    "The $1.2 million busing cost is real, but the estimated $3 million in attendance savings makes the change worth considering.",
-    "Busing costs $1.2 million, which is a price no district should ever pay for sleep.",
-    "The $3 million in savings is certain, so the $1.2 million cost should not be discussed.",
-    "Critics who mention busing costs simply do not care about students' health."
+    "The pilot initially raised scores, but the program was discontinued, so its long-term effect remains unknown.",
+    "The tutoring pilot raised scores, and the district ended it after funding lapsed.",
+    "The pilot's first-year success proves the program should be expanded immediately.",
+    "Because the program was discontinued, the pilot could not have raised scores."
    ],
    "answer": "A"
   },
   {
    "course": "AP English Language",
-   "unit": "Survey reporting",
-   "stem": "A survey of 500 residents got 200 responses: 120 supported a curbside composting plan, 50 opposed it, and 30 were unsure. Which sentence reports the result most accurately?",
-   "correct": "Among residents who responded, 60 percent supported the composting plan.",
+   "unit": "Warrant placement",
+   "stem": "A student writes: 'A 2021 survey found 60 percent of students use the library for internet access; a 2024 audit found home broadband subscriptions rose. Therefore the library should cut computer stations.' Which revision best repairs the missing step in the argument?",
+   "correct": "Add a sentence explaining why rising home broadband does not remove the need for library computers among students who still rely on them.",
    "distractors": [
-    "Sixty percent of all residents support the composting plan.",
-    "Most residents oppose the plan because only 120 of 500 supported it.",
-    "The survey proves the plan is divisive, since 40 percent did not support it."
+    "Move the 2024 audit before the 2021 survey so the evidence is chronological.",
+    "Replace the conclusion with a quotation from the 2021 survey.",
+    "Soften 'should cut' to 'might cut' without adding any reasoning."
    ],
-   "why": "The valid percentage uses the 200 respondents as the denominator; saying 60 percent of all residents ignores nonresponse. The other options miscalculate the base or treat nonresponse as opposition.",
+   "why": "The argument jumps from two facts to a recommendation without a warrant connecting them; the revision supplies that link. Merely reordering or hedging does not bridge the gap.",
    "n": 30,
    "options": [
-    "Most residents oppose the plan because only 120 of 500 supported it.",
-    "Among residents who responded, 60 percent supported the composting plan.",
-    "Sixty percent of all residents support the composting plan.",
-    "The survey proves the plan is divisive, since 40 percent did not support it."
+    "Soften 'should cut' to 'might cut' without adding any reasoning.",
+    "Add a sentence explaining why rising home broadband does not remove the need for library computers among students who still rely on them.",
+    "Move the 2024 audit before the 2021 survey so the evidence is chronological.",
+    "Replace the conclusion with a quotation from the 2021 survey."
    ],
    "answer": "B"
   },
   {
    "course": "AP English Language",
-   "unit": "Base rates",
-   "stem": "A speaker says, 'Three out of four students who failed the math test had skipped breakfast.' The speaker concludes that eating breakfast prevents failure. What is the main problem with this reasoning?",
-   "correct": "It gives no rate for students who ate breakfast and passed, so the comparison is incomplete.",
+   "unit": "Instruction sequence",
+   "stem": "Which revision best makes the steps in this instruction clear and correctly ordered? 'Before you submit the form, sign it after reading the instructions and before getting a supervisor's signature.'",
+   "correct": "Read the instructions, sign the form, get your supervisor's signature, and then submit it.",
    "distractors": [
-    "It attacks the students' character instead of addressing the test itself.",
-    "It relies on a false analogy between breakfast and studying.",
-    "It generalizes from one student to all students who failed."
+    "Submit the form, read the instructions, sign it, and then get your supervisor's signature.",
+    "Get your supervisor's signature before reading the instructions and signing the form, then submit it.",
+    "Sign the form before reading the instructions, get a supervisor's signature, and submit it."
    ],
-   "why": "The statistic describes only the failing group; without the breakfast habits of passing students, it cannot show breakfast prevents failure. The misconception is that a high percentage within one group proves a cause.",
+   "why": "The original nests steps in a confusing before/after chain; the correct version lists them in execution order. The distractors reverse or displace steps.",
    "n": 31,
    "options": [
-    "It attacks the students' character instead of addressing the test itself.",
-    "It relies on a false analogy between breakfast and studying.",
-    "It gives no rate for students who ate breakfast and passed, so the comparison is incomplete.",
-    "It generalizes from one student to all students who failed."
+    "Sign the form before reading the instructions, get a supervisor's signature, and submit it.",
+    "Get your supervisor's signature before reading the instructions and signing the form, then submit it.",
+    "Read the instructions, sign the form, get your supervisor's signature, and then submit it.",
+    "Submit the form, read the instructions, sign it, and then get your supervisor's signature."
    ],
    "answer": "C"
   },
   {
    "course": "AP English Language",
-   "unit": "Concision",
-   "stem": "Which revision of 'Due to the fact that the sample size was small, the results should not be generalized to the whole population' is most concise without losing meaning?",
-   "correct": "Because the sample was small, the results should not be generalized to the whole population.",
+   "unit": "Unstated assumption",
+   "stem": "A student argues: 'The new cafeteria menu is healthier because it offers a salad bar. Students will eat it because it is available.' Which assumption is doing the most work in this argument?",
+   "correct": "Students will choose the salad bar simply because the cafeteria offers it.",
    "distractors": [
-    "Due to the fact that the sample was small, the results should not be generalized to the whole population.",
-    "The sample size was small, so the results should not be generalized to the whole population, which is a large group.",
-    "The results should not be generalized to the whole population due to the fact that the sample size was small."
+    "Salad bars are more expensive to operate than other serving lines.",
+    "The district controls cafeteria menus and can change them easily.",
+    "Students dislike all vegetables unless they are raw."
    ],
-   "why": "The correct version replaces the wordy 'due to the fact that' with 'because' and keeps the full meaning. The wrong versions retain the wordy phrase or add redundant explanation.",
+   "why": "The claim that students will eat the healthier option depends on availability driving choice. The other options concern cost or authority, not the causal link.",
    "n": 32,
    "options": [
-    "The results should not be generalized to the whole population due to the fact that the sample size was small.",
-    "Due to the fact that the sample was small, the results should not be generalized to the whole population.",
-    "The sample size was small, so the results should not be generalized to the whole population, which is a large group.",
-    "Because the sample was small, the results should not be generalized to the whole population."
+    "The district controls cafeteria menus and can change them easily.",
+    "Salad bars are more expensive to operate than other serving lines.",
+    "Students dislike all vegetables unless they are raw.",
+    "Students will choose the salad bar simply because the cafeteria offers it."
    ],
    "answer": "D"
   },
   {
    "course": "AP English Language",
-   "unit": "Neutral summary",
-   "stem": "A source reports: 'We surveyed 300 weekday commuters at two stations; 68 percent favored later trains.' Which sentence best summarizes the source's methodology without overgeneralizing?",
-   "correct": "The study surveyed 300 weekday commuters at two stations and found that 68 percent favored later trains.",
+   "unit": "Deductive order",
+   "stem": "A student's paragraph states the recommendation first, then gives three reasons in descending order of strength. What is the main risk of this sequence?",
+   "correct": "Readers may resist the recommendation before seeing support, and the weaker reasons that follow may make the case feel thinner.",
    "distractors": [
-    "The study proved that most commuters nationwide want later trains.",
-    "The study showed that 68 percent of all residents favor later trains.",
-    "The study's small sample of two stations makes its findings useless."
+    "Readers will mistake the recommendation for a concession and expect a rebuttal.",
+    "The paragraph will lack a clear claim because the recommendation comes too early.",
+    "The reasons will seem stronger because they arrive after the claim."
    ],
-   "why": "A neutral summary keeps the sample and finding as reported; the wrong options expand the population or dismiss the study rather than summarize it. The misconception is that summary should include evaluation or nationwide scope.",
+   "why": "Leading with a claim asks readers to accept it before evidence; ordering reasons strongest-first can also make the remaining support feel like an afterthought.",
    "n": 33,
    "options": [
-    "The study surveyed 300 weekday commuters at two stations and found that 68 percent favored later trains.",
-    "The study showed that 68 percent of all residents favor later trains.",
-    "The study's small sample of two stations makes its findings useless.",
-    "The study proved that most commuters nationwide want later trains."
+    "Readers may resist the recommendation before seeing support, and the weaker reasons that follow may make the case feel thinner.",
+    "The paragraph will lack a clear claim because the recommendation comes too early.",
+    "The reasons will seem stronger because they arrive after the claim.",
+    "Readers will mistake the recommendation for a concession and expect a rebuttal."
    ],
    "answer": "A"
   }
@@ -1798,6 +1798,672 @@
       "The study showed that 68 percent of all residents favor later trains.",
       "The study's small sample of two stations makes its findings useless.",
       "The study proved that most commuters nationwide want later trains."
+     ],
+     "answer": "A"
+    }
+   ]
+  },
+  {
+   "set": 3,
+   "generated": "2026-11-12",
+   "questions": [
+    {
+     "course": "AP English Language",
+     "unit": "Tone",
+     "stem": "Read the sentence: 'The last train pulled out at 6:10. The platform emptied. I folded the timetable into eighths and slid it into my coat.' Which phrase best describes the tone?",
+     "correct": "subdued resignation",
+     "distractors": [
+      "open bitterness",
+      "eager anticipation",
+      "warm nostalgia"
+     ],
+     "why": "The flat details and folded timetable suggest quiet acceptance; 'warm nostalgia' mistakes a mention of the timetable for fond memory.",
+     "n": 1,
+     "options": [
+      "subdued resignation",
+      "eager anticipation",
+      "open bitterness",
+      "warm nostalgia"
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Circular reasoning",
+     "stem": "A student writes, 'The school day should start later because a later start time is the right schedule for teenagers.' Why does the sentence fail as an argument?",
+     "correct": "Its reason merely restates its conclusion.",
+     "distractors": [
+      "It attacks the character of opponents.",
+      "It generalizes from one example.",
+      "It presents only two possible choices."
+     ],
+     "why": "The premise says the same thing as the conclusion; 'generalizes from one example' misdescribes circular reasoning as a sampling error.",
+     "n": 2,
+     "options": [
+      "It generalizes from one example.",
+      "Its reason merely restates its conclusion.",
+      "It attacks the character of opponents.",
+      "It presents only two possible choices."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Red herring",
+     "stem": "In a debate over a new public pool, a speaker says, 'The town's roads are full of potholes, so we should not build a pool.' What role does the pothole remark play?",
+     "correct": "It diverts to an unrelated issue instead of addressing the pool.",
+     "distractors": [
+      "It attacks the motives of pool supporters.",
+      "It generalizes from a single example.",
+      "It forces a choice between two extremes."
+     ],
+     "why": "Potholes may matter but do not bear on the pool's merits; 'forces a choice' names false dilemma instead of diversion.",
+     "n": 3,
+     "options": [
+      "It generalizes from a single example.",
+      "It forces a choice between two extremes.",
+      "It diverts to an unrelated issue instead of addressing the pool.",
+      "It attacks the motives of pool supporters."
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "False authority",
+     "stem": "A diet company advertises, 'A Nobel Prize-winning physicist says this meal plan works, so it must be effective.' Which weakness most undermines the advertisement?",
+     "correct": "The physicist's expertise is outside nutrition.",
+     "distractors": [
+      "The advertisement relies on the plan's popularity.",
+      "The advertisement attacks nutritionists personally.",
+      "The advertisement assumes earlier events caused later ones."
+     ],
+     "why": "A physics prize does not establish nutrition expertise; 'relies on popularity' confuses authority with bandwagon appeal.",
+     "n": 4,
+     "options": [
+      "The advertisement relies on the plan's popularity.",
+      "The advertisement assumes earlier events caused later ones.",
+      "The advertisement attacks nutritionists personally.",
+      "The physicist's expertise is outside nutrition."
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Argument by analogy",
+     "stem": "A student argues, 'A library should ban certain books because a pharmacy bans certain medicines: if a product can harm someone, the institution should keep it off the shelf.' Which criticism most directly weakens the analogy?",
+     "correct": "Libraries and pharmacies differ in their purposes and in what choice means.",
+     "distractors": [
+      "The student attacks librarians instead of books.",
+      "The student relies on a survey of pharmacists.",
+      "The student offers only two possible policies."
+     ],
+     "why": "The analogy ignores differences between lending books and dispensing medicine; 'only two possible policies' names false dilemma, not faulty analogy.",
+     "n": 5,
+     "options": [
+      "Libraries and pharmacies differ in their purposes and in what choice means.",
+      "The student offers only two possible policies.",
+      "The student attacks librarians instead of books.",
+      "The student relies on a survey of pharmacists."
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Necessary vs. sufficient condition",
+     "stem": "A mayor says, 'To attract business, the city must fix its sidewalks. We fixed the sidewalks, so business will now improve.' What is the error in this reasoning?",
+     "correct": "It treats a necessary condition as if it were sufficient.",
+     "distractors": [
+      "It attacks the motives of business owners.",
+      "It generalizes from a single sidewalk project.",
+      "It assumes that popular ideas are true."
+     ],
+     "why": "Fixing sidewalks is presented as required but not enough; 'generalizes from a single project' mistakes a conditional error for sample size.",
+     "n": 6,
+     "options": [
+      "It attacks the motives of business owners.",
+      "It treats a necessary condition as if it were sufficient.",
+      "It assumes that popular ideas are true.",
+      "It generalizes from a single sidewalk project."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Appeal to ignorance",
+     "stem": "A board member says, 'No study has shown that the new schedule harms students, so we can assume it is safe.' Which statement best names the problem with this conclusion?",
+     "correct": "It treats lack of evidence of harm as proof of safety.",
+     "distractors": [
+      "It relies on an unqualified expert's testimony.",
+      "It presents only two possible schedules.",
+      "It attacks the researchers' character."
+     ],
+     "why": "No evidence of harm is not evidence of safety; 'only two possible schedules' mistakes this for a false dilemma.",
+     "n": 7,
+     "options": [
+      "It attacks the researchers' character.",
+      "It presents only two possible schedules.",
+      "It treats lack of evidence of harm as proof of safety.",
+      "It relies on an unqualified expert's testimony."
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Comma splice",
+     "stem": "Which revision fixes the comma splice while keeping both clauses independent? 'The committee reviewed the proposal, it approved the budget.'",
+     "correct": "The committee reviewed the proposal; it approved the budget.",
+     "distractors": [
+      "The committee reviewed the proposal, and approved the budget.",
+      "The committee reviewed the proposal, approving the budget.",
+      "The committee reviewed the proposal, it then approved the budget."
+     ],
+     "why": "A semicolon correctly joins two independent clauses; the 'and' version drops the second subject, so it no longer keeps two independent clauses.",
+     "n": 8,
+     "options": [
+      "The committee reviewed the proposal, approving the budget.",
+      "The committee reviewed the proposal, it then approved the budget.",
+      "The committee reviewed the proposal, and approved the budget.",
+      "The committee reviewed the proposal; it approved the budget."
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Subordination",
+     "stem": "Which sentence most clearly presents the storm as the cause of the cancellation?",
+     "correct": "Because the storm flooded the roads, the school canceled classes.",
+     "distractors": [
+      "The storm flooded the roads, and the school canceled classes.",
+      "The storm flooded the roads; the school canceled classes.",
+      "The school canceled classes, and the storm flooded the roads."
+     ],
+     "why": "'Because' subordinates the flooding as the cause; 'and' merely coordinates two events without establishing causation.",
+     "n": 9,
+     "options": [
+      "Because the storm flooded the roads, the school canceled classes.",
+      "The storm flooded the roads, and the school canceled classes.",
+      "The storm flooded the roads; the school canceled classes.",
+      "The school canceled classes, and the storm flooded the roads."
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Sentence rhythm",
+     "stem": "A paragraph reads: 'The district spent three years revising the schedule, surveying families, retraining bus drivers, and printing new routes. It failed.' What is the main effect of the one-word sentence?",
+     "correct": "It delivers the verdict with abrupt emphasis after the long buildup.",
+     "distractors": [
+      "It introduces a new piece of evidence about the schedule.",
+      "It creates a parallel structure with the previous sentence.",
+      "It shifts the passage into a more informal register."
+     ],
+     "why": "The short sentence lands the verdict after a long buildup; 'parallel structure' mistakes brevity for balance.",
+     "n": 10,
+     "options": [
+      "It introduces a new piece of evidence about the schedule.",
+      "It delivers the verdict with abrupt emphasis after the long buildup.",
+      "It creates a parallel structure with the previous sentence.",
+      "It shifts the passage into a more informal register."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Pronoun shift",
+     "stem": "A mayor says, 'You have asked for safer crossings for years. My office has heard you, and my office will act.' What does the shift from 'you' to 'my office' mainly accomplish?",
+     "correct": "It distinguishes the audience's demand from the office's responsibility to respond.",
+     "distractors": [
+      "It creates a pronoun error that blurs who is speaking.",
+      "It suggests the audience is to blame for the delay.",
+      "It moves the statement from public to private register."
+     ],
+     "why": "The shift clarifies who demands and who must answer; 'pronoun error' assumes every shift is a mistake.",
+     "n": 11,
+     "options": [
+      "It moves the statement from public to private register.",
+      "It suggests the audience is to blame for the delay.",
+      "It distinguishes the audience's demand from the office's responsibility to respond.",
+      "It creates a pronoun error that blurs who is speaking."
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Survey wording",
+     "stem": "A city polls residents: 'Do you support the wasteful new fee that would raise monthly water bills by $8 to fund unnecessary office renovations?' Sixty-two percent say no. A council member concludes, 'Residents overwhelmingly oppose the fee.' Which criticism of that conclusion is most accurate?",
+     "correct": "The loaded wording—'wasteful' and 'unnecessary'—likely pushed respondents toward opposition, so 62 percent cannot be read as a clean measure of opinion.",
+     "distractors": [
+      "The sample size is too small to support any conclusion about what city residents think.",
+      "An $8 monthly fee is too small to affect how respondents answer a poll.",
+      "The poll should have asked about office renovations instead of water bills."
+     ],
+     "why": "It identifies question-wording bias; the misconception is that any poll percentage measures opinion directly, regardless of how the question is phrased.",
+     "n": 12,
+     "options": [
+      "The poll should have asked about office renovations instead of water bills.",
+      "An $8 monthly fee is too small to affect how respondents answer a poll.",
+      "The sample size is too small to support any conclusion about what city residents think.",
+      "The loaded wording—'wasteful' and 'unnecessary'—likely pushed respondents toward opposition, so 62 percent cannot be read as a clean measure of opinion."
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Risk statistics",
+     "stem": "A brochure says a screening test 'cuts your risk of advanced disease by 50 percent.' The study reports advanced disease in 2 of 1,000 screened people and 4 of 1,000 unscreened people. Which sentence reports the finding most accurately?",
+     "correct": "Screening reduced advanced disease from 4 to 2 cases per 1,000 people—a 50 percent relative reduction but only a 2-in-1,000 absolute difference.",
+     "distractors": [
+      "Screening reduced advanced disease by 50 percentage points, from 4 percent to 2 percent.",
+      "Screening prevented advanced disease in half of all people who were screened.",
+      "Screening saved 500 lives for every 1,000 people who were screened."
+     ],
+     "why": "It distinguishes relative risk reduction from absolute risk; the wrong options inflate a 2-in-1,000 difference into a percentage-point or per-person benefit.",
+     "n": 13,
+     "options": [
+      "Screening reduced advanced disease from 4 to 2 cases per 1,000 people—a 50 percent relative reduction but only a 2-in-1,000 absolute difference.",
+      "Screening reduced advanced disease by 50 percentage points, from 4 percent to 2 percent.",
+      "Screening prevented advanced disease in half of all people who were screened.",
+      "Screening saved 500 lives for every 1,000 people who were screened."
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Mean and median",
+     "stem": "A jobs report states: 'The average starting salary for graduates of the program is $78,000; the median is $41,000.' Which conclusion is best supported?",
+     "correct": "A few very high salaries pull the average above the typical graduate's salary, so the median better describes a typical outcome.",
+     "distractors": [
+      "Most graduates earn about $78,000, because the average is the standard measure of what is typical.",
+      "The median is unreliable because it ignores every salary above $41,000.",
+      "The program should report only the average, since the median hides high earners."
+     ],
+     "why": "It reads a skewed distribution correctly; the misconception is that the mean always represents a typical case rather than being pulled by outliers.",
+     "n": 14,
+     "options": [
+      "Most graduates earn about $78,000, because the average is the standard measure of what is typical.",
+      "A few very high salaries pull the average above the typical graduate's salary, so the median better describes a typical outcome.",
+      "The program should report only the average, since the median hides high earners.",
+      "The median is unreliable because it ignores every salary above $41,000."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Denominators",
+     "stem": "A parks department budget is $5 million, and 60 percent goes to salaries. A student writes, 'Salaries consume 60 percent of the city's budget.' The city's total budget is $80 million. Which revision is most accurate?",
+     "correct": "Salaries consume 60 percent of the parks department's $5 million budget, or about 3.75 percent of the city's $80 million budget.",
+     "distractors": [
+      "Salaries consume 60 percent of the city's $80 million budget, since the parks budget is part of the city budget.",
+      "Salaries consume 3.75 percent of the parks department's budget, since $3 million divided by $80 million is 3.75 percent.",
+      "Salaries consume 6.25 percent of the city budget, since the $5 million parks budget is 6.25 percent of $80 million."
+     ],
+     "why": "It tracks the correct base for each percentage; the misconception is that a share of a subunit can be reported as a share of the whole, or that the subunit's total is the salaries figure.",
+     "n": 15,
+     "options": [
+      "Salaries consume 6.25 percent of the city budget, since the $5 million parks budget is 6.25 percent of $80 million.",
+      "Salaries consume 60 percent of the city's $80 million budget, since the parks budget is part of the city budget.",
+      "Salaries consume 60 percent of the parks department's $5 million budget, or about 3.75 percent of the city's $80 million budget.",
+      "Salaries consume 3.75 percent of the parks department's budget, since $3 million divided by $80 million is 3.75 percent."
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Pooled rates",
+     "stem": "Two schools report algebra pass rates. School A: 40 of 50 students passed. School B: 120 of 200 passed. A memo says, 'The average pass rate is 70 percent, because the school rates are 80 percent and 60 percent.' Which correction is accurate?",
+     "correct": "The combined rate is 64 percent (160 of 250), because the larger school's lower rate should carry more weight than a simple average of school rates.",
+     "distractors": [
+      "The combined rate is 70 percent, because averaging the two school rates gives each school equal weight.",
+      "The combined rate is 80 percent, because the higher-performing school sets the district standard.",
+      "The combined rate cannot be calculated without knowing each school's total enrollment."
+     ],
+     "why": "It computes a weighted pooled rate; the misconception is that an average of group percentages equals the percentage for the combined group.",
+     "n": 16,
+     "options": [
+      "The combined rate cannot be calculated without knowing each school's total enrollment.",
+      "The combined rate is 70 percent, because averaging the two school rates gives each school equal weight.",
+      "The combined rate is 80 percent, because the higher-performing school sets the district standard.",
+      "The combined rate is 64 percent (160 of 250), because the larger school's lower rate should carry more weight than a simple average of school rates."
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Statistical significance",
+     "stem": "A study of 10,000 students finds that a new tutoring program raises scores by 0.3 points on a 100-point test, with a result described as 'statistically significant (p < .05).' A director says, 'The program works; we should adopt it districtwide.' Which response best evaluates the claim?",
+     "correct": "The gain is statistically detectable but very small in practical terms, so adoption should depend on cost and whether 0.3 points matters.",
+     "distractors": [
+      "Statistical significance proves the gain is large enough to justify districtwide adoption.",
+      "Because the sample is small, the result cannot be trusted as evidence about the program.",
+      "The p-value shows that the program caused a 0.3-point gain in every student."
+     ],
+     "why": "It separates statistical significance from practical importance; the misconception is that a significant result must be large or automatically worth adopting.",
+     "n": 17,
+     "options": [
+      "The gain is statistically detectable but very small in practical terms, so adoption should depend on cost and whether 0.3 points matters.",
+      "The p-value shows that the program caused a 0.3-point gain in every student.",
+      "Statistical significance proves the gain is large enough to justify districtwide adoption.",
+      "Because the sample is small, the result cannot be trusted as evidence about the program."
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Source attribution",
+     "stem": "In a synthesis essay on a proposed soda tax, a student writes: 'A 2023 study by the Beverage Institute found that soda taxes reduce sales by only 2 percent, so taxes do not change behavior.' Which revision uses the source most responsibly?",
+     "correct": "A 2023 Beverage Institute study found a 2 percent sales drop, but an industry-funded group may have incentives to minimize the tax's effect, so the finding needs comparison with independent research.",
+     "distractors": [
+      "A 2023 study found that soda taxes reduce sales by 2 percent, which proves taxes do not change behavior.",
+      "The Beverage Institute is biased, so its study should not be mentioned anywhere in the essay.",
+      "Soda taxes reduce sales by exactly 2 percent, according to a study that all researchers accept."
+     ],
+     "why": "It qualifies an interested source instead of treating it as neutral or discarding it; the misconception is that a biased source has no evidentiary use.",
+     "n": 18,
+     "options": [
+      "Soda taxes reduce sales by exactly 2 percent, according to a study that all researchers accept.",
+      "A 2023 Beverage Institute study found a 2 percent sales drop, but an industry-funded group may have incentives to minimize the tax's effect, so the finding needs comparison with independent research.",
+      "A 2023 study found that soda taxes reduce sales by 2 percent, which proves taxes do not change behavior.",
+      "The Beverage Institute is biased, so its study should not be mentioned anywhere in the essay."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Rhetorical numbers",
+     "stem": "In a speech urging the city to fund mental-health services, a nurse says, 'I have held the hands of 212 patients in emergency rooms who waited three days for a bed.' What does the specific number mainly contribute to the rhetoric?",
+     "correct": "It gives concrete, accumulated experience that strengthens the nurse's credibility and makes an abstract shortage feel particular.",
+     "distractors": [
+      "It proves statistically that city policy is responsible for the three-day waits.",
+      "It creates a formal syllogism about the exact number of beds the city needs.",
+      "It softens the criticism by making the nurse's claim more tentative and cautious."
+     ],
+     "why": "It identifies ethos and concrete detail; the misconception is that a vivid number functions as statistical proof of cause or of an exact policy remedy.",
+     "n": 19,
+     "options": [
+      "It softens the criticism by making the nurse's claim more tentative and cautious.",
+      "It creates a formal syllogism about the exact number of beds the city needs.",
+      "It gives concrete, accumulated experience that strengthens the nurse's credibility and makes an abstract shortage feel particular.",
+      "It proves statistically that city policy is responsible for the three-day waits."
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Successive percentages",
+     "stem": "A jacket is marked down 30 percent, and the register takes another 20 percent off the reduced price. A shopper says, 'That is 50 percent off.' Which statement is accurate?",
+     "correct": "The total discount is 44 percent, because the second discount applies to the already reduced price.",
+     "distractors": [
+      "The total discount is 50 percent, because the two percentages are added together.",
+      "The total discount is 56 percent, because the discounts compound upward.",
+      "The total discount cannot be calculated without knowing the jacket's original price."
+     ],
+     "why": "It applies successive discounts multiplicatively; the misconception is that percentage reductions can simply be added.",
+     "n": 20,
+     "options": [
+      "The total discount cannot be calculated without knowing the jacket's original price.",
+      "The total discount is 56 percent, because the discounts compound upward.",
+      "The total discount is 50 percent, because the two percentages are added together.",
+      "The total discount is 44 percent, because the second discount applies to the already reduced price."
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Attributing a maximum",
+     "stem": "A nonprofit's report says that in pilot sites, 'up to 40 percent of participants' found jobs within six months. A student writes: 'The program helps 40 percent of participants find jobs.' Which revision most accurately attributes the finding?",
+     "correct": "The report says that at some pilot sites as many as 40 percent found jobs within six months, not that 40 percent did so overall.",
+     "distractors": [
+      "The report proves the program helps exactly 40 percent of all participants find jobs.",
+      "The report's 40 percent figure is meaningless because it is only a maximum.",
+      "The report shows that fewer than 40 percent of participants found jobs at every site."
+     ],
+     "why": "It preserves the ceiling and limited scope of 'up to'; the misconception is that a maximum or best-site figure describes the overall program.",
+     "n": 21,
+     "options": [
+      "The report says that at some pilot sites as many as 40 percent found jobs within six months, not that 40 percent did so overall.",
+      "The report proves the program helps exactly 40 percent of all participants find jobs.",
+      "The report's 40 percent figure is meaningless because it is only a maximum.",
+      "The report shows that fewer than 40 percent of participants found jobs at every site."
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Procedural clarity",
+     "stem": "A student writes: 'First the surveys were distributed, then after the data was collected it was analyzed, and finally a report was written by the committee.' Which revision best clarifies the sequence and the actor?",
+     "correct": "First the committee distributed the surveys; then it analyzed the data; finally it wrote the report.",
+     "distractors": [
+      "First surveys were distributed, then data was collected, then a report was written.",
+      "The committee distributed surveys, and a report was written after data analysis.",
+      "After the report was written, the committee distributed surveys and analyzed the data."
+     ],
+     "why": "It uses active voice and parallel sequence to show who did each step; the misconception is that passive constructions clarify procedure simply by sounding formal.",
+     "n": 22,
+     "options": [
+      "The committee distributed surveys, and a report was written after data analysis.",
+      "First the committee distributed the surveys; then it analyzed the data; finally it wrote the report.",
+      "After the report was written, the committee distributed surveys and analyzed the data.",
+      "First surveys were distributed, then data was collected, then a report was written."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Alternatives sequence",
+     "stem": "In a speech, a council member says: 'We tried closing Main Street to cars. We tried timed lights. We tried a crossing guard. Now we are asking for a roundabout.' What does the sequence of attempted solutions mainly accomplish?",
+     "correct": "It presents the roundabout as the remaining option after others have been tried, making the request seem tested rather than impulsive.",
+     "distractors": [
+      "It suggests the earlier solutions were never seriously attempted, so the roundabout is the first real plan.",
+      "It creates a false dilemma by claiming that only a roundabout can reduce traffic.",
+      "It shifts blame for traffic onto drivers by listing their failures."
+     ],
+     "why": "The list establishes prior effort and makes the final request seem like the next step. The false-dilemma misreading ignores that alternatives were actually tried.",
+     "n": 23,
+     "options": [
+      "It shifts blame for traffic onto drivers by listing their failures.",
+      "It creates a false dilemma by claiming that only a roundabout can reduce traffic.",
+      "It presents the roundabout as the remaining option after others have been tried, making the request seem tested rather than impulsive.",
+      "It suggests the earlier solutions were never seriously attempted, so the roundabout is the first real plan."
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Question-answer sequence",
+     "stem": "A columnist writes: 'What does the board fear? It fears the parents who have read the budget.' What does answering the rhetorical question immediately mainly accomplish?",
+     "correct": "It creates the impression of exposing a hidden motive while keeping control of the answer.",
+     "distractors": [
+      "It invites readers to deliberate honestly before the writer states a position.",
+      "It concedes that the board's motives are unknowable and should be investigated.",
+      "It shifts the burden of proof onto parents by asking them to respond."
+     ],
+     "why": "This is hypophora: the writer raises a question only to supply a damning answer, not to open genuine inquiry. Reading it as an invitation to deliberate mistakes control for openness.",
+     "n": 24,
+     "options": [
+      "It shifts the burden of proof onto parents by asking them to respond.",
+      "It concedes that the board's motives are unknowable and should be investigated.",
+      "It invites readers to deliberate honestly before the writer states a position.",
+      "It creates the impression of exposing a hidden motive while keeping control of the answer."
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Thesis placement",
+     "stem": "A student's essay opens with three paragraphs on the history of standardized testing, then states its thesis in paragraph four. What is the main problem with this sequence?",
+     "correct": "Readers cannot tell which historical details matter until the thesis arrives, so the opening reads as undirected.",
+     "distractors": [
+      "It gives the essay too little evidence for its claim by delaying the thesis.",
+      "It makes the essay's conclusion impossible to support with historical facts.",
+      "It weakens the thesis by placing it after the strongest evidence."
+     ],
+     "why": "A thesis should orient readers before supporting details; delaying it turns the history into a list rather than an argument. The other options confuse late placement with lack of evidence.",
+     "n": 25,
+     "options": [
+      "Readers cannot tell which historical details matter until the thesis arrives, so the opening reads as undirected.",
+      "It gives the essay too little evidence for its claim by delaying the thesis.",
+      "It makes the essay's conclusion impossible to support with historical facts.",
+      "It weakens the thesis by placing it after the strongest evidence."
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Chronological revision",
+     "stem": "Which revision makes the order of events in this sentence clearest? 'After the committee reviewed the proposal, it approved the budget, having received public comments.'",
+     "correct": "After receiving public comments, the committee reviewed the proposal and approved the budget.",
+     "distractors": [
+      "Having approved the budget, the committee reviewed the proposal after receiving public comments.",
+      "The committee received public comments after it reviewed the proposal and approved the budget.",
+      "The proposal was reviewed after the budget was approved by the committee, which had received public comments."
+     ],
+     "why": "The original buries the earliest event in a trailing phrase; the correct version orders comments, review, then approval. The distractors scramble that sequence.",
+     "n": 26,
+     "options": [
+      "The committee received public comments after it reviewed the proposal and approved the budget.",
+      "After receiving public comments, the committee reviewed the proposal and approved the budget.",
+      "The proposal was reviewed after the budget was approved by the committee, which had received public comments.",
+      "Having approved the budget, the committee reviewed the proposal after receiving public comments."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Causal chain test",
+     "stem": "A report claims: 'Because the city replaced sodium streetlights with LEDs, streets became brighter, so nighttime pedestrian crashes fell.' Which question most directly tests the argument's causal chain?",
+     "correct": "Did crashes fall on the relit streets compared with similar streets that kept sodium lights?",
+     "distractors": [
+      "Did residents prefer the whiter color of the new LED lights?",
+      "How much electricity did the city save by switching to LEDs?",
+      "Were the LED fixtures more expensive to install than sodium fixtures?"
+     ],
+     "why": "The claim chains lighting to brightness to fewer crashes; a comparison group tests whether that link is causal rather than coincidental. The distractors ask about preferences, savings, or costs instead.",
+     "n": 27,
+     "options": [
+      "Did residents prefer the whiter color of the new LED lights?",
+      "How much electricity did the city save by switching to LEDs?",
+      "Did crashes fall on the relit streets compared with similar streets that kept sodium lights?",
+      "Were the LED fixtures more expensive to install than sodium fixtures?"
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Process description",
+     "stem": "A writer explains a rumor's spread: 'A neighbor tells two people. Each tells two more. By Thursday the story has a lawyer.' What does this sequence mainly make the rumor feel like?",
+     "correct": "A mechanical process that accelerates predictably until its exaggeration lands as the logical result.",
+     "distractors": [
+      "A slow, uncertain story that readers should doubt because it lacks evidence.",
+      "A personal confession that asks readers to forgive the speaker.",
+      "A statistical trend that depends on precise counts rather than momentum."
+     ],
+     "why": "The doubling pattern supplies a clear mechanism, so the absurd final detail feels earned by the sequence. Reading it as doubt misses the comic acceleration.",
+     "n": 28,
+     "options": [
+      "A personal confession that asks readers to forgive the speaker.",
+      "A statistical trend that depends on precise counts rather than momentum.",
+      "A slow, uncertain story that readers should doubt because it lacks evidence.",
+      "A mechanical process that accelerates predictably until its exaggeration lands as the logical result."
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Chronological qualification",
+     "stem": "A student cites a district report: a tutoring pilot raised scores in year one; a later memo says the district ended the program after funding lapsed. Which sentence best uses both sources to qualify a claim about tutoring?",
+     "correct": "The pilot initially raised scores, but the program was discontinued, so its long-term effect remains unknown.",
+     "distractors": [
+      "The tutoring pilot raised scores, and the district ended it after funding lapsed.",
+      "Because the program was discontinued, the pilot could not have raised scores.",
+      "The pilot's first-year success proves the program should be expanded immediately."
+     ],
+     "why": "The sequence success-then-discontinuation limits what can be claimed: initial gains are real, but durability is untested. The distractors either stack facts without inference or overcorrect.",
+     "n": 29,
+     "options": [
+      "The pilot initially raised scores, but the program was discontinued, so its long-term effect remains unknown.",
+      "The tutoring pilot raised scores, and the district ended it after funding lapsed.",
+      "The pilot's first-year success proves the program should be expanded immediately.",
+      "Because the program was discontinued, the pilot could not have raised scores."
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Warrant placement",
+     "stem": "A student writes: 'A 2021 survey found 60 percent of students use the library for internet access; a 2024 audit found home broadband subscriptions rose. Therefore the library should cut computer stations.' Which revision best repairs the missing step in the argument?",
+     "correct": "Add a sentence explaining why rising home broadband does not remove the need for library computers among students who still rely on them.",
+     "distractors": [
+      "Move the 2024 audit before the 2021 survey so the evidence is chronological.",
+      "Replace the conclusion with a quotation from the 2021 survey.",
+      "Soften 'should cut' to 'might cut' without adding any reasoning."
+     ],
+     "why": "The argument jumps from two facts to a recommendation without a warrant connecting them; the revision supplies that link. Merely reordering or hedging does not bridge the gap.",
+     "n": 30,
+     "options": [
+      "Soften 'should cut' to 'might cut' without adding any reasoning.",
+      "Add a sentence explaining why rising home broadband does not remove the need for library computers among students who still rely on them.",
+      "Move the 2024 audit before the 2021 survey so the evidence is chronological.",
+      "Replace the conclusion with a quotation from the 2021 survey."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Instruction sequence",
+     "stem": "Which revision best makes the steps in this instruction clear and correctly ordered? 'Before you submit the form, sign it after reading the instructions and before getting a supervisor's signature.'",
+     "correct": "Read the instructions, sign the form, get your supervisor's signature, and then submit it.",
+     "distractors": [
+      "Submit the form, read the instructions, sign it, and then get your supervisor's signature.",
+      "Get your supervisor's signature before reading the instructions and signing the form, then submit it.",
+      "Sign the form before reading the instructions, get a supervisor's signature, and submit it."
+     ],
+     "why": "The original nests steps in a confusing before/after chain; the correct version lists them in execution order. The distractors reverse or displace steps.",
+     "n": 31,
+     "options": [
+      "Sign the form before reading the instructions, get a supervisor's signature, and submit it.",
+      "Get your supervisor's signature before reading the instructions and signing the form, then submit it.",
+      "Read the instructions, sign the form, get your supervisor's signature, and then submit it.",
+      "Submit the form, read the instructions, sign it, and then get your supervisor's signature."
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Unstated assumption",
+     "stem": "A student argues: 'The new cafeteria menu is healthier because it offers a salad bar. Students will eat it because it is available.' Which assumption is doing the most work in this argument?",
+     "correct": "Students will choose the salad bar simply because the cafeteria offers it.",
+     "distractors": [
+      "Salad bars are more expensive to operate than other serving lines.",
+      "The district controls cafeteria menus and can change them easily.",
+      "Students dislike all vegetables unless they are raw."
+     ],
+     "why": "The claim that students will eat the healthier option depends on availability driving choice. The other options concern cost or authority, not the causal link.",
+     "n": 32,
+     "options": [
+      "The district controls cafeteria menus and can change them easily.",
+      "Salad bars are more expensive to operate than other serving lines.",
+      "Students dislike all vegetables unless they are raw.",
+      "Students will choose the salad bar simply because the cafeteria offers it."
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP English Language",
+     "unit": "Deductive order",
+     "stem": "A student's paragraph states the recommendation first, then gives three reasons in descending order of strength. What is the main risk of this sequence?",
+     "correct": "Readers may resist the recommendation before seeing support, and the weaker reasons that follow may make the case feel thinner.",
+     "distractors": [
+      "Readers will mistake the recommendation for a concession and expect a rebuttal.",
+      "The paragraph will lack a clear claim because the recommendation comes too early.",
+      "The reasons will seem stronger because they arrive after the claim."
+     ],
+     "why": "Leading with a claim asks readers to accept it before evidence; ordering reasons strongest-first can also make the remaining support feel like an afterthought.",
+     "n": 33,
+     "options": [
+      "Readers may resist the recommendation before seeing support, and the weaker reasons that follow may make the case feel thinner.",
+      "The paragraph will lack a clear claim because the recommendation comes too early.",
+      "The reasons will seem stronger because they arrive after the claim.",
+      "Readers will mistake the recommendation for a concession and expect a rebuttal."
      ],
      "answer": "A"
     }
