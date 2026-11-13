@@ -1334,5 +1334,77 @@
       }
     ],
     "src": "web"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 28,
+    "total": 33,
+    "percent": 85,
+    "subject": "Grade Rescue",
+    "date": "2026-11-13",
+    "ts": 1794545872910,
+    "missed": [
+      {
+        "n": 5,
+        "q": "Sales of bicycles are not a measure of ridership or safety, so the evidence does not support the specific claim that the",
+        "p": "B",
+        "k": "A",
+        "o": [
+          "Nondisjunction in meiosis I of the mother, so one egg receiv",
+          "Nondisjunction in meiosis II of the mother, so one egg recei",
+          "Nondisjunction in meiosis II of the father, so the sperm car",
+          "Crossing over between the two chromosome 21 homologs, which"
+        ]
+      },
+      {
+        "n": 9,
+        "q": "The reply never engages the cost figures; it disqualifies the speaker, which is an ad hominem and leaves the estimates u",
+        "p": "A",
+        "k": "D",
+        "o": [
+          "About 0.01, roughly 1 in 100, because that is q taken from t",
+          "About 0.0001, roughly 1 in 10,000, because that is q squared",
+          "About 0.98, because carriers are everything that is not affe",
+          "About 0.0198, roughly 1 in 50, because q = 0.01 and carriers"
+        ]
+      },
+      {
+        "n": 21,
+        "q": "The clause \"by now the votes are counted\" treats the result as known, which is why the writer moves immediately to meani",
+        "p": "B",
+        "k": "C",
+        "o": [
+          "4 combinations",
+          "8 combinations",
+          "16 combinations",
+          "64 combinations"
+        ]
+      },
+      {
+        "n": 31,
+        "q": "\"Cave\" carries collapse and capitulation, so the headline judges the decision before the reader reaches a single fact ab",
+        "p": "A",
+        "k": "D",
+        "o": [
+          "Nondisjunction in meiosis I of the mother, which sends both",
+          "Nondisjunction in meiosis I of the father, which duplicates",
+          "Crossing over between the chromosome 18 homologs during prop",
+          "Nondisjunction in meiosis II of the mother, so sister chroma"
+        ]
+      },
+      {
+        "n": 33,
+        "q": "The flat detail of the bell and the unchanged budget closes on consequence rather than summary, leaving the pressure wit",
+        "p": "C",
+        "k": "A",
+        "o": [
+          "1:1:1:1, one class for each of the heterozygote's four gamet",
+          "9:3:3:1, the standard dihybrid ratio for two heterozygotes",
+          "3:1, because the recessive parent contributes nothing to the",
+          "1:2:1, because each locus shows incomplete dominance"
+        ]
+      }
+    ],
+    "src": "web"
   }
 ]
