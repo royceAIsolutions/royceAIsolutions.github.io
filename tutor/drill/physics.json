@@ -1,0 +1,473 @@
+{
+ "id": "physics",
+ "title": "Physics",
+ "generated": "2026-11-12",
+ "source": "generated",
+ "courses": [
+  "Physics"
+ ],
+ "questions": [
+  {
+   "n": 1,
+   "course": "Physics",
+   "unit": "Velocity-time graphs",
+   "stem": "A cart speeds up uniformly from rest to 12 m/s in 4.0 s, then holds 12 m/s for another 6.0 s. What total displacement does its velocity-time graph give for the whole 10 s?",
+   "options": [
+    "96 m",
+    "120 m",
+    "72 m",
+    "84 m"
+   ],
+   "answer": "A",
+   "why": "Displacement is the area under a v-t graph: a triangle of one-half times 4.0 times 12 = 24 m plus a rectangle of 6.0 times 12 = 72 m, for 96 m total."
+  },
+  {
+   "n": 2,
+   "course": "Physics",
+   "unit": "Free fall",
+   "stem": "A stone is dropped from rest off a bridge and takes 3.0 s to reach the water below. Taking g = 10 m/s\u00b2, how high is the bridge above the water?",
+   "options": [
+    "30 m",
+    "45 m",
+    "90 m",
+    "15 m"
+   ],
+   "answer": "B",
+   "why": "Height from rest is one-half g t squared = one-half times 10 times 9.0 = 45 m. Using v t with v = 30 m/s forgets that the speed was not constant."
+  },
+  {
+   "n": 3,
+   "course": "Physics",
+   "unit": "Horizontal projectiles",
+   "stem": "A ball rolls off a 45 m cliff with a horizontal speed of 20 m/s. Taking g = 10 m/s\u00b2, how far from the base of the cliff does it land?",
+   "options": [
+    "45 m",
+    "90 m",
+    "60 m",
+    "30 m"
+   ],
+   "answer": "C",
+   "why": "Vertical fall sets the time: 45 = one-half times 10 times t squared, so t = 3.0 s. Horizontal velocity is unchanged, so the range is 20 times 3.0 = 60 m."
+  },
+  {
+   "n": 4,
+   "course": "Physics",
+   "unit": "Acceleration at the top",
+   "stem": "A ball is thrown straight up and caught at the same height from which it was released. Ignoring air resistance, what is the ball's acceleration at the highest point of its flight?",
+   "options": [
+    "zero, because the velocity is momentarily zero",
+    "10 m/s\u00b2 directed upward",
+    "It falls smoothly from 10 m/s\u00b2 to zero at the top",
+    "10 m/s\u00b2 directed downward"
+   ],
+   "answer": "D",
+   "why": "Gravity acts throughout the flight, so the acceleration stays 10 m/s\u00b2 downward even where the velocity is zero. Only the velocity vanishes at the top, not the acceleration."
+  },
+  {
+   "n": 5,
+   "course": "Physics",
+   "unit": "Acceleration on a ramp",
+   "stem": "A cart is given a quick push up a frictionless ramp, rolls to a stop, then rolls back down. Which statement about the cart's acceleration while it is on the ramp is correct?",
+   "options": [
+    "It points down the ramp with constant magnitude the whole time",
+    "It points up the ramp while rising and down the ramp while falling",
+    "It is zero at the instant the cart stops",
+    "Its magnitude is largest at the top and smallest at the bottom"
+   ],
+   "answer": "A",
+   "why": "The only force along a frictionless ramp is the constant component of gravity down the slope, so the acceleration has the same size and direction while rising and while falling."
+  },
+  {
+   "n": 6,
+   "course": "Physics",
+   "unit": "Elevator scales",
+   "stem": "A 60 kg student stands on a bathroom scale in an elevator accelerating downward at 2.0 m/s\u00b2. Taking g = 10 m/s\u00b2, what does the scale read?",
+   "options": [
+    "600 N",
+    "480 N",
+    "720 N",
+    "120 N"
+   ],
+   "answer": "B",
+   "why": "The scale reads the normal force: N = m(g - a) = 60 times 8.0 = 480 N. Reading 600 N would mean the elevator were at rest, and 720 N would mean accelerating upward."
+  },
+  {
+   "n": 7,
+   "course": "Physics",
+   "unit": "Connected blocks",
+   "stem": "A 3.0 kg block on a frictionless table is tied by a light string over a frictionless pulley to a 2.0 kg block hanging off the edge. Taking g = 10 m/s\u00b2, what is the tension in the string?",
+   "options": [
+    "20 N",
+    "16 N",
+    "12 N",
+    "8 N"
+   ],
+   "answer": "C",
+   "why": "Both blocks accelerate together: a = 20 N / 5.0 kg = 4.0 m/s\u00b2. The tension is what accelerates the table block, so T = 3.0 times 4.0 = 12 N; 20 N is the hanging weight, not the tension."
+  },
+  {
+   "n": 8,
+   "course": "Physics",
+   "unit": "Kinetic friction",
+   "stem": "A 5.0 kg crate is pushed horizontally across a level floor with a force of 30 N. The coefficient of kinetic friction is 0.40 and g = 10 m/s\u00b2. What is the crate's acceleration?",
+   "options": [
+    "6.0 m/s\u00b2",
+    "10 m/s\u00b2",
+    "0 m/s\u00b2",
+    "2.0 m/s\u00b2"
+   ],
+   "answer": "D",
+   "why": "Friction is 0.40 times 50 N = 20 N, so the net force is 10 N and a = 10/5.0 = 2.0 m/s\u00b2. Dividing 30 N by the mass ignores friction entirely."
+  },
+  {
+   "n": 9,
+   "course": "Physics",
+   "unit": "Newton's third law",
+   "stem": "A mosquito splatters on the windshield of a moving truck. Which statement about the forces during the collision is correct?",
+   "options": [
+    "The two forces are equal in magnitude, but the mosquito's acceleration is far larger",
+    "The truck exerts a larger force because it has far more mass",
+    "The mosquito exerts no force because it comes to a stop",
+    "The truck feels no force because it barely slows down"
+   ],
+   "answer": "A",
+   "why": "Third-law pairs are always equal and opposite regardless of mass. The mosquito's tiny mass turns the same force into a huge acceleration, while the truck's mass turns it into almost none."
+  },
+  {
+   "n": 10,
+   "course": "Physics",
+   "unit": "Static friction",
+   "stem": "A 10 kg crate rests on a floor where the coefficient of static friction is 0.50. A worker pushes horizontally with 40 N and the crate does not move. Taking g = 10 m/s\u00b2, what is the friction force on the crate?",
+   "options": [
+    "50 N",
+    "40 N",
+    "0 N",
+    "10 N"
+   ],
+   "answer": "B",
+   "why": "Static friction only matches the applied force, up to a maximum of 0.50 times 100 N = 50 N. Here 40 N is enough, so the friction force equals 40 N, not its maximum."
+  },
+  {
+   "n": 11,
+   "course": "Physics",
+   "unit": "Net work and kinetic energy",
+   "stem": "A 2.0 kg object speeds up from 3.0 m/s to 7.0 m/s while sliding 4.0 m across a rough floor. What is the net work done on the object?",
+   "options": [
+    "16 J",
+    "80 J",
+    "40 J",
+    "8 J"
+   ],
+   "answer": "C",
+   "why": "The work-energy theorem gives net work = change in kinetic energy = one-half times 2.0 times (49 - 9) = 40 J. Multiplying mass by the distance is not work."
+  },
+  {
+   "n": 12,
+   "course": "Physics",
+   "unit": "Power",
+   "stem": "A worker lifts a 20 kg crate from the floor to a shelf 3.0 m high at constant speed in 2.0 s. Taking g = 10 m/s\u00b2, what average power does she deliver to the crate?",
+   "options": [
+    "600 W",
+    "120 W",
+    "60 W",
+    "300 W"
+   ],
+   "answer": "D",
+   "why": "The work done against gravity is m g h = 20 times 10 times 3.0 = 600 J, and power is that work over 2.0 s = 300 W. Reporting 600 W forgets to divide by the time."
+  },
+  {
+   "n": 13,
+   "course": "Physics",
+   "unit": "Spring energy",
+   "stem": "A spring with k = 200 N/m is compressed 0.20 m and launches a 0.50 kg block along a frictionless track. What is the block's speed as it leaves the spring?",
+   "options": [
+    "4.0 m/s",
+    "2.0 m/s",
+    "8.0 m/s",
+    "16 m/s"
+   ],
+   "answer": "A",
+   "why": "The stored energy is one-half k x squared = one-half times 200 times 0.040 = 4.0 J, all of it becoming kinetic: 4.0 = one-half times 0.50 times v squared, so v = 4.0 m/s."
+  },
+  {
+   "n": 14,
+   "course": "Physics",
+   "unit": "Energy lost in a bounce",
+   "stem": "A 0.50 kg ball is dropped from 1.8 m and rebounds to a height of 0.80 m. Taking g = 10 m/s\u00b2, how much mechanical energy is lost during the bounce?",
+   "options": [
+    "9.0 J",
+    "5.0 J",
+    "4.0 J",
+    "13 J"
+   ],
+   "answer": "B",
+   "why": "Before the bounce the energy is m g h = 0.50 times 10 times 1.8 = 9.0 J; after it is 0.50 times 10 times 0.80 = 4.0 J. The difference, 5.0 J, went into deformation, sound and heat."
+  },
+  {
+   "n": 15,
+   "course": "Physics",
+   "unit": "Perfectly inelastic collisions",
+   "stem": "A 2.0 kg cart moving at 6.0 m/s collides with a stationary 4.0 kg cart, and the two lock together. What is their common speed just after the collision?",
+   "options": [
+    "3.0 m/s",
+    "4.0 m/s",
+    "2.0 m/s",
+    "1.0 m/s"
+   ],
+   "answer": "C",
+   "why": "Momentum is conserved: 2.0 times 6.0 = 12 kg\u00b7m/s, now shared by 6.0 kg of cart, so v = 2.0 m/s. Kinetic energy is not conserved here, which is why averaging the speeds would be wrong."
+  },
+  {
+   "n": 16,
+   "course": "Physics",
+   "unit": "Impulse",
+   "stem": "A 0.20 kg ball hits a wall at 10 m/s and rebounds along the same line at 8.0 m/s. What is the magnitude of the impulse the wall delivers to the ball?",
+   "options": [
+    "0.40 N\u00b7s",
+    "2.0 N\u00b7s",
+    "1.8 N\u00b7s",
+    "3.6 N\u00b7s"
+   ],
+   "answer": "D",
+   "why": "Impulse equals the change in momentum, and the velocity reverses: 0.20 times (8.0 + 10) = 3.6 N\u00b7s. Subtracting the speeds as if direction did not matter gives the too-small 0.40 N\u00b7s."
+  },
+  {
+   "n": 17,
+   "course": "Physics",
+   "unit": "Recoil",
+   "stem": "A 4.0 kg cart at rest on a frictionless track explodes into two pieces. The 1.0 kg piece moves to the right at 9.0 m/s. What is the speed of the 3.0 kg piece?",
+   "options": [
+    "3.0 m/s",
+    "9.0 m/s",
+    "27 m/s",
+    "1.0 m/s"
+   ],
+   "answer": "A",
+   "why": "The cart started at rest, so the total momentum stays zero: 1.0 times 9.0 must be cancelled by 3.0 times v, giving v = 3.0 m/s in the opposite direction."
+  },
+  {
+   "n": 18,
+   "course": "Physics",
+   "unit": "Elastic collisions",
+   "stem": "A 2.0 kg ball moving at 5.0 m/s strikes a stationary 2.0 kg ball in a perfectly elastic head-on collision. Which outcome is correct?",
+   "options": [
+    "Both balls move off together at 2.5 m/s",
+    "The moving ball stops and the struck ball moves off at 5.0 m/s",
+    "The moving ball bounces straight back at 5.0 m/s while the other stays at rest",
+    "The struck ball moves off at 10 m/s while the other reverses at 5.0 m/s"
+   ],
+   "answer": "B",
+   "why": "In a one-dimensional elastic collision between equal masses, the velocities are exchanged: momentum and kinetic energy are both conserved only if the first ball stops and the second takes its 5.0 m/s."
+  },
+  {
+   "n": 19,
+   "course": "Physics",
+   "unit": "Centripetal force",
+   "stem": "A 2.0 kg model plane flies on a 0.50 m string in a horizontal circle at a steady 5.0 m/s. What is the tension in the string?",
+   "options": [
+    "50 N",
+    "25 N",
+    "100 N",
+    "10 N"
+   ],
+   "answer": "C",
+   "why": "The string supplies the centripetal force: m v squared over r = 2.0 times 25 / 0.50 = 100 N. Using m v r or m v squared without dividing by r gives the wrong scale."
+  },
+  {
+   "n": 20,
+   "course": "Physics",
+   "unit": "Orbital period",
+   "stem": "A satellite is moved from a circular orbit of radius r to a circular orbit of radius 2r around the same planet. How does its orbital period change?",
+   "options": [
+    "It doubles",
+    "It grows by a factor of 4",
+    "It stays the same because the satellite's mass is unchanged",
+    "It grows by a factor of about 2.8"
+   ],
+   "answer": "D",
+   "why": "Kepler's third law gives T squared proportional to r cubed, so doubling the radius multiplies the period by 2 to the three-halves power, about 2.8. The satellite's own mass cancels out."
+  },
+  {
+   "n": 21,
+   "course": "Physics",
+   "unit": "Apparent weight in a loop",
+   "stem": "A rider goes around a vertical circular loop at constant speed. How does the normal force from the seat compare at the bottom of the loop with the top?",
+   "options": [
+    "Larger at the bottom, where it must support the rider's weight and supply the centripetal force",
+    "Larger at the top, because the rider is upside down there",
+    "The same at both points, since the speed is constant",
+    "Zero at the top and equal to the rider's weight at the bottom"
+   ],
+   "answer": "A",
+   "why": "At the bottom the normal force points up and must both balance the weight and provide the inward force, so it exceeds m g; at the top the weight helps point inward, so the normal force is smaller."
+  },
+  {
+   "n": 22,
+   "course": "Physics",
+   "unit": "Surface gravity",
+   "stem": "A planet has twice Earth's mass and twice Earth's radius. If g = 10 m/s\u00b2 at Earth's surface, what is the surface gravity of this planet?",
+   "options": [
+    "20 m/s\u00b2",
+    "5.0 m/s\u00b2",
+    "40 m/s\u00b2",
+    "10 m/s\u00b2"
+   ],
+   "answer": "B",
+   "why": "Surface gravity is G M over R squared. Doubling the mass doubles g, but doubling the radius divides it by four, so the net effect is a factor of two smaller: 5.0 m/s\u00b2."
+  },
+  {
+   "n": 23,
+   "course": "Physics",
+   "unit": "Torque",
+   "stem": "A mechanic pulls perpendicularly on the end of a 0.40 m wrench with a force of 50 N. What torque does she produce about the bolt?",
+   "options": [
+    "12.5 N\u00b7m",
+    "125 N\u00b7m",
+    "20 N\u00b7m",
+    "0 N\u00b7m"
+   ],
+   "answer": "C",
+   "why": "Torque is r F sin(theta), and a perpendicular pull makes sin(theta) = 1: 0.40 times 50 = 20 N\u00b7m. Dividing by the radius instead of multiplying gives 125 N\u00b7m."
+  },
+  {
+   "n": 24,
+   "course": "Physics",
+   "unit": "Rolling race",
+   "stem": "A solid sphere and a hoop with the same mass and radius are released from rest at the top of the same incline and roll without slipping. Which reaches the bottom first, and why?",
+   "options": [
+    "The hoop, because its mass is concentrated at the rim",
+    "They tie, because both have the same mass and radius",
+    "The sphere, because it is lighter for its radius",
+    "The sphere, because more of its mass sits near the center, giving it less rotational inertia for its mass"
+   ],
+   "answer": "D",
+   "why": "Both convert the same potential energy into linear plus rotational kinetic energy; the sphere's smaller rotational inertia leaves more of that energy in linear motion, so it accelerates faster down the incline."
+  },
+  {
+   "n": 25,
+   "course": "Physics",
+   "unit": "Angular to linear speed",
+   "stem": "A wheel of radius 0.50 m turns at a steady 20 rad/s. What is the linear speed of a point on its rim?",
+   "options": [
+    "10 m/s",
+    "40 m/s",
+    "20 m/s",
+    "5.0 m/s"
+   ],
+   "answer": "A",
+   "why": "A point on the rim travels v = omega r = 20 times 0.50 = 10 m/s. Multiplying instead of dividing by the radius to convert gives 40 m/s."
+  },
+  {
+   "n": 26,
+   "course": "Physics",
+   "unit": "Pendulum period",
+   "stem": "A simple pendulum swings with a period of 2.0 s. If its length is increased to four times the original value and the amplitude stays small, what is the new period?",
+   "options": [
+    "8.0 s",
+    "4.0 s",
+    "2.8 s",
+    "1.0 s"
+   ],
+   "answer": "B",
+   "why": "For a simple pendulum T = 2 pi times the square root of L over g, so T scales with the square root of the length. Four times the length means twice the period, 4.0 s."
+  },
+  {
+   "n": 27,
+   "course": "Physics",
+   "unit": "Simple harmonic motion",
+   "stem": "A mass on a spring oscillates in simple harmonic motion. At the instant the mass passes through the equilibrium position, which statement is true?",
+   "options": [
+    "Both its speed and its acceleration are maximum",
+    "Its speed is zero and its acceleration is maximum",
+    "Its speed is maximum and its acceleration is zero",
+    "Its speed is maximum and its acceleration points back toward equilibrium"
+   ],
+   "answer": "C",
+   "why": "The restoring force is proportional to the displacement, so acceleration is zero where displacement is zero; all the energy is kinetic there, which makes the speed maximum."
+  },
+  {
+   "n": 28,
+   "course": "Physics",
+   "unit": "Wave speed on a string",
+   "stem": "A string under tension T carries a wave at speed v. If the tension is increased to four times its original value with the string otherwise unchanged, what is the new wave speed?",
+   "options": [
+    "4v",
+    "1.4v",
+    "0.5v",
+    "2v"
+   ],
+   "answer": "D",
+   "why": "Wave speed on a string is the square root of tension over linear mass density, so quadrupling the tension doubles the speed. It does not scale with the tension itself."
+  },
+  {
+   "n": 29,
+   "course": "Physics",
+   "unit": "Doppler effect",
+   "stem": "An ambulance siren emits a steady 700 Hz tone as it drives toward you and then past you. Compared with the sound you hear after it has passed, the sound while it approaches has",
+   "options": [
+    "A higher frequency and a shorter wavelength, travelling at the same speed through the air",
+    "A higher frequency and a higher speed through the air",
+    "A lower frequency and a longer wavelength, travelling at the same speed",
+    "The same frequency but a shorter wavelength, because the source is being compressed"
+   ],
+   "answer": "A",
+   "why": "The source's motion crowds the wavefronts ahead of it, shortening the wavelength and raising the heard frequency; the speed of sound in air is set by the medium and does not change."
+  },
+  {
+   "n": 30,
+   "course": "Physics",
+   "unit": "Standing waves",
+   "stem": "A 2.0 m string is fixed at both ends and vibrates in its third harmonic. What is the wavelength of the standing wave?",
+   "options": [
+    "4.0 m",
+    "1.3 m",
+    "2.0 m",
+    "0.67 m"
+   ],
+   "answer": "B",
+   "why": "A string fixed at both ends fits a whole number of half-wavelengths: the third harmonic fits three of them across 2.0 m, so the wavelength is 2 times 2.0 / 3 = 1.3 m."
+  },
+  {
+   "n": 31,
+   "course": "Physics",
+   "unit": "Coulomb's law",
+   "stem": "Two point charges attract each other with a force of magnitude F. If the distance between them is doubled and the charges are unchanged, the force becomes",
+   "options": [
+    "F/2",
+    "2F",
+    "F/4",
+    "4F"
+   ],
+   "answer": "C",
+   "why": "Coulomb's law goes as one over the distance squared, so doubling the separation divides the force by four. Halving it would be the result for a linear dependence."
+  },
+  {
+   "n": 32,
+   "course": "Physics",
+   "unit": "Parallel circuits",
+   "stem": "A 6.0 ohm resistor and a 3.0 ohm resistor are connected in parallel across a 12 V battery of negligible internal resistance. What total current does the battery supply?",
+   "options": [
+    "2.0 A",
+    "4.0 A",
+    "1.5 A",
+    "6.0 A"
+   ],
+   "answer": "D",
+   "why": "The parallel equivalent is 2.0 ohms, so the total current is 12 / 2.0 = 6.0 A. Adding the resistances as if they were in series gives the too-small 1.5 A."
+  },
+  {
+   "n": 33,
+   "course": "Physics",
+   "unit": "Terminal voltage",
+   "stem": "A battery with an emf of 12 V and an internal resistance of 1.0 ohm is connected to a 5.0 ohm resistor. What is the terminal voltage across the battery?",
+   "options": [
+    "10 V",
+    "12 V",
+    "2.0 V",
+    "8.0 V"
+   ],
+   "answer": "A",
+   "why": "The current is 12 / 6.0 = 2.0 A, and 2.0 A through the 1.0 ohm internal resistance loses 2.0 V, leaving 10 V at the terminals. The emf is only the terminal voltage when no current flows."
+  }
+ ]
+}
