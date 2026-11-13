@@ -2,7 +2,7 @@
    PIN-gated (SHA-256 client-side), talks to the bridge + Hermes webhook. */
 (function () {
   'use strict';
-  var API = 'https://pink-surname-reproduced-ons.trycloudflare.com';
+  var API = 'https://jet-nancy-bee-curtis.trycloudflare.com';
   // Self-locating + self-healing API (hardened Sep 27 2026). The published endpoint
   // (user-site/jlr-chat-endpoint.json) can list more than one host, and a host that is
   // dead AT THE EDGE answers a Cloudflare 530 with no body - it does not fail fast - so
