@@ -158,37 +158,37 @@
     "last": "Koh",
     "id": "angel koh",
     "name": "Angel Koh",
-    "subjects": "RN Training, NCLEX, Health",
+    "subjects": "IVC College Readiness, TEAS Nursing Entrance, RN Training",
     "active": true,
     "today": "—",
     "mtd": "—",
     "ytd": "—",
-    "topics": "NCLEX-RN Training",
-    "difficulty": "🩺 RN Training — Active",
-    "focus": "NCLEX-RN, Pharmacology, Anatomy",
+    "topics": "IVC Spring 2027 — placement, TEAS, nursing prereqs",
+    "difficulty": "🎓 Starting IVC — Spring 2027",
+    "focus": "Math + English placement, TEAS Reading/Math/Science/English, NCLEX-RN",
     "plan": "free_trial",
-    "cards": "rn",
+    "cards": "ivcprep,teas,rn",
     "authorized": true,
     "products": [
       "tutor"
     ],
     "kpis": [
       {
-        "label": "NCLEX",
-        "val": "72%"
+        "label": "IVC term",
+        "val": "Spring 27"
       },
       {
-        "label": "Modules",
-        "val": "8/12"
+        "label": "TEAS",
+        "val": "—"
       },
       {
-        "label": "Study Time",
-        "val": "30 min/day"
+        "label": "Drills",
+        "val": "0"
       }
     ],
     "calories": false,
-    "sessions": "4",
-    "streak": "3 days",
+    "sessions": "0",
+    "streak": "0 days",
     "week": "—"
   },
   {
