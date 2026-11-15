@@ -1,666 +1,666 @@
 {
  "id": "apbio",
  "title": "AP Biology — Chapter 13 (meiosis and heredity)",
- "generated": "2026-11-12",
+ "generated": "2026-11-15",
  "source": "Carter's Ch 13 guide: her slide deck slides 1-51, his spoken priority list, plus the Mendel/Hardy-Weinberg half of the Fri 11/13 quiz. Refresh this file when the unit changes.",
  "questions": [
   {
    "course": "AP Biology",
-   "unit": "Meiosis and homolog pairing",
-   "stem": "A mule has 63 chromosomes because its horse parent contributed 32 and its donkey parent contributed 31. Which best explains why meiosis in a mule usually cannot produce balanced gametes?",
-   "correct": "One chromosome lacks a homolog, so pairing and segregation at meiosis I are abnormal.",
+   "unit": "Meiosis I nondisjunction",
+   "stem": "A human sperm is found to carry both an X and a Y chromosome, along with 22 autosomes. Which meiotic error most directly explains this sperm?",
+   "correct": "Nondisjunction of the X and Y homologs during meiosis I.",
    "distractors": [
-    "Crossing over cannot occur because the chromosome number is odd.",
-    "Meiosis II is skipped, so sister chromatids never separate.",
-    "The gametes have too many centromeres and cannot fuse with one another."
+    "Nondisjunction of sister chromatids during meiosis II.",
+    "Failure of cytokinesis after meiosis II.",
+    "Fertilization of an egg by two sperm."
    ],
-   "why": "Homologs must pair during prophase I; an odd chromosome number leaves an unpaired chromosome that segregates irregularly.",
+   "why": "X and Y are homologs and normally separate in meiosis I, so a sperm carrying both reflects meiosis I nondisjunction, not meiosis II sister-chromatid failure.",
    "n": 1,
    "options": [
-    "One chromosome lacks a homolog, so pairing and segregation at meiosis I are abnormal.",
-    "Meiosis II is skipped, so sister chromatids never separate.",
-    "The gametes have too many centromeres and cannot fuse with one another.",
-    "Crossing over cannot occur because the chromosome number is odd."
+    "Nondisjunction of the X and Y homologs during meiosis I.",
+    "Failure of cytokinesis after meiosis II.",
+    "Fertilization of an egg by two sperm.",
+    "Nondisjunction of sister chromatids during meiosis II."
    ],
    "answer": "A"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Crossing over and variation",
-   "stem": "A meiocyte is homozygous AA at one locus and BB at a second locus on the same chromosome. A single crossover occurs between the two loci. How many genetically distinct gamete genotypes are produced for these two loci?",
-   "correct": "One: all gametes carry AB.",
-   "distractors": [
-    "Two: AB and ab.",
-    "Four: AB, Ab, aB, and ab.",
-    "None, because crossing over fails between identical homologs."
-   ],
-   "why": "Crossing over reshuffles alleles only when the homologs differ; with identical alleles, every chromatid still carries AB.",
-   "n": 2,
-   "options": [
-    "None, because crossing over fails between identical homologs.",
-    "One: all gametes carry AB.",
-    "Four: AB, Ab, aB, and ab.",
-    "Two: AB and ab."
-   ],
-   "answer": "B"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Allele segregation in meiosis I",
-   "stem": "A primary spermatocyte is heterozygous Aa. No crossing over occurs between the A locus and the centromere. After meiosis I and cytokinesis, what alleles do the two secondary spermatocytes carry?",
-   "correct": "One carries A and the other carries a.",
-   "distractors": [
-    "Both carry Aa.",
-    "Both carry A and a.",
-    "One carries AA and the other aa."
-   ],
-   "why": "Homologs separate in meiosis I while sister chromatids stay together, so the two homologs carrying A and a go to different daughter cells.",
-   "n": 3,
-   "options": [
-    "Both carry A and a.",
-    "Both carry Aa.",
-    "One carries A and the other carries a.",
-    "One carries AA and the other aa."
-   ],
-   "answer": "C"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Products of a single meiosis",
-   "stem": "A primary spermatocyte with 2n = 6 has homologs that differ at several loci and completes meiosis with no crossing over. How many genetically distinct gamete types does this single meiocyte produce?",
-   "correct": "Two, because the two products of each meiosis II division are identical.",
-   "distractors": [
-    "Four, because each of the four sperm receives a unique chromosome combination.",
-    "Eight, because three chromosome pairs assort independently.",
-    "One, because no crossing over means no genetic variation."
-   ],
-   "why": "Independent assortment gives eight possible types across many meioses, but one meiosis without crossing over produces two complementary types in duplicate.",
-   "n": 4,
-   "options": [
-    "Four, because each of the four sperm receives a unique chromosome combination.",
-    "Eight, because three chromosome pairs assort independently.",
-    "One, because no crossing over means no genetic variation.",
-    "Two, because the two products of each meiosis II division are identical."
-   ],
-   "answer": "D"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Meiosis II chromosome number",
-   "stem": "A human secondary spermatocyte has 23 chromosomes, each with two chromatids. After meiosis II, each spermatid still has 23 chromosomes. Why does the chromosome number not drop again?",
-   "correct": "Sister chromatids separate, so each chromosome becomes single-chromatid.",
-   "distractors": [
-    "Homologous chromosomes separate again in meiosis II.",
-    "DNA replicates before meiosis II, restoring the chromosome number.",
-    "Crossing over reduces chromatid number without changing chromosome number."
-   ],
-   "why": "Meiosis II is equational: centromeres split and sister chromatids separate, keeping the chromosome count at n while halving DNA content.",
-   "n": 5,
-   "options": [
-    "Sister chromatids separate, so each chromosome becomes single-chromatid.",
-    "DNA replicates before meiosis II, restoring the chromosome number.",
-    "Crossing over reduces chromatid number without changing chromosome number.",
-    "Homologous chromosomes separate again in meiosis II."
-   ],
-   "answer": "A"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Independent assortment probability",
-   "stem": "A meiocyte has genotype AaBb, with the A and B genes on different chromosome pairs. What fraction of its gametes is expected to carry both dominant alleles, AB?",
-   "correct": "One-fourth.",
-   "distractors": [
-    "One-half.",
-    "One-eighth.",
-    "Three-fourths."
-   ],
-   "why": "Independent assortment produces four equally likely gamete genotypes AB, Ab, aB, and ab, so AB is one of four.",
-   "n": 6,
-   "options": [
-    "One-eighth.",
-    "One-fourth.",
-    "One-half.",
-    "Three-fourths."
-   ],
-   "answer": "B"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Anaerobic respiration",
-   "stem": "During fermentation, one glucose molecule is converted to two lactate molecules in a muscle cell. What is the net ATP yield, and from which pathway does it come?",
-   "correct": "2 ATP, from glycolysis.",
-   "distractors": [
-    "4 ATP, from the Krebs cycle.",
-    "2 ATP, from the electron transport chain.",
-    "36 ATP, from oxidative phosphorylation."
-   ],
-   "why": "Fermentation regenerates NAD+ but makes no ATP itself; the net ATP comes from glycolysis before fermentation.",
-   "n": 7,
-   "options": [
-    "2 ATP, from the electron transport chain.",
-    "36 ATP, from oxidative phosphorylation.",
-    "2 ATP, from glycolysis.",
-    "4 ATP, from the Krebs cycle."
-   ],
-   "answer": "C"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Calvin cycle",
-   "stem": "For every six CO2 molecules fixed by the Calvin cycle, how many glyceraldehyde-3-phosphate (G3P) molecules are produced, and what supplies the reducing power?",
-   "correct": "Two G3P; NADPH from the light reactions.",
-   "distractors": [
-    "Six G3P; ATP from the light reactions.",
-    "One G3P; NADH from glycolysis.",
-    "Twelve G3P; FADH2 from the Krebs cycle."
-   ],
-   "why": "Six CO2 yield two net G3P; the light reactions supply ATP and NADPH for reduction.",
-   "n": 8,
-   "options": [
-    "One G3P; NADH from glycolysis.",
-    "Six G3P; ATP from the light reactions.",
-    "Twelve G3P; FADH2 from the Krebs cycle.",
-    "Two G3P; NADPH from the light reactions."
-   ],
-   "answer": "D"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Enzyme kinetics",
-   "stem": "An enzyme follows Michaelis-Menten kinetics with Vmax = 100 μmol/min. At a substrate concentration equal to Km, what is the reaction rate?",
-   "correct": "50 μmol/min.",
-   "distractors": [
-    "25 μmol/min.",
-    "75 μmol/min.",
-    "100 μmol/min."
-   ],
-   "why": "At [S] = Km, the enzyme is half-saturated, so the rate is Vmax divided by two.",
-   "n": 9,
-   "options": [
-    "50 μmol/min.",
-    "100 μmol/min.",
-    "75 μmol/min.",
-    "25 μmol/min."
-   ],
-   "answer": "A"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Water potential",
-   "stem": "A plant cell has solute potential -0.6 MPa and pressure potential +0.2 MPa. It is placed in an open solution with water potential 0.0 MPa. What is the net direction of water movement?",
-   "correct": "Into the cell, because the cell's water potential is -0.4 MPa.",
-   "distractors": [
-    "Out of the cell, because the cell's water potential is -0.8 MPa.",
-    "No net movement, because the pressure and solute potentials balance.",
-    "Out of the cell, because water moves from lower to higher solute concentration."
-   ],
-   "why": "Water moves from higher water potential (0.0 MPa) to lower water potential (-0.4 MPa), which is into the cell.",
-   "n": 10,
-   "options": [
-    "No net movement, because the pressure and solute potentials balance.",
-    "Into the cell, because the cell's water potential is -0.4 MPa.",
-    "Out of the cell, because the cell's water potential is -0.8 MPa.",
-    "Out of the cell, because water moves from lower to higher solute concentration."
-   ],
-   "answer": "B"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "DNA base composition",
-   "stem": "A double-stranded DNA molecule contains 1,000 base pairs and 300 adenine bases. How many guanine bases does it contain?",
-   "correct": "700",
-   "distractors": [
-    "300",
-    "400",
-    "350"
-   ],
-   "why": "The molecule has 2,000 total bases. A = T = 300, leaving 1,400 bases as G + C; therefore G = 700.",
-   "n": 11,
-   "options": [
-    "350",
-    "300",
-    "700",
-    "400"
-   ],
-   "answer": "C"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Meiosis I",
-   "stem": "A meiocyte is treated with a drug that allows DNA replication, synapsis, and crossing over but prevents the synaptonemal complex from disassembling. Which later meiotic event is most directly blocked?",
-   "correct": "Homologs remaining connected and failing to separate at anaphase I.",
-   "distractors": [
-    "Sister chromatids failing to separate at anaphase II.",
-    "DNA replication before meiosis II.",
-    "Fertilization restoring the diploid chromosome number."
-   ],
-   "why": "The synaptonemal complex must disassemble so chiasmata can resolve; if it persists, homologs stay tethered and cannot be pulled apart in anaphase I. The wrong options assume the complex acts later in meiosis II or in fertilization.",
-   "n": 12,
-   "options": [
-    "Fertilization restoring the diploid chromosome number.",
-    "DNA replication before meiosis II.",
-    "Sister chromatids failing to separate at anaphase II.",
-    "Homologs remaining connected and failing to separate at anaphase I."
-   ],
-   "answer": "D"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Independent assortment",
-   "stem": "A plant is homozygous at every locus, with two homologs for each chromosome pair. If meiosis and independent assortment occur normally, why do all its gametes have the same alleles?",
-   "correct": "Because every homolog carries the same alleles, so different orientations produce genetically identical products.",
-   "distractors": [
-    "Because crossing over cannot occur between homologous chromosomes that have identical alleles.",
-    "Because independent assortment moves only maternal chromosomes to gametes.",
-    "Because haploid gametes cannot carry alleles from both homologs."
-   ],
-   "why": "Independent assortment shuffles homologs, but if the homologs are identical at all loci, the shuffled products are genetically the same; this confuses chromosome orientation with creating new alleles. Crossing over can still occur, and both maternal and paternal homologs can be inherited.",
-   "n": 13,
-   "options": [
-    "Because every homolog carries the same alleles, so different orientations produce genetically identical products.",
-    "Because independent assortment moves only maternal chromosomes to gametes.",
-    "Because crossing over cannot occur between homologous chromosomes that have identical alleles.",
-    "Because haploid gametes cannot carry alleles from both homologs."
-   ],
-   "answer": "A"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Meiosis sequence",
-   "stem": "Which sequence places these meiosis I events in the correct order?",
-   "correct": "Homologs synapse → crossing over occurs → tetrads align at the equator → homologs move to opposite poles.",
-   "distractors": [
-    "Homologs synapse → tetrads align at the equator → crossing over occurs → homologs move to opposite poles.",
-    "Crossing over occurs → homologs synapse → homologs move to opposite poles → tetrads align at the equator.",
-    "Tetrads align at the equator → homologs synapse → crossing over occurs → homologs move to opposite poles."
-   ],
-   "why": "Synapsis forms the tetrad and permits crossing over before tetrads align at metaphase I; homolog separation is last. The wrong sequences place crossing over after alignment or after separation, a common mix-up of prophase I and metaphase/anaphase I.",
-   "n": 14,
-   "options": [
-    "Homologs synapse → tetrads align at the equator → crossing over occurs → homologs move to opposite poles.",
-    "Homologs synapse → crossing over occurs → tetrads align at the equator → homologs move to opposite poles.",
-    "Crossing over occurs → homologs synapse → homologs move to opposite poles → tetrads align at the equator.",
-    "Tetrads align at the equator → homologs synapse → crossing over occurs → homologs move to opposite poles."
-   ],
-   "answer": "B"
   },
   {
    "course": "AP Biology",
    "unit": "Oogenesis",
-   "stem": "A human primary oocyte is arrested in prophase I. Which sequence correctly describes the events from just before ovulation through fertilization?",
-   "correct": "Meiosis I completes → secondary oocyte is released → sperm entry triggers meiosis II completion → haploid pronuclei fuse.",
+   "stem": "A human primary oocyte completes meiosis I. The first polar body does not divide, but the secondary oocyte is fertilized and completes meiosis II. How many cells are produced, and what is their chromosome number?",
+   "correct": "One ovum and two polar bodies, each with 23 chromosomes.",
    "distractors": [
-    "Meiosis II completes → primary oocyte is released → sperm entry triggers meiosis I completion → diploid zygote forms.",
-    "Both meiotic divisions complete before ovulation → sperm entry triggers crossing over → pronuclei fuse.",
-    "Sperm entry triggers meiosis I → secondary oocyte is released → meiosis II completes before fertilization."
+    "One ovum and one polar body, each with 23 chromosomes.",
+    "Two ova and two polar bodies, each with 23 chromosomes.",
+    "One ovum with 46 chromosomes and two polar bodies with 23 chromosomes."
    ],
-   "why": "The oocyte completes meiosis I just before ovulation, arrests in metaphase II, and finishes meiosis II only after sperm entry; then the haploid pronuclei fuse. The wrong sequences reverse meiosis I and II or assume both divisions finish before fertilization.",
-   "n": 15,
+   "why": "The first polar body persists as a haploid cell, and meiosis II adds a second polar body, leaving one haploid ovum with 23 chromosomes.",
+   "n": 2,
    "options": [
-    "Both meiotic divisions complete before ovulation → sperm entry triggers crossing over → pronuclei fuse.",
-    "Sperm entry triggers meiosis I → secondary oocyte is released → meiosis II completes before fertilization.",
-    "Meiosis I completes → secondary oocyte is released → sperm entry triggers meiosis II completion → haploid pronuclei fuse.",
-    "Meiosis II completes → primary oocyte is released → sperm entry triggers meiosis I completion → diploid zygote forms."
+    "One ovum and one polar body, each with 23 chromosomes.",
+    "One ovum and two polar bodies, each with 23 chromosomes.",
+    "Two ova and two polar bodies, each with 23 chromosomes.",
+    "One ovum with 46 chromosomes and two polar bodies with 23 chromosomes."
+   ],
+   "answer": "B"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Independent assortment",
+   "stem": "A human primary oocyte has genotype AaBb, with the A and B genes on different chromosome pairs. After meiosis I, the secondary oocyte carries A and b. Ignoring crossing over, what does the first polar body carry?",
+   "correct": "a and B, because homologs of both pairs segregated to opposite poles.",
+   "distractors": [
+    "A and B, because the polar body receives the sister chromatids of both chromosomes.",
+    "a and b, because independent assortment randomizes which alleles stay together.",
+    "A and b, because sister chromatids separate during meiosis I."
+   ],
+   "why": "Meiosis I separates homologs, not sister chromatids, so the polar body receives the other homolog of each pair: a and B.",
+   "n": 3,
+   "options": [
+    "A and b, because sister chromatids separate during meiosis I.",
+    "a and b, because independent assortment randomizes which alleles stay together.",
+    "a and B, because homologs of both pairs segregated to opposite poles.",
+    "A and B, because the polar body receives the sister chromatids of both chromosomes."
    ],
    "answer": "C"
   },
   {
    "course": "AP Biology",
-   "unit": "Zygote mitosis",
-   "stem": "A human zygote with 46 chromosomes enters its first mitotic division. At metaphase of that division, how many chromosomes and chromatids are in the single cell?",
-   "correct": "46 chromosomes and 92 chromatids.",
+   "unit": "Anaphase I",
+   "stem": "A cell with 2n = 10 proceeds through meiosis. At anaphase I, how many chromosomes are moving toward each pole, and how many chromatids does each of those chromosomes have?",
+   "correct": "5 chromosomes, each with 2 chromatids",
    "distractors": [
-    "23 chromosomes and 46 chromatids.",
-    "46 chromosomes and 46 chromatids.",
-    "92 chromosomes and 92 chromatids."
+    "10 chromosomes, each with 1 chromatid",
+    "5 chromosomes, each with 1 chromatid",
+    "10 chromosomes, each with 2 chromatids"
    ],
-   "why": "DNA replicates before mitosis, making two sister chromatids per chromosome, while centromeres have not split; chromosome number stays 46. The choice 92 chromosomes confuses chromatid separation with replication, and 23 ignores the diploid zygote.",
-   "n": 16,
+   "why": "Anaphase I separates homologs, so each pole receives one chromosome from each of the five pairs, and each chromosome is still duplicated.",
+   "n": 4,
    "options": [
-    "46 chromosomes and 46 chromatids.",
-    "23 chromosomes and 46 chromatids.",
-    "92 chromosomes and 92 chromatids.",
-    "46 chromosomes and 92 chromatids."
+    "10 chromosomes, each with 2 chromatids",
+    "10 chromosomes, each with 1 chromatid",
+    "5 chromosomes, each with 1 chromatid",
+    "5 chromosomes, each with 2 chromatids"
    ],
    "answer": "D"
   },
   {
    "course": "AP Biology",
-   "unit": "Ploidy",
-   "stem": "Immediately after meiosis I and cytokinesis, each human daughter cell has 23 chromosomes, but each chromosome still has two chromatids. Why is this cell correctly called haploid?",
-   "correct": "It has one chromosome from each homologous pair, even though each chromosome is duplicated.",
+   "unit": "Sex chromosome segregation",
+   "stem": "A human male produces 400 sperm by normal meiosis. On average, how many of these sperm carry a Y chromosome?",
+   "correct": "200 sperm",
    "distractors": [
-    "It has 23 chromatids, one for each chromosome.",
-    "Its sister chromatids have already separated at the centromere.",
-    "Its homologous chromosomes are still paired in the same nucleus."
+    "0 sperm",
+    "100 sperm",
+    "400 sperm"
    ],
-   "why": "Haploid means one set of chromosomes, not one chromatid; after meiosis I, homologs have separated but sister chromatids remain attached. The wrong options assume haploid cells must have single-chromatid chromosomes or still-paired homologs.",
-   "n": 17,
+   "why": "X and Y separate in meiosis I, so half the sperm receive Y and half receive X, giving about 200 Y-bearing sperm.",
+   "n": 5,
    "options": [
-    "It has one chromosome from each homologous pair, even though each chromosome is duplicated.",
-    "It has 23 chromatids, one for each chromosome.",
-    "Its sister chromatids have already separated at the centromere.",
-    "Its homologous chromosomes are still paired in the same nucleus."
+    "200 sperm",
+    "0 sperm",
+    "400 sperm",
+    "100 sperm"
    ],
    "answer": "A"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Light reactions",
+   "stem": "A chloroplast is illuminated with light, and then CO2 is suddenly removed from its surroundings. Which immediate change is expected?",
+   "correct": "ATP and NADPH accumulate, and O2 production continues briefly because the light reactions do not require CO2.",
+   "distractors": [
+    "O2 production stops immediately because CO2 is the final electron acceptor.",
+    "ATP and NADPH production stops immediately because the Calvin cycle cannot use them.",
+    "Water splitting stops immediately because NADP+ is no longer available."
+   ],
+   "why": "CO2 is used in the Calvin cycle, not the light reactions; without it, ATP and NADPH build up while water splitting continues briefly.",
+   "n": 6,
+   "options": [
+    "O2 production stops immediately because CO2 is the final electron acceptor.",
+    "ATP and NADPH accumulate, and O2 production continues briefly because the light reactions do not require CO2.",
+    "ATP and NADPH production stops immediately because the Calvin cycle cannot use them.",
+    "Water splitting stops immediately because NADP+ is no longer available."
+   ],
+   "answer": "B"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Oxidative phosphorylation",
+   "stem": "A drug makes the inner mitochondrial membrane freely permeable to protons. What is the most likely immediate effect on a respiring cell?",
+   "correct": "ATP synthesis by ATP synthase decreases because the proton gradient is lost.",
+   "distractors": [
+    "O2 consumption stops immediately because electrons can no longer flow.",
+    "Glycolysis stops immediately because NADH cannot be oxidized.",
+    "ATP synthesis increases because protons reach ATP synthase more easily."
+   ],
+   "why": "The proton gradient drives ATP synthase; a leak dissipates it, so ATP synthesis falls even though electron transport may continue.",
+   "n": 7,
+   "options": [
+    "ATP synthesis increases because protons reach ATP synthase more easily.",
+    "O2 consumption stops immediately because electrons can no longer flow.",
+    "ATP synthesis by ATP synthase decreases because the proton gradient is lost.",
+    "Glycolysis stops immediately because NADH cannot be oxidized."
+   ],
+   "answer": "C"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Pedigree probability",
+   "stem": "Two unaffected parents have a child with an autosomal recessive disorder. What is the probability that their next child will be affected?",
+   "correct": "1/4",
+   "distractors": [
+    "1/2",
+    "3/4",
+    "0"
+   ],
+   "why": "Both parents must be carriers, and each child has a 1/4 chance of inheriting two recessive alleles; the prior affected child does not change the next child's odds.",
+   "n": 8,
+   "options": [
+    "3/4",
+    "0",
+    "1/2",
+    "1/4"
+   ],
+   "answer": "D"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Energy transfer",
+   "stem": "In a food chain, producers fix 50,000 kJ of energy. If 10 percent of energy is transferred to each successive trophic level, how much energy is available to the tertiary consumers?",
+   "correct": "50 kJ",
+   "distractors": [
+    "500 kJ",
+    "5,000 kJ",
+    "0.5 kJ"
+   ],
+   "why": "Energy is multiplied by 0.1 at each of three transfers: 50,000 to primary consumers is 5,000, to secondary consumers 500, and to tertiary consumers 50 kJ.",
+   "n": 9,
+   "options": [
+    "50 kJ",
+    "0.5 kJ",
+    "500 kJ",
+    "5,000 kJ"
+   ],
+   "answer": "A"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Mutation effects",
+   "stem": "A point mutation changes an mRNA codon from UAC (tyrosine) to UAA. What is the most likely effect on the protein produced?",
+   "correct": "Translation stops early because UAA is a stop codon.",
+   "distractors": [
+    "One amino acid is replaced by another because the codon still specifies an amino acid.",
+    "The reading frame shifts after the mutation, changing all later amino acids.",
+    "The mRNA is not transcribed because the mutation affects the promoter."
+   ],
+   "why": "UAA is a nonsense codon, so the ribosome terminates translation prematurely; a substitution would require a codon that still specifies an amino acid.",
+   "n": 10,
+   "options": [
+    "The mRNA is not transcribed because the mutation affects the promoter.",
+    "Translation stops early because UAA is a stop codon.",
+    "One amino acid is replaced by another because the codon still specifies an amino acid.",
+    "The reading frame shifts after the mutation, changing all later amino acids."
+   ],
+   "answer": "B"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Independent assortment (2^n)",
+   "stem": "One rodent species has 2n = 8 and a related species has 2n = 12; both are heterozygous at every locus. Ignoring crossing over, how many times more gamete chromosome combinations can one individual of the 12-chromosome species produce than one individual of the 8-chromosome species?",
+   "correct": "Four times as many, since the two species produce 64 and 16 combinations respectively",
+   "distractors": [
+    "Four more combinations, because the species differ by four chromosomes in total",
+    "The same number, because both species are diploid and assort independently in the same way",
+    "Six times as many, because the larger species has six chromosome pairs"
+   ],
+   "why": "Independent assortment yields 2^n gamete combinations, where n is the haploid number: 2^6 = 64 versus 2^4 = 16, a fourfold difference. Subtracting chromosome counts (12 - 8) mistakes chromosomes for the exponent.",
+   "n": 11,
+   "options": [
+    "Six times as many, because the larger species has six chromosome pairs",
+    "The same number, because both species are diploid and assort independently in the same way",
+    "Four times as many, since the two species produce 64 and 16 combinations respectively",
+    "Four more combinations, because the species differ by four chromosomes in total"
+   ],
+   "answer": "C"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Meiosis S phase",
+   "stem": "A diploid germ cell enters meiosis without completing S phase, but its homologs still pair. Which description of a resulting tetrad is most accurate?",
+   "correct": "It contains two unreplicated chromosomes, so only two chromatids are present instead of four.",
+   "distractors": [
+    "It contains four chromatids because homologs replicate during synapsis.",
+    "It contains two chromosomes but four centromeres because centromeres duplicate without DNA replication.",
+    "It cannot form a spindle, so homologs never pair."
+   ],
+   "why": "S phase produces sister chromatids; skipping it leaves one chromatid per homolog, so a tetrad has two chromatids. The wrong options assume replication occurs during synapsis or that centromeres duplicate independently.",
+   "n": 12,
+   "options": [
+    "It contains four chromatids because homologs replicate during synapsis.",
+    "It cannot form a spindle, so homologs never pair.",
+    "It contains two chromosomes but four centromeres because centromeres duplicate without DNA replication.",
+    "It contains two unreplicated chromosomes, so only two chromatids are present instead of four."
+   ],
+   "answer": "D"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Karyotype limits",
+   "stem": "A physician examines a standard karyotype made from a person's white blood cells and sees 46 normally paired chromosomes. Why can this karyotype not reveal whether crossing over occurred during the person's meiosis?",
+   "correct": "It shows condensed mitotic chromosomes, not meiotic tetrads, so reciprocal exchanges leave no visible record.",
+   "distractors": [
+    "Crossing over changes chromosome number, which karyotypes cannot detect.",
+    "White blood cells never undergo meiosis, so they contain no homologous chromosomes.",
+    "Crossing over only occurs in gametes, which are not present in blood."
+   ],
+   "why": "A karyotype uses mitotic metaphase chromosomes; crossing over happens in meiotic prophase I and is reciprocal, so it does not change chromosome number. The wrong options confuse chromosome number with exchange of segments.",
+   "n": 13,
+   "options": [
+    "It shows condensed mitotic chromosomes, not meiotic tetrads, so reciprocal exchanges leave no visible record.",
+    "White blood cells never undergo meiosis, so they contain no homologous chromosomes.",
+    "Crossing over only occurs in gametes, which are not present in blood.",
+    "Crossing over changes chromosome number, which karyotypes cannot detect."
+   ],
+   "answer": "A"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Fertilization",
+   "stem": "Immediately after a human sperm and egg fuse, the zygote contains 46 chromosomes. What happens to the maternal and paternal homologs at this point?",
+   "correct": "They remain separate chromosomes in one nucleus and do not pair or cross over until meiosis.",
+   "distractors": [
+    "They immediately pair into 23 tetrads to check for damage.",
+    "They fuse into 23 chromosomes, each containing both parental DNA.",
+    "They undergo crossing over to create new allele combinations before the first mitosis."
+   ],
+   "why": "Homolog pairing and crossing over occur in prophase I of meiosis, not at fertilization. The wrong options mistakenly treat fertilization as a pairing or recombination event.",
+   "n": 14,
+   "options": [
+    "They undergo crossing over to create new allele combinations before the first mitosis.",
+    "They remain separate chromosomes in one nucleus and do not pair or cross over until meiosis.",
+    "They fuse into 23 chromosomes, each containing both parental DNA.",
+    "They immediately pair into 23 tetrads to check for damage."
+   ],
+   "answer": "B"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Spermatogenesis",
+   "stem": "A human spermatogonium divides by mitosis, and one daughter enters meiosis while the other remains a stem cell. What is the main advantage of this arrangement?",
+   "correct": "It maintains a supply of spermatogonia while also producing gametes.",
+   "distractors": [
+    "It doubles the chromosome number before meiosis begins.",
+    "It creates genetic variation by crossing over during mitosis.",
+    "It ensures every daughter cell becomes a primary oocyte."
+   ],
+   "why": "Mitotic division renews the stem-cell population while meiosis produces sperm. The wrong options confuse mitosis with crossing over or with meiotic chromosome reduction.",
+   "n": 15,
+   "options": [
+    "It creates genetic variation by crossing over during mitosis.",
+    "It ensures every daughter cell becomes a primary oocyte.",
+    "It maintains a supply of spermatogonia while also producing gametes.",
+    "It doubles the chromosome number before meiosis begins."
+   ],
+   "answer": "C"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Karyotype of gamete",
+   "stem": "A karyotype is prepared from a normal human sperm rather than a somatic cell. Which result should the technician expect?",
+   "correct": "23 chromosomes, with no homologous pairs present.",
+   "distractors": [
+    "46 chromosomes arranged as 23 homologous pairs.",
+    "23 pairs of chromosomes, including one X and one Y.",
+    "46 chromosomes, but only 22 homologous pairs."
+   ],
+   "why": "A sperm is haploid with 23 chromosomes, so it has no homologous pairs. The wrong options incorrectly retain the diploid pairing seen in somatic cells.",
+   "n": 16,
+   "options": [
+    "23 pairs of chromosomes, including one X and one Y.",
+    "46 chromosomes arranged as 23 homologous pairs.",
+    "46 chromosomes, but only 22 homologous pairs.",
+    "23 chromosomes, with no homologous pairs present."
+   ],
+   "answer": "D"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Fertilization block",
+   "stem": "Within seconds after one sperm fuses with a human egg, the egg's membrane changes and cortical granules release enzymes that prevent additional sperm from entering. Why is this block essential?",
+   "correct": "It prevents a zygote with extra chromosome sets, which would disrupt meiosis and development.",
+   "distractors": [
+    "It prevents the egg from completing meiosis II and forming a polar body.",
+    "It ensures the zygote receives mitochondria from only the sperm.",
+    "It stops crossing over from occurring in the zygote's first mitosis."
+   ],
+   "why": "Polyspermy would create a triploid zygote with extra chromosome sets, disrupting development. The wrong options confuse this block with polar-body formation, mitochondria, or mitosis.",
+   "n": 17,
+   "options": [
+    "It prevents a zygote with extra chromosome sets, which would disrupt meiosis and development.",
+    "It prevents the egg from completing meiosis II and forming a polar body.",
+    "It ensures the zygote receives mitochondria from only the sperm.",
+    "It stops crossing over from occurring in the zygote's first mitosis."
+   ],
+   "answer": "A"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Egg cytoplasm",
+   "stem": "In humans, a sperm contributes a haploid nucleus and a centriole, while the egg contributes a haploid nucleus plus most of the cytoplasm. Why is the egg's large cytoplasmic contribution important after fertilization?",
+   "correct": "It supplies nutrients and organelles that support early embryonic divisions before implantation.",
+   "distractors": [
+    "It provides a second set of chromosomes that makes the zygote diploid.",
+    "It allows the zygote to skip DNA replication before its first mitosis.",
+    "It prevents independent assortment during the zygote's first meiotic division."
+   ],
+   "why": "The egg cytoplasm supports early development, but diploidy comes from the two haploid nuclei. The wrong options misattribute chromosome contribution or cell-cycle events to the cytoplasm.",
+   "n": 18,
+   "options": [
+    "It prevents independent assortment during the zygote's first meiotic division.",
+    "It supplies nutrients and organelles that support early embryonic divisions before implantation.",
+    "It provides a second set of chromosomes that makes the zygote diploid.",
+    "It allows the zygote to skip DNA replication before its first mitosis."
+   ],
+   "answer": "B"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Meiosis I chiasmata",
+   "stem": "At metaphase I, chiasmata hold each pair of homologs together. What must happen to these chiasmata for anaphase I to proceed normally?",
+   "correct": "They must be released so the homologs can move to opposite poles.",
+   "distractors": [
+    "They must duplicate so each pole receives a chiasma.",
+    "They must move to the equator and attach to spindle fibers.",
+    "They must form a synaptonemal complex between sister chromatids."
+   ],
+   "why": "Chiasmata are temporary links between homologs; their release allows anaphase I separation. The wrong options treat chiasmata as spindle attachments or as structures that duplicate.",
+   "n": 19,
+   "options": [
+    "They must duplicate so each pole receives a chiasma.",
+    "They must move to the equator and attach to spindle fibers.",
+    "They must be released so the homologs can move to opposite poles.",
+    "They must form a synaptonemal complex between sister chromatids."
+   ],
+   "answer": "C"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Crossing over",
+   "stem": "During prophase I, two nonsister chromatids break and exchange equal segments. Why does this crossing over usually leave each chromosome with the same overall length and gene content?",
+   "correct": "The exchange is reciprocal, so the segments swapped between homologs are equal and replace one another.",
+   "distractors": [
+    "The broken ends are repaired by DNA polymerase using the sister chromatid as a template.",
+    "The exchanged segments are immediately degraded, leaving the chromosome shorter.",
+    "Crossing over duplicates the exchanged segments, increasing gene number on both chromatids."
+   ],
+   "why": "Crossing over is a reciprocal exchange, so equal segments replace one another and length is conserved. The wrong options describe nonreciprocal repair, loss, or duplication.",
+   "n": 20,
+   "options": [
+    "The exchanged segments are immediately degraded, leaving the chromosome shorter.",
+    "Crossing over duplicates the exchanged segments, increasing gene number on both chromatids.",
+    "The broken ends are repaired by DNA polymerase using the sister chromatid as a template.",
+    "The exchange is reciprocal, so the segments swapped between homologs are equal and replace one another."
+   ],
+   "answer": "D"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Cell cycle checkpoint",
+   "stem": "A cell in G1 has DNA damage. The G1/S checkpoint normally stops the cell from entering S phase. If this checkpoint fails, what is the most likely consequence?",
+   "correct": "The cell copies damaged DNA and may pass mutations to daughter cells.",
+   "distractors": [
+    "The cell immediately enters mitosis without copying its DNA.",
+    "Homologous chromosomes fail to separate during anaphase I.",
+    "The cell always undergoes apoptosis before replication."
+   ],
+   "why": "Checkpoint failure lets a cell replicate damaged DNA, increasing mutation risk in daughter cells. The wrong options confuse the G1/S checkpoint with mitosis or meiosis and ignore that apoptosis is not guaranteed.",
+   "n": 21,
+   "options": [
+    "The cell copies damaged DNA and may pass mutations to daughter cells.",
+    "The cell immediately enters mitosis without copying its DNA.",
+    "Homologous chromosomes fail to separate during anaphase I.",
+    "The cell always undergoes apoptosis before replication."
+   ],
+   "answer": "A"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Gene regulation",
+   "stem": "In E. coli, a mutation prevents the lac repressor from binding the operator. If glucose is low, what happens to lac operon expression?",
+   "correct": "The operon is transcribed continuously, even when lactose is absent.",
+   "distractors": [
+    "The operon is transcribed only when lactose is present.",
+    "The operon is never transcribed because the promoter is blocked.",
+    "The operon is transcribed only when glucose is high."
+   ],
+   "why": "Without repressor binding, the operator cannot block transcription, so lactose is not needed to derepress the operon. The wrong options assume the repressor is still controlling expression.",
+   "n": 22,
+   "options": [
+    "The operon is transcribed only when lactose is present.",
+    "The operon is transcribed continuously, even when lactose is absent.",
+    "The operon is transcribed only when glucose is high.",
+    "The operon is never transcribed because the promoter is blocked."
+   ],
+   "answer": "B"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Plant life cycles",
+   "stem": "A table shows chromosome numbers in four tissues of a flowering plant: root 24, leaf 24, pollen grain 12, endosperm 36. Which conclusion is best supported?",
+   "correct": "The endosperm is triploid, consistent with a haploid sperm nucleus fusing with two haploid polar nuclei.",
+   "distractors": [
+    "The pollen grain is diploid because it has half the chromosome number of the root.",
+    "The endosperm is haploid because it is produced directly by meiosis.",
+    "The root and leaf are haploid because they contain the same number of chromosomes."
+   ],
+   "why": "Root and leaf are diploid (2n = 24), pollen is haploid (n = 12), and endosperm is 3n = 36 after double fertilization; the distractors confuse haploid with half and triploid with haploid.",
+   "n": 23,
+   "options": [
+    "The root and leaf are haploid because they contain the same number of chromosomes.",
+    "The endosperm is haploid because it is produced directly by meiosis.",
+    "The endosperm is triploid, consistent with a haploid sperm nucleus fusing with two haploid polar nuclei.",
+    "The pollen grain is diploid because it has half the chromosome number of the root."
+   ],
+   "answer": "C"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Crossing over",
+   "stem": "Two linked genes in a plant were scored in testcrosses at two temperatures. Recombination was 8% at 15°C and 16% at 25°C. Which conclusion is best supported?",
+   "correct": "Temperature can alter the frequency of crossing over between these linked genes.",
+   "distractors": [
+    "The two genes move to different chromosomes at 25°C.",
+    "Independent assortment increases as temperature rises.",
+    "Crossing over at 25°C occurred during mitosis rather than meiosis."
+   ],
+   "why": "Recombination between linked genes depends on crossing over in meiosis and can be environmentally modified; the distractors confuse recombination with independent assortment or mitosis.",
+   "n": 24,
+   "options": [
+    "Crossing over at 25°C occurred during mitosis rather than meiosis.",
+    "The two genes move to different chromosomes at 25°C.",
+    "Independent assortment increases as temperature rises.",
+    "Temperature can alter the frequency of crossing over between these linked genes."
+   ],
+   "answer": "D"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Double crossovers",
+   "stem": "In 200 tetrads with two crossovers between the same two loci, 80 yielded two recombinant chromatids, 100 yielded three, and 20 yielded four. Which conclusion is best supported?",
+   "correct": "Double crossovers can involve two, three, or four chromatids, so crossover number does not always equal recombinant chromatid number.",
+   "distractors": [
+    "Every double crossover produces four recombinant chromatids.",
+    "Crossing over occurs only between sister chromatids.",
+    "Recombination frequency always equals the number of crossovers per tetrad."
+   ],
+   "why": "Two crossovers may share a chromatid, leaving some parental combinations; the distractors assume all crossovers are independent or sister-only.",
+   "n": 25,
+   "options": [
+    "Double crossovers can involve two, three, or four chromatids, so crossover number does not always equal recombinant chromatid number.",
+    "Recombination frequency always equals the number of crossovers per tetrad.",
+    "Crossing over occurs only between sister chromatids.",
+    "Every double crossover produces four recombinant chromatids."
+   ],
+   "answer": "A"
+  },
+  {
+   "course": "AP Biology",
+   "unit": "Chiasma distribution",
+   "stem": "A table records chiasmata along chromosome 3 in 100 meiocytes: 60 near the ends, 25 in the middle, and 15 near the centromere. Which conclusion is best supported?",
+   "correct": "Crossing over is not uniformly distributed along the chromosome.",
+   "distractors": [
+    "Crossing over occurs only near the chromosome ends.",
+    "Chiasmata form during anaphase I.",
+    "The centromere is the most frequent site of crossing over."
+   ],
+   "why": "The data show more crossovers near the ends but not exclusively there; chiasmata form in prophase I, not anaphase I.",
+   "n": 26,
+   "options": [
+    "Chiasmata form during anaphase I.",
+    "Crossing over is not uniformly distributed along the chromosome.",
+    "The centromere is the most frequent site of crossing over.",
+    "Crossing over occurs only near the chromosome ends."
+   ],
+   "answer": "B"
   },
   {
    "course": "AP Biology",
    "unit": "Karyotype",
-   "stem": "A karyotype technician pairs the two copies of chromosome 7 from a patient. Which feature is used to call them homologous, even though their DNA sequences differ at many loci?",
-   "correct": "They have the same size, centromere position, and banding pattern.",
+   "stem": "A table lists four chromosome pairs from a human karyotype by length and centromere position. Pair 1 is longest and metacentric; Pair 2 is long and submetacentric; Pairs 3 and 4 are short and acrocentric. Which conclusion is best supported?",
+   "correct": "Pairs 3 and 4 cannot be matched as homologs by length and centromere position alone; banding patterns are needed.",
    "distractors": [
-    "They carry identical alleles at every locus.",
-    "They were inherited from the same parent.",
-    "They separate from each other during mitosis."
+    "Pair 1 must be the X chromosome pair because it is the longest.",
+    "Pairs 3 and 4 are homologous to each other because both are acrocentric.",
+    "Centromere position alone is sufficient to identify every homologous pair."
    ],
-   "why": "Homologs are matched by chromosome structure and banding, not identical alleles; they are inherited one from each parent and do not pair in mitosis. Identical alleles would describe sister chromatids, not homologs.",
-   "n": 18,
+   "why": "Many human chromosomes share size and centromere class, so karyotype pairing relies on banding; the distractors confuse similar appearance with homology.",
+   "n": 27,
    "options": [
-    "They carry identical alleles at every locus.",
-    "They have the same size, centromere position, and banding pattern.",
-    "They were inherited from the same parent.",
-    "They separate from each other during mitosis."
-   ],
-   "answer": "B"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Independent assortment",
-   "stem": "A student claims that independent assortment also occurs during meiosis II because sister chromatids separate randomly. Which correction is most accurate?",
-   "correct": "Independent assortment occurs at metaphase I, when homolog pairs orient toward opposite poles; separating sister chromatids in meiosis II does not reshuffle homolog pairs.",
-   "distractors": [
-    "Independent assortment occurs at fertilization, when gametes from two parents combine randomly.",
-    "Independent assortment occurs in prophase I, when crossing over exchanges segments between homologs.",
-    "Independent assortment occurs at anaphase II, when sister chromatids are pulled to opposite poles."
-   ],
-   "why": "The random orientation of homologs at metaphase I creates new chromosome combinations; sister chromatid separation in meiosis II does not reshuffle homologs. The distractors confuse independent assortment with fertilization, crossing over, or anaphase II.",
-   "n": 19,
-   "options": [
-    "Independent assortment occurs at fertilization, when gametes from two parents combine randomly.",
-    "Independent assortment occurs in prophase I, when crossing over exchanges segments between homologs.",
-    "Independent assortment occurs at metaphase I, when homolog pairs orient toward opposite poles; separating sister chromatids in meiosis II does not reshuffle homolog pairs.",
-    "Independent assortment occurs at anaphase II, when sister chromatids are pulled to opposite poles."
+    "Pairs 3 and 4 are homologous to each other because both are acrocentric.",
+    "Pair 1 must be the X chromosome pair because it is the longest.",
+    "Pairs 3 and 4 cannot be matched as homologs by length and centromere position alone; banding patterns are needed.",
+    "Centromere position alone is sufficient to identify every homologous pair."
    ],
    "answer": "C"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Crossing over",
-   "stem": "Under a microscope, a meiocyte at metaphase I shows a chiasma between nonsister chromatids in one tetrad. Which process has already occurred by this stage?",
-   "correct": "Crossing over between those chromatids in prophase I.",
-   "distractors": [
-    "Separation of homologous chromosomes in anaphase I.",
-    "Separation of sister chromatids in anaphase II.",
-    "Fusion of haploid nuclei at fertilization."
-   ],
-   "why": "A chiasma is the visible point where nonsister chromatids crossed over earlier in prophase I and remain joined; it is not the separation event itself. The distractors place crossing over after chromosome separation or at fertilization.",
-   "n": 20,
-   "options": [
-    "Separation of sister chromatids in anaphase II.",
-    "Separation of homologous chromosomes in anaphase I.",
-    "Fusion of haploid nuclei at fertilization.",
-    "Crossing over between those chromatids in prophase I."
-   ],
-   "answer": "D"
   },
   {
    "course": "AP Biology",
    "unit": "Oogenesis",
-   "stem": "A primary oocyte completes meiosis I, producing a secondary oocyte and a first polar body. Why do these two cells usually have different alleles even though both are haploid?",
-   "correct": "Each received a different set of homologs when homolog pairs separated in anaphase I.",
+   "stem": "A table lists four human ovarian cells: Cell 1 has 46 chromosomes and 46 chromatids; Cell 2 has 46 and 92; Cell 3 has 23 and 46; Cell 4 has 23 and 23. Which cell is a secondary oocyte at metaphase II?",
+   "correct": "Cell 3, with 23 chromosomes and 46 chromatids.",
    "distractors": [
-    "Each received identical sister chromatids but different amounts of cytoplasm.",
-    "The polar body is diploid, while the secondary oocyte is haploid.",
-    "Crossing over occurs only in the polar body, not in the secondary oocyte."
+    "Cell 1, with 46 chromosomes and 46 chromatids.",
+    "Cell 2, with 46 chromosomes and 92 chromatids.",
+    "Cell 4, with 23 chromosomes and 23 chromatids."
    ],
-   "why": "Anaphase I sends one homolog of each pair to each daughter, so the two haploid products differ in their homolog combinations. The distractors wrongly make one product diploid, assume identical chromatids, or restrict crossing over to the polar body.",
-   "n": 21,
-   "options": [
-    "Each received a different set of homologs when homolog pairs separated in anaphase I.",
-    "The polar body is diploid, while the secondary oocyte is haploid.",
-    "Crossing over occurs only in the polar body, not in the secondary oocyte.",
-    "Each received identical sister chromatids but different amounts of cytoplasm."
-   ],
-   "answer": "A"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Meiosis II",
-   "stem": "A secondary spermatocyte has 23 chromosomes, each with two sister chromatids. If centromeric cohesin is not cleaved during anaphase II, what is the immediate consequence?",
-   "correct": "Sister chromatids remain joined and cannot separate into spermatids with single-chromatid chromosomes.",
-   "distractors": [
-    "Homologous chromosomes fail to separate, producing diploid spermatids.",
-    "Crossing over cannot occur, so genetic variation is eliminated.",
-    "DNA replication occurs again before meiosis II can finish."
-   ],
-   "why": "Centromeric cohesin holds sister chromatids together until anaphase II; without cleavage, chromatids cannot be pulled apart normally. The wrong options confuse cohesin with homolog separation, prophase crossing over, or a second S phase.",
-   "n": 22,
-   "options": [
-    "Crossing over cannot occur, so genetic variation is eliminated.",
-    "Sister chromatids remain joined and cannot separate into spermatids with single-chromatid chromosomes.",
-    "Homologous chromosomes fail to separate, producing diploid spermatids.",
-    "DNA replication occurs again before meiosis II can finish."
-   ],
-   "answer": "B"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Meiosis II",
-   "stem": "In a primary spermatocyte, meiosis I and its cytokinesis occur normally, but a drug prevents cytokinesis after meiosis II. What is the immediate result?",
-   "correct": "Two cells, each containing two haploid nuclei.",
-   "distractors": [
-    "Four separate haploid cells, each with one nucleus.",
-    "One cell containing four diploid nuclei.",
-    "Two cells, each containing two diploid nuclei."
-   ],
-   "why": "Meiosis II still partitions chromatids into four haploid nuclei, but without cytokinesis II the two secondary cells each retain two nuclei; the misconception is that nuclear division and cell division are the same.",
-   "n": 23,
-   "options": [
-    "One cell containing four diploid nuclei.",
-    "Four separate haploid cells, each with one nucleus.",
-    "Two cells, each containing two haploid nuclei.",
-    "Two cells, each containing two diploid nuclei."
-   ],
-   "answer": "C"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Crossing over",
-   "stem": "In Drosophila, recombination between two linked genes is 12% in females and 0% in males. Which conclusion is best supported?",
-   "correct": "Crossing over between these genes occurs in females but not in males.",
-   "distractors": [
-    "The genes are on different chromosomes in females but linked in males.",
-    "Male Drosophila have no homologous chromosomes.",
-    "Recombination frequency cannot be compared between sexes."
-   ],
-   "why": "The data directly show sex-specific crossing over; the misconception is that 0% recombination means the genes must be unlinked or that males lack homologs.",
-   "n": 24,
-   "options": [
-    "Recombination frequency cannot be compared between sexes.",
-    "Male Drosophila have no homologous chromosomes.",
-    "The genes are on different chromosomes in females but linked in males.",
-    "Crossing over between these genes occurs in females but not in males."
-   ],
-   "answer": "D"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Meiosis II",
-   "stem": "A table lists four human cells by chromosome number and centromere number. Which row represents a secondary spermatocyte at anaphase II?",
-   "correct": "46 chromosomes, 46 centromeres",
-   "distractors": [
-    "23 chromosomes, 23 centromeres",
-    "46 chromosomes, 23 centromeres",
-    "23 chromosomes, 46 centromeres"
-   ],
-   "why": "At anaphase II centromeres split, so the 23 replicated chromosomes become 46 single-chromatid chromosomes; the misconception is that anaphase II still has 23 centromeres.",
-   "n": 25,
-   "options": [
-    "46 chromosomes, 46 centromeres",
-    "46 chromosomes, 23 centromeres",
-    "23 chromosomes, 46 centromeres",
-    "23 chromosomes, 23 centromeres"
-   ],
-   "answer": "A"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Independent assortment",
-   "stem": "A species has 2n = 6. Each parent can produce 2^3 = 8 kinds of gametes by independent assortment. Ignoring crossing over, how many genetically distinct zygote chromosome combinations can random fertilization produce?",
-   "correct": "64",
-   "distractors": [
-    "8",
-    "16",
-    "36"
-   ],
-   "why": "Each of 8 egg types can combine with each of 8 sperm types, giving 8 × 8 = 64; the misconception is adding gamete types instead of multiplying.",
-   "n": 26,
-   "options": [
-    "8",
-    "64",
-    "16",
-    "36"
-   ],
-   "answer": "B"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Crossing over",
-   "stem": "Unequal crossing over occurs between two nonsister chromatids in a tetrad, so one recombinant chromatid gains a segment and the other loses it. Which outcome is most likely after meiosis?",
-   "correct": "Two gametes carry a duplication and a deletion, respectively; the other two are normal.",
-   "distractors": [
-    "All four gametes carry the deletion.",
-    "The cell cannot complete meiosis.",
-    "Both recombinant gametes carry duplications."
-   ],
-   "why": "Unequal crossing over creates reciprocal duplication/deletion chromatids; the misconception is that crossing over always exchanges equal segments.",
-   "n": 27,
-   "options": [
-    "All four gametes carry the deletion.",
-    "Both recombinant gametes carry duplications.",
-    "Two gametes carry a duplication and a deletion, respectively; the other two are normal.",
-    "The cell cannot complete meiosis."
-   ],
-   "answer": "C"
-  },
-  {
-   "course": "AP Biology",
-   "unit": "Linked genes",
-   "stem": "A dihybrid testcross yields only two phenotypic classes, each about half of the offspring, with no recombinant classes observed. Which conclusion is best supported?",
-   "correct": "The two genes are completely linked and no crossing over was detected.",
-   "distractors": [
-    "The two genes are on different chromosomes and assort independently.",
-    "The two genes are 50 map units apart.",
-    "One gene is epistatic to the other."
-   ],
-   "why": "Only parental combinations appear, so the genes are linked with no observed recombination; the misconception is that a 1:1 ratio always means independent assortment.",
+   "why": "After meiosis I the secondary oocyte is haploid (23) but each chromosome still has two sister chromatids (46); Cell 1 is G1, Cell 2 is primary oocyte after S, and Cell 4 is an ovum.",
    "n": 28,
    "options": [
-    "One gene is epistatic to the other.",
-    "The two genes are 50 map units apart.",
-    "The two genes are on different chromosomes and assort independently.",
-    "The two genes are completely linked and no crossing over was detected."
+    "Cell 4, with 23 chromosomes and 23 chromatids.",
+    "Cell 2, with 46 chromosomes and 92 chromatids.",
+    "Cell 1, with 46 chromosomes and 46 chromatids.",
+    "Cell 3, with 23 chromosomes and 46 chromatids."
    ],
    "answer": "D"
   },
   {
    "course": "AP Biology",
-   "unit": "Photosynthesis",
-   "stem": "A plant is exposed to increasing light intensity while CO2 and temperature are held constant. Oxygen production rises until 800 units of light, then stays flat. Which conclusion is best supported?",
-   "correct": "Light is no longer limiting; some other factor limits the rate.",
+   "unit": "Linkage",
+   "stem": "A single meiocyte heterozygous at two linked loci produces four gametes with genotypes AB, AB, ab, and ab. Which conclusion is best supported?",
+   "correct": "No crossing over occurred between the two loci in this meiosis.",
    "distractors": [
-    "The plant has stopped photosynthesizing.",
-    "Respiration has stopped.",
-    "Oxygen production will rise if light increases further."
+    "The two loci are on different chromosomes and assort independently.",
+    "Crossing over occurred between sister chromatids at these loci.",
+    "The meiocyte produced four recombinant gametes."
    ],
-   "why": "The plateau indicates a different limiting factor such as CO2; the misconception is that more light always increases photosynthesis.",
+   "why": "Only two gamete genotypes, each duplicated, indicate the alleles stayed linked; independent assortment or crossing over would produce additional recombinant types.",
    "n": 29,
    "options": [
-    "Light is no longer limiting; some other factor limits the rate.",
-    "The plant has stopped photosynthesizing.",
-    "Respiration has stopped.",
-    "Oxygen production will rise if light increases further."
+    "No crossing over occurred between the two loci in this meiosis.",
+    "The meiocyte produced four recombinant gametes.",
+    "The two loci are on different chromosomes and assort independently.",
+    "Crossing over occurred between sister chromatids at these loci."
    ],
    "answer": "A"
   },
   {
    "course": "AP Biology",
-   "unit": "Cellular respiration",
-   "stem": "Germinating pea seeds consume 2.0 mL O2/min at 20°C and 3.0 mL O2/min at 30°C. What is the Q10 for this temperature range?",
-   "correct": "1.5",
+   "unit": "Gamete chromosome number",
+   "stem": "A table lists somatic chromosome numbers for four diploid species: Species 1 has 14, Species 2 has 28, Species 3 has 42, and Species 4 has 56. Which species produces gametes with 14 chromosomes?",
+   "correct": "Species 2, with 28 somatic chromosomes.",
    "distractors": [
-    "0.5",
-    "1.0",
-    "10"
+    "Species 1, with 14 somatic chromosomes.",
+    "Species 3, with 42 somatic chromosomes.",
+    "Species 4, with 56 somatic chromosomes."
    ],
-   "why": "Q10 is rate at T + 10 divided by rate at T, so 3.0/2.0 = 1.5; the misconception is that Q10 is the difference or a percent.",
+   "why": "Gametes are haploid, so a diploid species with 28 chromosomes produces gametes with 14; the distractors mistake the somatic number for the gamete number or halve the wrong species.",
    "n": 30,
    "options": [
-    "1.0",
-    "1.5",
-    "10",
-    "0.5"
+    "Species 1, with 14 somatic chromosomes.",
+    "Species 2, with 28 somatic chromosomes.",
+    "Species 3, with 42 somatic chromosomes.",
+    "Species 4, with 56 somatic chromosomes."
    ],
    "answer": "B"
   },
   {
    "course": "AP Biology",
-   "unit": "Enzyme kinetics",
-   "stem": "An enzyme is assayed with and without an inhibitor. At high substrate concentration, the inhibited reaction reaches the same Vmax as the uninhibited reaction, but its Km is higher. Which conclusion is best supported?",
-   "correct": "The inhibitor is competitive.",
+   "unit": "Human gametes",
+   "stem": "A table lists chromosome contents of four human gametes: Gamete 1 has 22 autosomes + X; Gamete 2 has 22 autosomes + Y; Gamete 3 has 23 autosomes + X; Gamete 4 has 23 autosomes + Y. Which are normal sperm?",
+   "correct": "Gamete 1 and Gamete 2 only.",
    "distractors": [
-    "The inhibitor is noncompetitive.",
-    "The inhibitor denatures the enzyme.",
-    "The inhibitor lowers Vmax."
+    "Gamete 3 and Gamete 4 only.",
+    "Gamete 1 and Gamete 3 only.",
+    "Gamete 2 and Gamete 4 only."
    ],
-   "why": "Competitive inhibitors raise Km but do not change Vmax; the misconception is that any inhibitor lowers Vmax.",
+   "why": "A normal sperm is haploid: 22 autosomes plus one sex chromosome; Gametes 3 and 4 have an extra autosome and are aneuploid.",
    "n": 31,
    "options": [
-    "The inhibitor denatures the enzyme.",
-    "The inhibitor lowers Vmax.",
-    "The inhibitor is competitive.",
-    "The inhibitor is noncompetitive."
+    "Gamete 1 and Gamete 3 only.",
+    "Gamete 2 and Gamete 4 only.",
+    "Gamete 1 and Gamete 2 only.",
+    "Gamete 3 and Gamete 4 only."
    ],
    "answer": "C"
   },
   {
    "course": "AP Biology",
-   "unit": "DNA replication",
-   "stem": "Cells grown in 15N are shifted to 14N medium. After one round, all DNA molecules are hybrid; after two rounds, half are hybrid and half are light. Which conclusion is best supported?",
-   "correct": "DNA replication is semiconservative.",
+   "unit": "Pedigree analysis",
+   "stem": "A table shows a family: two unaffected parents have one affected daughter and one unaffected son. No other family history is given. Which inheritance pattern is most likely?",
+   "correct": "Autosomal recessive",
    "distractors": [
-    "DNA replication is conservative.",
-    "DNA replication is dispersive.",
-    "DNA replication is conservative in the first round only."
+    "X-linked recessive",
+    "Autosomal dominant",
+    "Y-linked"
    ],
-   "why": "The pattern of hybrid and light molecules matches semiconservative replication; the misconception is that conservative replication would keep one fully heavy molecule.",
+   "why": "Two unaffected parents producing an affected daughter indicate a recessive allele carried by both parents; X-linked recessive is unlikely because an affected daughter would need an affected father.",
    "n": 32,
    "options": [
-    "DNA replication is conservative in the first round only.",
-    "DNA replication is dispersive.",
-    "DNA replication is conservative.",
-    "DNA replication is semiconservative."
+    "Y-linked",
+    "Autosomal dominant",
+    "X-linked recessive",
+    "Autosomal recessive"
    ],
    "answer": "D"
   },
   {
    "course": "AP Biology",
-   "unit": "Population ecology",
-   "stem": "A population of paramecia grows rapidly in a culture, then levels off at about 500 individuals even though nutrients are still present. Which conclusion is best supported?",
-   "correct": "The population has reached carrying capacity.",
+   "unit": "Blood types",
+   "stem": "A table shows a cross between a type A parent and a type B parent. Among their children are individuals with type A, type B, type AB, and type O blood. What are the parents' most likely genotypes?",
+   "correct": "IAi and IBi",
    "distractors": [
-    "The population is growing exponentially.",
-    "The population has no limiting factors.",
-    "The population will continue to double each day."
+    "IAIA and IBIB",
+    "IAi and IBIB",
+    "IAIA and IBi"
    ],
-   "why": "The plateau at a stable size indicates carrying capacity; the misconception is that unlimited nutrients mean unlimited growth.",
+   "why": "A type O child must inherit an i allele from each parent, so both parents must carry i; IAi x IBi also allows all four phenotypes.",
    "n": 33,
    "options": [
-    "The population has reached carrying capacity.",
-    "The population will continue to double each day.",
-    "The population has no limiting factors.",
-    "The population is growing exponentially."
+    "IAi and IBi",
+    "IAIA and IBIB",
+    "IAIA and IBi",
+    "IAi and IBIB"
    ],
    "answer": "A"
   }
@@ -669,474 +669,6 @@
   "AP Biology"
  ],
  "sets": [
-  {
-   "set": 1,
-   "generated": "2026-11-11",
-   "questions": [
-    {
-     "n": 1,
-     "course": "AP Biology",
-     "unit": "Chromosomes and karyotype",
-     "stem": "A human karyotype shows 23 pairs of chromosomes. Which statement about that display is correct?",
-     "options": [
-      "Twenty-two pairs are autosomes, and the members of a pair are homologs matched in length, shape and gene loci, one inherited from each parent.",
-      "All 23 pairs are autosomes, and each pair is a set of sister chromatids.",
-      "Twenty-three pairs of autosomes are present plus a separate pair of sex chromosomes.",
-      "The pairing proves the cell is haploid, because each chromosome has one partner."
-     ],
-     "answer": "A",
-     "why": "Humans carry 22 autosome pairs plus one sex pair; homologs match in length and shape and carry the same loci, one copy per parent."
-    },
-    {
-     "n": 2,
-     "course": "AP Biology",
-     "unit": "Meiosis I vs meiosis II",
-     "stem": "A cell with 2n = 6 has finished meiosis I and its two daughters are at metaphase II. How many chromosomes and chromatids does each daughter hold?",
-     "options": [
-      "6 chromosomes and 6 chromatids, because the set has not been halved yet.",
-      "3 chromosomes and 6 chromatids, because each chromosome is still two sister chromatids.",
-      "3 chromosomes and 3 chromatids, because the sisters have already separated.",
-      "6 chromosomes and 12 chromatids, because the DNA was copied after meiosis I."
-     ],
-     "answer": "B",
-     "why": "Meiosis I halves the set to n = 3 but leaves each chromosome doubled, so 3 chromosomes carry 6 chromatids until anaphase II."
-    },
-    {
-     "n": 3,
-     "course": "AP Biology",
-     "unit": "Metaphase II",
-     "stem": "At metaphase II, the two sister chromatids of a chromosome attach to microtubules from opposite poles. Why are those sisters not genetically identical?",
-     "options": [
-      "Because DNA replication in meiosis II introduces new mutations into one sister.",
-      "Because the sisters separated during anaphase I and then rejoined.",
-      "Because crossing over in prophase I exchanged segments between nonsister chromatids, so the sisters carry different allele combinations.",
-      "Because maternal and paternal chromosomes fused at the metaphase II plate."
-     ],
-     "answer": "C",
-     "why": "Crossing over exchanges corresponding segments between nonsister chromatids in prophase I, so each sister carries a mixed set of alleles."
-    },
-    {
-     "n": 4,
-     "course": "AP Biology",
-     "unit": "Cohesin and chromosome separation",
-     "stem": "During anaphase I the homologs separate while sister chromatids stay together. What makes that possible?",
-     "options": [
-      "Cohesin is cleaved at the centromeres first, then along the arms in anaphase II.",
-      "Cohesin is not involved; the spindle pulls homologs apart directly.",
-      "Cohesin is fully degraded at the end of metaphase I, releasing sisters immediately.",
-      "Cohesin is cleaved along the chromosome arms, while centromeric cohesin stays intact until anaphase II."
-     ],
-     "answer": "D",
-     "why": "Arm cohesin is cut in anaphase I to free the homologs; centromeric cohesin persists so sisters travel together until anaphase II."
-    },
-    {
-     "n": 5,
-     "course": "AP Biology",
-     "unit": "One replication, two divisions",
-     "stem": "Why is there no DNA replication between meiosis I and meiosis II?",
-     "options": [
-      "Because the chromosomes were already replicated in interphase, and a second replication would double the genome again.",
-      "Because meiosis II is not a real division and requires no new DNA.",
-      "Because replication happens during telophase I and is too fast to observe.",
-      "Because each daughter cell replicates its DNA during prophase II."
-     ],
-     "answer": "A",
-     "why": "One S phase precedes meiosis I; replicating again before meiosis II would give each gamete twice the DNA it should carry."
-    },
-    {
-     "n": 6,
-     "course": "AP Biology",
-     "unit": "Products of meiosis",
-     "stem": "Why are all four products of meiosis genetically distinct from one another?",
-     "options": [
-      "Because each product receives a different number of chromosomes.",
-      "Independent assortment gives different combinations of homologs, and crossing over puts different alleles on the chromatids.",
-      "Because mutation occurs in every one of the four daughter cells.",
-      "Because sister chromatids are identical and separate randomly at anaphase II."
-     ],
-     "answer": "B",
-     "why": "Assortment mixes which homologs travel together and crossing over mixes alleles along each chromosome, so no two products match."
-    },
-    {
-     "n": 7,
-     "course": "AP Biology",
-     "unit": "Anaphase I vs anaphase II",
-     "stem": "Which pairing correctly states what separates in each meiotic anaphase?",
-     "options": [
-      "Anaphase I separates sister chromatids; anaphase II separates homologs.",
-      "Both anaphases separate homologs, which is why the set halves twice.",
-      "Anaphase I separates homologous chromosomes; anaphase II separates sister chromatids.",
-      "Anaphase I separates sister chromatids of each homolog simultaneously."
-     ],
-     "answer": "C",
-     "why": "Meiosis I is the reductional division that pulls homologs apart; meiosis II is the equational division that splits sisters."
-    },
-    {
-     "n": 8,
-     "course": "AP Biology",
-     "unit": "Independent assortment",
-     "stem": "Two homologous pairs line up at metaphase I. What does independent assortment predict about the resulting gametes?",
-     "options": [
-      "Only two gamete types are possible, because the pairs travel together.",
-      "Gametes carry both homologs of each pair until meiosis II.",
-      "Two gamete types form, with the recombinant types appearing only after crossing over.",
-      "Four gamete types are possible, because each pair's orientation is independent of the other pair's."
-     ],
-     "answer": "D",
-     "why": "Each pair orients randomly and independently, so two pairs produce 2^2 = 4 equally likely gamete combinations."
-    },
-    {
-     "n": 9,
-     "course": "AP Biology",
-     "unit": "Prophase I",
-     "stem": "What happens during synapsis in prophase I?",
-     "options": [
-      "Homologs pair along their lengths, held by the synaptonemal complex, and nonsister chromatids exchange corresponding segments.",
-      "Sister chromatids separate at the centromere and begin moving to the poles.",
-      "Homologs line up single file at the metaphase plate.",
-      "The nuclear envelope re-forms around each haploid set."
-     ],
-     "answer": "A",
-     "why": "Synapsis is the physical pairing of homologs in prophase I; crossing over occurs within that paired structure and creates chiasmata."
-    },
-    {
-     "n": 10,
-     "course": "AP Biology",
-     "unit": "Crossing over",
-     "stem": "A chromosome in a gamete carries alleles that came from both of the student's grandparents on the same side of the family. What produced that?",
-     "options": [
-      "Independent assortment at metaphase I, which mixes whole chromosomes.",
-      "Crossing over between nonsister chromatids in prophase I, which makes recombinant chromosomes.",
-      "Random fertilization, which combines gametes from two parents.",
-      "Nondisjunction, which changes how chromosomes are distributed."
-     ],
-     "answer": "B",
-     "why": "A single chromosome carrying DNA from both homologs is the signature of crossing over; assortment only mixes intact chromosomes."
-    },
-    {
-     "n": 11,
-     "course": "AP Biology",
-     "unit": "Combinations",
-     "stem": "The number of gamete combinations from independent assortment is 2^n, where n is the haploid number. For humans, what does that give?",
-     "options": [
-      "2^46, more than 70 trillion combinations.",
-      "23^2, or 529 combinations.",
-      "2^23, more than 8 million combinations.",
-      "2 x 23, or 46 combinations."
-     ],
-     "answer": "C",
-     "why": "n = 23 in humans, so independent assortment alone yields 2^23, about 8.4 million different gametes."
-    },
-    {
-     "n": 12,
-     "course": "AP Biology",
-     "unit": "Random fertilization",
-     "stem": "Why does random fertilization increase variation even though it adds no new alleles?",
-     "options": [
-      "Because fertilization creates new alleles by recombining DNA inside the zygote.",
-      "Because the sperm selects which of the egg's chromosomes will be retained.",
-      "Because fertilization doubles the chromosome number of each gamete.",
-      "Because any sperm can fuse with any ovum, so the combination of two already-varied gametes multiplies the possibilities."
-     ],
-     "answer": "D",
-     "why": "Fertilization does not create alleles; it pairs one of millions of sperm with one of millions of eggs, multiplying combinations."
-    },
-    {
-     "n": 13,
-     "course": "AP Biology",
-     "unit": "Nondisjunction in meiosis I",
-     "stem": "One primary spermatocyte yields four sperm with 24, 24, 22 and 22 chromosomes (human). Which division failed?",
-     "options": [
-      "Meiosis I, because all four gametes are abnormal and the error appears in both products of the first division.",
-      "Meiosis II, because only one of the two secondary cells produced abnormal gametes.",
-      "Mitosis after fertilization, because the counts are unequal.",
-      "Crossing over, because recombination changed the chromosome counts."
-     ],
-     "answer": "A",
-     "why": "A meiosis I nondisjunction sends both homologs to one pole, so both secondary cells inherit the error and all four gametes are abnormal."
-    },
-    {
-     "n": 14,
-     "course": "AP Biology",
-     "unit": "Nondisjunction in meiosis II",
-     "stem": "Four gametes carry 24, 22, 23 and 23 chromosomes. Which event explains this pattern?",
-     "options": [
-      "Nondisjunction in meiosis I, because all four products differ from 23.",
-      "Nondisjunction in meiosis II, because only one of the two secondary cells divided abnormally.",
-      "Failure of crossing over, because recombination preserves the count.",
-      "Failure of cytokinesis in meiosis I, because the cells never separated."
-     ],
-     "answer": "B",
-     "why": "When exactly two of four gametes are abnormal and the other two are normal, the error was confined to one secondary cell at meiosis II."
-    },
-    {
-     "n": 15,
-     "course": "AP Biology",
-     "unit": "Trisomy and monosomy",
-     "stem": "An n+1 gamete fuses with a normal n gamete. What is the result, and how does it differ from an n-1 gamete fusing?",
-     "options": [
-      "A monosomic zygote; an n-1 gamete gives trisomy, which is usually viable.",
-      "A haploid zygote; an n-1 gamete gives a diploid zygote.",
-      "A trisomic zygote with three copies of one chromosome; an n-1 gamete gives monosomy, which is usually lethal.",
-      "A polyploid zygote with two extra sets; an n-1 gamete removes one whole set."
-     ],
-     "answer": "C",
-     "why": "n+1 plus n gives three copies (trisomy, as in trisomy 21); n-1 plus n leaves one copy (monosomy), which is usually not viable."
-    },
-    {
-     "n": 16,
-     "course": "AP Biology",
-     "unit": "Sex determination",
-     "stem": "A sperm carries a Y chromosome. What follows for the zygote, and what was the sperm's own chromosome content?",
-     "options": [
-      "The zygote will be XX and female, and the sperm carried two diploid sets.",
-      "The zygote will be XY and male, and the sperm carried 46 chromosomes.",
-      "The zygote's sex cannot be predicted, because the egg may also carry a Y.",
-      "The zygote will be XY and male, and the sperm carried a single haploid set of 23."
-     ],
-     "answer": "D",
-     "why": "Eggs always carry X, so a Y-bearing sperm produces an XY male; gametes are haploid, carrying 23 chromosomes."
-    },
-    {
-     "n": 17,
-     "course": "AP Biology",
-     "unit": "Gametes",
-     "stem": "Which statement about gametes in animals is correct?",
-     "options": [
-      "They are the only haploid cells, and they do not divide again before fertilization.",
-      "They are diploid, and they divide by mitosis after meiosis.",
-      "They are haploid and divide by meiosis a second time before fusing.",
-      "They are haploid in males but diploid in females."
-     ],
-     "answer": "A",
-     "why": "Gametes are the sole haploid cells in animals; they fuse rather than divide, and the zygote then grows by mitosis."
-    },
-    {
-     "n": 18,
-     "course": "AP Biology",
-     "unit": "Homologous chromosomes",
-     "stem": "Two chromosomes form a homologous pair. Which description is correct?",
-     "options": [
-      "They carry identical alleles at every locus, which is why they pair.",
-      "They carry the same genes at the same loci, matched in length and shape, but may carry different alleles.",
-      "They carry different genes entirely, and pairing matches them by size only.",
-      "They are the two sister chromatids produced when the chromosome replicated."
-     ],
-     "answer": "B",
-     "why": "Homologs share loci and structure, one from each parent; the alleles at those loci can differ, which is what makes crossing over matter."
-    },
-    {
-     "n": 19,
-     "course": "AP Biology",
-     "unit": "Unique to meiosis",
-     "stem": "Which set of events occurs in meiosis but never in mitosis?",
-     "options": [
-      "Chromosome condensation, spindle formation and sister chromatid separation.",
-      "DNA replication in interphase and cytokinesis at the end of division.",
-      "Synapsis with crossing over in prophase I, homologous pairs at the metaphase plate, and homolog separation in anaphase I.",
-      "Nuclear envelope breakdown and kinetochore attachment to microtubules."
-     ],
-     "answer": "C",
-     "why": "Those three events are the reason meiosis reduces the set; everything else on the list is shared machinery."
-    },
-    {
-     "n": 20,
-     "course": "AP Biology",
-     "unit": "Haploid and diploid",
-     "stem": "What do haploid and diploid actually describe?",
-     "options": [
-      "The number of chromatids per chromosome, one versus two.",
-      "The amount of DNA in the nucleus, 2C versus 4C.",
-      "Whether the cell is a gamete or a somatic cell, regardless of chromosome number.",
-      "The number of chromosome SETS: one of each chromosome versus two of each."
-     ],
-     "answer": "D",
-     "why": "Diploid means two sets and haploid means one set; a replicated haploid cell still has two chromatids per chromosome, which is a different measure."
-    },
-    {
-     "n": 21,
-     "course": "AP Biology",
-     "unit": "Human chromosome numbers",
-     "stem": "A human gamete carries 23 chromosomes. What is that set, and what happens to the number at fertilization?",
-     "options": [
-      "22 autosomes plus 1 sex chromosome, and fertilization restores 2n = 46.",
-      "22 autosomes plus 1 sex chromosome, and fertilization restores 2n = 23.",
-      "23 autosomes plus 1 sex chromosome, and fertilization gives 48.",
-      "46 chromosomes, half of which are degraded at fertilization."
-     ],
-     "answer": "A",
-     "why": "n = 23 means 22 autosomes plus one sex chromosome; adding the other gamete's set gives 46, the diploid number."
-    },
-    {
-     "n": 22,
-     "course": "AP Biology",
-     "unit": "Testcross",
-     "stem": "What is the purpose of crossing an individual of unknown genotype to a homozygous recessive partner?",
-     "options": [
-      "It doubles the number of offspring, which makes ratios easier to read.",
-      "The recessive partner contributes only recessive alleles, so the offspring phenotypes reveal the unknown genotype.",
-      "It converts recessive alleles into dominant ones in the offspring.",
-      "It prevents crossing over, so linkage can be measured directly."
-     ],
-     "answer": "B",
-     "why": "Because the tester contributes only recessive alleles, any dominant offspring must have received the dominant allele from the unknown parent."
-    },
-    {
-     "n": 23,
-     "course": "AP Biology",
-     "unit": "Absence of a phenotype",
-     "stem": "A tall pea plant is crossed with a dwarf plant (tt), and all 80 offspring are tall. What is the best conclusion?",
-     "options": [
-      "The tall parent is heterozygous (Tt), because half the offspring should be dwarf.",
-      "The tall parent's genotype cannot be determined from any offspring counts.",
-      "The tall parent is homozygous dominant (TT), because no recessive offspring appeared.",
-      "The cross shows that height and flower color are linked."
-     ],
-     "answer": "C",
-     "why": "A heterozygote crossed to tt yields roughly 1:1; with 80 offspring all dominant, the parent is almost certainly TT."
-    },
-    {
-     "n": 24,
-     "course": "AP Biology",
-     "unit": "Ratios",
-     "stem": "A double heterozygote is testcrossed and yields four phenotypic classes in roughly equal numbers. What does that establish?",
-     "options": [
-      "The two genes are completely linked, which is why all four classes appear.",
-      "One gene is epistatic to the other, which masks one class.",
-      "The parent was homozygous for both traits, which is why the ratio is even.",
-      "The two genes assort independently, which is why the 1:1:1:1 ratio appears."
-     ],
-     "answer": "D",
-     "why": "Equal numbers of all four classes is the signature of independent assortment; complete linkage would keep only the two parental classes."
-    },
-    {
-     "n": 25,
-     "course": "AP Biology",
-     "unit": "Dihybrid cross",
-     "stem": "Two heterozygotes for unlinked genes are crossed. What offspring ratio is expected?",
-     "options": [
-      "9:3:3:1 across the four phenotype combinations.",
-      "1:1:1:1, because each gene assorts independently.",
-      "3:1, because only one gene is segregating.",
-      "1:2:1, because each genotype appears once."
-     ],
-     "answer": "A",
-     "why": "A 9:3:3:1 ratio is the product of two independent 3:1 monohybrid ratios."
-    },
-    {
-     "n": 26,
-     "course": "AP Biology",
-     "unit": "Hardy-Weinberg, first step",
-     "stem": "In a population at Hardy-Weinberg equilibrium, what does the frequency of the recessive PHENOTYPE give you directly?",
-     "options": [
-      "q, which you square to get the recessive allele frequency.",
-      "q^2, which you square-root to get the recessive allele frequency q.",
-      "2pq, which you halve to get the heterozygote frequency.",
-      "p^2, which you subtract from 1 to get q."
-     ],
-     "answer": "B",
-     "why": "Only recessive homozygotes show the recessive phenotype, so their frequency is q^2; rooting it gives q."
-    },
-    {
-     "n": 27,
-     "course": "AP Biology",
-     "unit": "Hardy-Weinberg, arithmetic",
-     "stem": "In a population at equilibrium, 16 percent of individuals show the recessive phenotype. What fraction is heterozygous?",
-     "options": [
-      "0.16, because the recessive phenotype frequency equals the heterozygote frequency.",
-      "0.24, because q times p gives the heterozygote fraction.",
-      "0.48, because q = 0.4, p = 0.6, and 2pq = 0.48.",
-      "0.36, because p squared gives the heterozygote fraction."
-     ],
-     "answer": "C",
-     "why": "q^2 = 0.16 gives q = 0.4 and p = 0.6, so heterozygotes = 2(0.6)(0.4) = 0.48."
-    },
-    {
-     "n": 28,
-     "course": "AP Biology",
-     "unit": "Hardy-Weinberg assumptions",
-     "stem": "A beetle population of 1,000 is reduced to 20 individuals on an isolated island. Which assumption of Hardy-Weinberg is most likely to fail first?",
-     "options": [
-      "Random mating, because small populations always mate assortatively.",
-      "No mutation, because small populations mutate more often per individual.",
-      "No gene flow, because islands cannot exchange migrants at all.",
-      "Large population size, because allele frequencies shift by chance in a small population."
-     ],
-     "answer": "D",
-     "why": "Genetic drift is the consequence of small N: sampling error moves allele frequencies regardless of fitness."
-    },
-    {
-     "n": 29,
-     "course": "AP Biology",
-     "unit": "Equilibrium meaning",
-     "stem": "What does it mean for a population to be at Hardy-Weinberg equilibrium?",
-     "options": [
-      "Allele and genotype frequencies stay constant from generation to generation because no evolutionary force is acting.",
-      "Every individual has the same genotype, so no variation remains.",
-      "The dominant allele is being selected for, so its frequency rises.",
-      "Mutation and selection are exactly balanced, holding the recessive allele constant."
-     ],
-     "answer": "A",
-     "why": "Equilibrium means the frequencies are stable; it is the null model against which real change is measured."
-    },
-    {
-     "n": 30,
-     "course": "AP Biology",
-     "unit": "Mutation vs reshuffling",
-     "stem": "What is the correct division of labor between mutation and sexual reproduction?",
-     "options": [
-      "Meiosis creates new alleles; mutation only redistributes them among offspring.",
-      "Mutation originates new alleles; meiosis and fertilization redistribute the alleles that already exist.",
-      "Both create new alleles, which is why sexual populations mutate faster.",
-      "Neither creates variation; variation comes only from the environment."
-     ],
-     "answer": "B",
-     "why": "Mutation is the only source of new alleles; assortment, crossing over and fertilization reshuffle them into new combinations."
-    },
-    {
-     "n": 31,
-     "course": "AP Biology",
-     "unit": "Which mechanism, which stage",
-     "stem": "Which pairing correctly matches a source of variation to its stage?",
-     "options": [
-      "Independent assortment in prophase I, crossing over at metaphase I, mutation at fertilization.",
-      "Crossing over in anaphase I, independent assortment at anaphase II, mutation at fusion.",
-      "Crossing over in prophase I, independent assortment at metaphase I, random fertilization at fusion.",
-      "Random fertilization in prophase I, crossing over at metaphase II, assortment at fusion."
-     ],
-     "answer": "C",
-     "why": "Crossing over is a prophase I event, assortment happens as pairs orient at metaphase I, and fertilization combines two gametes."
-    },
-    {
-     "n": 32,
-     "course": "AP Biology",
-     "unit": "Telophase I",
-     "stem": "A human cell reaches the end of telophase I. What does each daughter cell contain?",
-     "options": [
-      "46 chromosomes, each made of one chromatid, so the cell is still diploid.",
-      "23 chromosomes, each made of one chromatid, so the cell is already a gamete.",
-      "46 chromosomes, each made of two sister chromatids, so 92 chromatids in total.",
-      "23 chromosomes, each still made of two sister chromatids, so 46 chromatids in a haploid cell."
-     ],
-     "answer": "D",
-     "why": "Meiosis I halves the set to 23 but does not split centromeres, so each chromosome is still doubled until anaphase II."
-    },
-    {
-     "n": 33,
-     "course": "AP Biology",
-     "unit": "Why both halving and doubling",
-     "stem": "Why does a sexual life cycle require both meiosis and fertilization?",
-     "options": [
-      "Meiosis halves the chromosome number and fertilization restores it, so the number stays constant across generations.",
-      "Meiosis restores the chromosome number and fertilization halves it before development.",
-      "Both halve the number, so the zygote begins with a quarter of the parental set.",
-      "Fertilization alone is sufficient; meiosis exists only to make gametes smaller."
-     ],
-     "answer": "A",
-     "why": "Without halving, each generation would double the genome; without fusion, the set could never be restored."
-    }
-   ]
-  },
   {
    "set": 2,
    "generated": "2026-11-12",
@@ -3130,6 +2662,672 @@
       "The population will continue to double each day.",
       "The population has no limiting factors.",
       "The population is growing exponentially."
+     ],
+     "answer": "A"
+    }
+   ]
+  },
+  {
+   "set": 5,
+   "generated": "2026-11-15",
+   "questions": [
+    {
+     "course": "AP Biology",
+     "unit": "Meiosis I nondisjunction",
+     "stem": "A human sperm is found to carry both an X and a Y chromosome, along with 22 autosomes. Which meiotic error most directly explains this sperm?",
+     "correct": "Nondisjunction of the X and Y homologs during meiosis I.",
+     "distractors": [
+      "Nondisjunction of sister chromatids during meiosis II.",
+      "Failure of cytokinesis after meiosis II.",
+      "Fertilization of an egg by two sperm."
+     ],
+     "why": "X and Y are homologs and normally separate in meiosis I, so a sperm carrying both reflects meiosis I nondisjunction, not meiosis II sister-chromatid failure.",
+     "n": 1,
+     "options": [
+      "Nondisjunction of the X and Y homologs during meiosis I.",
+      "Failure of cytokinesis after meiosis II.",
+      "Fertilization of an egg by two sperm.",
+      "Nondisjunction of sister chromatids during meiosis II."
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Oogenesis",
+     "stem": "A human primary oocyte completes meiosis I. The first polar body does not divide, but the secondary oocyte is fertilized and completes meiosis II. How many cells are produced, and what is their chromosome number?",
+     "correct": "One ovum and two polar bodies, each with 23 chromosomes.",
+     "distractors": [
+      "One ovum and one polar body, each with 23 chromosomes.",
+      "Two ova and two polar bodies, each with 23 chromosomes.",
+      "One ovum with 46 chromosomes and two polar bodies with 23 chromosomes."
+     ],
+     "why": "The first polar body persists as a haploid cell, and meiosis II adds a second polar body, leaving one haploid ovum with 23 chromosomes.",
+     "n": 2,
+     "options": [
+      "One ovum and one polar body, each with 23 chromosomes.",
+      "One ovum and two polar bodies, each with 23 chromosomes.",
+      "Two ova and two polar bodies, each with 23 chromosomes.",
+      "One ovum with 46 chromosomes and two polar bodies with 23 chromosomes."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Independent assortment",
+     "stem": "A human primary oocyte has genotype AaBb, with the A and B genes on different chromosome pairs. After meiosis I, the secondary oocyte carries A and b. Ignoring crossing over, what does the first polar body carry?",
+     "correct": "a and B, because homologs of both pairs segregated to opposite poles.",
+     "distractors": [
+      "A and B, because the polar body receives the sister chromatids of both chromosomes.",
+      "a and b, because independent assortment randomizes which alleles stay together.",
+      "A and b, because sister chromatids separate during meiosis I."
+     ],
+     "why": "Meiosis I separates homologs, not sister chromatids, so the polar body receives the other homolog of each pair: a and B.",
+     "n": 3,
+     "options": [
+      "A and b, because sister chromatids separate during meiosis I.",
+      "a and b, because independent assortment randomizes which alleles stay together.",
+      "a and B, because homologs of both pairs segregated to opposite poles.",
+      "A and B, because the polar body receives the sister chromatids of both chromosomes."
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Anaphase I",
+     "stem": "A cell with 2n = 10 proceeds through meiosis. At anaphase I, how many chromosomes are moving toward each pole, and how many chromatids does each of those chromosomes have?",
+     "correct": "5 chromosomes, each with 2 chromatids",
+     "distractors": [
+      "10 chromosomes, each with 1 chromatid",
+      "5 chromosomes, each with 1 chromatid",
+      "10 chromosomes, each with 2 chromatids"
+     ],
+     "why": "Anaphase I separates homologs, so each pole receives one chromosome from each of the five pairs, and each chromosome is still duplicated.",
+     "n": 4,
+     "options": [
+      "10 chromosomes, each with 2 chromatids",
+      "10 chromosomes, each with 1 chromatid",
+      "5 chromosomes, each with 1 chromatid",
+      "5 chromosomes, each with 2 chromatids"
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Sex chromosome segregation",
+     "stem": "A human male produces 400 sperm by normal meiosis. On average, how many of these sperm carry a Y chromosome?",
+     "correct": "200 sperm",
+     "distractors": [
+      "0 sperm",
+      "100 sperm",
+      "400 sperm"
+     ],
+     "why": "X and Y separate in meiosis I, so half the sperm receive Y and half receive X, giving about 200 Y-bearing sperm.",
+     "n": 5,
+     "options": [
+      "200 sperm",
+      "0 sperm",
+      "400 sperm",
+      "100 sperm"
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Light reactions",
+     "stem": "A chloroplast is illuminated with light, and then CO2 is suddenly removed from its surroundings. Which immediate change is expected?",
+     "correct": "ATP and NADPH accumulate, and O2 production continues briefly because the light reactions do not require CO2.",
+     "distractors": [
+      "O2 production stops immediately because CO2 is the final electron acceptor.",
+      "ATP and NADPH production stops immediately because the Calvin cycle cannot use them.",
+      "Water splitting stops immediately because NADP+ is no longer available."
+     ],
+     "why": "CO2 is used in the Calvin cycle, not the light reactions; without it, ATP and NADPH build up while water splitting continues briefly.",
+     "n": 6,
+     "options": [
+      "O2 production stops immediately because CO2 is the final electron acceptor.",
+      "ATP and NADPH accumulate, and O2 production continues briefly because the light reactions do not require CO2.",
+      "ATP and NADPH production stops immediately because the Calvin cycle cannot use them.",
+      "Water splitting stops immediately because NADP+ is no longer available."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Oxidative phosphorylation",
+     "stem": "A drug makes the inner mitochondrial membrane freely permeable to protons. What is the most likely immediate effect on a respiring cell?",
+     "correct": "ATP synthesis by ATP synthase decreases because the proton gradient is lost.",
+     "distractors": [
+      "O2 consumption stops immediately because electrons can no longer flow.",
+      "Glycolysis stops immediately because NADH cannot be oxidized.",
+      "ATP synthesis increases because protons reach ATP synthase more easily."
+     ],
+     "why": "The proton gradient drives ATP synthase; a leak dissipates it, so ATP synthesis falls even though electron transport may continue.",
+     "n": 7,
+     "options": [
+      "ATP synthesis increases because protons reach ATP synthase more easily.",
+      "O2 consumption stops immediately because electrons can no longer flow.",
+      "ATP synthesis by ATP synthase decreases because the proton gradient is lost.",
+      "Glycolysis stops immediately because NADH cannot be oxidized."
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Pedigree probability",
+     "stem": "Two unaffected parents have a child with an autosomal recessive disorder. What is the probability that their next child will be affected?",
+     "correct": "1/4",
+     "distractors": [
+      "1/2",
+      "3/4",
+      "0"
+     ],
+     "why": "Both parents must be carriers, and each child has a 1/4 chance of inheriting two recessive alleles; the prior affected child does not change the next child's odds.",
+     "n": 8,
+     "options": [
+      "3/4",
+      "0",
+      "1/2",
+      "1/4"
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Energy transfer",
+     "stem": "In a food chain, producers fix 50,000 kJ of energy. If 10 percent of energy is transferred to each successive trophic level, how much energy is available to the tertiary consumers?",
+     "correct": "50 kJ",
+     "distractors": [
+      "500 kJ",
+      "5,000 kJ",
+      "0.5 kJ"
+     ],
+     "why": "Energy is multiplied by 0.1 at each of three transfers: 50,000 to primary consumers is 5,000, to secondary consumers 500, and to tertiary consumers 50 kJ.",
+     "n": 9,
+     "options": [
+      "50 kJ",
+      "0.5 kJ",
+      "500 kJ",
+      "5,000 kJ"
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Mutation effects",
+     "stem": "A point mutation changes an mRNA codon from UAC (tyrosine) to UAA. What is the most likely effect on the protein produced?",
+     "correct": "Translation stops early because UAA is a stop codon.",
+     "distractors": [
+      "One amino acid is replaced by another because the codon still specifies an amino acid.",
+      "The reading frame shifts after the mutation, changing all later amino acids.",
+      "The mRNA is not transcribed because the mutation affects the promoter."
+     ],
+     "why": "UAA is a nonsense codon, so the ribosome terminates translation prematurely; a substitution would require a codon that still specifies an amino acid.",
+     "n": 10,
+     "options": [
+      "The mRNA is not transcribed because the mutation affects the promoter.",
+      "Translation stops early because UAA is a stop codon.",
+      "One amino acid is replaced by another because the codon still specifies an amino acid.",
+      "The reading frame shifts after the mutation, changing all later amino acids."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Independent assortment (2^n)",
+     "stem": "One rodent species has 2n = 8 and a related species has 2n = 12; both are heterozygous at every locus. Ignoring crossing over, how many times more gamete chromosome combinations can one individual of the 12-chromosome species produce than one individual of the 8-chromosome species?",
+     "correct": "Four times as many, since the two species produce 64 and 16 combinations respectively",
+     "distractors": [
+      "Four more combinations, because the species differ by four chromosomes in total",
+      "The same number, because both species are diploid and assort independently in the same way",
+      "Six times as many, because the larger species has six chromosome pairs"
+     ],
+     "why": "Independent assortment yields 2^n gamete combinations, where n is the haploid number: 2^6 = 64 versus 2^4 = 16, a fourfold difference. Subtracting chromosome counts (12 - 8) mistakes chromosomes for the exponent.",
+     "n": 11,
+     "options": [
+      "Six times as many, because the larger species has six chromosome pairs",
+      "The same number, because both species are diploid and assort independently in the same way",
+      "Four times as many, since the two species produce 64 and 16 combinations respectively",
+      "Four more combinations, because the species differ by four chromosomes in total"
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Meiosis S phase",
+     "stem": "A diploid germ cell enters meiosis without completing S phase, but its homologs still pair. Which description of a resulting tetrad is most accurate?",
+     "correct": "It contains two unreplicated chromosomes, so only two chromatids are present instead of four.",
+     "distractors": [
+      "It contains four chromatids because homologs replicate during synapsis.",
+      "It contains two chromosomes but four centromeres because centromeres duplicate without DNA replication.",
+      "It cannot form a spindle, so homologs never pair."
+     ],
+     "why": "S phase produces sister chromatids; skipping it leaves one chromatid per homolog, so a tetrad has two chromatids. The wrong options assume replication occurs during synapsis or that centromeres duplicate independently.",
+     "n": 12,
+     "options": [
+      "It contains four chromatids because homologs replicate during synapsis.",
+      "It cannot form a spindle, so homologs never pair.",
+      "It contains two chromosomes but four centromeres because centromeres duplicate without DNA replication.",
+      "It contains two unreplicated chromosomes, so only two chromatids are present instead of four."
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Karyotype limits",
+     "stem": "A physician examines a standard karyotype made from a person's white blood cells and sees 46 normally paired chromosomes. Why can this karyotype not reveal whether crossing over occurred during the person's meiosis?",
+     "correct": "It shows condensed mitotic chromosomes, not meiotic tetrads, so reciprocal exchanges leave no visible record.",
+     "distractors": [
+      "Crossing over changes chromosome number, which karyotypes cannot detect.",
+      "White blood cells never undergo meiosis, so they contain no homologous chromosomes.",
+      "Crossing over only occurs in gametes, which are not present in blood."
+     ],
+     "why": "A karyotype uses mitotic metaphase chromosomes; crossing over happens in meiotic prophase I and is reciprocal, so it does not change chromosome number. The wrong options confuse chromosome number with exchange of segments.",
+     "n": 13,
+     "options": [
+      "It shows condensed mitotic chromosomes, not meiotic tetrads, so reciprocal exchanges leave no visible record.",
+      "White blood cells never undergo meiosis, so they contain no homologous chromosomes.",
+      "Crossing over only occurs in gametes, which are not present in blood.",
+      "Crossing over changes chromosome number, which karyotypes cannot detect."
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Fertilization",
+     "stem": "Immediately after a human sperm and egg fuse, the zygote contains 46 chromosomes. What happens to the maternal and paternal homologs at this point?",
+     "correct": "They remain separate chromosomes in one nucleus and do not pair or cross over until meiosis.",
+     "distractors": [
+      "They immediately pair into 23 tetrads to check for damage.",
+      "They fuse into 23 chromosomes, each containing both parental DNA.",
+      "They undergo crossing over to create new allele combinations before the first mitosis."
+     ],
+     "why": "Homolog pairing and crossing over occur in prophase I of meiosis, not at fertilization. The wrong options mistakenly treat fertilization as a pairing or recombination event.",
+     "n": 14,
+     "options": [
+      "They undergo crossing over to create new allele combinations before the first mitosis.",
+      "They remain separate chromosomes in one nucleus and do not pair or cross over until meiosis.",
+      "They fuse into 23 chromosomes, each containing both parental DNA.",
+      "They immediately pair into 23 tetrads to check for damage."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Spermatogenesis",
+     "stem": "A human spermatogonium divides by mitosis, and one daughter enters meiosis while the other remains a stem cell. What is the main advantage of this arrangement?",
+     "correct": "It maintains a supply of spermatogonia while also producing gametes.",
+     "distractors": [
+      "It doubles the chromosome number before meiosis begins.",
+      "It creates genetic variation by crossing over during mitosis.",
+      "It ensures every daughter cell becomes a primary oocyte."
+     ],
+     "why": "Mitotic division renews the stem-cell population while meiosis produces sperm. The wrong options confuse mitosis with crossing over or with meiotic chromosome reduction.",
+     "n": 15,
+     "options": [
+      "It creates genetic variation by crossing over during mitosis.",
+      "It ensures every daughter cell becomes a primary oocyte.",
+      "It maintains a supply of spermatogonia while also producing gametes.",
+      "It doubles the chromosome number before meiosis begins."
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Karyotype of gamete",
+     "stem": "A karyotype is prepared from a normal human sperm rather than a somatic cell. Which result should the technician expect?",
+     "correct": "23 chromosomes, with no homologous pairs present.",
+     "distractors": [
+      "46 chromosomes arranged as 23 homologous pairs.",
+      "23 pairs of chromosomes, including one X and one Y.",
+      "46 chromosomes, but only 22 homologous pairs."
+     ],
+     "why": "A sperm is haploid with 23 chromosomes, so it has no homologous pairs. The wrong options incorrectly retain the diploid pairing seen in somatic cells.",
+     "n": 16,
+     "options": [
+      "23 pairs of chromosomes, including one X and one Y.",
+      "46 chromosomes arranged as 23 homologous pairs.",
+      "46 chromosomes, but only 22 homologous pairs.",
+      "23 chromosomes, with no homologous pairs present."
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Fertilization block",
+     "stem": "Within seconds after one sperm fuses with a human egg, the egg's membrane changes and cortical granules release enzymes that prevent additional sperm from entering. Why is this block essential?",
+     "correct": "It prevents a zygote with extra chromosome sets, which would disrupt meiosis and development.",
+     "distractors": [
+      "It prevents the egg from completing meiosis II and forming a polar body.",
+      "It ensures the zygote receives mitochondria from only the sperm.",
+      "It stops crossing over from occurring in the zygote's first mitosis."
+     ],
+     "why": "Polyspermy would create a triploid zygote with extra chromosome sets, disrupting development. The wrong options confuse this block with polar-body formation, mitochondria, or mitosis.",
+     "n": 17,
+     "options": [
+      "It prevents a zygote with extra chromosome sets, which would disrupt meiosis and development.",
+      "It prevents the egg from completing meiosis II and forming a polar body.",
+      "It ensures the zygote receives mitochondria from only the sperm.",
+      "It stops crossing over from occurring in the zygote's first mitosis."
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Egg cytoplasm",
+     "stem": "In humans, a sperm contributes a haploid nucleus and a centriole, while the egg contributes a haploid nucleus plus most of the cytoplasm. Why is the egg's large cytoplasmic contribution important after fertilization?",
+     "correct": "It supplies nutrients and organelles that support early embryonic divisions before implantation.",
+     "distractors": [
+      "It provides a second set of chromosomes that makes the zygote diploid.",
+      "It allows the zygote to skip DNA replication before its first mitosis.",
+      "It prevents independent assortment during the zygote's first meiotic division."
+     ],
+     "why": "The egg cytoplasm supports early development, but diploidy comes from the two haploid nuclei. The wrong options misattribute chromosome contribution or cell-cycle events to the cytoplasm.",
+     "n": 18,
+     "options": [
+      "It prevents independent assortment during the zygote's first meiotic division.",
+      "It supplies nutrients and organelles that support early embryonic divisions before implantation.",
+      "It provides a second set of chromosomes that makes the zygote diploid.",
+      "It allows the zygote to skip DNA replication before its first mitosis."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Meiosis I chiasmata",
+     "stem": "At metaphase I, chiasmata hold each pair of homologs together. What must happen to these chiasmata for anaphase I to proceed normally?",
+     "correct": "They must be released so the homologs can move to opposite poles.",
+     "distractors": [
+      "They must duplicate so each pole receives a chiasma.",
+      "They must move to the equator and attach to spindle fibers.",
+      "They must form a synaptonemal complex between sister chromatids."
+     ],
+     "why": "Chiasmata are temporary links between homologs; their release allows anaphase I separation. The wrong options treat chiasmata as spindle attachments or as structures that duplicate.",
+     "n": 19,
+     "options": [
+      "They must duplicate so each pole receives a chiasma.",
+      "They must move to the equator and attach to spindle fibers.",
+      "They must be released so the homologs can move to opposite poles.",
+      "They must form a synaptonemal complex between sister chromatids."
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Crossing over",
+     "stem": "During prophase I, two nonsister chromatids break and exchange equal segments. Why does this crossing over usually leave each chromosome with the same overall length and gene content?",
+     "correct": "The exchange is reciprocal, so the segments swapped between homologs are equal and replace one another.",
+     "distractors": [
+      "The broken ends are repaired by DNA polymerase using the sister chromatid as a template.",
+      "The exchanged segments are immediately degraded, leaving the chromosome shorter.",
+      "Crossing over duplicates the exchanged segments, increasing gene number on both chromatids."
+     ],
+     "why": "Crossing over is a reciprocal exchange, so equal segments replace one another and length is conserved. The wrong options describe nonreciprocal repair, loss, or duplication.",
+     "n": 20,
+     "options": [
+      "The exchanged segments are immediately degraded, leaving the chromosome shorter.",
+      "Crossing over duplicates the exchanged segments, increasing gene number on both chromatids.",
+      "The broken ends are repaired by DNA polymerase using the sister chromatid as a template.",
+      "The exchange is reciprocal, so the segments swapped between homologs are equal and replace one another."
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Cell cycle checkpoint",
+     "stem": "A cell in G1 has DNA damage. The G1/S checkpoint normally stops the cell from entering S phase. If this checkpoint fails, what is the most likely consequence?",
+     "correct": "The cell copies damaged DNA and may pass mutations to daughter cells.",
+     "distractors": [
+      "The cell immediately enters mitosis without copying its DNA.",
+      "Homologous chromosomes fail to separate during anaphase I.",
+      "The cell always undergoes apoptosis before replication."
+     ],
+     "why": "Checkpoint failure lets a cell replicate damaged DNA, increasing mutation risk in daughter cells. The wrong options confuse the G1/S checkpoint with mitosis or meiosis and ignore that apoptosis is not guaranteed.",
+     "n": 21,
+     "options": [
+      "The cell copies damaged DNA and may pass mutations to daughter cells.",
+      "The cell immediately enters mitosis without copying its DNA.",
+      "Homologous chromosomes fail to separate during anaphase I.",
+      "The cell always undergoes apoptosis before replication."
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Gene regulation",
+     "stem": "In E. coli, a mutation prevents the lac repressor from binding the operator. If glucose is low, what happens to lac operon expression?",
+     "correct": "The operon is transcribed continuously, even when lactose is absent.",
+     "distractors": [
+      "The operon is transcribed only when lactose is present.",
+      "The operon is never transcribed because the promoter is blocked.",
+      "The operon is transcribed only when glucose is high."
+     ],
+     "why": "Without repressor binding, the operator cannot block transcription, so lactose is not needed to derepress the operon. The wrong options assume the repressor is still controlling expression.",
+     "n": 22,
+     "options": [
+      "The operon is transcribed only when lactose is present.",
+      "The operon is transcribed continuously, even when lactose is absent.",
+      "The operon is transcribed only when glucose is high.",
+      "The operon is never transcribed because the promoter is blocked."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Plant life cycles",
+     "stem": "A table shows chromosome numbers in four tissues of a flowering plant: root 24, leaf 24, pollen grain 12, endosperm 36. Which conclusion is best supported?",
+     "correct": "The endosperm is triploid, consistent with a haploid sperm nucleus fusing with two haploid polar nuclei.",
+     "distractors": [
+      "The pollen grain is diploid because it has half the chromosome number of the root.",
+      "The endosperm is haploid because it is produced directly by meiosis.",
+      "The root and leaf are haploid because they contain the same number of chromosomes."
+     ],
+     "why": "Root and leaf are diploid (2n = 24), pollen is haploid (n = 12), and endosperm is 3n = 36 after double fertilization; the distractors confuse haploid with half and triploid with haploid.",
+     "n": 23,
+     "options": [
+      "The root and leaf are haploid because they contain the same number of chromosomes.",
+      "The endosperm is haploid because it is produced directly by meiosis.",
+      "The endosperm is triploid, consistent with a haploid sperm nucleus fusing with two haploid polar nuclei.",
+      "The pollen grain is diploid because it has half the chromosome number of the root."
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Crossing over",
+     "stem": "Two linked genes in a plant were scored in testcrosses at two temperatures. Recombination was 8% at 15°C and 16% at 25°C. Which conclusion is best supported?",
+     "correct": "Temperature can alter the frequency of crossing over between these linked genes.",
+     "distractors": [
+      "The two genes move to different chromosomes at 25°C.",
+      "Independent assortment increases as temperature rises.",
+      "Crossing over at 25°C occurred during mitosis rather than meiosis."
+     ],
+     "why": "Recombination between linked genes depends on crossing over in meiosis and can be environmentally modified; the distractors confuse recombination with independent assortment or mitosis.",
+     "n": 24,
+     "options": [
+      "Crossing over at 25°C occurred during mitosis rather than meiosis.",
+      "The two genes move to different chromosomes at 25°C.",
+      "Independent assortment increases as temperature rises.",
+      "Temperature can alter the frequency of crossing over between these linked genes."
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Double crossovers",
+     "stem": "In 200 tetrads with two crossovers between the same two loci, 80 yielded two recombinant chromatids, 100 yielded three, and 20 yielded four. Which conclusion is best supported?",
+     "correct": "Double crossovers can involve two, three, or four chromatids, so crossover number does not always equal recombinant chromatid number.",
+     "distractors": [
+      "Every double crossover produces four recombinant chromatids.",
+      "Crossing over occurs only between sister chromatids.",
+      "Recombination frequency always equals the number of crossovers per tetrad."
+     ],
+     "why": "Two crossovers may share a chromatid, leaving some parental combinations; the distractors assume all crossovers are independent or sister-only.",
+     "n": 25,
+     "options": [
+      "Double crossovers can involve two, three, or four chromatids, so crossover number does not always equal recombinant chromatid number.",
+      "Recombination frequency always equals the number of crossovers per tetrad.",
+      "Crossing over occurs only between sister chromatids.",
+      "Every double crossover produces four recombinant chromatids."
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Chiasma distribution",
+     "stem": "A table records chiasmata along chromosome 3 in 100 meiocytes: 60 near the ends, 25 in the middle, and 15 near the centromere. Which conclusion is best supported?",
+     "correct": "Crossing over is not uniformly distributed along the chromosome.",
+     "distractors": [
+      "Crossing over occurs only near the chromosome ends.",
+      "Chiasmata form during anaphase I.",
+      "The centromere is the most frequent site of crossing over."
+     ],
+     "why": "The data show more crossovers near the ends but not exclusively there; chiasmata form in prophase I, not anaphase I.",
+     "n": 26,
+     "options": [
+      "Chiasmata form during anaphase I.",
+      "Crossing over is not uniformly distributed along the chromosome.",
+      "The centromere is the most frequent site of crossing over.",
+      "Crossing over occurs only near the chromosome ends."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Karyotype",
+     "stem": "A table lists four chromosome pairs from a human karyotype by length and centromere position. Pair 1 is longest and metacentric; Pair 2 is long and submetacentric; Pairs 3 and 4 are short and acrocentric. Which conclusion is best supported?",
+     "correct": "Pairs 3 and 4 cannot be matched as homologs by length and centromere position alone; banding patterns are needed.",
+     "distractors": [
+      "Pair 1 must be the X chromosome pair because it is the longest.",
+      "Pairs 3 and 4 are homologous to each other because both are acrocentric.",
+      "Centromere position alone is sufficient to identify every homologous pair."
+     ],
+     "why": "Many human chromosomes share size and centromere class, so karyotype pairing relies on banding; the distractors confuse similar appearance with homology.",
+     "n": 27,
+     "options": [
+      "Pairs 3 and 4 are homologous to each other because both are acrocentric.",
+      "Pair 1 must be the X chromosome pair because it is the longest.",
+      "Pairs 3 and 4 cannot be matched as homologs by length and centromere position alone; banding patterns are needed.",
+      "Centromere position alone is sufficient to identify every homologous pair."
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Oogenesis",
+     "stem": "A table lists four human ovarian cells: Cell 1 has 46 chromosomes and 46 chromatids; Cell 2 has 46 and 92; Cell 3 has 23 and 46; Cell 4 has 23 and 23. Which cell is a secondary oocyte at metaphase II?",
+     "correct": "Cell 3, with 23 chromosomes and 46 chromatids.",
+     "distractors": [
+      "Cell 1, with 46 chromosomes and 46 chromatids.",
+      "Cell 2, with 46 chromosomes and 92 chromatids.",
+      "Cell 4, with 23 chromosomes and 23 chromatids."
+     ],
+     "why": "After meiosis I the secondary oocyte is haploid (23) but each chromosome still has two sister chromatids (46); Cell 1 is G1, Cell 2 is primary oocyte after S, and Cell 4 is an ovum.",
+     "n": 28,
+     "options": [
+      "Cell 4, with 23 chromosomes and 23 chromatids.",
+      "Cell 2, with 46 chromosomes and 92 chromatids.",
+      "Cell 1, with 46 chromosomes and 46 chromatids.",
+      "Cell 3, with 23 chromosomes and 46 chromatids."
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Linkage",
+     "stem": "A single meiocyte heterozygous at two linked loci produces four gametes with genotypes AB, AB, ab, and ab. Which conclusion is best supported?",
+     "correct": "No crossing over occurred between the two loci in this meiosis.",
+     "distractors": [
+      "The two loci are on different chromosomes and assort independently.",
+      "Crossing over occurred between sister chromatids at these loci.",
+      "The meiocyte produced four recombinant gametes."
+     ],
+     "why": "Only two gamete genotypes, each duplicated, indicate the alleles stayed linked; independent assortment or crossing over would produce additional recombinant types.",
+     "n": 29,
+     "options": [
+      "No crossing over occurred between the two loci in this meiosis.",
+      "The meiocyte produced four recombinant gametes.",
+      "The two loci are on different chromosomes and assort independently.",
+      "Crossing over occurred between sister chromatids at these loci."
+     ],
+     "answer": "A"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Gamete chromosome number",
+     "stem": "A table lists somatic chromosome numbers for four diploid species: Species 1 has 14, Species 2 has 28, Species 3 has 42, and Species 4 has 56. Which species produces gametes with 14 chromosomes?",
+     "correct": "Species 2, with 28 somatic chromosomes.",
+     "distractors": [
+      "Species 1, with 14 somatic chromosomes.",
+      "Species 3, with 42 somatic chromosomes.",
+      "Species 4, with 56 somatic chromosomes."
+     ],
+     "why": "Gametes are haploid, so a diploid species with 28 chromosomes produces gametes with 14; the distractors mistake the somatic number for the gamete number or halve the wrong species.",
+     "n": 30,
+     "options": [
+      "Species 1, with 14 somatic chromosomes.",
+      "Species 2, with 28 somatic chromosomes.",
+      "Species 3, with 42 somatic chromosomes.",
+      "Species 4, with 56 somatic chromosomes."
+     ],
+     "answer": "B"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Human gametes",
+     "stem": "A table lists chromosome contents of four human gametes: Gamete 1 has 22 autosomes + X; Gamete 2 has 22 autosomes + Y; Gamete 3 has 23 autosomes + X; Gamete 4 has 23 autosomes + Y. Which are normal sperm?",
+     "correct": "Gamete 1 and Gamete 2 only.",
+     "distractors": [
+      "Gamete 3 and Gamete 4 only.",
+      "Gamete 1 and Gamete 3 only.",
+      "Gamete 2 and Gamete 4 only."
+     ],
+     "why": "A normal sperm is haploid: 22 autosomes plus one sex chromosome; Gametes 3 and 4 have an extra autosome and are aneuploid.",
+     "n": 31,
+     "options": [
+      "Gamete 1 and Gamete 3 only.",
+      "Gamete 2 and Gamete 4 only.",
+      "Gamete 1 and Gamete 2 only.",
+      "Gamete 3 and Gamete 4 only."
+     ],
+     "answer": "C"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Pedigree analysis",
+     "stem": "A table shows a family: two unaffected parents have one affected daughter and one unaffected son. No other family history is given. Which inheritance pattern is most likely?",
+     "correct": "Autosomal recessive",
+     "distractors": [
+      "X-linked recessive",
+      "Autosomal dominant",
+      "Y-linked"
+     ],
+     "why": "Two unaffected parents producing an affected daughter indicate a recessive allele carried by both parents; X-linked recessive is unlikely because an affected daughter would need an affected father.",
+     "n": 32,
+     "options": [
+      "Y-linked",
+      "Autosomal dominant",
+      "X-linked recessive",
+      "Autosomal recessive"
+     ],
+     "answer": "D"
+    },
+    {
+     "course": "AP Biology",
+     "unit": "Blood types",
+     "stem": "A table shows a cross between a type A parent and a type B parent. Among their children are individuals with type A, type B, type AB, and type O blood. What are the parents' most likely genotypes?",
+     "correct": "IAi and IBi",
+     "distractors": [
+      "IAIA and IBIB",
+      "IAi and IBIB",
+      "IAIA and IBi"
+     ],
+     "why": "A type O child must inherit an i allele from each parent, so both parents must carry i; IAi x IBi also allows all four phenotypes.",
+     "n": 33,
+     "options": [
+      "IAi and IBi",
+      "IAIA and IBIB",
+      "IAIA and IBi",
+      "IAi and IBIB"
      ],
      "answer": "A"
     }
