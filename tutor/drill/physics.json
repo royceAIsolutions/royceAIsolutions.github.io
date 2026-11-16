@@ -1,12 +1,12 @@
 {
  "id": "physics",
  "title": "Physics — Unit 2 Forces of Earth (targets 2.1-2.3)",
- "generated": "2026-11-15",
+ "generated": "2026-11-16",
  "courses": [
   "Physics"
  ],
- "source": "Carter's three learning-target pages for Unit 2. Sets rotate: the dashboard sends Set: N on every new drill and the deck serves set N. Every option in an item carries the same word count so length cannot hint at the key.",
- "set_count": 3,
+ "source": "Carter's three learning-target pages for Unit 2. Sets rotate: the dashboard sends Set: N on every new drill. Set 4 is force diagrams plus repair of the items missed on 2026-11-15; set 5 is quantitative and level-4 extension. Every option in an item carries the same word count so length cannot hint at the key.",
+ "set_count": 5,
  "questions": [
   {
    "n": 1,
@@ -2863,6 +2863,1470 @@
       10
      ],
      "set": 3
+    }
+   ]
+  },
+  {
+   "set": 4,
+   "label": "Set 4",
+   "questions": [
+    {
+     "n": 1,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "rules",
+     "stem": "What must a free body diagram show?",
+     "options": [
+      "One isolated object and every force on it",
+      "One isolated object and every force it applies",
+      "Every object in the scene and all their forces",
+      "One moving object plus arrows showing its velocity"
+     ],
+     "answer": "A",
+     "why": "An FBD isolates a single object and lists only the external forces acting on that object.",
+     "option_words": [
+      8,
+      8,
+      9,
+      8
+     ],
+     "set": 4
+    },
+    {
+     "n": 2,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "rules",
+     "stem": "Which item is never drawn on a free body diagram?",
+     "options": [
+      "A weight arrow that points straight downward",
+      "A velocity arrow showing the object's motion",
+      "A normal force arrow perpendicular to a surface",
+      "A friction arrow pointing against the motion"
+     ],
+     "answer": "B",
+     "why": "Velocity is not a force; drawing it is the most common way to lose marks on this item.",
+     "option_words": [
+      7,
+      7,
+      8,
+      7
+     ],
+     "set": 4
+    },
+    {
+     "n": 3,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "rules",
+     "stem": "A block rests on a ramp tilted at an angle. Which arrow points straight down?",
+     "options": [
+      "Normal force, which acts perpendicular to the ramp surface",
+      "Friction, which acts parallel to the ramp surface",
+      "Weight, which always acts vertically toward Earth's center",
+      "The applied push, which acts along the ramp surface"
+     ],
+     "answer": "C",
+     "why": "Weight is always vertical regardless of the surface; only normal force tilts with the ramp.",
+     "option_words": [
+      9,
+      8,
+      8,
+      9
+     ],
+     "set": 4
+    },
+    {
+     "n": 4,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "rules",
+     "stem": "How is the normal force drawn on a free body diagram?",
+     "options": [
+      "Parallel to the surface, pointing along the motion",
+      "Straight down, parallel to the object's weight",
+      "Opposite the applied force, whatever its direction",
+      "Perpendicular to the surface, pointing away from it"
+     ],
+     "answer": "D",
+     "why": "Normal force is a contact push from the surface, so it is perpendicular and outward.",
+     "option_words": [
+      8,
+      7,
+      7,
+      8
+     ],
+     "set": 4
+    },
+    {
+     "n": 5,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "rules",
+     "stem": "How is friction drawn on a free body diagram?",
+     "options": [
+      "Along the surface, opposing the object's motion",
+      "Perpendicular to the surface, pointing away from it",
+      "Straight down, parallel to the object's weight",
+      "Along the surface, pointing with the object's motion"
+     ],
+     "answer": "A",
+     "why": "Friction resists sliding, so its arrow runs along the surface against the motion.",
+     "option_words": [
+      7,
+      8,
+      7,
+      8
+     ],
+     "set": 4
+    },
+    {
+     "n": 6,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "plate",
+     "stem": "On a plate free body diagram, which arrow should be drawn longest?",
+     "options": [
+      "Ridge push, pointing outward away from the spreading ridge",
+      "Slab pull, pointing down and inward at the trench",
+      "Friction, pointing back along the plate's base and sides",
+      "Mantle drag, pointing along the base with the flow"
+     ],
+     "answer": "B",
+     "why": "Slab pull is the dominant plate force, so it takes the longest arrow in the diagram.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 4
+    },
+    {
+     "n": 7,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "plate",
+     "stem": "In which direction does the slab pull arrow point on a plate diagram?",
+     "options": [
+      "Upward and outward, away from the sinking slab",
+      "Sideways along the ridge, parallel to the boundary",
+      "Downward and inward, following the cold sinking slab",
+      "Straight upward, directly opposite the plate's weight vector"
+     ],
+     "answer": "C",
+     "why": "The dense slab sinks, so it pulls the plate down and inward toward the mantle.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 4
+    },
+    {
+     "n": 8,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "plate",
+     "stem": "In which direction does the ridge push arrow point on a plate diagram?",
+     "options": [
+      "Inward and up-slope, toward the elevated ridge crest",
+      "Straight downward, parallel to the plate's own weight",
+      "Along the ridge axis, parallel to the spreading center",
+      "Outward and down-slope, away from the elevated ridge"
+     ],
+     "answer": "D",
+     "why": "The ridge stands high, so lithosphere slides away from it downhill: outward and down-slope.",
+     "option_words": [
+      8,
+      8,
+      9,
+      8
+     ],
+     "set": 4
+    },
+    {
+     "n": 9,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "plate",
+     "stem": "In which direction does the mantle drag arrow point on a plate diagram?",
+     "options": [
+      "Along the plate's base, in the direction of mantle flow",
+      "Across the plate's base, perpendicular to the mantle flow there",
+      "Straight down into the mantle layer beneath the plate edge",
+      "Along the plate's base, opposite the direction of the flow"
+     ],
+     "answer": "A",
+     "why": "Mantle drag is the friction-like coupling to flow beneath the plate, so it follows the flow.",
+     "option_words": [
+      10,
+      10,
+      10,
+      10
+     ],
+     "set": 4
+    },
+    {
+     "n": 10,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "balance",
+     "stem": "A plate moves at constant speed. What do the arrows in its diagram show?",
+     "options": [
+      "Driving arrows are longer than all resisting arrows",
+      "Driving and resisting arrows are equal in length",
+      "Resisting arrows are longer than all driving arrows",
+      "No arrows are needed because the plate is moving"
+     ],
+     "answer": "B",
+     "why": "Constant speed means zero net force, so the forward and backward arrows match.",
+     "option_words": [
+      8,
+      8,
+      8,
+      9
+     ],
+     "set": 4
+    },
+    {
+     "n": 11,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "balance",
+     "stem": "How is an accelerating object shown in a free body diagram?",
+     "options": [
+      "All arrows are equal, giving zero net force overall",
+      "A velocity arrow is added beside the force arrows",
+      "One direction's arrows are longer, giving a net force",
+      "The arrows are replaced by a single motion arrow"
+     ],
+     "answer": "C",
+     "why": "Unbalanced arrows mean net force, and net force means acceleration in that direction.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 4
+    },
+    {
+     "n": 12,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "labels",
+     "stem": "Which label correctly names an object's weight on a diagram?",
+     "options": [
+      "F with a subscript N, equal to mass times gravity",
+      "F with a subscript f, equal to mass times gravity",
+      "F with a subscript T, equal to mass times gravity",
+      "F with a subscript g, equal to mass times gravity"
+     ],
+     "answer": "D",
+     "why": "Weight is F_g, or mg; F_N is normal force, f is friction, and T is tension.",
+     "option_words": [
+      10,
+      10,
+      10,
+      10
+     ],
+     "set": 4
+    },
+    {
+     "n": 13,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "labels",
+     "stem": "An arrow along a plate's base is unlabeled and points against the motion. What is it?",
+     "options": [
+      "Friction, which resists sliding along the base",
+      "Slab pull, which accelerates the plate downward",
+      "Ridge push, which drives the plate outward",
+      "Mantle drag, which carries the plate along"
+     ],
+     "answer": "A",
+     "why": "The arrow opposing motion along a surface is friction, so it needs the label f.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ],
+     "set": 4
+    },
+    {
+     "n": 14,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "rules",
+     "stem": "Why are reaction forces left off a free body diagram?",
+     "options": [
+      "They always cancel, so they can never matter",
+      "They act on other objects, not on this object",
+      "They are smaller, so they can be safely ignored",
+      "They act only after the object starts moving"
+     ],
+     "answer": "B",
+     "why": "An FBD lists forces on the chosen object; the forces it exerts elsewhere belong to other diagrams.",
+     "option_words": [
+      8,
+      9,
+      9,
+      8
+     ],
+     "set": 4
+    },
+    {
+     "n": 15,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "cases",
+     "stem": "A mass hangs at rest from a single rope. What does its diagram show?",
+     "options": [
+      "Tension down and weight up, equal in length",
+      "Tension up and weight down, weight much longer",
+      "Tension up and weight down, equal in length",
+      "Only tension, because a hanging mass has no weight"
+     ],
+     "answer": "C",
+     "why": "At rest the forces balance, so tension equals weight and the arrows match.",
+     "option_words": [
+      8,
+      8,
+      8,
+      9
+     ],
+     "set": 4
+    },
+    {
+     "n": 16,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "cases",
+     "stem": "A crate slides across a level floor as you push it. Which pair opposes each other?",
+     "options": [
+      "The weight downward and the friction backward",
+      "The normal force up and the applied push",
+      "The weight downward and the push forward",
+      "The push forward and the friction backward"
+     ],
+     "answer": "D",
+     "why": "Along the direction of motion, the applied push and friction are the opposing pair.",
+     "option_words": [
+      7,
+      8,
+      7,
+      7
+     ],
+     "set": 4
+    },
+    {
+     "n": 17,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "cases",
+     "stem": "On a ramp, which force has a component pointing down the slope?",
+     "options": [
+      "Weight, whose component along the slope pulls downhill",
+      "Normal force, whose component along the slope pulls downhill",
+      "Friction, whose component along the slope pulls downhill",
+      "The normal force and friction together, pulling downhill"
+     ],
+     "answer": "A",
+     "why": "Weight is vertical, so on a tilted surface part of it points down the slope.",
+     "option_words": [
+      8,
+      9,
+      8,
+      8
+     ],
+     "set": 4
+    },
+    {
+     "n": 18,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "balance",
+     "stem": "Two horizontal forces act: 10 newtons right and 10 newtons left. What is the motion?",
+     "options": [
+      "Constant acceleration to the right, since 10 newtons",
+      "No acceleration, because the net force is zero",
+      "Constant acceleration to the left, since 10 newtons",
+      "Undefined, because equal forces cannot be drawn"
+     ],
+     "answer": "B",
+     "why": "Equal and opposite forces give zero net force, so there is no acceleration.",
+     "option_words": [
+      8,
+      8,
+      8,
+      7
+     ],
+     "set": 4
+    },
+    {
+     "n": 19,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "plate",
+     "stem": "Which vertical pair belongs on a plate diagram when balance is asked for?",
+     "options": [
+      "Weight down and slab pull up from the descending end",
+      "Ridge push down and mantle drag up under the plate",
+      "Weight down and buoyant support up from the asthenosphere",
+      "Friction down and normal force up at the plate edge"
+     ],
+     "answer": "C",
+     "why": "Vertically, the plate's weight is matched by buoyant support from the mantle beneath.",
+     "option_words": [
+      10,
+      10,
+      9,
+      10
+     ],
+     "set": 4
+    },
+    {
+     "n": 20,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "rules",
+     "stem": "Which mistake costs the most marks on a diagram?",
+     "options": [
+      "Arrows drawn slightly shorter than all of the others",
+      "The object drawn as a box, not a circle",
+      "The diagram drawn without a title or caption",
+      "All of the arrows drawn correctly but left unlabeled"
+     ],
+     "answer": "D",
+     "why": "Rubrics award the labels: an unlabeled arrow cannot be credited as a force.",
+     "option_words": [
+      9,
+      9,
+      8,
+      9
+     ],
+     "set": 4
+    },
+    {
+     "n": 21,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "plate",
+     "stem": "A plate diagram shows equal opposing arrows. What does that establish?",
+     "options": [
+      "The plate moves at a steady speed, not accelerating",
+      "The plate is still accelerating toward the trench quickly",
+      "The plate is not moving in any direction whatsoever",
+      "The plate has no forces acting on it whatsoever"
+     ],
+     "answer": "A",
+     "why": "Balanced arrows mean zero net force, which with motion means constant velocity.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 4
+    },
+    {
+     "n": 22,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "plate",
+     "stem": "Which two arrows should point in roughly opposite directions?",
+     "options": [
+      "Weight downward and ridge push outward along the plate",
+      "Ridge push outward, slab pull inward along the plate",
+      "Mantle drag and slab pull, both pointing inward there",
+      "Friction and mantle drag, both pointing with the flow"
+     ],
+     "answer": "B",
+     "why": "The along-plate pair is drive and resistance: ridge push one way, slab pull the other.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 4
+    },
+    {
+     "n": 23,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "rules",
+     "stem": "Which pair correctly sorts these forces by type?",
+     "options": [
+      "Friction acts at a distance; weight is contact",
+      "Both friction and weight are contact forces",
+      "Friction is contact; weight acts at a distance",
+      "Both friction and weight act at a distance"
+     ],
+     "answer": "C",
+     "why": "Contact forces need touching surfaces; weight is the long-range gravitational pull.",
+     "option_words": [
+      8,
+      7,
+      8,
+      8
+     ],
+     "set": 4
+    },
+    {
+     "n": 24,
+     "course": "Physics",
+     "unit": "Force diagrams",
+     "tag": "plate",
+     "stem": "Why is slab pull stronger than ridge push?",
+     "options": [
+      "A ridge stands higher, so it pushes harder",
+      "Ridge push acts on a much larger plate area",
+      "Slab pull only acts after the plate stops moving",
+      "A cold dense slab sinks under its own weight"
+     ],
+     "answer": "D",
+     "why": "The sinking slab's gravitational pull exceeds the push from the elevated ridge.",
+     "option_words": [
+      8,
+      9,
+      9,
+      9
+     ],
+     "set": 4
+    },
+    {
+     "n": 25,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "repair",
+     "stem": "Which statement about ridges and slabs is correct?",
+     "options": [
+      "Ridges push plates apart; slabs pull plates inward",
+      "Ridges pull plates together; slabs push plates apart",
+      "Ridges pull plates apart; slabs also pull plates apart",
+      "Ridges push plates apart; slabs push plates outward"
+     ],
+     "answer": "A",
+     "why": "Only slabs pull; ridges push. Reversing that is the commonest plate-force error.",
+     "option_words": [
+      8,
+      8,
+      9,
+      8
+     ],
+     "set": 4
+    },
+    {
+     "n": 26,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "repair",
+     "stem": "At an ocean-continent convergent boundary, which plate subducts?",
+     "options": [
+      "The continental plate, because it is denser there",
+      "The oceanic plate, because it is denser there",
+      "Neither plate, because both are equally dense there",
+      "Whichever plate is moving faster at that boundary"
+     ],
+     "answer": "B",
+     "why": "Density decides: old oceanic lithosphere sinks beneath lighter continental crust.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 4
+    },
+    {
+     "n": 27,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "repair",
+     "stem": "What happens to crust at a trench?",
+     "options": [
+      "Young crust is created as magma rises",
+      "Crust is neither created nor destroyed there",
+      "Old crust is destroyed as it sinks",
+      "Crust is pushed sideways without changing age"
+     ],
+     "answer": "C",
+     "why": "Trenches consume old cold crust; ridges create young hot crust.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ],
+     "set": 4
+    },
+    {
+     "n": 28,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "repair",
+     "stem": "Why does a transform boundary produce no volcanoes?",
+     "options": [
+      "Magma forms but cools before reaching the surface",
+      "The crust there is far too thick to melt",
+      "Volcanoes do form there, but only under water",
+      "Nothing rises or subducts, so no magma forms"
+     ],
+     "answer": "D",
+     "why": "Melting requires decompression or added water, and transform motion supplies neither.",
+     "option_words": [
+      8,
+      9,
+      8,
+      8
+     ],
+     "set": 4
+    },
+    {
+     "n": 29,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "repair",
+     "stem": "Symmetric magnetic stripes on the seafloor are evidence for what?",
+     "options": [
+      "New crust forming and spreading away from a ridge",
+      "Old crust being compressed and folded at a ridge",
+      "A stationary ridge sitting on older unmoving seafloor rock",
+      "Deep sediment layers aligning with the present magnetic field"
+     ],
+     "answer": "A",
+     "why": "Each reversal is recorded on both sides, so the pattern mirrors as crust spreads.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 4
+    },
+    {
+     "n": 30,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "repair",
+     "stem": "Why is heat flow highest at a mid-ocean ridge?",
+     "options": [
+      "Old crust there is still slowly heating up",
+      "New crust there is still hot and cooling",
+      "Friction along the ridge generates the extra heat",
+      "Thick sediment traps heat at the ridge axis"
+     ],
+     "answer": "B",
+     "why": "Young crust near the ridge has not cooled yet, so heat flow is high there.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 4
+    },
+    {
+     "n": 31,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "repair",
+     "stem": "Which statement separates relative from absolute dating?",
+     "options": [
+      "Relative gives years; absolute gives only the order",
+      "Relative uses isotopes; absolute uses layer superposition",
+      "Relative gives order; absolute gives ages in years",
+      "Relative dates single minerals; absolute dates whole rocks"
+     ],
+     "answer": "C",
+     "why": "Relative dating orders events; radiometric methods return a number in years.",
+     "option_words": [
+      8,
+      7,
+      8,
+      8
+     ],
+     "set": 4
+    },
+    {
+     "n": 32,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "repair",
+     "stem": "Which isotope dates a 100-million-year-old volcanic rock?",
+     "options": [
+      "Carbon-14, whose half-life fits that span",
+      "Uranium-238, whose half-life is far too long",
+      "Nitrogen-14, which volcanic rock does not contain",
+      "Potassium-40, whose half-life fits that span"
+     ],
+     "answer": "D",
+     "why": "K-40's 1.25-billion-year half-life leaves measurable parent and daughter at 100 Ma.",
+     "option_words": [
+      6,
+      7,
+      7,
+      6
+     ],
+     "set": 4
+    },
+    {
+     "n": 33,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "repair",
+     "stem": "Roughly how long is carbon-14 useful for dating?",
+     "options": [
+      "About 50,000 years, or nine to ten half-lives",
+      "About 5,000 years, or one single half-life",
+      "About 50 million years, or nine thousand half-lives",
+      "About 5 million years, or nine hundred half-lives"
+     ],
+     "answer": "A",
+     "why": "Past about ten half-lives too little parent remains, so C-14 stops near 50,000 years.",
+     "option_words": [
+      8,
+      7,
+      8,
+      8
+     ],
+     "set": 4
+    }
+   ]
+  },
+  {
+   "set": 5,
+   "label": "Set 5",
+   "questions": [
+    {
+     "n": 1,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "rates",
+     "stem": "A plate moves 5 cm per year. How far does it move in 10 million years?",
+     "options": [
+      "500 km, since 5 cm per year is 50 km per million",
+      "50 km, since 5 cm per year is 5 km per million",
+      "5,000 km, since 5 cm per year is 500 km per million",
+      "100 km, since 5 cm per year is 10 km per million"
+     ],
+     "answer": "A",
+     "why": "1 cm/yr is 10 km/My, so 5 cm/yr is 50 km/My and 10 My gives 500 km.",
+     "option_words": [
+      12,
+      12,
+      12,
+      12
+     ],
+     "set": 5
+    },
+    {
+     "n": 2,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "rates",
+     "stem": "A plate moves 2 cm per year. How far does it move in 30 million years?",
+     "options": [
+      "60 km, since 2 cm per year is 2 km per million",
+      "600 km, since 2 cm per year is 20 km per million",
+      "3,000 km, since 2 cm per year is 100 km per million",
+      "12,000 km, since 2 cm per year is 400 km per million"
+     ],
+     "answer": "B",
+     "why": "2 cm/yr equals 20 km/My, and 20 km/My over 30 My is 600 km.",
+     "option_words": [
+      12,
+      12,
+      12,
+      12
+     ],
+     "set": 5
+    },
+    {
+     "n": 3,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "arithmetic",
+     "stem": "Three half-lives of a 400-million-year isotope have passed. What is the age, and how much parent remains?",
+     "options": [
+      "800 million years, with 12.5 percent parent left",
+      "1.2 billion years, with 25 percent parent left",
+      "1.2 billion years, with 12.5 percent parent left",
+      "400 million years, with 12.5 percent parent left"
+     ],
+     "answer": "C",
+     "why": "Three half-lives times 400 My is 1.2 By, and three halvings leave 12.5 percent parent.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 5
+    },
+    {
+     "n": 4,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "arithmetic",
+     "stem": "A rock holds 6.25 percent parent and the half-life is 1 billion years. How old is it?",
+     "options": [
+      "2 billion years, since two half-lives elapsed",
+      "3 billion years, since three half-lives elapsed",
+      "6 billion years, since six half-lives elapsed",
+      "4 billion years, since four half-lives elapsed"
+     ],
+     "answer": "D",
+     "why": "100 to 50 to 25 to 12.5 to 6.25 percent is four halvings, so 4 times 1 By is 4 By.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ],
+     "set": 5
+    },
+    {
+     "n": 5,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "arithmetic",
+     "stem": "What parent-to-daughter ratio appears after exactly one half-life?",
+     "options": [
+      "1 to 1, since half the parent has decayed",
+      "1 to 3, since a quarter of the parent remains",
+      "1 to 7, since an eighth of the parent remains",
+      "1 to 15, since a sixteenth of the parent remains"
+     ],
+     "answer": "A",
+     "why": "After one half-life, half the parent has become daughter, so the ratio is 1:1.",
+     "option_words": [
+      9,
+      10,
+      10,
+      10
+     ],
+     "set": 5
+    },
+    {
+     "n": 6,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "arithmetic",
+     "stem": "A sample shows a parent-to-daughter ratio of 1 to 15. How many half-lives have passed?",
+     "options": [
+      "Three, since only 12.5 percent parent remains",
+      "Four, since only 6.25 percent parent remains",
+      "Two, since only 25 percent parent remains",
+      "Five, since only 3.125 percent parent remains"
+     ],
+     "answer": "B",
+     "why": "A 1:15 ratio leaves 6.25 percent parent, which is four halvings.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ],
+     "set": 5
+    },
+    {
+     "n": 7,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "arithmetic",
+     "stem": "A sample holds one-sixteenth of its original parent isotope. How many half-lives passed?",
+     "options": [
+      "Three, because the parent halved three separate times",
+      "Five, because the parent halved five separate times",
+      "Four, because the parent halved four separate times",
+      "Two, because the parent halved two separate times"
+     ],
+     "answer": "C",
+     "why": "One-sixteenth is 6.25 percent, which is four halvings of the original amount.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 5
+    },
+    {
+     "n": 8,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "isotopes",
+     "stem": "Which isotope suits a 2-billion-year-old granitic rock?",
+     "options": [
+      "Carbon-14, whose half-life fits only thousands of years",
+      "Potassium-40, whose half-life fits only millions of years",
+      "Radon-222, whose half-life fits only several days",
+      "Uranium-238, whose half-life fits many billions of years"
+     ],
+     "answer": "D",
+     "why": "U-238's 4.5-billion-year half-life leaves measurable parent and daughter at 2 By.",
+     "option_words": [
+      8,
+      8,
+      7,
+      8
+     ],
+     "set": 5
+    },
+    {
+     "n": 9,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "isotopes",
+     "stem": "Which isotope suits a 30,000-year-old bone fragment?",
+     "options": [
+      "Carbon-14, whose half-life fits tens of thousands of years",
+      "Uranium-238, whose half-life fits several billions of years",
+      "Rubidium-87, whose half-life fits tens of billions of years",
+      "Potassium-40, whose half-life fits about a billion years there"
+     ],
+     "answer": "A",
+     "why": "A 5,730-year half-life means measurable parent remains at 30,000 years, about five half-lives.",
+     "option_words": [
+      9,
+      8,
+      9,
+      9
+     ],
+     "set": 5
+    },
+    {
+     "n": 10,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "reasoning",
+     "stem": "Which equation gives the age of a sample once half-lives are counted?",
+     "options": [
+      "Age equals the half-life divided by number of half-lives",
+      "Age equals the number of half-lives times the half-life",
+      "Age equals the percentage of parent times the half-life",
+      "Age equals the daughter percentage times the parent count"
+     ],
+     "answer": "B",
+     "why": "Counting halvings gives n, and multiplying n by the isotope's half-life gives the age.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 5
+    },
+    {
+     "n": 11,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "graphs",
+     "stem": "A parent-remaining curve falls from 100 to 50 to 25 percent. What does each drop show?",
+     "options": [
+      "Two half-lives passing, measured along the time axis",
+      "One daughter isotope escaping from the mineral grain",
+      "One half-life passing, measured along the time axis",
+      "A single mineral grain starting to crystallize slowly"
+     ],
+     "answer": "C",
+     "why": "The curve is exponential, so every halving of the y-value is one half-life on the x-axis.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 5
+    },
+    {
+     "n": 12,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "reasoning",
+     "stem": "What does a reliable radiometric date require of the mineral?",
+     "options": [
+      "An open system, with daughter atoms escaping out steadily",
+      "A melted state, so parent and daughter can mix",
+      "A heated state, so the ratio can reset completely",
+      "A closed system, with no parent or daughter escaping"
+     ],
+     "answer": "D",
+     "why": "Gain or loss of either isotope breaks the ratio, so the mineral must stay closed.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 5
+    },
+    {
+     "n": 13,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "relative",
+     "stem": "In an undisturbed sequence, which layer is oldest?",
+     "options": [
+      "The bottom layer, by the principle of superposition",
+      "The top layer, by the principle of superposition",
+      "The middle layer, because it is squeezed hardest",
+      "All layers are the same age in undisturbed rock"
+     ],
+     "answer": "A",
+     "why": "Superposition: undisturbed layers stack with the oldest at the base.",
+     "option_words": [
+      8,
+      8,
+      8,
+      9
+     ],
+     "set": 5
+    },
+    {
+     "n": 14,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "relative",
+     "stem": "What does an unconformity record in a sequence?",
+     "options": [
+      "A single layer that formed unusually quickly",
+      "A gap in time from erosion or non-deposition",
+      "A fault that shifted layers sideways later",
+      "A fold that inverted the whole sequence"
+     ],
+     "answer": "B",
+     "why": "An unconformity is missing time: material was eroded or never deposited.",
+     "option_words": [
+      7,
+      8,
+      7,
+      7
+     ],
+     "set": 5
+    },
+    {
+     "n": 15,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "relative",
+     "stem": "A sandstone contains a pebble of granite. Which is older?",
+     "options": [
+      "The sandstone, which formed before the granite pebble",
+      "Both formed at the same time in one event",
+      "The granite pebble, which formed before the sandstone",
+      "The order cannot be determined from one pebble"
+     ],
+     "answer": "C",
+     "why": "The inclusion principle: a clast must exist before the rock that contains it.",
+     "option_words": [
+      8,
+      9,
+      8,
+      8
+     ],
+     "set": 5
+    },
+    {
+     "n": 16,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "relative",
+     "stem": "How are index fossils used in a rock sequence?",
+     "options": [
+      "To measure the absolute age in millions of years",
+      "To show that no folding ever affected the layers",
+      "To prove the sediment was never deposited in water",
+      "To identify layers of the same relative age"
+     ],
+     "answer": "D",
+     "why": "Index fossils are short-lived, wide-ranging species, so they correlate relative age.",
+     "option_words": [
+      9,
+      9,
+      9,
+      8
+     ],
+     "set": 5
+    },
+    {
+     "n": 17,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "relative",
+     "stem": "A fault offsets four layers. What is its age relative to them?",
+     "options": [
+      "Younger than the layers it offsets",
+      "Older than the layers it offsets",
+      "Same age as the lowest layer",
+      "Impossible to place without radiometric dating"
+     ],
+     "answer": "A",
+     "why": "Cross-cutting: whatever does the cutting is younger than what it cuts.",
+     "option_words": [
+      6,
+      6,
+      6,
+      6
+     ],
+     "set": 5
+    },
+    {
+     "n": 18,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "dating",
+     "stem": "A fossil lies between ash dated 80 Ma and ash dated 74 Ma. What is its age?",
+     "options": [
+      "Exactly 77 million years old in every case",
+      "Anywhere between 74 and 80 million years old",
+      "Older than 80 million years, younger than 74",
+      "Between 74 and 80 thousand years of age"
+     ],
+     "answer": "B",
+     "why": "Bracketing gives a range: younger than 80 Ma, older than 74 Ma.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 5
+    },
+    {
+     "n": 19,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "age",
+     "stem": "Why is no ocean crust older than about 200 million years?",
+     "options": [
+      "Ocean crust forms too slowly to reach older ages",
+      "Ocean crust is melted away by ridge volcanism only",
+      "Ocean crust is destroyed at trenches by subduction",
+      "Ocean crust is buried by sediment before it ages"
+     ],
+     "answer": "C",
+     "why": "Oceanic lithosphere recycles into the mantle, so seafloor is geologically young.",
+     "option_words": [
+      9,
+      9,
+      8,
+      9
+     ],
+     "set": 5
+    },
+    {
+     "n": 20,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "age",
+     "stem": "Where in an ocean basin is the crust oldest?",
+     "options": [
+      "At the ridge axis, where crust is newest",
+      "Midway between the ridge and the trench",
+      "Directly beneath the continental shelf edge there",
+      "Farthest from the ridge, nearest the trench"
+     ],
+     "answer": "D",
+     "why": "Crust ages with distance from the spreading center, so the oldest lies near trenches.",
+     "option_words": [
+      8,
+      7,
+      7,
+      7
+     ],
+     "set": 5
+    },
+    {
+     "n": 21,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "magnetic",
+     "stem": "What does a mirrored magnetic stripe pattern across a ridge indicate?",
+     "options": [
+      "Crust formed at the ridge and moved outward both ways",
+      "Crust formed at both edges and moved toward the ridge",
+      "The ridge axis migrated slowly while the crust stayed fixed",
+      "Magnetic minerals settled from the ocean water in stripes"
+     ],
+     "answer": "A",
+     "why": "Symmetry means both sides left the same axis, which is spreading.",
+     "option_words": [
+      10,
+      10,
+      10,
+      9
+     ],
+     "set": 5
+    },
+    {
+     "n": 22,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "gps",
+     "stem": "GPS vectors at a divergent boundary point in which directions?",
+     "options": [
+      "Toward the boundary from both sides here",
+      "Away from the boundary on both sides",
+      "Same direction on both sides of the boundary",
+      "Vertically downward into the mantle on both sides"
+     ],
+     "answer": "B",
+     "why": "Divergence means the plates separate, so each vector points away from the boundary.",
+     "option_words": [
+      7,
+      7,
+      8,
+      8
+     ],
+     "set": 5
+    },
+    {
+     "n": 23,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "heat",
+     "stem": "How does heat flow change across an ocean basin?",
+     "options": [
+      "It is lowest at the ridge and rises with crust age",
+      "It is uniform across the whole basin at all ages",
+      "It is highest at the ridge and falls with crust age",
+      "It is highest at the trench and lowest at the ridge"
+     ],
+     "answer": "C",
+     "why": "Young hot crust near the ridge loses heat fastest, so measured flow is highest there.",
+     "option_words": [
+      11,
+      10,
+      11,
+      11
+     ],
+     "set": 5
+    },
+    {
+     "n": 24,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "convergent",
+     "stem": "Why does one plate descend at an ocean-continent boundary?",
+     "options": [
+      "The continental plate is denser than the oceanic plate",
+      "The oceanic plate is much thicker and therefore heavier",
+      "The continental plate moves faster and pushes it down",
+      "The oceanic plate is denser than the mantle beneath"
+     ],
+     "answer": "D",
+     "why": "Old cold oceanic lithosphere is dense enough to sink; continental crust is buoyant.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 5
+    },
+    {
+     "n": 25,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "convergent",
+     "stem": "How do earthquake depths reveal a subducting slab?",
+     "options": [
+      "Depth increases inland, following the dipping cold slab",
+      "Depth decreases inland, following the rising hot mantle",
+      "Depth stays shallow and constant across the margin",
+      "Depth is deepest at the ridge and trench"
+     ],
+     "answer": "A",
+     "why": "The Benioff zone tracks the slab, so quakes deepen away from the trench.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 5
+    },
+    {
+     "n": 26,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "transform",
+     "stem": "Which set of observations identifies a transform boundary?",
+     "options": [
+      "Deep quakes, a trench, and explosive volcanoes",
+      "Shallow quakes, offset rock units, and no volcanoes",
+      "Shallow quakes, new crust, and high heat flow",
+      "Intermediate quakes, folded rock, and thick crust"
+     ],
+     "answer": "B",
+     "why": "Lateral slip produces shallow quakes and offsets, with no magma generated.",
+     "option_words": [
+      7,
+      8,
+      8,
+      7
+     ],
+     "set": 5
+    },
+    {
+     "n": 27,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "convergent",
+     "stem": "What forms when two continental plates collide?",
+     "options": [
+      "A trench with deep quakes and island arcs",
+      "A ridge with new crust and shallow quakes",
+      "A mountain belt with thickened crust, no trench",
+      "A transform fault with offset stream channels there"
+     ],
+     "answer": "C",
+     "why": "Neither continent subducts easily, so the crust shortens and thickens instead.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 5
+    },
+    {
+     "n": 28,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "divergent",
+     "stem": "Why does melting occur beneath a mid-ocean ridge?",
+     "options": [
+      "Water from the slab lowers the rock's melting point",
+      "Friction between the separating plates generates the magma",
+      "Compression at the ridge squeezes rock into liquid",
+      "Rising mantle decompresses, sharply lowering its melting point"
+     ],
+     "answer": "D",
+     "why": "Decompression melting as mantle rises feeds the ridge; water-driven melting belongs to subduction.",
+     "option_words": [
+      9,
+      8,
+      8,
+      8
+     ],
+     "set": 5
+    },
+    {
+     "n": 29,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "heat",
+     "stem": "Which pair correctly distinguishes Earth's two heat sources?",
+     "options": [
+      "Primordial is leftover; radiogenic is produced now",
+      "Primordial is produced now; radiogenic is leftover",
+      "Primordial comes from the Sun; radiogenic from friction",
+      "Primordial comes from tides; radiogenic from pressure"
+     ],
+     "answer": "A",
+     "why": "Accretional heat still draining out is primordial; decay heat is generated continuously.",
+     "option_words": [
+      7,
+      7,
+      8,
+      7
+     ],
+     "set": 5
+    },
+    {
+     "n": 30,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "seismic",
+     "stem": "What does the S-wave shadow zone prove about the outer core?",
+     "options": [
+      "It is solid, because shear waves speed up inside it",
+      "It is liquid, because shear waves cannot cross it",
+      "It is empty, because no waves reach that region",
+      "It is denser than the inner core beneath it"
+     ],
+     "answer": "B",
+     "why": "S-waves require a solid, so their absence beyond the shadow is evidence of liquid.",
+     "option_words": [
+      10,
+      9,
+      9,
+      9
+     ],
+     "set": 5
+    },
+    {
+     "n": 31,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "layers",
+     "stem": "Why is the inner core solid while the outer core is liquid?",
+     "options": [
+      "The inner core contains no iron to melt",
+      "The inner core is cooler than outer core rock",
+      "Pressure at that depth raises the melting point",
+      "Convection keeps the inner core from ever melting"
+     ],
+     "answer": "C",
+     "why": "Higher pressure raises the melting point, so the deepest iron solidifies despite being hotter.",
+     "option_words": [
+      8,
+      9,
+      8,
+      8
+     ],
+     "set": 5
+    },
+    {
+     "n": 32,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "extension",
+     "stem": "Mars shows little plate motion today. What best accounts for that?",
+     "options": [
+      "A smaller planet kept more radiogenic heat inside",
+      "A smaller planet has a mantle that convects faster",
+      "A smaller planet never had any radioactive isotopes",
+      "A smaller planet lost heat faster, weakening convection"
+     ],
+     "answer": "D",
+     "why": "Small bodies have more surface per volume, so they cool and shut down convection sooner.",
+     "option_words": [
+      8,
+      9,
+      8,
+      8
+     ],
+     "set": 5
+    },
+    {
+     "n": 33,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "extension",
+     "stem": "Early Earth held more short-lived isotopes. What followed inside it?",
+     "options": [
+      "Stronger convection and much more vigorous tectonics",
+      "Weaker convection and a completely static crust",
+      "A colder mantle with no plumes anywhere",
+      "A liquid inner core with no field"
+     ],
+     "answer": "A",
+     "why": "More decay heat meant stronger convection, which is why ancient crust records intense activity.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ],
+     "set": 5
     }
    ]
   }
