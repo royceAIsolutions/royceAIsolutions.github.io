@@ -1406,5 +1406,113 @@
       }
     ],
     "src": "web"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 22,
+    "total": 33,
+    "percent": 67,
+    "subject": "Physics",
+    "date": "2026-11-16",
+    "ts": 1794793945253,
+    "missed": [
+      {
+        "n": 10,
+        "q": "Slab pull is the dominant plate force, so its vector should be longest and labeled.",
+        "p": "C",
+        "k": "B",
+        "o": [
+          "Rising hot rock pushes the plate away from ridges",
+          "Sinking cool rock drags the plate toward the trench",
+          "Spreading ridges pull the plate toward the nearby continent",
+          "Mantle drag pushes the plate upward into the crust"
+        ]
+      },
+      {
+        "n": 12,
+        "q": "Divergence creates new oceanic crust at a ridge, with shallow quakes and decompression melting.",
+        "p": "C",
+        "k": "D",
+        "o": [
+          "Folded mountains and no trench, because neither plate subduc",
+          "A ridge and rift valley, because plates move apart",
+          "A transform fault, because the plates slide past sideways",
+          "Trench and volcanic arc, because the oceanic plate subducts"
+        ]
+      },
+      {
+        "n": 14,
+        "q": "Continental crust is too buoyant to subduct, so the plates shorten and thicken into a mountain belt.",
+        "p": "C",
+        "k": "B",
+        "o": [
+          "Deep earthquakes, island arcs, and explosive volcanism",
+          "Shallow earthquakes, offset stream channels, no volcanism",
+          "Shallow earthquakes, new oceanic crust, and ridges",
+          "Intermediate earthquakes, folded rock, and thick crust"
+        ]
+      },
+      {
+        "n": 15,
+        "q": "The answer is B — Transform motion is strike-slip: shallow quakes, offset features, and no magma because nothing rises o",
+        "p": "A",
+        "k": "C",
+        "o": [
+          "Quakes follow the hot mantle as it rises",
+          "Quakes follow the ridge as new crust forms",
+          "Quakes follow the cold slab as it sinks",
+          "Quakes follow the fault as plates slide sideways"
+        ]
+      },
+      {
+        "n": 17,
+        "q": "Melting needs decompression or added water; transform motion supplies neither, so no magma is generated.",
+        "p": "D",
+        "k": "A",
+        "o": [
+          "New crust records field reversals as it spreads outward",
+          "Old crust is folded by compression at the ridge",
+          "The ridge moves sideways across a stationary ocean floor",
+          "Deep sediment layers align with the present magnetic field"
+        ]
+      },
+      {
+        "n": 19,
+        "q": "Oceanic lithosphere is destroyed at subduction zones, so the oldest seafloor is far younger than the continents.",
+        "p": "A",
+        "k": "C",
+        "o": [
+          "Old crust far from the ridge is heating up",
+          "Friction at the ridge generates heat along the fault",
+          "New crust near the ridge is hot and cooling",
+          "Thick sediment insulates the crust far from the ridge"
+        ]
+      },
+      {
+        "n": 26,
+        "q": "Daughter at 75 percent means parent at 25 percent, which is two halvings.",
+        "p": "C",
+        "k": "B",
+        "o": [
+          "Its 1.25-billion-year half-life leaves too little daughter",
+          "Its 5,730-year half-life leaves too little parent",
+          "Its 4.5-billion-year half-life leaves too little parent",
+          "Its 48.8-billion-year half-life leaves too little daughter"
+        ]
+      },
+      {
+        "n": 28,
+        "q": "K-40 has a half-life near 1.25 billion years and is built into volcanic minerals, so it dates the eruption.",
+        "p": "B",
+        "k": "D",
+        "o": [
+          "Relative gives years; absolute gives only the relative order",
+          "Relative uses the radioactive isotopes; absolute uses rock s",
+          "Relative dates single minerals; absolute dates whole rock un",
+          "Relative gives order; absolute gives an age in years"
+        ]
+      }
+    ],
+    "src": "web"
   }
 ]
