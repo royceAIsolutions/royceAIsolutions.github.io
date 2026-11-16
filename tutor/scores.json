@@ -1514,5 +1514,113 @@
       }
     ],
     "src": "web"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 23,
+    "total": 33,
+    "percent": 70,
+    "subject": "Physics",
+    "date": "2026-11-16",
+    "ts": 1794795690565,
+    "missed": [
+      {
+        "n": 6,
+        "q": "The opposing arrow is resistance: friction along the base and at the boundary.",
+        "p": "D",
+        "k": "B",
+        "o": [
+          "Thermal energy becomes nuclear potential energy",
+          "Nuclear potential energy becomes thermal energy",
+          "Mechanical energy becomes chemical bond energy",
+          "Chemical energy becomes gravitational potential energy"
+        ]
+      },
+      {
+        "n": 8,
+        "q": "Slow heat loss through a thick insulating mantle plus ongoing decay keeps the interior hot.",
+        "p": "C",
+        "k": "D",
+        "o": [
+          "Convergent, where one plate descends beneath another",
+          "Divergent, where upwelling magma creates new crust",
+          "Collisional, where two continental plates weld together",
+          "Transform, where plates slide horizontally past one another"
+        ]
+      },
+      {
+        "n": 13,
+        "q": "100 km over 5 My is 20 km/My, and since 1 cm/yr is 10 km/My that is 2 cm/yr.",
+        "p": "B",
+        "k": "A",
+        "o": [
+          "Crust at the trench is older and being destroyed",
+          "Crust at the trench is younger and being created",
+          "Crust at the trench is hotter and still cooling",
+          "Crust at the trench is thinner and newly formed"
+        ]
+      },
+      {
+        "n": 14,
+        "q": "The answer is A — Trenches consume old cold crust; ridges create young hot crust, so age and heat separate them.",
+        "p": "A",
+        "k": "B",
+        "o": [
+          "Continental lithosphere is much denser than the oceanic type",
+          "Old oceanic lithosphere is denser than the mantle below",
+          "Oceanic lithosphere is much thicker than the continental lit",
+          "Continental lithosphere is much colder than the oceanic lith"
+        ]
+      },
+      {
+        "n": 15,
+        "q": "The answer is B — Cold, old oceanic lithosphere is dense enough to sink; continental crust is buoyant and resists subduc",
+        "p": "A",
+        "k": "C",
+        "o": [
+          "A longer slab increases friction along the plate base",
+          "A longer slab raises ridge push from the spreading center",
+          "A longer slab exerts more slab pull on the plate",
+          "A longer slab removes mantle drag from the plate"
+        ]
+      },
+      {
+        "n": 26,
+        "q": "Absolute dating gives an age in years, which is what a radiometric result provides.",
+        "p": "C",
+        "k": "B",
+        "o": [
+          "The lowest layer, because superposition always applies here",
+          "The dike, because it cuts the other units",
+          "The top layer, because it sits above the others",
+          "All three layers, because they all formed together"
+        ]
+      },
+      {
+        "n": 27,
+        "q": "The answer is B — Cross-cutting: the feature doing the cutting is younger than everything it cuts.",
+        "p": "B",
+        "k": "C",
+        "o": [
+          "They give an absolute age measured in years",
+          "They show which layer was later metamorphosed",
+          "They identify layers of the same relative age",
+          "They prove the layers were never intensely folded"
+        ]
+      },
+      {
+        "n": 30,
+        "q": "Daughter at 87.5 percent leaves parent at 12.5 percent, which is three halvings.",
+        "p": "A",
+        "k": "B",
+        "o": [
+          "Carbon-14, whose half-life suits that age range",
+          "Potassium-40, whose half-life suits that age range",
+          "Uranium-238, whose half-life is too long to resolve",
+          "Nitrogen-14, which does not occur in volcanic rock"
+        ]
+      }
+    ],
+    "src": "web"
   }
 ]
