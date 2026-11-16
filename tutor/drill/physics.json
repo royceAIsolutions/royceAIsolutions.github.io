@@ -5,7 +5,8 @@
  "courses": [
   "Physics"
  ],
- "source": "Carter's three learning-target pages for Unit 2 (2.1 interior processes, 2.2 geological cause and effect, 2.3 geologic time), rebuilt as 33 items with equal-word-count options so length cannot hint at the answer.",
+ "source": "Carter's three learning-target pages for Unit 2. Sets rotate: the dashboard sends Set: N on every new drill and the deck serves set N. Every option in an item carries the same word count so length cannot hint at the key.",
+ "set_count": 3,
  "questions": [
   {
    "n": 1,
@@ -698,6 +699,2171 @@
     7,
     7,
     7
+   ]
+  }
+ ],
+ "sets": [
+  {
+   "set": 1,
+   "label": "Set 1",
+   "questions": [
+    {
+     "n": 1,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "model",
+     "stem": "A cross-section model has to show which layer is liquid. Which claim is correct, and what is the evidence?",
+     "options": [
+      "Outer core; shear waves stop at this boundary",
+      "Mantle; it flows slowly under the rigid plates",
+      "Inner core; it is hotter than layers above",
+      "Crust; it bends plastically beneath the deep oceans"
+     ],
+     "answer": "A",
+     "why": "Only the outer core is liquid, and S-waves cannot travel through a liquid, which is the seismic evidence.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ]
+    },
+    {
+     "n": 2,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "model",
+     "stem": "The inner core is hotter than the outer core, yet it is solid. Why?",
+     "options": [
+      "Iron becomes solid as it loses radiogenic heat",
+      "Pressure at that depth raises the melting point",
+      "Inner core is actually cooler than the mantle",
+      "Convection in the core removes heat very quickly"
+     ],
+     "answer": "B",
+     "why": "Melting point rises with pressure, so the deepest iron stays solid despite a temperature above the outer core's.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ]
+    },
+    {
+     "n": 3,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "model",
+     "stem": "A student writes that the mantle is molten rock. Which correction is right?",
+     "options": [
+      "The mantle is liquid only beneath the deep oceans",
+      "The mantle is solid and never deforms at all",
+      "The mantle is solid rock that flows over time",
+      "The mantle is a gas at those asthenosphere depths"
+     ],
+     "answer": "C",
+     "why": "The mantle is solid; it deforms plastically over geologic time, and only the outer core is liquid.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ]
+    },
+    {
+     "n": 4,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "heat",
+     "stem": "Where inside Earth do nuclear processes occur, and which process is it?",
+     "options": [
+      "Crust only; fusion of hydrogen into helium gas",
+      "Core only; fusion of iron into heavier nuclei",
+      "Mantle only; fission of silicate minerals into oxides",
+      "Core and mantle; radioactive decay of heavy isotopes"
+     ],
+     "answer": "D",
+     "why": "Long-lived isotopes such as U-238, U-235, Th-232 and K-40 decay in the core and mantle; fusion is a stellar process.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ]
+    },
+    {
+     "n": 5,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "heat",
+     "stem": "How does one radioactive decay event deliver heat to the surrounding rock?",
+     "options": [
+      "Emitted particles and gamma rays are absorbed",
+      "The nucleus releases chemical bonds that burn",
+      "Friction between decaying atoms generates the heat",
+      "Magnetic reconnection converts each decay into photons"
+     ],
+     "answer": "A",
+     "why": "Decay energy leaves as particle kinetic energy and gamma radiation, which the surrounding rock absorbs and thermalizes.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "n": 6,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "heat",
+     "stem": "Which pair correctly distinguishes the two sources of Earth's internal heat?",
+     "options": [
+      "Primordial is continuous; radiogenic is leftover heat",
+      "Primordial is leftover; radiogenic is produced continuously",
+      "Primordial is solar; radiogenic comes from friction",
+      "Primordial is tidal; radiogenic comes from pressure"
+     ],
+     "answer": "B",
+     "why": "Primordial heat is accretional heat still draining out; radiogenic heat is generated now by radioactive decay.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "n": 7,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "heat",
+     "stem": "If radiogenic heating declined sharply, what would happen to plate motion?",
+     "options": [
+      "Convection would strengthen and plates would speed",
+      "Convection would reverse and plates would stop",
+      "Convection would weaken and plates would slow",
+      "Convection stops although plates continue moving quickly"
+     ],
+     "answer": "C",
+     "why": "Decay heat sustains convection; less heat means weaker convection, less slab pull, and slower plates.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "n": 8,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "convection",
+     "stem": "Why does hot mantle material rise in a convection cell?",
+     "options": [
+      "It is pushed upward by the overriding plate above",
+      "It is denser than the material beneath the crust",
+      "It is pulled upward by the nearby sinking slab",
+      "It is less dense than the surrounding cooler rock"
+     ],
+     "answer": "D",
+     "why": "Rising material is buoyant because it is less dense; nothing needs to push it up.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ]
+    },
+    {
+     "n": 9,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "forces",
+     "stem": "On a force vector diagram of a plate, which arrow should be drawn largest?",
+     "options": [
+      "Slab pull at the subducting end, pointing downward",
+      "Ridge push at the spreading end, pointing outward",
+      "Friction along the plate base, opposing its motion",
+      "Mantle drag along the base, following the flow"
+     ],
+     "answer": "A",
+     "why": "Slab pull is the dominant plate force, so its vector should be longest and labeled.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ]
+    },
+    {
+     "n": 10,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "forces",
+     "stem": "Which statement correctly connects convection to a force acting on a plate?",
+     "options": [
+      "Rising hot rock pushes the plate away from ridges",
+      "Sinking cool rock drags the plate toward the trench",
+      "Spreading ridges pull the plate toward the nearby continent",
+      "Mantle drag pushes the plate upward into the crust"
+     ],
+     "answer": "B",
+     "why": "The descending limb drags lithosphere down and inward, which is the mechanism behind slab pull.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ]
+    },
+    {
+     "n": 11,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "divergent",
+     "stem": "At a divergent boundary in an ocean basin, which feature forms?",
+     "options": [
+      "A deep trench with deep earthquakes and island arcs",
+      "A strike-slip fault with shallow quakes and no magma",
+      "A mid-ocean ridge with shallow earthquakes and active volcanism",
+      "A folded mountain belt made of thickened continental crust"
+     ],
+     "answer": "C",
+     "why": "Divergence creates new oceanic crust at a ridge, with shallow quakes and decompression melting.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ]
+    },
+    {
+     "n": 12,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "convergent",
+     "stem": "An oceanic plate meets a continental plate. What forms, and why?",
+     "options": [
+      "Folded mountains and no trench, because neither plate subducts",
+      "A ridge and rift valley, because plates move apart",
+      "A transform fault, because the plates slide past sideways",
+      "Trench and volcanic arc, because the oceanic plate subducts"
+     ],
+     "answer": "D",
+     "why": "Oceanic lithosphere is denser, so it subducts, producing a trench and a volcanic arc above the slab.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ]
+    },
+    {
+     "n": 13,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "convergent",
+     "stem": "Two continental plates collide. What is the result?",
+     "options": [
+      "A folded mountain belt with thickened crust, no trench",
+      "A trench with deep earthquakes and explosive arc volcanoes",
+      "A mid-ocean ridge with new crust and shallow quakes",
+      "A transform fault with offset streams and no volcanism"
+     ],
+     "answer": "A",
+     "why": "Continental crust is too buoyant to subduct, so the plates shorten and thicken into a mountain belt.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ]
+    },
+    {
+     "n": 14,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "transform",
+     "stem": "Which set of features belongs to a transform boundary?",
+     "options": [
+      "Deep earthquakes, island arcs, and explosive volcanism",
+      "Shallow earthquakes, offset stream channels, no volcanism",
+      "Shallow earthquakes, new oceanic crust, and ridges",
+      "Intermediate earthquakes, folded rock, and thick crust"
+     ],
+     "answer": "B",
+     "why": "Transform motion is strike-slip: shallow quakes, offset features, and no magma because nothing rises or sinks.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "n": 15,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "convergent",
+     "stem": "Earthquake depth increases with distance from a trench. What does that show?",
+     "options": [
+      "Quakes follow the hot mantle as it rises",
+      "Quakes follow the ridge as new crust forms",
+      "Quakes follow the cold slab as it sinks",
+      "Quakes follow the fault as plates slide sideways"
+     ],
+     "answer": "C",
+     "why": "The Benioff zone tracks the dipping slab, which is why deep quakes occur only at subduction zones.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ]
+    },
+    {
+     "n": 16,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "transform",
+     "stem": "Why does a transform boundary produce no volcanoes?",
+     "options": [
+      "Magma forms there but cannot reach the surface very quickly",
+      "The crust is too thin to hold a magma chamber",
+      "The plates there move too slowly to generate any heat",
+      "No material rises or subducts there, so nothing ever melts"
+     ],
+     "answer": "D",
+     "why": "Melting needs decompression or added water; transform motion supplies neither, so no magma is generated.",
+     "option_words": [
+      10,
+      10,
+      10,
+      10
+     ]
+    },
+    {
+     "n": 17,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "magnetic",
+     "stem": "Magnetic striping on the seafloor is symmetric about a ridge. What does it prove?",
+     "options": [
+      "New crust records field reversals as it spreads outward",
+      "Old crust is folded by compression at the ridge",
+      "The ridge moves sideways across a stationary ocean floor",
+      "Deep sediment layers align with the present magnetic field"
+     ],
+     "answer": "A",
+     "why": "Basalt records the field as it cools, and the mirrored pattern on both sides shows crust moving away from the ridge.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ]
+    },
+    {
+     "n": 18,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "age",
+     "stem": "Ocean crust is nowhere older than about 200 million years. Why?",
+     "options": [
+      "Ocean crust forms too slowly to accumulate older rock",
+      "Ocean crust is recycled into trenches at subduction zones",
+      "The ocean crust is continually melted by ridge volcanism",
+      "Ocean crust is buried by sediment before aging further"
+     ],
+     "answer": "B",
+     "why": "Oceanic lithosphere is destroyed at subduction zones, so the oldest seafloor is far younger than the continents.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ]
+    },
+    {
+     "n": 19,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "heat",
+     "stem": "Heat flow is high at a ridge and low far from it. What explains the pattern?",
+     "options": [
+      "Old crust far from the ridge is heating up",
+      "Friction at the ridge generates heat along the fault",
+      "New crust near the ridge is hot and cooling",
+      "Thick sediment insulates the crust far from the ridge"
+     ],
+     "answer": "C",
+     "why": "Crust cools and thickens with distance from the ridge, so heat flow falls as the lithosphere ages.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ]
+    },
+    {
+     "n": 20,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "gps",
+     "stem": "A GPS station moves 4 cm per year. How far does it travel in 25 million years?",
+     "options": [
+      "100 km, since 4 cm per year is 4 km per million",
+      "10,000 km, since 4 cm per year is 400 km per million",
+      "400 km, since 4 cm per year is 16 km per million",
+      "1,000 km, since 4 cm per year is 40 km per million"
+     ],
+     "answer": "D",
+     "why": "1 cm/yr equals 10 km per million years, so 4 cm/yr gives 40 km/My and 25 My gives 1,000 km.",
+     "option_words": [
+      12,
+      12,
+      12,
+      12
+     ]
+    },
+    {
+     "n": 21,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "half-life",
+     "stem": "How is a half-life defined for a radioactive isotope?",
+     "options": [
+      "The time for half the parent atoms to decay",
+      "The time for all parent atoms to decay completely",
+      "The time for half the daughter atoms to escape",
+      "The time for the isotope to change its temperature"
+     ],
+     "answer": "A",
+     "why": "A half-life is the interval in which half of the remaining parent decays, and it is constant for that isotope.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ]
+    },
+    {
+     "n": 22,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "half-life",
+     "stem": "What fraction of the original parent remains after four half-lives?",
+     "options": [
+      "25 percent, because the parent halves only twice",
+      "6.25 percent, because the parent halves four times",
+      "12.5 percent, because the parent halves three times",
+      "3.125 percent, because the parent halves five times"
+     ],
+     "answer": "B",
+     "why": "Each half-life halves the parent: 50, 25, 12.5, then 6.25 percent after four.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ]
+    },
+    {
+     "n": 23,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "arithmetic",
+     "stem": "A sample holds 12.5 percent of its original parent isotope. How many half-lives have passed?",
+     "options": [
+      "Two, because the parent halved two separate times",
+      "Four, because the parent halved four separate times",
+      "Three, because the parent halved three separate times",
+      "Five, because the parent halved five separate times"
+     ],
+     "answer": "C",
+     "why": "100 to 50 to 25 to 12.5 percent is three halvings, so n = 3.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ]
+    },
+    {
+     "n": 24,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "arithmetic",
+     "stem": "A rock holds 12.5 percent parent and the isotope has a 700-million-year half-life. What is its age?",
+     "options": [
+      "1.4 billion years, because two half-lives have passed",
+      "2.8 billion years, because four half-lives have passed",
+      "700 million years, because one half-life has passed",
+      "2.1 billion years, because three half-lives have passed"
+     ],
+     "answer": "D",
+     "why": "n = 3 and each half-life is 700 My, so age = 3 x 700 My = 2.1 billion years.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ]
+    },
+    {
+     "n": 25,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "arithmetic",
+     "stem": "A sample shows a parent-to-daughter ratio of 1:3. How many half-lives have passed?",
+     "options": [
+      "Two, because 75 percent of the parent has decayed",
+      "One, because 50 percent of the parent has decayed",
+      "Three, because 87.5 percent of the parent has decayed",
+      "Four, because 93.75 percent of the parent has decayed"
+     ],
+     "answer": "A",
+     "why": "Daughter at 75 percent means parent at 25 percent, which is two halvings.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ]
+    },
+    {
+     "n": 26,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "isotopes",
+     "stem": "Why is carbon-14 unsuitable for dating a 70-million-year-old rock?",
+     "options": [
+      "Its 1.25-billion-year half-life leaves too little daughter",
+      "Its 5,730-year half-life leaves too little parent",
+      "Its 4.5-billion-year half-life leaves too little parent",
+      "Its 48.8-billion-year half-life leaves too little daughter"
+     ],
+     "answer": "B",
+     "why": "Beyond about ten half-lives the remaining parent is unmeasurable, and C-14 also dates only once-living material.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "n": 27,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "isotopes",
+     "stem": "Which isotope would you use to date a volcanic ash layer, and why?",
+     "options": [
+      "Carbon-14, because its half-life suits million-year rock",
+      "Uranium-238, because its half-life suits thousand-year bone",
+      "Potassium-40, because its half-life suits million-year rock",
+      "Rubidium-87, because its half-life suits thousand-year shell"
+     ],
+     "answer": "C",
+     "why": "K-40 has a half-life near 1.25 billion years and is built into volcanic minerals, so it dates the eruption.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "n": 28,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "dating",
+     "stem": "Which difference between relative and absolute dating is stated correctly?",
+     "options": [
+      "Relative gives years; absolute gives only the relative order",
+      "Relative uses the radioactive isotopes; absolute uses rock superposition",
+      "Relative dates single minerals; absolute dates whole rock units",
+      "Relative gives order; absolute gives an age in years"
+     ],
+     "answer": "D",
+     "why": "Relative dating orders events using superposition and cross-cutting; absolute dating converts a ratio into years.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ]
+    },
+    {
+     "n": 29,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "dating",
+     "stem": "A fault cuts through three sedimentary layers. What can you conclude?",
+     "options": [
+      "The fault is younger than the layers it cuts",
+      "The fault is older than the layers it cuts",
+      "Fault is the same age as the lowest layer",
+      "The fault is older than the folded rock intrusion"
+     ],
+     "answer": "A",
+     "why": "Cross-cutting relationships: a feature that cuts another must be younger than what it cuts.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ]
+    },
+    {
+     "n": 30,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "dating",
+     "stem": "How would you find the absolute age of a fossil between two ash layers?",
+     "options": [
+      "Date the fossil bone itself directly with uranium-lead isotopes",
+      "Date both ash layers, bracketing the fossil between them",
+      "Date the sedimentary rock grains surrounding the whole fossil",
+      "Date the lowest layer in the exposed cliff section"
+     ],
+     "answer": "B",
+     "why": "Volcanic ash is datable and bounds the fossil in time, which is why ash layers are the standard bracket.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ]
+    },
+    {
+     "n": 31,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "reasoning",
+     "stem": "Why does constant radioactive decay let geologists read a rock's age?",
+     "options": [
+      "The decay rate slows predictably as the rock gets older",
+      "The daughter isotope leaks out at a measurable constant rate",
+      "The parent-to-daughter ratio in the closed mineral records elapsed half-lives",
+      "The parent isotope is replenished at a constant known rate"
+     ],
+     "answer": "C",
+     "why": "Because the decay rate does not change, the ratio in a closed mineral is a clock that records elapsed time.",
+     "option_words": [
+      10,
+      10,
+      10,
+      10
+     ]
+    },
+    {
+     "n": 32,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "reasoning",
+     "stem": "Which condition must hold for a radiometric date to be trustworthy?",
+     "options": [
+      "The whole rock was metamorphosed after the mineral had formed",
+      "The rock sample contains several different radioactive isotopes of uranium",
+      "The mineral was heated well above its melting point later",
+      "The mineral stayed closed, losing no parent or daughter atoms"
+     ],
+     "answer": "D",
+     "why": "An open system loses or gains parent or daughter and the ratio no longer records the original age.",
+     "option_words": [
+      10,
+      10,
+      10,
+      10
+     ]
+    },
+    {
+     "n": 33,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "reasoning",
+     "stem": "A rock gives an age of 1.4 billion years with a 700-million-year isotope. What fraction of parent remains?",
+     "options": [
+      "25 percent, because two half-lives have elapsed",
+      "50 percent, because one half-life has elapsed",
+      "12.5 percent, because three half-lives have elapsed",
+      "6.25 percent, because four half-lives have elapsed"
+     ],
+     "answer": "A",
+     "why": "1.4 billion divided by 700 million is n = 2, so the parent has halved twice to 25 percent.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ]
+    }
+   ]
+  },
+  {
+   "set": 2,
+   "label": "Set 2",
+   "questions": [
+    {
+     "n": 1,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "layers",
+     "stem": "Oceanic crust and continental crust differ in thickness and density. Which comparison is correct?",
+     "options": [
+      "Oceanic is thinner and denser than continental crust",
+      "Oceanic is thicker and denser than continental crust",
+      "Oceanic is thinner and lighter than continental crust",
+      "Oceanic is thicker and lighter than continental crust"
+     ],
+     "answer": "A",
+     "why": "Oceanic crust is about 7 km of basalt; continental crust is thicker granite, which is less dense.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 2,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "layers",
+     "stem": "Which layer accounts for the greatest share of Earth's volume?",
+     "options": [
+      "The crust, a thin shell of basaltic ocean floor",
+      "The mantle, a thick shell of flowing silicate rock",
+      "The outer core, a layer of liquid iron alloy",
+      "The inner core, a sphere of solid iron alloy"
+     ],
+     "answer": "B",
+     "why": "The mantle extends roughly 2,900 km and holds most of Earth's volume and mass.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 2
+    },
+    {
+     "n": 3,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "layers",
+     "stem": "Why does the asthenosphere flow while the lithosphere above it does not?",
+     "options": [
+      "It is made of liquid iron rather than silicate rock",
+      "It is under much less pressure than the crust above",
+      "It sits closer to its melting point at that depth",
+      "It contains no radioactive isotopes to warm it at all"
+     ],
+     "answer": "C",
+     "why": "Higher temperature at depth brings rock near its melting point, so it deforms plastically over time.",
+     "option_words": [
+      10,
+      10,
+      10,
+      10
+     ],
+     "set": 2
+    },
+    {
+     "n": 4,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "heat",
+     "stem": "Which isotope is a major source of Earth's radiogenic heat?",
+     "options": [
+      "Carbon-14, decaying quickly inside the shallow crust",
+      "Hydrogen-1, fusing slowly inside the inner core",
+      "Iron-56, splitting rapidly inside the outer core",
+      "Potassium-40, decaying slowly inside the mantle"
+     ],
+     "answer": "D",
+     "why": "K-40, U-238, U-235 and Th-232 are the long-lived heat-producing isotopes in the mantle and core.",
+     "option_words": [
+      7,
+      7,
+      7,
+      6
+     ],
+     "set": 2
+    },
+    {
+     "n": 5,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "heat",
+     "stem": "Heat production per kilogram of rock from radioactive decay is best described as what?",
+     "options": [
+      "Nearly constant over the isotope's decay timescale",
+      "Increasing sharply as the rock gets older",
+      "Dropping to zero after one single half-life",
+      "Dependent on pressure rather than on the isotope"
+     ],
+     "answer": "A",
+     "why": "Decay rate is fixed per isotope, so heat per kilogram stays steady until the isotope is depleted.",
+     "option_words": [
+      7,
+      7,
+      7,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 6,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "heat",
+     "stem": "Which long-term change follows if Earth's radiogenic heat production falls?",
+     "options": [
+      "Convection strengthens and plate motion speeds up instead",
+      "Convection weakens and plate motion slows over time",
+      "Convection reverses direction and plates then move inland",
+      "Convection stops and the plates freeze in place"
+     ],
+     "answer": "B",
+     "why": "Less heat means weaker convection, less slab pull, and slower plates — a long-term, not instant, change.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 7,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "forces",
+     "stem": "On a plate diagram, the arrow pulling the subducting slab downward represents what?",
+     "options": [
+      "Ridge push, the weakest force acting on the plate",
+      "Mantle drag, the force pushing plates apart sideways",
+      "Slab pull, the dominant force driving plate motion",
+      "Friction, the force that accelerates the descending slab"
+     ],
+     "answer": "C",
+     "why": "The cold dense slab sinks under its own weight; slab pull is the largest plate-driving force.",
+     "option_words": [
+      9,
+      8,
+      8,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 8,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "forces",
+     "stem": "What produces ridge push at a mid-ocean ridge?",
+     "options": [
+      "Hot mantle pushes sideways against the ridge axis",
+      "Subducting slabs drag the plate toward the ridge",
+      "Friction between plates pulls crust into the ridge",
+      "Elevated lithosphere slides downslope away from the ridge"
+     ],
+     "answer": "D",
+     "why": "The ridge stands high, so lithosphere slides away from it under gravity — a smaller force than slab pull.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 9,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "forces",
+     "stem": "In a force diagram, what does the friction arrow along a plate's base do?",
+     "options": [
+      "Opposes the plate's motion, thus reducing its speed",
+      "Adds to slab pull, increasing the plate's speed",
+      "Pushes the plate sideways toward the ridge axis",
+      "Has no effect, since friction cannot act on rock"
+     ],
+     "answer": "A",
+     "why": "Friction and mantle drag resist motion, so they point opposite the plate's direction of travel.",
+     "option_words": [
+      8,
+      8,
+      8,
+      9
+     ],
+     "set": 2
+    },
+    {
+     "n": 10,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "convection",
+     "stem": "In a mantle convection cell, where does the descending limb typically lie?",
+     "options": [
+      "Above a mid-ocean ridge, where hot rock rises",
+      "Above a subduction zone, where cold rock sinks",
+      "Directly beneath a continental interior, where rock is hottest",
+      "Along a transform fault, where plates slide sideways"
+     ],
+     "answer": "B",
+     "why": "Cooled lithosphere sinks at convergent margins, which is why descending limbs line up with subduction zones.",
+     "option_words": [
+      8,
+      8,
+      9,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 11,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "divergent",
+     "stem": "Continental crust pulls apart at a divergent boundary. Which feature forms?",
+     "options": [
+      "A deep trench with a long volcanic island chain",
+      "A folded mountain belt built from greatly thickened crust",
+      "A rift valley with normal faults and thinning crust",
+      "A strike-slip fault with clearly offset rock layers"
+     ],
+     "answer": "C",
+     "why": "Continental rifting produces a valley bounded by normal faults, as in the East African Rift.",
+     "option_words": [
+      9,
+      9,
+      9,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 12,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "convergent",
+     "stem": "Two oceanic plates converge. Which pair of features forms?",
+     "options": [
+      "A rift valley with a chain of hot volcanoes",
+      "A folded mountain belt and a broad plateau",
+      "A long transform fault with offset stream channels",
+      "A deep trench and a volcanic island arc"
+     ],
+     "answer": "D",
+     "why": "One oceanic plate subducts, creating a trench and an arc of volcanoes above the slab.",
+     "option_words": [
+      9,
+      8,
+      8,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 13,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "transform",
+     "stem": "Which boundary is the classic example of transform motion?",
+     "options": [
+      "The San Andreas fault, where plates slide past",
+      "The Mid-Atlantic Ridge, where new crust forms",
+      "The Andes, where oceanic crust subducts inland",
+      "The East African Rift, where a continent splits"
+     ],
+     "answer": "A",
+     "why": "The San Andreas is a strike-slip boundary: two plates slide horizontally past each other.",
+     "option_words": [
+      8,
+      7,
+      7,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 14,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "transform",
+     "stem": "Which feature is never produced at a transform boundary?",
+     "options": [
+      "Shallow earthquakes from sudden slip along a fault",
+      "New oceanic crust created by upwelling magma",
+      "Offset streams and roads cut by lateral motion",
+      "Fractured rock along a linear fault trace"
+     ],
+     "answer": "B",
+     "why": "Transform motion neither creates nor destroys crust and generates no magma.",
+     "option_words": [
+      8,
+      7,
+      8,
+      7
+     ],
+     "set": 2
+    },
+    {
+     "n": 15,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "divergent",
+     "stem": "Which boundary type creates new lithosphere?",
+     "options": [
+      "Transform, where plates slide horizontally past each other",
+      "Convergent, where one plate descends into the mantle",
+      "Divergent, where upwelling magma forms new ocean crust",
+      "Collisional, where two continents weld together into one"
+     ],
+     "answer": "C",
+     "why": "Only divergence adds new crust; convergence destroys it and transform neither.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 16,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "earthquakes",
+     "stem": "Which observation is the strongest direct evidence for subduction?",
+     "options": [
+      "Shallow earthquakes scattered across a continent interior",
+      "Volcanoes erupting at the center of a plate",
+      "Magnetic stripes running parallel to a coastline",
+      "Earthquake depth increasing inland from a trench"
+     ],
+     "answer": "D",
+     "why": "Deep quakes only occur inside a descending slab, so the depth trend traces subduction in data.",
+     "option_words": [
+      7,
+      8,
+      7,
+      7
+     ],
+     "set": 2
+    },
+    {
+     "n": 17,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "magnetic",
+     "stem": "What creates the magnetic striping pattern on the seafloor?",
+     "options": [
+      "Basalt cooling during reversals of Earth's field",
+      "Sediment layers sorting themselves by grain size",
+      "Glaciers depositing magnetic minerals in stripes",
+      "Magma chambers aligning with the current field"
+     ],
+     "answer": "A",
+     "why": "New basalt records the field direction when it cools, so reversals leave mirrored stripes.",
+     "option_words": [
+      7,
+      7,
+      6,
+      7
+     ],
+     "set": 2
+    },
+    {
+     "n": 18,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "age",
+     "stem": "Where is the oldest ocean crust found?",
+     "options": [
+      "At the ridge axis, where crust is newest",
+      "Farthest from the ridge, near subduction zones",
+      "In the middle of a wide ocean basin",
+      "Beneath continental shelves, close to the shoreline"
+     ],
+     "answer": "B",
+     "why": "Crust ages as it moves away from the ridge, so the oldest seafloor lies near trenches.",
+     "option_words": [
+      8,
+      7,
+      8,
+      7
+     ],
+     "set": 2
+    },
+    {
+     "n": 19,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "gps",
+     "stem": "GPS vectors on either side of a mid-ocean ridge point where?",
+     "options": [
+      "Toward the ridge axis, from both sides equally",
+      "Parallel to the ridge, in the same direction",
+      "Away from the ridge axis, on both sides",
+      "Downward, into the asthenosphere that lies below them"
+     ],
+     "answer": "C",
+     "why": "Divergent motion means the two plates move apart, so both vectors point away from the ridge.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 20,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "heat",
+     "stem": "Where would you expect the highest heat flow?",
+     "options": [
+      "In the center of an old deep ocean basin",
+      "Along a transform fault far from any spreading ridge",
+      "Beneath a thick continental mountain belt like the Andes",
+      "At a mid-ocean ridge, where new crust is hot"
+     ],
+     "answer": "D",
+     "why": "Young crust near a ridge is still hot, so heat flow is highest there and falls with age.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 2
+    },
+    {
+     "n": 21,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "gps",
+     "stem": "A plate moves 3 cm per year. How far does it travel in 20 million years?",
+     "options": [
+      "600 km, since 3 cm per year is 30 km per million",
+      "60 km, since 3 cm per year is 3 km per million",
+      "6,000 km, since 3 cm per year is 300 km per million",
+      "1,200 km, since 3 cm per year is 60 km per million"
+     ],
+     "answer": "A",
+     "why": "1 cm/yr is 10 km/My, so 3 cm/yr gives 30 km/My and 20 My gives 600 km.",
+     "option_words": [
+      12,
+      12,
+      12,
+      12
+     ],
+     "set": 2
+    },
+    {
+     "n": 22,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "half-life",
+     "stem": "After two half-lives, what fraction of the parent isotope remains?",
+     "options": [
+      "50 percent, because the parent halved once",
+      "25 percent, because the parent halved twice",
+      "12.5 percent, because the parent halved three times",
+      "6.25 percent, because the parent halved four times"
+     ],
+     "answer": "B",
+     "why": "Each half-life halves the remainder: 100 to 50 to 25 percent.",
+     "option_words": [
+      7,
+      7,
+      8,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 23,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "arithmetic",
+     "stem": "A rock is 1.5 billion years old and the isotope has a 500-million-year half-life. What remains?",
+     "options": [
+      "25 percent parent, after two half-lives",
+      "50 percent parent, after one half-life",
+      "12.5 percent parent, after three half-lives",
+      "6.25 percent parent, after four half-lives"
+     ],
+     "answer": "C",
+     "why": "1.5 billion divided by 500 million is n = 3, and three halvings leave 12.5 percent.",
+     "option_words": [
+      6,
+      6,
+      6,
+      6
+     ],
+     "set": 2
+    },
+    {
+     "n": 24,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "arithmetic",
+     "stem": "A sample has a parent-to-daughter ratio of 1:7. How many half-lives have passed?",
+     "options": [
+      "Two, because 75 percent has decayed away",
+      "One, because 50 percent has decayed away",
+      "Four, because 93.75 percent has decayed away",
+      "Three, because 87.5 percent has decayed away"
+     ],
+     "answer": "D",
+     "why": "Daughter at 87.5 percent means parent at 12.5 percent, which is three halvings.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ],
+     "set": 2
+    },
+    {
+     "n": 25,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "isotopes",
+     "stem": "Carbon-14 dating becomes unreliable after roughly how long?",
+     "options": [
+      "About 50,000 years, or nine half-lives",
+      "About 5,000 years, or one half-life",
+      "About 500,000 years, or ninety half-lives",
+      "About 5 million years, ninety half-lives"
+     ],
+     "answer": "A",
+     "why": "Past about ten half-lives too little parent remains to measure, and 5,730 years times ten is ~57,000.",
+     "option_words": [
+      6,
+      6,
+      6,
+      6
+     ],
+     "set": 2
+    },
+    {
+     "n": 26,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "isotopes",
+     "stem": "A fossil lies between two volcanic ash layers. How is its age determined?",
+     "options": [
+      "Date the fossil bone itself using potassium-argon",
+      "Date both ash layers and bracket the fossil",
+      "Date the sedimentary grains surrounding the fossil",
+      "Date the deepest layer in the exposed cliff"
+     ],
+     "answer": "B",
+     "why": "Ash is datable and bounds the fossil in time, giving a reliable range.",
+     "option_words": [
+      7,
+      8,
+      7,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 27,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "isotopes",
+     "stem": "Which material is best dated with uranium-lead?",
+     "options": [
+      "A wooden tool from a young archaeological site",
+      "A shell from a shallow marine deposit",
+      "A zircon crystal from very old continental rock",
+      "A bone fragment from a recent cave deposit"
+     ],
+     "answer": "C",
+     "why": "U-238's 4.5-billion-year half-life suits ancient zircons; C-14 suits young organic material.",
+     "option_words": [
+      8,
+      7,
+      8,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 28,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "dating",
+     "stem": "Which principle places the oldest sedimentary layer at the bottom?",
+     "options": [
+      "Cross-cutting, valid where faults cut layers",
+      "Original horizontality, valid for tilted beds",
+      "Faunal succession, valid for correlated fossils",
+      "Superposition, valid in undisturbed sequences"
+     ],
+     "answer": "D",
+     "why": "Superposition states that undisturbed layers stack youngest on top, oldest at the base.",
+     "option_words": [
+      6,
+      6,
+      6,
+      5
+     ],
+     "set": 2
+    },
+    {
+     "n": 29,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "dating",
+     "stem": "A rock contains a fragment of an older rock. What can you conclude?",
+     "options": [
+      "The fragment is older than the rock containing it",
+      "The fragment is younger than the rock containing it",
+      "The fragment and host rock are the same age",
+      "The fragment formed after the host was folded"
+     ],
+     "answer": "A",
+     "why": "The inclusion principle: a clast must exist before the rock that incorporates it.",
+     "option_words": [
+      9,
+      9,
+      9,
+      8
+     ],
+     "set": 2
+    },
+    {
+     "n": 30,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "dating",
+     "stem": "What does an unconformity represent in a rock sequence?",
+     "options": [
+      "A long period when magma intruded between the layers",
+      "A gap in time where erosion or non-deposition occurred",
+      "A fault that displaced the layers sideways over time",
+      "A fold that overturned the entire sequence of beds"
+     ],
+     "answer": "B",
+     "why": "An unconformity is missing time: material was eroded or never deposited before the next layer formed.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 2
+    },
+    {
+     "n": 31,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "reasoning",
+     "stem": "Why is a closed system required for a radiometric date?",
+     "options": [
+      "Pressure changes the isotope's half-life value",
+      "Heat changes the isotope's half-life value",
+      "Leaking parent or daughter changes the ratio",
+      "Water adds new radioactive parent atoms"
+     ],
+     "answer": "C",
+     "why": "The ratio is the clock, so gain or loss of either isotope invalidates the age.",
+     "option_words": [
+      6,
+      6,
+      7,
+      6
+     ],
+     "set": 2
+    },
+    {
+     "n": 32,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "arithmetic",
+     "stem": "A rock holds one-eighth of its original parent isotope. If the half-life is 250 million years, how old is it?",
+     "options": [
+      "500 million years, since two half-lives passed",
+      "250 million years, since one half-life passed",
+      "1,000 million years, since four half-lives passed",
+      "750 million years, since three half-lives passed"
+     ],
+     "answer": "D",
+     "why": "One-eighth remaining means n = 3, and 3 x 250 My = 750 My.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ],
+     "set": 2
+    },
+    {
+     "n": 33,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "age",
+     "stem": "Which measurement would best test the seafloor spreading hypothesis?",
+     "options": [
+      "Crust age plotted against distance from a ridge",
+      "Sediment color plotted against water depth offshore",
+      "Volcano height plotted against distance from a coast",
+      "Earthquake count plotted against local population density"
+     ],
+     "answer": "A",
+     "why": "Spreading predicts age increasing with distance from the ridge, which is exactly what is observed.",
+     "option_words": [
+      8,
+      7,
+      8,
+      7
+     ],
+     "set": 2
+    }
+   ]
+  },
+  {
+   "set": 3,
+   "label": "Set 3",
+   "questions": [
+    {
+     "n": 1,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "seismic",
+     "stem": "S-waves from an earthquake are missing beyond a certain distance. What does that reveal?",
+     "options": [
+      "A liquid layer, the outer core, blocks shear waves",
+      "A solid layer, the mantle, bends shear waves sharply",
+      "A vacuum layer, the asthenosphere, absorbs shear waves",
+      "A dense layer, the crust, reflects shear waves backward"
+     ],
+     "answer": "A",
+     "why": "Shear waves cannot pass through liquid, so their shadow zone is the evidence that the outer core is liquid.",
+     "option_words": [
+      9,
+      9,
+      8,
+      9
+     ],
+     "set": 3
+    },
+    {
+     "n": 2,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "convection",
+     "stem": "Which layer's slow flow drags the lithospheric plates along?",
+     "options": [
+      "The inner core, which rotates faster than the mantle",
+      "The asthenosphere, which deforms plastically over geologic time",
+      "The continental crust, which spreads under its own weight",
+      "The outer core, which flows as a liquid metal"
+     ],
+     "answer": "B",
+     "why": "Plates ride on the weak asthenosphere; its convection supplies mantle drag as well as slab pull.",
+     "option_words": [
+      9,
+      8,
+      9,
+      9
+     ],
+     "set": 3
+    },
+    {
+     "n": 3,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "convection",
+     "stem": "How can solid mantle rock convect at all?",
+     "options": [
+      "It melts completely at even the shallow mantle depths",
+      "It is a gas under the pressures of the mantle",
+      "It deforms slowly enough to flow over geologic time",
+      "It is a liquid that flows quickly like water"
+     ],
+     "answer": "C",
+     "why": "Solid rock at high temperature deforms plastically, flowing centimeters per year over millions of years.",
+     "option_words": [
+      9,
+      10,
+      9,
+      9
+     ],
+     "set": 3
+    },
+    {
+     "n": 4,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "forces",
+     "stem": "A plate moves at a constant speed. What must be true of the forces on it?",
+     "options": [
+      "Driving forces are far larger than all resistance",
+      "Resisting forces are larger than the driving force",
+      "The plate experiences no forces of either kind",
+      "Driving forces balance all of the resisting forces"
+     ],
+     "answer": "D",
+     "why": "Constant velocity means net force is zero, so slab pull and ridge push are matched by friction and drag.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 3
+    },
+    {
+     "n": 5,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "forces",
+     "stem": "One arrow in a plate diagram is unlabeled and points against motion. Which force is it?",
+     "options": [
+      "Friction, which resists movement along the base",
+      "Slab pull, which accelerates the plate downward",
+      "Ridge push, which drives the plate outward",
+      "Mantle drag, which always assists plate motion"
+     ],
+     "answer": "A",
+     "why": "The opposing arrow is resistance: friction along the base and at the boundary.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ],
+     "set": 3
+    },
+    {
+     "n": 6,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "heat",
+     "stem": "Which energy conversion happens during radioactive decay in the mantle?",
+     "options": [
+      "Thermal energy becomes nuclear potential energy",
+      "Nuclear potential energy becomes thermal energy",
+      "Mechanical energy becomes chemical bond energy",
+      "Chemical energy becomes gravitational potential energy"
+     ],
+     "answer": "B",
+     "why": "Decay converts nuclear energy into particle kinetic energy and gamma rays, which thermalize as heat.",
+     "option_words": [
+      6,
+      6,
+      6,
+      6
+     ],
+     "set": 3
+    },
+    {
+     "n": 7,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "heat",
+     "stem": "Why has Earth's interior stayed hot for billions of years?",
+     "options": [
+      "The Sun heats the interior directly through the crust",
+      "Friction from tides generates most of the interior heat",
+      "The mantle insulates it while decay keeps adding heat",
+      "The core stopped cooling once the crust solidified"
+     ],
+     "answer": "C",
+     "why": "Slow heat loss through a thick insulating mantle plus ongoing decay keeps the interior hot.",
+     "option_words": [
+      9,
+      9,
+      9,
+      8
+     ],
+     "set": 3
+    },
+    {
+     "n": 8,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "inference",
+     "stem": "A boundary shows only shallow earthquakes, offset rock units, and no volcanoes. Which type is it?",
+     "options": [
+      "Convergent, where one plate descends beneath another",
+      "Divergent, where upwelling magma creates new crust",
+      "Collisional, where two continental plates weld together",
+      "Transform, where plates slide horizontally past one another"
+     ],
+     "answer": "D",
+     "why": "Shallow quakes plus offset units and no magma is the transform signature.",
+     "option_words": [
+      7,
+      7,
+      7,
+      8
+     ],
+     "set": 3
+    },
+    {
+     "n": 9,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "inference",
+     "stem": "A boundary shows a deep trench and earthquakes down to 600 km. Which type is it?",
+     "options": [
+      "Convergent, with a slab descending into the mantle",
+      "Divergent, with new crust forming at a ridge axis",
+      "Transform, with plates sliding laterally past each other",
+      "Intraplate, with a hot spot beneath the crust"
+     ],
+     "answer": "A",
+     "why": "Deep quakes require a descending slab, so the depth range identifies subduction.",
+     "option_words": [
+      8,
+      9,
+      8,
+      8
+     ],
+     "set": 3
+    },
+    {
+     "n": 10,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "inference",
+     "stem": "A boundary shows a ridge axis, high heat flow, and shallow quakes. Which type is it?",
+     "options": [
+      "Convergent, where crust is destroyed at a trench",
+      "Divergent, where plates move apart and magma rises",
+      "Transform, where plates slide past without new crust",
+      "Collisional, where two continents thicken the crust"
+     ],
+     "answer": "B",
+     "why": "High heat flow and shallow quakes at a ridge are the divergent signature.",
+     "option_words": [
+      8,
+      8,
+      8,
+      7
+     ],
+     "set": 3
+    },
+    {
+     "n": 11,
+     "course": "Physics",
+     "unit": "Plate boundaries",
+     "tag": "prediction",
+     "stem": "Two continents continue colliding for 50 million years. What should result?",
+     "options": [
+      "A trench with a chain of island arcs",
+      "A wider ocean basin with new oceanic crust",
+      "A taller, broader mountain belt with thickened crust",
+      "A transform fault with offset river channels nearby"
+     ],
+     "answer": "C",
+     "why": "Continued collision shortens and thickens crust, raising and widening the mountain belt.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 3
+    },
+    {
+     "n": 12,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "magnetic",
+     "stem": "Magnetic stripes 100 km from a ridge record an age of 5 million years. What is the spreading rate?",
+     "options": [
+      "1 cm per year, since 100 km in 5 million years",
+      "4 cm per year, since 100 km in 5 million years",
+      "10 cm per year, since 100 km in 5 million years",
+      "2 cm per year, since 100 km in 5 million years"
+     ],
+     "answer": "D",
+     "why": "100 km over 5 My is 20 km/My, and since 1 cm/yr is 10 km/My that is 2 cm/yr.",
+     "option_words": [
+      11,
+      11,
+      11,
+      11
+     ],
+     "set": 3
+    },
+    {
+     "n": 13,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "age",
+     "stem": "Which observation best distinguishes a trench from a ridge?",
+     "options": [
+      "Crust at the trench is older and being destroyed",
+      "Crust at the trench is younger and being created",
+      "Crust at the trench is hotter and still cooling",
+      "Crust at the trench is thinner and newly formed"
+     ],
+     "answer": "A",
+     "why": "Trenches consume old cold crust; ridges create young hot crust, so age and heat separate them.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 3
+    },
+    {
+     "n": 14,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "density",
+     "stem": "Why does oceanic lithosphere subduct while continental lithosphere usually does not?",
+     "options": [
+      "Continental lithosphere is much denser than the oceanic type",
+      "Old oceanic lithosphere is denser than the mantle below",
+      "Oceanic lithosphere is much thicker than the continental lithosphere",
+      "Continental lithosphere is much colder than the oceanic lithosphere"
+     ],
+     "answer": "B",
+     "why": "Cold, old oceanic lithosphere is dense enough to sink; continental crust is buoyant and resists subduction.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 3
+    },
+    {
+     "n": 15,
+     "course": "Physics",
+     "unit": "Plate tectonics evidence",
+     "tag": "forces",
+     "stem": "Why do plates with long subducting boundaries tend to move fastest?",
+     "options": [
+      "A longer slab increases friction along the plate base",
+      "A longer slab raises ridge push from the spreading center",
+      "A longer slab exerts more slab pull on the plate",
+      "A longer slab removes mantle drag from the plate"
+     ],
+     "answer": "C",
+     "why": "Slab pull scales with the length of the descending slab, so plates with more subduction move faster.",
+     "option_words": [
+      9,
+      10,
+      10,
+      9
+     ],
+     "set": 3
+    },
+    {
+     "n": 16,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "graphs",
+     "stem": "On a decay graph, what does each halving of the parent curve mark?",
+     "options": [
+      "Two half-lives on the horizontal time axis",
+      "One full decay of the daughter isotope",
+      "The start of a new mineral crystallization",
+      "One half-life on the horizontal time axis"
+     ],
+     "answer": "D",
+     "why": "The parent curve is exponential, so every halving of its value is one half-life.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ],
+     "set": 3
+    },
+    {
+     "n": 17,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "isotopes",
+     "stem": "Which isotope would date a 4.4-billion-year-old zircon?",
+     "options": [
+      "Uranium-238, whose half-life suits ancient crystals",
+      "Carbon-14, whose half-life suits ancient crystals",
+      "Potassium-40, whose half-life is far too short",
+      "Nitrogen-14, whose half-life suits organic remains"
+     ],
+     "answer": "A",
+     "why": "U-238's 4.5-billion-year half-life matches the age, so measurable parent and daughter remain.",
+     "option_words": [
+      6,
+      6,
+      7,
+      6
+     ],
+     "set": 3
+    },
+    {
+     "n": 18,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "dating",
+     "stem": "A mineral is later heated enough to lose its daughter isotope. What happens to its date?",
+     "options": [
+      "The measured age becomes older than the true age",
+      "The measured age becomes younger than the true age",
+      "The measured age stays exactly the same as before",
+      "The measured age becomes impossible to interpret at all"
+     ],
+     "answer": "B",
+     "why": "Losing daughter resets the ratio, so the mineral records the later heating event.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 3
+    },
+    {
+     "n": 19,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "dating",
+     "stem": "A fossil sits between ash dated 70 Ma and ash dated 66 Ma. What is its age?",
+     "options": [
+      "Exactly 68 million years old in every case",
+      "Older than 70 million years, younger than 66",
+      "Anywhere between 66 and 70 million years old",
+      "Between 66 and 70 thousand years of age"
+     ],
+     "answer": "C",
+     "why": "Bracketing gives a range, not a point: the fossil is younger than 70 Ma and older than 66 Ma.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 3
+    },
+    {
+     "n": 20,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "scale",
+     "stem": "How many years are in one million years?",
+     "options": [
+      "One hundred thousand years, written 10 to the fifth",
+      "One billion years, written 10 to the ninth",
+      "One thousand years, written 10 to the third",
+      "One thousand thousand years, written 10 to the sixth"
+     ],
+     "answer": "D",
+     "why": "A million is a thousand thousands, which is the unit used in plate-rate arithmetic.",
+     "option_words": [
+      9,
+      8,
+      8,
+      9
+     ],
+     "set": 3
+    },
+    {
+     "n": 21,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "reasoning",
+     "stem": "Why can sedimentary rock usually not be dated directly by radiometric methods?",
+     "options": [
+      "Its grains formed earlier, so dates mix source ages",
+      "Its minerals contain almost no radioactive isotopes at all",
+      "Its layers form too quickly to accumulate daughter atoms",
+      "Its half-life changes when the sediment gets compacted"
+     ],
+     "answer": "A",
+     "why": "Sedimentary grains are recycled from older rocks, so a whole-rock date averages unrelated source ages.",
+     "option_words": [
+      9,
+      9,
+      9,
+      8
+     ],
+     "set": 3
+    },
+    {
+     "n": 22,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "extension",
+     "stem": "Mars is smaller than Earth and shows little plate motion today. What best explains that?",
+     "options": [
+      "A smaller planet retains much more radiogenic heat than Earth",
+      "A smaller planet cooled off much faster, weakening mantle convection",
+      "A smaller planet has a thicker mantle that convects faster",
+      "A smaller planet has no core to generate any heat"
+     ],
+     "answer": "B",
+     "why": "Surface-area-to-volume ratio is higher on small bodies, so they lose heat and shut down convection sooner.",
+     "option_words": [
+      10,
+      10,
+      10,
+      10
+     ],
+     "set": 3
+    },
+    {
+     "n": 23,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "extension",
+     "stem": "Early Earth had more short-lived radioactive isotopes. What followed for its interior?",
+     "options": [
+      "Slower convection and a completely static lithosphere",
+      "A colder mantle with no plumes there",
+      "Faster convection and more vigorous tectonic activity",
+      "A liquid inner core and no field"
+     ],
+     "answer": "C",
+     "why": "More decay heat early on drove stronger convection, which is why ancient crust records intense tectonic activity.",
+     "option_words": [
+      7,
+      7,
+      7,
+      7
+     ],
+     "set": 3
+    },
+    {
+     "n": 24,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "relative",
+     "stem": "Which statement is an example of relative dating only?",
+     "options": [
+      "Fossil A is exactly 250 million years old today",
+      "Fossil A contains 12.5 percent of the parent isotope",
+      "Fossil A has a half-life of 700 million years",
+      "Fossil A lies in a layer below fossil B"
+     ],
+     "answer": "D",
+     "why": "Relative dating gives order, not a number in years.",
+     "option_words": [
+      9,
+      9,
+      9,
+      9
+     ],
+     "set": 3
+    },
+    {
+     "n": 25,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "absolute",
+     "stem": "Which statement is an example of absolute dating?",
+     "options": [
+      "The ash layer is 66 million years old",
+      "The ash layer is older than the limestone",
+      "The ash layer sits beneath the sandstone",
+      "The ash layer cuts across a folded shale"
+     ],
+     "answer": "A",
+     "why": "Absolute dating gives an age in years, which is what a radiometric result provides.",
+     "option_words": [
+      8,
+      8,
+      7,
+      8
+     ],
+     "set": 3
+    },
+    {
+     "n": 26,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "relative",
+     "stem": "A dike cuts across three sedimentary layers. Which is youngest?",
+     "options": [
+      "The lowest layer, because superposition always applies here",
+      "The dike, because it cuts the other units",
+      "The top layer, because it sits above the others",
+      "All three layers, because they all formed together"
+     ],
+     "answer": "B",
+     "why": "Cross-cutting: the feature doing the cutting is younger than everything it cuts.",
+     "option_words": [
+      8,
+      8,
+      9,
+      8
+     ],
+     "set": 3
+    },
+    {
+     "n": 27,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "relative",
+     "stem": "How do index fossils help correlate rock layers?",
+     "options": [
+      "They give an absolute age measured in years",
+      "They show which layer was later metamorphosed",
+      "They identify layers of the same relative age",
+      "They prove the layers were never intensely folded"
+     ],
+     "answer": "C",
+     "why": "Index fossils are short-lived species with wide distribution, so their presence marks a relative age.",
+     "option_words": [
+      8,
+      7,
+      8,
+      8
+     ],
+     "set": 3
+    },
+    {
+     "n": 28,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "reasoning",
+     "stem": "Why does a half-life not depend on temperature or pressure?",
+     "options": [
+      "Decay is a chemical process, sped up by heat",
+      "Decay is a mechanical process, slowed by pressure",
+      "Decay is a surface process, changed by erosion",
+      "Decay is a nuclear process, unaffected by surroundings"
+     ],
+     "answer": "D",
+     "why": "Radioactive decay happens in the nucleus, where ordinary temperature and pressure changes have no effect.",
+     "option_words": [
+      9,
+      8,
+      8,
+      8
+     ],
+     "set": 3
+    },
+    {
+     "n": 29,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "arithmetic",
+     "stem": "A sample shows 87.5 percent daughter isotope. How many half-lives have passed?",
+     "options": [
+      "Three, because 12.5 percent of the parent remains",
+      "Two, because 25 percent of the parent remains",
+      "One, because 50 percent of the parent remains",
+      "Four, because 6.25 percent of the parent remains"
+     ],
+     "answer": "A",
+     "why": "Daughter at 87.5 percent leaves parent at 12.5 percent, which is three halvings.",
+     "option_words": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "set": 3
+    },
+    {
+     "n": 30,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "isotopes",
+     "stem": "Which isotope would you choose for a 100-million-year-old volcanic rock?",
+     "options": [
+      "Carbon-14, whose half-life suits that age range",
+      "Potassium-40, whose half-life suits that age range",
+      "Uranium-238, whose half-life is too long to resolve",
+      "Nitrogen-14, which does not occur in volcanic rock"
+     ],
+     "answer": "B",
+     "why": "K-40's 1.25-billion-year half-life leaves measurable parent and daughter at 100 Ma.",
+     "option_words": [
+      7,
+      7,
+      8,
+      8
+     ],
+     "set": 3
+    },
+    {
+     "n": 31,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "heat",
+     "stem": "Which statement about Earth's present-day heat budget is correct?",
+     "options": [
+      "Almost none of surface heat flow is radiogenic today",
+      "All of the surface heat flow comes from the Sun",
+      "Roughly half of surface heat flow is radiogenic today",
+      "Heat flow is highest in continental interiors right now"
+     ],
+     "answer": "C",
+     "why": "Radiogenic decay supplies about half of the heat leaving the surface, with the rest draining primordial heat.",
+     "option_words": [
+      9,
+      10,
+      9,
+      9
+     ],
+     "set": 3
+    },
+    {
+     "n": 32,
+     "course": "Physics",
+     "unit": "Geologic time",
+     "tag": "reasoning",
+     "stem": "Two rocks carry the same isotope; one shows 25 percent parent, the other 50 percent. Which is older?",
+     "options": [
+      "The 50 percent sample, having lost only two half-lives",
+      "Both samples are the same age, having lost one",
+      "Neither sample can be dated with that isotope here",
+      "The 25 percent sample, having lost two half-lives"
+     ],
+     "answer": "D",
+     "why": "Less parent means more elapsed time, so 25 percent is two half-lives and older than the 50 percent sample.",
+     "option_words": [
+      9,
+      9,
+      9,
+      8
+     ],
+     "set": 3
+    },
+    {
+     "n": 33,
+     "course": "Physics",
+     "unit": "Earth's interior",
+     "tag": "model",
+     "stem": "What is the main limitation of a labeled cross-section model of Earth?",
+     "options": [
+      "It is a two-dimensional snapshot that is not to scale",
+      "It cannot show all four layers at the same time",
+      "It cannot include either temperature or any depth information",
+      "It will necessarily mislabel both the crust and the mantle"
+     ],
+     "answer": "A",
+     "why": "A cross-section is a static 2D diagram; adding scale bars, temperatures and arrows is what makes it quantitative.",
+     "option_words": [
+      10,
+      10,
+      9,
+      10
+     ],
+     "set": 3
+    }
    ]
   }
  ]
