@@ -1730,5 +1730,113 @@
       }
     ],
     "src": "web"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 23,
+    "total": 33,
+    "percent": 70,
+    "subject": "Physics",
+    "date": "2026-11-17",
+    "ts": 1794891561516,
+    "missed": [
+      {
+        "n": 8,
+        "q": "The dense slab sinks, so it pulls the plate down and inward toward the mantle.",
+        "p": "C",
+        "k": "D",
+        "o": [
+          "Inward and up-slope, toward the elevated ridge crest",
+          "Straight downward, parallel to the plate's own weight",
+          "Along the ridge axis, parallel to the spreading center",
+          "Outward and down-slope, away from the elevated ridge"
+        ]
+      },
+      {
+        "n": 14,
+        "q": "The arrow opposing motion along a surface is friction, so it needs the label f.",
+        "p": "D",
+        "k": "B",
+        "o": [
+          "They always cancel, so they can never matter",
+          "They act on other objects, not on this object",
+          "They are smaller, so they can be safely ignored",
+          "They act only after the object starts moving"
+        ]
+      },
+      {
+        "n": 15,
+        "q": "The answer is B — An FBD lists forces on the chosen object; the forces it exerts elsewhere belong to other diagrams.",
+        "p": "D",
+        "k": "C",
+        "o": [
+          "Tension down and weight up, equal in length",
+          "Tension up and weight down, weight much longer",
+          "Tension up and weight down, equal in length",
+          "Only tension, because a hanging mass has no weight"
+        ]
+      },
+      {
+        "n": 16,
+        "q": "The answer is C — At rest the forces balance, so tension equals weight and the arrows match.",
+        "p": "C",
+        "k": "D",
+        "o": [
+          "The weight downward and the friction backward",
+          "The normal force up and the applied push",
+          "The weight downward and the push forward",
+          "The push forward and the friction backward"
+        ]
+      },
+      {
+        "n": 17,
+        "q": "The answer is D — Along the direction of motion, the applied push and friction are the opposing pair.",
+        "p": "D",
+        "k": "A",
+        "o": [
+          "Weight, whose component along the slope pulls downhill",
+          "Normal force, whose component along the slope pulls downhill",
+          "Friction, whose component along the slope pulls downhill",
+          "The normal force and friction together, pulling downhill"
+        ]
+      },
+      {
+        "n": 22,
+        "q": "Balanced arrows mean zero net force, which with motion means constant velocity.",
+        "p": "A",
+        "k": "B",
+        "o": [
+          "Weight downward and ridge push outward along the plate",
+          "Ridge push outward, slab pull inward along the plate",
+          "Mantle drag and slab pull, both pointing inward there",
+          "Friction and mantle drag, both pointing with the flow"
+        ]
+      },
+      {
+        "n": 23,
+        "q": "The answer is B — The along-plate pair is drive and resistance: ridge push one way, slab pull the other.",
+        "p": "A",
+        "k": "C",
+        "o": [
+          "Friction acts at a distance; weight is contact",
+          "Both friction and weight are contact forces",
+          "Friction is contact; weight acts at a distance",
+          "Both friction and weight act at a distance"
+        ]
+      },
+      {
+        "n": 28,
+        "q": "Trenches consume old cold crust; ridges create young hot crust.",
+        "p": "A",
+        "k": "D",
+        "o": [
+          "Magma forms but cools before reaching the surface",
+          "The crust there is far too thick to melt",
+          "Volcanoes do form there, but only under water",
+          "Nothing rises or subducts, so no magma forms"
+        ]
+      }
+    ],
+    "src": "web"
   }
 ]
