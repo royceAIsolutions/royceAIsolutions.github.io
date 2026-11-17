@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF23H9423B"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EF23H9423B');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Receptionist for the JLR Service Department — Live Demo | RoyceAI</title>
+<meta name="description" content="An AI receptionist built for a Land Rover / Jaguar service drive: books service appointments, answers status calls, triages brake and warning-light calls, routes to advisors and parts, and captures every after-hours call. Play the demo.">
+<link rel="canonical" href="https://royceai.com/ai-receptionist/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta property="og:title" content="AI Receptionist for the JLR Service Department — Play the demo call">
+<meta property="og:description" content="Service appointments booked, status calls answered, brake noise triaged, advisors and parts reached — on the first ring, at 7am and at 9:42pm.">
+<meta property="og:url" content="https://royceai.com/ai-receptionist/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Receptionist for the JLR Service Department">
+<meta name="twitter:description" content="Play a real service-drive call: appointment booked, advisor notified, confirmation texted — before the caller hangs up.">
+<script type="application/ld+json">
+[{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "RoyceAI AI Receptionist for Dealership Service Departments",
+  "serviceType": "AI phone receptionist for auto dealership service departments",
+  "provider": {"@type": "Organization", "name": "RoyceAI Solutions", "url": "https://royceai.com/"},
+  "areaServed": "US",
+  "url": "https://royceai.com/ai-receptionist/",
+  "description": "Answers the service line on the first ring, books service appointments, answers status calls, triages safety concerns, routes to service advisors and parts, and delivers transcripts and confirmation texts."
+},{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Does the AI quote repair prices?", "acceptedAnswer": {"@type": "Answer", "text": "No. Pricing and diagnosis stay with your service advisor. The receptionist captures the vehicle, mileage and concern, books the slot, and hands the advisor what they need to price it."}},
+    {"@type": "Question", "name": "Does it tell callers they are talking to an AI?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The greeting discloses it in the first sentence, and the caller can ask for a person at any point and be transferred."}},
+    {"@type": "Question", "name": "Can it tell a caller whether their car is ready?", "acceptedAnswer": {"@type": "Answer", "text": "Only when it is connected to your repair-order system. Without that read, it takes the question, tells the caller the advisor will call back, and escalates the message with the transcript."}},
+    {"@type": "Question", "name": "What happens on an after-hours call?", "acceptedAnswer": {"@type": "Answer", "text": "It answers, says the store is closed, books the first available appointment, flags loaner requests and safety concerns for the morning, and texts the caller a confirmation."}},
+    {"@type": "Question", "name": "How does it connect to our store?", "acceptedAnswer": {"@type": "Answer", "text": "Either the existing service number forwards to the AI line, or it is published as an additional line. Appointments write to your scheduler through its API, or land as a queue item your advisors accept."}}
+  ]
+}]
+</script>
+<style>
+:root{--bg:#07070a;--bg-card:#0e0e12;--bg-elevated:#15151b;--text:#eeeef0;--text-secondary:#88889a;--text-muted:#5c5c6e;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.1);--accent:#7c5cfc;--accent-light:#a78bfa;--accent-dark:#5b3cd4;--accent-glow:rgba(124,92,252,0.2);--accent-bg:rgba(124,92,252,0.08);--accent-gradient:linear-gradient(135deg,#7c5cfc 0%,#a78bfa 50%,#7c5cfc 100%);--green:#34d399;--amber:#fbbf24;--radius:16px;--radius-sm:10px;--max-w:1200px;--nav-h:64px;--font:'Inter',system-ui,-apple-system,sans-serif;--transition:0.35s cubic-bezier(0.16,1,0.3,1);--shadow-card:0 2px 20px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.03);--shadow-elevated:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;opacity:0.012;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:-1;opacity:0.3}
+.orb-1{width:600px;height:600px;background:rgba(124,92,252,0.08);top:-300px;right:-200px}
+.orb-2{width:500px;height:500px;background:rgba(168,85,247,0.05);bottom:-250px;left:-150px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 4px 20px var(--accent-glow)}50%{box-shadow:0 0 0 1px var(--accent),0 4px 40px var(--accent-glow),0 0 60px var(--accent-glow)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes breathe{0%,100%{opacity:0.3;transform:scale(1)}50%{opacity:0.5;transform:scale(1.1)}}
+@keyframes pop-in{from{opacity:0;transform:translateY(8px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes wave{0%,100%{height:8px}50%{height:26px}}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;background:var(--bg);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:var(--max-w);margin:0 auto}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo img{width:40px;height:40px;border-radius:9px;vertical-align:middle;margin-right:6px}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--accent-bg)}
+.nav-links a.nav-drawer-only{display:none!important}
+.nav-burger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;cursor:pointer;margin-left:8px;padding:0;flex:none;position:relative;z-index:1002}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.hero-sub{min-height:50vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:calc(80px + var(--nav-h)) 24px 40px;max-width:var(--max-w);margin:0 auto;animation:fade-up 0.6s ease-out}
+.hero-sub .badge{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:100px;background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(168,85,247,0.1));border:1px solid rgba(124,92,252,0.25);font-size:0.85rem;font-weight:600;color:var(--accent-light);margin-bottom:22px;animation:float 3s ease-in-out infinite}
+.hero-sub h1{font-size:clamp(2.1rem,6vw,3.7rem);font-weight:900;line-height:1.1;letter-spacing:-0.03em;margin-bottom:18px;max-width:880px}
+.hero-sub h1 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.hero-sub .subtitle{font-size:clamp(1rem,1.8vw,1.18rem);color:var(--text-secondary);max-width:720px;line-height:1.75;margin-bottom:14px}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.hero-sub .meta{font-size:0.85rem;color:var(--text-muted);margin-top:14px}
+.storeline{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;margin-top:22px;font-size:0.82rem;color:var(--text-muted)}
+.storeline span{display:inline-flex;align-items:center;gap:6px}
+.section{padding:64px 24px;max-width:var(--max-w);margin:0 auto}
+.section-header{text-align:center;margin-bottom:36px}
+.section-header h2{font-size:clamp(1.7rem,4.5vw,2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px}
+.section-header h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.section-header p{color:var(--text-secondary);max-width:720px;margin:0 auto;font-size:1.02rem}
+/* ===== call simulator ===== */
+.demo-wrap{background:linear-gradient(180deg,rgba(124,92,252,0.06),rgba(14,14,18,0.6));border:1px solid var(--border-hover);border-radius:22px;padding:18px;box-shadow:var(--shadow-elevated)}
+.demo-note{display:flex;align-items:center;justify-content:center;gap:8px;font-size:0.76rem;color:var(--text-muted);margin-bottom:14px;text-align:center;flex-wrap:wrap}
+.demo-note b{color:var(--accent-light);font-weight:700}
+.scn-bar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
+.scn{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);color:var(--text-secondary);padding:9px 14px;border-radius:100px;font-size:0.8rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:var(--font);display:inline-flex;align-items:center;gap:6px}
+.scn:hover{color:var(--text);border-color:rgba(124,92,252,0.4);background:var(--accent-bg);transform:translateY(-1px)}
+.scn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.demo-grid{display:grid;grid-template-columns:320px 1fr;gap:16px}
+.phone{background:#0a0a0e;border:1px solid var(--border);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:14px;min-height:440px}
+.phone-top{display:flex;align-items:center;gap:12px}
+.phone-av{width:46px;height:46px;border-radius:14px;background:var(--accent-gradient);background-size:200% 200%;animation:shimmer 4s ease-in-out infinite;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:1rem;flex:none}
+.phone-meta{min-width:0}
+.phone-meta h4{font-size:0.95rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.phone-meta p{font-size:0.76rem;color:var(--text-secondary)}
+.phone-state{display:flex;align-items:center;gap:8px;font-size:0.78rem;font-weight:600;color:var(--accent-light);background:var(--accent-bg);border:1px solid rgba(124,92,252,0.25);border-radius:100px;padding:5px 12px;width:fit-content}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent-light);animation:breathe 1.4s ease-in-out infinite}
+.phone-state.idle .dot{background:var(--text-muted);animation:none}
+.wave{display:flex;align-items:center;justify-content:center;gap:4px;height:56px;flex:1}
+.wave i{display:block;width:4px;height:10px;border-radius:3px;background:linear-gradient(180deg,var(--accent-light),var(--accent));opacity:0.55;transition:height .2s}
+.wave i:nth-child(2n){height:18px;opacity:0.45}
+.wave i:nth-child(3n){height:26px;opacity:0.4}
+.wave i:nth-child(5n){height:14px;opacity:0.5}
+.playing .wave i{animation:wave 1.1s ease-in-out infinite}
+.wave i:nth-child(3n){animation-delay:.15s}
+.wave i:nth-child(3n+1){animation-delay:.3s}
+.wave i:nth-child(4n){animation-delay:.45s}
+.phone-time{font-variant-numeric:tabular-nums;font-size:1.5rem;font-weight:800;letter-spacing:0.02em;text-align:center;color:var(--text)}
+.phone-time small{display:block;font-size:0.68rem;font-weight:500;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;margin-top:2px}
+.phone-facts{border-top:1px solid var(--border);padding-top:12px;display:flex;flex-direction:column;gap:6px;font-size:0.78rem;color:var(--text-secondary)}
+.phone-facts div{display:flex;justify-content:space-between;gap:10px}
+.phone-facts b{color:var(--text);font-weight:600;text-align:right}
+.transcript{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;display:flex;flex-direction:column;overflow:hidden;min-height:440px;max-height:520px}
+.tr-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border);font-size:0.78rem;color:var(--text-secondary)}
+.tr-head b{color:var(--text);font-weight:700}
+.tr-body{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.tr-body::-webkit-scrollbar{width:6px}
+.tr-body::-webkit-scrollbar-thumb{background:rgba(124,92,252,0.3);border-radius:3px}
+.empty-state{align-self:center;text-align:center;color:var(--text-muted);font-size:0.86rem;line-height:1.7;padding:38px 18px;border:1px dashed var(--border-hover);border-radius:14px;max-width:340px;margin:auto}
+.empty-state b{display:block;color:var(--text-secondary);font-size:0.9rem;margin-bottom:4px}
+.bubble{max-width:86%;padding:10px 14px;border-radius:14px;font-size:0.87rem;line-height:1.55;animation:pop-in .22s ease-out}
+.bubble.ai{background:rgba(124,92,252,0.14);border:1px solid rgba(124,92,252,0.28);border-bottom-left-radius:4px;align-self:flex-start}
+.bubble.caller{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-bottom-right-radius:4px;align-self:flex-end}
+.bubble.sys{align-self:center;max-width:96%;background:transparent;border:1px dashed rgba(52,211,153,0.35);color:var(--green);font-size:0.75rem;font-weight:600;text-transform:none;text-align:center;padding:7px 12px;border-radius:10px}
+.bubble .who{display:block;font-size:0.66rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:3px;opacity:0.75}
+.typing{display:inline-flex;gap:4px;padding:4px 2px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--accent-light);animation:breathe 1s ease-in-out infinite}
+.typing i:nth-child(2){animation-delay:.2s}
+.typing i:nth-child(3){animation-delay:.4s}
+.tr-foot{display:flex;align-items:center;gap:8px;padding:12px 16px;border-top:1px solid var(--border);flex-wrap:wrap}
+.demo-btn{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:9px 16px;font-size:0.82rem;font-weight:700;cursor:pointer;font-family:var(--font);transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.demo-btn:hover{background:var(--accent-light)}
+.demo-btn.ghost{background:rgba(255,255,255,0.04);color:var(--text);border:1px solid var(--border-hover)}
+.demo-btn.ghost:hover{background:var(--accent-bg);border-color:rgba(124,92,252,0.4)}
+.demo-btn:disabled{opacity:0.45;cursor:not-allowed;transform:none}
+.speed{margin-left:auto;font-size:0.76rem;color:var(--text-muted);display:flex;align-items:center;gap:4px}
+.speed button{background:none;border:1px solid var(--border);color:var(--text-secondary);border-radius:7px;padding:3px 8px;font-size:0.74rem;font-weight:700;cursor:pointer;font-family:var(--font)}
+.speed button.on{background:var(--accent-bg);border-color:rgba(124,92,252,0.4);color:var(--accent-light)}
+.outcome{margin-top:16px;display:none;grid-template-columns:repeat(3,1fr);gap:12px}
+.outcome.show{display:grid;animation:fade-up .4s ease-out}
+.oc{background:var(--bg-card);border:1px solid rgba(52,211,153,0.28);border-radius:14px;padding:14px 16px}
+.oc h5{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--green);font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.oc p{font-size:0.82rem;color:var(--text-secondary);line-height:1.5}
+.oc p b{color:var(--text);font-weight:600}
+@media(max-width:900px){.demo-grid{grid-template-columns:1fr}.phone{min-height:0}.wave{height:44px}.transcript{max-height:420px}}
+@media(max-width:640px){.outcome{grid-template-columns:1fr}}
+/* ===== rest of page ===== */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bento-2{grid-template-columns:repeat(2,1fr)}
+.bento-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:26px 22px;transition:all var(--transition)}
+.bento-card:hover{border-color:rgba(124,92,252,0.35);transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
+.bento-card .icon{font-size:1.55rem;margin-bottom:12px;display:inline-block}
+.bento-card h3{font-size:1.02rem;font-weight:700;margin-bottom:8px}
+.bento-card p{color:var(--text-secondary);font-size:0.9rem}
+.bento-card ul{list-style:none;margin-top:10px}
+.bento-card li{color:var(--text-secondary);font-size:0.85rem;padding:4px 0 4px 18px;position:relative}
+.bento-card li::before{content:'\2713';position:absolute;left:0;color:var(--accent-light);font-weight:700}
+.timeline{max-width:800px;margin:0 auto;position:relative}
+.timeline::before{content:'';position:absolute;left:20px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,rgba(124,92,252,0.5),rgba(124,92,252,0.05))}
+.tl-item{position:relative;padding:0 0 28px 60px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:12px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:0 0 20px var(--accent-glow);border:3px solid var(--bg)}
+.tl-item h3{font-size:1.02rem;font-weight:700;margin-bottom:4px}
+.tl-item p{color:var(--text-secondary);font-size:0.92rem}
+.tl-item code{background:rgba(255,255,255,0.05);padding:1px 6px;border-radius:5px;font-size:0.82rem;color:var(--accent-light)}
+.cover-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.cover{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px}
+.cover h3{font-size:0.95rem;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.cover.yes h3{color:var(--green)}
+.cover.no h3{color:var(--amber)}
+.cover ul{list-style:none}
+.cover li{font-size:0.87rem;color:var(--text-secondary);padding:5px 0 5px 20px;position:relative}
+.cover.yes li::before{content:'\2713';position:absolute;left:0;color:var(--green);font-weight:700}
+.cover.no li::before{content:'\2192';position:absolute;left:0;color:var(--amber);font-weight:700}
+.fact-table{width:100%;border-collapse:collapse;font-size:0.88rem;background:var(--bg-card);border-radius:var(--radius);overflow:hidden}
+.fact-table th,.fact-table td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--border)}
+.fact-table th{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:800;background:rgba(255,255,255,0.02)}
+.fact-table td{color:var(--text-secondary)}
+.fact-table td b{color:var(--text)}
+.fact-table tr:last-child td{border-bottom:none}
+details.faq{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin-bottom:10px}
+details.faq summary{cursor:pointer;font-weight:700;font-size:0.95rem;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:'+';color:var(--accent-light);font-weight:800}
+details.faq[open] summary::after{content:'–'}
+details.faq p{color:var(--text-secondary);font-size:0.9rem;margin-top:10px}
+.cta-section{padding:76px 24px;text-align:center;max-width:var(--max-w);margin:0 auto}
+.cta-section h2{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:14px}
+.cta-section h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+.cta-section p{color:var(--text-secondary);max-width:640px;margin:0 auto 20px}
+.cta-perks{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.cta-perk{background:var(--accent-bg);border:1px solid rgba(124,92,252,0.25);color:var(--accent-light);font-size:0.82rem;font-weight:600;padding:8px 16px;border-radius:100px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:12px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all var(--transition);cursor:pointer;border:none;font-family:var(--font)}
+.btn-primary{background:var(--accent);color:#fff;animation:pulse-glow 2.5s ease-in-out infinite}
+.btn-primary:hover{background:var(--accent-light);transform:scale(1.03)}
+.btn-ghost{background:rgba(255,255,255,0.04);color:var(--text);border:1px solid var(--border-hover)}
+.btn-ghost:hover{background:var(--accent-bg);border-color:rgba(124,92,252,0.4);transform:scale(1.03)}
+footer{max-width:var(--max-w);margin:0 auto;padding:36px 24px 44px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center}
+footer .logo{font-weight:700}
+footer .logo span{color:var(--accent-light)}
+footer .links{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center}
+footer .links a{color:var(--text-secondary);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+footer .links a:hover{color:var(--text)}
+footer .copy{color:var(--text-muted);font-size:0.8rem}
+@media(max-width:640px){
+  .hero-sub{padding:calc(60px + var(--nav-h)) 20px 32px}
+  .section{padding:46px 20px}
+  .bento,.bento-2,.cover-grid{grid-template-columns:1fr}
+  .scn-bar{gap:6px;justify-content:flex-start}
+  .scn{font-size:0.75rem;padding:7px 11px}
+  .demo-wrap{padding:12px;border-radius:18px}
+  .section-header h2{font-size:clamp(1.6rem,7vw,2rem)}
+  .cta-section{padding:56px 20px}
+  .nav-links a:not(.nav-cta):not(.nav-show-mobile){display:none}
+  .nav-links.open a{display:block;padding:10px 8px}
+  .fact-table{font-size:0.8rem}
+  .fact-table th,.fact-table td{padding:10px 12px}
+}
+@media(min-width:641px) and (max-width:1023px){.bento{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:0.001ms!important;animation-iteration-count:1!important;transition-duration:0.001ms!important}}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:rgba(14,14,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:calc(var(--nav-h) + 16px) 16px 30px;display:flex;flex-direction:column;gap:2px;transform:translateX(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);overflow-y:auto;z-index:1000}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:999}
+nav{z-index:1001;background:var(--bg);justify-content:flex-start!important}
+nav > .nav-links{margin-left:auto!important}
+nav > .nav-burger{margin-left:8px!important;margin-right:0!important;flex:none}
+nav > .nav-logo{margin-right:0!important}
+.nav-links>a:not(.nav-cta){display:none!important}
+</style>
+<meta property="og:image" content="https://royceai.com/assets/logo/brand/png/royceai-og-1200x630.png?v=6">
+<meta name="twitter:image" content="https://royceai.com/assets/logo/brand/png/royceai-og-1200x630.png?v=6">
+<link rel="icon" href="/favicon.ico?v=6" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/assets/logo/brand/royceai-mark-nav.svg?v=6">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=6">
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo/brand/royceai-mark-nav.svg?v=6" alt="RoyceAI" width="30" height="30" style="width:30px;height:30px;display:inline-block;vertical-align:middle;margin-right:6px"> Royce<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/live-poker" class="nav-drawer-only">♠️ Live Poker</a>
+    <a href="/land-rover" class="nav-drawer-only">🚙 Land Rover</a>
+    <a href="/pinball" class="nav-drawer-only">🕹️ Pinball</a>
+    <a href="/auditions" class="nav-drawer-only">🎭 Auditions</a>
+    <a href="/xlb" class="nav-drawer-only">🥟 XLB Dumplings</a>
+    <a href="/tutor" class="nav-drawer-only">✨ Tutor</a>
+    <a href="https://www.youtube.com/@royceaimusic" class="nav-drawer-only" target="_blank" rel="noopener">🎵 RoyceAI Music</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu"></div>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+
+<header class="hero-sub">
+  <span class="badge">🔧 Service Department Demo — Land Rover Newport Beach</span>
+  <h1>The service line, answered<br><span class="gradient">on the first ring.</span></h1>
+  <p class="subtitle">Appointments booked, status calls answered, brake noise triaged, advisors and parts reached — at 7am, at 5:52pm, and at 9:42pm when the store is dark. Built by someone who works in a Land Rover store, not in a call-center pitch deck.</p>
+  <div class="hero-ctas">
+    <a href="#demo" class="btn btn-primary" id="heroPlay">▶ Play the demo call</a>
+    <a href="/chat" class="btn btn-ghost">Book a 15-minute demo</a>
+  </div>
+  <div class="storeline">
+    <span>📍 1540 Jamboree Road, Newport Beach, CA 92660</span>
+    <span>🕖 Service: Mon–Fri 7:00am–6:00pm · Sat 8:00am–4:00pm · Sun closed</span>
+    <span>☎️ Service line 949-432-4081</span>
+  </div>
+</header>
+
+<section class="section" id="demo" style="padding-top:10px">
+  <div class="demo-note">
+    <b>Simulated call.</b> Scripted from a real service-drive workflow — the transcript streams line by line, nothing is dialed and no live audio is played.
+  </div>
+  <div class="demo-wrap">
+    <div class="scn-bar" id="scnBar"></div>
+    <div class="demo-grid">
+      <div class="phone" id="phone">
+        <div class="phone-top">
+          <div class="phone-av">AI</div>
+          <div class="phone-meta">
+            <h4 id="pName">Incoming call</h4>
+            <p id="pLine">Service line · 949-432-4081</p>
+          </div>
+        </div>
+        <div class="phone-state idle" id="pState"><span class="dot"></span><span id="pStateText">Ready</span></div>
+        <div class="wave" id="wave"></div>
+        <div class="phone-time" id="pTime">00:00<small>call time</small></div>
+        <div class="phone-facts">
+          <div><span>Scenario</span><b id="fScn">—</b></div>
+          <div><span>Caller</span><b id="fCaller">—</b></div>
+          <div><span>Intent</span><b id="fIntent">—</b></div>
+          <div><span>Outcome</span><b id="fOut">—</b></div>
+        </div>
+      </div>
+      <div class="transcript">
+        <div class="tr-head"><span><b>Live transcript</b> · what the advisor sees</span><span id="trCount">0 lines</span></div>
+        <div class="tr-body" id="trBody" aria-live="polite" aria-relevant="additions"></div>
+        <div class="tr-foot">
+          <button class="demo-btn" id="btnPlay">▶ Play call</button>
+          <button class="demo-btn ghost" id="btnReset">↻ Restart</button>
+          <div class="speed">Speed
+            <button data-speed="1" class="on">1×</button>
+            <button data-speed="2">2×</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="outcome" id="outcome"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2>Every call a service drive gets, <span class="gradient">handled</span></h2>
+    <p>Nine shapes of call, each one configured to finish — not just answer. Pick a scenario above and watch the outcome land in the advisor's queue.</p>
+  </div>
+  <div class="bento">
+    <div class="bento-card">
+      <span class="icon">📅</span>
+      <h3>Book the appointment</h3>
+      <p>Year, model, mileage, concern, name, callback number — captured in one pass, then the slot is offered from your real availability.</p>
+      <ul>
+        <li>Writes to your scheduler, or queues for advisor approval</li>
+        <li>Confirmation text to the caller before they hang up</li>
+        <li>Service light, mileage and concern on the RO draft</li>
+      </ul>
+    </div>
+    <div class="bento-card">
+      <span class="icon">🔎</span>
+      <h3>Answer "is my car ready?"</h3>
+      <p>With repair-order read access it quotes the real status. Without it, it takes the question, promises a callback, and escalates with the transcript — it never guesses.</p>
+      <ul>
+        <li>RO number or last name + vehicle</li>
+        <li>Advisor gets the ping with the caller on the line</li>
+        <li>No "should be done today" from a system that can't see it</li>
+      </ul>
+    </div>
+    <div class="bento-card">
+      <span class="icon">⚠️</span>
+      <h3>Triage the safety call</h3>
+      <p>Brake grinding, a red warning light, smoke, a tire going down on PCH. Two questions decide whether it books a slot or hands off to roadside.</p>
+      <ul>
+        <li>Firm pedal? Warning light? Still driving?</li>
+        <li>Same-day or first-thing slot, flagged urgent</li>
+        <li>Roadside handoff when the car shouldn't move</li>
+      </ul>
+    </div>
+    <div class="bento-card">
+      <span class="icon">🧰</span>
+      <h3>Route the parts counter</h3>
+      <p>Part number, VIN or "the roof rack for my Defender" — captured, then routed to parts with a callback promise and the details in the note.</p>
+      <ul>
+        <li>VIN or part number captured when offered</li>
+        <li>Parts line reached during hours</li>
+        <li>Callback logged when the counter is busy</li>
+      </ul>
+    </div>
+    <div class="bento-card">
+      <span class="icon">🌙</span>
+      <h3>Catch the after-hours call</h3>
+      <p>The 9:42pm call that goes to voicemail today becomes a 7:30am appointment with a loaner request attached.</p>
+      <ul>
+        <li>Books against tomorrow's real availability</li>
+        <li>Loaner requested, never promised</li>
+        <li>Morning queue ready before the doors open</li>
+      </ul>
+    </div>
+    <div class="bento-card">
+      <span class="icon">🚗</span>
+      <h3>Don't lose the misdial</h3>
+      <p>One number rings into service, but the caller wants a 2027 Sport. It transfers to sales with the model and question already stated.</p>
+      <ul>
+        <li>Sales line 949-432-4085 with context</li>
+        <li>Warm handoff, not a cold "let me transfer you"</li>
+        <li>Transcript still logged</li>
+      </ul>
+    </div>
+    <div class="bento-card">
+      <span class="icon">🌐</span>
+      <h3>Hold the line in Spanish</h3>
+      <p>Same script, same handoff rules, in Spanish — and Korean and Mandarin where the store's market needs them.</p>
+      <ul>
+        <li>Language detected from the first sentence</li>
+        <li>Same capture fields, same confirmations</li>
+        <li>Advisor receives the transcript in English</li>
+      </ul>
+    </div>
+    <div class="bento-card">
+      <span class="icon">🧾</span>
+      <h3>Prove every call</h3>
+      <p>Every call is a record: transcript, capture fields, outcome, transfer target. The Monday report is read off those records, not off memory.</p>
+      <ul>
+        <li>Answered vs. abandoned, by hour</li>
+        <li>Appointments booked, after-hours split out</li>
+        <li>Transfers and callbacks with wait times</li>
+      </ul>
+    </div>
+    <div class="bento-card">
+      <span class="icon">🧍</span>
+      <h3>Hand off to a human, instantly</h3>
+      <p>"Let me talk to someone" is a transfer, not an argument. It says who it's transferring to and what it already captured.</p>
+      <ul>
+        <li>Advisor, parts, sales or service manager</li>
+        <li>Drops are called back on the number it has</li>
+        <li>After hours: message + morning callback, never a dead end</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2>What it answers. <span class="gradient">What it escalates.</span></h2>
+    <p>The line between the two is the whole product. A receptionist that improvises a price or a completion time costs more than an unanswered call.</p>
+  </div>
+  <div class="cover-grid">
+    <div class="cover yes">
+      <h3>✅ Answers, books, confirms</h3>
+      <ul>
+        <li>Hours, address, directions, which drive to pull into</li>
+        <li>Service, parts and sales phone numbers and pickup times</li>
+        <li>Appointment requests with vehicle, mileage and concern</li>
+        <li>Reschedules and cancellations on an existing booking</li>
+        <li>Repair-order status <em>when connected to the RO system</em></li>
+        <li>Loaner and courtesy-vehicle requests — requested, not promised</li>
+        <li>Recall questions: VIN captured, advisor confirms eligibility</li>
+        <li>Whether a part is orderable, once parts confirms availability</li>
+        <li>Warm transfer to any department, with context</li>
+      </ul>
+    </div>
+    <div class="cover no">
+      <h3>↗ Escalates, never improvises</h3>
+      <ul>
+        <li>Repair prices, diagnosis, and "what will this cost"</li>
+        <li>Promising a completion date or a wait time</li>
+        <li>Declaring a car safe to drive on a brake or warning-light call</li>
+        <li>Warranty coverage decisions</li>
+        <li>Goodwill, discounts, or anything a manager signs off on</li>
+        <li>Confirming a loaner is available today</li>
+        <li>Quoting a trade or a payment — that's sales</li>
+        <li>Anything a caller asks twice and the system can't see</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2>How a call <span class="gradient">actually runs</span></h2>
+    <p>Same path whether it's 7:05am on a Tuesday or 11pm on a Sunday.</p>
+  </div>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><h3>1. Ring once, answer, disclose</h3><p>"Land Rover Newport Beach service, this is the AI assistant — how can I help?" Disclosure is in the first sentence, and a caller can ask for a person at any point.</p></div>
+    <div class="tl-item"><div class="tl-dot"></div><h3>2. Classify the call</h3><p>Book · status · safety · parts · sales · billing question · complaint. The classification sets which questions get asked and where the call ends.</p></div>
+    <div class="tl-item"><div class="tl-dot"></div><h3>3. Capture the vehicle</h3><p>Year, model, mileage, VIN or plate when offered, last name, callback number. Existing customers are matched on the number so the advisor isn't re-asking.</p></div>
+    <div class="tl-item"><div class="tl-dot"></div><h3>4. Offer a real slot</h3><p>Read from your live availability — <code>Thu 7:30</code>, <code>Fri 1:00</code> — never a made-up time. Two options, one question.</p></div>
+    <div class="tl-item"><div class="tl-dot"></div><h3>5. Confirm, then route</h3><p>Text confirmation to the caller, appointment or message to the advisor's queue, transcript attached. Urgent flags go to the top.</p></div>
+    <div class="tl-item"><div class="tl-dot"></div><h3>6. Leave a record</h3><p>Transcript, capture fields, outcome, handle time. The Monday report is generated from those records — answer rate by hour, bookings, after-hours split.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2>What the <span class="gradient">service manager</span> gets</h2>
+    <p>Not a dashboard nobody opens. A weekly card with the numbers fixed-ops actually argues about.</p>
+  </div>
+  <table class="fact-table">
+    <thead><tr><th>Metric</th><th>What it measures</th><th>Why it matters</th></tr></thead>
+    <tbody>
+      <tr><td><b>Answer rate by hour</b></td><td>Calls answered vs. calls that hit voicemail, per hour of the service day</td><td>Shows the 11am and 4pm cliffs your advisors can't cover while they're on the drive</td></tr>
+      <tr><td><b>Appointments booked</b></td><td>Bookings created, split in-hours vs. after-hours</td><td>The after-hours number is pure recovered work — it did not exist before</td></tr>
+      <tr><td><b>Captured, not converted</b></td><td>Callers who gave a vehicle and number but didn't book</td><td>The list your BDC or advisors can work the next morning</td></tr>
+      <tr><td><b>Transfers &amp; callbacks</b></td><td>Who it handed off to, and whether the callback happened</td><td>Proof the handoff isn't a black hole</td></tr>
+      <tr><td><b>Handle time</b></td><td>Average and longest call, by intent</td><td>Catches a script that's too long on the calls that should be 40 seconds</td></tr>
+      <tr><td><b>Escalation reasons</b></td><td>What it refused to answer and handed up</td><td>Shows exactly where your policy has gaps</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2>Questions a service manager <span class="gradient">actually asks</span></h2>
+  </div>
+  <details class="faq"><summary>Will it quote a price for a brake job?</summary><p>No. Pricing and diagnosis stay with the advisor. It captures the vehicle, mileage and concern, books the slot, and leaves the advisor what they need to price it. A receptionist that guesses a price creates a promise the store has to honour.</p></details>
+  <details class="faq"><summary>What if the caller asks for a human?</summary><p>It transfers immediately and says who it's transferring to. If the advisor doesn't pick up, the caller gets a callback promise and the message lands in the advisor's queue with the transcript.</p></details>
+  <details class="faq"><summary>Can it tell a caller their car is ready?</summary><p>Only when it's connected to your repair-order system. Without that read it says the advisor will confirm, and it pages the advisor instead of guessing. That distinction is the reason advisors trust it.</p></details>
+  <details class="faq"><summary>Does it tell people they're talking to an AI?</summary><p>Yes — in the greeting. Every call also opens with a recording notice, and the caller can opt out of the recording.</p></details>
+  <details class="faq"><summary>How does it get our availability?</summary><p>Either from your scheduling system's API, or from a published availability file your service manager controls. If neither exists, it takes the request and books against slots your advisor confirms — slower, but never a time you can't staff.</p></details>
+  <details class="faq"><summary>What happens if the line drops mid-call?</summary><p>The capture fields it already has are saved with the transcript, the advisor sees a dropped call with a callback number, and the caller gets a text. Nothing is lost because the call ended early.</p></details>
+  <details class="faq"><summary>How long until it's live?</summary><p>Days, not months. Week one: number forwarding, hours, departments, and the appointment rules. Week two: your real availability feed and the advisor queue. The 14-day trial runs on the live line.</p></details>
+  <details class="faq"><summary>What does it cost?</summary><p>$3,000 a month per line, month-to-month, with a 14-day free trial. One line covers the service drive; parts and sales routing are configured on the same line.</p></details>
+</section>
+
+<section class="cta-section">
+  <h2>Bring your worst call <span class="gradient">to the demo.</span></h2>
+  <p>The 5:52pm brake call. The third "is it ready" of the morning. The Sunday-night loaner request. Walk in with the call that costs you the most and we'll run that one.</p>
+  <div class="cta-perks">
+    <span class="cta-perk" style="background:var(--accent);border-color:var(--accent);color:#fff">📞 $3,000/mo per line</span>
+    <span class="cta-perk">14-day free trial</span>
+    <span class="cta-perk">Month-to-month</span>
+    <span class="cta-perk">Live in days</span>
+    <span class="cta-perk">Built by a JLR sales consultant</span>
+  </div>
+  <a href="/chat" class="btn btn-primary">Book the 15-minute demo →</a>
+  <a href="/dealerships" class="btn btn-ghost" style="margin-left:12px">See the dealership build</a>
+</section>
+
+<footer>
+  <div class="logo">Royce<span>AI</span> Solutions. Irvine, CA</div>
+  <div class="links">
+    <a href="/ai-receptionist/">AI Receptionist</a>
+    <a href="/dealerships">Dealerships</a>
+    <a href="/business">Business AI</a>
+    <a href="/land-rover">Land Rover Inventory</a>
+    <a href="/products">All Products</a>
+    <a href="/chat">Talk to us</a>
+  </div>
+  <div class="copy">Demo figures and hours reflect Land Rover Newport Beach, 1540 Jamboree Road. Transcript above is simulated; no call is placed.</div>
+</footer>
+
+<script src="/assets/menu.js" defer></script>
+<script>
+(function(){
+  "use strict";
+  var SCENARIOS = {
+    book: {
+      label: "📅 Book a 30k service",
+      short: "30k service",
+      caller: "D. Patel · Defender 110",
+      intent: "Appointment",
+      time: "8:12 AM · Tue",
+      lines: [
+        {s:"ai", t:"Thank you for calling Land Rover Newport Beach service. This is the AI assistant — this call is recorded so your advisor can review it. How can I help?"},
+        {s:"caller", t:"Yeah, I need to get my Defender in for its 30,000 mile service."},
+        {s:"ai", t:"Happy to set that up. Which Defender is it — year and model?"},
+        {s:"caller", t:"2023 Defender 110, the P400."},
+        {s:"ai", t:"Got it — 2023 Defender 110. And the mileage on it right now?"},
+        {s:"caller", t:"28,600."},
+        {s:"ai", t:"Thank you. Can I get a last name for the appointment?"},
+        {s:"caller", t:"Patel."},
+        {s:"ai", t:"Thank you, Mr. Patel. I have Thursday at 7:30 in the morning, or Friday at 1:00. Which is better for you?"},
+        {s:"caller", t:"Thursday morning."},
+        {s:"ai", t:"Booked — Thursday, 7:30 AM. I'll text the confirmation to this number. Is the service light on, or is there anything else you want the advisor to look at?"},
+        {s:"caller", t:"Service light is on. That's it."},
+        {s:"ai", t:"Noted: service light on, 28,600 miles. Pull into the service drive off Jamboree and someone will check you in. Anything else I can do?"},
+        {s:"caller", t:"No, that's it. Thanks."},
+        {s:"ai", t:"You're welcome. Have a good morning."},
+        {s:"sys", t:"Appointment created · Thu 7:30 AM · SMS confirmation sent · transcript filed to advisor queue"}
+      ],
+      outcome: [
+        {h:"📅 Appointment", p:"<b>Thu 7:30 AM</b> — 2023 Defender 110, 28,600 mi, service light on"},
+        {h:"🧑‍🔧 Advisor", p:"RO draft with vehicle, mileage and concern <b>queued</b>"},
+        {h:"💬 Caller", p:"Confirmation text sent before the caller hung up"}
+      ],
+      fact: {caller:"New caller", intent:"Book service", out:"Booked Thu 7:30"}
+    },
+    status: {
+      label: "🔎 Is my car ready?",
+      short: "Status call",
+      caller: "T. Nguyen · Range Rover Sport",
+      intent: "Status",
+      time: "11:40 AM · Wed",
+      lines: [
+        {s:"ai", t:"Land Rover Newport Beach service, this is the AI assistant. How can I help?"},
+        {s:"caller", t:"I dropped my Sport off Monday and nobody has called me. Is it done?"},
+        {s:"ai", t:"I'm sorry about that. Let me pull it up — what's the last name on the repair order?"},
+        {s:"caller", t:"Nguyen."},
+        {s:"ai", t:"Thank you. Is it the Range Rover Sport that came in Monday morning?"},
+        {s:"caller", t:"Yeah, white one."},
+        {s:"ai", t:"I have it here: your repair order is in final quality check, and the advisor has it back to you today. I'm not going to promise a time I can't see — let me put you through to them now so they can give you the pickup window."},
+        {s:"caller", t:"Okay, yeah, put me through."},
+        {s:"ai", t:"Transferring you to the advisor handling your Sport. If the line drops, they'll call you back on this number."},
+        {s:"sys", t:"Warm transfer · advisor sees caller, RO number and transcript · callback number captured"}
+      ],
+      outcome: [
+        {h:"🔎 Status read", p:"RO in <b>final quality check</b> — read from the RO system, not guessed"},
+        {h:"🧑‍🔧 Advisor", p:"Warm transfer with caller on the line"},
+        {h:"📵 If dropped", p:"Callback number captured, text sent, advisor pinged"}
+      ],
+      fact: {caller:"Existing customer", intent:"RO status", out:"Warm transfer"}
+    },
+    safety: {
+      label: "⚠️ Brakes grinding on PCH",
+      short: "Safety triage",
+      caller: "M. Alvarez · Range Rover Velar",
+      intent: "Urgent",
+      time: "5:52 PM · Thu",
+      lines: [
+        {s:"ai", t:"Land Rover Newport Beach service, this is the AI assistant. How can I help?"},
+        {s:"caller", t:"My brakes are grinding really bad and I'm driving on PCH right now."},
+        {s:"ai", t:"I'll help you get this handled tonight. First, is the brake pedal firm when you press it, or does it go soft toward the floor?"},
+        {s:"caller", t:"No, the pedal feels normal. It's just grinding."},
+        {s:"ai", t:"Okay. Does the car pull to one side when you brake, and is there any red brake warning light on the dash?"},
+        {s:"caller", t:"No pulling. No red light."},
+        {s:"ai", t:"Then it's most likely pads, and I wouldn't push it far tonight. I can book you first thing tomorrow at 7:30, and I'm flagging the advisor now so parts can be checked before you arrive. Does 7:30 work?"},
+        {s:"caller", t:"Yeah, 7:30 is fine."},
+        {s:"ai", t:"Booked for 7:30 AM, flagged urgent. What's the mileage and your last name?"},
+        {s:"caller", t:"About 34,000. Alvarez."},
+        {s:"ai", t:"Thank you, Mr. Alvarez. If the grinding gets worse or the pedal changes at all before then, stop driving and call us back — I'll get roadside on the line. Confirmation is coming to this number now."},
+        {s:"sys", t:"URGENT flag · 7:30 AM booking · advisor paged tonight · roadside path offered if symptoms change"}
+      ],
+      outcome: [
+        {h:"⚠️ Two questions", p:"Pedal feel + warning light decided <b>book vs. roadside</b>"},
+        {h:"📅 Booked", p:"<b>7:30 AM</b>, flagged urgent, pads pre-checked"},
+        {h:"🛟 Guardrail", p:"No diagnosis, no price, no \"safe to drive\" ruling"}
+      ],
+      fact: {caller:"Caller driving", intent:"Safety triage", out:"Urgent 7:30 AM"}
+    },
+    parts: {
+      label: "🧰 Parts counter",
+      short: "Parts",
+      caller: "J. Kim · Defender 110",
+      intent: "Parts",
+      time: "2:15 PM · Fri",
+      lines: [
+        {s:"ai", t:"Land Rover Newport Beach service, this is the AI assistant. How can I help?"},
+        {s:"caller", t:"Do you guys have the roof rack in stock for a Defender 110?"},
+        {s:"ai", t:"That's the parts counter — I'll get you there. Do you have the part number, or should they pull it off the VIN?"},
+        {s:"caller", t:"I don't have the number. It's a 2024 Defender 110."},
+        {s:"ai", t:"No problem. Can I get the last eight of the VIN? That way parts quotes the right rack and the mounting kit."},
+        {s:"caller", t:"Hang on... it's R A 1 2 3 4 5 6."},
+        {s:"ai", t:"Got it. I'm transferring you to parts now with the VIN and the request on the note. If the counter is with a customer, they'll call you back on this number — is this the best number?"},
+        {s:"caller", t:"Yeah, this one's fine."},
+        {s:"ai", t:"Perfect. Transferring you now."},
+        {s:"sys", t:"Routed to parts · VIN + request on the note · callback number confirmed"}
+      ],
+      outcome: [
+        {h:"🧰 Routed", p:"Parts counter with VIN and part request attached"},
+        {h:"☎️ Fallback", p:"Callback logged if the counter is busy"},
+        {h:"🚫 Guardrail", p:"No price and no stock claim from the receptionist"}
+      ],
+      fact: {caller:"Parts request", intent:"Parts", out:"Routed to parts"}
+    },
+    night: {
+      label: "🌙 9:42 PM — loaner + service",
+      short: "After hours",
+      caller: "S. Whitfield · Range Rover",
+      intent: "After hours",
+      time: "9:42 PM · Sun",
+      lines: [
+        {s:"ai", t:"Thank you for calling Land Rover Newport Beach. The store is closed right now — I'm the AI assistant and I can still book you in. How can I help?"},
+        {s:"caller", t:"I need to get my Range Rover looked at this week, and I need a loaner while it's in."},
+        {s:"ai", t:"I can put the loaner request on the appointment. Two things the advisor will confirm in the morning: courtesy-vehicle availability, and whether the work is warranty. What's going on with the vehicle?"},
+        {s:"caller", t:"Air suspension warning keeps coming on."},
+        {s:"ai", t:"Got it — air suspension warning. Is the car sitting level, or is a corner dropped?"},
+        {s:"caller", t:"It's sitting level. Just the light."},
+        {s:"ai", t:"That's helpful for the advisor. The first openings are Monday 7:30 AM and Monday 10:00. Which would you rather?"},
+        {s:"caller", t:"7:30."},
+        {s:"ai", t:"Booked for Monday 7:30, loaner requested, air suspension warning noted. Is this the best number for the morning confirmation text?"},
+        {s:"caller", t:"Yes. Thank you."},
+        {s:"ai", t:"You're all set. The advisor will text you before 8 to confirm the loaner. Goodnight."},
+        {s:"sys", t:"After-hours booking · loaner REQUESTED (not promised) · Monday queue built before the doors opened"}
+      ],
+      outcome: [
+        {h:"🌙 After hours", p:"Booked <b>Mon 7:30 AM</b> while the store was closed"},
+        {h:"🚙 Loaner", p:"Requested and flagged — availability confirmed by the advisor"},
+        {h:"📋 Queue", p:"Sitting in Monday's list before anyone clocks in"}
+      ],
+      fact: {caller:"After hours", intent:"Book + loaner", out:"Mon 7:30, loaner requested"}
+    },
+    sales: {
+      label: "🚗 Misdial to sales",
+      short: "Sales transfer",
+      caller: "Unknown · 2027 Sport",
+      intent: "Sales",
+      time: "10:05 AM · Sat",
+      lines: [
+        {s:"ai", t:"Land Rover Newport Beach service, this is the AI assistant. How can I help?"},
+        {s:"caller", t:"Oh — I'm trying to reach sales. I want to ask about a 2027 Range Rover Sport lease."},
+        {s:"ai", t:"That's the sales floor, and I'll get you there. So they're ready for you: are you asking about a Sport you saw on the lot, or a build you want ordered?"},
+        {s:"caller", t:"One on your website. Black one."},
+        {s:"ai", t:"Perfect — I'll pass that along. Transferring you to sales now on 949-432-4085. If they're with a customer, they'll call you right back on this number."},
+        {s:"caller", t:"Great, thanks."},
+        {s:"sys", t:"Warm transfer to sales · model and intent stated on the note · no service script forced on a buyer"}
+      ],
+      outcome: [
+        {h:"🚗 Sales kept", p:"Transferred to <b>949-432-4085</b> with the model stated"},
+        {h:"🧠 Context", p:"\"Black 2027 Sport from the website\" travels with the call"},
+        {h:"📞 Fallback", p:"Callback captured if sales is busy"}
+      ],
+      fact: {caller:"Mis-dialed", intent:"Sales", out:"Transferred to sales"}
+    }
+  };
+
+  var order = ["book","status","safety","parts","night","sales"];
+  var current = "book", playing = false, timer = null, elapsed = 0, speed = 1, runId = 0;
+  var $ = function(id){ return document.getElementById(id); };
+  var body = $("trBody"), scnBar = $("scnBar"), phone = $("phone"), pState = $("pState"), pStateText = $("pStateText");
+
+  // waveform bars
+  var wave = $("wave");
+  for (var i=0;i<28;i++){ wave.appendChild(document.createElement("i")); }
+
+  function fmt(n){ return (n<10?"0":"")+n; }
+  function setFact(k,v){ var el=$("f"+k); if(el) el.textContent=v; }
+
+  function clock(){
+    var m = Math.floor(elapsed/60), s = elapsed%60;
+    $("pTime").innerHTML = fmt(m)+":"+fmt(s)+"<small>call time</small>";
+  }
+
+  function startTimer(){
+    clearInterval(timer);
+  }
+
+  function buildBar(){
+    scnBar.innerHTML = "";
+    order.forEach(function(k){
+      var b = document.createElement("button");
+      b.className = "scn" + (k===current ? " on" : "");
+      b.type = "button";
+      b.textContent = SCENARIOS[k].label;
+      b.onclick = function(){ select(k); };
+      scnBar.appendChild(b);
+    });
+  }
+
+  function select(k){
+    current = k;
+    buildBar();
+    reset();
+  }
+
+  function reset(){
+    runId++;
+    playing = false;
+    clearInterval(timer);
+    elapsed = 0;
+    clock();
+    buildBar();
+    body.innerHTML = '<div class="empty-state"><b>The line is quiet.</b>Press play and the call streams here, line by line — exactly what your advisor would read.</div>';
+    $("outcome").className = "outcome";
+    $("outcome").innerHTML = "";
+    $("trCount").textContent = "0 lines";
+    phone.classList.remove("playing");
+    pState.classList.add("idle");
+    pStateText.textContent = "Ready";
+    $("btnPlay").disabled = false;
+    $("btnPlay").textContent = "▶ Play call";
+    var sc = SCENARIOS[current];
+    $("pName").textContent = sc.caller;
+    $("pLine").textContent = sc.time + " · service line 949-432-4081";
+    setFact("Scn", sc.short);
+    setFact("Caller", sc.fact.caller);
+    setFact("Intent", sc.fact.intent);
+    setFact("Out", "—");
+  }
+
+  function addBubble(line){
+    elapsed += line.s === "ai" ? 9 : (line.s === "caller" ? 5 : 0);
+    clock();
+    var es = body.querySelector(".empty-state");
+    if (es) es.remove();
+    var d = document.createElement("div");
+    d.className = "bubble " + line.s;
+    if (line.s === "sys"){
+      d.innerHTML = "⟶ " + line.t;
+    } else {
+      var who = line.s === "ai" ? "Receptionist" : "Caller";
+      if (line.s === "ai"){
+        d.innerHTML = '<span class="who">' + who + '</span>' + line.t;
+      } else {
+        d.innerHTML = '<span class="who">' + who + '</span>' + line.t;
+      }
+    }
+    body.appendChild(d);
+    body.scrollTop = body.scrollHeight;
+    var n = body.querySelectorAll(".bubble").length;
+    $("trCount").textContent = n + (n===1 ? " line" : " lines");
+  }
+
+  function typing(){
+    var es = body.querySelector(".empty-state");
+    if (es) es.remove();
+    var d = document.createElement("div");
+    d.className = "bubble ai";
+    d.id = "typing";
+    d.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
+    body.appendChild(d);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function wait(ms, id){
+    return new Promise(function(res){
+      setTimeout(res, ms);
+      if (id !== runId){ /* stale */ }
+    });
+  }
+
+  function showOutcome(){
+    var oc = $("outcome");
+    oc.innerHTML = "";
+    SCENARIOS[current].outcome.forEach(function(o){
+      var d = document.createElement("div");
+      d.className = "oc";
+      d.innerHTML = "<h5>" + o.h + "</h5><p>" + o.p + "</p>";
+      oc.appendChild(d);
+    });
+    oc.className = "outcome show";
+    setFact("Out", SCENARIOS[current].fact.out);
+  }
+
+  async function play(){
+    if (playing) { playing = false; return; }
+    reset();
+    var id = runId;
+    playing = true;
+    $("btnPlay").disabled = true;
+    phone.classList.add("playing");
+    pState.classList.remove("idle");
+    pStateText.textContent = "On call · live transcription";
+    startTimer();
+
+    var lines = SCENARIOS[current].lines;
+    for (var i=0;i<lines.length;i++){
+      if (!playing || id !== runId) return;
+      var l = lines[i];
+      if (l.s === "caller"){
+        await wait(900/speed, id);
+        if (!playing || id !== runId) return;
+        addBubble(l);
+        await wait(700/speed, id);
+      } else if (l.s === "ai"){
+        typing();
+        await wait(650/speed, id);
+        var t = document.getElementById("typing");
+        if (t) t.remove();
+        if (!playing || id !== runId) return;
+        addBubble(l);
+        await wait(500/speed, id);
+      } else {
+        await wait(300/speed, id);
+        if (!playing || id !== runId) return;
+        addBubble(l);
+        await wait(400/speed, id);
+      }
+    }
+    if (id !== runId) return;
+    playing = false;
+    clearInterval(timer);
+    phone.classList.remove("playing");
+    pState.classList.add("idle");
+    pStateText.textContent = "Call ended · " + fmt(Math.floor(elapsed/60)) + ":" + fmt(elapsed%60);
+    $("btnPlay").disabled = false;
+    $("btnPlay").textContent = "▶ Play again";
+    showOutcome();
+  }
+
+  $("btnPlay").onclick = play;
+  $("btnReset").onclick = reset;
+  Array.prototype.forEach.call(document.querySelectorAll(".speed button"), function(b){
+    b.onclick = function(){
+      Array.prototype.forEach.call(document.querySelectorAll(".speed button"), function(x){ x.classList.remove("on"); });
+      b.classList.add("on");
+      speed = parseInt(b.dataset.speed,10) || 1;
+    };
+  });
+  $("heroPlay").onclick = function(e){
+    e.preventDefault();
+    document.getElementById("demo").scrollIntoView({behavior:"smooth", block:"start"});
+    setTimeout(function(){ if(!playing) play(); }, 600);
+  };
+
+  reset();
+
+  // Auto-play once, the first time the demo panel is actually on screen.
+  try {
+    var started = false;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduce && "IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting && !started){
+            started = true;
+            io.disconnect();
+            setTimeout(function(){ if (!playing) play(); }, 700);
+          }
+        });
+      }, {threshold: 0.35});
+      io.observe(document.getElementById("demo"));
+    }
+  } catch(err) {}
+})();
+</script>
+</body>
+</html>
