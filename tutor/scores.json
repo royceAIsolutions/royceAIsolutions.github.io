@@ -1622,5 +1622,113 @@
       }
     ],
     "src": "web"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 23,
+    "total": 33,
+    "percent": 70,
+    "subject": "Physics",
+    "date": "2026-11-17",
+    "ts": 1794890347786,
+    "missed": [
+      {
+        "n": 6,
+        "q": "After one half-life, half the parent has become daughter, so the ratio is 1:1.",
+        "p": "D",
+        "k": "B",
+        "o": [
+          "Three, since only 12.5 percent parent remains",
+          "Four, since only 6.25 percent parent remains",
+          "Two, since only 25 percent parent remains",
+          "Five, since only 3.125 percent parent remains"
+        ]
+      },
+      {
+        "n": 9,
+        "q": "U-238's 4.5-billion-year half-life leaves measurable parent and daughter at 2 By.",
+        "p": "C",
+        "k": "A",
+        "o": [
+          "Carbon-14, whose half-life fits tens of thousands of years",
+          "Uranium-238, whose half-life fits several billions of years",
+          "Rubidium-87, whose half-life fits tens of billions of years",
+          "Potassium-40, whose half-life fits about a billion years the"
+        ]
+      },
+      {
+        "n": 10,
+        "q": "The answer is A — A 5,730-year half-life means measurable parent remains at 30,000 years, about five half-lives.",
+        "p": "A",
+        "k": "B",
+        "o": [
+          "Age equals the half-life divided by number of half-lives",
+          "Age equals the number of half-lives times the half-life",
+          "Age equals the percentage of parent times the half-life",
+          "Age equals the daughter percentage times the parent count"
+        ]
+      },
+      {
+        "n": 16,
+        "q": "The inclusion principle: a clast must exist before the rock that contains it.",
+        "p": "A",
+        "k": "D",
+        "o": [
+          "To measure the absolute age in millions of years",
+          "To show that no folding ever affected the layers",
+          "To prove the sediment was never deposited in water",
+          "To identify layers of the same relative age"
+        ]
+      },
+      {
+        "n": 17,
+        "q": "The answer is D — Index fossils are short-lived, wide-ranging species, so they correlate relative age.",
+        "p": "B",
+        "k": "A",
+        "o": [
+          "Younger than the layers it offsets",
+          "Older than the layers it offsets",
+          "Same age as the lowest layer",
+          "Impossible to place without radiometric dating"
+        ]
+      },
+      {
+        "n": 21,
+        "q": "Crust ages with distance from the spreading center, so the oldest lies near trenches.",
+        "p": "B",
+        "k": "A",
+        "o": [
+          "Crust formed at the ridge and moved outward both ways",
+          "Crust formed at both edges and moved toward the ridge",
+          "The ridge axis migrated slowly while the crust stayed fixed",
+          "Magnetic minerals settled from the ocean water in stripes"
+        ]
+      },
+      {
+        "n": 23,
+        "q": "Divergence means the plates separate, so each vector points away from the boundary.",
+        "p": "A",
+        "k": "C",
+        "o": [
+          "It is lowest at the ridge and rises with crust age",
+          "It is uniform across the whole basin at all ages",
+          "It is highest at the ridge and falls with crust age",
+          "It is highest at the trench and lowest at the ridge"
+        ]
+      },
+      {
+        "n": 24,
+        "q": "The answer is C — Young hot crust near the ridge loses heat fastest, so measured flow is highest there.",
+        "p": "C",
+        "k": "D",
+        "o": [
+          "The continental plate is denser than the oceanic plate",
+          "The oceanic plate is much thicker and therefore heavier",
+          "The continental plate moves faster and pushes it down",
+          "The oceanic plate is denser than the mantle beneath"
+        ]
+      }
+    ],
+    "src": "web"
   }
 ]
