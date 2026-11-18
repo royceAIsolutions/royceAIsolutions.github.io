@@ -1838,5 +1838,113 @@
       }
     ],
     "src": "web"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 22,
+    "total": 33,
+    "percent": 67,
+    "subject": "Physics",
+    "date": "2026-11-18",
+    "ts": 1794973693038,
+    "missed": [
+      {
+        "n": 3,
+        "q": "The mantle extends roughly 2,900 km and holds most of Earth's volume and mass.",
+        "p": "B",
+        "k": "C",
+        "o": [
+          "It is made of liquid iron rather than silicate rock",
+          "It is under much less pressure than the crust above",
+          "It sits closer to its melting point at that depth",
+          "It contains no radioactive isotopes to warm it at all"
+        ]
+      },
+      {
+        "n": 8,
+        "q": "The cold dense slab sinks under its own weight; slab pull is the largest plate-driving force.",
+        "p": "B",
+        "k": "D",
+        "o": [
+          "Hot mantle pushes sideways against the ridge axis",
+          "Subducting slabs drag the plate toward the ridge",
+          "Friction between plates pulls crust into the ridge",
+          "Elevated lithosphere slides downslope away from the ridge"
+        ]
+      },
+      {
+        "n": 10,
+        "q": "Friction and mantle drag resist motion, so they point opposite the plate's direction of travel.",
+        "p": "C",
+        "k": "B",
+        "o": [
+          "Above a mid-ocean ridge, where hot rock rises",
+          "Above a subduction zone, where cold rock sinks",
+          "Directly beneath a continental interior, where rock is hotte",
+          "Along a transform fault, where plates slide sideways"
+        ]
+      },
+      {
+        "n": 11,
+        "q": "The answer is B — Cooled lithosphere sinks at convergent margins, which is why descending limbs line up with subduction",
+        "p": "A",
+        "k": "C",
+        "o": [
+          "A deep trench with a long volcanic island chain",
+          "A folded mountain belt built from greatly thickened crust",
+          "A rift valley with normal faults and thinning crust",
+          "A strike-slip fault with clearly offset rock layers"
+        ]
+      },
+      {
+        "n": 14,
+        "q": "The San Andreas is a strike-slip boundary: two plates slide horizontally past each other.",
+        "p": "C",
+        "k": "B",
+        "o": [
+          "Shallow earthquakes from sudden slip along a fault",
+          "New oceanic crust created by upwelling magma",
+          "Offset streams and roads cut by lateral motion",
+          "Fractured rock along a linear fault trace"
+        ]
+      },
+      {
+        "n": 17,
+        "q": "Deep quakes only occur inside a descending slab, so the depth trend traces subduction in data.",
+        "p": "B",
+        "k": "A",
+        "o": [
+          "Basalt cooling during reversals of Earth's field",
+          "Sediment layers sorting themselves by grain size",
+          "Glaciers depositing magnetic minerals in stripes",
+          "Magma chambers aligning with the current field"
+        ]
+      },
+      {
+        "n": 19,
+        "q": "Crust ages as it moves away from the ridge, so the oldest seafloor lies near trenches.",
+        "p": "A",
+        "k": "C",
+        "o": [
+          "Toward the ridge axis, from both sides equally",
+          "Parallel to the ridge, in the same direction",
+          "Away from the ridge axis, on both sides",
+          "Downward, into the asthenosphere that lies below them"
+        ]
+      },
+      {
+        "n": 20,
+        "q": "The answer is C — Divergent motion means the two plates move apart, so both vectors point away from the ridge.",
+        "p": "C",
+        "k": "D",
+        "o": [
+          "In the center of an old deep ocean basin",
+          "Along a transform fault far from any spreading ridge",
+          "Beneath a thick continental mountain belt like the Andes",
+          "At a mid-ocean ridge, where new crust is hot"
+        ]
+      }
+    ],
+    "src": "web"
   }
 ]
