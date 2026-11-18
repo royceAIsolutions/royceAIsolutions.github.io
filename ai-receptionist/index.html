@@ -759,7 +759,6 @@ nav > .nav-logo{margin-right:0!important}
   function reset(){
     runId++;
     playing = false;
-    stopAudio();
     clearInterval(timer);
     elapsed = 0;
     clock();
@@ -839,54 +838,6 @@ nav > .nav-logo{margin-right:0!important}
   // ---- real audio for the first scenario -------------------------------------
   // The track is generated from this same transcript (build_demo_audio.py) and the
   // timings file says when each line starts, so transcript and voice stay together.
-  var audioEl = null, audioTimes = null, audioLoading = null;
-  function loadAudio(){
-    if (audioTimes) return Promise.resolve(audioTimes);
-    if (audioLoading) return audioLoading;
-    audioLoading = fetch("/assets/audio/jlr-demo-call.json", {cache:"no-store"})
-      .then(function(r){ return r.ok ? r.json() : null; })
-      .then(function(d){ if (d && d.lines && d.lines.length) { audioTimes = d;
-          if(!audioEl){ audioEl = document.getElementById("demoAudioEl") || new Audio(d.src);
-                        audioEl.preload = "auto"; window.__demoAudio = audioEl; } } return audioTimes; })
-      .catch(function(){ return null; });
-    return audioLoading;
-  }
-  function stopAudio(){ if (audioEl){ try { audioEl.pause(); audioEl.currentTime = 0; } catch(e){} } }
-
-  // Browsers only allow audible playback that starts inside a user gesture. The click that
-  // starts the demo runs a fetch and a scroll first, so prime the element here, synchronously.
-  function unlockAudio(){
-    try {
-      if (!audioEl){
-        audioEl = document.getElementById("demoAudioEl") || new Audio("/assets/audio/jlr-demo-call.mp3");
-        audioEl.preload = "auto";
-        window.__demoAudio = audioEl;
-      }
-      var p = audioEl.play();
-      if (p && p.then) p.then(function(){ try { audioEl.pause(); audioEl.currentTime = 0; } catch(e){} }).catch(function(){});
-    } catch(e){}
-  }
-
-  function showSoundHint(){
-    var h = document.getElementById("soundHint");
-    if (h) { h.style.display = "inline-flex"; }
-  }
-
-  function waitAudio(t, id){
-    // Never hang the demo on a blocked autoplay or a missing audio device: hard cap
-    // each line at its own timestamp plus a grace window, then carry on.
-    var deadline = Date.now() + (t + 8) * 1000;
-    return new Promise(function(res){
-      (function tick(){
-        if (id !== runId) return res();
-        if (!audioEl) return res();
-        if (audioEl.currentTime >= t || audioEl.ended) return res();
-        if (Date.now() > deadline) return res();
-        setTimeout(tick, 60);
-      })();
-    });
-  }
-
   async function play(){
     if (playing) { playing = false; return; }
     reset();
@@ -934,15 +885,13 @@ nav > .nav-logo{margin-right:0!important}
     showOutcome();
   }
 
-  $("btnPlay").onclick = function(){ unlockAudio(); play(); };
-  (function(){ var h = document.getElementById("soundHint"); if (h) h.onclick = function(){ unlockAudio(); try { audioEl.currentTime = 0; audioEl.play(); } catch(e){} }; })();
+  $("btnPlay").onclick = play;
   $("btnReset").onclick = reset;
   Array.prototype.forEach.call(document.querySelectorAll(".speed button"), function(b){
     b.onclick = function(){
       Array.prototype.forEach.call(document.querySelectorAll(".speed button"), function(x){ x.classList.remove("on"); });
       b.classList.add("on");
       speed = parseInt(b.dataset.speed,10) || 1;
-      if (audioEl) audioEl.playbackRate = speed;
     };
   });
 
@@ -985,30 +934,7 @@ nav > .nav-logo{margin-right:0!important}
     .catch(function(){});
 })();
 
-/* Live demo line: the number is published by provision.py into /jlr-receptionist-line.json.
-   No file, or active:false, and the page quietly stays on the simulated-call version. */
-(function(){
-  "use strict";
-  var box = document.getElementById("demoLine");
-  var num = document.getElementById("demoLineNum");
-  var hero = document.getElementById("heroCall");
-  if (!box || !num) return;
-  fetch("/jlr-receptionist-line.json", {cache: "no-store"})
-    .then(function(r){ return r.ok ? r.json() : null; })
-    .then(function(d){
-      if (!d || !d.active || !d.number) return;
-      var disp = d.display || d.number;
-      var tel = "tel:" + String(d.number).replace(/[^\d+]/g, "");
-      num.textContent = disp;
-      num.href = tel;
-      box.classList.add("on");
-      if (hero){
-        hero.textContent = "📞 Call the demo line — " + disp;
-        hero.href = tel;
-      }
-    })
-    .catch(function(){});
-})();
+
 </script>
 </body>
 </html>
