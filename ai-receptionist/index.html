@@ -284,7 +284,6 @@ nav > .nav-logo{margin-right:0!important}
   <p class="subtitle">Appointments booked, status calls answered, brake noise triaged, advisors and parts reached — at 7am, at 5:52pm, and at 9:42pm when the store is dark. Built by someone who works in a Land Rover store, not in a call-center pitch deck.</p>
   <div class="hero-ctas">
     <a href="tel:+19492043517" class="btn btn-primary" id="heroCall">📞 Call the demo line — (949) 204-3517</a>
-    <a href="#demo" class="btn btn-ghost" id="heroPlay">Watch a sample transcript</a>
     <a href="#" class="btn btn-ghost" id="heroLog" target="_blank" rel="noopener" style="visibility:hidden">🔎 Phone log</a>
   </div>
   <div class="storeline">
@@ -946,12 +945,6 @@ nav > .nav-logo{margin-right:0!important}
       if (audioEl) audioEl.playbackRate = speed;
     };
   });
-  $("heroPlay").onclick = function(e){
-    e.preventDefault();
-    unlockAudio();
-    document.getElementById("demo").scrollIntoView({behavior:"smooth", block:"start"});
-    setTimeout(function(){ if(!playing) play(); }, 600);
-  };
 
   reset();
 
