@@ -282,6 +282,7 @@ nav > .nav-logo{margin-right:0!important}
   <div class="hero-ctas">
     <a href="#demo" class="btn btn-primary" id="heroPlay">▶ Play the demo call</a>
     <a href="/chat" class="btn btn-ghost" id="heroCall">Book a 15-minute demo</a>
+    <a href="#" class="btn btn-ghost" id="heroLog" target="_blank" rel="noopener" hidden>🔎 Phone log</a>
   </div>
   <div class="storeline">
     <span>📍 Service: 2101 Dove Street, Newport Beach, CA 92660</span>
@@ -297,7 +298,6 @@ nav > .nav-logo{margin-right:0!important}
       <a class="dl-num" id="demoLineNum" href="tel:">—</a>
     </div>
     <p class="dl-copy">This is the actual agent, not a recording. Call it, try to break it, and judge the handoff yourself.</p>
-    <a class="dl-log" id="demoLogBtn" href="#" target="_blank" rel="noopener" hidden>Phone log →</a>
   </div>
   <div class="demo-note">
     <b>Simulated call.</b> Scripted from a real service-drive workflow — the transcript streams line by line, nothing is dialed and no live audio is played.
@@ -926,7 +926,7 @@ nav > .nav-logo{margin-right:0!important}
    which carries the current tunnel URL for the transcript page (password protected). */
 (function(){
   "use strict";
-  var btn = document.getElementById("demoLogBtn");
+  var btn = document.getElementById("heroLog");
   if (!btn) return;
   fetch("/jlr-receptionist-log.json", {cache: "no-store"})
     .then(function(r){ return r.ok ? r.json() : null; })
