@@ -282,7 +282,7 @@ nav > .nav-logo{margin-right:0!important}
   <div class="hero-ctas">
     <a href="#demo" class="btn btn-primary" id="heroPlay">▶ Play the demo call</a>
     <a href="/chat" class="btn btn-ghost" id="heroCall">Book a 15-minute demo</a>
-    <a href="#" class="btn btn-ghost" id="heroLog" target="_blank" rel="noopener" hidden>🔎 Phone log</a>
+    <a href="#" class="btn btn-ghost" id="heroLog" target="_blank" rel="noopener" style="visibility:hidden">🔎 Phone log</a>
   </div>
   <div class="storeline">
     <span>📍 Service: 2101 Dove Street, Newport Beach, CA 92660</span>
@@ -300,7 +300,7 @@ nav > .nav-logo{margin-right:0!important}
     <p class="dl-copy">This is the actual agent, not a recording. Call it, try to break it, and judge the handoff yourself.</p>
   </div>
   <div class="demo-note">
-    <b>Simulated call.</b> Scripted from a real service-drive workflow — the transcript streams line by line, nothing is dialed and no live audio is played.
+    <b>Simulated call, real audio.</b> Scripted from a real service-drive workflow and voiced end to end — the transcript streams in sync and no live call is placed.
   </div>
   <div class="demo-wrap">
     <div class="scn-bar" id="scnBar"></div>
@@ -763,6 +763,7 @@ nav > .nav-logo{margin-right:0!important}
   function reset(){
     runId++;
     playing = false;
+    stopAudio();
     clearInterval(timer);
     elapsed = 0;
     clock();
@@ -839,6 +840,32 @@ nav > .nav-logo{margin-right:0!important}
     setFact("Out", SCENARIOS[current].fact.out);
   }
 
+  // ---- real audio for the first scenario -------------------------------------
+  // The track is generated from this same transcript (build_demo_audio.py) and the
+  // timings file says when each line starts, so transcript and voice stay together.
+  var audioEl = null, audioTimes = null, audioLoading = null;
+  function loadAudio(){
+    if (audioTimes) return Promise.resolve(audioTimes);
+    if (audioLoading) return audioLoading;
+    audioLoading = fetch("/assets/audio/jlr-demo-call.json", {cache:"no-store"})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(d){ if (d && d.lines && d.lines.length) { audioTimes = d; if(!audioEl){ audioEl = new Audio(d.src); audioEl.preload = "auto"; } } return audioTimes; })
+      .catch(function(){ return null; });
+    return audioLoading;
+  }
+  function stopAudio(){ if (audioEl){ try { audioEl.pause(); audioEl.currentTime = 0; } catch(e){} } }
+
+  function waitAudio(t, id){
+    return new Promise(function(res){
+      (function tick(){
+        if (id !== runId) return res();
+        if (!audioEl) return res();
+        if (audioEl.currentTime >= t || audioEl.ended) return res();
+        setTimeout(tick, 60);
+      })();
+    });
+  }
+
   async function play(){
     if (playing) { playing = false; return; }
     reset();
@@ -851,6 +878,31 @@ nav > .nav-logo{margin-right:0!important}
     startTimer();
 
     var lines = SCENARIOS[current].lines;
+
+    var track = (current === "book") ? await loadAudio() : null;
+    if (track && id === runId){
+      audioEl.currentTime = 0;
+      audioEl.playbackRate = speed;
+      try { await audioEl.play(); } catch(e){}
+      for (var j=0;j<lines.length;j++){
+        if (!playing || id !== runId) { stopAudio(); return; }
+        await waitAudio((track.lines[j] && track.lines[j].t) || j*2.4, id);
+        if (!playing || id !== runId) { stopAudio(); return; }
+        if (lines[j].s === "ai") typing();
+        addBubble(lines[j]);
+      }
+      var remain = Math.max(0, (track.duration || 0) - (audioEl.currentTime || 0));
+      await new Promise(function(r){ setTimeout(r, Math.min(remain*1000, 4000)); });
+      playing = false; clearInterval(timer); stopAudio();
+      phone.classList.remove("playing");
+      pState.classList.add("idle");
+      pStateText.textContent = "Call ended · " + fmt(Math.floor((track.duration||0)/60)) + ":" + fmt(Math.round((track.duration||0)%60));
+      $("btnPlay").disabled = false;
+      $("btnPlay").textContent = "▶ Play again";
+      showOutcome();
+      return;
+    }
+
     for (var i=0;i<lines.length;i++){
       if (!playing || id !== runId) return;
       var l = lines[i];
@@ -892,6 +944,7 @@ nav > .nav-logo{margin-right:0!important}
       Array.prototype.forEach.call(document.querySelectorAll(".speed button"), function(x){ x.classList.remove("on"); });
       b.classList.add("on");
       speed = parseInt(b.dataset.speed,10) || 1;
+      if (audioEl) audioEl.playbackRate = speed;
     };
   });
   $("heroPlay").onclick = function(e){
@@ -933,7 +986,7 @@ nav > .nav-logo{margin-right:0!important}
     .then(function(cfg){
       if (!cfg || !cfg.available || !cfg.url) return;
       btn.href = cfg.url;
-      btn.hidden = false;
+      btn.style.visibility = "visible";
       if (cfg.auth && cfg.auth.user) btn.title = "Password protected · user " + cfg.auth.user;
     })
     .catch(function(){});

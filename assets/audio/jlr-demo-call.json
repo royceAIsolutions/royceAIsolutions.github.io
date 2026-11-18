@@ -1,0 +1,103 @@
+{
+ "src": "/assets/audio/jlr-demo-call.mp3",
+ "duration": 109.2,
+ "generated": true,
+ "voices": {
+  "ai": "Reed (English (US))",
+  "caller": "Samantha (English (US))"
+ },
+ "lines": [
+  {
+   "t": 0.0,
+   "who": "ai"
+  },
+  {
+   "t": 13.82,
+   "who": "caller"
+  },
+  {
+   "t": 16.25,
+   "who": "ai"
+  },
+  {
+   "t": 21.72,
+   "who": "caller"
+  },
+  {
+   "t": 25.81,
+   "who": "ai"
+  },
+  {
+   "t": 29.52,
+   "who": "caller"
+  },
+  {
+   "t": 34.06,
+   "who": "ai"
+  },
+  {
+   "t": 40.2,
+   "who": "caller"
+  },
+  {
+   "t": 42.13,
+   "who": "ai"
+  },
+  {
+   "t": 46.66,
+   "who": "caller"
+  },
+  {
+   "t": 48.77,
+   "who": "ai"
+  },
+  {
+   "t": 52.39,
+   "who": "caller"
+  },
+  {
+   "t": 55.16,
+   "who": "ai"
+  },
+  {
+   "t": 58.68,
+   "who": "caller"
+  },
+  {
+   "t": 60.74,
+   "who": "ai"
+  },
+  {
+   "t": 64.31,
+   "who": "caller"
+  },
+  {
+   "t": 65.87,
+   "who": "ai"
+  },
+  {
+   "t": 77.29,
+   "who": "caller"
+  },
+  {
+   "t": 78.71,
+   "who": "ai"
+  },
+  {
+   "t": 85.42,
+   "who": "caller"
+  },
+  {
+   "t": 87.45,
+   "who": "ai"
+  },
+  {
+   "t": 103.09,
+   "who": "caller"
+  },
+  {
+   "t": 105.37,
+   "who": "ai"
+  }
+ ]
+}
