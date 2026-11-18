@@ -1,10 +1,10 @@
 {
  "src": "/assets/audio/jlr-demo-call.mp3",
- "duration": 118.26,
+ "duration": 111.23,
  "generated": true,
  "voices": {
-  "ai": "en-US-BrianNeural",
-  "caller": "en-US-AvaNeural"
+  "ai": "en-US-AndrewMultilingualNeural",
+  "caller": "en-US-EmmaMultilingualNeural"
  },
  "lines": [
   {
@@ -12,91 +12,91 @@
    "who": "ai"
   },
   {
-   "t": 15.01,
+   "t": 14.22,
    "who": "caller"
   },
   {
-   "t": 17.73,
+   "t": 17.11,
    "who": "ai"
   },
   {
-   "t": 23.36,
+   "t": 21.63,
    "who": "caller"
   },
   {
-   "t": 27.57,
+   "t": 25.46,
    "who": "ai"
   },
   {
-   "t": 31.45,
+   "t": 28.71,
    "who": "caller"
   },
   {
-   "t": 35.97,
+   "t": 33.38,
    "who": "ai"
   },
   {
-   "t": 41.98,
+   "t": 39.2,
    "who": "caller"
   },
   {
-   "t": 44.18,
+   "t": 41.44,
    "who": "ai"
   },
   {
-   "t": 48.94,
+   "t": 45.36,
    "who": "caller"
   },
   {
-   "t": 51.54,
+   "t": 47.99,
    "who": "ai"
   },
   {
-   "t": 55.68,
+   "t": 51.6,
    "who": "caller"
   },
   {
-   "t": 59.08,
+   "t": 54.54,
    "who": "ai"
   },
   {
-   "t": 62.81,
+   "t": 57.53,
    "who": "caller"
   },
   {
-   "t": 65.44,
+   "t": 60.09,
    "who": "ai"
   },
   {
-   "t": 69.6,
+   "t": 63.53,
    "who": "caller"
   },
   {
-   "t": 71.82,
+   "t": 65.7,
    "who": "ai"
   },
   {
-   "t": 83.88,
+   "t": 77.23,
    "who": "caller"
   },
   {
-   "t": 86.05,
+   "t": 79.4,
    "who": "ai"
   },
   {
-   "t": 92.88,
+   "t": 86.25,
    "who": "caller"
   },
   {
-   "t": 95.27,
+   "t": 88.64,
    "who": "ai"
   },
   {
-   "t": 111.87,
+   "t": 105.5,
    "who": "caller"
   },
   {
-   "t": 114.59,
+   "t": 108.1,
    "who": "ai"
   }
  ]
