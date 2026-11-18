@@ -329,6 +329,8 @@ nav > .nav-logo{margin-right:0!important}
         <div class="tr-foot">
           <button class="demo-btn" id="btnPlay">▶ Play call</button>
           <button class="demo-btn ghost" id="btnReset">↻ Restart</button>
+          <audio id="demoAudioEl" controls preload="metadata" src="/assets/audio/jlr-demo-call.mp3"
+                 style="height:34px;max-width:260px;filter:invert(0.92) hue-rotate(180deg)"></audio>
           <div class="speed">Speed
             <button data-speed="1" class="on">1×</button>
             <button data-speed="2">2×</button>
@@ -851,9 +853,8 @@ nav > .nav-logo{margin-right:0!important}
     audioLoading = fetch("/assets/audio/jlr-demo-call.json", {cache:"no-store"})
       .then(function(r){ return r.ok ? r.json() : null; })
       .then(function(d){ if (d && d.lines && d.lines.length) { audioTimes = d;
-          if(!audioEl){ audioEl = new Audio(d.src); audioEl.preload = "auto"; audioEl.id = "demoAudio";
-                        audioEl.style.display = "none"; document.body.appendChild(audioEl);
-                        window.__demoAudio = audioEl; } } return audioTimes; })
+          if(!audioEl){ audioEl = document.getElementById("demoAudioEl") || new Audio(d.src);
+                        audioEl.preload = "auto"; window.__demoAudio = audioEl; } } return audioTimes; })
       .catch(function(){ return null; });
     return audioLoading;
   }
@@ -864,9 +865,9 @@ nav > .nav-logo{margin-right:0!important}
   function unlockAudio(){
     try {
       if (!audioEl){
-        audioEl = new Audio("/assets/audio/jlr-demo-call.mp3");
-        audioEl.preload = "auto"; audioEl.id = "demoAudio"; audioEl.style.display = "none";
-        document.body.appendChild(audioEl); window.__demoAudio = audioEl;
+        audioEl = document.getElementById("demoAudioEl") || new Audio("/assets/audio/jlr-demo-call.mp3");
+        audioEl.preload = "auto";
+        window.__demoAudio = audioEl;
       }
       var p = audioEl.play();
       if (p && p.then) p.then(function(){ try { audioEl.pause(); audioEl.currentTime = 0; } catch(e){} }).catch(function(){});
