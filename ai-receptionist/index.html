@@ -92,6 +92,9 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
 .demo-wrap{background:linear-gradient(180deg,rgba(124,92,252,0.06),rgba(14,14,18,0.6));border:1px solid var(--border-hover);border-radius:22px;padding:18px;box-shadow:var(--shadow-elevated)}
 .demo-note{display:flex;align-items:center;justify-content:center;gap:8px;font-size:0.76rem;color:var(--text-muted);margin-bottom:14px;text-align:center;flex-wrap:wrap}
 .demo-note b{color:var(--accent-light);font-weight:700}
+#heroCall{font-size:1.03rem;padding:16px 34px;box-shadow:0 10px 34px rgba(49,196,141,.18),0 2px 0 rgba(255,255,255,.06) inset;animation:callPulse 2.6s ease-in-out infinite}
+@keyframes callPulse{0%,100%{box-shadow:0 10px 34px rgba(49,196,141,.16)}50%{box-shadow:0 10px 44px rgba(49,196,141,.34)}}
+@media(max-width:640px){#heroCall{width:100%;justify-content:center}}
 .demo-line{display:none;align-items:center;gap:16px;flex-wrap:wrap;background:linear-gradient(135deg,rgba(52,211,153,0.09),rgba(124,92,252,0.07));border:1px solid rgba(52,211,153,0.32);border-radius:16px;padding:14px 18px;margin-bottom:14px}
 .demo-line.on{display:flex}
 .demo-line .dl-badge{display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--green)}
@@ -280,8 +283,8 @@ nav > .nav-logo{margin-right:0!important}
   <h1>The service line, answered<br><span class="gradient">on the first ring.</span></h1>
   <p class="subtitle">Appointments booked, status calls answered, brake noise triaged, advisors and parts reached — at 7am, at 5:52pm, and at 9:42pm when the store is dark. Built by someone who works in a Land Rover store, not in a call-center pitch deck.</p>
   <div class="hero-ctas">
-    <a href="#demo" class="btn btn-primary" id="heroPlay">▶ Play the demo call</a>
-    <a href="/chat" class="btn btn-ghost" id="heroCall">Book a 15-minute demo</a>
+    <a href="tel:+19492043517" class="btn btn-primary" id="heroCall">📞 Call the demo line — (949) 204-3517</a>
+    <a href="#demo" class="btn btn-ghost" id="heroPlay">Watch a sample transcript</a>
     <a href="#" class="btn btn-ghost" id="heroLog" target="_blank" rel="noopener" style="visibility:hidden">🔎 Phone log</a>
   </div>
   <div class="storeline">
