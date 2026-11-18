@@ -300,7 +300,7 @@ nav > .nav-logo{margin-right:0!important}
     <p class="dl-copy">This is the actual agent, not a recording. Call it, try to break it, and judge the handoff yourself.</p>
   </div>
   <div class="demo-note">
-    <b>Simulated call, real audio.</b> Scripted from a real service-drive workflow and voiced end to end — the transcript streams in sync and no live call is placed.
+    <b>Simulated call.</b> Scripted from a real service-drive workflow — the transcript streams line by line, exactly what the advisor would read. No audio and no live call.
   </div>
   <div class="demo-wrap">
     <div class="scn-bar" id="scnBar"></div>
@@ -329,13 +329,10 @@ nav > .nav-logo{margin-right:0!important}
         <div class="tr-foot">
           <button class="demo-btn" id="btnPlay">▶ Play call</button>
           <button class="demo-btn ghost" id="btnReset">↻ Restart</button>
-          <audio id="demoAudioEl" controls preload="metadata" src="/assets/audio/jlr-demo-call.mp3"
-                 style="height:34px;max-width:260px;filter:invert(0.92) hue-rotate(180deg)"></audio>
           <div class="speed">Speed
             <button data-speed="1" class="on">1×</button>
             <button data-speed="2">2×</button>
-            <button id="soundHint" style="display:none" title="Your browser blocked autoplay — tap to start the audio">🔊 Sound</button>
-          </div>
+            </div>
         </div>
       </div>
     </div>
@@ -906,31 +903,6 @@ nav > .nav-logo{margin-right:0!important}
     startTimer();
 
     var lines = SCENARIOS[current].lines;
-
-    var track = (current === "book") ? await loadAudio() : null;
-    if (track && id === runId){
-      audioEl.currentTime = 0;
-      audioEl.playbackRate = speed;
-      try { await audioEl.play(); }
-      catch(e){ showSoundHint(); }
-      for (var j=0;j<lines.length;j++){
-        if (!playing || id !== runId) { stopAudio(); return; }
-        await waitAudio((track.lines[j] && track.lines[j].t) || j*2.4, id);
-        if (!playing || id !== runId) { stopAudio(); return; }
-        if (lines[j].s === "ai") typing();
-        addBubble(lines[j]);
-      }
-      var remain = Math.max(0, (track.duration || 0) - (audioEl.currentTime || 0));
-      await new Promise(function(r){ setTimeout(r, Math.min(remain*1000, 4000)); });
-      playing = false; clearInterval(timer); stopAudio();
-      phone.classList.remove("playing");
-      pState.classList.add("idle");
-      pStateText.textContent = "Call ended · " + fmt(Math.floor((track.duration||0)/60)) + ":" + fmt(Math.round((track.duration||0)%60));
-      $("btnPlay").disabled = false;
-      $("btnPlay").textContent = "▶ Play again";
-      showOutcome();
-      return;
-    }
 
     for (var i=0;i<lines.length;i++){
       if (!playing || id !== runId) return;
