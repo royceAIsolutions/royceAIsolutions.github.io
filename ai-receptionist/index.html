@@ -83,6 +83,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
 .storeline{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;margin-top:22px;font-size:0.82rem;color:var(--text-muted)}
 .storeline span{display:inline-flex;align-items:center;gap:6px}
 .section{padding:64px 24px;max-width:var(--max-w);margin:0 auto}
+.section[id]{scroll-margin-top:calc(var(--nav-h) + 16px)}
 .section-header{text-align:center;margin-bottom:36px}
 .section-header h2{font-size:clamp(1.7rem,4.5vw,2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px}
 .section-header h2 .gradient{background:var(--accent-gradient);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
@@ -91,6 +92,13 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
 .demo-wrap{background:linear-gradient(180deg,rgba(124,92,252,0.06),rgba(14,14,18,0.6));border:1px solid var(--border-hover);border-radius:22px;padding:18px;box-shadow:var(--shadow-elevated)}
 .demo-note{display:flex;align-items:center;justify-content:center;gap:8px;font-size:0.76rem;color:var(--text-muted);margin-bottom:14px;text-align:center;flex-wrap:wrap}
 .demo-note b{color:var(--accent-light);font-weight:700}
+.demo-line{display:none;align-items:center;gap:16px;flex-wrap:wrap;background:linear-gradient(135deg,rgba(52,211,153,0.09),rgba(124,92,252,0.07));border:1px solid rgba(52,211,153,0.32);border-radius:16px;padding:14px 18px;margin-bottom:14px}
+.demo-line.on{display:flex}
+.demo-line .dl-badge{display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--green)}
+.demo-line .dl-num{font-size:clamp(1.15rem,2.6vw,1.5rem);font-weight:800;letter-spacing:-0.01em;color:var(--text);text-decoration:none;display:block}
+.demo-line .dl-num:hover{color:var(--accent-light)}
+.demo-line .dl-copy{font-size:0.8rem;color:var(--text-secondary);margin-left:auto;max-width:340px}
+@media(max-width:640px){.demo-line .dl-copy{margin-left:0}}
 .scn-bar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
 .scn{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);color:var(--text-secondary);padding:9px 14px;border-radius:100px;font-size:0.8rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:var(--font);display:inline-flex;align-items:center;gap:6px}
 .scn:hover{color:var(--text);border-color:rgba(124,92,252,0.4);background:var(--accent-bg);transform:translateY(-1px)}
@@ -269,7 +277,7 @@ nav > .nav-logo{margin-right:0!important}
   <p class="subtitle">Appointments booked, status calls answered, brake noise triaged, advisors and parts reached — at 7am, at 5:52pm, and at 9:42pm when the store is dark. Built by someone who works in a Land Rover store, not in a call-center pitch deck.</p>
   <div class="hero-ctas">
     <a href="#demo" class="btn btn-primary" id="heroPlay">▶ Play the demo call</a>
-    <a href="/chat" class="btn btn-ghost">Book a 15-minute demo</a>
+    <a href="/chat" class="btn btn-ghost" id="heroCall">Book a 15-minute demo</a>
   </div>
   <div class="storeline">
     <span>📍 1540 Jamboree Road, Newport Beach, CA 92660</span>
@@ -279,6 +287,13 @@ nav > .nav-logo{margin-right:0!important}
 </header>
 
 <section class="section" id="demo" style="padding-top:10px">
+  <div class="demo-line" id="demoLine">
+    <div>
+      <span class="dl-badge"><span class="dot"></span> Live demo line</span>
+      <a class="dl-num" id="demoLineNum" href="tel:">—</a>
+    </div>
+    <p class="dl-copy">This is the actual agent, not a recording. Call it, try to break it, and judge the handoff yourself.</p>
+  </div>
   <div class="demo-note">
     <b>Simulated call.</b> Scripted from a real service-drive workflow — the transcript streams line by line, nothing is dialed and no live audio is played.
   </div>
@@ -891,6 +906,32 @@ nav > .nav-logo{margin-right:0!important}
       io.observe(document.getElementById("demo"));
     }
   } catch(err) {}
+})();
+</script>
+<script>
+/* Live demo line: the number is published by provision.py into /jlr-receptionist-line.json.
+   No file, or active:false, and the page quietly stays on the simulated-call version. */
+(function(){
+  "use strict";
+  var box = document.getElementById("demoLine");
+  var num = document.getElementById("demoLineNum");
+  var hero = document.getElementById("heroCall");
+  if (!box || !num) return;
+  fetch("/jlr-receptionist-line.json", {cache: "no-store"})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if (!d || !d.active || !d.number) return;
+      var disp = d.display || d.number;
+      var tel = "tel:" + String(d.number).replace(/[^\d+]/g, "");
+      num.textContent = disp;
+      num.href = tel;
+      box.classList.add("on");
+      if (hero){
+        hero.textContent = "📞 Call the demo line — " + disp;
+        hero.href = tel;
+      }
+    })
+    .catch(function(){});
 })();
 </script>
 </body>
