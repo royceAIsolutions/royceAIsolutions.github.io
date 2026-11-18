@@ -1,0 +1,11 @@
+{
+  "available": true,
+  "url": "https://soldier-stage-turning-bear.trycloudflare.com/log",
+  "desk": "https://soldier-stage-turning-bear.trycloudflare.com/desk",
+  "auth": {
+    "type": "basic",
+    "user": "jlr"
+  },
+  "note": "Password protected. Ask Royce for the password; it is not published here.",
+  "updated": "2026-11-18T14:19:00-08:00"
+}

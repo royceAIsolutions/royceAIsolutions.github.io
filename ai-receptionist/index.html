@@ -98,6 +98,10 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1001;backgro
 .demo-line .dl-num{font-size:clamp(1.15rem,2.6vw,1.5rem);font-weight:800;letter-spacing:-0.01em;color:var(--text);text-decoration:none;display:block}
 .demo-line .dl-num:hover{color:var(--accent-light)}
 .demo-line .dl-copy{font-size:0.8rem;color:var(--text-secondary);margin-left:auto;max-width:340px}
+.demo-line .dl-log{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:10px;
+  background:rgba(124,92,252,0.16);border:1px solid rgba(124,92,252,0.4);color:var(--text);
+  font-size:0.85rem;font-weight:600;text-decoration:none;white-space:nowrap}
+.demo-line .dl-log:hover{background:rgba(124,92,252,0.26);color:#fff}
 @media(max-width:640px){.demo-line .dl-copy{margin-left:0}}
 .scn-bar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
 .scn{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);color:var(--text-secondary);padding:9px 14px;border-radius:100px;font-size:0.8rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:var(--font);display:inline-flex;align-items:center;gap:6px}
@@ -293,6 +297,7 @@ nav > .nav-logo{margin-right:0!important}
       <a class="dl-num" id="demoLineNum" href="tel:">—</a>
     </div>
     <p class="dl-copy">This is the actual agent, not a recording. Call it, try to break it, and judge the handoff yourself.</p>
+    <a class="dl-log" id="demoLogBtn" href="#" target="_blank" rel="noopener" hidden>Phone log →</a>
   </div>
   <div class="demo-note">
     <b>Simulated call.</b> Scripted from a real service-drive workflow — the transcript streams line by line, nothing is dialed and no live audio is played.
@@ -917,6 +922,23 @@ nav > .nav-logo{margin-right:0!important}
 })();
 </script>
 <script>
+/* Phone log button: shown only when the desk publishes /jlr-receptionist-log.json,
+   which carries the current tunnel URL for the transcript page (password protected). */
+(function(){
+  "use strict";
+  var btn = document.getElementById("demoLogBtn");
+  if (!btn) return;
+  fetch("/jlr-receptionist-log.json", {cache: "no-store"})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(cfg){
+      if (!cfg || !cfg.available || !cfg.url) return;
+      btn.href = cfg.url;
+      btn.hidden = false;
+      if (cfg.auth && cfg.auth.user) btn.title = "Password protected · user " + cfg.auth.user;
+    })
+    .catch(function(){});
+})();
+
 /* Live demo line: the number is published by provision.py into /jlr-receptionist-line.json.
    No file, or active:false, and the page quietly stays on the simulated-call version. */
 (function(){
