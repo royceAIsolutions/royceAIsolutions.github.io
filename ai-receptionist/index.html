@@ -332,6 +332,7 @@ nav > .nav-logo{margin-right:0!important}
           <div class="speed">Speed
             <button data-speed="1" class="on">1×</button>
             <button data-speed="2">2×</button>
+            <button id="soundHint" style="display:none" title="Your browser blocked autoplay — tap to start the audio">🔊 Sound</button>
           </div>
         </div>
       </div>
@@ -858,6 +859,25 @@ nav > .nav-logo{margin-right:0!important}
   }
   function stopAudio(){ if (audioEl){ try { audioEl.pause(); audioEl.currentTime = 0; } catch(e){} } }
 
+  // Browsers only allow audible playback that starts inside a user gesture. The click that
+  // starts the demo runs a fetch and a scroll first, so prime the element here, synchronously.
+  function unlockAudio(){
+    try {
+      if (!audioEl){
+        audioEl = new Audio("/assets/audio/jlr-demo-call.mp3");
+        audioEl.preload = "auto"; audioEl.id = "demoAudio"; audioEl.style.display = "none";
+        document.body.appendChild(audioEl); window.__demoAudio = audioEl;
+      }
+      var p = audioEl.play();
+      if (p && p.then) p.then(function(){ try { audioEl.pause(); audioEl.currentTime = 0; } catch(e){} }).catch(function(){});
+    } catch(e){}
+  }
+
+  function showSoundHint(){
+    var h = document.getElementById("soundHint");
+    if (h) { h.style.display = "inline-flex"; }
+  }
+
   function waitAudio(t, id){
     // Never hang the demo on a blocked autoplay or a missing audio device: hard cap
     // each line at its own timestamp plus a grace window, then carry on.
@@ -890,7 +910,8 @@ nav > .nav-logo{margin-right:0!important}
     if (track && id === runId){
       audioEl.currentTime = 0;
       audioEl.playbackRate = speed;
-      try { await audioEl.play(); } catch(e){}
+      try { await audioEl.play(); }
+      catch(e){ showSoundHint(); }
       for (var j=0;j<lines.length;j++){
         if (!playing || id !== runId) { stopAudio(); return; }
         await waitAudio((track.lines[j] && track.lines[j].t) || j*2.4, id);
@@ -944,7 +965,8 @@ nav > .nav-logo{margin-right:0!important}
     showOutcome();
   }
 
-  $("btnPlay").onclick = play;
+  $("btnPlay").onclick = function(){ unlockAudio(); play(); };
+  (function(){ var h = document.getElementById("soundHint"); if (h) h.onclick = function(){ unlockAudio(); try { audioEl.currentTime = 0; audioEl.play(); } catch(e){} }; })();
   $("btnReset").onclick = reset;
   Array.prototype.forEach.call(document.querySelectorAll(".speed button"), function(b){
     b.onclick = function(){
@@ -956,6 +978,7 @@ nav > .nav-logo{margin-right:0!important}
   });
   $("heroPlay").onclick = function(e){
     e.preventDefault();
+    unlockAudio();
     document.getElementById("demo").scrollIntoView({behavior:"smooth", block:"start"});
     setTimeout(function(){ if(!playing) play(); }, 600);
   };
