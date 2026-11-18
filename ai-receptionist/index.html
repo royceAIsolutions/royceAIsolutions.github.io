@@ -849,18 +849,25 @@ nav > .nav-logo{margin-right:0!important}
     if (audioLoading) return audioLoading;
     audioLoading = fetch("/assets/audio/jlr-demo-call.json", {cache:"no-store"})
       .then(function(r){ return r.ok ? r.json() : null; })
-      .then(function(d){ if (d && d.lines && d.lines.length) { audioTimes = d; if(!audioEl){ audioEl = new Audio(d.src); audioEl.preload = "auto"; } } return audioTimes; })
+      .then(function(d){ if (d && d.lines && d.lines.length) { audioTimes = d;
+          if(!audioEl){ audioEl = new Audio(d.src); audioEl.preload = "auto"; audioEl.id = "demoAudio";
+                        audioEl.style.display = "none"; document.body.appendChild(audioEl);
+                        window.__demoAudio = audioEl; } } return audioTimes; })
       .catch(function(){ return null; });
     return audioLoading;
   }
   function stopAudio(){ if (audioEl){ try { audioEl.pause(); audioEl.currentTime = 0; } catch(e){} } }
 
   function waitAudio(t, id){
+    // Never hang the demo on a blocked autoplay or a missing audio device: hard cap
+    // each line at its own timestamp plus a grace window, then carry on.
+    var deadline = Date.now() + (t + 8) * 1000;
     return new Promise(function(res){
       (function tick(){
         if (id !== runId) return res();
         if (!audioEl) return res();
         if (audioEl.currentTime >= t || audioEl.ended) return res();
+        if (Date.now() > deadline) return res();
         setTimeout(tick, 60);
       })();
     });
