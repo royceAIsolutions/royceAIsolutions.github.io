@@ -1946,5 +1946,113 @@
       }
     ],
     "src": "web"
+  },
+  {
+    "student": "Carter Koh",
+    "correct": 25,
+    "total": 33,
+    "percent": 76,
+    "subject": "Physics",
+    "date": "2026-11-18",
+    "ts": 1794981673686,
+    "missed": [
+      {
+        "n": 7,
+        "q": "A 1:15 ratio leaves 6.25 percent parent, which is four halvings.",
+        "p": "A",
+        "k": "C",
+        "o": [
+          "Three, because the parent halved three separate times",
+          "Five, because the parent halved five separate times",
+          "Four, because the parent halved four separate times",
+          "Two, because the parent halved two separate times"
+        ]
+      },
+      {
+        "n": 9,
+        "q": "U-238's 4.5-billion-year half-life leaves measurable parent and daughter at 2 By.",
+        "p": "D",
+        "k": "A",
+        "o": [
+          "Carbon-14, whose half-life fits tens of thousands of years",
+          "Uranium-238, whose half-life fits several billions of years",
+          "Rubidium-87, whose half-life fits tens of billions of years",
+          "Potassium-40, whose half-life fits about a billion years the"
+        ]
+      },
+      {
+        "n": 10,
+        "q": "The answer is A — A 5,730-year half-life means measurable parent remains at 30,000 years, about five half-lives.",
+        "p": "A",
+        "k": "B",
+        "o": [
+          "Age equals the half-life divided by number of half-lives",
+          "Age equals the number of half-lives times the half-life",
+          "Age equals the percentage of parent times the half-life",
+          "Age equals the daughter percentage times the parent count"
+        ]
+      },
+      {
+        "n": 16,
+        "q": "The inclusion principle: a clast must exist before the rock that contains it.",
+        "p": "C",
+        "k": "D",
+        "o": [
+          "To measure the absolute age in millions of years",
+          "To show that no folding ever affected the layers",
+          "To prove the sediment was never deposited in water",
+          "To identify layers of the same relative age"
+        ]
+      },
+      {
+        "n": 21,
+        "q": "Crust ages with distance from the spreading center, so the oldest lies near trenches.",
+        "p": "B",
+        "k": "A",
+        "o": [
+          "Crust formed at the ridge and moved outward both ways",
+          "Crust formed at both edges and moved toward the ridge",
+          "The ridge axis migrated slowly while the crust stayed fixed",
+          "Magnetic minerals settled from the ocean water in stripes"
+        ]
+      },
+      {
+        "n": 23,
+        "q": "Divergence means the plates separate, so each vector points away from the boundary.",
+        "p": "A",
+        "k": "C",
+        "o": [
+          "It is lowest at the ridge and rises with crust age",
+          "It is uniform across the whole basin at all ages",
+          "It is highest at the ridge and falls with crust age",
+          "It is highest at the trench and lowest at the ridge"
+        ]
+      },
+      {
+        "n": 25,
+        "q": "Old cold oceanic lithosphere is dense enough to sink; continental crust is buoyant.",
+        "p": "C",
+        "k": "A",
+        "o": [
+          "Depth increases inland, following the dipping cold slab",
+          "Depth decreases inland, following the rising hot mantle",
+          "Depth stays shallow and constant across the margin",
+          "Depth is deepest at the ridge and trench"
+        ]
+      },
+      {
+        "n": 33,
+        "q": "Small bodies have more surface per volume, so they cool and shut down convection sooner.",
+        "p": "B",
+        "k": "A",
+        "o": [
+          "Stronger convection and much more vigorous tectonics",
+          "Weaker convection and a completely static crust",
+          "A colder mantle with no plumes anywhere",
+          "A liquid inner core with no field"
+        ]
+      }
+    ],
+    "src": "web"
   }
 ]
