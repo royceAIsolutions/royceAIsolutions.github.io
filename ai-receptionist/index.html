@@ -322,14 +322,6 @@ nav > .nav-logo{margin-right:0!important}
       <div class="transcript">
         <div class="tr-head"><span><b>Live transcript</b> · what the advisor sees</span><span id="trCount">0 lines</span></div>
         <div class="tr-body" id="trBody" aria-live="polite" aria-relevant="additions"></div>
-        <div class="tr-foot">
-          <button class="demo-btn" id="btnPlay">▶ Play call</button>
-          <button class="demo-btn ghost" id="btnReset">↻ Restart</button>
-          <div class="speed">Speed
-            <button data-speed="1" class="on">1×</button>
-            <button data-speed="2">2×</button>
-            </div>
-        </div>
       </div>
     </div>
     <div class="outcome" id="outcome"></div>
@@ -754,6 +746,7 @@ nav > .nav-logo{margin-right:0!important}
     current = k;
     buildBar();
     reset();
+    play();   // no play button any more: picking a scenario runs the call
   }
 
   function reset(){
@@ -770,8 +763,6 @@ nav > .nav-logo{margin-right:0!important}
     phone.classList.remove("playing");
     pState.classList.add("idle");
     pStateText.textContent = "Ready";
-    $("btnPlay").disabled = false;
-    $("btnPlay").textContent = "▶ Play call";
     var sc = SCENARIOS[current];
     $("pName").textContent = sc.caller;
     $("pLine").textContent = sc.time + " · service line 949-432-4081";
@@ -843,7 +834,6 @@ nav > .nav-logo{margin-right:0!important}
     reset();
     var id = runId;
     playing = true;
-    $("btnPlay").disabled = true;
     phone.classList.add("playing");
     pState.classList.remove("idle");
     pStateText.textContent = "On call · live transcription";
@@ -880,20 +870,8 @@ nav > .nav-logo{margin-right:0!important}
     phone.classList.remove("playing");
     pState.classList.add("idle");
     pStateText.textContent = "Call ended · " + fmt(Math.floor(elapsed/60)) + ":" + fmt(elapsed%60);
-    $("btnPlay").disabled = false;
-    $("btnPlay").textContent = "▶ Play again";
     showOutcome();
   }
-
-  $("btnPlay").onclick = play;
-  $("btnReset").onclick = reset;
-  Array.prototype.forEach.call(document.querySelectorAll(".speed button"), function(b){
-    b.onclick = function(){
-      Array.prototype.forEach.call(document.querySelectorAll(".speed button"), function(x){ x.classList.remove("on"); });
-      b.classList.add("on");
-      speed = parseInt(b.dataset.speed,10) || 1;
-    };
-  });
 
   reset();
 
