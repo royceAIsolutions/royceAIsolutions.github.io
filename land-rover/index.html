@@ -179,6 +179,9 @@ footer .links a{margin:0 10px}
   <label>Trim
     <select id="fTrim"><option value="">All</option></select>
   </label>
+  <label>Year
+    <select id="fYear"><option value="">All</option></select>
+  </label>
   <label>Engine
     <select id="fEng"><option value="">All</option></select>
   </label>
@@ -238,6 +241,7 @@ function render() {
   const dlr = document.getElementById('fDealer').value;
   const trm = document.getElementById('fTrim').value;
   const engVal = document.getElementById('fEng').value;
+  const yrVal = document.getElementById('fYear').value;
   const wb = document.getElementById('fWb').value;
   const col = document.getElementById('fColor').value;
   const int = document.getElementById('fInt').value;
@@ -257,6 +261,7 @@ function render() {
       if ((v.engFamily || 'Not stated') !== parts[0]) return false;
       if (parts[1] && (v.engLabel || 'Not stated') !== parts[1]) return false;
     }
+    if (yrVal && String(v.year || '') !== yrVal) return false;
     if (wb && (v.wheelbase || '') !== wb) return false;
     if (col && (v.colorFull || '') !== col) return false;
     if (int && (v.interiorFam || '') !== int) return false;
@@ -329,7 +334,7 @@ function render() {
 // narrows every other dropdown to options that ACTUALLY exist in inventory
 // given the current filter state. Impossible selections reset to 'All'.
 const FAMILY_ORDER = ["2.0L turbo I4", "3.0L I6 mild hybrid", "4.4L twin-turbo V8", "5.0L supercharged V8", "Plug-in hybrid (PHEV)", "Electric", "Diesel", "Not stated"];
-const FILTER_IDS = ['fMake','fModel','fDealer','fTrim','fEng','fWb','fColor','fInt','fOpt'];
+const FILTER_IDS = ['fMake','fModel','fDealer','fTrim','fYear','fEng','fWb','fColor','fInt','fOpt'];
 function refreshOptions() {
   const vals = {};
   FILTER_IDS.forEach(id => vals[id] = document.getElementById(id).value);
@@ -347,6 +352,7 @@ function refreshOptions() {
     if (g('fModel') && v.model !== g('fModel')) return false;
     if (g('fDealer') && v.dealer !== g('fDealer')) return false;
     if (g('fTrim') && (v.trimDisplay || '') !== g('fTrim')) return false;
+    if (g('fYear') && String(v.year || '') !== g('fYear')) return false;
     const e = g('fEng');
     if (e) {
       const p = e.split('::');
@@ -362,6 +368,7 @@ function refreshOptions() {
   };
   const rows = data.filter(v => matchAll(v, null));
   const rowsNoEng = data.filter(v => matchAll(v, 'fEng'));
+  const rowsNoYear = data.filter(v => matchAll(v, 'fYear'));
   const fill = (id, key) => {
     const cur = vals[id];
     let opts = [...new Set(rows.map(v => v[key]))].filter(Boolean);
@@ -403,6 +410,19 @@ function refreshOptions() {
       // a previously chosen label stays chosen only if it still exists under the same family
       const keep = [...el.options].some(o => o.value === curEng);
       el.value = keep ? curEng : '';
+    }
+    {
+      const curYear = vals.fYear;
+      const counts = {};
+      rowsNoYear.forEach(v => {
+        const y = String(v.year || '');
+        if (y) counts[y] = (counts[y] || 0) + 1;
+      });
+      const years = Object.keys(counts).sort((a, b) => Number(b) - Number(a));
+      const el = document.getElementById('fYear');
+      el.innerHTML = '<option value="">All</option>' +
+        years.map(y => '<option value="' + y + '">' + y + ' (' + counts[y] + ')</option>').join('');
+      el.value = (curYear && years.includes(curYear)) ? curYear : '';
     }
   fill('fWb', 'wheelbase');
   // Colour is grouped by family: the raw feed carries 140 near-duplicate paint names
