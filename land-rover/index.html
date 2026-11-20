@@ -334,24 +334,34 @@ function refreshOptions() {
   const vals = {};
   FILTER_IDS.forEach(id => vals[id] = document.getElementById(id).value);
   const optNot = document.getElementById('fOptNot').checked;
-  const rowsNoOpt = data.filter(v =>
-    (!vals.fMake || v.make === vals.fMake) &&
-    (!vals.fModel || v.model === vals.fModel) &&
-    (!vals.fDealer || v.dealer === vals.fDealer) &&
-    (!vals.fTrim || (v.trimDisplay || '') === vals.fTrim) &&
-    (!vals.fEng || ((v.engFamily || 'Not stated') === vals.fEng.split('::')[0] &&
-                    (!vals.fEng.split('::')[1] || (v.engLabel || 'Not stated') === vals.fEng.split('::')[1]))) &&
-    (!vals.fWb || (v.wheelbase || '') === vals.fWb) &&
-    (!vals.fColor || (v.colorFull || '') === vals.fColor) &&
-    (!vals.fInt || (v.interiorFam || '') === vals.fInt)
-  );
   const rowLabels = (v) => {
     const O = (window.LR_OPTIONS && v.vin && window.LR_OPTIONS[v.vin]) || {n: [], p: [], c: []};
     return [...(O.n || []), ...(O.p || []).map(p => p.name)];
   };
-  const rows = rowsNoOpt.filter(v =>
-    (!vals.fOpt || rowLabels(v).includes(vals.fOpt) === !optNot)
-  );
+  // Each facet lists the options that survive the OTHER filters. A facet that filters itself down
+  // to the one thing already chosen cannot be changed without clearing it first — and the select
+  // silently resets to "All", so the page shows every car while the filter looks empty.
+  const matchAll = (v, skip) => {
+    const g = k => skip === k ? '' : (vals[k] || '');
+    if (g('fMake') && v.make !== g('fMake')) return false;
+    if (g('fModel') && v.model !== g('fModel')) return false;
+    if (g('fDealer') && v.dealer !== g('fDealer')) return false;
+    if (g('fTrim') && (v.trimDisplay || '') !== g('fTrim')) return false;
+    const e = g('fEng');
+    if (e) {
+      const p = e.split('::');
+      if ((v.engFamily || 'Not stated') !== p[0]) return false;
+      if (p[1] && (v.engLabel || 'Not stated') !== p[1]) return false;
+    }
+    if (g('fWb') && (v.wheelbase || '') !== g('fWb')) return false;
+    if (g('fColor') && (v.colorFull || '') !== g('fColor')) return false;
+    if (g('fInt') && (v.interiorFam || '') !== g('fInt')) return false;
+    const o = g('fOpt');
+    if (o && (rowLabels(v).includes(o) !== !optNot)) return false;
+    return true;
+  };
+  const rows = data.filter(v => matchAll(v, null));
+  const rowsNoEng = data.filter(v => matchAll(v, 'fEng'));
   const fill = (id, key) => {
     const cur = vals[id];
     let opts = [...new Set(rows.map(v => v[key]))].filter(Boolean);
@@ -372,7 +382,7 @@ function refreshOptions() {
     {
       const curEng = vals.fEng;
       const byFam = {};
-      rows.forEach(v => {
+      rowsNoEng.forEach(v => {
         const f = FAMILY_ORDER.includes(v.engFamily) ? v.engFamily : 'Not stated';
         (byFam[f] = byFam[f] || new Set()).add(v.engLabel || 'Not stated');
       });
@@ -382,13 +392,13 @@ function refreshOptions() {
       });
       const el = document.getElementById('fEng');
       el.innerHTML = '<option value="">All</option>' + fams.map(f => {
-        const n = rows.filter(v => (v.engFamily || 'Not stated') === f).length;
+        const n = rowsNoEng.filter(v => (v.engFamily || 'Not stated') === f).length;
         const labels = [...byFam[f]].sort();
         const head = '<option value="' + f + '::" style="font-weight:700">All ' + f +
                      ' (' + n + ')</option>';
         const opts = labels.map(l =>
           '&nbsp;&nbsp;<option value="' + f + '::' + l.replace(/"/g, '&quot;') + '">' + l + '</option>').join('');
-        return '<optgroup label="' + f + '">' + (labels.length > 1 ? head : '') + opts + '</optgroup>';
+        return '<optgroup label="' + f + '">' + head + opts + '</optgroup>';
       }).join('');
       // a previously chosen label stays chosen only if it still exists under the same family
       const keep = [...el.options].some(o => o.value === curEng);
@@ -442,7 +452,7 @@ function refreshOptions() {
   // Options dropdown = valuable options present in the currently filtered rows
   // (ignores its own selection + the exclude toggle so the choice persists)
   const curOpt = vals.fOpt;
-  let optVals = [...new Set(rowsNoOpt.flatMap(v => rowLabels(v)))].filter(Boolean);
+  let optVals = [...new Set(data.filter(v => matchAll(v, 'fOpt')).flatMap(v => rowLabels(v)))].filter(Boolean);
   optVals.sort((a, b) => String(a).localeCompare(String(b)));
   const fOptEl = document.getElementById('fOpt');
   fOptEl.innerHTML = '<option value="">All</option>' + optVals.map(x => '<option>' + x + '</option>').join('');
