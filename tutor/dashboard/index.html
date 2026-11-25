@@ -253,7 +253,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v29-nov09-2026';
+var PAGE_VER='v30-nov09-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -327,7 +327,7 @@ function renderSB(u){
 }
 function renderGradeCard(u){
   var card=document.getElementById("gradeCard"); if(!card) return;
-  var rows=u.grades||[], el=u.eligibility||null;
+  var rows=u.grades||[];
   if(!rows.length && !el){ card.style.display="none"; return; }
   card.style.display="block";
   var ao=document.getElementById("gradesAsOf"); if(ao) ao.textContent="as of "+(u.grades_as_of||"—");
@@ -601,7 +601,7 @@ setInterval(function(){
   .then(function(d){
     if(d.found&&d.data){
       var u=d.data;
-      CU.today=u.today||"-";CU.mtd=u.mtd||"-";CU.ytd=u.ytd||"-";CU.kpis=u.kpis||CU.kpis;CU.grades=u.grades||CU.grades;CU.eligibility=u.eligibility||CU.eligibility;
+      CU.today=u.today||"-";CU.mtd=u.mtd||"-";CU.ytd=u.ytd||"-";CU.kpis=u.kpis||CU.kpis;CU.grades=u.grades||CU.grades;
       renderSB(CU);
     }
   }).catch(function(){});
