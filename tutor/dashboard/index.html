@@ -206,6 +206,15 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 .el-note li:last-child{margin-bottom:0}
 .el-note li.warn:before{background:#f87171}
 @media(max-width:560px){#gradeCard{padding:15px 14px 14px}.gc-row{grid-template-columns:1fr 44px 64px;gap:9px;padding-left:9px}.el-grid{grid-template-columns:1fr}.el-banner .vb-state{font-size:.98rem}}
+#quizFb.iq-fb{font-size:.82rem;line-height:1.45;padding:8px 12px;border-radius:8px;margin-bottom:8px;background:rgba(255,255,255,.035);border:1px solid var(--border)}
+#quizFb.ok{color:#4ade80;border-color:rgba(74,222,128,.25)}
+#quizFb.bad{color:#f87171;border-color:rgba(248,113,113,.25)}
+@media(max-width:520px){
+  #quizPanel{padding:0 14px!important}
+  #quizQ{padding:16px!important;font-size:.92rem!important;min-height:0!important;line-height:1.55!important;margin-bottom:10px!important}
+  #quizFb.iq-fb{font-size:.78rem;padding:6px 10px}
+  .iq-btn{padding:11px 14px!important}
+}
 </style>
 <div id="gradeCard" style="display:none">
 <div class="gc-head"><span class="gc-title">Grades</span><span class="gc-date" id="gradesAsOf">&mdash;</span></div>
@@ -247,6 +256,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <span id="quizScr" style="color:var(--accent-light);font-size:.85rem;font-weight:600">0/0</span>
 </span>
 </div>
+<div id="quizFb" class="iq-fb" style="display:none"></div>
 <div id="quizQ" style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:28px;margin-bottom:16px;font-size:.95rem;line-height:1.7;color:var(--text);min-height:100px">Starting quiz...</div>
 <div id="quizA" style="display:flex;flex-direction:column;gap:8px"></div>
 </div>
@@ -254,7 +264,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v31-nov09-2026';
+var PAGE_VER='v32-nov09-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -408,16 +418,34 @@ function startInlineQuiz(s){
 }
 // Bring the question and its answers into view on every new question, so the
 // student never has to scroll to find the options.
+function stickyOffset(){
+  // Measure the real sticky/fixed chrome instead of guessing 84px — on a phone the
+  // brand bar plus nav is taller, and guessing left the question underneath it.
+  var h=0;
+  ["nav","header"].forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(e){
+      var st=getComputedStyle(e);
+      if(st.position==="fixed"||st.position==="sticky"){
+        var r=e.getBoundingClientRect();
+        if(r.height>0&&r.height<320&&r.bottom>0) h=Math.max(h,r.bottom);
+      }
+    });
+  });
+  return h>0?h+8:84;
+}
 function focusQuiz(){
   var q=document.getElementById("quizQ"),a=document.getElementById("quizA"),p=document.getElementById("quizPanel");
   if(!q||!p||p.style.display==="none")return;
-  var navH=84,vh=window.innerHeight||800,y=window.pageYOffset||0;
+  var vh=window.innerHeight||800,y=window.pageYOffset||0;
+  var navH=stickyOffset();
   var qTop=q.getBoundingClientRect().top+y;
   var aBottom=a.getBoundingClientRect().bottom+y;
-  var target=qTop-navH;                 // question under the nav
-  var overflow=aBottom-(target+vh);     // options still below the fold?
-  if(overflow>0){                       // give up at most half the question to show them
-    target+=Math.min(overflow,q.getBoundingClientRect().height*0.5);
+  var target=qTop-navH;                              // question under the sticky chrome
+  var overflow=aBottom-(target+vh);                  // answers still below the fold?
+  if(overflow>0){
+    // showing every option matters more than showing the whole question, but never
+    // scroll the question completely away
+    target+=Math.min(overflow,q.getBoundingClientRect().height*0.75);
   }
   try{window.scrollTo({top:Math.max(0,target),behavior:"smooth"});}catch(e){window.scrollTo(0,Math.max(0,target));}
 }
@@ -447,12 +475,24 @@ function askQ(msg){
   });
 }
 function showQ(reply){
-  var qText=reply.replace(/^[A-D][)]\s*[^\n]*\n?/gm,"").trim();
+  // The reply carries the previous answer's feedback AND the next question. Keeping the
+  // feedback inside the question box pushed the answers below the fold on a phone, so it
+  // becomes a one-line strip above.
+  var fm=reply.match(/^\s*(?:Correct|Incorrect)[\s\S]*?(?=\s*Q\d+\s*\/\s*\d+\s*:)/);
+  var fb=fm?fm[0].trim():"";
+  var body=fb?reply.slice(fm[0].length):reply;
+  var fbel=document.getElementById("quizFb");
+  if(fbel){
+    fbel.textContent=fb;
+    fbel.className="iq-fb"+(/^Correct/i.test(fb)?" ok":(/^Incorrect/i.test(fb)?" bad":""));
+    fbel.style.display=fb?"block":"none";
+  }
+  var qText=body.replace(/^[A-D][)]\s*[^\n]*\n?/gm,"").trim();
   // Keep the current stem so a wrong answer can be recorded with its question.
   var stem=qText.replace(/^\s*(Correct|Incorrect)[^.]*\.\s*/i,"").split("\n")[0].trim();
   if(stem.length>10) iqCurQ=stem.slice(0,120);
   document.getElementById("quizQ").innerHTML=qText.replace(/\n/g,"<br>");
-  var opts=reply.match(/(?:^|[\n])([A-D][)]\s*[^\n*]+)/g);
+  var opts=body.match(/(?:^|[\n])([A-D][)]\s*[^\n*]+)/g);
   if(opts)opts=opts.map(function(o){return o.replace(/^[\n]/,"").trim();});
   // Option texts are kept so a missed item on a generated deck can be re-judged later.
   // Authored banks (rescue) are already keyed server-side, so skip them to keep the ledger small.
