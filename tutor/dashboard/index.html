@@ -208,12 +208,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 @media(max-width:560px){#gradeCard{padding:15px 14px 14px}.gc-row{grid-template-columns:1fr 44px 64px;gap:9px;padding-left:9px}.el-grid{grid-template-columns:1fr}.el-banner .vb-state{font-size:.98rem}}
 </style>
 <div id="gradeCard" style="display:none">
-<div id="eligBanner" class="el-banner"><span class="vb-icon" id="vbIcon"></span><span class="vb-body"><span class="vb-state" id="vbState"></span><span class="vb-why" id="vbWhy"></span></span></div>
-<div class="gc-head"><span class="gc-title">Grades</span><span class="gc-date" id="gradesAsOf">&mdash;</span></div>
-<div id="gradeRows"></div>
-<div class="el-head"><span class="gc-title">College basketball eligibility</span><span class="el-tag">NCAA D1</span></div>
-<div class="el-grid" id="eligGrid"></div>
-<ul class="el-note" id="eligNote"></ul>
+
 </div>
 </div>
 <div class="dash-grid" id="dashGrid">
@@ -258,7 +253,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v28-nov09-2026';
+var PAGE_VER='v29-nov09-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -351,50 +346,6 @@ function renderGradeCard(u){
         (r.percent===null||r.percent===undefined?"&mdash;":r.percent.toFixed(2)+"%")+'</div>';
       box.appendChild(d);
     });
-  }
-  var bn=document.getElementById("eligBanner");
-  if(bn&&el&&el.verdict){
-    var col=el.color||"wait";
-    bn.className="el-banner show "+col;
-    var ic=document.getElementById("vbIcon"), st=document.getElementById("vbState"), wy=document.getElementById("vbWhy");
-    if(ic) ic.textContent = col==="ok"?"\u2705":(col==="wait"?"\u23f3":"\u26a0\ufe0f");
-    if(st) st.textContent = (col==="ok"?"ELIGIBLE":(col==="wait"?"ON TRACK — NOT YET ELIGIBLE":"NOT ELIGIBLE"))+
-      (el.verdict?" ("+el.verdict+")":"");
-    if(wy) wy.textContent = el.reason||"";
-    if(st) st.setAttribute("title", el.verdict||"");
-  } else if(bn){ bn.className="el-banner"; }
-  var grid=document.getElementById("eligGrid"); var note=document.getElementById("eligNote");
-  if(grid&&el){
-    grid.innerHTML="";
-    var items=[
-      ["Core GPA (audited)", el.core_gpa.toFixed(2)+" / "+el.min_core_gpa.toFixed(2)+" min", el.gpa_meets?"ok":"bad"],
-      ["If these marks hold", (el.projected_core_gpa===null?"—":el.projected_core_gpa.toFixed(2))+
-        (el.projected_core_gpa!==null&&el.projected_core_gpa<el.min_core_gpa?" BELOW FLOOR":""),
-        el.projected_core_gpa===null?"wait":(el.projected_core_gpa>=el.min_core_gpa?"wait":"bad")],
-      ["10/7 progression", (el.progression_have===null?"—":el.progression_have)+"/"+(el.progression_need||20)+
-        " core units"+(el.progression_met?" met":" — not yet"), el.progression_met?"ok":"wait"],
-      ["SAT / ACT", el.test_required?"required":"not required (NCAA dropped it 2023)", "ok"]
-    ];
-    items.forEach(function(it){
-      var d=document.createElement("div"); d.className="el-item";
-      d.className="el-item "+it[2];
-      d.innerHTML='<span class="el-k">'+it[0]+'</span><span class="el-v el-'+it[2]+'">'+it[1]+'</span>';
-      grid.appendChild(d);
-    });
-    if(note){
-      var bits=[];
-      if(el.below_c_now&&el.below_c_now.length) bits.push("Below C now: "+el.below_c_now.join(", ")+" — a D earns 1.0 core points and satisfies no A-G requirement.");
-      if(el.shortfalls&&el.shortfalls.length) bits.push("Units still to earn: "+el.shortfalls.join(" · ")+".");
-      if(el.failed_core&&el.failed_core.length) bits.push("Failed core course on the transcript: "+el.failed_core.map(function(f){return f.title||f.course}).join(", ")+" (retake required).");
-      if(el.projection_note) bits.push("Projection assumes "+el.projection_note+".");
-      var warnIdx = (el.below_c_now&&el.below_c_now.length)?0:-1;
-      note.innerHTML="";
-      bits.filter(Boolean).forEach(function(t,i){
-        var li=document.createElement("li"); li.textContent=t;
-        if(i===warnIdx) li.className="warn";
-        note.appendChild(li);
-      });
-    }
   }
 }
 async function loadHist(n){
