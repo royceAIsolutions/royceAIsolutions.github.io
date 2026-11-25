@@ -208,7 +208,8 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 @media(max-width:560px){#gradeCard{padding:15px 14px 14px}.gc-row{grid-template-columns:1fr 44px 64px;gap:9px;padding-left:9px}.el-grid{grid-template-columns:1fr}.el-banner .vb-state{font-size:.98rem}}
 </style>
 <div id="gradeCard" style="display:none">
-
+<div class="gc-head"><span class="gc-title">Grades</span><span class="gc-date" id="gradesAsOf">&mdash;</span></div>
+<div id="gradeRows"></div>
 </div>
 </div>
 <div class="dash-grid" id="dashGrid">
@@ -253,7 +254,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v30-nov09-2026';
+var PAGE_VER='v31-nov09-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
