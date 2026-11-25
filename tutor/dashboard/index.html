@@ -243,7 +243,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <table class="quiz-table"><thead><tr><th>Date</th><th>Mode</th><th>Score</th><th>Result</th></tr></thead><tbody id="quizHistoryBody"></tbody></table>
 </div>
 </div>
-<div id="quizPanel" style="display:none;max-width:var(--max-w);margin:0 auto;padding:0 32px">
+<div id="quizPanel" style="display:none;max-width:var(--max-w);margin:0 auto;padding:0 32px;scroll-margin-top:84px">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding:12px 0;border-bottom:1px solid var(--border)">
 <span style="display:flex;align-items:center;gap:8px"><button id="quizBackBtn" onclick="closeIQ()" style="background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:8px;font-size:.8rem;cursor:pointer;font-family:var(--font)">&larr; Back</button><span id="quizSubj" style="color:var(--accent-light);font-weight:600">Quiz</span><span style="color:var(--text-secondary);font-size:.75rem">80% to pass</span></span>
 <span style="display:flex;align-items:center;gap:16px">
@@ -258,7 +258,7 @@ nav > .nav-logo{margin-right:0!important;order:-1}
 <footer>RoyceAI Solutions. Irvine, CA</footer>
 <script>
 // Cache-buster: if version doesn't match, force reload
-var PAGE_VER='v27-nov09-2026';
+var PAGE_VER='v28-nov09-2026';
 try{
   var cv=localStorage.getItem('tutor_page_ver');
   if(cv&&cv!==PAGE_VER){localStorage.clear();location.href='https://royceai.com/tutor/dashboard/?v='+PAGE_VER}
@@ -435,6 +435,7 @@ function startInlineQuiz(s){
   document.getElementById("quizA").innerHTML="";
   document.getElementById("quizProg").textContent="Q0/"+iqTotal;
   document.getElementById("quizScr").textContent="—";
+  setTimeout(focusQuiz,60);
   // Load stored topics from previous sessions to avoid repeats
   var prevKey="tutor_seen_"+s;
   var prevTopics=[];
@@ -452,6 +453,21 @@ function startInlineQuiz(s){
     contextMsg+=" Already asked: "+prevTopics.slice(-20).join(", ")+". Ask completely different questions.";
   }
   askQ(contextMsg);
+}
+// Bring the question and its answers into view on every new question, so the
+// student never has to scroll to find the options.
+function focusQuiz(){
+  var q=document.getElementById("quizQ"),a=document.getElementById("quizA"),p=document.getElementById("quizPanel");
+  if(!q||!p||p.style.display==="none")return;
+  var navH=84,vh=window.innerHeight||800,y=window.pageYOffset||0;
+  var qTop=q.getBoundingClientRect().top+y;
+  var aBottom=a.getBoundingClientRect().bottom+y;
+  var target=qTop-navH;                 // question under the nav
+  var overflow=aBottom-(target+vh);     // options still below the fold?
+  if(overflow>0){                       // give up at most half the question to show them
+    target+=Math.min(overflow,q.getBoundingClientRect().height*0.5);
+  }
+  try{window.scrollTo({top:Math.max(0,target),behavior:"smooth"});}catch(e){window.scrollTo(0,Math.max(0,target));}
 }
 function closeIQ(){
   document.getElementById("quizPanel").style.display="none";
@@ -489,6 +505,7 @@ function showQ(reply){
   // Option texts are kept so a missed item on a generated deck can be re-judged later.
   // Authored banks (rescue) are already keyed server-side, so skip them to keep the ledger small.
   iqCurOpts=(opts&&opts.length>=4&&iqSubj!=="rescue")?opts.slice(0,4).map(function(o){return o.replace(/^[A-D][).]\s*/,"").trim().slice(0,60);}):[];
+  setTimeout(focusQuiz,20);
   if(!opts||opts.length<2){
     iqRetry++;
     if(iqRetry<5){
