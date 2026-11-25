@@ -1,547 +1,513 @@
 [
- {
-  "first": "Jiho",
-  "last": "Pak",
-  "id": "jiho pak",
-  "name": "Jiho Pak",
-  "subjects": "Math, 9th Grade Prep, Bible Study",
-  "active": true,
-  "today": "\u2014",
-  "mtd": "\u2014",
-  "ytd": "1100/1236 (89%)",
-  "topics": "Jul 15 Quiz, Factoring, Geometry",
-  "difficulty": "\ud83d\udd25 Math 3 \u2014 94%",
-  "focus": "Radicals, Quadratics, Polynomials",
-  "plan": "free_trial",
-  "cards": "math,grade9",
-  "authorized": true,
-  "products": [
-   "tutor"
-  ],
-  "kpis": [
-   {
-    "label": "Math",
-    "val": "96/100"
-   },
-   {
-    "label": "Streak",
-    "val": "7 days"
-   },
-   {
-    "label": "Focus Time",
-    "val": "45 min/day"
-   }
-  ],
-  "calories": false,
-  "week": "\u2014",
-  "sessions": "12",
-  "streak": "7 days"
- },
- {
-  "first": "Carter",
-  "last": "Koh",
-  "id": "carter koh",
-  "name": "Carter Koh",
-  "subjects": "AP English Language, AP Biology, Algebra 2, US History, Physics",
-  "active": true,
-  "today": "47/66 (71%)",
-  "mtd": "357/495 (72%)",
-  "ytd": "1212/1640 (74%)",
-  "topics": "Algebra 2, Grade 11 Review",
-  "difficulty": "\ud83d\udcda 11th Grade \u2014 AP course load",
-  "focus": "AP Biology, AP English Lang, Algebra 2",
-  "plan": "free_trial",
-  "cards": "rescue,apeng,apbio,physics,math",
-  "authorized": true,
-  "products": [
-   "tutor"
-  ],
-  "kpis": [
-   {
-    "label": "NCAA at risk",
-    "val": "AT RISK \u00b7 GPA 3.19",
-    "color": "bad"
-   },
-   {
-    "label": "Overall",
-    "val": "1119/1508 (74%)"
-   }
-  ],
-  "calories": false,
-  "week": "222/264 (84%)",
-  "sessions": "19",
-  "streak": "\u2014",
-  "grades": [
-   {
-    "course": "AP Eng Lang - Fall semester",
-    "teacher": "Kane",
-    "mark": "D",
-    "percent": 63.5,
-    "status": "BELOW-C",
-    "need": 6.5,
-    "lever": "Quizzes/Projects (30% of grade) 46.7% \u2192 68.3%"
-   },
-   {
-    "course": "AP Biology A - Fall semester",
-    "teacher": "Jacobs",
-    "mark": "D",
-    "percent": 66.05,
-    "status": "BELOW-C",
-    "need": 3.95,
-    "lever": "Tests (50% of grade) 58.9% \u2192 66.8%"
-   },
-   {
-    "course": "Physics In Un A - Fall semester",
-    "teacher": "Cassity",
-    "mark": "C",
-    "percent": null,
-    "status": "UNKNOWN",
-    "why": "mark is on a 'points' scale, not a percent"
-   },
-   {
-    "course": "Math II A Solid - Fall semester",
-    "teacher": "Hobson",
-    "mark": "A",
-    "percent": 96.74,
-    "status": "OK"
-   },
-   {
-    "course": "US History - Fall semester",
-    "teacher": "Meussner",
-    "mark": "A-",
-    "percent": 91.66,
-    "status": "OK"
-   }
-  ],
-  "eligibility": {
-   "audited_at": "2026-11-01",
-   "core_gpa": 3.194,
-   "min_core_gpa": 2.3,
-   "gpa_meets": true,
-   "core_courses_graded": 18,
-   "projected_core_gpa": 3.055,
-   "projection_courses": 4,
-   "projection_note": "if the 4 in-progress marks hold through the semester",
-   "progression_have": 17,
-   "progression_need": 20,
-   "progression_met": false,
-   "progression_ems": "11/14",
-   "shortfalls": [
-    "English 4/8",
-    "Math 3/6",
-    "Additional Eng/Math/Sci 0/2",
-    "Social Science 2/4",
-    "Additional core (world language etc.) 4/8"
-   ],
-   "failed_core": [
-    {
-     "title": "Math IIB",
-     "year": "2025-2026",
-     "term": "2",
-     "grade": "10",
-     "area": "Math"
-    }
-   ],
-   "below_c_now": [
-    "AP Eng Lang",
-    "AP Biology A"
-   ],
-   "test_required": false,
-   "verdict": "AT RISK",
-   "color": "bad",
-   "reason": "2 core courses below C right now: AP Eng Lang, AP Biology A. A D earns 1.0 core point and satisfies no A-G requirement."
+  {
+    "first": "Jiho",
+    "last": "Pak",
+    "id": "jiho pak",
+    "name": "Jiho Pak",
+    "subjects": "Math, 9th Grade Prep, Bible Study",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "1100/1236 (89%)",
+    "topics": "Jul 15 Quiz, Factoring, Geometry",
+    "difficulty": "\ud83d\udd25 Math 3 \u2014 94%",
+    "focus": "Radicals, Quadratics, Polynomials",
+    "plan": "free_trial",
+    "cards": "math,grade9",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Math",
+        "val": "96/100"
+      },
+      {
+        "label": "Streak",
+        "val": "7 days"
+      },
+      {
+        "label": "Focus Time",
+        "val": "45 min/day"
+      }
+    ],
+    "calories": false,
+    "week": "\u2014",
+    "sessions": "12",
+    "streak": "7 days"
   },
-  "grades_as_of": "2026-11-01"
- },
- {
-  "first": "Angel",
-  "last": "Koh",
-  "id": "angel koh",
-  "name": "Angel Koh",
-  "subjects": "IVC College Readiness, TEAS Nursing Entrance, RN Training",
-  "active": true,
-  "today": "\u2014",
-  "mtd": "\u2014",
-  "ytd": "\u2014",
-  "topics": "IVC Spring 2027 \u2014 placement, TEAS, nursing prereqs",
-  "difficulty": "\ud83c\udf93 Starting IVC \u2014 Spring 2027",
-  "focus": "Math + English placement, TEAS Reading/Math/Science/English, NCLEX-RN",
-  "plan": "free_trial",
-  "cards": "ivcprep,teas,rn",
-  "authorized": true,
-  "products": [
-   "tutor"
-  ],
-  "kpis": [
-   {
-    "label": "IVC term",
-    "val": "Spring 27"
-   },
-   {
-    "label": "TEAS",
-    "val": "\u2014"
-   },
-   {
-    "label": "Drills",
-    "val": "0"
-   }
-  ],
-  "calories": false,
-  "sessions": "0",
-  "streak": "0 days",
-  "week": "\u2014"
- },
- {
-  "first": "Paxton",
-  "last": "Koh",
-  "id": "paxton koh",
-  "name": "Paxton Koh",
-  "subjects": "Reading Games, ABCs, Colors",
-  "active": true,
-  "today": "\u2014",
-  "mtd": "\u2014",
-  "ytd": "\u2014",
-  "topics": "\u2014",
-  "difficulty": "\ud83c\udf92 Kindergarten \u2014 Game Mode",
-  "focus": "Phonics, Letter Recognition, Sight Words",
-  "plan": "free_trial",
-  "cards": "reading",
-  "authorized": true,
-  "products": [
-   "tutor"
-  ],
-  "kpis": [],
-  "calories": false,
-  "sessions": "0",
-  "streak": "-",
-  "week": "\u2014"
- },
- {
-  "first": "Josh",
-  "last": "Lucero",
-  "id": "josh lucero",
-  "name": "Josh Lucero",
-  "subjects": "Series 66, Series 7, Finance",
-  "active": true,
-  "today": "\u2014",
-  "mtd": "\u2014",
-  "ytd": "99/110 (90%)",
-  "topics": "Series 66, Series 7",
-  "difficulty": "\ud83d\udccb Series 66 \u2014 27/30 (90%)",
-  "focus": "Series 66 (Uniform Combined), Series 7",
-  "plan": "free_trial",
-  "cards": "series66,series7",
-  "authorized": true,
-  "products": [
-   "tutor"
-  ],
-  "kpis": [
-   {
-    "label": "Series 66",
-    "val": "74%"
-   },
-   {
-    "label": "Progress",
-    "val": "60%"
-   },
-   {
-    "label": "Study Time",
-    "val": "25 min/day"
-   }
-  ],
-  "calories": false,
-  "sessions": "3",
-  "streak": "2 days",
-  "week": "\u2014"
- },
- {
-  "first": "Mason",
-  "last": "Min",
-  "id": "mason min",
-  "name": "Mason Min",
-  "subjects": "Baby Play, ABCs, Colors",
-  "active": true,
-  "today": "\u2014",
-  "mtd": "\u2014",
-  "ytd": "\u2014",
-  "topics": "Sensory Play",
-  "difficulty": "\ud83d\udc76 Baby Play \u2014 Sensory",
-  "focus": "Sensory, Colors, Sounds",
-  "plan": "free_trial",
-  "cards": "baby",
-  "authorized": true,
-  "products": [
-   "tutor"
-  ],
-  "kpis": [
-   {
-    "label": "Age",
-    "val": "Toddler"
-   },
-   {
-    "label": "Learning",
-    "val": "ABCs"
-   },
-   {
-    "label": "Milestones",
-    "val": "On track"
-   }
-  ],
-  "calories": false,
-  "week": "\u2014"
- },
- {
-  "first": "Pearl",
-  "last": "Johnson",
-  "id": "pearl johnson",
-  "name": "Pearl Johnson",
-  "subjects": "Preschool Play, Letters, Numbers",
-  "active": true,
-  "today": "\u2014",
-  "mtd": "\u2014",
-  "ytd": "\u2014",
-  "topics": "\u2014",
-  "difficulty": "\ud83c\udfa8 Preschool \u2014 Play Mode",
-  "focus": "ABCs, 123s, Colors, Shapes",
-  "plan": "free_trial",
-  "cards": "baby,preschool",
-  "authorized": true,
-  "products": [
-   "tutor"
-  ],
-  "kpis": [
-   {
-    "label": "Colors",
-    "val": "6/6"
-   },
-   {
-    "label": "Games",
-    "val": "3 played"
-   },
-   {
-    "label": "Stars",
-    "val": "15"
-   }
-  ],
-  "calories": false,
-  "sessions": "3",
-  "week": "\u2014"
- },
- {
-  "first": "Ruby",
-  "last": "Johnson",
-  "id": "ruby johnson",
-  "name": "Ruby Johnson",
-  "subjects": "Reading, Math, Grade 2",
-  "active": true,
-  "today": "\u2014",
-  "mtd": "\u2014",
-  "ytd": "\u2014",
-  "topics": "\u2014",
-  "difficulty": "\ud83d\udcda Grade 2 \u2014 Foundations",
-  "focus": "Reading Comprehension, Addition, Subtraction, Phonics",
-  "plan": "free_trial",
-  "cards": "reading,math",
-  "authorized": true,
-  "products": [
-   "tutor"
-  ],
-  "kpis": [
-   {
-    "label": "Math",
-    "val": "4/5"
-   },
-   {
-    "label": "Games",
-    "val": "2 played"
-   },
-   {
-    "label": "Stars",
-    "val": "8"
-   }
-  ],
-  "calories": false,
-  "sessions": "2",
-  "week": "\u2014"
- },
- {
-  "first": "Chase",
-  "last": "Touch",
-  "id": "chase touch",
-  "name": "Chase Touch",
-  "subjects": "Grade 7, Nelson MS, Pre-Algebra",
-  "active": true,
-  "today": "\u2014",
-  "mtd": "\u2014",
-  "ytd": "\u2014",
-  "topics": "\u2014",
-  "difficulty": "\ud83d\udcda 7th Grade \u2014 Nelson MS",
-  "focus": "Pre-Algebra, Reading, Science",
-  "plan": "free_trial",
-  "cards": "math,reading",
-  "authorized": true,
-  "products": [
-   "tutor",
-   "therapy"
-  ],
-  "kpis": [
-   {
-    "label": "Pre-Alg",
-    "val": "B+"
-   },
-   {
-    "label": "Nelson MS",
-    "val": "7th Grade"
-   },
-   {
-    "label": "Sessions",
-    "val": "0"
-   }
-  ],
-  "calories": false,
-  "sessions": "0",
-  "week": "\u2014"
- },
- {
-  "first": "Tommy",
-  "last": "Touch",
-  "id": "tommy touch",
-  "name": "Tommy Touch",
-  "subjects": "Therapy Bot, Social Skills, Emotional Growth",
-  "active": true,
-  "today": "\u2014",
-  "mtd": "\u2014",
-  "ytd": "\u2014",
-  "topics": "\u2014",
-  "difficulty": "\ud83e\udde0 Therapy",
-  "focus": "Mental wellness, Therapy Bot",
-  "plan": "free_trial",
-  "cards": "",
-  "authorized": true,
-  "products": [
-   "therapy"
-  ],
-  "kpis": [
-   {
-    "label": "Therapy",
-    "val": "Active"
-   },
-   {
-    "label": "Sessions",
-    "val": "0"
-   },
-   {
-    "label": "Streak",
-    "val": "New"
-   }
-  ],
-  "calories": false,
-  "sessions": "0",
-  "streak": "New",
-  "week": "\u2014"
- },
- {
-  "first": "MacKenzie",
-  "last": "Koh",
-  "id": "mackenzie koh",
-  "name": "MacKenzie Koh",
-  "subjects": "Math, Reading, Science",
-  "active": true,
-  "today": "\u2014",
-  "mtd": "\u2014",
-  "ytd": "\u2014",
-  "topics": "\u2014",
-  "difficulty": "\ud83d\udcda 4th Grade \u2014 Gentle Pace",
-  "focus": "Multiplication, Reading Comprehension, Science",
-  "plan": "free_trial",
-  "cards": "grade4,math",
-  "authorized": true,
-  "products": [
-   "tutor"
-  ],
-  "kpis": [],
-  "calories": false,
-  "sessions": "0",
-  "streak": "-",
-  "school": "Talbot Hill",
-  "dob": "2017-06-03",
-  "age": "9",
-  "week": "\u2014"
- },
- {
-  "first": "Charles",
-  "last": "Koh",
-  "id": "charles koh",
-  "name": "Charles Koh",
-  "subjects": "WA Real Estate, RCW/WAC, Contracts",
-  "active": true,
-  "today": "\u2014",
-  "mtd": "\u2014",
-  "ytd": "\u2014",
-  "topics": "\u2014",
-  "difficulty": "\ud83c\udfe2 WA Real Estate \u2014 Exam Prep",
-  "focus": "RCW/WAC Law, Contracts, Agency",
-  "plan": "free_trial",
-  "cards": "realestate",
-  "authorized": true,
-  "products": [
-   "tutor"
-  ],
-  "kpis": [
-   {
-    "label": "Practice",
-    "val": "\u2014"
-   },
-   {
-    "label": "Pass Rate",
-    "val": "\u2014"
-   },
-   {
-    "label": "Streak",
-    "val": "0 days"
-   }
-  ],
-  "calories": false,
-  "sessions": "0",
-  "streak": "-",
-  "week": "\u2014"
- },
- {
-  "first": "Royce",
-  "last": "Koh",
-  "id": "royce koh",
-  "name": "Royce Koh",
-  "subjects": "Police Officer Written Exam (NBPD), Interview Prep, Physical Agility",
-  "active": true,
-  "today": "\u2014",
-  "mtd": "\u2014",
-  "ytd": "\u2014",
-  "topics": "Police Exam, NBPD Application",
-  "difficulty": "\ud83d\ude93 NBPD Recruit \u2014 application submitted 11/24/2026",
-  "focus": "Reading comprehension, arithmetic, report clarity, judgment",
-  "plan": "family",
-  "cards": "nbpd",
-  "authorized": true,
-  "products": [
-   "tutor"
-  ],
-  "kpis": [
-   {
-    "label": "Application",
-    "val": "SUBMITTED 11/24/2026",
-    "color": "good"
-   },
-   {
-    "label": "Polygraph",
-    "val": "~Feb 2027",
-    "color": "warn"
-   }
-  ],
-  "calories": false,
-  "week": "\u2014",
-  "sessions": "0",
-  "streak": "\u2014",
-  "grades": [],
-  "eligibility": {}
- }
+  {
+    "first": "Carter",
+    "last": "Koh",
+    "id": "carter koh",
+    "name": "Carter Koh",
+    "subjects": "AP English Language, AP Biology, Algebra 2, US History, Physics",
+    "active": true,
+    "today": "47/66 (71%)",
+    "mtd": "357/495 (72%)",
+    "ytd": "1212/1640 (74%)",
+    "topics": "Algebra 2, Grade 11 Review",
+    "difficulty": "\ud83d\udcda 11th Grade \u2014 AP course load",
+    "focus": "AP Biology, AP English Lang, Algebra 2",
+    "plan": "free_trial",
+    "cards": "rescue,apeng,apbio,physics,math",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Overall",
+        "val": "1212/1640 (74%)"
+      },
+      {
+        "label": "Below C",
+        "val": "2",
+        "color": "bad"
+      },
+      {
+        "label": "Sessions",
+        "val": "19"
+      }
+    ],
+    "calories": false,
+    "week": "222/264 (84%)",
+    "sessions": "19",
+    "streak": "\u2014",
+    "grades": [
+      {
+        "course": "AP Eng Lang - Fall semester",
+        "teacher": "Kane",
+        "mark": "D",
+        "percent": 63.5,
+        "status": "BELOW-C",
+        "need": 6.5,
+        "lever": "Quizzes/Projects (30% of grade) 46.7% \u2192 68.3%"
+      },
+      {
+        "course": "AP Biology A - Fall semester",
+        "teacher": "Jacobs",
+        "mark": "D",
+        "percent": 66.05,
+        "status": "BELOW-C",
+        "need": 3.95,
+        "lever": "Tests (50% of grade) 58.9% \u2192 66.8%"
+      },
+      {
+        "course": "Physics In Un A - Fall semester",
+        "teacher": "Cassity",
+        "mark": "C",
+        "percent": null,
+        "status": "UNKNOWN",
+        "why": "mark is on a 'points' scale, not a percent"
+      },
+      {
+        "course": "Math II A Solid - Fall semester",
+        "teacher": "Hobson",
+        "mark": "A",
+        "percent": 96.74,
+        "status": "OK"
+      },
+      {
+        "course": "US History - Fall semester",
+        "teacher": "Meussner",
+        "mark": "A-",
+        "percent": 91.66,
+        "status": "OK"
+      }
+    ],
+    "grades_as_of": "2026-11-01"
+  },
+  {
+    "first": "Angel",
+    "last": "Koh",
+    "id": "angel koh",
+    "name": "Angel Koh",
+    "subjects": "IVC College Readiness, TEAS Nursing Entrance, RN Training",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "IVC Spring 2027 \u2014 placement, TEAS, nursing prereqs",
+    "difficulty": "\ud83c\udf93 Starting IVC \u2014 Spring 2027",
+    "focus": "Math + English placement, TEAS Reading/Math/Science/English, NCLEX-RN",
+    "plan": "free_trial",
+    "cards": "ivcprep,teas,rn",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "IVC term",
+        "val": "Spring 27"
+      },
+      {
+        "label": "TEAS",
+        "val": "\u2014"
+      },
+      {
+        "label": "Drills",
+        "val": "0"
+      }
+    ],
+    "calories": false,
+    "sessions": "0",
+    "streak": "0 days",
+    "week": "\u2014"
+  },
+  {
+    "first": "Paxton",
+    "last": "Koh",
+    "id": "paxton koh",
+    "name": "Paxton Koh",
+    "subjects": "Reading Games, ABCs, Colors",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83c\udf92 Kindergarten \u2014 Game Mode",
+    "focus": "Phonics, Letter Recognition, Sight Words",
+    "plan": "free_trial",
+    "cards": "reading",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [],
+    "calories": false,
+    "sessions": "0",
+    "streak": "-",
+    "week": "\u2014"
+  },
+  {
+    "first": "Josh",
+    "last": "Lucero",
+    "id": "josh lucero",
+    "name": "Josh Lucero",
+    "subjects": "Series 66, Series 7, Finance",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "99/110 (90%)",
+    "topics": "Series 66, Series 7",
+    "difficulty": "\ud83d\udccb Series 66 \u2014 27/30 (90%)",
+    "focus": "Series 66 (Uniform Combined), Series 7",
+    "plan": "free_trial",
+    "cards": "series66,series7",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Series 66",
+        "val": "74%"
+      },
+      {
+        "label": "Progress",
+        "val": "60%"
+      },
+      {
+        "label": "Study Time",
+        "val": "25 min/day"
+      }
+    ],
+    "calories": false,
+    "sessions": "3",
+    "streak": "2 days",
+    "week": "\u2014"
+  },
+  {
+    "first": "Mason",
+    "last": "Min",
+    "id": "mason min",
+    "name": "Mason Min",
+    "subjects": "Baby Play, ABCs, Colors",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "Sensory Play",
+    "difficulty": "\ud83d\udc76 Baby Play \u2014 Sensory",
+    "focus": "Sensory, Colors, Sounds",
+    "plan": "free_trial",
+    "cards": "baby",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Age",
+        "val": "Toddler"
+      },
+      {
+        "label": "Learning",
+        "val": "ABCs"
+      },
+      {
+        "label": "Milestones",
+        "val": "On track"
+      }
+    ],
+    "calories": false,
+    "week": "\u2014"
+  },
+  {
+    "first": "Pearl",
+    "last": "Johnson",
+    "id": "pearl johnson",
+    "name": "Pearl Johnson",
+    "subjects": "Preschool Play, Letters, Numbers",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83c\udfa8 Preschool \u2014 Play Mode",
+    "focus": "ABCs, 123s, Colors, Shapes",
+    "plan": "free_trial",
+    "cards": "baby,preschool",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Colors",
+        "val": "6/6"
+      },
+      {
+        "label": "Games",
+        "val": "3 played"
+      },
+      {
+        "label": "Stars",
+        "val": "15"
+      }
+    ],
+    "calories": false,
+    "sessions": "3",
+    "week": "\u2014"
+  },
+  {
+    "first": "Ruby",
+    "last": "Johnson",
+    "id": "ruby johnson",
+    "name": "Ruby Johnson",
+    "subjects": "Reading, Math, Grade 2",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83d\udcda Grade 2 \u2014 Foundations",
+    "focus": "Reading Comprehension, Addition, Subtraction, Phonics",
+    "plan": "free_trial",
+    "cards": "reading,math",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Math",
+        "val": "4/5"
+      },
+      {
+        "label": "Games",
+        "val": "2 played"
+      },
+      {
+        "label": "Stars",
+        "val": "8"
+      }
+    ],
+    "calories": false,
+    "sessions": "2",
+    "week": "\u2014"
+  },
+  {
+    "first": "Chase",
+    "last": "Touch",
+    "id": "chase touch",
+    "name": "Chase Touch",
+    "subjects": "Grade 7, Nelson MS, Pre-Algebra",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83d\udcda 7th Grade \u2014 Nelson MS",
+    "focus": "Pre-Algebra, Reading, Science",
+    "plan": "free_trial",
+    "cards": "math,reading",
+    "authorized": true,
+    "products": [
+      "tutor",
+      "therapy"
+    ],
+    "kpis": [
+      {
+        "label": "Pre-Alg",
+        "val": "B+"
+      },
+      {
+        "label": "Nelson MS",
+        "val": "7th Grade"
+      },
+      {
+        "label": "Sessions",
+        "val": "0"
+      }
+    ],
+    "calories": false,
+    "sessions": "0",
+    "week": "\u2014"
+  },
+  {
+    "first": "Tommy",
+    "last": "Touch",
+    "id": "tommy touch",
+    "name": "Tommy Touch",
+    "subjects": "Therapy Bot, Social Skills, Emotional Growth",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83e\udde0 Therapy",
+    "focus": "Mental wellness, Therapy Bot",
+    "plan": "free_trial",
+    "cards": "",
+    "authorized": true,
+    "products": [
+      "therapy"
+    ],
+    "kpis": [
+      {
+        "label": "Therapy",
+        "val": "Active"
+      },
+      {
+        "label": "Sessions",
+        "val": "0"
+      },
+      {
+        "label": "Streak",
+        "val": "New"
+      }
+    ],
+    "calories": false,
+    "sessions": "0",
+    "streak": "New",
+    "week": "\u2014"
+  },
+  {
+    "first": "MacKenzie",
+    "last": "Koh",
+    "id": "mackenzie koh",
+    "name": "MacKenzie Koh",
+    "subjects": "Math, Reading, Science",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83d\udcda 4th Grade \u2014 Gentle Pace",
+    "focus": "Multiplication, Reading Comprehension, Science",
+    "plan": "free_trial",
+    "cards": "grade4,math",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [],
+    "calories": false,
+    "sessions": "0",
+    "streak": "-",
+    "school": "Talbot Hill",
+    "dob": "2017-06-03",
+    "age": "9",
+    "week": "\u2014"
+  },
+  {
+    "first": "Charles",
+    "last": "Koh",
+    "id": "charles koh",
+    "name": "Charles Koh",
+    "subjects": "WA Real Estate, RCW/WAC, Contracts",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "\u2014",
+    "difficulty": "\ud83c\udfe2 WA Real Estate \u2014 Exam Prep",
+    "focus": "RCW/WAC Law, Contracts, Agency",
+    "plan": "free_trial",
+    "cards": "realestate",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Practice",
+        "val": "\u2014"
+      },
+      {
+        "label": "Pass Rate",
+        "val": "\u2014"
+      },
+      {
+        "label": "Streak",
+        "val": "0 days"
+      }
+    ],
+    "calories": false,
+    "sessions": "0",
+    "streak": "-",
+    "week": "\u2014"
+  },
+  {
+    "first": "Royce",
+    "last": "Koh",
+    "id": "royce koh",
+    "name": "Royce Koh",
+    "subjects": "Police Officer Written Exam (NBPD), Interview Prep, Physical Agility",
+    "active": true,
+    "today": "\u2014",
+    "mtd": "\u2014",
+    "ytd": "\u2014",
+    "topics": "Police Exam, NBPD Application",
+    "difficulty": "\ud83d\ude93 NBPD Recruit \u2014 application submitted 11/24/2026",
+    "focus": "Reading comprehension, arithmetic, report clarity, judgment",
+    "plan": "family",
+    "cards": "nbpd",
+    "authorized": true,
+    "products": [
+      "tutor"
+    ],
+    "kpis": [
+      {
+        "label": "Application",
+        "val": "SUBMITTED 11/24/2026",
+        "color": "good"
+      },
+      {
+        "label": "Polygraph",
+        "val": "~Feb 2027",
+        "color": "warn"
+      }
+    ],
+    "calories": false,
+    "week": "\u2014",
+    "sessions": "0",
+    "streak": "\u2014",
+    "grades": [],
+    "eligibility": {}
+  }
 ]
