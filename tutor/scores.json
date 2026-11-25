@@ -2054,5 +2054,77 @@
       }
     ],
     "src": "web"
+  },
+  {
+    "student": "Royce Koh",
+    "correct": 28,
+    "total": 33,
+    "percent": 85,
+    "subject": "nbpd",
+    "date": "2026-11-25",
+    "ts": 1795583788703,
+    "missed": [
+      {
+        "n": 4,
+        "q": "The increase of 248 divided by the base of 1,240 equals twenty percent.",
+        "p": "C",
+        "k": "D",
+        "o": [
+          "60 mph",
+          "68 mph",
+          "78 mph",
+          "72 mph"
+        ]
+      },
+      {
+        "n": 13,
+        "q": "For cause means it had a stated justification.",
+        "p": "C",
+        "k": "A",
+        "o": [
+          "Neither the officer nor the sergeant was available.",
+          "Neither the officer or the sergeant were available.",
+          "Neither the officer nor the sergeant were available.",
+          "Neither the officer or the sergeant was available."
+        ]
+      },
+      {
+        "n": 18,
+        "q": "Concrete nouns and one verb beat vague phrasing.",
+        "p": "D",
+        "k": "B",
+        "o": [
+          "all dispatchers are patrol officers",
+          "nothing certain about the overlap",
+          "some patrol officers are dispatchers",
+          "no dispatcher is a patrol officer"
+        ]
+      },
+      {
+        "n": 22,
+        "q": "D before A before B before C.",
+        "p": "A",
+        "k": "B",
+        "o": [
+          "195 calls",
+          "240 calls",
+          "225 calls",
+          "265 calls"
+        ]
+      },
+      {
+        "n": 29,
+        "q": "Corroborate means to support with evidence.",
+        "p": "B",
+        "k": "A",
+        "o": [
+          "cautious and sensible",
+          "reckless and fast",
+          "delayed and uncertain",
+          "authorised and formal"
+        ]
+      }
+    ],
+    "src": "web"
   }
 ]
