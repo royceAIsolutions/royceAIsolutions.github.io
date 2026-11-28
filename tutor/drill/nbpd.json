@@ -1,12 +1,12 @@
 {
  "id": "nbpd",
  "title": "Police Officer Written Exam \u2014 NBPD style",
- "generated": "2026-11-24",
+ "generated": "2026-11-27",
  "courses": [
   "Police Exam"
  ],
  "source": "Entry-level police written exam practice in the shape used by California agencies: arithmetic and word problems, reading comprehension with inference, grammar and report clarity, logic, table reading, observation recall, vocabulary and situational judgment. NBPD publishes no exam blueprint; this deck mirrors the standard section mix, not leaked items.",
- "set_count": 1,
+ "set_count": 2,
  "sets": [
   {
    "set": 1,
@@ -673,6 +673,474 @@
      ]
     }
    ]
+  },
+  {
+   "set": 2,
+   "generated": "2026-11-27",
+   "questions": [
+    {
+     "n": 1,
+     "course": "Police Exam",
+     "unit": "Math",
+     "stem": "A briefing begins at 0645 and runs 95 minutes. End time?",
+     "options": [
+      "0820 hours",
+      "0810 hours",
+      "0830 hours",
+      "0740 hours"
+     ],
+     "answer": "A",
+     "why": "Ninety-five minutes after 0645 crosses the hour to reach 0820 hours."
+    },
+    {
+     "n": 2,
+     "course": "Police Exam",
+     "unit": "Math",
+     "stem": "A roster allots 7.5 hours to patrol and 1.25 hours to briefing. Total hours?",
+     "options": [
+      "7.75 hours",
+      "8.75 hours",
+      "8.25 hours",
+      "9.25 hours"
+     ],
+     "answer": "B",
+     "why": "Seven and a half hours plus one and a quarter is eight and three quarters."
+    },
+    {
+     "n": 3,
+     "course": "Police Exam",
+     "unit": "Math",
+     "stem": "A grant covers three eighths of a $24,000 training budget. Amount covered?",
+     "options": [
+      "$7,500",
+      "$8,000",
+      "$9,000",
+      "$12,000"
+     ],
+     "answer": "C",
+     "why": "One eighth of twenty-four thousand is three thousand, so three eighths is nine thousand."
+    },
+    {
+     "n": 4,
+     "course": "Police Exam",
+     "unit": "Math",
+     "stem": "A suspect covers 100 meters in 20 seconds. Speed in meters per second?",
+     "options": [
+      "3 meters per second",
+      "4 meters per second",
+      "6 meters per second",
+      "5 meters per second"
+     ],
+     "answer": "D",
+     "why": "One hundred meters divided by twenty seconds gives five meters each second."
+    },
+    {
+     "n": 5,
+     "course": "Police Exam",
+     "unit": "Math",
+     "stem": "A 240-page case file is 15 percent photographs. How many photo pages?",
+     "options": [
+      "36 pages",
+      "30 pages",
+      "40 pages",
+      "45 pages"
+     ],
+     "answer": "A",
+     "why": "Fifteen percent of two hundred forty is thirty-six photo pages in total."
+    },
+    {
+     "n": 6,
+     "course": "Police Exam",
+     "unit": "Math",
+     "stem": "Three shifts log 18, 24 and 21 citations. Average citations per shift?",
+     "options": [
+      "19 citations",
+      "21 citations",
+      "22 citations",
+      "24 citations"
+     ],
+     "answer": "B",
+     "why": "The three shifts total sixty-three citations, which divides evenly into twenty-one per shift."
+    },
+    {
+     "n": 7,
+     "course": "Police Exam",
+     "unit": "Reading",
+     "stem": "A memo states the review 'will proceed absent objection.' The review proceeds if:",
+     "options": [
+      "objections are filed early",
+      "the chief objects first",
+      "no objection is filed",
+      "objections are withdrawn"
+     ],
+     "answer": "C",
+     "why": "Absent objection means nothing is filed to stop the review from moving forward."
+    },
+    {
+     "n": 8,
+     "course": "Police Exam",
+     "unit": "Reading",
+     "stem": "An order tells officers to act 'at their discretion.' The order:",
+     "options": [
+      "gives very detailed written steps",
+      "fixes one required standard method",
+      "removes every existing legal limit",
+      "leaves the choice to the officer"
+     ],
+     "answer": "D",
+     "why": "Discretion hands the decision to the officer rather than dictating one fixed method."
+    },
+    {
+     "n": 9,
+     "course": "Police Exam",
+     "unit": "Reading",
+     "stem": "A report says the witness 'declined to elaborate.' The witness:",
+     "options": [
+      "gave no further detail",
+      "refused all later testimony",
+      "changed the earlier statement",
+      "asked for a lawyer"
+     ],
+     "answer": "A",
+     "why": "Declining to elaborate means the witness stopped short of adding more detail."
+    },
+    {
+     "n": 10,
+     "course": "Police Exam",
+     "unit": "Reading",
+     "stem": "A log entry marked 'inconclusive' describes a finding that is:",
+     "options": [
+      "clearly established fact",
+      "not fully determined",
+      "deliberately kept secret",
+      "overturned on appeal"
+     ],
+     "answer": "B",
+     "why": "Inconclusive means the evidence did not settle the question either way."
+    },
+    {
+     "n": 11,
+     "course": "Police Exam",
+     "unit": "Reading",
+     "stem": "A supervisor notes the unit is 'running lean.' The staffing is:",
+     "options": [
+      "above the budgeted level",
+      "equal to the budgeted level",
+      "below the budgeted level",
+      "separate from the budget"
+     ],
+     "answer": "C",
+     "why": "Running lean means the unit is working with fewer people than planned."
+    },
+    {
+     "n": 12,
+     "course": "Police Exam",
+     "unit": "Reading",
+     "stem": "A finding described as 'provisional' is one that is:",
+     "options": [
+      "final and fully binding",
+      "settled by higher review",
+      "permanent once it is filed",
+      "temporary pending more review"
+     ],
+     "answer": "D",
+     "why": "Provisional findings hold for now and can change as review continues."
+    },
+    {
+     "n": 13,
+     "course": "Police Exam",
+     "unit": "Grammar",
+     "stem": "Choose the sentence with correct subject and verb agreement.",
+     "options": [
+      "Each of the officers carries a radio.",
+      "Each of the officers carry a radio.",
+      "Each of the officer carry a radio.",
+      "Each of the officer carries a radio."
+     ],
+     "answer": "A",
+     "why": "Each is singular, so the verb takes the singular form carries."
+    },
+    {
+     "n": 14,
+     "course": "Police Exam",
+     "unit": "Grammar",
+     "stem": "Choose the sentence with the correct pronoun case.",
+     "options": [
+      "Between you and I the report is done.",
+      "Between you and me the report is done.",
+      "Between me and I the report is done.",
+      "Between we and you the report is done."
+     ],
+     "answer": "B",
+     "why": "A preposition takes object pronouns, so between you and me is correct."
+    },
+    {
+     "n": 15,
+     "course": "Police Exam",
+     "unit": "Grammar",
+     "stem": "Choose the sentence with correct punctuation between clauses.",
+     "options": [
+      "The officer checked the gate then she left.",
+      "The officer checked the gate, then she left.",
+      "The officer checked the gate; then she left.",
+      "The officer checked the gate then, she left."
+     ],
+     "answer": "C",
+     "why": "Two independent clauses need a semicolon or a comma plus conjunction."
+    },
+    {
+     "n": 16,
+     "course": "Police Exam",
+     "unit": "Grammar",
+     "stem": "Choose the sentence that uses the correct past perfect verb form.",
+     "options": [
+      "The officer had wrote the report before leaving.",
+      "The officer has wrote the report before leaving.",
+      "The officer have written the report before leaving.",
+      "The officer had written the report before leaving."
+     ],
+     "answer": "D",
+     "why": "Past perfect pairs had with the participle written, not the simple past wrote."
+    },
+    {
+     "n": 17,
+     "course": "Police Exam",
+     "unit": "Grammar",
+     "stem": "Choose the sentence written in active voice.",
+     "options": [
+      "The officer secured the evidence bag.",
+      "The evidence bag was secured by officers.",
+      "Securing of the evidence was done.",
+      "The bag was secured by the officer."
+     ],
+     "answer": "A",
+     "why": "Active voice puts the officer first as the one doing the action."
+    },
+    {
+     "n": 18,
+     "course": "Police Exam",
+     "unit": "Logic",
+     "stem": "No one without a badge enters the yard. Hale entered the yard. Therefore Hale:",
+     "options": [
+      "held no valid badge",
+      "carried a valid badge",
+      "refused showing any badge",
+      "was denied entry later"
+     ],
+     "answer": "B",
+     "why": "Since badge-less people never enter, Hale must have carried a valid badge."
+    },
+    {
+     "n": 19,
+     "course": "Police Exam",
+     "unit": "Logic",
+     "stem": "If the gate is locked, the lot is empty. The lot is not empty. Therefore:",
+     "options": [
+      "the gate was locked anyway",
+      "the lot will empty later",
+      "the gate was not locked",
+      "the gate is still locked"
+     ],
+     "answer": "C",
+     "why": "A locked gate would empty the lot, so the open lot proves the gate was unlocked."
+    },
+    {
+     "n": 20,
+     "course": "Police Exam",
+     "unit": "Logic",
+     "stem": "Every certified officer completed the course. Reyes is not certified. Therefore Reyes:",
+     "options": [
+      "completed the course anyway",
+      "will complete it later",
+      "completed a different course",
+      "did not complete the course"
+     ],
+     "answer": "D",
+     "why": "The course requirement covered certified officers only, so Reyes falls outside that group."
+    },
+    {
+     "n": 21,
+     "course": "Police Exam",
+     "unit": "Logic",
+     "stem": "Stops are ordered: P before Q, R after Q, S before P. Which stop comes last?",
+     "options": [
+      "Stop R",
+      "Stop S",
+      "Stop P",
+      "Stop Q"
+     ],
+     "answer": "A",
+     "why": "The chain runs S then P then Q then R, placing R last."
+    },
+    {
+     "n": 22,
+     "course": "Police Exam",
+     "unit": "Data",
+     "stem": "Monthly stops were 48, 60, 54 and 42. What is the median?",
+     "options": [
+      "45 stops",
+      "51 stops",
+      "48 stops",
+      "54 stops"
+     ],
+     "answer": "B",
+     "why": "Sorted as 42, 48, 54 and 60, the middle pair averages fifty-one."
+    },
+    {
+     "n": 23,
+     "course": "Police Exam",
+     "unit": "Data",
+     "stem": "A table shows 24 force reports one year and 18 the next. Percent change?",
+     "options": [
+      "15 percent decrease",
+      "20 percent decrease",
+      "25 percent decrease",
+      "30 percent decrease"
+     ],
+     "answer": "C",
+     "why": "A drop of six from a base of twenty-four equals twenty-five percent."
+    },
+    {
+     "n": 24,
+     "course": "Police Exam",
+     "unit": "Data",
+     "stem": "A monthly chart lists 12, 15, 15, 18 and 20 citations. What is the mode?",
+     "options": [
+      "12 citations",
+      "18 citations",
+      "20 citations",
+      "15 citations"
+     ],
+     "answer": "D",
+     "why": "The mode is the value appearing most often, and fifteen appears twice."
+    },
+    {
+     "n": 25,
+     "course": "Police Exam",
+     "unit": "Observation",
+     "stem": "The suspect drove a silver sedan with plate 7XK-330. What was the plate?",
+     "options": [
+      "7XK-330",
+      "7KX-330",
+      "7XK-303",
+      "7XK-313"
+     ],
+     "answer": "A",
+     "why": "Detail recall: the letters keep their order and the last digits are three three zero."
+    },
+    {
+     "n": 26,
+     "course": "Police Exam",
+     "unit": "Observation",
+     "stem": "The burglary occurred between 2100 and 2130 hours. The time window was:",
+     "options": [
+      "2000 to 2030",
+      "2100 to 2130",
+      "2100 to 2200",
+      "2230 to 2300"
+     ],
+     "answer": "B",
+     "why": "Detail recall: both the start and end times were recorded exactly."
+    },
+    {
+     "n": 27,
+     "course": "Police Exam",
+     "unit": "Observation",
+     "stem": "The witness described a green pickup with ladder racks. Vehicle color?",
+     "options": [
+      "blue",
+      "white",
+      "green",
+      "grey"
+     ],
+     "answer": "C",
+     "why": "Detail recall: the color stated in the description was green."
+    },
+    {
+     "n": 28,
+     "course": "Police Exam",
+     "unit": "Vocabulary",
+     "stem": "'The deputy was exonerated by the review.' Exonerated means:",
+     "options": [
+      "reassigned",
+      "reprimanded",
+      "suspended",
+      "cleared"
+     ],
+     "answer": "D",
+     "why": "To exonerate is to clear someone of blame or wrongdoing."
+    },
+    {
+     "n": 29,
+     "course": "Police Exam",
+     "unit": "Vocabulary",
+     "stem": "'A cursory search of the vehicle' describes a search that was:",
+     "options": [
+      "quick and superficial",
+      "thorough and careful",
+      "delayed until morning",
+      "recorded on video"
+     ],
+     "answer": "A",
+     "why": "Cursory means hasty and lacking in depth or detail."
+    },
+    {
+     "n": 30,
+     "course": "Police Exam",
+     "unit": "Vocabulary",
+     "stem": "'The directive was superseded by a later memo.' The directive was:",
+     "options": [
+      "copied",
+      "replaced",
+      "delayed",
+      "clarified"
+     ],
+     "answer": "B",
+     "why": "Supersede means to take the place of something earlier."
+    },
+    {
+     "n": 31,
+     "course": "Police Exam",
+     "unit": "Judgment",
+     "stem": "A driver refuses to exit and reaches under the seat. Your first priority?",
+     "options": [
+      "ask the driver to calm down",
+      "write the citation before you approach",
+      "order hands visible and request backup",
+      "open the door and pull him out"
+     ],
+     "answer": "C",
+     "why": "Control the hands and add cover before anything else happens."
+    },
+    {
+     "n": 32,
+     "course": "Police Exam",
+     "unit": "Judgment",
+     "stem": "A colleague arrives visibly impaired before shift. You should:",
+     "options": [
+      "cover his duties and say nothing",
+      "send him home and log it later",
+      "ignore it since he seems functional",
+      "notify the supervisor before shift starts"
+     ],
+     "answer": "D",
+     "why": "Policy requires reporting impairment before that colleague takes the street."
+    },
+    {
+     "n": 33,
+     "course": "Police Exam",
+     "unit": "Judgment",
+     "stem": "A resident offers you a $20 gift card for handling her case. You should:",
+     "options": [
+      "decline politely and document the offer",
+      "accept it and record it plainly",
+      "take it and split it quietly",
+      "accept quietly and tell no one"
+     ],
+     "answer": "A",
+     "why": "Gifts tied to a case are barred, so decline and put the offer on record."
+    }
+   ]
   }
  ],
  "questions": [
@@ -680,661 +1148,463 @@
    "n": 1,
    "course": "Police Exam",
    "unit": "Math",
-   "stem": "An officer works 11.25 hours per shift. Hours in 16 shifts?",
+   "stem": "A briefing begins at 0645 and runs 95 minutes. End time?",
    "options": [
-    "180 hours",
-    "170 hours",
-    "176 hours",
-    "184 hours"
+    "0820 hours",
+    "0810 hours",
+    "0830 hours",
+    "0740 hours"
    ],
    "answer": "A",
-   "why": "Eleven and a quarter hours across sixteen shifts comes to one hundred eighty hours.",
-   "option_words": [
-    2,
-    2,
-    2,
-    2
-   ]
+   "why": "Ninety-five minutes after 0645 crosses the hour to reach 0820 hours."
   },
   {
    "n": 2,
    "course": "Police Exam",
    "unit": "Math",
-   "stem": "A report is 40% complete after 6 pages. Total pages?",
+   "stem": "A roster allots 7.5 hours to patrol and 1.25 hours to briefing. Total hours?",
    "options": [
-    "12 pages",
-    "15 pages",
-    "14 pages",
-    "18 pages"
+    "7.75 hours",
+    "8.75 hours",
+    "8.25 hours",
+    "9.25 hours"
    ],
    "answer": "B",
-   "why": "Six pages is forty percent of the total, so the report runs fifteen pages.",
-   "option_words": [
-    2,
-    2,
-    2,
-    2
-   ]
+   "why": "Seven and a half hours plus one and a quarter is eight and three quarters."
   },
   {
    "n": 3,
    "course": "Police Exam",
    "unit": "Math",
-   "stem": "Calls rise from 1,240 to 1,488. Percent increase?",
+   "stem": "A grant covers three eighths of a $24,000 training budget. Amount covered?",
    "options": [
-    "16 percent",
-    "18 percent",
-    "20 percent",
-    "24 percent"
+    "$7,500",
+    "$8,000",
+    "$9,000",
+    "$12,000"
    ],
    "answer": "C",
-   "why": "The increase of 248 divided by the base of 1,240 equals twenty percent.",
-   "option_words": [
-    2,
-    2,
-    2,
-    2
-   ]
+   "why": "One eighth of twenty-four thousand is three thousand, so three eighths is nine thousand."
   },
   {
    "n": 4,
    "course": "Police Exam",
    "unit": "Math",
-   "stem": "A vehicle travels 42 miles in 35 minutes. Average speed?",
+   "stem": "A suspect covers 100 meters in 20 seconds. Speed in meters per second?",
    "options": [
-    "60 mph",
-    "68 mph",
-    "78 mph",
-    "72 mph"
+    "3 meters per second",
+    "4 meters per second",
+    "6 meters per second",
+    "5 meters per second"
    ],
    "answer": "D",
-   "why": "Forty-two miles in thirty-five minutes works out to seventy-two miles per hour.",
-   "option_words": [
-    2,
-    2,
-    2,
-    2
-   ]
+   "why": "One hundred meters divided by twenty seconds gives five meters each second."
   },
   {
    "n": 5,
    "course": "Police Exam",
    "unit": "Math",
-   "stem": "Overtime is 1.5x a $41.20 hourly rate. Overtime rate?",
+   "stem": "A 240-page case file is 15 percent photographs. How many photo pages?",
    "options": [
-    "$61.80",
-    "$56.40",
-    "$59.20",
-    "$64.60"
+    "36 pages",
+    "30 pages",
+    "40 pages",
+    "45 pages"
    ],
    "answer": "A",
-   "why": "Forty-one dollars twenty cents times one and a half is sixty-one eighty.",
-   "option_words": [
-    1,
-    1,
-    1,
-    1
-   ]
+   "why": "Fifteen percent of two hundred forty is thirty-six photo pages in total."
   },
   {
    "n": 6,
    "course": "Police Exam",
    "unit": "Math",
-   "stem": "Four districts report 320, 410, 275 and 515 calls. Mean?",
+   "stem": "Three shifts log 18, 24 and 21 citations. Average citations per shift?",
    "options": [
-    "355 calls",
-    "380 calls",
-    "370 calls",
-    "395 calls"
+    "19 citations",
+    "21 citations",
+    "22 citations",
+    "24 citations"
    ],
    "answer": "B",
-   "why": "The four district figures total 1,520, which divided by four is 380.",
-   "option_words": [
-    2,
-    2,
-    2,
-    2
-   ]
+   "why": "The three shifts total sixty-three citations, which divides evenly into twenty-one per shift."
   },
   {
    "n": 7,
    "course": "Police Exam",
    "unit": "Reading",
-   "stem": "The staffing model assumes six percent attrition, a figure the chief calls optimistic. He expects attrition to:",
+   "stem": "A memo states the review 'will proceed absent objection.' The review proceeds if:",
    "options": [
-    "fall below six percent",
-    "remain exactly six percent",
-    "rise above six percent",
-    "become impossible to measure"
+    "objections are filed early",
+    "the chief objects first",
+    "no objection is filed",
+    "objections are withdrawn"
    ],
    "answer": "C",
-   "why": "Calling the estimate optimistic means he expects a worse number.",
-   "option_words": [
-    4,
-    4,
-    4,
-    4
-   ]
+   "why": "Absent objection means nothing is filed to stop the review from moving forward."
   },
   {
    "n": 8,
    "course": "Police Exam",
    "unit": "Reading",
-   "stem": "A policy applies 'notwithstanding prior practice.' The policy:",
+   "stem": "An order tells officers to act 'at their discretion.' The order:",
    "options": [
-    "repeats all earlier practice",
-    "requires additional formal review",
-    "applies to future hires",
-    "overrides all earlier practice"
+    "gives very detailed written steps",
+    "fixes one required standard method",
+    "removes every existing legal limit",
+    "leaves the choice to the officer"
    ],
    "answer": "D",
-   "why": "'Notwithstanding' displaces what came before.",
-   "option_words": [
-    4,
-    4,
-    4,
-    4
-   ]
+   "why": "Discretion hands the decision to the officer rather than dictating one fixed method."
   },
   {
    "n": 9,
    "course": "Police Exam",
    "unit": "Reading",
-   "stem": "A memo says the response 'was not inconsistent with policy.' This means the response:",
+   "stem": "A report says the witness 'declined to elaborate.' The witness:",
    "options": [
-    "may have complied",
-    "clearly violated policy",
-    "was never reviewed",
-    "changed the policy itself"
+    "gave no further detail",
+    "refused all later testimony",
+    "changed the earlier statement",
+    "asked for a lawyer"
    ],
    "answer": "A",
-   "why": "Double negative: it does not contradict policy.",
-   "option_words": [
-    3,
-    3,
-    3,
-    4
-   ]
+   "why": "Declining to elaborate means the witness stopped short of adding more detail."
   },
   {
    "n": 10,
    "course": "Police Exam",
    "unit": "Reading",
-   "stem": "A witness statement that is 'material' to a case is one that:",
+   "stem": "A log entry marked 'inconclusive' describes a finding that is:",
    "options": [
-    "is unusually lengthy",
-    "affects the outcome",
-    "was written in person",
-    "names the officer"
+    "clearly established fact",
+    "not fully determined",
+    "deliberately kept secret",
+    "overturned on appeal"
    ],
    "answer": "B",
-   "why": "Material means relevant to the result.",
-   "option_words": [
-    3,
-    3,
-    4,
-    3
-   ]
+   "why": "Inconclusive means the evidence did not settle the question either way."
   },
   {
    "n": 11,
    "course": "Police Exam",
    "unit": "Reading",
-   "stem": "A sergeant writes that a trend 'bears watching.' She is recommending:",
+   "stem": "A supervisor notes the unit is 'running lean.' The staffing is:",
    "options": [
-    "immediate discipline",
-    "closing the inquiry",
-    "continued monitoring",
-    "changing the policy"
+    "above the budgeted level",
+    "equal to the budgeted level",
+    "below the budgeted level",
+    "separate from the budget"
    ],
    "answer": "C",
-   "why": "Bears watching means keep observing.",
-   "option_words": [
-    2,
-    3,
-    2,
-    3
-   ]
+   "why": "Running lean means the unit is working with fewer people than planned."
   },
   {
    "n": 12,
    "course": "Police Exam",
    "unit": "Reading",
-   "stem": "'The unit operated at reduced capacity for cause.' The reduction was:",
+   "stem": "A finding described as 'provisional' is one that is:",
    "options": [
-    "accidental and unexplained",
-    "permanent and unplanned",
-    "ordered by a court",
-    "deliberate and justified"
+    "final and fully binding",
+    "settled by higher review",
+    "permanent once it is filed",
+    "temporary pending more review"
    ],
    "answer": "D",
-   "why": "For cause means it had a stated justification.",
-   "option_words": [
-    3,
-    3,
-    4,
-    3
-   ]
+   "why": "Provisional findings hold for now and can change as review continues."
   },
   {
    "n": 13,
    "course": "Police Exam",
    "unit": "Grammar",
-   "stem": "Choose the correct sentence.",
+   "stem": "Choose the sentence with correct subject and verb agreement.",
    "options": [
-    "Neither the officer nor the sergeant was available.",
-    "Neither the officer or the sergeant were available.",
-    "Neither the officer nor the sergeant were available.",
-    "Neither the officer or the sergeant was available."
+    "Each of the officers carries a radio.",
+    "Each of the officers carry a radio.",
+    "Each of the officer carry a radio.",
+    "Each of the officer carries a radio."
    ],
    "answer": "A",
-   "why": "Neither/nor takes the singular verb with a singular second subject.",
-   "option_words": [
-    8,
-    8,
-    8,
-    8
-   ]
+   "why": "Each is singular, so the verb takes the singular form carries."
   },
   {
    "n": 14,
    "course": "Police Exam",
    "unit": "Grammar",
-   "stem": "Choose the clearest report line.",
+   "stem": "Choose the sentence with the correct pronoun case.",
    "options": [
-    "The vehicle was observed by me proceeding at speed.",
-    "I observed the vehicle speeding in the northbound lanes.",
-    "A high rate of speed was being proceeded at.",
-    "Speeding was observed on the part of the vehicle."
+    "Between you and I the report is done.",
+    "Between you and me the report is done.",
+    "Between me and I the report is done.",
+    "Between we and you the report is done."
    ],
    "answer": "B",
-   "why": "Active voice, shortest construction, no nominalisation.",
-   "option_words": [
-    9,
-    9,
-    9,
-    9
-   ]
+   "why": "A preposition takes object pronouns, so between you and me is correct."
   },
   {
    "n": 15,
    "course": "Police Exam",
    "unit": "Grammar",
-   "stem": "Choose the correctly punctuated sentence.",
+   "stem": "Choose the sentence with correct punctuation between clauses.",
    "options": [
-    "The suspect fled and, the officer pursued.",
-    "The suspect fled; and the officer pursued.",
-    "The suspect fled, and the officer pursued.",
-    "The suspect fled and the officer, pursued."
+    "The officer checked the gate then she left.",
+    "The officer checked the gate, then she left.",
+    "The officer checked the gate; then she left.",
+    "The officer checked the gate then, she left."
    ],
    "answer": "C",
-   "why": "Two independent clauses joined by a comma and conjunction.",
-   "option_words": [
-    7,
-    7,
-    7,
-    7
-   ]
+   "why": "Two independent clauses need a semicolon or a comma plus conjunction."
   },
   {
    "n": 16,
    "course": "Police Exam",
    "unit": "Grammar",
-   "stem": "Choose the sentence with the correct possessive.",
+   "stem": "Choose the sentence that uses the correct past perfect verb form.",
    "options": [
-    "The officers report was complete.",
-    "The officers's report was complete.",
-    "The officer reports' was complete.",
-    "The officer's report was complete."
+    "The officer had wrote the report before leaving.",
+    "The officer has wrote the report before leaving.",
+    "The officer have written the report before leaving.",
+    "The officer had written the report before leaving."
    ],
    "answer": "D",
-   "why": "Singular possessive takes apostrophe before s.",
-   "option_words": [
-    5,
-    5,
-    5,
-    5
-   ]
+   "why": "Past perfect pairs had with the participle written, not the simple past wrote."
   },
   {
    "n": 17,
    "course": "Police Exam",
    "unit": "Grammar",
-   "stem": "Choose the most precise sentence.",
+   "stem": "Choose the sentence written in active voice.",
    "options": [
-    "The vehicle stopped at the marked crosswalk.",
-    "The vehicle stopped at the object there.",
-    "The vehicle halted near the crossing area.",
-    "The vehicle stopped in that general area."
+    "The officer secured the evidence bag.",
+    "The evidence bag was secured by officers.",
+    "Securing of the evidence was done.",
+    "The bag was secured by the officer."
    ],
    "answer": "A",
-   "why": "Concrete nouns and one verb beat vague phrasing.",
-   "option_words": [
-    7,
-    7,
-    7,
-    7
-   ]
+   "why": "Active voice puts the officer first as the one doing the action."
   },
   {
    "n": 18,
    "course": "Police Exam",
    "unit": "Logic",
-   "stem": "All patrol officers are POST-certified. Some POST-certified staff are dispatchers. Therefore:",
+   "stem": "No one without a badge enters the yard. Hale entered the yard. Therefore Hale:",
    "options": [
-    "all dispatchers are patrol officers",
-    "nothing certain about the overlap",
-    "some patrol officers are dispatchers",
-    "no dispatcher is a patrol officer"
+    "held no valid badge",
+    "carried a valid badge",
+    "refused showing any badge",
+    "was denied entry later"
    ],
    "answer": "B",
-   "why": "The overlap between the two groups is undetermined.",
-   "option_words": [
-    5,
-    5,
-    5,
-    6
-   ]
+   "why": "Since badge-less people never enter, Hale must have carried a valid badge."
   },
   {
    "n": 19,
    "course": "Police Exam",
    "unit": "Logic",
-   "stem": "If the alert is issued, the road closes. The road is not closed. Therefore:",
+   "stem": "If the gate is locked, the lot is empty. The lot is not empty. Therefore:",
    "options": [
-    "the alert was clearly issued",
-    "the road will close later",
-    "the alert was never issued",
-    "the alert remains still pending"
+    "the gate was locked anyway",
+    "the lot will empty later",
+    "the gate was not locked",
+    "the gate is still locked"
    ],
    "answer": "C",
-   "why": "Denying the consequent is valid here.",
-   "option_words": [
-    5,
-    5,
-    5,
-    5
-   ]
+   "why": "A locked gate would empty the lot, so the open lot proves the gate was unlocked."
   },
   {
    "n": 20,
    "course": "Police Exam",
    "unit": "Logic",
-   "stem": "Every report reviewed was signed. One report was unsigned. Therefore that report:",
+   "stem": "Every certified officer completed the course. Reyes is not certified. Therefore Reyes:",
    "options": [
-    "was reviewed and signed",
-    "was signed by another",
-    "was reviewed but misfiled",
-    "was never actually reviewed"
+    "completed the course anyway",
+    "will complete it later",
+    "completed a different course",
+    "did not complete the course"
    ],
    "answer": "D",
-   "why": "Contrapositive of the first statement.",
-   "option_words": [
-    4,
-    4,
-    4,
-    4
-   ]
+   "why": "The course requirement covered certified officers only, so Reyes falls outside that group."
   },
   {
    "n": 21,
    "course": "Police Exam",
    "unit": "Logic",
-   "stem": "Four units respond in order: A before B, C after B, D before A. Which unit is first?",
+   "stem": "Stops are ordered: P before Q, R after Q, S before P. Which stop comes last?",
    "options": [
-    "Unit D",
-    "Unit A",
-    "Unit B",
-    "Unit C"
+    "Stop R",
+    "Stop S",
+    "Stop P",
+    "Stop Q"
    ],
    "answer": "A",
-   "why": "D before A before B before C.",
-   "option_words": [
-    2,
-    2,
-    2,
-    2
-   ]
+   "why": "The chain runs S then P then Q then R, placing R last."
   },
   {
    "n": 22,
    "course": "Police Exam",
    "unit": "Data",
-   "stem": "Calls by district are 320, 410, 275 and 515. Range?",
+   "stem": "Monthly stops were 48, 60, 54 and 42. What is the median?",
    "options": [
-    "195 calls",
-    "240 calls",
-    "225 calls",
-    "265 calls"
+    "45 stops",
+    "51 stops",
+    "48 stops",
+    "54 stops"
    ],
    "answer": "B",
-   "why": "The highest district figure is 515 and the lowest is 275, a range of 240.",
-   "option_words": [
-    2,
-    2,
-    2,
-    2
-   ]
+   "why": "Sorted as 42, 48, 54 and 60, the middle pair averages fifty-one."
   },
   {
    "n": 23,
    "course": "Police Exam",
    "unit": "Data",
-   "stem": "A table shows 60 stops in January and 75 in February. Percent change?",
+   "stem": "A table shows 24 force reports one year and 18 the next. Percent change?",
    "options": [
-    "15 percent up",
-    "20 percent up",
-    "25 percent up",
-    "30 percent up"
+    "15 percent decrease",
+    "20 percent decrease",
+    "25 percent decrease",
+    "30 percent decrease"
    ],
    "answer": "C",
-   "why": "Fifteen additional stops over a base of sixty is a twenty-five percent rise.",
-   "option_words": [
-    3,
-    3,
-    3,
-    3
-   ]
+   "why": "A drop of six from a base of twenty-four equals twenty-five percent."
   },
   {
    "n": 24,
    "course": "Police Exam",
    "unit": "Data",
-   "stem": "A chart shows arrests falling for three straight quarters, then rising. The trend is:",
+   "stem": "A monthly chart lists 12, 15, 15, 18 and 20 citations. What is the mode?",
    "options": [
-    "a flat line",
-    "an unbroken decline",
-    "an unbroken rise",
-    "a reversal"
+    "12 citations",
+    "18 citations",
+    "20 citations",
+    "15 citations"
    ],
    "answer": "D",
-   "why": "The trend changed direction from falling to rising, which is a reversal.",
-   "option_words": [
-    3,
-    3,
-    3,
-    2
-   ]
+   "why": "The mode is the value appearing most often, and fifteen appears twice."
   },
   {
    "n": 25,
    "course": "Police Exam",
    "unit": "Observation",
-   "stem": "Address given was 1450 Birch Street at 2247 hours. What was the address?",
+   "stem": "The suspect drove a silver sedan with plate 7XK-330. What was the plate?",
    "options": [
-    "1450 Birch Street",
-    "1540 Birch Street",
-    "1450 Birch Road",
-    "1450 Beach Street"
+    "7XK-330",
+    "7KX-330",
+    "7XK-303",
+    "7XK-313"
    ],
    "answer": "A",
-   "why": "Detail recall: number and street name.",
-   "option_words": [
-    3,
-    3,
-    3,
-    3
-   ]
+   "why": "Detail recall: the letters keep their order and the last digits are three three zero."
   },
   {
    "n": 26,
    "course": "Police Exam",
    "unit": "Observation",
-   "stem": "The caller in that report was a 61-year-old female. The caller was:",
+   "stem": "The burglary occurred between 2100 and 2130 hours. The time window was:",
    "options": [
-    "51 years old",
-    "61 years old",
-    "61 years old male",
-    "71 years old"
+    "2000 to 2030",
+    "2100 to 2130",
+    "2100 to 2200",
+    "2230 to 2300"
    ],
    "answer": "B",
-   "why": "Age and sex were both stated.",
-   "option_words": [
-    3,
-    3,
-    4,
-    3
-   ]
+   "why": "Detail recall: both the start and end times were recorded exactly."
   },
   {
    "n": 27,
    "course": "Police Exam",
    "unit": "Observation",
-   "stem": "The report noted a broken rear window. Which window was broken?",
+   "stem": "The witness described a green pickup with ladder racks. Vehicle color?",
    "options": [
-    "the front window",
-    "the side window",
-    "the rear window",
-    "the kitchen window"
+    "blue",
+    "white",
+    "green",
+    "grey"
    ],
    "answer": "C",
-   "why": "Detail recall from the short passage.",
-   "option_words": [
-    3,
-    3,
-    3,
-    3
-   ]
+   "why": "Detail recall: the color stated in the description was green."
   },
   {
    "n": 28,
    "course": "Police Exam",
    "unit": "Vocabulary",
-   "stem": "'The officer's account was corroborated by video.' Corroborated means:",
+   "stem": "'The deputy was exonerated by the review.' Exonerated means:",
    "options": [
-    "contradicted",
-    "questioned",
-    "summarised",
-    "confirmed"
+    "reassigned",
+    "reprimanded",
+    "suspended",
+    "cleared"
    ],
    "answer": "D",
-   "why": "Corroborate means to support with evidence.",
-   "option_words": [
-    1,
-    1,
-    1,
-    1
-   ]
+   "why": "To exonerate is to clear someone of blame or wrongdoing."
   },
   {
    "n": 29,
    "course": "Police Exam",
    "unit": "Vocabulary",
-   "stem": "'A prudent course of action' most nearly means:",
+   "stem": "'A cursory search of the vehicle' describes a search that was:",
    "options": [
-    "cautious and sensible",
-    "reckless and fast",
-    "delayed and uncertain",
-    "authorised and formal"
+    "quick and superficial",
+    "thorough and careful",
+    "delayed until morning",
+    "recorded on video"
    ],
    "answer": "A",
-   "why": "Prudent means showing care for consequences.",
-   "option_words": [
-    3,
-    3,
-    3,
-    3
-   ]
+   "why": "Cursory means hasty and lacking in depth or detail."
   },
   {
    "n": 30,
    "course": "Police Exam",
    "unit": "Vocabulary",
-   "stem": "'The order was rescinded' means the order was:",
+   "stem": "'The directive was superseded by a later memo.' The directive was:",
    "options": [
-    "repeated",
-    "cancelled",
-    "enforced",
-    "recorded"
+    "copied",
+    "replaced",
+    "delayed",
+    "clarified"
    ],
    "answer": "B",
-   "why": "Rescind means to revoke.",
-   "option_words": [
-    1,
-    1,
-    1,
-    1
-   ]
+   "why": "Supersede means to take the place of something earlier."
   },
   {
    "n": 31,
    "course": "Police Exam",
    "unit": "Judgment",
-   "stem": "Two roommates argue loudly, no weapons visible. Your first action?",
+   "stem": "A driver refuses to exit and reaches under the seat. Your first priority?",
    "options": [
-    "interview both roommates together at once",
-    "issue a citation to the louder roommate",
-    "separate parties and secure the scene",
-    "leave after documenting the call details"
+    "ask the driver to calm down",
+    "write the citation before you approach",
+    "order hands visible and request backup",
+    "open the door and pull him out"
    ],
    "answer": "C",
-   "why": "Safety and separation before resolution.",
-   "option_words": [
-    6,
-    7,
-    6,
-    6
-   ]
+   "why": "Control the hands and add cover before anything else happens."
   },
   {
    "n": 32,
    "course": "Police Exam",
    "unit": "Judgment",
-   "stem": "A supervisor's order conflicts with written policy. You should:",
+   "stem": "A colleague arrives visibly impaired before shift. You should:",
    "options": [
-    "refuse the order in front of others",
-    "follow it silently and say nothing more",
-    "report the supervisor before you comply",
-    "raise the conflict and ask clarification"
+    "cover his duties and say nothing",
+    "send him home and log it later",
+    "ignore it since he seems functional",
+    "notify the supervisor before shift starts"
    ],
    "answer": "D",
-   "why": "Raise it on the record, do not refuse in the field.",
-   "option_words": [
-    7,
-    7,
-    6,
-    6
-   ]
+   "why": "Policy requires reporting impairment before that colleague takes the street."
   },
   {
    "n": 33,
    "course": "Police Exam",
    "unit": "Judgment",
-   "stem": "A bystander films you during a stop and refuses to stop filming. You should:",
+   "stem": "A resident offers you a $20 gift card for handling her case. You should:",
    "options": [
-    "continue the stop and document the filming",
-    "seize the phone as evidence of interference",
-    "end the stop to avoid being recorded",
-    "order the bystander to delete the footage"
+    "decline politely and document the offer",
+    "accept it and record it plainly",
+    "take it and split it quietly",
+    "accept quietly and tell no one"
    ],
    "answer": "A",
-   "why": "Recording is lawful; the stop continues.",
-   "option_words": [
-    7,
-    7,
-    7,
-    7
-   ]
+   "why": "Gifts tied to a case are barred, so decline and put the offer on record."
   }
  ]
 }
